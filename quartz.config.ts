@@ -8,15 +8,13 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
-    pageTitleSuffix: "",
+    pageTitle: "Physics Wiki",
+    pageTitleSuffix: "Marcelo S. Guimarães",
     enableSPA: true,
     enablePopovers: true,
-    analytics: {
-      provider: "plausible",
-    },
+    analytics: null,
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "msguima.github.io/wiki",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
@@ -28,16 +26,18 @@ const config: QuartzConfig = {
         code: "IBM Plex Mono",
       },
       colors: {
+        // Palette matched to the personal site (msguima.github.io):
+        // primary #1B4F8A, pale blue #D6E4F4, accent #E8913A
         lightMode: {
-          light: "#faf8f8",
+          light: "#fafbfc",
           lightgray: "#e5e5e5",
           gray: "#b8b8b8",
           darkgray: "#4e4e4e",
           dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          secondary: "#1B4F8A",
+          tertiary: "#E8913A",
+          highlight: "rgba(27, 79, 138, 0.08)",
+          textHighlight: "#d6e4f488",
         },
         darkMode: {
           light: "#161618",
@@ -45,10 +45,10 @@ const config: QuartzConfig = {
           gray: "#646464",
           darkgray: "#d4d4d4",
           dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          secondary: "#8ab4dd",
+          tertiary: "#E8913A",
+          highlight: "rgba(138, 180, 221, 0.08)",
+          textHighlight: "#1b4f8a88",
         },
       },
     },
@@ -66,7 +66,10 @@ const config: QuartzConfig = {
         },
         keepBackground: false,
       }),
-      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
+      Plugin.ObsidianFlavoredMarkdown({
+        enableInHtmlEmbed: false,
+        disableBrokenWikilinks: true,
+      }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
