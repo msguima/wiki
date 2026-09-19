@@ -13,7 +13,7 @@ modified: 2026-05-08
 
 # Estrutura Algébrica da Teoria Quântica de Campos
 
-*Written by AI assistants under the scientific and pedagogical supervision of Marcelo S. Guimarães; see ai-authorship for the division of labour and the models involved.*
+*Written by AI assistants under the scientific and pedagogical supervision of Marcelo S. Guimarães; see [[ai-authorship]] for the division of labour and the models involved.*
 
 **Álgebras, Fluxo Modular e Aplicações**
 

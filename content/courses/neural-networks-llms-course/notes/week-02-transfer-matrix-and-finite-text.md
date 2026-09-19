@@ -12,7 +12,7 @@ modified: 2026-09-19
 
 # Week 2 — Transfer Matrix, Correlation Length, and What a Finite Text Can Show
 
-*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 0. Written by an AI assistant under the researcher's supervision; see ai-authorship.*
+*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 0. Written by an AI assistant under the researcher's supervision; see [[ai-authorship]].*
 
 *Week 1 fitted a distribution to observations with the context held fixed.
 Make the context a preceding token and the fitting problem becomes a Markov

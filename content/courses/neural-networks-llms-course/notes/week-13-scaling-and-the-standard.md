@@ -12,7 +12,7 @@ modified: 2026-09-19
 
 # Week 13 — Scaling, Grokking, and the Standard of a Transition
 
-*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 3. Written by an AI assistant under the researcher's supervision; see ai-authorship.*
+*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 3. Written by an AI assistant under the researcher's supervision; see [[ai-authorship]].*
 
 *We can now compute a decoder's prediction and describe its training. This
 week asks how to measure attention concentration and how the prediction loss

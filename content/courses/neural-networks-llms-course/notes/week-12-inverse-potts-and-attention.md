@@ -12,7 +12,7 @@ modified: 2026-09-19
 
 # Week 12 — The Inverse Potts Problem and Factored Attention
 
-*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 3. Written by an AI assistant under the researcher's supervision; see ai-authorship.*
+*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 3. Written by an AI assistant under the researcher's supervision; see [[ai-authorship]].*
 
 *A Potts model supplies a source whose conditional probabilities can be
 calculated exactly. We use it to understand prediction of a missing spin,

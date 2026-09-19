@@ -159,4 +159,4 @@ chosen vectors and maps. Accuracy requires testing predictions against fresh
 observations from a specified source. Nothing was learned in this example.
 
 **Next:** [[week-01-inferring-a-distribution]]. Authorship and supervision:
-ai-authorship.
+[[ai-authorship]].

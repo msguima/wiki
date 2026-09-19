@@ -34,6 +34,7 @@ PUBLISH=(
   projects
   questions
   overview.md
+  ai-authorship.md
   # Course teaching material: lecture notes, syllabi, reference appendices,
   # notation conventions. Skeletons and supervision docs stay private.
   courses/2026-algebraic-qft-course/notes

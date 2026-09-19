@@ -12,7 +12,7 @@ modified: 2026-09-19
 
 # Week 5 — Hopfield Dynamics and the Meaning of a Capacity
 
-*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 1. Written by an AI assistant under the researcher's supervision; see ai-authorship.*
+*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 1. Written by an AI assistant under the researcher's supervision; see [[ai-authorship]].*
 
 *Weeks 3 and 4 varied the weights with the data fixed. This week does the
 opposite: the couplings are built once from the stored patterns and then held,

@@ -12,7 +12,7 @@ modified: 2026-09-19
 
 # Week 8 — One Head, and a Decoder Computed by Hand
 
-*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 2. Written by an AI assistant under the researcher's supervision; see ai-authorship.*
+*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 2. Written by an AI assistant under the researcher's supervision; see [[ai-authorship]].*
 
 *This is the meeting where the machine is assembled with nothing left
 implicit, and then run by hand on a two-token sequence until a conditional

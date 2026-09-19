@@ -18,7 +18,7 @@ noise, then learn a sequence of reverse transitions that can generate a new
 observation from noise. We will see why adding noise is easy and why reversing
 it requires knowledge of the data distribution.
 
-Course: [[nn-llm-syllabus]]. Authorship and supervision: ai-authorship.
+Course: [[nn-llm-syllabus]]. Authorship and supervision: [[ai-authorship]].
 
 ## Learning goals and reading route
 

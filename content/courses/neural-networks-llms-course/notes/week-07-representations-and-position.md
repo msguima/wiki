@@ -12,7 +12,7 @@ modified: 2026-09-19
 
 # Week 7 — Representations and Position
 
-*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 2. Written by an AI assistant under the researcher's supervision; see ai-authorship.*
+*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 2. Written by an AI assistant under the researcher's supervision; see [[ai-authorship]].*
 
 *Attention acts on vectors, while text arrives as discrete labels in a
 particular order. We first assign each label a vector, then supply information

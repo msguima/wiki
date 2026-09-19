@@ -12,7 +12,7 @@ modified: 2026-09-19
 
 # Week 6 — Dense Memory, and Attention Derived from an Energy
 
-*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 1. Written by an AI assistant under the researcher's supervision; see ai-authorship.*
+*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 1. Written by an AI assistant under the researcher's supervision; see [[ai-authorship]].*
 
 *A continuous memory can retrieve a weighted average of stored vectors.
 Starting from an energy, we will derive those weights and prove descent for

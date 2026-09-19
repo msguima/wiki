@@ -12,7 +12,7 @@ modified: 2026-09-19
 
 # Week 11 — Particles on a Sphere, and Observables of a Trained Model
 
-*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 3. Written by an AI assistant under the researcher's supervision; see ai-authorship.*
+*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 3. Written by an AI assistant under the researcher's supervision; see [[ai-authorship]].*
 
 *A trained model is now in hand, and it produces vectors and attention
 matrices by the thousand. Which of those numbers mean something? This meeting

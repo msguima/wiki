@@ -13,7 +13,7 @@ modified: 2026-07-01
 
 # Generalized Symmetries and Topological Matter
 
-*Written by AI assistants under the scientific and pedagogical supervision of Marcelo S. Guimarães; see ai-authorship for the division of labour and the models involved.*
+*Written by AI assistants under the scientific and pedagogical supervision of Marcelo S. Guimarães; see [[ai-authorship]] for the division of labour and the models involved.*
 
 **From Lattice Gauge Theory to Quantum Information**
 

@@ -13,7 +13,7 @@ modified: 2026-09-19
 
 # Statistical Physics of Neural Networks and Language Models
 
-*Written by AI assistants under the scientific and pedagogical supervision of Marcelo S. Guimarães; see ai-authorship for the division of labour and the models involved.*
+*Written by AI assistants under the scientific and pedagogical supervision of Marcelo S. Guimarães; see [[ai-authorship]] for the division of labour and the models involved.*
 
 A one-semester topics course that uses a physicist's training in statistical
 mechanics as the way into neural networks and language models. The student
@@ -103,7 +103,7 @@ Class size is limited to 8–20 by the computational infrastructure.
 Models: From the transfer matrix to the attention mechanism* — the
 instructor's own lecture notes, in English, supplying every derivation in
 full, with worked examples, checkpoints, exercises and answers. Available through [[nn-llm-resources|the reading and experiments page]];
-see ai-authorship for its authorship disclosure.
+see [[ai-authorship]] for its authorship disclosure.
 
 **Statistical-mechanical background.**
 - Engel and Van den Broeck, *Statistical Mechanics of Learning* — the reference for the perceptron capacity calculation, and the source of the $H(v)$ notation used in Week 4.

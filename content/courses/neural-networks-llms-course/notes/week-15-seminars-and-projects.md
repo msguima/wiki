@@ -12,7 +12,7 @@ modified: 2026-09-19
 
 # Week 15 — Project Seminars, and What the Course Established
 
-*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 5. Written by an AI assistant under the researcher's supervision; see ai-authorship.*
+*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 5. Written by an AI assistant under the researcher's supervision; see [[ai-authorship]].*
 
 *The last week has no lecture and no chapter behind it. Four hours of
 twenty-minute seminars with questions, in the format of a conference
@@ -220,7 +220,7 @@ a negative result, if one occurred, is reported as a result.
   table of §3 was derived, and rereading it after fourteen weeks is a better
   use of an hour than it sounds.
 - [[nn-llm-syllabus]] — the course, its assessment and its outcomes.
-- ai-authorship — who wrote these pages, and what the supervision
+- [[ai-authorship]] — who wrote these pages, and what the supervision
   certifies.
 
 ---

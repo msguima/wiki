@@ -12,7 +12,7 @@ modified: 2026-09-19
 
 # Week 10 — Gradients, Stochastic Updates, Generation
 
-*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 2. Written by an AI assistant under the researcher's supervision; see ai-authorship.*
+*Notes for [[nn-llm-syllabus|the neural-networks course]], Unit 2. Written by an AI assistant under the researcher's supervision; see [[ai-authorship]].*
 
 *The decoder now supplies a probability for an observed next token. We
 will differentiate its loss, trace the error signal through its layers and

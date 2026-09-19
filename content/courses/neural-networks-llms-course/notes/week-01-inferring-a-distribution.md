@@ -18,7 +18,7 @@ step toward an LLM is to make this small inference explicit. The architecture
 will later supply a much richer dependence on the preceding text.
 
 Course: [[nn-llm-syllabus]]. Overview: [[nn-llm-start-here]].
-Authorship and supervision: ai-authorship.
+Authorship and supervision: [[ai-authorship]].
 
 ## Learning goals and reading
 
