@@ -25,13 +25,38 @@ CULL="$ROOT/scripts/cull-links.py"
 [ -d "$SRC/areas" ] || { echo "error: no wiki/ under $VAULT" >&2; exit 1; }
 
 # Everything the public site may contain. Add to this list, never to a copy.
-PUBLISH=(areas concepts connections entities papers projects questions overview.md)
+PUBLISH=(
+  areas
+  concepts
+  connections
+  entities
+  papers
+  projects
+  questions
+  overview.md
+  # Course teaching material: lecture notes, syllabi, reference appendices,
+  # notation conventions. Skeletons and supervision docs stay private.
+  courses/2026-algebraic-qft-course/notes
+  courses/2026-algebraic-qft-course/appendices
+  courses/2026-algebraic-qft-course/syllabus.md
+  courses/2026-algebraic-qft-course/conventions.md
+  courses/ads-cft-course/notes
+  courses/ads-cft-course/appendices
+  courses/ads-cft-course/syllabus.md
+  courses/ads-cft-course/conventions.md
+  courses/generalized-symmetries-course/notes
+  courses/generalized-symmetries-course/appendices
+  courses/generalized-symmetries-course/syllabus.md
+  courses/generalized-symmetries-course/conventions.md
+)
 
-# People notes that stay private (junior researchers; see wiki/entities/).
+# People notes that stay private (junior researchers; see wiki/entities/),
+# plus internal course documents (organizational crosswalk).
 EXCLUDE=(
   entities/ismael-porfirio.md
   entities/erick-landim.md
   entities/luigi-carvalho-ferreira.md
+  courses/ads-cft-course/appendices/adscft-org-crosswalk.md
 )
 
 # Clear the previous copy, keeping the hand-written landing page.
@@ -39,7 +64,10 @@ find "$DEST" -mindepth 1 -maxdepth 1 ! -name 'index.md' -exec rm -rf {} +
 
 for item in "${PUBLISH[@]}"; do
   [ -e "$SRC/$item" ] || { echo "error: missing $item in $SRC" >&2; exit 1; }
-  cp -R "$SRC/$item" "$DEST/"
+  # cp -R with a path only keeps the last component; recreate the parent
+  # dirs so courses/<course>/notes lands at content/courses/<course>/notes
+  mkdir -p "$DEST/$(dirname "$item")"
+  cp -R "$SRC/$item" "$DEST/$(dirname "$item")/"
 done
 
 for item in "${EXCLUDE[@]}"; do

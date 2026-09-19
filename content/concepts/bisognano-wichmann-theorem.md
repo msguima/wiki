@@ -47,7 +47,7 @@ Bisognano–Wichmann is the computational keystone that turns abstract modular t
 ## Papers
 
 - J. Bisognano, E. Wichmann, *On the duality condition for a Hermitian scalar field*, J. Math. Phys. 16 (1975) 985; and *...for quantum fields*, J. Math. Phys. 17 (1976) 303 — the original theorem.
-- Derived in the AQFT course: week-10-bisognano-wichmann.
+- Derived in the AQFT course: [[week-10-bisognano-wichmann]].
 - Used in [[2026-benedetti-magic-in-qft]], the group's Bell-CHSH and relative-entropy papers, and reviewed in [[2025-liu-lectures-entanglement-vna]].
 
 ## Notes

@@ -40,7 +40,7 @@ Reeh–Schlieder is the theorem that guarantees the group's modular-theoretic ma
 
 - H. Reeh, S. Schlieder, *Bemerkungen zur Unitäräquivalenz von Lorentzinvarianten Feldern*, Nuovo Cimento 22 (1961) 1051 — the original theorem.
 - E. Witten, *Notes on some entanglement properties of QFT*, Rev. Mod. Phys. 90 (2018) 045003 [1803.04993] — modern pedagogical account (cyclic-separating, modular theory, type III).
-- Derived in the AQFT course: week-09-reeh-schlieder-and-local-algebras.
+- Derived in the AQFT course: [[week-09-reeh-schlieder-and-local-algebras]].
 - Used as a hypothesis in [[2026-benedetti-magic-in-qft]] and the group's Bell / relative-entropy work; reviewed in [[2025-liu-lectures-entanglement-vna]].
 
 ## Notes
