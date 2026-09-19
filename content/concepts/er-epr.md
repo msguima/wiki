@@ -19,14 +19,14 @@ There is an **algebraic version** (developed in [[2025-liu-lectures-entanglement
 ER=EPR is the conceptual hinge between the group's quantum-information tools and holographic geometry:
 
 - It says the *entanglement* the group already quantifies (via [[bell-chsh-inequality|Bell-CHSH]] violation and [[araki-uhlmann-relative-entropy|relative entropy]]) is the very thing that "is" the wormhole. So a Bell-CHSH measurement between the two boundary algebras is, under ER=EPR, a probe of **spacetime connectivity** — this is the motivation behind [[bell-chsh-in-holographic-setting]] and the [[holographic-bell-program]] connection.
-- The **algebraic** form (commutant structure ↔ connectivity) is stated in exactly the [[type-iii-von-neumann-algebras|type III$_1$]] / [[tomita-takesaki-modular-theory|modular]] language the group is fluent in, making it a natural target rather than a foreign framework.
+- The **algebraic** form (commutant structure ↔ connectivity) is stated in exactly the [[type-iii-von-neumann-algebras|type III₁]] / [[tomita-takesaki-modular-theory|modular]] language the group is fluent in, making it a natural target rather than a foreign framework.
 - It frames the [[traversable-wormholes|traversable wormhole]] puzzle: if entanglement *is* the bridge, what does it mean to *send a signal across* it (GJW), and how does that coexist with the no-signaling that Bell-CHSH presumes? See [[bell-chsh-across-traversable-wormhole]].
 
 ## Relations
 
 - Realized concretely by the [[thermofield-double-state|thermofield double]] / eternal black hole.
 - Quantitative cousins: [[ryu-takayanagi-formula|Ryu–Takayanagi]], [[quantum-extremal-surfaces|quantum extremal surfaces]].
-- Algebraic form lives on [[type-iii-von-neumann-algebras|type III$_1$]] algebras via [[tomita-takesaki-modular-theory|modular theory]] and the [[subregion-subalgebra-duality]].
+- Algebraic form lives on [[type-iii-von-neumann-algebras|type III₁]] algebras via [[tomita-takesaki-modular-theory|modular theory]] and the [[subregion-subalgebra-duality]].
 - Tension and interplay with [[traversable-wormholes|traversability]] and [[bell-chsh-inequality|Bell-CHSH]].
 
 ## Papers

@@ -1,5 +1,5 @@
 ---
-title: "Sem II Week 5 — The TFD as a Type III$_1$ KMS State"
+title: "Sem II Week 5 — The TFD as a Type III₁ KMS State"
 type: lecture-notes
 course: syllabus
 semester: 2

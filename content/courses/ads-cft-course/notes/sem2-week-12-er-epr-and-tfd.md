@@ -138,7 +138,7 @@ This is exactly the obstruction that [[sem2-week-13-quantum-focusing-anec|Wk 13]
 
 ## 6. The AQFT bridge: this modular Hamiltonian is the CPW dressing generator
 
-The contact with the [[courses/ads-cft-course/syllabus|AQFT course]] is unusually sharp. At large $N$ the single-trace algebra $\mathcal{A}_R$ on one boundary is a [[type-iii-von-neumann-algebras|type III$_1$ factor]] with the TFD as its cyclic-separating vector. Chandrasekaran–Penington–Witten **dress** this algebra by its modular flow — and the modular Hamiltonian is precisely the $K = \beta_H(H_R - H_L)$ we derived in §2. The [[crossed-product-construction|crossed product]] $\mathcal{A}_R\rtimes_\sigma\mathbb{R}$ is then type II$_\infty$, with a trace and a finite (generalised) entropy.
+The contact with the [[courses/ads-cft-course/syllabus|AQFT course]] is unusually sharp. At large $N$ the single-trace algebra $\mathcal{A}_R$ on one boundary is a [[type-iii-von-neumann-algebras|type III₁ factor]] with the TFD as its cyclic-separating vector. Chandrasekaran–Penington–Witten **dress** this algebra by its modular flow — and the modular Hamiltonian is precisely the $K = \beta_H(H_R - H_L)$ we derived in §2. The [[crossed-product-construction|crossed product]] $\mathcal{A}_R\rtimes_\sigma\mathbb{R}$ is then type II$_\infty$, with a trace and a finite (generalised) entropy.
 
 | This course (holographic) | AQFT course (algebraic) |
 |---|---|

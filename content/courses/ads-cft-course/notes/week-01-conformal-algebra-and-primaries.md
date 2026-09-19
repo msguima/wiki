@@ -35,7 +35,7 @@ By the end of this week, a student can:
 
 **Prerequisites.** Standard QFT (Poincaré symmetry, free-field Wightman functions, reps of $\mathrm{SO}(1,d-1)$); Lie-algebra commutators and highest-weight reps.
 
-**AQFT cross-reference.** None — Block A is purely kinematic. The von Neumann-algebra / modular machinery enters only in Semester II, where the *same* conformal symmetry reappears as the symmetry of a [[type-iii-von-neumann-algebras|type III$_1$]] boundary algebra.
+**AQFT cross-reference.** None — Block A is purely kinematic. The von Neumann-algebra / modular machinery enters only in Semester II, where the *same* conformal symmetry reappears as the symmetry of a [[type-iii-von-neumann-algebras|type III₁]] boundary algebra.
 
 **What these notes add.** adscft.org §§3–5 give the conformal algebra and the correlator constraints cleanly, and this note does not repeat them. What it adds is threefold: the four-family solution of the Killing equation done by *counting* rather than quoted, so the number $\tfrac{(d+1)(d+2)}{2}$ is earned; the embedding-space realisation written out far enough to see $\mathfrak{so}(d,2)$ — which is the AdS isometry group, and therefore the first structural fact of the whole course; and the two- and three-point functions derived in one continuous argument so that the exact place where the symmetry runs out, at four points, is visible. Read the site for breadth, this note for those three.
 

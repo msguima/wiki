@@ -1,5 +1,5 @@
 ---
-title: "Week 12 — Type III$_1$ Classification of QFT Local Algebras"
+title: "Week 12 — Type III₁ Classification of QFT Local Algebras"
 type: lecture-notes
 course: syllabus
 semester: 1
@@ -158,7 +158,7 @@ This is in sharp contrast with non-relativistic quantum mechanics, where differe
 
 2. **There is no "preferred frame" or "preferred algebra."** Lorentz covariance is built in: a boost maps a wedge to a (rotated) wedge, and both have isomorphic algebras. Choosing one wedge over another is a representation-dependent choice, not a feature of the theory.
 
-3. **Density-matrix language doesn't lift to QFT.** The "state of the system in region $\mathcal{O}$" cannot be a density matrix on $\mathcal{A}(\mathcal{O}) \cong $ III$_1$. The standard QM construction $\rho_\mathcal{O} = \mathrm{Tr}_{\bar\mathcal{O}}\rho$ assumes a tensor factorization that does not exist in type III$_1$.
+3. **Density-matrix language doesn't lift to QFT.** The "state of the system in region $\mathcal{O}$" cannot be a density matrix on $\mathcal{A}(\mathcal{O}) \cong $ III$_1$. The standard QM construction $\rho_\mathcal{O} = \mathrm{Tr}_{\bar{\mathcal{O}}}\rho$ assumes a tensor factorization that does not exist in type III$_1$.
 
 ## 4. Operational consequences
 
@@ -166,7 +166,7 @@ In a hyperfinite type III$_1$ factor, the following hold (and they propagate int
 
 ### 4.1 No density matrices
 
-There is no faithful normal trace; states cannot be represented by $\rho$ in the sense $\omega(a) = \mathrm{Tr}(\rho a)$. The standard "reduced state" $\rho_\mathcal{O} = \mathrm{Tr}_{\bar\mathcal{O}}\rho$ from quantum mechanics is undefined as an operator on Hilbert space.
+There is no faithful normal trace; states cannot be represented by $\rho$ in the sense $\omega(a) = \mathrm{Tr}(\rho a)$. The standard "reduced state" $\rho_\mathcal{O} = \mathrm{Tr}_{\bar{\mathcal{O}}}\rho$ from quantum mechanics is undefined as an operator on Hilbert space.
 
 This is **structural**, not a renormalization artifact. Even with arbitrary UV regulators (cutoffs, lattices), the absence of a faithful normal trace on $\mathcal{A}(\mathcal{O})$ in the *limit* persists. Type III$_1$ is the obstruction.
 

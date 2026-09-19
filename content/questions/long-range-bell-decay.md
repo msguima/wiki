@@ -16,7 +16,7 @@ This is the quantitative half of **IQOQI Open Quantum Problem #12** (R. Verch, *
 
 ## Why It Matters
 
-The $L \to 0$ (region-tangency) endpoint is **PROVED**: Summers–Werner showed that the [[type-iii-von-neumann-algebras|type III$_1$]] structure together with the [[rindler-wedges|Reeh–Schlieder]] property forces maximal violation $\beta = 2\sqrt{2}$ (Tsirelson) for the algebras of tangent wedges/double cones. The group's [[weyl-operators|Weyl-operator]] + [[tomita-takesaki-modular-theory|Tomita–Takesaki]] machinery supplies the *body* of the curve at finite $L$. Pinning the decay class — exponential $e^{-mL}$ (massive) versus power-law $L^{-p}$ (massless) — would settle a named open problem and tie the falloff directly to the mass gap and the split property.
+The $L \to 0$ (region-tangency) endpoint is **PROVED**: Summers–Werner showed that the [[type-iii-von-neumann-algebras|type III₁]] structure together with the [[rindler-wedges|Reeh–Schlieder]] property forces maximal violation $\beta = 2\sqrt{2}$ (Tsirelson) for the algebras of tangent wedges/double cones. The group's [[weyl-operators|Weyl-operator]] + [[tomita-takesaki-modular-theory|Tomita–Takesaki]] machinery supplies the *body* of the curve at finite $L$. Pinning the decay class — exponential $e^{-mL}$ (massive) versus power-law $L^{-p}$ (massless) — would settle a named open problem and tie the falloff directly to the mass gap and the split property.
 
 ## What We Know
 

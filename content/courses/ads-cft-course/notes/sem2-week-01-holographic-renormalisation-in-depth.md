@@ -87,7 +87,9 @@ $$
 a = c \;\propto\; \frac{L^3}{G_N}
 $$
 
-<!-- CHECK: exact a=c coefficient (e.g. a=c=pi L^3/8 G_5, and the N=4 value (N^2-1)/4); confirm normalisation against de Haro-Skenderis-Solodukhin before quoting a number. -->. The equality $a=c$ is the hallmark of a strongly-coupled large-$N$ CFT with a *two-derivative* (Einstein) gravity dual; splitting $a\ne c$ requires higher-curvature bulk terms ($R^2$, i.e. finite-$\lambda$ stringy corrections). This refines the $d=2$ Brown–Henneaux result $c=3L/2G$ of [[week-09-holographic-renormalisation|Wk 9]] to four dimensions.
+<!-- CHECK: exact a=c coefficient (e.g. a=c=pi L^3/8 G_5, and the N=4 value (N^2-1)/4); confirm normalisation against de Haro-Skenderis-Solodukhin before quoting a number. -->
+
+The equality $a=c$ is the hallmark of a strongly-coupled large-$N$ CFT with a *two-derivative* (Einstein) gravity dual; splitting $a\ne c$ requires higher-curvature bulk terms ($R^2$, i.e. finite-$\lambda$ stringy corrections). This refines the $d=2$ Brown–Henneaux result $c=3L/2G$ of [[week-09-holographic-renormalisation|Wk 9]] to four dimensions.
 
 > **[Sketched]** the $d=4$ anomaly from the FG log term, $a=c\propto L^3/G_N$; **exact coefficient flagged `CHECK`** (the structure and $a=c$ are robust; the numerical factor is scheme/normalisation).
 

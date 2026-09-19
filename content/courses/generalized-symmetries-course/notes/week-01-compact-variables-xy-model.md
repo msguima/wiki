@@ -154,8 +154,8 @@ Three regimes, for orientation (the third is established in Week 4):
 | Regime | $\langle \vec S_x\cdot\vec S_0\rangle$ | $\langle\vec S\rangle$ | mechanism |
 |---|---|---|---|
 | true LRO (forbidden in 2d, §3.5) | $\to$ const $> 0$ | $\ne 0$ | broken symmetry |
-| QLRO (low $T$) | $\sim |x|^{-\eta(T)}$, $\eta = \frac{1}{2\pi\beta}$ | $0$ | free spin waves |
-| disorder (high $T$) | $\sim e^{-|x|/\xi}$ | $0$ | proliferated vortices |
+| QLRO (low $T$) | $\sim \lvert x\rvert^{-\eta(T)}$, $\eta = \frac{1}{2\pi\beta}$ | $0$ | free spin waves |
+| disorder (high $T$) | $\sim e^{-\lvert x\rvert/\xi}$ | $0$ | proliferated vortices |
 
 ```
   ln G(x) ↑

@@ -25,7 +25,7 @@ Establish the functional form and decay rate of the maximal vacuum [[bell-chsh-i
 - **Compact-region results** — Eur. Phys. J. C 85 (2025): Bell-CHSH in [[causal-diamonds|causal diamonds]], the right geometry for finite separation $L$.
 - **Optimization toolkit** — Phys. Rev. D 112 (2025): the characterized class of bounded Hermitian dichotomic operators that *optimize* the violation; needed to make $\beta(L)$ a genuine supremum.
 - **Numerics** — Phys. Rev. D 110 (2024): systematic evaluation across mass, dimension, test function.
-- **Proved endpoint** — Summers–Werner: $\beta = 2\sqrt{2}$ at region tangency ($L\to 0$), from [[type-iii-von-neumann-algebras|type III$_1$]] + Reeh–Schlieder.
+- **Proved endpoint** — Summers–Werner: $\beta = 2\sqrt{2}$ at region tangency ($L\to 0$), from [[type-iii-von-neumann-algebras|type III₁]] + Reeh–Schlieder.
 
 ## 3. Phased plan (~12 months)
 

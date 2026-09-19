@@ -13,7 +13,7 @@ modified: 2026-06-19
 
 **Target: IQOQI Open Quantum Problem #48 (Alex May, *The entanglement cost of f-routing*). Parallel track to the Bell projects; feeds the wormholes ↔ QI thread.**
 
-> Unlike the other two projects this one is already partly in flight: a manuscript is drafted for [[holographic-dual-embezzlement-protocol]], and the open question [[embezzlement-capacity-lower-bound]] *is* the capacity statement. The group's advantage over May's discrete (rank / span-program) cutting edge is the [[type-iii-von-neumann-algebras|type III$_1$]] continuum and the [[araki-uhlmann-relative-entropy|Araki–Uhlmann relative entropy]] toolkit.
+> Unlike the other two projects this one is already partly in flight: a manuscript is drafted for [[holographic-dual-embezzlement-protocol]], and the open question [[embezzlement-capacity-lower-bound]] *is* the capacity statement. The group's advantage over May's discrete (rank / span-program) cutting edge is the [[type-iii-von-neumann-algebras|type III₁]] continuum and the [[araki-uhlmann-relative-entropy|Araki–Uhlmann relative entropy]] toolkit.
 
 ## 1. Thesis statement
 

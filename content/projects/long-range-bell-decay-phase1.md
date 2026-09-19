@@ -29,7 +29,7 @@ $$
 
 over bounded Hermitian $A_i\in\mathcal{A}(\mathcal{O}_A)$, $B_j\in\mathcal{A}(\mathcal{O}_B)$ with $\|A_i\|,\|B_j\|\le1$.
 
-**Known endpoint `[Proved]`.** Summers–Werner: for tangent regions ($L\to0^+$), [[type-iii-von-neumann-algebras|type III$_1$]] + [[rindler-wedges|Reeh–Schlieder]] force $\beta = 2\sqrt2$.
+**Known endpoint `[Proved]`.** Summers–Werner: for tangent regions ($L\to0^+$), [[type-iii-von-neumann-algebras|type III₁]] + [[rindler-wedges|Reeh–Schlieder]] force $\beta = 2\sqrt2$.
 
 **Open (Verch, OQP #12).** $\beta(L)$ for $L>0$: that $\beta(L)\to2$ as $L\to\infty$, the rate, and — a subtlety surfaced in v2 — whether $\beta(L)>2$ strictly for *all* finite $L$ or terminates at a finite threshold $L_0$.
 

@@ -51,7 +51,7 @@ We work on $(d+1)$-dimensional Minkowski space $\mathbb{R}^{1,d}$ with signature
 $$
 \phi(x) = \int \frac{d^d k}{(2\pi)^d \sqrt{2\omega_k}}\left[a_k\,e^{-i\omega_k x^0 + i\vec k\cdot\vec x} + a_k^\dagger\,e^{+i\omega_k x^0 - i\vec k\cdot\vec x}\right], \quad \omega_k = \sqrt{|\vec k|^2 + m^2},
 $$
-acting on Fock space $\mathcal{F} = \bigoplus_{n=0}^\infty \mathrm{Sym}^n(L^2(\mathbb{R}^d))$, with $[a_k, a_{k'}^\dagger] = (2\pi)^d\, \delta^d(\vec k - \vec k\,')$ and a vacuum $\Omega_0 = |0\rangle$ satisfying $a_k|0\rangle = 0$.
+acting on Fock space $\mathcal{F} = \bigoplus_{n=0}^\infty \mathrm{Sym}^n(L^2(\mathbb{R}^d))$, with $[a_k, a_{k'}^\dagger] = (2\pi)^d\, \delta^d(\vec k - \vec k\,{}')$ and a vacuum $\Omega_0 = |0\rangle$ satisfying $a_k|0\rangle = 0$.
 
 This is a *distribution* in $x$, not a genuine operator — squaring it gives ultraviolet divergences (because the integrand $1/\omega_k$ does not give a normalizable mode at large $|\vec k|$). The operators we will actually use are **smeared** versions.
 
@@ -84,7 +84,7 @@ $$
 W(f, g) := \langle 0 | \phi(f)\, \phi(g) | 0\rangle.
 $$
 
-By explicit computation in Fock space (use the mode expansion and $\langle 0|a_k a_{k'}^\dagger|0\rangle = (2\pi)^d\delta^d(\vec k - \vec k\,')$):
+By explicit computation in Fock space (use the mode expansion and $\langle 0|a_k a_{k'}^\dagger|0\rangle = (2\pi)^d\delta^d(\vec k - \vec k\,{}')$):
 $$
 W(f, g) = \int \frac{d^d k}{(2\pi)^d 2\omega_k}\, \tilde f(\omega_k, -\vec k)^*\, \tilde g(\omega_k, -\vec k),
 $$

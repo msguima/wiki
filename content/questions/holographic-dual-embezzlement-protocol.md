@@ -97,7 +97,7 @@ The pieces exist; the explicit holographic dictionary for the embezzlement proto
 |---|---|---|
 | TFD on eternal AdS-Schwarzschild | Killing time across the wormhole | Two boundaries, built-in bipartite structure; full Leutheusser–Liu/Witten/CPW machinery applies directly |
 | Vacuum on a Rindler wedge | Boost generator (Bisognano–Wichmann) | Wedge complementarity; modular Hamiltonian linear in $T_{00}$ |
-| Vacuum on a causal diamond in CFT | Casini–Huerta–Myers diamond Hamiltonian | Explicit modular Hamiltonian $K = 2\pi \int_{B_R} \tfrac{r^2-|\mathbf{x}|^2}{2r} T_{tt}\,d^{d-1}x$ |
+| Vacuum on a causal diamond in CFT | Casini–Huerta–Myers diamond Hamiltonian | Explicit modular Hamiltonian $K = 2\pi \int_{B_R} \tfrac{r^2-\lvert\mathbf{x}\rvert^2}{2r} T_{tt}\,d^{d-1}x$ |
 
 **Recommended framing for the paper.** Do *not* try to dualize "the" catalyst. Instead, frame the eternal AdS-Schwarzschild as the privileged catalyst geometry and write the embezzlement protocol explicitly there as a clock-sector translation. The universal-catalyst result of van Luijk et al. enters as: "the protocol succeeds because the algebra is Type III₁ — but it is realized *geometrically* only here."
 

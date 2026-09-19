@@ -59,14 +59,14 @@ This paper is the natural pedagogical "front door" to the wormhole literature al
 - **It collects, in one place, the wormhole/traversability physics that the algebraic-QFT course covers piecewise.** GJW (§5.2.1), Maldacena–Qi (§5.2.2), and the TFD-as-wormhole picture (§4.2.1) are exactly the bulk-side inputs of Semester II Blocks 4–5 (AAJ, MSY). The review supplies the geometric intuition that the algebra "does not see" — precisely the algebra/bulk demarcation the syllabus flags.
 - **The GJW coupling $V = g\,\mathcal{O}_L\mathcal{O}_R$ is a Connes-cocycle perturbation of the TFD modular flow.** This is the formal bridge to the group's [[relative-entropy-qft|relative-entropy]] and [[crossed-product-construction|crossed-product]] machinery — see [[relative-entropy-wormhole-opening]].
 - **Bell-CHSH between the two boundaries.** The TFD is the canonical state on which the group already studies Bell-CHSH (course Sem II Wk 8). Traversability *adds signaling* between the two sides, raising the sharp question of whether opening the wormhole degrades the Tsirelson violation — see [[bell-chsh-across-traversable-wormhole]].
-- **Regenesis ↔ embezzlement.** The eternal traversable wormhole is a steady entangled resource through which information passes; this resonates with [[entanglement-embezzlement|entanglement embezzlement]] in [[type-iii-von-neumann-algebras|type III$_1$]] algebras (Porfirio, Landim) — see [[wormholes-and-quantum-information-qft]].
+- **Regenesis ↔ embezzlement.** The eternal traversable wormhole is a steady entangled resource through which information passes; this resonates with [[entanglement-embezzlement|entanglement embezzlement]] in [[type-iii-von-neumann-algebras|type III₁]] algebras (Porfirio, Landim) — see [[wormholes-and-quantum-information-qft]].
 
 ## Questions Raised
 
 1. Does the GJW double-trace coupling, treated as a cocycle perturbation, change the [[araki-uhlmann-relative-entropy|Araki–Uhlmann relative entropy]] between the TFD and the deformed state in a way computable in a free-field two-wedge analogue? → [[relative-entropy-wormhole-opening]]
 2. Is there a quantitative trade-off between **traversability** (signaling across the throat) and **Bell-CHSH violation** (which presumes the two algebras commute)? → [[bell-chsh-across-traversable-wormhole]]
 3. Can regenesis / wormhole teleportation be cast as an (approximate) embezzlement protocol on a type III$_1$ resource, giving the cost a relative-entropy meaning? → [[holographic-dual-embezzlement-protocol]]
-4. Does the Euclidean-wormhole **factorization puzzle** have anything to say about, or borrow from, [[large-n-factorization|large-$N$ factorization]] of single-trace operators — the same factorization statement that makes the boundary algebra type III$_1$?
+4. Does the Euclidean-wormhole **factorization puzzle** have anything to say about, or borrow from, [[large-n-factorization|large-N factorization]] of single-trace operators — the same factorization statement that makes the boundary algebra type III$_1$?
 
 ## Related Papers
 

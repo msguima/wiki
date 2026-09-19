@@ -9,7 +9,7 @@ originated: 2026-04-07
 
 ## Statement
 
-The [[subregion-subalgebra-duality]] in AdS/CFT identifies bulk spacetime regions with emergent [[type-iii-von-neumann-algebras|type III$_1$]] boundary subalgebras --- the same algebraic setting in which Marcelo's [[weyl-operators|Weyl operator]] Bell-CHSH tests and [[araki-uhlmann-relative-entropy|Araki-Uhlmann relative entropy]] computations operate. Can these tools, developed for flat-space QFT, be applied to holographic boundary theories to extract information about bulk causal structure, spacetime connectivity, or gravitational entropy?
+The [[subregion-subalgebra-duality]] in AdS/CFT identifies bulk spacetime regions with emergent [[type-iii-von-neumann-algebras|type III₁]] boundary subalgebras --- the same algebraic setting in which Marcelo's [[weyl-operators|Weyl operator]] Bell-CHSH tests and [[araki-uhlmann-relative-entropy|Araki-Uhlmann relative entropy]] computations operate. Can these tools, developed for flat-space QFT, be applied to holographic boundary theories to extract information about bulk causal structure, spacetime connectivity, or gravitational entropy?
 
 ## Why It Matters
 

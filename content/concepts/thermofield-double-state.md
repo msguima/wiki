@@ -15,7 +15,7 @@ $$
 $$
 It is the canonical purification of a Gibbs state. In holography, the TFD of two copies of a CFT is dual to the **two-sided eternal AdS–Schwarzschild black hole**: the two boundary factors are the two asymptotic regions, joined by a (non-traversable) Einstein–Rosen bridge. Geometric connectivity of the bridge is the bulk image of the $L$–$R$ entanglement — the cleanest statement of [[er-epr|ER=EPR]].
 
-Algebraically, the TFD is a **cyclic and separating vector** for the boundary algebras $\mathcal{A}_L, \mathcal{A}_R$, and it is a **KMS state** at inverse temperature $\beta$ for the boost/time-translation that the bulk Killing flow implements. Its [[tomita-takesaki-modular-theory|modular operator]] is (the exponential of) the boost generator. At large $N$ the algebras are [[type-iii-von-neumann-algebras|type III$_1$]].
+Algebraically, the TFD is a **cyclic and separating vector** for the boundary algebras $\mathcal{A}_L, \mathcal{A}_R$, and it is a **KMS state** at inverse temperature $\beta$ for the boost/time-translation that the bulk Killing flow implements. Its [[tomita-takesaki-modular-theory|modular operator]] is (the exponential of) the boost generator. At large $N$ the algebras are [[type-iii-von-neumann-algebras|type III₁]].
 
 ## Role in Research
 
@@ -30,7 +30,7 @@ The TFD is the single state where almost every thread of the group's program con
 - The flat-space analogue is the **Minkowski vacuum** restricted to two complementary [[rindler-wedges|Rindler wedges]]: the vacuum is the TFD of the two wedge algebras at the Unruh temperature (Bisognano–Wichmann). This is why free-field two-wedge calculations model the holographic TFD.
 - Cyclic-separating ⇒ [[tomita-takesaki-modular-theory|Tomita–Takesaki]] structure; KMS ⇒ modular flow = thermal time.
 - Underlies [[er-epr|ER=EPR]] and the [[traversable-wormholes|traversable wormhole]] constructions.
-- Single-trace operators on each boundary factorize at large $N$ ([[large-n-factorization]]) ⇒ [[type-iii-von-neumann-algebras|type III$_1$]].
+- Single-trace operators on each boundary factorize at large $N$ ([[large-n-factorization]]) ⇒ [[type-iii-von-neumann-algebras|type III₁]].
 
 ## Papers
 

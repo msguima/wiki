@@ -57,7 +57,7 @@ For this wiki the paper functions as a **second open-problems agenda** — a hol
 As a survey the paper draws on a wide toolkit rather than deriving one result; the frameworks it leans on are exactly the ones the group and its AQFT/AdS-CFT courses use:
 
 - **Algebraic QFT** — [[type-iii-von-neumann-algebras|type II/III von Neumann algebras]], [[tomita-takesaki-modular-theory|modular theory]], [[causal-diamonds|causal diamonds]], the [[crossed-product-construction|crossed product]].
-- **Holography** — [[ryu-takayanagi-formula|RT]] / [[quantum-extremal-surfaces|quantum extremal surfaces]], the [[quantum-extremal-surfaces|island formula]], entanglement-wedge reconstruction and [[subregion-subalgebra-duality|subregion–subalgebra duality]], [[large-n-factorization|large-$N$ factorization]].
+- **Holography** — [[ryu-takayanagi-formula|RT]] / [[quantum-extremal-surfaces|quantum extremal surfaces]], the [[quantum-extremal-surfaces|island formula]], entanglement-wedge reconstruction and [[subregion-subalgebra-duality|subregion–subalgebra duality]], [[large-n-factorization|large-N factorization]].
 - **Operational QI & resource theory** — LOCC, channel capacity, hypothesis testing, entanglement distillation/dilution, state merging, free-operation monotones.
 - **Quantum error correction** — code subspaces, holographic/operator-algebra codes, non-isometric codes.
 - **Relativistic QI** — Unruh–DeWitt detectors, quantum reference frames, spacetime localization.

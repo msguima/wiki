@@ -42,7 +42,7 @@ By the end of this week, a student can:
 
 The whole subject compresses to one through-line — *entanglement is geometry* — refined five times:
 
-1. **Symmetry & dictionary (Sem I A–B).** A CFT's data $\{(\Delta,\ell),C_{ijk}\}$ matches a bulk AdS theory; the isometry $\mathrm{SO}(d,2)$ *is* the conformal group, $\Delta(\Delta-d)=m^2L^2$, and large $N$ makes the bulk classical with a [[type-iii-von-neumann-algebras|type III$_1$]] boundary algebra. *New input: the holographic dictionary.*
+1. **Symmetry & dictionary (Sem I A–B).** A CFT's data $\{(\Delta,\ell),C_{ijk}\}$ matches a bulk AdS theory; the isometry $\mathrm{SO}(d,2)$ *is* the conformal group, $\Delta(\Delta-d)=m^2L^2$, and large $N$ makes the bulk classical with a [[type-iii-von-neumann-algebras|type III₁]] boundary algebra. *New input: the holographic dictionary.*
 2. **Entropy = area (Sem I C, RT).** $S_A=\mathrm{Area}(\gamma_A)/4G_N$ — entanglement entropy is a minimal surface. *New input: the RT formula.*
 3. **Covariance + algebra (Wk 14, Sem II 3).** HRT (extremal surfaces), the entanglement wedge, subregion–subalgebra duality, JLMS, the first law $\delta S=\delta\langle K\rangle$. *New input: modular theory.*
 4. **Quantum corrections (Sem II 5).** The QES prescription: extremise $S_{\rm gen}=\mathrm{Area}/4G_N+S_{\rm bulk}$. *New input: bulk entropy.*

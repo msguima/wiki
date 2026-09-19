@@ -201,7 +201,7 @@ with the same $e^{\pi\omega/2}$ vs $e^{-\pi\omega/2}$ ratios as Week 10 §4.3.
 
 The condition $a_k|0_M\rangle = 0$ for all $k$ translates, after the Bogoliubov transformation, to a constraint on the Rindler-mode content of $|0_M\rangle$. Solving:
 $$
-|0_M\rangle \;=\; \prod_{\omega > 0} \frac{1}{\sqrt{Z_\omega}}\,\sum_n e^{-\pi n\omega}\,\frac{(b_\omega^L^\dagger b_\omega^R^\dagger)^n}{n!}\,|0_R\rangle\otimes|0_L\rangle,
+|0_M\rangle \;=\; \prod_{\omega > 0} \frac{1}{\sqrt{Z_\omega}}\,\sum_n e^{-\pi n\omega}\,\frac{(b_\omega^{L\dagger} b_\omega^{R\dagger})^n}{n!}\,|0_R\rangle\otimes|0_L\rangle,
 $$
 or, recasting in terms of two-sided number eigenstates $|n_\omega\rangle_R \otimes |n_\omega\rangle_L$ (using that $b^\dagger_R b^\dagger_L$ creates one quantum on each side):
 $$

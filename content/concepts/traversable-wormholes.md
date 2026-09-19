@@ -28,7 +28,7 @@ Traversable wormholes are the sharpest meeting point between the group's algebra
 
 2. **Traversability versus Bell-CHSH.** A maximal [[bell-chsh-inequality|Bell-CHSH]] violation between two regions presumes their algebras *commute* (no signaling). Opening the wormhole introduces signaling across the throat, so there should be a quantitative tension between traversability and achievable violation — see [[bell-chsh-across-traversable-wormhole]].
 
-3. **A teleportation resource.** Regenesis through the wormhole is a physical channel for moving quantum information, inviting comparison with [[entanglement-embezzlement|embezzlement]] from a [[type-iii-von-neumann-algebras|type III$_1$]] resource.
+3. **A teleportation resource.** Regenesis through the wormhole is a physical channel for moving quantum information, inviting comparison with [[entanglement-embezzlement|embezzlement]] from a [[type-iii-von-neumann-algebras|type III₁]] resource.
 
 This concept anchors Semester II of the algebraic-QFT course (Blocks 4–5: GJW, MSY, AAJ).
 

@@ -13,7 +13,7 @@ modified: 2026-06-19
 
 **Target: IQOQI Open Quantum Problems #1 (Werner, *All the Bell inequalities*), #26 (Gill, *Bell inequalities holding for all quantum states*), #32 (Gisin, *many questions, a few answers*). Companion to [[long-range-bell-decay-project]].**
 
-> These problems are posed entirely in the finite-dimensional / correlation-polytope setting. Nobody has written the **relativistic-QFT chapter**, and the group owns that vocabulary. The aim is not to "solve" #1 in full but to plant a flag with a genuine, bounded result on [[type-iii-von-neumann-algebras|type III$_1$]] local algebras.
+> These problems are posed entirely in the finite-dimensional / correlation-polytope setting. Nobody has written the **relativistic-QFT chapter**, and the group owns that vocabulary. The aim is not to "solve" #1 in full but to plant a flag with a genuine, bounded result on [[type-iii-von-neumann-algebras|type III₁]] local algebras.
 
 ## 1. Thesis statement
 
@@ -32,7 +32,7 @@ Lift the CGLMP and [[mermin-inequalities|Mermin]] families into the Weyl-operato
 The type III$_1$ counterpart of #26, via Reeh–Schlieder + cyclicity of the vacuum: no local region admits a state-independent classical bound.
 
 ### Phase 3 — Position paper (3–4 wks)
-A single paper planting the flag across #1/#26/#27/#32.
+A single paper planting the flag across #1/26/27/32.
 
 ## 4. Targets & people
 

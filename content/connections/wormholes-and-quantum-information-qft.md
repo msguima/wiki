@@ -14,11 +14,11 @@ That gives three concrete bridges, in increasing order of ambition:
 
 1. **The GJW coupling is a Connes-cocycle perturbation** of the TFD modular flow — the same object as the group's relative-entropy and crossed-product calculations. → [[relative-entropy-wormhole-opening]]
 2. **Traversability injects signaling**, in apparent tension with the no-signaling premise of a maximal [[bell-chsh-inequality|Bell-CHSH]] violation. → [[bell-chsh-across-traversable-wormhole]]
-3. **Regenesis is a teleportation channel** through a steady entangled resource — a possible physical instance of [[entanglement-embezzlement|embezzlement]] in [[type-iii-von-neumann-algebras|type III$_1$]]. → [[holographic-dual-embezzlement-protocol]]
+3. **Regenesis is a teleportation channel** through a steady entangled resource — a possible physical instance of [[entanglement-embezzlement|embezzlement]] in [[type-iii-von-neumann-algebras|type III₁]]. → [[holographic-dual-embezzlement-protocol]]
 
 ## Evidence
 
-- **Same algebras, same modular theory.** Holographic boundary algebras at large $N$ and free-field wedge algebras are both hyperfinite [[type-iii-von-neumann-algebras|type III$_1$]] with cyclic-separating vacuum/TFD; the modular conjugation $J$ and modular flow exist identically in both. ([[2025-liu-lectures-entanglement-vna|Liu]] states the holographic side; the group owns the flat-space side.)
+- **Same algebras, same modular theory.** Holographic boundary algebras at large $N$ and free-field wedge algebras are both hyperfinite [[type-iii-von-neumann-algebras|type III₁]] with cyclic-separating vacuum/TFD; the modular conjugation $J$ and modular flow exist identically in both. ([[2025-liu-lectures-entanglement-vna|Liu]] states the holographic side; the group owns the flat-space side.)
 - **GJW = cocycle, made explicit.** Ahmad–Jefferson (arXiv:2501.01487) treat the GJW deformation $V = g\,\mathcal{O}_L\mathcal{O}_R$ as a Connes-cocycle perturbation and compute corrections to generalized entropy — the exact technology of the group's relative-entropy program and Sem I Week 7 of the course.
 - **The course already plans the flat-space mirror calculations.** AQFT Sem II Wk 8 (Bell-CHSH on the TFD) and Wk 12 (cocycle-perturbed entropy with $V = g\,W(f_L)W(f_R)$) are pencilled-in mini-calculations that would directly feed projects 1–2.
 
@@ -33,7 +33,7 @@ That gives three concrete bridges, in increasing order of ambition:
 - **P1 — Relative entropy of wormhole opening (most computable).** Take the free-field two-wedge TFD; perturb by $V = g\,W(f_L)W(f_R)$; compute the [[araki-uhlmann-relative-entropy|Araki–Uhlmann relative entropy]] $S(\omega_V\|\omega)$ to $O(g^2)$ via the Connes cocycle, and interpret its sign/size as the "cost of opening the throat." Extends the group's 2025 relative-entropy papers and AQFT Sem II Wk 12. Detailed in [[relative-entropy-wormhole-opening]].
 - **P2 — Traversability vs. Tsirelson (most distinctive).** Compute the Bell-CHSH correlator between the two wedge algebras *in the presence of* the coupling $V$, and test for a monotone trade-off between signaling strength $g$ and achievable violation. Detailed in [[bell-chsh-across-traversable-wormhole]].
 - **P3 — Regenesis as embezzlement (most speculative).** Formulate the Maldacena–Qi eternal traversable wormhole as a renewable type III$_1$ resource and ask whether information transfer through it is an embezzlement protocol, assigning a relative-entropy cost. Connects ismael-porfirio/erick-landim's thesis work to wormholes.
-- **P4 — Factorization vs. large-$N$ factorization (conceptual).** Clarify whether the Euclidean-wormhole **factorization puzzle** ($\langle Z_1 Z_2\rangle \neq \langle Z_1\rangle\langle Z_2\rangle$) and **[[large-n-factorization|large-$N$ factorization]]** of single-trace operators (the very statement that makes the algebra type III$_1$) are in tension or are two faces of one structure. A position-paper / Socratic direction rather than a calculation.
+- **P4 — Factorization vs. large-$N$ factorization (conceptual).** Clarify whether the Euclidean-wormhole **factorization puzzle** ($\langle Z_1 Z_2\rangle \neq \langle Z_1\rangle\langle Z_2\rangle$) and **[[large-n-factorization|large-N factorization]]** of single-trace operators (the very statement that makes the algebra type III$_1$) are in tension or are two faces of one structure. A position-paper / Socratic direction rather than a calculation.
 
 ## Related
 

@@ -290,7 +290,7 @@ We will not reproduce this chain. Block C states the theorem with hypotheses, ci
 
 Implications:
 
-1. **No density matrix on local regions.** "What is the state of the system in $\mathcal{O}$?" cannot be answered by a $\rho$. The standard quantum-mechanical reduction $\rho_\mathcal{O} = \mathrm{Tr}_{\bar\mathcal{O}} \rho$ doesn't even make sense.
+1. **No density matrix on local regions.** "What is the state of the system in $\mathcal{O}$?" cannot be answered by a $\rho$. The standard quantum-mechanical reduction $\rho_\mathcal{O} = \mathrm{Tr}_{\bar{\mathcal{O}}} \rho$ doesn't even make sense.
 
 2. **No von Neumann entropy.** Naive entanglement entropy formulae diverge — the "area law divergence" of QFT entanglement entropy is the algebraic content of being type III. The *finite* parts that are physical (Calabrese–Cardy formulae, etc.) are renormalized differences that survive in the algebraic framework.
 

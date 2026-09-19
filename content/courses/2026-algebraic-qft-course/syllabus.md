@@ -87,7 +87,7 @@ Seven standing reference documents under `appendices/`. A–C are prerequisites-
 
 - [[functional-analysis-survival-kit|Appendix A — Functional-Analysis Survival Kit]] — the operator theory Block A assumes: unbounded operators, closability, spectral theorem, topologies.
 - [[free-field-and-rindler-primer|Appendix B — Free-Field and Rindler Primer]] — the free scalar, Wightman functions, and Rindler coordinates. Read before Block C.
-- [[holography-large-n-primer|Appendix E — Holography and Large-$N$ Primer]] — the minimum AdS/CFT needed for Semester II, for students who have not taken the [[courses/2026-algebraic-qft-course/syllabus|AdS/CFT course]].
+- [[holography-large-n-primer|Appendix E — Holography and Large-N Primer]] — the minimum AdS/CFT needed for Semester II, for students who have not taken the [[courses/2026-algebraic-qft-course/syllabus|AdS/CFT course]].
 - [[modular-theory-reference-sheet|Appendix C — Modular Theory Reference Sheet]] — every modular-theory formula in one place, in this course's conventions.
 - [[crossed-product-reference-sheet|Appendix D — Crossed-Product Reference Sheet]] — the crossed-product construction, its trace, and the type III → II$_\infty$ statement.
 - [[notation-and-conventions|Appendix F — Notation and Conventions]] — the symbol table. Companion to [[courses/2026-algebraic-qft-course/conventions]], which fixes the KMS and modular sign conventions.

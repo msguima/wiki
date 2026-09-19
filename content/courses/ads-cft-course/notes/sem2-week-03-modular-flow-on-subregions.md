@@ -66,7 +66,7 @@ $$
 
 The single fact we use repeatedly: $|\Omega\rangle$ is a **KMS state** for $\sigma_t$ at inverse temperature $\beta = 2\pi$ (in modular units), equivalently $\rho_A = e^{-K_A}$ with the **modular Hamiltonian** $K_A = -\log\rho_A$ generating the flow, $\sigma_t = e^{iK_A t}\cdot e^{-iK_A t}$, so $\Delta_\Omega = e^{-K_A}$.
 
-> **[Stated-without-proof]** Existence and uniqueness of $(\Delta_\Omega, J_\Omega)$ and the KMS property — Tomita–Takesaki theorem, proved in [[week-05-tomita-operator|AQFT Wk 5]]. For a holographic boundary subregion at large $N$, $\mathcal{A}(A)$ is a [[type-iii-von-neumann-algebras|type III$_1$ factor]], so $\rho_A$ does **not** exist as a trace-class operator and $K_A$ is defined only through $\Delta_\Omega$ — but every formula below is well-defined as written.
+> **[Stated-without-proof]** Existence and uniqueness of $(\Delta_\Omega, J_\Omega)$ and the KMS property — Tomita–Takesaki theorem, proved in [[week-05-tomita-operator|AQFT Wk 5]]. For a holographic boundary subregion at large $N$, $\mathcal{A}(A)$ is a [[type-iii-von-neumann-algebras|type III₁ factor]], so $\rho_A$ does **not** exist as a trace-class operator and $K_A$ is defined only through $\Delta_\Omega$ — but every formula below is well-defined as written.
 
 ## 2. The Rindler wedge: Bisognano–Wichmann
 
@@ -185,7 +185,7 @@ the last step using the **bulk** first law in $\mathcal{E}(A)$. The right-hand s
 
 ## 6. Why this matters here
 
-Everything in §§1, 5 is the **same machinery as the group's own programs**. The modular operator $\Delta$, the modular conjugation $J$, and the [[araki-uhlmann-relative-entropy|Araki–Uhlmann relative entropy]] are precisely the tools used in the flat-space Bell-CHSH and relative-entropy work — only here they act on a **holographic** boundary subalgebra that is [[type-iii-von-neumann-algebras|type III$_1$]] at large $N$ ([[subregion-subalgebra-duality]]). The first law $\delta S = \delta\langle K\rangle$ is the bridge: it is an algebraic identity on the type III$_1$ algebra (no trace needed), yet it computes a *geometric* quantity (RT area) holographically. This is the cleanest entry point for asking whether the group's modular/relative-entropy methods can probe bulk geometry — see [[bell-chsh-in-holographic-setting]] and [[holographic-dual-embezzlement-protocol]].
+Everything in §§1, 5 is the **same machinery as the group's own programs**. The modular operator $\Delta$, the modular conjugation $J$, and the [[araki-uhlmann-relative-entropy|Araki–Uhlmann relative entropy]] are precisely the tools used in the flat-space Bell-CHSH and relative-entropy work — only here they act on a **holographic** boundary subalgebra that is [[type-iii-von-neumann-algebras|type III₁]] at large $N$ ([[subregion-subalgebra-duality]]). The first law $\delta S = \delta\langle K\rangle$ is the bridge: it is an algebraic identity on the type III$_1$ algebra (no trace needed), yet it computes a *geometric* quantity (RT area) holographically. This is the cleanest entry point for asking whether the group's modular/relative-entropy methods can probe bulk geometry — see [[bell-chsh-in-holographic-setting]] and [[holographic-dual-embezzlement-protocol]].
 
 ## 7. Key claims and proof status
 

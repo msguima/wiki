@@ -12,7 +12,7 @@ modified: 2026-04-07
 
 $$\mathcal{M}_{\text{bulk}}(\mathcal{E}(A)) \cong \mathcal{M}_{\text{bdy}}(A).$$
 
-In the large $N$ limit of the boundary CFT, these boundary subalgebras are [[type-iii-von-neumann-algebras|type III$_1$ von Neumann algebras]], so the bulk causal structure is encoded in the commutant structure of type III$_1$ factors on the boundary:
+In the large $N$ limit of the boundary CFT, these boundary subalgebras are [[type-iii-von-neumann-algebras|type III₁ von Neumann algebras]], so the bulk causal structure is encoded in the commutant structure of type III$_1$ factors on the boundary:
 
 $$\mathcal{M}_R' = \mathcal{M}_{R'}$$
 
