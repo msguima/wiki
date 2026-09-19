@@ -62,10 +62,14 @@ async function _navigate(url: URL, isBack: boolean = false) {
   isNavigating = true
   startLoading()
   p = p || new DOMParser()
+  // the URL we actually land on, which differs from `url` when the server
+  // redirects a folder page missing its trailing slash (/courses -> /courses/)
+  let canonicalUrl = url
   const contents = await fetchCanonical(url)
     .then((res) => {
       const contentType = res.headers.get("content-type")
       if (contentType?.startsWith("text/html")) {
+        if (res.url) canonicalUrl = new URL(res.url)
         return res.text()
       } else {
         window.location.assign(url)
@@ -86,7 +90,7 @@ async function _navigate(url: URL, isBack: boolean = false) {
   cleanupFns.clear()
 
   const html = p.parseFromString(contents, "text/html")
-  normalizeRelativeURLs(html, url)
+  normalizeRelativeURLs(html, canonicalUrl)
 
   let title = html.querySelector("title")?.textContent
   if (title) {

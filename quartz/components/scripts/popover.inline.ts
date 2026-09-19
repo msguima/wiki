@@ -90,7 +90,10 @@ async function mouseEnterHandler(
     default:
       const contents = await response.text()
       const html = p.parseFromString(contents, "text/html")
-      normalizeRelativeURLs(html, targetUrl)
+      // rebase against the URL we actually landed on: a link to a folder page
+      // without its trailing slash (e.g. /courses) is redirected to /courses/,
+      // and normalizing against the pre-redirect URL drops a path segment
+      normalizeRelativeURLs(html, response.url || targetUrl)
       // prepend all IDs inside popovers to prevent duplicates
       html.querySelectorAll("[id]").forEach((el) => {
         const targetID = `popover-internal-${el.id}`
