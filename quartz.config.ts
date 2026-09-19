@@ -9,7 +9,7 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "Physics Wiki",
-    pageTitleSuffix: "Marcelo S. Guimarães",
+    pageTitleSuffix: " · Marcelo S. Guimarães",
     enableSPA: true,
     enablePopovers: true,
     analytics: null,
