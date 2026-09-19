@@ -13,6 +13,9 @@ modified: 2026-05-26
 
 # Gauge/Gravity Duality: Foundations and Black-Hole Information
 
+*Written by AI assistants under the scientific and pedagogical supervision of Marcelo S. Guimarães; see ai-authorship for the division of labour and the models involved.*
+
+
 A two-semester graduate course on the AdS/CFT correspondence and its applications to black-hole information. Designed as a self-contained route from standard QFT to the recent literature on Page curves, replica wormholes, and quantum extremal surfaces. The external resource [adscft.org](https://adscft.org/) is the **primary text**; this course adds framing, notation alignment, and connections to the algebraic-QFT and quantum-information-in-QFT research programs at UERJ.
 
 This course is **independent of** but cross-linked with the [[courses/ads-cft-course/syllabus|2026 Algebraic-QFT course]]. Students who have taken AQFT will find Sem II's modular-flow / type III₁ material familiar; students who have not will be given the minimum they need without operator-algebra prerequisites.

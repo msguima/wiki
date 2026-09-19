@@ -12,6 +12,9 @@ modified: 2026-05-08
 ---
 
 # Estrutura Algébrica da Teoria Quântica de Campos
+
+*Written by AI assistants under the scientific and pedagogical supervision of Marcelo S. Guimarães; see ai-authorship for the division of labour and the models involved.*
+
 **Álgebras, Fluxo Modular e Aplicações**
 
 A two-semester graduate course on the algebraic structure of quantum field theory, from the foundations of operator algebras to the recent literature on crossed products, traversable wormholes, and gravitational entropy. Designed to take students with basic QFT (and no operator-algebra background) to the point where they can read and critically discuss the recent papers of Witten, Chandrasekaran–Penington–Witten, and Ahmad–Jefferson, with the Chandrasekaran–Longo–Penington–Witten de Sitter paper as a contrasting II$_1$ example.

@@ -48,6 +48,18 @@ PUBLISH=(
   courses/generalized-symmetries-course/appendices
   courses/generalized-symmetries-course/syllabus.md
   courses/generalized-symmetries-course/conventions.md
+  # The neural-networks/LLM course prefixes its files nn-llm- and carries
+  # reader-facing navigation the older courses lack (start here, week map,
+  # glossary, resources), plus the first figures on the site in assets/.
+  courses/neural-networks-llms-course/notes
+  courses/neural-networks-llms-course/appendices
+  courses/neural-networks-llms-course/assets
+  courses/neural-networks-llms-course/nn-llm-syllabus.md
+  courses/neural-networks-llms-course/nn-llm-conventions.md
+  courses/neural-networks-llms-course/nn-llm-start-here.md
+  courses/neural-networks-llms-course/nn-llm-week-map.md
+  courses/neural-networks-llms-course/nn-llm-glossary.md
+  courses/neural-networks-llms-course/nn-llm-resources.md
 )
 
 # People notes that stay private (junior researchers; see wiki/entities/),

@@ -12,6 +12,9 @@ modified: 2026-07-01
 ---
 
 # Generalized Symmetries and Topological Matter
+
+*Written by AI assistants under the scientific and pedagogical supervision of Marcelo S. Guimarães; see ai-authorship for the division of labour and the models involved.*
+
 **From Lattice Gauge Theory to Quantum Information**
 
 A two-semester graduate course that starts from compact variables on a lattice and ends at the modern frontier: higher-form symmetries, 't Hooft anomalies, topological order, and non-invertible defects. Semester I builds the classic core — Kramers–Wannier, Wegner, Wilson, Kogut–Susskind, Polyakov, Fradkin–Shenker — with every duality derived on the lattice, in cochain language, with all the sums done. Semester II re-reads that material through Gaiotto–Kapustin–Seiberg–Willett and lands on Kitaev's toric code, Wen's string-nets, the modified Villain program, and condensation defects. The destination is deliberate: students finish able to read the current literature on higher gauging and defect condensation, which is where the group's [[julia-toulouse-mechanism|Julia–Toulouse]] research line now lives.
