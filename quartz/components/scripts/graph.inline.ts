@@ -357,7 +357,9 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     autoStart: false,
     autoDensity: true,
     backgroundAlpha: 0,
-    preference: "webgpu",
+    // local patch: WebGPU leaves the canvas blank on some Chrome/macOS setups;
+    // WebGL works everywhere and is plenty for this 2D graph
+    preference: "webgl",
     resolution: window.devicePixelRatio,
     eventMode: "static",
   })

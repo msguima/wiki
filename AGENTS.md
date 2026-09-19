@@ -27,3 +27,6 @@ content.
 - One patched upstream file: `quartz/plugins/transformers/ofm.ts` — the
   `disableBrokenWikilinks` existence check ignores short-form targets
   (upstream bug in 4.5.2). See README "Upstream" before merging upstream.
+- Second patch: `quartz/components/scripts/graph.inline.ts` forces pixi to
+  WebGL (upstream hardcodes WebGPU, which renders a blank graph on some
+  Chrome/macOS machines).

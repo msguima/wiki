@@ -38,3 +38,8 @@ against folder-qualified slugs and marked every short-form link broken
 (Quartz 4.5.2). Drop the patch if upstream fixes it; without it, either turn
 `disableBrokenWikilinks` off or every `[[wikilink]]` renders as broken.
 
+A second patch in `quartz/components/scripts/graph.inline.ts` forces the
+pixi renderer to WebGL (`preference: "webgl"`, upstream hardcodes WebGPU),
+which leaves the graph canvas blank on some Chrome/macOS setups. WebGL is
+universally supported and sufficient for the 2D graph.
+
