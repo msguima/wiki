@@ -30,3 +30,11 @@ content.
 - Second patch: `quartz/components/scripts/graph.inline.ts` forces pixi to
   WebGL (upstream hardcodes WebGPU, which renders a blank graph on some
   Chrome/macOS machines).
+
+## Project status in the hub
+At the end of every session that changes this project, review `ESTADO.md` before the
+last commit: fase, versão, próximo passo and produtos. Update `revisado_em` even if
+nothing else changes. Phases for this area: ideia, andamento, revisão, submetido, publicado.
+Under Produtos list only PDFs and HTML pages from this repository that may go to the
+hub site, or external links. Never list referee reports, student data or assessment
+documents.
