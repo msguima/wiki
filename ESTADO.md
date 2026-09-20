@@ -1,6 +1,6 @@
 ---
 titulo: wiki
-area: pesquisa
+area: conhecimento
 fase: ideia
 revisado_em: 2026-09-20
 ---
