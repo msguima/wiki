@@ -30,7 +30,6 @@ content.
 - Second patch: `quartz/components/scripts/graph.inline.ts` forces pixi to
   WebGL (upstream hardcodes WebGPU, which renders a blank graph on some
   Chrome/macOS machines).
-
 ## Project status in the hub
 At the end of every session that changes this project, review `ESTADO.md` before the
 last commit: fase, versão, próximo passo and produtos. Update `revisado_em` even if
@@ -38,3 +37,7 @@ nothing else changes. Phases for this area: ideia, construção, teste, em uso, 
 Under Produtos list only PDFs and HTML pages from this repository that may go to the
 hub site, or external links. Never list referee reports, student data or assessment
 documents.
+Keep the next step to **one** paragraph of at most 300 characters: only the first is
+read, and anything beyond is cut. Longer text belongs in `## Notas`, which takes 5,000.
+Each product is a Markdown link, `- [label](path)`; any other shape is refused and the
+file never reaches the site.
