@@ -8,7 +8,7 @@ block: 3
 duration: "master dossier: 4 hours of material; classroom core: 2-hour seminar + 1-hour office/self-study"
 prerequisites: Sem II Wk 9 (Liu I); Sem I Wks 13–14 (crossed product, dressed entropy); Sem II Wks 1–8
 target_paper: "Hong Liu, arXiv:2510.07017 §§V, VII–IX"
-modified: 2026-08-24
+modified: 2026-09-29
 ---
 
 # Sem II Week 10 — Liu Lectures II: Crossed Products, Semiclassical Limits, Algebraic ER=EPR
@@ -18,7 +18,7 @@ modified: 2026-08-24
 ## 0. Reading
 
 **Primary:**
-- Hong Liu, arXiv:2510.07017, **§V** (crossed product by modular flow), **§VII** (subregion–subalgebra duality and islands), **§VIII**, especially §VIII.C (emergent connectivity and algebraic ER=EPR), and **§IX** (algebraic approaches to quantum-gravity regimes).
+- Hong Liu, arXiv:2510.07017, **§V** (crossed product by modular flow), **§VII** (subregion–subalgebra duality and islands), **§VIII**, especially §VIII.3 (emergent connectivity and algebraic ER=EPR), and **§IX** (algebraic approaches to quantum-gravity regimes).
 
 **Secondary / gentler:**
 - Sem I Wks 13–14 (the abstract crossed product and dressed entropy).
@@ -145,7 +145,7 @@ These are not competing answers. Witten explains how the noncentral collective c
 
 ### 3.1 The standard-form pattern
 
-Before stating Liu §VIII.C, recall an exact modular fact that is often confused with the proposal. A standard pair $(\mathcal A_R,\Omega)$ gives a canonical antiunitary $J$ and a commutant. If the physical left algebra has separately been identified as that commutant, then the two-sided modular pattern follows.
+Before stating Liu §VIII.3, recall an exact modular fact that is often confused with the proposal. A standard pair $(\mathcal A_R,\Omega)$ gives a canonical antiunitary $J$ and a commutant. If the physical left algebra has separately been identified as that commutant, then the two-sided modular pattern follows.
 
 **Two-sided modular pattern. [Exact algebraic statement.]** *Let $\Omega$ be cyclic and separating for $\mathcal A_R$, and suppose the physical left algebra is represented as $\mathcal A_L=\mathcal A_R'$. Tomita–Takesaki theory then gives*
 $$
@@ -203,7 +203,7 @@ A mixed product density $\rho_R\otimes\rho_L$ defines a perfectly good normal st
 
 > **Physical picture.** The finite-dimensional check tests faithfulness of the one-sided state: every Schmidt coefficient must be nonzero. It does not test maximal entanglement, since unequal positive Schmidt coefficients still give a cyclic-separating vector. Whether those modular data admit a smooth connected bulk interpretation is a further holographic question.
 
-### 3.3 Liu §VIII.C: the proposal and its domain
+### 3.3 Liu §VIII.3: the proposal and its domain
 
 Liu reviews the algebraic ER=EPR proposal of Engelhardt and Liu. It is a **conditional proposal**, not a theorem of Tomita–Takesaki theory. Its starting assumptions already contain substantial bulk information:
 
@@ -307,7 +307,7 @@ Students enter Block 4 with:
 
 - **Crossed product and clock:** the crossed product makes the outer modular flow inner. Its canonical pair becomes an ADM-energy/timeshift pair only after the physical identification made in the Witten/CPW regime. For a type III$_1$ factor the continuous core is type II$_\infty$.
 - **Semiclassical reduction (stated only):** the exact Fourier laboratory gives $S_{\widehat\tau}=S(\rho)+H(\mu)-\mathbb E_\mu[p]$ and, for a Gaussian, $S(\rho)+\tfrac12\log(2\pi e\sigma^2)-p_0$. The further equality with $A/(4G_N)+S_{\rm out}+\mathrm{const}$ is a gravitational matching. The clock-width term is not the matter area-law divergence.
-- **Standard pair versus algebraic ER=EPR:** a faithful TFD-like vector gives the exact relation $J\mathcal{A}_R J=\mathcal{A}_R'=\mathcal A_L$. Liu's §VIII.C proposal is different: within a pure semiclassical bulk domain and the $\alpha'\to0$ limit, it classifies disconnected, classical-wormhole, and quantum-volatile-wormhole regimes using boundary algebra types together with bulk classicality.
+- **Standard pair versus algebraic ER=EPR:** a faithful TFD-like vector gives the exact relation $J\mathcal{A}_R J=\mathcal{A}_R'=\mathcal A_L$. Liu's §VIII.3 proposal is different: within a pure semiclassical bulk domain and the $\alpha'\to0$ limit, it classifies disconnected, classical-wormhole, and quantum-volatile-wormhole regimes using boundary algebra types together with bulk classicality.
 - **Research map:** Witten, CPW, AAJ, and the CLPW aside use related operator-algebraic structures with different physical inputs; their conclusions should not be transferred without their hypotheses.
 - **Handoff:** AAJ use unitary covariance, a deformation-dependent weight and Jacobian, and BCH—not the course's Connes-cocycle series—to organize the deformed type-II entropy.
 
@@ -365,7 +365,7 @@ S_{\widehat\tau'}=-\widehat\tau'(D'\log D')
 $$
 Why does this not affect entropy differences computed with one fixed trace normalization?
 
-**7\*. Liu's three branches.** For each of the following data, say what Liu's §VIII.C proposal concludes and which extra hypothesis is doing work: (a) both boundary algebras are type I; (b) both are type III$_1$ and the bulk is classical; (c) neither is type I and the bulk is quantum volatile. Then explain why knowing only $J\mathcal A_RJ=\mathcal A_R'$ answers none of the three classification questions.
+**7\*. Liu's three branches.** For each of the following data, say what Liu's §VIII.3 proposal concludes and which extra hypothesis is doing work: (a) both boundary algebras are type I; (b) both are type III$_1$ and the bulk is classical; (c) neither is type I and the bulk is quantum volatile. Then explain why knowing only $J\mathcal A_RJ=\mathcal A_R'$ answers none of the three classification questions.
 
 **8\*. Classical or volatile?** Consider three hypothetical $G_N\to0$ families: (i) all invariant fluctuations are $O(G_N^{1/2})$ and all invariant lengths are $O(1)$; (ii) fluctuations are $O(G_N^{1/2})$ but one proper length is $O(G_N^{-1})$; (iii) all invariant sizes are $O(1)$ but the variance of an invariant area remains $O(1)$. Classify each family using Liu's definition. State why the classification is not determined by algebra type alone.
 
@@ -386,8 +386,8 @@ Why does this not affect entropy differences computed with one fixed trace norma
 7. **Three branches:** type I/type I gives disconnected; type III$_1$/type III$_1$ plus a classical bulk gives a classical wormhole; non-type-I algebras plus volatility gives a quantum wormhole. These are branches of Liu's conditional proposal, not consequences of the standard-pair identity.
 8. **Volatility:** family (i) is classical; (ii) is volatile because an invariant length grows as a negative power of $G_N$; (iii) is volatile because invariant fluctuations do not vanish.
 9. **Final draft rubric:** every use of “if and only if” must list the pure semiclassical bulk, no-baby-universe, $G_N\to0$, and $\alpha'\to0$ assumptions.
-10. **Source audit:** §V supplies crossed-product structure, §VII subregion/subalgebra and island context, §VIII.C the conditional connectivity proposal, and §IX observer dressing and quantum-volatile applications. AAJ is a later comparison, not a theorem stated in those Liu sections.
+10. **Source audit:** §V supplies crossed-product structure, §VII subregion/subalgebra and island context, §VIII.3 the conditional connectivity proposal, and §IX observer dressing and quantum-volatile applications. AAJ is a later comparison, not a theorem stated in those Liu sections.
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 3. Last revised 2026-08-24.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 3. Last revised 2026-09-29.*

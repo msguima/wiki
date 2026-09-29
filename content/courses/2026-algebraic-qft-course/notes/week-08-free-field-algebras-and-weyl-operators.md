@@ -7,7 +7,7 @@ week: 8
 block: C
 duration: 4 hours (midterm 2 hr + lectures 2 hr)
 prerequisites: Weeks 1–7 (vN algebras, modular theory, Connes cocycle)
-modified: 2026-08-24
+modified: 2026-09-29
 ---
 
 # Week 8 — Free-Field Algebras and Weyl Operators
@@ -299,7 +299,7 @@ $$
 W(f) W(g) = e^{-i\cdot 0/2} W(f+g) = W(f+g) = W(g) W(f).
 $$
 
-So $W(f) W(g)^{-1} W(f)^{-1} W(g) = W(f) W(-g) W(-f) W(g) = e^{-i\sigma(f,g) - i\sigma(-f,-g) + \ldots} W(0) = 1$ — the group commutator is trivial, hence the operator commutator is trivial.
+For arbitrary supports the Weyl relation gives $W(f)W(g)=e^{-i\sigma(f,g)}\,W(g)W(f)$. Spacelike separation is the case $\sigma(f,g)=0$, where the phase is trivial and the operators commute.
 
 ## 6. Worked example: 2D massless scalar in two wedges
 
@@ -347,7 +347,7 @@ $$
 =-\frac12\left(\int f_R\right)\left(\int g_R\right)
 =-\frac12.
 $$
-Reversing the chronological order gives $+1/2$; spacelike-separated supports give $0$. For generic overlapping causal relations no universal closed formula exists, but the displayed distributional integral is well posed and can be evaluated numerically. This exact special case is more informative than a schematic Gaussian estimate with an unsupported “error-function factor.”
+Reversing the chronological order gives $+1/2$; spacelike-separated supports give $0$. For generic overlapping causal relations no universal closed formula exists, but the displayed distributional integral is well posed and can be evaluated numerically.
 
 ### 6.3 Weyl algebra in the wedge
 
@@ -513,4 +513,4 @@ These checkpoints cover the core problems. Starred, project, and explicitly rese
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block C. Last revised 2026-08-24.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block C. Last revised 2026-09-29.*

@@ -2,7 +2,7 @@
 title: "Appendix G — Bibliography and Paper Map"
 type: appendix
 course: syllabus
-modified: 2026-08-24
+modified: 2026-09-29
 ---
 
 # Bibliography and Paper Map
@@ -131,9 +131,15 @@ The chain has two logically independent inputs. Nuclearity/split/approximation r
 
 ## G.7 Crossed Product and Dressed Entropy
 
+### Takesaki, *Duality for crossed products and the structure of von Neumann algebras of type III*, *Acta Math.* 131 (1973) 249–310
+
+**Course use.** The source of Week 13 Theorem 4.1 and of the duality theorem in Week 13 §4.2: the modular crossed product is semifinite, its trace is scaled by the dual action, and crossing again by the dual action gives back the original algebra up to stabilization. Witten's crossed-product paper cites it for the III$_1$ → II$_\infty$ statement.
+
+**Reading strategy.** Statement only; the proof is routed through Takesaki Vol. II.
+
 ### Connes & Takesaki, *The flow of weights on factors of type III*, *Tôhoku Math. J.* 29 (1977) 473
 
-**Course use.** Connes–Takesaki duality (Week 13 Theorem 4.1): type III$_1$ + modular flow → type II$_\infty$ via crossed product; trace exists and is unique up to scaling.
+**Course use.** The flow of weights: the dual action restricted to the centre of the core. Its triviality characterizes type III$_1$, which is why the core of a III$_1$ factor is a factor (Week 13 Theorem 4.1), while III$_\lambda$ and III$_0$ keep a nontrivial centre.
 
 **Reading strategy.** Statement only; the proof uses the crossed-product and type-III machinery routed through Takesaki Vol. II.
 
@@ -175,7 +181,7 @@ The chain has two logically independent inputs. Nuclearity/split/approximation r
 | 10 | Bisognano–Wichmann 1975, 1976; Haag ch. V §4 | Borchers 2000 §3 |
 | 11 | Summers–Werner 1987a,b | Group papers (selected) |
 | 12 | Buchholz–D'Antoni–Fredenhagen 1987 | Halvorson 2006 |
-| 13 | Takesaki Vol. II ch. X | Connes & Takesaki 1977; Liu §V |
+| 13 | Takesaki Vol. II ch. X | Takesaki 1973; Connes & Takesaki 1977; Liu §V |
 | 14 | Witten 2112.12828 §§3.1, 3.4–3.5 | Witten §4 (other conserved charges); CPW entropy comparison |
 | 15 | Maldacena 2003 §§1–3; CPW 2209.10454 §§2–3 | Liu §§V, VII–VIII |
 

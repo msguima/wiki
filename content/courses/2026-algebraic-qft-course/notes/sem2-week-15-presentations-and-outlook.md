@@ -133,7 +133,7 @@ This is the instructor's capstone reference. “Course proof” means the notes 
 | Tsirelson bound | I.11 | proved |
 | Summers–Werner maximality | I.11, II.8 | source result with state/geometry/algebra hypotheses; not every quartet is optimal |
 | local hyperfinite type III$_1$ | I.12 | source synthesis requiring factoriality, phase-space/hyperfinite input, and a separate scaling or modular-spectrum type-III$_1$ input |
-| continuous core is semifinite | I.13 | Connes–Takesaki result stated; representation constructed |
+| continuous core is semifinite | I.13 | Takesaki's structure theorem stated; representation constructed |
 | type-II entropy and trace-scale ambiguity | I.14, II.3 | algebraic calculation plus source theorem |
 | finite-dimensional TFD standard pair | I.15, II.5 | proved for each one-sided matrix algebra |
 | continuum TFD/Rindler statement | II.5 | one-sided standard pairs; formal mode TFD is not a literal continuum tensor product |

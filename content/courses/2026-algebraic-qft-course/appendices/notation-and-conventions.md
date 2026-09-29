@@ -2,7 +2,7 @@
 title: "Appendix F — Notation and Conventions"
 type: appendix
 course: syllabus
-modified: 2026-08-24
+modified: 2026-09-29
 ---
 
 # Notation and Conventions
@@ -203,7 +203,7 @@ Modular time $t$ corresponds to boost rapidity $+2\pi t$ — the boost subgroup 
 | $S_{\mathrm{gen}}$ | generalized entropy in gravity (only in holographic settings) |
 | $\mathcal{B}(\omega, \phi)$ | modular boundary term |
 
-**Finite-dimensional identity** (Week 14 Theorem 3.1; explicit derivation in §4.4):
+**Finite-dimensional identity** (derived in Week 14 §3.1):
 $$
 S(\rho) - S(\sigma) = -S(\rho\|\sigma) + \mathrm{Tr}((\rho - \sigma)\,K_\sigma),
 \qquad K_\sigma = -\log\sigma.

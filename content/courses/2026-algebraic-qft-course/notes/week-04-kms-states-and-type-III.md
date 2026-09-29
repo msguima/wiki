@@ -7,7 +7,7 @@ week: 4
 block: A
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Weeks 1–3 (C*-algebras, vN algebras, type classification)
-modified: 2026-08-24
+modified: 2026-09-29
 ---
 
 # Week 4 — KMS States, the Modular Interpretation, Type III Preview
@@ -219,7 +219,7 @@ In type III, the modular flow is genuinely non-trivial. Its class modulo inner a
 
 When $\mathcal{M}$ is type III, modular flow cannot be removed globally by choosing a trace: there is no faithful normal semifinite trace to provide a trivial modular reference state. Connes' cocycle theorem says that modular groups associated with two faithful normal states differ by an inner cocycle. Consequently their images in $\operatorname{Out}(\mathcal{M})$ define a state-independent flow. The kernel and spectral data of this outer flow enter the type-III classification.
 
-For type III$_1$, Connes' $S$-invariant is $\mathbb{R}_{\geq0}$; equivalently, the logarithmic modular spectrum is unrestricted. This is the strongest of the type-III spectral possibilities. The statement concerns the classification invariant, not a claim that modular flow by itself supplies the physical Hamiltonian of every QFT problem.
+For type III$_1$, Connes' $S$-invariant is $\mathbb{R}_{\geq0}$; equivalently, the logarithmic modular spectrum of **every** faithful normal state is unrestricted. One state with unrestricted spectrum is not enough, because $S$ is an intersection over all of them. This is the strongest of the type-III spectral possibilities. The statement concerns the classification invariant, not a claim that modular flow by itself supplies the physical Hamiltonian of every QFT problem.
 
 ### 6.4 The "thermal time" interpretation
 
@@ -277,7 +277,7 @@ The modular flow on the full ITPFI $\mathcal{R}_\lambda$ is the infinite tensor 
 
 The finite, nonzero period is the visible clue. The actual conclusion that $\mathcal R_\lambda$ has type III$_\lambda$ is the quoted factor theorem together with Connes' later invariant theory; it cannot be inferred from the spectrum or period of one state alone. Distinct values of $\lambda \in (0,1)$ give non-isomorphic algebras: $\mathcal{R}_\lambda \cong \mathcal{R}_{\lambda'}$ iff $\lambda = \lambda'$.
 
-**On the absence of a faithful normal trace.** The structural fact that no faithful normal trace exists on $\mathcal{R}_\lambda$ for $\lambda \neq 1$ is a separate part of Powers' theorem and we do *not* prove it here. Naive arguments using the GNS vector state $\omega_\lambda^{\otimes\infty}$ as a "trace witness" fail — Murray-von Neumann equivalence of projections is internal to the algebra (existence of a partial isometry $u \in \mathcal{R}_\lambda$ with $u^* u = p$, $u u^* = q$), and a non-tracial vector state cannot certify or rule out such equivalences. The correct argument goes through the type classification of the relative commutant of the asymptotic tail algebra, and is in the references above.
+**On the absence of a faithful normal trace.** The structural fact that no faithful normal trace exists on $\mathcal{R}_\lambda$ for $\lambda \neq 1$ is a separate part of Powers' theorem and we do *not* prove it here. Naive arguments using the GNS vector state $\omega_\lambda^{\otimes\infty}$ as a "trace witness" fail — Murray-von Neumann equivalence of projections is internal to the algebra (existence of a partial isometry $u \in \mathcal{R}_\lambda$ with $u^* u = p$, $u u^* = q$), and a non-tracial vector state cannot certify or rule out such equivalences. Powers' own proof distinguishes the $\mathcal R_\lambda$ by an asymptotic property of the algebra, his property $L_\lambda$. The modern route goes through Connes' invariant $S(\mathcal M)=\bigcap_\varphi\operatorname{Sp}\Delta_\varphi$ (§6.3 and Week 12). For the product state $\omega_\lambda^{\otimes\infty}$ the centralizer is a factor, and in that case $S(\mathcal R_\lambda)$ equals the spectrum of this one modular operator, $\{0\}\cup\lambda^{\mathbb Z}$. Every semifinite factor has $S=\{1\}$, so no faithful normal semifinite trace can exist. Proofs: Powers 1967; Connes, *Ann. Sci. ENS* 6 (1973) 133; Takesaki Vol. II Ch. XII.
 
 The contrast is striking:
 - **$\lambda = 1$ (tracial state):** $\rho_1 = \frac{1}{2} I$, $\omega_1$ is the tracial state. The algebra is type II$_1$, with a trace and continuous-dimension projections.
@@ -428,4 +428,4 @@ These checkpoints cover the core calculations. The starred problems remain sourc
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block A. Last revised 2026-08-24. End of Block A — the foundations of operator algebras.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block A. Last revised 2026-09-29. End of Block A — the foundations of operator algebras.*

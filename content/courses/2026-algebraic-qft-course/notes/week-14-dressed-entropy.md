@@ -7,7 +7,7 @@ week: 14
 block: D
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Week 13 (crossed product), Week 7 (Connes cocycle + Araki–Uhlmann)
-modified: 2026-08-24
+modified: 2026-09-29
 ---
 
 # Week 14 — Dressed Entropy and the Modular-Energy Term
@@ -19,7 +19,7 @@ modified: 2026-08-24
 **Primary:**
 
 - Witten, “Gravity and the crossed product,” arXiv:2112.12828, §§3.4–3.5 (trace, density matrices, and entropy).
-- Takesaki, *Theory of Operator Algebras II*, ch. X and §V.2 (continuous cores and noncommutative Radon–Nikodym theory).
+- Takesaki, *Theory of Operator Algebras II*, chs. VIII (the Connes cocycle, i.e. noncommutative Radon–Nikodym theory), X (crossed products) and XII (the continuous core).
 
 **Secondary:**
 
@@ -492,4 +492,4 @@ $$
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block D. Last revised 2026-08-24.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block D. Last revised 2026-09-29.*

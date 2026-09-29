@@ -7,7 +7,7 @@ week: 3
 block: A
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Week 2 (von Neumann algebras, bicommutant)
-modified: 2026-08-24
+modified: 2026-09-29
 ---
 
 # Week 3 — Type Classification (I, II, III) and Projections
@@ -51,7 +51,7 @@ The set $\mathrm{Proj}(\mathcal{M})$ of projections in $\mathcal{M}$ is a *compl
 
 ### 1.1 Murray–von Neumann equivalence
 
-**Definition 1.1 (Partial isometry).** An element $v \in \mathcal{M}$ is a *partial isometry* if $v^* v$ is a projection. Equivalently, $v v^*$ is a projection; equivalently, $v^* v v = v$.
+**Definition 1.1 (Partial isometry).** An element $v \in \mathcal{M}$ is a *partial isometry* if $v^* v$ is a projection. Equivalently, $v v^*$ is a projection; equivalently, $v v^* v = v$.
 
 The two projections $v^* v$ (the *initial projection*) and $v v^*$ (the *final projection*) are the projections onto the kernel-complement and the range of $v$, respectively. The partial isometry $v$ implements an isometry from $\mathrm{ran}(v^* v) \subset \mathcal{H}$ to $\mathrm{ran}(v v^*) \subset \mathcal{H}$.
 
@@ -96,7 +96,7 @@ In $\mathcal{B}(\mathcal{H})$, the projections form a "discrete" structure: rank
 
 **Example 2.4 (Hilbert's hotel).** In $\mathcal{B}(\ell^2)$, the projection $1$ (onto all of $\ell^2$) is equivalent to the projection $p$ onto $\{e_2, e_3, \ldots\}$. The shift $S e_n = e_{n+1}$ is a partial isometry with $S^* S = 1$ and $S S^* = p$. So $1 \sim p < 1$, demonstrating that $1$ is infinite in $\mathcal{B}(\ell^2)$.
 
-**Example 2.5 (Type II oddity).** In a type II$_1$ factor $\mathcal{R}$, *every* projection, including the identity, is finite, but the projection lattice is not discrete — between any two projections $p_1 < p_2$ there is a continuum of projections (parameterized by trace value). This is the "continuous-dimension" structure that gives type II its name.
+**Example 2.5 (Type II oddity).** In a type II$_1$ factor $\mathcal{M}$, *every* projection, including the identity, is finite, but the projection lattice is not discrete — between any two projections $p_1 < p_2$ there is a continuum of projections (parameterized by trace value). This is the "continuous-dimension" structure that gives type II its name.
 
 ## 3. The Murray-von Neumann classification
 
@@ -118,7 +118,7 @@ The classification is exhaustive and exclusive: every factor is in exactly one t
 - *Type I$_n$ for $n < \infty$: $\mathcal{M} \cong M_n(\mathbb{C})$.*
 - *Type I$_\infty$: $\mathcal{M}\cong\mathcal B(\mathcal K)$ with $\dim\mathcal K$ infinite; in the separable case, $\mathcal K\cong\ell^2(\mathbb N)$.*
 
-**Sketch of proof.** Let $\mathcal{M}$ be a type I factor on $\mathcal{H}$, and pick a minimal projection $p_0 \in \mathcal{M}$ (exists by Definition 3.1). Since $\mathcal{M}$ is a factor, the comparison theorem gives a family of pairwise orthogonal projections $\{p_\alpha\}$, all equivalent to $p_0$, with $\sum_\alpha p_\alpha = 1$. Let $|A|$ be the cardinality of this family.
+**Sketch of proof.** Let $\mathcal{M}$ be a type I factor on $\mathcal{H}$, and pick a minimal projection $p_0 \in \mathcal{M}$ (exists by Theorem 3.1). Since $\mathcal{M}$ is a factor, the comparison theorem gives a family of pairwise orthogonal projections $\{p_\alpha\}$, all equivalent to $p_0$, with $\sum_\alpha p_\alpha = 1$. Let $|A|$ be the cardinality of this family.
 
 Pick partial isometries $v_\alpha$ with $v_\alpha^* v_\alpha = p_0$ and $v_\alpha v_\alpha^* = p_\alpha$. Then the $v_\alpha v_\beta^*$ form a system of "matrix units" satisfying $v_{\alpha\beta} v_{\gamma\delta} = \delta_{\beta\gamma} v_{\alpha\delta}$. The vN algebra they generate is isomorphic to $\mathcal{B}(\ell^2(A))$. Plus, the original $\mathcal{M}$ contains $\{v_{\alpha\beta}\}_{\alpha,\beta}$ as generators (using minimality of $p_0$), so $\mathcal{M} = \{v_{\alpha\beta}\}'' \cong \mathcal{B}(\ell^2(A))$. $\square$
 
@@ -142,11 +142,13 @@ This is the source of the name "noncommutative integration": type II$_1$ algebra
 
 ### 3.3 Type II$_\infty$ factors
 
-**Intrinsic definition.** A factor $\mathcal{M}$ is *type II$_\infty$* if it is type II (no minimal projection but has a non-zero finite projection, per Theorem 3.1) and the identity $1_{\mathcal{M}}$ is *infinite*. Equivalently, $\mathcal{M}$ admits a faithful normal *semifinite* trace $\tau$ — defined on a dense \*-ideal and satisfying $\tau(ab) = \tau(ba)$ where defined — but no *normalized* trace.
+**Intrinsic definition.** A factor $\mathcal{M}$ is *type II$_\infty$* if it is type II (no minimal projection but has a non-zero finite projection, per Theorem 3.1) and the identity $1_{\mathcal{M}}$ is *infinite*. Equivalently, $\mathcal{M}$ has no minimal projections and admits a faithful normal *semifinite* trace $\tau$ — defined on a dense \*-ideal and satisfying $\tau(ab) = \tau(ba)$ where defined — but no *normalized* trace. The condition on minimal projections is needed: $\mathcal B(\mathcal H)$ with $\dim\mathcal H=\infty$ also carries a faithful normal semifinite trace, $\operatorname{Tr}$, and no normalized one, but it is type I$_\infty$.
 
 The trace takes projection-values in the full extended interval $[0, \infty]$.
 
-**Theorem 3.5 (Structure theorem). [Stated only — separability assumed; refs: Murray–vN; Takesaki Vol. I §V.1.]** *Every type II$_\infty$ factor on a separable Hilbert space is isomorphic to $\mathcal{R}_1 \otimes \mathcal{B}(\ell^2)$ for some type II$_1$ factor $\mathcal{R}_1$.*
+**Theorem 3.5 (Structure theorem). [Stated only — separability assumed; refs: Murray–vN; Takesaki Vol. I §V.1.]** *Every type II$_\infty$ factor on a separable Hilbert space is isomorphic to $\mathcal{N} \otimes \mathcal{B}(\ell^2)$ for some type II$_1$ factor $\mathcal{N}$.*
+
+The II$_1$ factor $\mathcal N$ depends on the II$_\infty$ factor and need not be the hyperfinite factor $\mathcal R$ of §5.2. The hyperfinite case $\mathcal R\otimes\mathcal B(\ell^2)$ is the one that reappears in Block D as the continuous core of the hyperfinite type III$_1$ factor.
 
 The structure theorem is what justifies the slogan "type II$_\infty$ = II$_1$ tensor type I$_\infty$." But the *type* is intrinsic to the algebra (a property of its projection lattice and trace), and we should be careful to distinguish the intrinsic definition from the structural decomposition. The decomposition is a theorem; the intrinsic property is the definition.
 
@@ -218,7 +220,7 @@ For a discrete icc group $G$, the group vN algebra $\mathcal{L}(G) = \{\lambda(g
 
 1. *$\mathcal{L}(G)$ is a factor when $G$ is icc.* Any $a \in \mathcal{L}(G) \cap \mathcal{L}(G)'$ commutes with every $\lambda(g)$, so its expansion $a = \sum_g a_g \lambda(g)$ has coefficients constant on conjugacy classes. The icc condition (every non-identity conjugacy class is infinite) combined with $\ell^2$-summability of the coefficients forces $a_g = 0$ for $g \neq e$, so $a \in \mathbb{C}\cdot 1$. Hence $\mathcal{L}(G)$ has trivial center.
 
-2. *Faithful normalized trace exists.* The trace $\tau(a) := \langle\delta_e, a\delta_e\rangle$ is faithful, normal, normalized, and tracial (Week 2 §5.5). Existence of a normalized trace rules out types II$_\infty$ (no normalized trace) and III (no trace at all).
+2. *Faithful normalized trace exists.* The trace $\tau(a) := \langle\delta_e, a\delta_e\rangle$ is faithful, normal, normalized, and tracial (Week 2 Example 5.5). Existence of a normalized trace rules out types II$_\infty$ (no normalized trace) and III (no trace at all).
 
 3. *No minimal projections (and infinite-dimensional).* Every type I$_n$ factor with $n < \infty$ is finite-dimensional, while $\mathcal{L}(G)$ for $G$ infinite is infinite-dimensional (the $\lambda(g)$ for distinct $g$ are linearly independent). Type I$_\infty$ factors do not admit a *normalized* trace (only a semifinite one), contradicting (2). So $\mathcal{L}(G)$ is not type I.
 
@@ -403,4 +405,4 @@ The checks below cover the core route through projection comparison and traces. 
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block A. Last revised 2026-08-24.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block A. Last revised 2026-09-29.*

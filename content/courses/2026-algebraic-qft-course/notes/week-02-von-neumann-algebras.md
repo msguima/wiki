@@ -12,7 +12,7 @@ modified: 2026-09-29
 
 # Week 2 — Von Neumann Algebras and the Double Commutant
 
-> *We strengthened "Banach algebra" to "C\*-algebra" by adding one axiom (the C\*-identity) and discovered enormous structural rigidity. We now strengthen "C\*-algebra" to "von Neumann algebra" by changing the topology in which we close. The cost: vN algebras come with a representation built in. The benefit: a wealth of projections, a topology in which the bicommutant theorem trivializes the algebra-vs-topology distinction, and the foundation for everything in modular theory and beyond.*
+> *We strengthened "Banach algebra" to "C\*-algebra" by adding one axiom (the C\*-identity) and discovered enormous structural rigidity. We now strengthen "C\*-algebra" to "von Neumann algebra" by changing the topology in which we close. The price is a concrete definition, stated inside a chosen representation; §6 explains why nothing essential depends on that choice. The benefit: a wealth of projections, a topology in which the bicommutant theorem trivializes the algebra-vs-topology distinction, and the foundation for everything in modular theory and beyond.*
 
 ### How to use this chapter
 
@@ -342,7 +342,7 @@ A non-normal state lies outside the folium selected by the given representation:
 
 **Theorem 6.2 (Sakai). [Stated only — refs: Sakai, *C\*-algebras and W\*-algebras*, ch. 1.]** *Every vN algebra $\mathcal{M}$ has a unique Banach space of normal linear functionals, called the predual $\mathcal{M}_*$, such that $\mathcal{M} = (\mathcal{M}_*)^*$ as Banach spaces.*
 
-This is the abstract characterization of vN algebras: $\mathcal{M}$ is a vN algebra iff it is a C\*-algebra that is the dual of *some* Banach space. (Sakai's theorem, 1956.) It tells us that vN algebras are *intrinsically* defined — we don't need to fix a specific Hilbert-space realization to know that $\mathcal{M}$ is "abstractly" a vN algebra.
+This is the abstract characterization of vN algebras: a C\*-algebra is \*-isomorphic to a vN algebra iff it is the dual of *some* Banach space. (Sakai's theorem, 1956; such C\*-algebras are called W\*-algebras.) It tells us that vN algebras are *intrinsically* defined — we don't need to fix a specific Hilbert-space realization to know that $\mathcal{M}$ is "abstractly" a vN algebra.
 
 **Example 6.3.** $\mathcal{B}(\mathcal{H})_* = \mathcal{T}(\mathcal{H})$ (trace-class operators), and the duality is $\omega_\rho(a) = \mathrm{Tr}(\rho a)$ for $\rho$ trace-class. Normal states on $\mathcal{B}(\mathcal{H})$ are exactly density-matrix states. Non-normal states do exist (as functionals on $\mathcal{B}(\mathcal{H})$) but they are not represented by any $\rho \in \mathcal{T}(\mathcal{H})$.
 
@@ -394,7 +394,7 @@ This is a useful finite-dimensional laboratory for the difference between the al
 
 ## 9. What to take away
 
-1. **vN algebras are C\*-algebras with a built-in representation.** Closing in WOT/SOT instead of norm gives access to spectral projections, and via the bicommutant theorem, to the full algebraic-topological duality.
+1. **vN algebras are C\*-algebras closed in a weak topology.** The definition is concrete, but by Sakai's theorem a vN algebra is intrinsically a C\*-algebra that is a dual Banach space, and its σ-weak topology and normal states do not depend on the representation. Closing in WOT/SOT instead of norm gives access to spectral projections, and via the bicommutant theorem, to the full algebraic-topological duality.
 
 2. **The bicommutant theorem.** Algebraic ($\mathcal{M} = \mathcal{M}''$) ↔ topological (WOT/SOT/σ-weak-closed). This is the central structural result: it allows us to construct vN algebras as $S''$ for any self-adjoint $S$, and to verify the vN-algebra property either algebraically or topologically. For a unital \*-algebra the WOT-, SOT- and σ-weak closures all equal the bicommutant, although the three topologies remain different, and this is why the choice of WOT in the definition is a convention.
 

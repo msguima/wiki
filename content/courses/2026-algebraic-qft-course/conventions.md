@@ -2,7 +2,7 @@
 title: "Course Conventions"
 type: course-note
 course: syllabus
-modified: 2026-08-24
+modified: 2026-09-29
 ---
 
 # Course Conventions
@@ -225,7 +225,7 @@ The course must not blur:
 - **Type-I density-matrix calculations** with **type-III local-algebra facts**.
 - **Wedge-specific Bisognano–Wichmann geometry** with **generic bounded-region modular flow** (which is *not* geometric).
 - **Structural Bell-correlation theorems** (Summers–Werner, hypothesis-explicit) with **explicit Weyl-test-function computations** (which approach but don't attain $2\sqrt 2$).
-- **Proved operator-algebra statements** (Connes–Takesaki) with **holographic or gravitational interpretation** (Witten 2022 identification).
+- **Proved operator-algebra statements** (Takesaki's structure theorem) with **holographic or gravitational interpretation** (Witten 2022 identification).
 - The **clock coordinate**, its **conjugate momentum**, the **modular
   parameter**, and the **Fourier-dual variable**.
 - The **clock wavefunction width** with a **matter UV cutoff**. The crossed

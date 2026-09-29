@@ -7,7 +7,7 @@ week: 1
 block: A
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Hilbert spaces, bounded operators, basic functional analysis
-modified: 2026-08-24
+modified: 2026-09-29
 ---
 
 # Week 1 — C\*-algebras, States, and the GNS Construction
@@ -435,7 +435,7 @@ Three structural facts run the rest of the course:
 
 ## 10. Looking ahead: Week 2
 
-Next week we strengthen "C\*-algebra" to "von Neumann algebra" by closing in the weak operator topology rather than the norm topology. The price is that von Neumann algebras come with a representation built in (you cannot define a vN algebra abstractly the way you can a C\*-algebra without losing information). The benefit is a much richer structure: every vN algebra has a wealth of projections that generate it, and the order structure on projections leads to the Murray–von Neumann classification (Week 3). Tomita–Takesaki (Block B) and the type-III classification of QFT algebras (Block C) all live in the von Neumann setting.
+Next week we strengthen "C\*-algebra" to "von Neumann algebra" by closing in the weak operator topology rather than the norm topology. That closure is taken inside a chosen representation, so the definition we give is concrete. Nothing is lost by this choice: Sakai's theorem (Week 2 §6) characterizes von Neumann algebras abstractly, as the C\*-algebras that are dual Banach spaces, and the σ-weak topology and the normal states are intrinsic to the algebra. The benefit is a much richer structure: every vN algebra has a wealth of projections that generate it, and the order structure on projections leads to the Murray–von Neumann classification (Week 3). Tomita–Takesaki (Block B) and the type-III classification of QFT algebras (Block C) all live in the von Neumann setting.
 
 ## 11. Problem set
 
@@ -503,4 +503,4 @@ These are result checks, not substitute solutions. The starred problems remain e
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block A. Last revised 2026-08-24.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block A. Last revised 2026-09-29.*

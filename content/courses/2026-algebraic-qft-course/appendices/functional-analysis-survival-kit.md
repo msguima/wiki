@@ -153,10 +153,8 @@ $\sigma(A)=\{\lambda\in\mathbb R:E_A(B)\ne0\text{ for every open }B\ni
 
 ## A.4 Topologies on $\mathcal{B}(\mathcal{H})$
 
-We use four topologies:
-
-We write sequences for readability; nets are required for the general
-topological statements.
+We use four topologies. They are written with sequences for readability;
+nets are required for the general topological statements.
 
 **Norm topology.** $T_i\to T$ iff $\|T_i-T\|\to0$. Strongest of the four.
 
@@ -184,7 +182,7 @@ as "what no experiment can distinguish": finite experimental precision is a
 different notion. Mathematically, WOT closure supplies the spectral
 projections and bounded limits needed for an algebra of observables.
 
-**Key fact (Sakai).** A C\*-algebra $\mathcal{A}$ is a vN algebra iff it has a predual: there is a Banach space $\mathcal{A}_*$ with $\mathcal{A} = (\mathcal{A}_*)^*$.
+**Key fact (Sakai).** A C\*-algebra $\mathcal{A}$ is \*-isomorphic to a vN algebra iff it has a predual: there is a Banach space $\mathcal{A}_*$ with $\mathcal{A} = (\mathcal{A}_*)^*$. Such C\*-algebras are called W\*-algebras. The definition above is concrete, but the $\sigma$-weak topology and the normal states are intrinsic to the algebra and do not depend on the chosen faithful normal representation.
 
 ## A.5 States, Normal States, Predual
 

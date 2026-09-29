@@ -2,7 +2,7 @@
 title: "Appendix C — Modular Theory Reference Sheet"
 type: appendix
 course: syllabus
-modified: 2026-08-24
+modified: 2026-09-29
 ---
 
 # Modular Theory Reference Sheet
@@ -32,7 +32,7 @@ $S_0$ is closable (Week 5 Prop 2.2); its closure is denoted $S$.
 
 ## C.3 Tomita–Takesaki Theorem
 
-**[Stated only — refs: B-R Vol. I §2.5; Takesaki Vol. II Ch. VIII.]** Under the standard setup,
+**[Stated only — refs: B-R Vol. I §2.5; Takesaki Vol. II Ch. VI.]** Under the standard setup,
 $$
 J\,\mathcal{M}\,J = \mathcal{M}', \qquad \Delta^{-it}\,\mathcal{M}\,\Delta^{it} = \mathcal{M} \quad \text{for all } t \in \mathbb{R}.
 $$
@@ -146,9 +146,14 @@ Modular time $t$ corresponds to boost rapidity $+2\pi t$. Unruh temperature $T_U
 
 - **Type II$_1$**: tracial state has $\Delta = 1$, $\sigma_t = \mathrm{id}$, $S(\mathcal{M}) = \{1\}$.
 - **Type III$_\lambda$ ($\lambda \in (0, 1)$)**: modular flow on Powers state is periodic, $T_\lambda = 2\pi/|\log\lambda|$, $S(\mathcal{M}) = \{0\}\cup\{\lambda^n: n \in \mathbb{Z}\}$.
-- **Type III$_1$**: $S(\mathcal{M})=[0,\infty)$. Equivalently, for a
-  faithful normal state the logarithmic modular generator has full real
-  spectrum; the spectrum of $\Delta$ itself is $[0,\infty)$.
+- **Type III$_1$**: $S(\mathcal{M})=[0,\infty)$. Since
+  $S(\mathcal M)=\bigcap_\varphi\operatorname{Sp}\Delta_\varphi$ over the
+  faithful normal states (or weights) of a factor, this says that **every**
+  such state has $\operatorname{Sp}\Delta_\varphi=[0,\infty)$, equivalently a
+  logarithmic modular generator with full real spectrum. One state with this
+  spectrum proves nothing: on $\mathcal B(\mathcal H)$ a faithful state whose
+  eigenvalue ratios $p_i/p_j$ are dense in $(0,\infty)$ also has
+  $\operatorname{Sp}\Delta=[0,\infty)$.
 
 ## C.11 Use in the Course
 

@@ -8,7 +8,7 @@ block: 5
 duration: "master dossier: 4 hours of material; classroom core: 2-hour seminar + 1-hour office/self-study"
 prerequisites: Sem II Wks 11–13 (AAJ); Sem I Wk 12 (type classification)
 target_paper: "Maldacena, Stanford, Yang, arXiv:1704.05333; aside: CLPW, arXiv:2206.10780"
-modified: 2026-08-24
+modified: 2026-09-29
 ---
 
 # Sem II Week 14 — MSY: The Bulk Side; and a de Sitter Aside (CLPW, type II$_1$)
@@ -32,7 +32,7 @@ modified: 2026-08-24
 
 **Optional research reading:**
 - Maldacena, Qi, "Eternal traversable wormholes," arXiv:1804.00491.
-- Lin, Maldacena, Rozenberg, Shan, "Holography for people with no time," arXiv:2207.00407 (dS observers and clocks).
+- Witten, "A background independent algebra in quantum gravity," arXiv:2308.03663 (the algebra along an observer's worldline, with the Hartle–Hawking state as the maximum-entropy state; de Sitter vacua as the worked case).
 
 ## 1. MSY: the bulk picture
 
@@ -325,4 +325,4 @@ Week 15 closes the course: final-write-up presentations, the instructor's outloo
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 5. Last revised 2026-08-24.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 5. Last revised 2026-09-29.*

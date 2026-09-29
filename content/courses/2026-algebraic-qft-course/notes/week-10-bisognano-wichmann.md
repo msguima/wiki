@@ -7,7 +7,7 @@ week: 10
 block: C
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Weeks 5–9 (Tomita–Takesaki + Reeh–Schlieder + Weyl algebras)
-modified: 2026-08-24
+modified: 2026-09-29
 ---
 
 # Week 10 — The Bisognano–Wichmann Theorem
@@ -115,7 +115,7 @@ $$
 The full Bisognano–Wichmann proof is technically demanding (originally ~25 pages each in the 1975 and 1976 papers, with substantial Wightman-analyticity prerequisites). It builds on:
 - **Wightman analyticity** of the $n$-point functions in tube domains (forward-tube holomorphy from the spectral condition);
 - **Reeh–Schlieder** (Week 9) supplying cyclicity of the vacuum for $\mathcal{A}(W_R)$;
-- **The Lüders–Pauli theorem** or its equivalents: spectral properties of the Poincaré group representation on Hilbert space;
+- **The Bargmann–Hall–Wightman theorem**: Lorentz covariance and the spectral condition extend the Wightman functions to the complex Lorentz group. On vectors $a\Omega$ with $a$ localized in $W_R$, the boost $U(\Lambda(s))=e^{isK}$ therefore continues analytically in the rapidity to the strip $0\le\operatorname{Im}s\le\pi$. At $s=i\pi$ the complexified boost acts on real points as the reflection $(x^0,x^1)\mapsto(-x^0,-x^1)$, and $e^{isK}$ becomes $e^{-\pi K}$;
 - **The PCT theorem** (Jost; Wightman): to identify the antiunitary $J_{W_R}$ as $\Theta \cdot R_\perp(\pi)$.
 
 The full proof shows that the operator $J_0 \Delta_0^{1/2}$ defined by the Tomita procedure on $\mathcal{A}(W_R)\Omega$ — *a priori* unknown abstractly — coincides with the closure of $a\,\Omega \mapsto (\Theta R_\perp(\pi)\, e^{-\pi K}\, a)\,\Omega$, by exploiting the analytic structure of $K$ on the dense domain of analytic vectors. **[Stated only — for the full proof: Bisognano–Wichmann 1975, 1976; Borchers 2000 §3 for a streamlined modern treatment.]**
@@ -213,11 +213,12 @@ A parallel construction inside $W_L$ gives left-Rindler operators. In a regulate
 
 ### 4.4 The Bogoliubov transformation
 
-To express $b_\omega^R$ in terms of $a_k, a_k^\dagger$, take the overlap of the two mode functions. Concretely, in the variable $u := \xi$ (positive real) the Minkowski mode $e^{-ikx^-} = e^{iku}$ has a known expansion in Rindler modes via the **Mellin transform**:
+To express $b_\omega^R$ in terms of $a_k, a_k^\dagger$, take the overlap of the two mode functions. Concretely, write $u := -x^- = \xi e^{-\eta}$, which is positive on $W_R$. The Minkowski mode $e^{-ikx^-} = e^{iku}$ has a known expansion in the Rindler powers $(-x^-)^{i\omega}=u^{i\omega}$ via the **Mellin transform**:
 $$
-e^{iku} = \int_{-\infty}^\infty \frac{d\omega}{2\pi}\, e^{i\omega \log(ku)}\, \Gamma(-i\omega)\, (-i)^{-i\omega},
+e^{iku} = \int_{-\infty}^\infty \frac{d\omega}{2\pi}\, e^{i\omega \log(ku)}\, \Gamma(-i\omega)\, (-i)^{i\omega},
+\qquad (-i)^{i\omega}=e^{\pi\omega/2},
 $$
-valid in a suitable distributional sense. Splitting into $\omega > 0$ (Rindler-positive) and $\omega < 0$ (Rindler-negative) parts and matching coefficients gives:
+valid in a suitable distributional sense. It follows from $\int_0^\infty u^{s-1}e^{iku}\,du=\Gamma(s)(-ik)^{-s}$ for $0<\operatorname{Re}s<1$ on the principal branch, together with Mellin inversion along $s=-i\omega$. The weight $e^{+\pi\omega/2}$ therefore multiplies the Rindler-positive powers ($\omega>0$), and $e^{-\pi|\omega|/2}$ the Rindler-negative ones. Splitting into $\omega > 0$ (Rindler-positive) and $\omega < 0$ (Rindler-negative) parts and matching coefficients gives:
 $$
 b_\omega^R = \int_0^\infty dk\,\left[\alpha_{\omega k}\, a_k + \beta_{\omega k}\, a_k^\dagger\right],
 $$
@@ -519,4 +520,4 @@ These checkpoints cover the core problems. Starred, project, and explicitly rese
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block C. Last revised 2026-08-24.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block C. Last revised 2026-09-29.*

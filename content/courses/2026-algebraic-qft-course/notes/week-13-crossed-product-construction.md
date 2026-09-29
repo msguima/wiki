@@ -7,7 +7,7 @@ week: 13
 block: D
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Weeks 4–6 (KMS, Tomita–Takesaki, modular flow), Week 12 (type III$_1$)
-modified: 2026-08-24
+modified: 2026-09-29
 ---
 
 # Week 13 — The Crossed Product Construction
@@ -27,7 +27,8 @@ modified: 2026-08-24
 **Optional research reading:**
 - Witten, "Gravity and the crossed product," *JHEP* 10 (2022) 008, arXiv:2112.12828 — the headline paper applying the crossed product to large-$N$ gravity. The Sem II Block 1 reading.
 - Liu, "Lectures on entanglement, von Neumann algebras, and emergence of spacetime," arXiv:2510.07017, §V — pedagogical exposition of the crossed product in the holographic context.
-- Connes & Takesaki, "The flow of weights on factors of type III," *Tôhoku Math. J.* 29 (1977) 473 — the original duality theorem.
+- M. Takesaki, "Duality for crossed products and the structure of von Neumann algebras of type III," *Acta Math.* 131 (1973) 249–310 — the original duality theorem and the semifinite structure of the modular crossed product.
+- Connes & Takesaki, "The flow of weights on factors of type III," *Tôhoku Math. J.* 29 (1977) 473 — the flow of weights: the centre of the core and the dual action on it, which separate the type-III subclasses.
 
 ### 0.1 How to use this master dossier
 
@@ -126,7 +127,7 @@ The construction has three main effects:
 
 1. **It inner-ifies the flow.** An outer automorphism of $\mathcal{M}$ becomes inner on $\mathcal{M} \rtimes_\alpha \mathbb{R}$. For type III$_1$ algebras, the modular flow is genuinely outer; the crossed product makes it inner on the dressed algebra.
 
-2. **It can change the type.** When $\alpha$ is the modular flow $\sigma^\omega$ on a type III$_1$ algebra, the crossed product is type II$_\infty$. This is the **Connes–Takesaki duality theorem** (§4 below). The crossed product **removes the type-III obstruction**.
+2. **It can change the type.** When $\alpha$ is the modular flow $\sigma^\omega$ on a type III$_1$ algebra, the crossed product is type II$_\infty$. This is **Takesaki's structure theorem** for the continuous core (§4 below). The crossed product **removes the type-III obstruction**.
 
 3. **It adjoins a clock.** The auxiliary $L^2(\mathbb{R})$ factor and the translation operator $\lambda(t)$ together encode a one-parameter group of "clock states." Physical observables in the dressed algebra can be conditioned on the clock reading.
 
@@ -157,7 +158,7 @@ is exactly $\pi(\mathcal{M})$. **Takesaki duality** (next subsection) extends th
 
 ### 3.2 The trace
 
-**Theorem 3.1 (Canonical trace on the continuous core). [Stated only — refs: Takesaki Vol. II ch. X; Connes–Takesaki 1977.]** *Let $\omega$ be a faithful normal state or weight on $\mathcal M$. The continuous core $\widehat{\mathcal M}=\mathcal M\rtimes_{\sigma^\omega}\mathbb R$ is semifinite and carries a faithful normal semifinite trace $\widehat\tau$ satisfying*
+**Theorem 3.1 (Canonical trace on the continuous core). [Stated only — refs: Takesaki, *Acta Math.* 131 (1973) 249; Takesaki Vol. II ch. X; Connes–Takesaki 1977.]** *Let $\omega$ be a faithful normal state or weight on $\mathcal M$. The continuous core $\widehat{\mathcal M}=\mathcal M\rtimes_{\sigma^\omega}\mathbb R$ is semifinite and carries a faithful normal semifinite trace $\widehat\tau$ satisfying*
 $$
 \hat\tau \circ \theta_r = e^{-r}\,\hat\tau.
 $$
@@ -202,11 +203,13 @@ This separation is didactically important. The model explains the measure and th
 
 ## 4. The type-promotion theorem
 
-### 4.1 Connes–Takesaki
+### 4.1 Takesaki's theorem and the flow of weights
 
-**Theorem 4.1 (continuous-core structure). [Stated only — refs: Connes & Takesaki, *Tôhoku Math. J.* 29 (1977) 473; Takesaki, Vol. II, ch. X.]** *Let $\mathcal{M}$ be a type III$_1$ factor with faithful normal state $\omega$ and modular flow $\sigma^\omega$. Then $\hat{\mathcal{M}} := \mathcal{M} \rtimes_{\sigma^\omega} \mathbb{R}$ is a type II$_\infty$ factor.*
+**Theorem 4.1 (continuous-core structure). [Stated only — refs: Takesaki, *Acta Math.* 131 (1973) 249; Connes & Takesaki, *Tôhoku Math. J.* 29 (1977) 473; Takesaki, Vol. II, chs. X and XII.]** *Let $\mathcal{M}$ be a type III$_1$ factor with faithful normal state $\omega$ and modular flow $\sigma^\omega$. Then $\hat{\mathcal{M}} := \mathcal{M} \rtimes_{\sigma^\omega} \mathbb{R}$ is a type II$_\infty$ factor.*
 
 Equivalently: type III$_1$ + modular flow → type II$_\infty$, structurally. The "obstruction to a trace" is removed by the crossed product.
+
+The two references supply different parts of this statement. Takesaki (1973) proved that the modular crossed product is semifinite, with a trace scaled by the dual action, and proved the duality theorem of §4.2. Connes and Takesaki (1977) studied the restriction of the dual action to the centre of the core, the **flow of weights**; the centre is trivial exactly for type III$_1$, which is the factor statement.
 
 **More generally:** the core of every type III factor is semifinite and of type II. The distinction between the subtypes survives in its centre and in the induced flow of weights. For type III$_1$ the centre is trivial, hence the core is a II$_\infty$ factor. For type III$_\lambda$, $0<\lambda<1$, and type III$_0$, the core has a nontrivial centre and must not be called a factor.
 
@@ -222,7 +225,7 @@ $$
 
 Thus the double crossed product returns a stable amplification of the original algebra. The factor $\mathcal B(L^2(\mathbb R))$ belongs to the **second** crossing; it is not the result of the first crossed product by an inner modular action.
 
-This is the Connes–Takesaki structure theorem in the form needed here. For a hyperfinite type III$_1$ source, the core is the hyperfinite type II$_\infty$ factor. For the other subtypes, the action on the centre of the core is essential classifying data.
+Together with §4.1 this is Takesaki's structure theorem in the form needed here: up to the stabilization in the display, a type III factor is the crossed product of its semifinite core by the trace-scaling dual action. For a hyperfinite type III$_1$ source, the core is the hyperfinite type II$_\infty$ factor. For the other subtypes, the dual action on the centre of the core, the Connes–Takesaki flow of weights, is essential classifying data.
 
 ### 4.3 Why this matters
 
@@ -233,7 +236,7 @@ For our course:
 - This permits the definition of **dressed entropy** for states whose trace densities have finite entropy (Week 14), up to a state-independent additive constant.
 - In the Witten/CPW setting, the action remains the relevant modular flow, while the added collective coordinate is related physically to ADM energy and its conjugate timeshift. Under additional semiclassical hypotheses, the resulting algebraic entropy matches generalized entropy up to a state-independent constant.
 
-The Connes–Takesaki theorem is the **structural backbone of Sem II**.
+Theorem 4.1 is the **structural backbone of Sem II**.
 
 ## 5. Worked example: type-I crossed product
 
@@ -277,7 +280,7 @@ where the second factor is the algebra $L^\infty(\mathbb R_p)$ of bounded functi
 
 $\mathcal{B}(\mathcal{H}) \otimes L^\infty(\mathbb{R})$ is type I (the tensor product of a type I factor with an abelian vN algebra). For $\dim\mathcal{H}=n$, it is a homogeneous type-I$_n$ algebra with diffuse centre, not a factor.
 
-This is *not* a factor — it has center $1 \otimes L^\infty(\mathbb{R})$. The full Connes–Takesaki theorem statement (Theorem 4.1) is for type III sources; in the type I case here, the crossed product is a *factor-decomposed* type I algebra, not a single type II$_\infty$ factor. The type promotion happens only when the modular flow is genuinely outer.
+This is *not* a factor — it has center $1 \otimes L^\infty(\mathbb{R})$. Theorem 4.1 is a statement about type III sources; in the type I case here, the crossed product is a *factor-decomposed* type I algebra, not a single type II$_\infty$ factor. The type promotion happens only when the modular flow is genuinely outer.
 
 ### 5.4 Trace
 
@@ -289,7 +292,7 @@ This is semifinite: finite, for example, for finite-rank positive $a$ and compac
 
 ### 5.5 Lesson
 
-In the type-I case the crossed product just produces a tensor product with $L^\infty(\mathbb{R})$. The type doesn't change in a meaningful way. The Connes–Takesaki theorem's content kicks in only when the modular flow is **outer**, which is the type III case.
+In the type-I case the crossed product just produces a tensor product with $L^\infty(\mathbb{R})$. The type doesn't change in a meaningful way. The content of Theorem 4.1 appears only when the modular flow is **outer**, which is the type III case.
 
 ## 6. Worked example: Powers factor (type III$_\lambda$)
 
@@ -297,7 +300,7 @@ The Powers factor $\mathcal{R}_\lambda$ (Week 4 §7) for $\lambda \in (0, 1)$ is
 
 ### 6.1 The crossed product
 
-Form $\widehat{\mathcal R_\lambda}:=\mathcal R_\lambda\rtimes_{\sigma^{\omega_\lambda}}\mathbb R$ on the GNS Hilbert space tensored with $L^2(\mathbb R)$. By Connes–Takesaki, this is a semifinite type-II algebra.
+Form $\widehat{\mathcal R_\lambda}:=\mathcal R_\lambda\rtimes_{\sigma^{\omega_\lambda}}\mathbb R$ on the GNS Hilbert space tensored with $L^2(\mathbb R)$. By Takesaki's structure theorem, this is a semifinite type-II algebra.
 
 ### 6.2 Structural form
 
@@ -331,7 +334,7 @@ $$
 
 Form $\widehat{\mathcal A}(W_R):=\mathcal A(W_R)\rtimes_{\sigma^\omega}\mathbb R$ on $\mathcal F\otimes L^2(\mathbb R_q)$. The scalar $q$ is the regular-representation coordinate, $Q$ is multiplication by $q$, the automorphism parameter is $t$, and the physical rapidity is $u=2\pi t$.
 
-By Connes–Takesaki (Theorem 4.1), $\hat{\mathcal{A}}(W_R)$ is a type II$_\infty$ algebra.
+By Theorem 4.1, $\hat{\mathcal{A}}(W_R)$ is a type II$_\infty$ algebra.
 
 ### 7.3 What can be computed explicitly
 
@@ -356,7 +359,7 @@ In each case, the free-field wedge supplies the exact modular action and the exa
 ## 8. What to take away
 
 - **Definition and covariance check:** the crossed product $\mathcal{M} \rtimes_\alpha \mathbb{R}$ is the von Neumann algebra on $\mathcal{H} \otimes L^2(\mathbb{R})$ generated by $\pi(a)$ (fiberwise action by $\alpha_{-q}$) and $\lambda(t)$ (translation), with $\lambda(t)\pi(a)\lambda(t)^*=\pi(\alpha_t(a))$.
-- **Stated only (Connes–Takesaki Theorem 4.1):** for a type III$_1$ factor $\mathcal{M}$ with modular flow $\sigma^\omega$, the crossed product $\hat{\mathcal{M}}$ is a type II$_\infty$ factor with a faithful normal semifinite trace, unique up to scaling.
+- **Stated only (Theorem 4.1; Takesaki 1973, Connes–Takesaki 1977):** for a type III$_1$ factor $\mathcal{M}$ with modular flow $\sigma^\omega$, the crossed product $\hat{\mathcal{M}}$ is a type II$_\infty$ factor with a faithful normal semifinite trace, unique up to scaling.
 - **Stated only (Theorem 3.1):** the dual action $\theta_r$ of $\hat{\mathbb{R}}$ on $\hat{\mathcal{M}}$ scales the trace: $\hat\tau \circ \theta_r = e^{-r}\hat\tau$.
 - **Worked (type I):** crossed product of $\mathcal{B}(\mathcal{H})$ by inner modular flow is $\mathcal{B}(\mathcal{H}) \otimes L^\infty(\mathbb{R})$. The type doesn't promote — type promotion happens only for outer flows.
 - **Subtype warning:** the core of a III$_\lambda$ factor with $\lambda<1$ has nontrivial centre; only III$_1$ gives a factor.
@@ -409,4 +412,4 @@ Week 14 defines trace entropy on the type II$_\infty$ core. We first prove the e
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block D. Last revised 2026-08-24.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block D. Last revised 2026-09-29.*
