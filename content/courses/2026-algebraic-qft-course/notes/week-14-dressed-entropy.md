@@ -1,5 +1,5 @@
 ---
-title: "Week 14 — Dressed Entropy and the Modular Boundary Term"
+title: "Week 14 — Dressed Entropy and the Modular-Energy Term"
 type: lecture-notes
 course: syllabus
 semester: 1
@@ -7,345 +7,489 @@ week: 14
 block: D
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Week 13 (crossed product), Week 7 (Connes cocycle + Araki–Uhlmann)
-modified: 2026-06-11
+modified: 2026-08-24
 ---
 
-# Week 14 — Dressed Entropy and the Modular Boundary Term
+# Week 14 — Dressed Entropy and the Modular-Energy Term
 
-> *Week 13 gave us a trace where there had been none: by adjoining a modular clock to a type III$_1$ algebra, the dressed algebra is type II$_\infty$ with a faithful normal semifinite trace, unique up to scaling. This week we use that trace to define a **dressed entropy** — and prove the central technical result of the entire course: differences of dressed entropies between two normal states reproduce the **Araki–Uhlmann relative entropy** of Week 7, plus a finite **modular boundary term** carried by the clock. This boundary term is what every Sem II paper computes. In the free-field Rindler model, the dressed entropy reproduces the **generalized entropy formula** $S_{\mathrm{gen}} = A/(4 G_N) + S_{\mathrm{out}}$ that motivates the entire algebraic-gravity program.*
+> *The continuous core gives us a trace, but a trace is only the beginning of the entropy problem. We must still specify a normal state on the core, find its density relative to the trace, and control the positive and negative parts of $-D\log D$. This week separates three statements that are often merged too quickly. First, entropy on a semifinite algebra is an exact trace-theoretic construction. Second, “entropy difference = minus relative entropy plus modular-energy difference” is an exact algebraic identity for two densities in the same semifinite algebra. Third, identifying this result with $A/(4G_N)+S_{\rm out}$ is a physical theorem requiring the gravitational setting. The type-I Fourier model lets us verify every sign without pretending that a type III wedge has a density matrix.*
 
 ## 0. Reading
 
 **Primary:**
-- Witten, "Gravity and the crossed product," *JHEP* 10 (2022) 008, arXiv:2112.12828, §§3–4 — the dressed entropy and the generalized entropy.
-- Bratteli & Robinson, Vol. I, §2.7 (dual weights, dressed entropy as von Neumann entropy on a type II$_\infty$ algebra).
+
+- Witten, “Gravity and the crossed product,” arXiv:2112.12828, §§3.4–3.5 (trace, density matrices, and entropy).
+- Takesaki, *Theory of Operator Algebras II*, ch. X and §V.2 (continuous cores and noncommutative Radon–Nikodym theory).
 
 **Secondary:**
-- Chandrasekaran, Penington, Witten (CPW), "Large $N$ algebras and generalized entropy," arXiv:2209.10454, §3 — two-sided black hole version, dressed entropy = generalized entropy.
-- Liu, "Lectures on entanglement, von Neumann algebras, and emergence of spacetime," arXiv:2510.07017, §§5–6 — pedagogical exposition.
+
+- Chandrasekaran, Penington, Witten (CPW), arXiv:2209.10454, §§2.2–3 (type-II entropy and generalized entropy).
+- Ahmad and Jefferson, arXiv:2306.07323 (crossed products for QFT subregions, with the gravity-independent scope made explicit).
 
 **Optional research reading:**
-- Ahmad & Jefferson, "Algebraic perturbation theory: traversable wormholes and generalized entropy beyond subleading order," arXiv:2501.01487 — perturbations of the dressed entropy.
-- Faulkner, Li, Wang, "A modular toolkit for bulk reconstruction," *JHEP* 04 (2019) 119, arXiv:1806.10560 — modular tools in holography.
-- Jensen, Sorce, Speranza, "Generalized entropy for general subregions in quantum gravity," arXiv:2306.01837 — extension of CPW.
 
-## 1. Setup
+- Araki, “Relative entropy of states of von Neumann algebras,” *Publ. RIMS* **11** (1976) 809.
+- Casini, “Relative entropy and the Bekenstein bound,” *Class. Quantum Grav.* **25** (2008) 205021, arXiv:0804.2182.
 
-### 1.1 Recap
+### 0.1 How to use this master dossier
 
-Week 13 constructed, for a type III$_1$ von Neumann algebra $\mathcal{M}$ with faithful normal state $\omega$ and modular flow $\sigma^\omega$, the **modular crossed product**
+- **Classroom core:** §§1–3 and Problems 1–6. This route derives the trace-rescaling sign, the exact product entropy, and the entropy-difference identity.
+- **Full derivation / self-study:** §§4–5 and Problems 7–9. This route checks coherent-state cancellation and separates clock width from the matter UV cutoff.
+- **Research extension:** §6 and Problems 10–11. This route maps the abstract identities to Witten and CPW while keeping the gravitational input explicit.
+
+For every entropy formula, first name the algebra, trace, density, and domain. Only then ask for a geometric interpretation.
+
+## 1. What the trace does—and does not—give us
+
+### 1.1 The continuous core
+
+Let $\mathcal M$ be a type III$_1$ factor, $\omega$ a faithful normal state, and
+
 $$
-\hat{\mathcal{M}} \;:=\; \mathcal{M} \rtimes_{\sigma^\omega} \mathbb{R}
-$$
-on $\mathcal{H} \otimes L^2(\mathbb{R}_s)$. By Connes–Takesaki, $\hat{\mathcal{M}}$ is type II$_\infty$. It carries a faithful normal semifinite trace $\hat\tau$, unique up to rescaling, satisfying the dual-scaling relation $\hat\tau \circ \theta_r = e^{-r}\,\hat\tau$.
-
-The original algebra $\mathcal{M}$ embeds as a subalgebra via $\pi$, but the embedding $\pi(\mathcal{M}) \subset \hat{\mathcal{M}}$ is *not* trace-class: the trace on $\hat{\mathcal{M}}$ restricted to $\pi(\mathcal{M})$ is divergent on any non-zero element. The trace becomes finite only on operators that depend non-trivially on the clock $L^2(\mathbb{R}_s)$.
-
-### 1.2 Why dressed entropy
-
-On the type II$_\infty$ dressed algebra, we can do something we could not do on $\mathcal{M}$ alone: write a **von Neumann entropy**. Given a normal state $\hat\rho$ on $\hat{\mathcal{M}}$ with density $\hat\rho_d$ relative to the trace ($\hat\rho(x) = \hat\tau(\hat\rho_d\,x)$), define
-$$
-S_{\mathrm{vN}}(\hat\rho) := -\hat\tau(\hat\rho_d \log\hat\rho_d).
-$$
-
-The standard quantum-mechanical entropy formula, **on the dressed algebra**.
-
-The catch: the trace $\hat\tau$ is only unique up to scaling, so $S_{\mathrm{vN}}(\hat\rho)$ is well-defined only **up to a state-independent additive constant**. Different choices of scaling shift all dressed entropies by the same constant. This is fine for *differences*, which are the physically meaningful quantities.
-
-### 1.3 What we will prove
-
-The two main results of this week:
-
-1. **Dressed entropy is well-defined** (modulo additive constant) on the crossed product.
-2. **Differences of dressed entropies reproduce Araki–Uhlmann + a modular boundary term:**
-$$
-\boxed{S_{\mathrm{vN}}(\hat\rho_\omega) - S_{\mathrm{vN}}(\hat\rho_\phi) \;=\; -\,S(\omega \| \phi) + (\text{modular boundary term}).}
-$$
-The boundary term is finite, computable, and is the technical object of the Sem II papers.
-
-## 2. The dressed entropy formula
-
-### 2.1 Definition
-
-**Definition 2.1.** Let $\hat\rho$ be a normal positive linear functional on $\hat{\mathcal{M}}$ (type II$_\infty$) with $\hat\rho(x) = \hat\tau(\hat\rho_d\,x)$ for a positive operator $\hat\rho_d$ affiliated with $\hat{\mathcal{M}}$ (the **density** of $\hat\rho$). The **von Neumann entropy** of $\hat\rho$ is
-$$
-S_{\mathrm{vN}}(\hat\rho) := -\hat\tau(\hat\rho_d\,\log\hat\rho_d),
-$$
-where the right side is finite (or $+\infty$) by the spectral theorem.
-
-### 2.2 Existence of the density
-
-The trace $\hat\tau$ is faithful, normal, semifinite on $\hat{\mathcal{M}}$ (Theorem 3.1 of Week 13). Every normal positive linear functional $\hat\rho$ on a semifinite vN algebra has a density with respect to a faithful normal semifinite trace — this is the noncommutative Radon-Nikodym theorem.
-
-**Lemma 2.2. [Stated only — refs: Takesaki Vol. II §V.2.]** *For any normal positive linear functional $\hat\rho$ on $\hat{\mathcal{M}}$, there exists a positive operator $\hat\rho_d$ affiliated with $\hat{\mathcal{M}}$ such that $\hat\rho(x) = \hat\tau(\hat\rho_d\,x)$ for all $x$ in a dense subalgebra. The density $\hat\rho_d$ is uniquely determined by $\hat\rho$.*
-
-Note: $\hat\rho_d$ need not be bounded (it can be unbounded for unbounded states), but it is *affiliated* with $\hat{\mathcal{M}}$ (its spectral projections lie in $\hat{\mathcal{M}}$).
-
-### 2.3 Properties
-
-The dressed entropy $S_{\mathrm{vN}}$ satisfies the standard properties of the Umegaki entropy in finite dimensions:
-
-- **Positivity (under normalization):** for a normalized state $\hat\rho$ (i.e., $\hat\rho(1) = 1$, so $\hat\tau(\hat\rho_d) = 1$), $S_{\mathrm{vN}}(\hat\rho)$ can take any real value, including negative. In a type II$_\infty$ algebra, normalized states have densities that are *not* trace-class on $\hat{\mathcal{M}}$ as a whole, so the entropy is unbounded.
-- **Concavity:** $S_{\mathrm{vN}}(\alpha\hat\rho_1 + (1-\alpha)\hat\rho_2) \ge \alpha S_{\mathrm{vN}}(\hat\rho_1) + (1-\alpha)S_{\mathrm{vN}}(\hat\rho_2)$ for $\alpha \in [0, 1]$.
-- **Invariance:** $S_{\mathrm{vN}}$ depends on the choice of trace $\hat\tau$. Rescaling $\hat\tau \to c\hat\tau$ shifts $S_{\mathrm{vN}} \to S_{\mathrm{vN}} - \log c$ (state-independent additive shift). So *differences* of $S_{\mathrm{vN}}$ between two states are well-defined.
-
-The state-independent additive ambiguity is real, and it is the reason the Sem II literature talks about "generalized entropy up to a constant" or "dressed entropy modulo an additive ambiguity that drops out in differences."
-
-> **Physical picture: why adjoining a clock renders entropy finite.** The bare type III entropy diverges because the vacuum contains entangled pairs at *every* UV scale, and a sharp geometric cut counts all of them. The dressed algebra blurs the cut. Its observables are relational — "field value when the clock reads $s$" — and a physical clock is a quantum system with energy fluctuations, hence intrinsic time uncertainty. Conditioning on the clock effectively *smears the location of the horizon* (in the Rindler model: the boost-time origin, and with it the bifurcation surface, acquires quantum spread). The deepest UV pairs straddling the cut are no longer sharply assigned to one side, so the count terminates. The entropy that remains is finite but normalization-dependent — exactly the structure of $S_{\rm gen}$: a divergent matter entropy and a counterterm-like area piece whose split is regulator-convention, while differences are physical. Witten's slogan compresses this: *in gravity there are no sharp subregions, only subregions relative to an observer, and that is why gravitational entropy is finite.*
-
-## 3. The relation to Araki–Uhlmann
-
-The dressed entropy on $\hat{\mathcal{M}}$ is related, but **not identical**, to the Araki–Uhlmann relative entropy on $\mathcal{M}$ from Week 7.
-
-### 3.1 The relation theorem
-
-**Theorem 3.1 (Dressed entropy ↔ Araki–Uhlmann + boundary term). [Stated only — refs: Witten 2022 §4; CPW 2022 §3.]** *Let $\omega, \phi$ be two faithful normal states on $\mathcal{M}$, and let $\hat\rho_\omega, \hat\rho_\phi$ be the corresponding dressed states on $\hat{\mathcal{M}}$ (constructed via the modular crossed product, with a fixed normalization of the clock). Then*
-$$
-S_{\mathrm{vN}}(\hat\rho_\omega) - S_{\mathrm{vN}}(\hat\rho_\phi) \;=\; -\,S(\omega \| \phi) + \mathcal{B}(\omega, \phi),
-$$
-*where $S(\omega\|\phi)$ is the Araki–Uhlmann relative entropy (Week 7) and $\mathcal{B}(\omega, \phi)$ is the **modular boundary term** — finite, computable from the modular Hamiltonians of $\omega$ and $\phi$ as expectation values in the clock $\mathcal{H}_{\mathrm{clock}} = L^2(\mathbb{R}_s)$.*
-
-The sign of $-S(\omega\|\phi)$ on the RHS is because the relative entropy is non-negative ($\omega \neq \phi$ states have $S(\omega\|\phi) > 0$, so the dressed-entropy difference is *less than* the boundary term — the relative entropy "absorbs" some of the entropy).
-
-### 3.2 What the boundary term is
-
-The modular boundary term is the **relative modular energy** of $\omega$ measured with respect to the modular flow of the *reference* state $\phi$:
-$$
-\mathcal{B}(\omega, \phi) \;=\; \omega(K_\phi) - \phi(K_\phi) \;=\; \mathrm{Tr}((\rho_\omega - \rho_\phi)\,K_\phi),
-$$
-where $K_\phi = -\log\rho_\phi$ is the modular Hamiltonian of the **reference** state $\phi$ (formally; well-defined as a self-adjoint operator on the GNS Hilbert space via spectral theory).
-
-**Important sign / index conventions.** The boundary term uses the modular Hamiltonian of $\phi$ (the second argument), not of $\omega$. It vanishes when $\omega = \phi$, and is generally non-zero otherwise. The combination $\mathcal{B}(\omega, \phi) = \omega(K_\phi) - \phi(K_\phi)$ involves only **differences** of $K_\phi$ expectations, so the choice of overall additive scalar in $K_\phi$ (which is ambiguous up to $\log Z$ in the finite-dim derivation) drops out.
-
-In type III, the individual terms $\omega(K_\phi)$ and $\phi(K_\phi) = -\mathrm{Tr}(\rho_\phi\log\rho_\phi) = S_{\mathrm{vN}}(\phi)$ are formally divergent in the cut-off-free limit, but their **difference** $\mathcal{B}$ is finite. This is the algebraic content of "subtraction renormalization" for entanglement entropy in QFT.
-
-> **Physical picture: the first law of entanglement.** Rearranged, Theorem 3.1 reads
-> $$
-> \Delta S_{\mathrm{vN}} = \Delta\langle K_\phi\rangle - S(\omega\|\phi),
-> $$
-> with $\Delta\langle K_\phi\rangle = \mathcal{B}$ the change in modular energy. This is a thermodynamic identity: at modular temperature $\beta = 1$, "$\Delta S = \Delta E - \Delta F$," with the relative entropy playing the role of the free-energy excess of $\omega$ over equilibrium. Two standard limits make it familiar. *Linear order:* for $\omega = \phi + \delta\phi$, $S(\omega\|\phi) = O(\delta^2)$ (Week 7 §7), so $\delta S = \delta\langle K_\phi\rangle$ — the **first law of entanglement entropy**, the equality of entropy and modular-energy variations that, fed through the holographic dictionary, yields the linearized Einstein equations (Faulkner et al.). *Positivity:* since $S(\omega\|\phi) \ge 0$, we get $\Delta S \le \Delta\langle K\rangle$ — the **Bekenstein bound** in its modern form (Casini): the entropy a state can carry above the vacuum is bounded by its modular energy. The boundary term is thus not a technical residue; it is the energy side of the thermodynamics of entanglement, and the Sem II papers are exercises in tracking it through gravitational dressings.
-
-### 3.3 Comparison with the QFT story
-
-Recall (Week 12) that in a type III$_1$ algebra:
-- $-\hat\tau(\hat\rho_d\log\hat\rho_d)$ — Umegaki entropy on the dressed algebra — is well-defined.
-- $-\mathrm{Tr}(\rho\log\rho)$ — naive vN entropy on the original algebra — is **not** well-defined (no trace, no density matrix). In a regulated theory it diverges as a UV cutoff is removed.
-
-The dressed entropy is the "regulated" version, where the regulator is the modular clock. Differences of dressed entropies are finite and recover the type-III-safe relative entropy.
-
-### 3.4 Connection to the generalized entropy
-
-In a **holographic** setting (Sem II Block 1), the dressed entropy on $\hat{\mathcal{M}}_{\mathrm{boundary}}$ equals the **generalized entropy** of the bulk:
-$$
-S_{\mathrm{vN}}(\hat\rho_\omega) = \frac{A_{\mathrm{horizon}}}{4 G_N} + S_{\mathrm{out}}(\rho_\omega) + \text{const},
-$$
-where:
-- $A_{\mathrm{horizon}}$ is the area of the bulk horizon dual to the boundary subregion;
-- $S_{\mathrm{out}}$ is the entropy of bulk quantum fields outside the horizon;
-- $\text{const}$ is the state-independent additive ambiguity from the trace normalization (§2.3).
-
-This identification — dressed entropy $=$ generalized entropy — is the **central technical result of Witten 2022**. It gives the holographic dressed entropy a *physical* interpretation as the gravitational area-plus-bulk-entanglement formula of Bekenstein, Hawking, Ryu, Takayanagi.
-
-## 4. Worked example: type-I dressed algebra
-
-### 4.1 Setup
-
-Take $\mathcal{M} = \mathcal{B}(\mathcal{H})$ with $\dim\mathcal{H} = n$, and $\omega(a) = \mathrm{Tr}(\rho\,a)$ a faithful state. The dressed algebra (Week 13 §5) is $\hat{\mathcal{M}} \cong \mathcal{B}(\mathcal{H}) \otimes L^\infty(\mathbb{R}_s)$, with trace
-$$
-\hat\tau(a \otimes f) = \mathrm{Tr}(a)\,\int f(s)\,e^{-s}\,ds.
+\widehat{\mathcal M}
+{}={}
+\mathcal M\rtimes_{\sigma^\omega}\mathbb R
 $$
 
-### 4.2 The dressed state
+its continuous core. By Week 13, $\widehat{\mathcal M}$ is a type II$_\infty$ factor with a faithful normal semifinite trace $\widehat\tau$ satisfying
 
-The natural dressing of $\omega$ to $\hat\omega$ on $\hat{\mathcal{M}}$ is to tensor with a normalized clock state:
 $$
-\hat\omega(a \otimes f) := \omega(a)\,\mu(f),
-$$
-where $\mu(f) = \int f(s)\,\mu(s)\,ds$ is the expectation against a probability measure $\mu$ on $\mathbb{R}_s$ — the "clock state."
-
-For the canonical choice $\mu(s) = e^{-s}\,\mathbf{1}_{s > 0}$ (exponential on the positive half-line, normalized — heuristic, since this is the dual-weight measure), the dressed state takes the form
-$$
-\hat\omega = \omega \otimes \mu, \qquad \hat\rho_d = \rho \otimes \mu_d,
-$$
-where $\mu_d(s) = \mu(s)\cdot e^{s}$ (so that $\hat\tau(\hat\rho_d \cdot)$ reproduces $\hat\omega$).
-
-### 4.3 The dressed entropy
-
-The Umegaki entropy on the dressed algebra is
-$$
-S_{\mathrm{vN}}(\hat\omega) = -\hat\tau(\hat\rho_d \log\hat\rho_d) = -\mathrm{Tr}(\rho\log\rho)\cdot\mu(1) + (\text{measure entropy}).
-$$
-For a normalized $\mu$, $\mu(1) = 1$, so the first term is just $S_{\mathrm{vN}}(\omega) = -\mathrm{Tr}(\rho\log\rho)$, the original Umegaki entropy.
-
-The second term (measure entropy) is $-\int\mu(s)\log\mu(s)\,ds$ for the clock measure $\mu$. This is the **modular boundary term in the type-I case** — entirely from the clock.
-
-So for product dressed states,
-$$
-S_{\mathrm{vN}}(\hat\omega) = S_{\mathrm{vN}}(\omega) + S_{\mathrm{clock}}(\mu).
+\widehat\tau\circ\theta_r=e^{-r}\widehat\tau.
 $$
 
-The dressed entropy is the original entropy plus a clock contribution. In type I this is straightforward; in type III the original $S_{\mathrm{vN}}(\omega)$ is undefined and the "splitting" is more subtle.
+The word **semifinite** matters. The identity has infinite trace, but sufficiently many positive operators have finite trace that every positive element can be approximated from below by finite-trace ones.
 
-### 4.4 Difference of two dressed states
+### 1.2 Densities relative to a semifinite trace
 
-For two states $\hat\omega = \omega \otimes \mu$ and $\hat\phi = \phi \otimes \mu$ (same clock $\mu$, different system states):
-$$
-S_{\mathrm{vN}}(\hat\omega) - S_{\mathrm{vN}}(\hat\phi) = S_{\mathrm{vN}}(\omega) - S_{\mathrm{vN}}(\phi).
-$$
-The clock contributions cancel.
+Let $\widehat\omega$ be a normal positive functional on $\widehat{\mathcal M}$. The noncommutative Radon–Nikodym theorem gives a positive $\widehat\tau$-measurable operator $D_{\widehat\omega}$, affiliated with $\widehat{\mathcal M}$, such that
 
-Now compare with Araki–Uhlmann:
 $$
-S(\omega\|\phi) = \mathrm{Tr}(\rho_\omega(\log\rho_\omega - \log\rho_\phi)) = \mathrm{Tr}(\rho_\omega\log\rho_\omega) - \mathrm{Tr}(\rho_\omega\log\rho_\phi)
+\widehat\omega(x)=\widehat\tau(D_{\widehat\omega}x)
 $$
-(Week 7 §6). Rearranging,
+
+on the natural domain. If $\widehat\omega$ is normalized, then $\widehat\tau(D_{\widehat\omega})=1$.
+
+[[functional-analysis-survival-kit|Appendix A §A.5.2]] defines affiliation and
+$\widehat\tau$-measurability; in particular, $D_{\widehat\omega}$ need not be
+a bounded element of the core.
+
+The trace entropy is
+
 $$
-\mathrm{Tr}(\rho_\omega\log\rho_\omega) = S(\omega\|\phi) + \mathrm{Tr}(\rho_\omega\log\rho_\phi).
+S_{\widehat\tau}(\widehat\omega)
+:=
+-\widehat\tau(D_{\widehat\omega}\log D_{\widehat\omega}).
 $$
-The dressed-entropy difference is then
+
+If both parts are finite, the entropy is a real number. If exactly one part is finite, it is well-defined as $+\infty$ or $-\infty$; if both are infinite, the expression is undefined as $\infty-\infty$. Thus the existence of a trace does not imply that every normal state has finite entropy.
+
+### 1.3 Trace normalization and the sign of the entropy shift
+
+Suppose we replace the trace by $\widehat\tau'=c\widehat\tau$, $c>0$, while keeping the state fixed. Its density becomes $D'=D/c$, because
+
+$$
+\widehat\tau'(D'x)=c\widehat\tau\!\left(\frac Dc x\right)=\widehat\omega(x).
+$$
+
+Therefore
+
 $$
 \begin{aligned}
-S_{\mathrm{vN}}(\omega) - S_{\mathrm{vN}}(\phi)
-&= -\mathrm{Tr}(\rho_\omega\log\rho_\omega) + \mathrm{Tr}(\rho_\phi\log\rho_\phi) \\
-&= -S(\omega\|\phi) - \mathrm{Tr}(\rho_\omega\log\rho_\phi) + \mathrm{Tr}(\rho_\phi\log\rho_\phi) \\
-&= -S(\omega\|\phi) + \mathrm{Tr}((\rho_\phi - \rho_\omega)\log\rho_\phi) \\
-&= -S(\omega\|\phi) - \mathrm{Tr}((\rho_\phi - \rho_\omega)\,K_\phi) \\
-&= -S(\omega\|\phi) + \mathrm{Tr}((\rho_\omega - \rho_\phi)\,K_\phi),
+S_{\widehat\tau'}(\widehat\omega)
+&=-c\widehat\tau\!\left(\frac Dc\log\frac Dc\right)\\
+&=-\widehat\tau(D\log D)+\log c\,\widehat\tau(D)\\
+&=S_{\widehat\tau}(\widehat\omega)+\log c.
 \end{aligned}
 $$
-using $\log\rho_\phi = -K_\phi$. The last expression is
+
+Hence
+
 $$
-\boxed{S_{\mathrm{vN}}(\omega) - S_{\mathrm{vN}}(\phi) = -S(\omega\|\phi) + \big(\omega(K_\phi) - \phi(K_\phi)\big),}
+\boxed{\widehat\tau\longmapsto c\widehat\tau
+\quad\Longrightarrow\quad
+S\longmapsto S+\log c.}
 $$
-where $K_\phi = -\log\rho_\phi$ is the modular Hamiltonian of the **reference** state $\phi$. The second term is the **modular boundary term** $\mathcal{B}(\omega, \phi) = \omega(K_\phi) - \phi(K_\phi) = \mathrm{Tr}((\rho_\omega - \rho_\phi)K_\phi)$. ✓
 
-This verifies Theorem 3.1 in the type-I case: dressed-entropy difference = $-$ Araki–Uhlmann + modular boundary term.
+Every normalized state shifts by the same constant, so entropy differences are unchanged.
 
-**Sanity check.** Setting $\omega = \phi$: both sides vanish — left side trivially, right side because $S(\omega\|\omega) = 0$ and $\mathcal{B}(\omega, \omega) = 0$. ✓
+> **Physical interpretation.** The additive constant is a normalization ambiguity of the type II$_\infty$ trace. In a gravitational application it can be matched to a renormalization convention for generalized entropy. This match is meaningful, but it is not supplied by the operator-algebra theorem alone.
 
-**Sign convention.** The combination $\mathcal{B}(\omega, \phi)$ is sometimes called the **relative modular energy** of $\omega$ with respect to the reference flow $\sigma^\phi$. It is the expectation of $K_\phi$ in the state $\omega$ minus its expectation in the reference state $\phi$ — exactly what one would call "energy excess of $\omega$ above the reference state, measured by the reference Hamiltonian."
+## 2. Exact laboratory: the inner-action Fourier model
 
-## 5. Worked example: free-field Rindler
+The genuine type III core is best treated abstractly. To see the density and entropy without hiding a representation change, we use the exact type-I model of Week 13.
 
-The most important worked example for the Sem II program.
+### 2.1 Algebra and trace
 
-### 5.1 Setup
+Take $\mathcal M=\mathcal B(\mathcal H)$, with $\dim\mathcal H<\infty$ for convenience, and a faithful state $\omega(a)=\operatorname{Tr}(\rho a)$. After untwisting the inner modular action and Fourier transforming the regular coordinate $q$, the core is
 
-Let $\mathcal{M} = \mathcal{A}(W_R)$ for the 2D massless free scalar, with vacuum state $\omega = \omega_0$ (Minkowski). By Bisognano–Wichmann (Week 10), $\sigma^{\omega_0}_t = $ boost flow with rapidity $2\pi t$, so the modular Hamiltonian is $K_{\omega_0} = 2\pi K_{\mathrm{boost}}$ where $K_{\mathrm{boost}} = \int_0^\infty x^1 T^{00}\,dx^1$ is the boost generator.
-
-Form $\hat{\mathcal{M}} = \mathcal{A}(W_R) \rtimes_{\sigma^{\omega_0}}\mathbb{R}$ on $\mathcal{F} \otimes L^2(\mathbb{R}_s)$. By Connes–Takesaki, type II$_\infty$.
-
-### 5.2 The trace
-
-The trace on $\hat{\mathcal{M}}$ is the integral kernel from Week 13 §7.3:
 $$
-\hat\tau(a) = \int_{-\infty}^\infty e^{-2\pi s}\,\langle 0_M \otimes \delta_s\,|\,a\,|\,0_M \otimes \delta_s\rangle\,ds.
+\widehat{\mathcal M}
+\cong
+\mathcal B(\mathcal H)\bar\otimes L^\infty(\mathbb R_p),
 $$
-The factor $e^{-2\pi s}$ encodes the Unruh-temperature Boltzmann weight.
 
-### 5.3 The dressed vacuum
+with trace
 
-The natural dressing of $\omega_0$ to $\hat\omega_0$ on $\hat{\mathcal{M}}$ uses the *unique* clock-state factorization that respects the dual-action structure. In practice, $\hat\omega_0$ is implemented by a vector $|\hat 0\rangle \in \mathcal{F} \otimes L^2(\mathbb{R}_s)$ of the form $|0_M\rangle \otimes |h\rangle$ where $h \in L^2(\mathbb{R}_s)$ is a *clock wavefunction* — a normalized state of the modular clock.
-
-For the standard normalization, $h(s) = \pi^{-1/4}e^{-s^2/2}$ (a Gaussian) or $h(s) = \mathbf{1}_{s > 0}\,e^{-\pi s}$ (exponential cutoff at zero), depending on convention. Both give the same dressed entropy *up to the universal additive constant*.
-
-### 5.4 Computing the dressed vacuum entropy
-
-The vacuum density on $\hat{\mathcal{M}}$ satisfies $\hat\rho_d = \mathbf{1}_{\mathcal{F}} \otimes e^{-2\pi X}$ (modulo regulariztion), where $X$ is the position operator on $L^2(\mathbb{R}_s)$. This is because the dressed vacuum is supposed to match the Bisognano–Wichmann thermal state at $\beta = 2\pi$.
-
-The dressed entropy is then
 $$
-S_{\mathrm{vN}}(\hat\omega_0) = -\hat\tau(\hat\rho_d \log\hat\rho_d) = -\hat\tau(\hat\rho_d \cdot (-2\pi X)) = 2\pi\,\langle X\rangle_{\hat\omega_0}.
+\widehat\tau(a\otimes f(P))
+{}={}
+\operatorname{Tr}(a)\int_{\mathbb R} f(p)e^{-p}dp.
 $$
-This is a finite number (under appropriate regularization), proportional to the modular Hamiltonian's expectation value in the clock.
 
-### 5.5 A coherent-state excitation
+Here $p$ is the spectral variable of $P=-i\partial_q$. It is not the regular-representation coordinate $q$ on which $Q$ acts by multiplication.
 
-Consider a coherent state $|\alpha\rangle = e^{i\phi(f)}|0_M\rangle$ for a test function $f$ supported in $W_R$. The corresponding state $\omega_\alpha$ on $\mathcal{A}(W_R)$ differs from $\omega_0$ by a Weyl-operator dressing. The Araki–Uhlmann relative entropy (Week 7 §7 generalized) is
+### 2.2 A product state and its density
+
+Let $\mu(p)dp$ be a probability distribution and define
+
 $$
-S(\omega_\alpha \| \omega_0) = \tfrac{1}{2}\,\sigma(f, \mathcal{F}f),
+\widehat\omega(a\otimes f(P))
+{}={}
+\operatorname{Tr}(\rho a)\int_{\mathbb R}\mu(p)f(p)dp.
 $$
-where $\sigma$ is the symplectic form and $\mathcal{F}$ is a positive operator related to the modular Hamiltonian.
 
-The dressed state $\hat\rho_{\omega_\alpha}$ on $\hat{\mathcal{M}}$ has dressed entropy
+To solve $\widehat\omega(x)=\widehat\tau(Dx)$, compare the two integrals. The density is
+
 $$
-S_{\mathrm{vN}}(\hat\rho_{\omega_\alpha}) - S_{\mathrm{vN}}(\hat\omega_0) = -S(\omega_\alpha\|\omega_0) + \mathcal{B}(\omega_\alpha, \omega_0),
+\boxed{D(p)=\rho\,\mu(p)e^p.}
 $$
-where the modular boundary term $\mathcal{B}$ is finite and computable.
 
-### 5.6 The area law in this model
+The sign of $e^p$ is forced: it cancels the $e^{-p}$ in the trace.
 
-Now, **the punchline**. In the limit where the test function $f$ has support pushed toward the bifurcation surface (the boost-limit, Week 11 §4.4), the relative entropy and the boundary term combine:
+### 2.3 Product entropy
+
+Because $\rho$ and $\mu(P)e^P$ commute,
+
 $$
-S_{\mathrm{vN}}(\hat\omega_0) \;\sim\; 2\pi\,\langle K_{\mathrm{boost}}\rangle_{\hat\omega_0} \;=\; 2\pi \cdot \frac{c\,L}{\epsilon} + \text{finite},
+\log D=\log\rho+\log\mu(P)+P.
 $$
-where $L$ is the size of the wedge boundary, $\epsilon$ is a UV regulator, and $c$ is a universal coefficient ($c = 1$ for free 2D massless scalar). The divergent part scales as **the area of the wedge boundary** divided by a regulator — this is the **area law** of vacuum entanglement entropy, recovered from the dressed entropy of the modular crossed product.
 
-In a 4D massless free scalar, the same calculation gives the standard 4D area-law divergence $S \sim A/\epsilon^2$. And in a holographic setting (Sem II), this becomes literally the Bekenstein–Hawking $A/(4 G_N)$ via the holographic dictionary.
+Substituting in the entropy gives
 
-**The area-law divergence is recovered algebraically from the modular crossed product.** In the free-field Rindler model, the divergent piece of the dressed vacuum entropy reproduces the standard UV-divergent vacuum entanglement entropy with the correct area scaling. Identifying this with the gravitational $A/(4G_N)$ in a *holographic* setting requires an additional input — the holographic dictionary at large $N$ — which is the content of Witten 2022 and is developed in Sem II Block 1. The crossed product alone does not produce gravity; it produces the algebraic skeleton that, in a holographic theory, equals the gravitational dressing.
+$$
+\begin{aligned}
+S_{\widehat\tau}(\widehat\omega)
+&=-\operatorname{Tr}(\rho\log\rho)
+-\int\mu(p)\log\mu(p)dp
+-\int p\mu(p)dp\\
+&=S(\rho)+H(\mu)-\mathbb E_\mu[p].
+\end{aligned}
+$$
 
-## 6. The structural lesson
+Thus
 
-The crossed product + dressed entropy story gives:
+$$
+\boxed{S_{\widehat\tau}(\rho\otimes\mu)
+=S(\rho)+H(\mu)-\mathbb E_\mu[p].}
+$$
 
-1. **A trace where there was none.** On the dressed algebra $\hat{\mathcal{M}}$, the trace $\hat\tau$ exists and is unique up to scaling.
+The last term is not optional. Calling $H(\mu)$ alone “the clock entropy” hides the contribution produced by the trace weight.
 
-2. **A von Neumann entropy where there was none.** $S_{\mathrm{vN}}(\hat\rho) = -\hat\tau(\hat\rho_d\log\hat\rho_d)$, finite up to a state-independent additive constant.
+### 2.4 Gaussian clock distribution
 
-3. **A precise relation to type-III-safe quantities.** Differences of dressed entropies = Araki–Uhlmann + modular boundary term, and both ingredients are well-defined on the original algebra $\mathcal{M}$.
+For
 
-4. **An area law in the free-field model.** The dressed vacuum entropy on the Rindler wedge has the expected $\mathrm{area}/\epsilon^{d-1}$ divergence, matching the standard QFT entanglement-entropy scaling.
+$$
+\mu(p)=\frac{1}{\sqrt{2\pi}\sigma}
+\exp\!\left[-\frac{(p-p_0)^2}{2\sigma^2}\right],
+$$
 
-5. **A bridge to holography.** Under the additional input of the holographic dictionary at large $N$ (Witten 2022), the dressed entropy of a boundary subregion equals the **generalized entropy** $A/(4G_N) + S_{\mathrm{out}}$ of the corresponding bulk wedge. This identification — *dressed entropy = generalized entropy* — is a theorem of holographic QFT, separate from the operator-algebraic construction of the crossed product itself.
+we have
 
-This is the algebraic skeleton on which the entire Sem II program is built.
+$$
+H(\mu)=\frac12\log(2\pi e\sigma^2),
+\qquad
+\mathbb E[p]=p_0.
+$$
+
+Therefore
+
+$$
+\boxed{S_{\widehat\tau}=S(\rho)
++\frac12\log(2\pi e\sigma^2)-p_0.}
+$$
+
+As $\sigma\to0$, the differential entropy tends to $-\infty$. A sharp clock does **not** generate the positive UV area-law divergence of matter entanglement.
+
+### 2.5 Exponential distribution
+
+For $\mu(p)=\kappa e^{-\kappa p}\mathbf1_{p\geq0}$,
+
+$$
+H(\mu)=1-\log\kappa,
+\qquad
+\mathbb E[p]=\frac1\kappa,
+$$
+
+and hence
+
+$$
+S_{\widehat\tau}=S(\rho)+1-\log\kappa-\frac1\kappa.
+$$
+
+This second example makes clear which part is distribution-dependent and which part is structural.
+
+## 3. The exact entropy-difference identity
+
+### 3.1 Derivation in a semifinite algebra
+
+Let $D_\omega$ and $D_\phi$ be faithful normalized densities in the same semifinite algebra, relative to the same trace. Their Umegaki relative entropy is
+
+$$
+S(D_\omega\Vert D_\phi)
+{}={}
+\widehat\tau\!\left[D_\omega(\log D_\omega-\log D_\phi)\right].
+$$
+
+Introduce the reference modular Hamiltonian
+
+$$
+K_\phi:=-\log D_\phi.
+$$
+
+Then
+
+$$
+\begin{aligned}
+S_{\widehat\tau}(D_\omega)-S_{\widehat\tau}(D_\phi)
+&=-\widehat\tau(D_\omega\log D_\omega)
++\widehat\tau(D_\phi\log D_\phi)\\
+&=-S(D_\omega\Vert D_\phi)
++\widehat\tau\!\left[(D_\omega-D_\phi)K_\phi\right].
+\end{aligned}
+$$
+
+Therefore
+
+$$
+\boxed{
+\Delta S
+{}={}
+-S(D_\omega\Vert D_\phi)+\Delta\langle K_\phi\rangle.}
+$$
+
+This identity is exact whenever the displayed quantities are defined. It is simply the relative-entropy identity written so that the entropy difference is isolated.
+
+### 3.2 Relation to the original type III algebra
+
+The relative entropy in §3.1 is the relative entropy of **two states on the core**. To replace it by the Araki relative entropy $S_{\mathcal M}(\omega\Vert\phi)$ of states on the original type III algebra, one must specify how $\omega$ and $\phi$ are lifted to $\widehat{\mathcal M}$ and prove that the chosen lift preserves the relevant relative entropy.
+
+Witten constructs particular classical-quantum densities directly on the crossed product, while CPW proves the relative-entropy relation needed in its specified semiclassical setup. Neither result says that two arbitrary extensions preserve the relative entropy merely because they restrict to $\omega$ and $\phi$ on $\mathcal M$. We will consequently use the following status labels:
+
+- **Proved:** the semifinite identity of §3.1.
+- **Construction-dependent:** identification of the core relative entropy with the Araki relative entropy on $\mathcal M$.
+- **Holographic:** identification of $\Delta\langle K_\phi\rangle$ with an area variation.
+
+### 3.3 First law and positivity
+
+For a differentiable family $D(\varepsilon)=D_\phi+\varepsilon\dot D+O(\varepsilon^2)$, relative entropy begins at second order. Hence the linearized identity is
+
+$$
+\delta S=\delta\langle K_\phi\rangle.
+$$
+
+At finite separation, positivity gives
+
+$$
+\Delta S\leq\Delta\langle K_\phi\rangle.
+$$
+
+These are, respectively, the first law of entanglement and the relative-entropy form of the Bekenstein bound. Their content is independent of the crossed product; the core supplies a trace-based entropy with which the same relation can be written.
+
+## 4. The coherent-state consistency check
+
+The most useful check is also the simplest. It prevents us from assigning a spurious entropy change to an inner unitary excitation.
+
+### 4.1 Same clock, unitary in the algebra
+
+Let $U\in\widehat{\mathcal M}$ be unitary and let
+
+$$
+D_U=UD_0U^*.
+$$
+
+Traciality and functional calculus give
+
+$$
+\begin{aligned}
+S_{\widehat\tau}(D_U)
+&=-\widehat\tau\!\left(UD_0U^*\,U(\log D_0)U^*\right)\\
+&=-\widehat\tau(D_0\log D_0)
+=S_{\widehat\tau}(D_0).
+\end{aligned}
+$$
+
+Thus an inner conjugation changes the state but not its trace entropy.
+
+### 4.2 Weyl coherent state in a wedge
+
+If $f$ is supported in $W_R$, then $W(f)\in\mathcal A(W_R)$ and $\pi(W(f))\in\widehat{\mathcal A}(W_R)$. Dressing the vacuum and the coherent state with the same clock and the same core identification gives
+
+$$
+D_f=\pi(W(f))D_0\pi(W(f))^*,
+$$
+
+so
+
+$$
+\boxed{S_{\widehat\tau}(D_f)-S_{\widehat\tau}(D_0)=0.}
+$$
+
+The two terms on the right-hand side of the entropy-difference identity do not vanish separately. They cancel:
+
+$$
+S(D_f\Vert D_0)
+{}={}
+\widehat\tau\!\left[(D_f-D_0)K_0\right].
+$$
+
+For a wedge coherent state this is the familiar statement that the relative entropy equals the increase in vacuum modular energy, because a local unitary does not change the entropy of the state restricted to that algebra.
+
+### 4.3 How to obtain a nonzero difference
+
+A nonzero dressed-entropy difference requires changing something beyond an inner conjugation with a fixed clock. Examples include:
+
+1. two densities not related by a unitary in the algebra;
+2. different clock distributions $\mu$;
+3. a unitary lying outside the algebra whose entropy is being computed;
+4. comparing state-dependent realizations of the core through a nontrivial cocycle identification.
+
+Each case must be stated explicitly. Otherwise the nonzero “relative-entropy term plus boundary term” contradicts unitary invariance.
+
+## 5. Matter UV entropy is separate from clock entropy
+
+### 5.1 The regulated QFT result
+
+The ultraviolet divergence of entanglement entropy comes from short-distance matter correlations across an entangling surface. It is already present before a clock is introduced.
+
+For a $1+1$-dimensional CFT, the vacuum entropy of an interval of length $\ell$ is
+
+$$
+S_{\rm matter}(\ell)
+{}={}
+\frac c3\log\frac{\ell}{\epsilon}+\text{const},
+$$
+
+while a half-line with an infrared scale $L$ has the corresponding one-boundary coefficient $c/6$. In $3+1$ dimensions the leading divergence has the form
+
+$$
+S_{\rm matter}
+{}={}
+c_2\frac{A}{\epsilon^2}+\text{subleading terms},
+$$
+
+where $c_2$ depends on the regulator. The logarithmic and area divergences are matter-sector statements.
+
+### 5.2 What the crossed product changes
+
+The crossed product supplies a semifinite trace and makes a renormalized entropy of suitable core states meaningful up to one constant. It does not derive the matter area law from the width $\sigma$ of a one-dimensional clock distribution. The two scales have different meanings:
+
+| Quantity | Meaning |
+|---|---|
+| $\epsilon$ | short-distance regulator of matter modes near the entangling surface |
+| $\sigma$ | width of a chosen probability distribution in modular-energy space |
+
+They may become related in a particular gravitational state, but such a relation is additional physics, not a consequence of the continuous-core theorem.
+
+## 6. The gravitational identification
+
+Witten constructs the relevant type II$_\infty$ algebra, trace, and classical-quantum densities, and interprets the additive normalization relative to a reference black-hole entropy. CPW supplies the more explicit generalized-entropy matching: for its class of semiclassical states, the algebraic entropy has the form
+
+$$
+S_{\rm alg}
+{}={}
+\frac{A}{4G_N}+S_{\rm out}+\text{const}
+$$
+
+in the stated semiclassical regime. The logical ingredients are:
+
+1. **Operator algebra:** the relevant algebra is a crossed product and therefore carries a semifinite trace.
+2. **State construction:** a classical-quantum wavefunction for the energy collective coordinate determines a density in that algebra.
+3. **Gravity:** the first law and the bulk equations relate the energy term to the variation of $A/(4G_N)$.
+4. **Quantum fields:** relative entropy controls the finite change in $S_{\rm out}$.
+
+Only the first item is a general theorem about every modular crossed product. The remaining items encode the semiclassical black-hole setting. Keeping them separate makes the result stronger, not weaker, because one can see exactly where gravity enters.
 
 ## 7. What to take away
 
-- **Definition:** dressed entropy $S_{\mathrm{vN}}(\hat\rho) = -\hat\tau(\hat\rho_d\log\hat\rho_d)$ on the type II$_\infty$ dressed algebra, where $\hat\rho_d$ is the density of $\hat\rho$ relative to the dressed trace.
-- **Modulo additive constant:** $S_{\mathrm{vN}}$ is well-defined up to a state-independent additive shift coming from the trace's $e^{-r}$ rescaling under the dual action.
-- **Stated only (Theorem 3.1):** differences of dressed entropies = $-$ Araki–Uhlmann relative entropy + modular boundary term. The boundary term is finite and is the central object of Sem II.
-- **Worked (type I):** $S_{\mathrm{vN}}(\hat\omega) = S_{\mathrm{vN}}(\omega) + S_{\mathrm{clock}}(\mu)$ for product dressed states.
-- **Worked (free-field Rindler):** $S_{\mathrm{vN}}(\hat\omega_0) \sim$ area-law divergence of vacuum entanglement entropy, as expected.
-- **Holographic punchline (Witten 2022; requires holographic dictionary as additional input):** in a CFT-gravity duality at large $N$, dressed entropy of boundary subregion = generalized entropy of bulk wedge $= A/(4 G_N) + S_{\mathrm{out}}$. This identification is a theorem of holographic QFT; it equates the algebraic dressed entropy with the gravitational Bekenstein–Hawking + Ryu–Takayanagi formula.
+- A normal state on the core has a density relative to the semifinite trace, but its entropy need not be finite.
+- Under $\widehat\tau\to c\widehat\tau$, every normalized-state entropy shifts by $+\log c$.
+- In the exact inner-action Fourier model,
+
+$$
+S(\rho\otimes\mu)=S(\rho)+H(\mu)-\mathbb E_\mu[p].
+$$
+
+- For two densities in the same semifinite algebra,
+
+$$
+\Delta S=-S(D_\omega\Vert D_\phi)+\Delta\langle K_\phi\rangle
+$$
+
+is an exact identity.
+- Replacing the core relative entropy by Araki relative entropy on the original type III algebra requires a specified, relative-entropy-preserving lift.
+- A same-clock coherent excitation implemented by a unitary in the algebra has exactly zero entropy difference; relative entropy and modular energy cancel.
+- Clock width is not the matter UV cutoff. In $1+1$ dimensions the matter divergence is logarithmic; in $3+1$ it begins with $A/\epsilon^2$.
+- The equality with generalized entropy is a semiclassical-gravity result, not an automatic consequence of adjoining $L^2(\mathbb R)$.
 
 ## 8. Looking ahead
 
-Week 15 closes Block D and prepares the bridge to Sem II by introducing the **thermofield double** (TFD) state and its role in two-sided constructions. The Minkowski vacuum, viewed across the two-sided Rindler split, is literally the TFD of the boost Hamiltonian. The two-sided eternal black hole in holography is dual to a CFT in the TFD state. The dressing by the ADM Hamiltonian (Sem II Block 1) of the boundary algebra is the gravitational counterpart of the modular crossed product. **All of Sem II is, in one sentence, the application of the Block D machinery to specific physical settings.**
+Week 15 introduces the finite-dimensional thermofield double and then explains what survives in type III QFT. The key distinction will be the same one used here: a finite-dimensional TFD is a literal vector in a tensor product with density matrices on either side, whereas the vacuum standard form of a wedge algebra is thermofield-like without a Hilbert-space factorization.
 
 ## 9. Problem set
 
 **Core problems.**
 
-**1. Density of a dressed state.** For $\hat{\mathcal{M}} = \mathcal{B}(\mathcal{H}) \otimes L^\infty(\mathbb{R})$ and $\hat\omega = \omega \otimes \mu$ with $\omega(a) = \mathrm{Tr}(\rho a)$ and $\mu(f) = \int f(s)\mu(s)\,ds$, identify the density $\hat\rho_d$ with respect to the trace $\hat\tau(a \otimes f) = \mathrm{Tr}(a)\int f(s)e^{-s}\,ds$. (*Hint:* solve $\hat\tau(\hat\rho_d \cdot (a \otimes f)) = \omega(a)\mu(f)$ for $\hat\rho_d$.)
+**1. Trace rescaling.** Starting from $\widehat\tau'=c\widehat\tau$, derive $D'=D/c$ and $S_{\widehat\tau'}=S_{\widehat\tau}+\log c$. Check the result on a one-dimensional example.
 
-**2. Dressed entropy of a product state.** Compute $S_{\mathrm{vN}}(\hat\omega)$ for $\hat\omega = \omega \otimes \mu$ as in §4.3. Verify $S_{\mathrm{vN}}(\hat\omega) = S_{\mathrm{vN}}(\omega) + S_{\mathrm{clock}}(\mu)$ explicitly.
+**2. Density in the Fourier model.** For $\widehat\omega(a\otimes f)=\operatorname{Tr}(\rho a)\int\mu(p)f(p)dp$, derive $D(p)=\rho\mu(p)e^p$ from the defining Radon–Nikodym relation.
 
-**3. Difference of dressed entropies in type I.** Verify Theorem 3.1 in the type-I case: for $\hat\omega = \omega \otimes \mu, \hat\phi = \phi \otimes \mu$,
+**3. Product entropy.** Compute $-\widehat\tau(D\log D)$ and recover
+
 $$
-S_{\mathrm{vN}}(\hat\omega) - S_{\mathrm{vN}}(\hat\phi) = -S(\omega\|\phi) + \mathcal{B}(\omega, \phi)
+S_{\widehat\tau}=S(\rho)+H(\mu)-\mathbb E[p].
 $$
-with $\mathcal{B}(\omega, \phi) = \omega(K_\phi) - \phi(K_\phi) = \mathrm{Tr}((\rho_\omega - \rho_\phi)K_\phi)$ where $K_\phi = -\log\rho_\phi$ is the modular Hamiltonian of the reference state $\phi$.
 
-**4. Vanishing boundary term.** Show that the modular boundary term $\mathcal{B}(\omega, \phi)$ vanishes when $\omega$ and $\phi$ have the same modular flow (equivalently: the same modular Hamiltonian, up to additive scalar). In this case, dressed-entropy difference = $-$ Araki–Uhlmann.
+Explain why dropping the last term changes entropy differences when the mean modular energy changes.
 
-**5. Area-law warmup.** For the free 2D massless scalar restricted to the half-line $\{x^1 > 0\}$ at fixed time, use a UV regulator $\epsilon$ and compute the leading-order dressed vacuum entropy. Show it diverges as $c\log\epsilon + \text{const}$ for the central charge $c = 1$. This is the 2D analog of the 4D area law.
+**4. Gaussian and exponential profiles.** Verify the formulas of §§2.4–2.5. For the Gaussian, compute $\partial S/\partial p_0$ and $\partial S/\partial\sigma$. Interpret the signs without invoking a matter cutoff.
+
+**5. Entropy-difference identity.** Starting only from the definitions of entropy and relative entropy, derive §3.1 line by line. State the integrability assumptions required for every term.
+
+**6. Inner-unitary cancellation.** Let $D_U=UDU^*$ with $U$ unitary. Prove $S(D_U)=S(D)$ and then use the entropy-difference identity to show
+
+$$
+S(D_U\Vert D)=\widehat\tau[(D_U-D)(-\log D)].
+$$
 
 **Starred problems.**
 
-**6\*. Dressed entropy of a coherent state in free-field Rindler.** For a Weyl-operator coherent state $|\alpha\rangle = e^{i\phi(f)}|0_M\rangle$ with $f$ supported in $W_R$, compute the dressed-entropy difference $S_{\mathrm{vN}}(\hat\rho_\alpha) - S_{\mathrm{vN}}(\hat\omega_0)$ to leading order in $|\alpha|$. Express the result in terms of $\sigma(f, f)$ (symplectic form) and a boundary term involving the modular Hamiltonian.
+**7\*. Coherent wedge excitation.** Let $U=\pi(W(f))$ for $f$ supported in $W_R$. Prove that a same-clock dressed state is related to the dressed vacuum by inner conjugation. Explain which hypothesis any proposed nonzero same-clock entropy difference would have to violate.
 
-**7\*. Verify the boost-limit.** Show that in the limit where $f$ approaches the bifurcation surface (boost rapidity $\eta \to \infty$), the modular boundary term in Problem 6 becomes the dominant contribution to the dressed entropy.
+**8\*. Two different lifts.** Construct two product lifts of the same finite-dimensional system state using clock distributions $\mu$ and $\nu$. Compute the entropy difference and show explicitly why the restriction to the original algebra does not determine the core entropy.
 
-**8\*. Holographic identification.** In a 2D CFT with $c = 1$ on a boundary interval $I = [-L, L]$ at fixed time, the bulk dual is an AdS$_3$ wedge. The vacuum is dual to pure AdS$_3$; the dressed entropy of the boundary interval should equal $\frac{c}{3}\log(2L/\epsilon)$ (Calabrese–Cardy) plus the bulk RT contribution. Verify the area-law part of this and discuss what "$S_{\mathrm{out}}$" looks like in this exactly-solvable setting.
+**9\*. Matter area law.** Derive the $c/3$ logarithm for a $1+1$ CFT interval from the replica result, or review a standard derivation. Then give a dimensional argument for the leading $A/\epsilon^2$ term in $3+1$ dimensions. Explain why neither follows from $H(\mu)$.
 
 **Project problems.**
 
-**9. Read Witten 2022 §4 (generalized entropy).** Reproduce the identification $S_{\mathrm{vN}}(\hat\rho) = A/(4 G_N) + S_{\mathrm{out}} + \text{const}$ in the holographic setting. Identify each ingredient (modular Hamiltonian, ADM dressing, trace formula).
+**10. Witten source map.** Read Witten §§3.3–3.5. His representation uses multiplication by $X_{\rm W}$, whereas our regular representation uses $\lambda(t)=e^{-itP}$. Derive the operator map $X_{\rm W}=-P$, hence the spectral relation $X_{\rm W}=-p$, and $P_{\rm W}=-i\partial_{X_{\rm W}}=Q$ after the corresponding Fourier/sign change. Then match his $g(X_{\rm W})$, $K$, trace, and density matrix to the course dictionary. Record which formulas are exact in Witten's classical-quantum state construction and which statements in this lecture are the more abstract operator-algebraic version.
 
-**10. Read AAJ §2–3 (algebraic perturbation theory).** Identify how the Connes cocycle (Week 7) enters as a perturbation around the unperturbed dressed entropy. Verify that the AAJ "leading correction" is the modular boundary term computed perturbatively in the deformation parameter.
+**11. CPW source map.** Read CPW §§2.2–3. Identify the formula showing that $\widehat\tau\mapsto e^c\widehat\tau$ shifts entropy by $+c$---equivalently, $\widehat\tau\mapsto c\widehat\tau$ for $c>0$ shifts it by $+\log c$---and locate the independent inputs used to identify algebraic entropy with generalized entropy.
+
+## 10. Instructor checkpoints (internal)
+
+1. $D'=D/c$ and $S'=S+\log c$; in a one-dimensional algebra this follows from normalizing the unique state against the rescaled trace.
+2. Comparing the Radon–Nikodym integrands forces $D(p)=\rho\mu(p)e^p$.
+3. The three logarithms give $S(\rho)$, $H(\mu)$, and $-\mathbb E[p]$ separately. The last changes whenever the mean changes.
+4. Gaussian: $\partial_{p_0}S=-1$, $\partial_\sigma S=1/\sigma$. Exponential: $H=1-\log\kappa$ and $\mathbb E[p]=1/\kappa$.
+5. Expand the relative entropy definition and collect $-\log D_\phi$; all traces of unbounded logarithms must be finite or consistently extended-real.
+6. Functional calculus plus traciality gives $S(UDU^*)=S(D)$ and hence the exact cancellation identity.
+7. For $\operatorname{supp}f\subset W_R$, $\pi(W(f))$ is a unitary in the core. A nonzero answer must change the clock, the algebra/core identification, or the innerness assumption.
+8. The two restrictions to $\mathcal M$ agree, while the answer differs by $H(\mu)-H(\nu)-\mathbb E_\mu[p]+\mathbb E_\nu[p]$.
+9. The $1+1$ result is logarithmic; transverse cell counting gives $A/\epsilon^2$ in $3+1$. Neither depends on the one-dimensional clock width.
+10. Witten's operator map is $X_{\rm W}=-P$ and $P_{\rm W}=Q$; on the $P$-spectrum this becomes $X_{\rm W}=-p$. These statements hold only after Fourier/sign change, and $g(X_{\rm W})$ must not be rewritten as multiplication by $g(q)$.
+11. CPW's $+c$ shift is exact for the parameterization $\widehat\tau\mapsto e^c\widehat\tau$ (or $+\log c$ for $\widehat\tau\mapsto c\widehat\tau$); the generalized-entropy equality additionally uses horizon relative entropy, the first law/area response, and relaxation.
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block D. Last revised 2026-06-11.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block D. Last revised 2026-08-24.*

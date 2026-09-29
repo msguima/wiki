@@ -7,25 +7,32 @@ week: 7
 block: B
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Weeks 5–6 (Tomita operator and modular flow)
-modified: 2026-06-11
+modified: 2026-08-24
 ---
 
 # Week 7 — Connes Cocycle and Araki-Uhlmann Relative Entropy
 
 > *A single faithful normal state gives a modular flow. Physics rarely gives us just one state. We perturb the vacuum, compare thermal states, restrict states to subalgebras, and ask whether one state can be distinguished from another. Week 7 supplies the comparison calculus: the relative modular operator, the Connes cocycle, and Araki-Uhlmann relative entropy.*
 
+### How to use this chapter
+
+- **In class:** calculate the relative modular operator for two faithful matrices, derive the cocycle, and recover Umegaki relative entropy before stating the representation-independent theory.
+- **For self-study:** keep the three objects separate on paper: $\Delta_{\omega|\phi}$ compares states, $(D\omega:D\phi)_t$ compares flows, and $S(\omega\|\phi)$ is a number in $[0,+\infty]$. Work one noncommuting $2\times2$ example.
+- **Instructor checkpoint:** test cocycle ordering and support conditions. Relative entropy is intrinsic and monotone, but it need not be finite.
+
 ## 0. Reading
 
 **Primary:**
-- Bratteli & Robinson, Vol. I, §2.5, for relative modular operators and the Radon-Nikodym theorem.
+- Takesaki, *Theory of Operator Algebras II*, chs. VIII–IX, for relative modular theory, spatial derivatives, and Connes cocycles.
 - Ohya & Petz, *Quantum Entropy and Its Use*, ch. 5, for finite-dimensional relative entropy and monotonicity.
 
 **Secondary:**
-- Takesaki, *Theory of Operator Algebras II*, sections on spatial derivatives and Connes cocycles.
+- Bratteli & Robinson, Vol. I, §2.5, for the single-vector Tomita–Takesaki background. That section does **not** supply the relative modular/Radon–Nikodym theory used here.
 - Witten, "Notes on some entanglement properties of QFT," arXiv:1803.04993, §3–4.
 
 **Optional research reading:**
 - Araki, "Relative entropy of states of von Neumann algebras," *Publ. RIMS* 11 (1976).
+- Uhlmann, "Relative entropy and the Wigner–Yanase–Dyson–Lieb concavity in an interpolation theory," *Commun. Math. Phys.* 54 (1977) 21–32, for monotonicity.
 - Connes, "Une classification des facteurs de type III," *Ann. Sci. ENS* 6 (1973).
 
 ## 1. Why compare modular flows?
@@ -59,7 +66,7 @@ $$
 \Delta_{\omega,\phi}:=S_{\omega,\phi}^*S_{\omega,\phi}.
 $$
 
-**Proof status. [Stated only — refs: Araki 1976; B-R Vol. I §2.5; Takesaki Vol. II Ch. VIII.]** Closability and representation-independent construction parallel Week 5 but require the standard form of a von Neumann algebra or spatial derivatives to avoid representation artifacts.
+**Proof status. [Stated only — refs: Araki 1976; Takesaki Vol. II, chs. VIII–IX.]** Closability and representation-independent construction parallel Week 5 but require the standard form of a von Neumann algebra or spatial derivatives to avoid representation artifacts.
 
 When $\omega=\phi$, this reduces to the ordinary Tomita operator and ordinary modular operator:
 $$
@@ -137,6 +144,11 @@ $$
 \sigma_t^\omega(a)
 =(D\omega/D\phi)_t\,\sigma_t^\phi(a)\,(D\omega/D\phi)_t^*.
 $$
+Reversing the two states gives the same-time adjoint identity
+$$
+\boxed{(D\omega/D\phi)_t^*=(D\phi/D\omega)_t.}
+$$
+This identity is a useful guardrail: reversing the indices takes an adjoint, not a replacement $t\mapsto -t$.
 
 This is the noncommutative Radon-Nikodym theorem in the form we need later.
 
@@ -146,7 +158,7 @@ $$
 $$
 *is the **same for every faithful normal state**. A von Neumann algebra carries a canonical one-parameter subgroup of $\mathrm{Out}(\mathcal{M})$ — a dynamics intrinsic to the algebra itself.*
 
-> **Physical picture.** This corollary upgrades the slogan of Week 6 ("the state determines its time") to something stronger and stranger: *the algebra alone determines time, up to locally implementable adjustments.* Changing the state changes the modular flow only by conjugation with unitaries inside $\mathcal{M}$ — operations an observer with access to $\mathcal{M}$ can perform herself. What she cannot change is the outer class $\delta_t$. For type I and II algebras, $\delta_t$ is trivial (modular flows are inner): time must come from outside, as a Hamiltonian. For type III, $\delta_t$ is *nontrivial*: a type III algebra ticks on its own, and no choice of state, no local unitary dressing, can stop it. This is the precise sense in which a QFT local algebra "has dynamics built in" — and the kernel and periodicity of $\delta$ are exactly Connes' T-invariant, classifying III$_\lambda$ (periodic $\delta$) versus III$_1$ ($\delta$ injective). The classification of Week 3 §6 is thus revealed as a classification of *intrinsic clocks*.
+> **Physical picture, with the classification boundary visible.** Changing a faithful normal state changes its modular flow by unitaries inside $\mathcal{M}$, so the outer class $\delta_t$ is state-independent. For semifinite factors this outer flow is trivial. For type III it is nontrivial as a flow, although particular times can lie in its kernel. That kernel is Connes' $T$-invariant: for type III$_\lambda$, $0<\lambda<1$, it is $(2\pi/|\log\lambda|)\mathbb{Z}$; for type III$_1$ it is $\{0\}$. These facts distinguish the periodic III$_\lambda$ case from the aperiodic III$_1$ case. They do **not** by themselves classify all type III$_0$ factors, whose flow-of-weights data are essential. Thus “the algebra carries an outer clock” is a useful image, provided we do not promote the image into a complete classification theorem.
 
 ### 4.1 Finite-dimensional verification
 
@@ -164,6 +176,12 @@ $$
 So the cocycle is represented inside $\mathcal{M}$ by
 $$
 \boxed{u_t=(D\omega_\rho/D\omega_\sigma)_t=\rho^{-it}\,\sigma^{it}.}
+$$
+The adjoint/index identity is visible immediately:
+$$
+(\rho^{-it}\sigma^{it})^*
+=\sigma^{-it}\rho^{it}
+=(D\omega_\sigma/D\omega_\rho)_t.
 $$
 
 The cocycle identity becomes
@@ -206,11 +224,25 @@ S(\omega\|\phi)
 :=-\langle\Omega_\omega,\log\Delta_{\phi,\omega}\,\Omega_\omega\rangle.
 }
 $$
-If the vector is outside the domain of $\log\Delta_{\phi,\omega}$ in the relevant sense, the value is $+\infty$.
+This bracket is an extended spectral integral, not an ordinary operator-domain test. Let $E$ be the spectral measure of $\Delta_{\phi,\omega}$ and
+$$
+\mu_{\phi,\omega}(B)
+:=\langle\Omega_\omega,E(B)\Omega_\omega\rangle.
+$$
+Then
+$$
+S(\omega\|\phi)
+=-\int_{[0,\infty)}\log\lambda\,d\mu_{\phi,\omega}(\lambda).
+$$
+The value is $+\infty$ when $\operatorname{supp}\omega\nleq\operatorname{supp}\phi$ (equivalently, the relative spectral measure sees the zero-support obstruction), or when
+$$
+\int_{(0,1)}(-\log\lambda)\,d\mu_{\phi,\omega}(\lambda)=+\infty.
+$$
+There is no additional divergence hidden at large $\lambda$: $\log^+\lambda\leq\lambda$, and $\int\lambda\,d\mu_{\phi,\omega}=\|\Delta_{\phi,\omega}^{1/2}\Omega_\omega\|^2$ is controlled (equal to $1$ for normalized faithful vector representatives in this setup). Thus membership in $D(\log\Delta)$, which demands a stronger square-log moment, is not the finiteness criterion for relative entropy.
 
 The order of the indices matters. The definition uses $\Delta_{\phi,\omega}$, not $\Delta_{\omega,\phi}$.
 
-**Theorem 5.2. [Stated only — refs: Araki 1976.]** For normal states on a von Neumann algebra:
+**Theorem 5.2. [Stated only — refs: Araki 1976; Uhlmann, *Commun. Math. Phys.* 54 (1977) 21–32.]** For normal states on a von Neumann algebra:
 $$
 S(\omega\|\phi)\ge 0,
 $$
@@ -225,7 +257,7 @@ $$
 
 Monotonicity is the algebraic form of data processing: throwing away observables cannot make two states easier to distinguish.
 
-> **Physical picture.** Relative entropy has a sharp operational meaning that explains every property in Theorem 5.2. By the quantum Stein lemma, $S(\omega\|\phi)$ is the optimal exponential rate at which an observer can rule out the hypothesis "the system is in state $\phi$" when it is actually in state $\omega$: after $n$ measurements on independent copies, the probability of mistaking $\omega$ for $\phi$ decays as $e^{-n S(\omega\|\phi)}$. Positivity then says distinguishing takes work; $S = 0$ iff $\omega = \phi$ says only identical states are indistinguishable; $S = +\infty$ (which happens when $\omega$ assigns probability to events that $\phi$ forbids — the support condition, cf. Problem 9\*) says a single measurement can separate them. Monotonicity under restriction is now obvious physics: an observer with fewer observables can only distinguish more slowly. The asymmetry $S(\omega\|\phi) \neq S(\phi\|\omega)$ is also operational — false-alarm and missed-detection errors are inequivalent. In QFT applications the slogan is: *relative entropy measures how distinguishable a state is from the vacuum using only measurements inside a region*, and monotonicity under shrinking the region is what drives the Bekenstein-bound and ANEC arguments of the research literature.
+> **Physical picture (finite-dimensional i.i.d. version first).** The quantum Stein lemma identifies $S(\rho\|\sigma)$ with the optimal asymptotic type-II error exponent when one discriminates $\rho^{\otimes n}$ from $\sigma^{\otimes n}$ while keeping the type-I error bounded. This gives a precise meaning to distinguishability and makes monotonicity natural: discarding observables cannot improve the optimal rate. Extensions exist for von Neumann algebras and more general asymptotic settings, but their hypotheses should be stated before importing the slogan wholesale. In finite dimensions, $S(\rho\|\sigma)=+\infty$ exactly when $\operatorname{supp}\rho\nleq\operatorname{supp}\sigma$; then an event forbidden by $\sigma$ has positive probability under $\rho$. In infinite dimensions, relative entropy can also diverge because $\log\sigma$ is too singular even when the support inclusion holds, so $+\infty$ does not automatically mean perfect one-shot discrimination. For local QFT, the safe statement is that Araki relative entropy quantifies distinguishability using observables in the chosen region, and restriction to a smaller algebra cannot increase it.
 
 ## 6. Finite-dimensional entropy calculation
 
@@ -307,7 +339,7 @@ Von Neumann entropy
 $$
 S(\rho)=-\mathrm{Tr}(\rho\log\rho)
 $$
-requires a density matrix and a trace. Under the nuclearity and split-property hypotheses discussed in Block C, local QFT algebras are type III$_1$ factors. There is no canonical trace, hence no local density matrix relative to such a trace and no regulator-independent local von Neumann entropy.
+requires a density matrix and a trace. For the local QFT examples classified in Block C, phase-space/nuclearity input supplies injectivity or hyperfiniteness, while a **separate** scaling or modular-spectrum theorem supplies the III$_1$ subtype; factoriality and separable predual then give the standard hyperfinite III$_1$ factor. There is no canonical local trace, hence no local density matrix relative to such a trace and no regulator-independent sharp-region von Neumann entropy.
 
 Relative entropy does not suffer this failure. Araki's definition uses the relative modular operator, which is available for normal states on von Neumann algebras of any type.
 
@@ -328,9 +360,7 @@ $$
 \sigma_t^{\omega_s}
 =\mathrm{Ad}(u_t(s))\circ\sigma_t^\phi.
 $$
-Differentiating in $s$ gives a modular response operator. This is the abstract seed of cocycle perturbation theory, used in research literature (e.g., recent algebraic-perturbation work on wormhole entropy).
-
-We will not develop that perturbation theory here. The point for now is simpler: the object that gets perturbed in research-level applications is the Connes cocycle from this week.
+Differentiating in $s$ gives an abstract modular-response operator and is the seed of Connes-cocycle perturbation theory. We will not develop that theory here. In particular, this construction should not be conflated with every later calculation called a perturbation: the AAJ calculation in Semester II instead uses unitary covariance, spectral reweighting/Jacobians, and BCH commutators. Week 7 supplies the comparison theory for faithful weights and their modular flows; it is not a universal template for perturbative dressed dynamics.
 
 ## 10. What to take away
 
@@ -395,8 +425,55 @@ S(\rho_{AB}\|\sigma_{AB})\ge S(\rho_A\|\sigma_A).
 $$
 Prove it in the special case where $\rho_{AB}$ and $\sigma_{AB}$ are block-diagonal classical-quantum states.
 
-**9\*. Relative entropy for displaced Gaussian states.** For a single harmonic oscillator, compare two displaced thermal Gaussian states with the same nonzero covariance and displacements $\alpha,\beta$. Compute the relative entropy and identify the coefficient of $|\alpha-\beta|^2$. Then explain why the pure coherent-vector case on $\mathcal{B}(\mathcal{H})$ has a support singularity when $\alpha\neq\beta$.
+**9\*. Relative entropy for displaced Gaussian states (forward-looking).** This problem uses the oscillator/Gaussian machinery developed in Week 8; it may be postponed until then. Let $\rho_{\mathrm{th}}=(1-q)q^N$ for one oscillator, with $0<q<1$ and mean occupation $\bar n=q/(1-q)$. Define $\rho_\alpha=D(\alpha)\rho_{\mathrm{th}}D(\alpha)^*$ and similarly $\rho_\beta$, using $D(\alpha)^*aD(\alpha)=a+\alpha$. You may use unitary invariance of relative entropy, $\log(U\rho U^*)=U(\log\rho)U^*$, and
+$$
+D(\gamma)^*ND(\gamma)
+=N+\gamma a^*+\overline\gamma a+|\gamma|^2.
+$$
+Show that
+$$
+S(\rho_\alpha\|\rho_\beta)
+=\log\!\left(\frac{\bar n+1}{\bar n}\right)|\alpha-\beta|^2
+=(-\log q)|\alpha-\beta|^2.
+$$
+Then explain why the pure coherent-vector case on $\mathcal{B}(\mathcal{H})$ has a support singularity, and hence infinite relative entropy, when $\alpha\neq\beta$.
+
+## Self-study answer checkpoints
+
+These checkpoints cover the core problems. Starred, project, and explicitly research-level problems remain source-led; they should be completed with the references and hypotheses named in the problem.
+
+1. On Hilbert--Schmidt space the decisive identity is
+   $$
+   \Delta_{\rho,\sigma}=L_\rho R_{\sigma^{-1}},
+   \qquad
+   \Delta_{\rho,\sigma}(X)=\rho X\sigma^{-1}.
+   $$
+   In particular, on the defining core $X=a\sigma^{1/2}$ one obtains $\Delta_{\rho,\sigma}X=\rho a\sigma^{-1/2}$.
+2. Direct multiplication gives
+   $$
+   u_t\,\sigma_t^\sigma(u_s)
+   =\rho^{-it}\rho^{-is}\sigma^{is}\sigma^{it}
+   =u_{t+s}.
+   $$
+   No commutativity between $\rho$ and $\sigma$ is used.
+3. The middle factors cancel:
+   $$
+   u_t\sigma_t^\sigma(a)u_t^*
+   =\rho^{-it}a\rho^{it}
+   =\sigma_t^\rho(a).
+   $$
+4. Since $\log\Delta_{\sigma,\rho}=L_{\log\sigma}-R_{\log\rho}$, evaluation on $\rho^{1/2}$ gives
+   $$
+   S(\omega_\rho\|\omega_\sigma)
+   =\operatorname{Tr}\rho(\log\rho-\log\sigma).
+   $$
+5. With $Z_i=1+e^{-\beta_iE}$ and excited-state probability $q_i=e^{-\beta_iE}/Z_i$, the final result is
+   $$
+   S(\rho_{\beta_1}\|\rho_{\beta_2})
+   =(\beta_2-\beta_1)E q_1+\log\frac{Z_2}{Z_1}.
+   $$
+   For $E>0$ it is nonnegative and vanishes precisely when $\beta_1=\beta_2$.
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block B. Last revised 2026-06-11.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block B. Last revised 2026-08-24.*

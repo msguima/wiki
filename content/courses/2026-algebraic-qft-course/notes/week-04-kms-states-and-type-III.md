@@ -7,12 +7,18 @@ week: 4
 block: A
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Weeks 1–3 (C*-algebras, vN algebras, type classification)
-modified: 2026-06-11
+modified: 2026-08-24
 ---
 
 # Week 4 — KMS States, the Modular Interpretation, Type III Preview
 
-> *Last week we classified factors and saw that type III admits no trace. The standard quantum-mechanical notion of thermal equilibrium — the Gibbs state $\rho_\beta = e^{-\beta H}/Z$ — therefore makes no sense in type III. This week we develop the algebraic substitute: the **KMS condition**. It is a condition on a state alone, with no Hamiltonian explicitly invoked, that captures all the operational content of "thermal equilibrium" — and it survives in type III. The Tomita-Takesaki theorem (Block B) will say that **for any faithful normal state on a vN algebra** there is a canonical one-parameter automorphism group — the modular flow — for which the state is KMS at $\beta = 1$. The whole machinery of modular theory grows out of this single observation.*
+> *Last week we classified factors and saw that type III admits no trace. The standard quantum-mechanical formula $\rho_\beta=e^{-\beta H}/Z$ therefore has no intrinsic local analogue there. This week we develop the algebraic substitute: the **KMS condition**. It is a condition on a state **relative to a specified one-parameter automorphism group**; it needs neither a Hamiltonian operator inside the algebra nor a density matrix. Tomita–Takesaki theory will then say that every faithful normal state supplies a canonical group of this kind—the modular flow—for which it is KMS at $\beta=1$ in our convention.*
+
+### How to use this chapter
+
+- **In class:** derive the finite-dimensional KMS boundary identity first, extract detailed balance, and only then state the abstract strip condition. End by using the Powers product state as a controlled preview of type III$_\lambda$.
+- **For self-study:** reproduce the two-level-system calculation and annotate every sign in the Fourier and modular conventions. Treat the thermal-time discussion as an interpretation after the KMS theorem, not as part of its proof.
+- **Instructor checkpoint:** verify that students can explain why the exact $\lambda=0$ product state is nonfaithful and type I$_\infty$, why III$_0$ needs a different limiting construction, and why the course uses $\sigma_t=\operatorname{Ad}\Delta^{-it}$ at inverse modular temperature $+1$.
 
 ## 0. Reading
 
@@ -67,11 +73,11 @@ $$
 
 Equation ($*$) — together with the holomorphic interpolation $F$ — has three crucial features:
 
-1. **No reference to $\rho_\beta$ explicitly.** The boundary values $F(t) = \omega_\beta(a\sigma_t(b))$ and $F(t+i\beta) = \omega_\beta(\sigma_t(b)a)$ are computable from the state alone — the density matrix has dropped out.
+1. **No reference to $\rho_\beta$ explicitly.** Once the automorphism group $\sigma$ has been specified, the boundary values $F(t) = \omega_\beta(a\sigma_t(b))$ and $F(t+i\beta) = \omega_\beta(\sigma_t(b)a)$ are expressed entirely in terms of the state and that dynamics — the density matrix has dropped out.
 
 2. **Holomorphic structure on the upper strip.** $F(z)$ extends to a holomorphic function on $\{0 \le \mathrm{Im}\,z \le \beta\}$ — entire in finite dimensions, holomorphic-on-the-strip in the general C\*-algebraic setting (Definition 2.1).
 
-3. **Trace cyclicity is the engine.** The proof uses only cyclicity of the trace and the fact that $\rho_\beta$ is a function of $H$. In type III there is no trace and no density matrix, but the abstract KMS condition — the existence of a holomorphic $F$ with these boundary values — still makes sense. That is the abstraction we now make.
+3. **Trace cyclicity is the engine.** The proof uses only cyclicity of the trace and the fact that $\rho_\beta$ is a function of $H$. A type-III factor has no nonzero normal semifinite trace and hence no intrinsic Gibbs density matrix relative to such a trace, but the abstract KMS condition — the existence of a holomorphic $F$ with these boundary values — still makes sense. That is the abstraction we now make.
 
 ## 2. The KMS condition
 
@@ -83,7 +89,7 @@ Equation ($*$) — together with the holomorphic interpolation $F$ — has three
 
 The condition encodes Eq. ($*$) abstractly: the function $t \mapsto \omega(a\sigma_t(b))$ on the real axis coincides at $t + i\beta$ with $\omega(\sigma_t(b)a)$, with a holomorphic interpolation in between.
 
-> **Physical picture.** The analytic strip is *imaginary time*. A physicist meets the KMS condition as the statement that thermal correlation functions are periodic in imaginary time with period $\beta$ — the Matsubara/Euclidean-path-integral structure: $\langle a(0)\, b(i\beta)\rangle_\beta = \langle b(0)\, a(0)\rangle_\beta$ up to ordering, i.e. translating one operator all the way across the thermal circle swaps the operator order. Definition 2.1 is exactly this, stated so that no path integral, no trace, and no density matrix are required: all that survives is the *analyticity of correlators in a strip of width $\beta$* plus the boundary identification. That this survives is no accident — analyticity statements are statements about correlation functions, and correlation functions are exactly what a state provides. The strip width being $\beta$ also explains physically why higher temperature is "less analytic": at $T \to \infty$ the strip collapses and the condition degenerates to traciality (§5), while at $T \to 0$ the strip becomes a half-plane — the boundary of the KMS family is the spectrum condition of the vacuum.
+> **Physical picture.** The analytic strip is *imaginary time*. A physicist meets the KMS condition as the statement that thermal correlation functions are periodic in imaginary time with period $\beta$ — the Matsubara/Euclidean-path-integral structure: $\langle a(0)\, b(i\beta)\rangle_\beta = \langle b(0)\, a(0)\rangle_\beta$ up to ordering, i.e. translating one operator all the way across the thermal circle swaps the operator order. Definition 2.1 is exactly this, stated so that no path integral, trace formula, or intrinsic density matrix is required: what remains is the *analyticity of the $\sigma$-evolved correlators in a strip of width $\beta$* plus the boundary identification. The state supplies the expectation functional, while the chosen automorphism group supplies the notion of time translation. The strip width being $\beta$ also explains physically why higher temperature is "less analytic": at $T \to \infty$ the strip collapses and the condition degenerates to traciality (§5), while at $T \to 0$ the strip becomes a half-plane — the boundary of the KMS family is the spectrum condition of the vacuum.
 
 #### Detailed balance, derived
 
@@ -91,7 +97,7 @@ The slogan "KMS = detailed balance" can be made exact in two lines of Fourier an
 $$
 G_+(t) := \omega(a\,\sigma_t(b)), \qquad G_-(t) := \omega(\sigma_t(b)\,a),
 $$
-physically: the amplitude for the system to *absorb* the perturbation $b$ and later release it into $a$, in the two possible operator orders. KMS says $G_-(t) = G_+(t + i\beta)$ via the holomorphic interpolant. Writing $G_\pm(t) = \frac{1}{2\pi}\int d\nu\, e^{-i\nu t}\, \hat G_\pm(\nu)$ and shifting the contour through the strip (justified by boundedness and analyticity of $F_{a,b}$),
+physically: the amplitude for the system to *absorb* the perturbation $b$ and later release it into $a$, in the two possible operator orders. KMS says $G_-(t) = G_+(t + i\beta)$ via the holomorphic interpolant. Writing $G_\pm(t) = \frac{1}{2\pi}\int d\nu\, e^{+i\nu t}\, \hat G_\pm(\nu)$ and shifting through the strip (first for analytic observables, and then in the distributional sense),
 $$
 \boxed{\;\hat G_-(\nu) = e^{-\beta\nu}\, \hat G_+(\nu).\;}
 $$
@@ -102,7 +108,7 @@ The Fourier components at frequency $\nu$ — the rates for processes in which t
 - **Sign convention.** Many references (including Bratteli–Robinson) use $\beta > 0$ and an "upper strip" (as written above). Some references invert. Be careful.
 - **Strip width = inverse temperature.** $\beta = 1/k_B T$. Higher temperature → narrower strip.
 - **Locality in $a, b$.** Just one pair of analytic functions per pair of observables. Hence verifying KMS is a "local" condition on observable pairs.
-- **Norm continuity of $\sigma_t$.** This is a regularity assumption; it ensures $t \mapsto \omega(a\sigma_t(b))$ is continuous on the real axis. In QFT, $\sigma_t$ is the modular flow, and norm continuity is automatic for "nice" observables.
+- **Continuity depends on the setting.** Definition 2.1 is the C\*-dynamical formulation and assumes point-norm continuity. A modular automorphism group on a von Neumann algebra is, in general, only $\sigma$-weakly continuous on the whole algebra; its analytic elements form a $\sigma$-weakly dense subalgebra. The corresponding W\*-KMS formulation uses this weaker continuity. One should not claim norm continuity for every modularly evolved observable.
 
 ### 2.2 What KMS captures
 
@@ -116,7 +122,7 @@ The KMS condition is also the algebraic content of *detailed balance*: the relat
 
 ## 3. KMS in finite dimensions = Gibbs
 
-**Theorem 3.1 (KMS uniqueness in finite dimensions).** *Let $\mathcal{A} = \mathcal{B}(\mathcal{H})$ with $\dim\mathcal{H} < \infty$, $H = H^* \in \mathcal{A}$, and $\sigma_t = \mathrm{Ad}\,e^{itH}$. Then a state $\omega$ on $\mathcal{A}$ is KMS at $\beta$ for $\sigma$ iff $\omega = \omega_{\rho_\beta}$ where $\rho_\beta = e^{-\beta H}/\mathrm{Tr}(e^{-\beta H})$.*
+**Theorem 3.1 (KMS uniqueness in finite dimensions; proved below).** *Let $\mathcal{A} = \mathcal{B}(\mathcal{H})$ with $\dim\mathcal{H} < \infty$, $H = H^* \in \mathcal{A}$, and $\sigma_t = \mathrm{Ad}\,e^{itH}$. Then a state $\omega$ on $\mathcal{A}$ is KMS at $\beta>0$ for $\sigma$ iff $\omega = \omega_{\rho_\beta}$ where $\rho_\beta = e^{-\beta H}/\mathrm{Tr}(e^{-\beta H})$.*
 
 **Proof.** *Direction (⇐).* Suppose $\omega = \omega_{\rho_\beta}$. The function $F_{a,b}(z) := \frac{1}{Z}\mathrm{Tr}(e^{-\beta H} a\, e^{izH} b\, e^{-izH})$ is the entire holomorphic extension constructed in §1.1, with boundary values $F_{a,b}(t) = \omega_{\rho_\beta}(a\sigma_t(b))$ and $F_{a,b}(t + i\beta) = \omega_{\rho_\beta}(\sigma_t(b) a)$ established there. Boundedness on the strip $0 \le \mathrm{Im}\,z \le \beta$ holds because $\rho_\beta$, $e^{-\beta H}$, $a$, $b$, and the Heisenberg evolution are all bounded operators on the finite-dimensional $\mathcal{H}$.
 
@@ -152,7 +158,7 @@ Hence $\omega(E_{il}) = 0$ for all $i \neq l$.
 
 *Remark on energy degeneracies.* If $E_i = E_l$ with $i \neq l$, Step 2 still works: $b = E_{ll}$ is diagonal, $\sigma_t(b) = b$, and the constant-$F$ argument gives $\omega(E_{il}) = 0$. Step 1's exponential argument is unchanged whether or not $E_i \neq E_j$.
 
-This theorem says: in finite dimensions, the KMS condition picks out exactly the Gibbs states. It is a *characterization* of thermal equilibrium that uses only the algebraic structure $(\mathcal{A}, \sigma_t, \omega)$ and doesn't presuppose any specific Hilbert-space realization.
+This theorem says: in finite dimensions, once the dynamical system $(\mathcal A,\sigma)$ has been specified, the KMS condition picks out exactly the Gibbs state. Although the proof used a convenient matrix realization and its implementing Hamiltonian, the boundary condition itself is formulated in terms of $(\mathcal A,\sigma,\omega)$.
 
 ## 4. KMS in QFT: the example we need
 
@@ -160,31 +166,31 @@ In QFT — and especially for type III algebras — the KMS condition is far mor
 
 The leading example, which we will work out fully in Week 10:
 
-**Example 4.1 (Bisognano–Wichmann, preview).** Let $\mathcal{A}(W_R)$ be the local algebra of the right Rindler wedge in a free Wightman QFT, and let $\sigma_t$ be the *boost* automorphism (boost the algebra in the $(t, x^1)$ plane by parameter $-2\pi t$). The vacuum state $\omega_0$ restricted to $\mathcal{A}(W_R)$ is *KMS at $\beta = 1$* with respect to $\sigma$.
+**Example 4.1 (Bisognano–Wichmann, preview).** Let $\mathcal{A}(W_R)$ be the local algebra of the right Rindler wedge in a Wightman QFT satisfying the hypotheses of the Bisognano–Wichmann theorem. In our convention $\sigma_t^\Omega=\operatorname{Ad}(\Delta_\Omega^{-it})$, the modular automorphism is the boost automorphism with physical rapidity $+2\pi t$. The vacuum state $\omega_0$ restricted to $\mathcal{A}(W_R)$ is *KMS at $\beta = 1$* with respect to this flow. (With the more common convention $\operatorname{Ad}(\Delta^{it})$, the rapidity is $-2\pi t$.)
 
-Equivalently, in physical units: the vacuum looks thermal at temperature $T_U = a/2\pi$ to a uniformly accelerated observer with proper acceleration $a$. This is the *Unruh effect*, here re-expressed as a KMS condition. The local algebra $\mathcal{A}(W_R)$ is type III$_1$, so there is no Gibbs density matrix — only the algebraic KMS condition.
+Equivalently, in physical units: the vacuum looks thermal at temperature $T_U = a/2\pi$ to a uniformly accelerated observer with proper acceleration $a$. This is the *Unruh effect*, here re-expressed as a KMS condition. Bisognano–Wichmann by itself identifies the modular dynamics; it does **not** classify the factor. Standard wedge algebras are type III$_1$ only after the separate type theorem and its hypotheses are supplied (Weeks 10 and 12). In that case there is no intrinsic Gibbs density matrix—only the algebraic KMS condition.
 
-This example is the prototype for everything in Block C and beyond. The KMS condition is the *only* characterization of thermal-equilibrium in type III, and Tomita-Takesaki + Bisognano-Wichmann tell us where to look. The boost is the canonical modular flow of the Rindler-wedge algebra.
+This example is the prototype for everything in Block C and beyond. The KMS condition is the standard algebraic characterization of thermal equilibrium when a Gibbs density matrix is unavailable. Tomita-Takesaki and Bisognano-Wichmann tell us where the relevant dynamics comes from: the boost is the canonical modular flow of the vacuum wedge algebra.
 
-**Example 4.2 (Two-sided Rindler — preview of TFD).** Let $\mathcal{A}(W_R), \mathcal{A}(W_L)$ be the algebras of the right and left Rindler wedges. The Minkowski vacuum, restricted to the *combined* algebra $\mathcal{A}(W_R) \otimes \mathcal{A}(W_L)$, is the *thermofield double* state of the boost generator. This will be the central example for Sem II Block 2 (CPW).
+**Example 4.2 (Two-sided Rindler — TFD as a regulated analogy).** The right- and left-wedge algebras commute, and under wedge duality they are commutants. Their common-boundary situation does **not** furnish a literal type-I tensor factorization $\mathcal{H}=\mathcal{H}_R\otimes\mathcal{H}_L$, nor a normal thermofield-double vector in such a factorization. A UV regulator, or a split inclusion with a collar between regions, produces a type-I approximation in which the familiar TFD formula is useful. In the continuum, the exact statement is instead the KMS/modular correlation structure of the vacuum. This distinction will matter in Semester II Block 2.
 
-**Example 4.3 (Tolman–Ehrenfest).** In a curved spacetime with a stationary observer, the local temperature $T_{loc}$ depends on position via the gravitational redshift. The KMS condition is *local*: the algebra of observables in a small region around the observer satisfies KMS at the local temperature, even though the global temperature is not uniform. This is the algebraic version of the Tolman–Ehrenfest law.
+**Example 4.3 (Tolman–Ehrenfest, scoped).** In a stationary spacetime, a global KMS state for the Killing-time evolution is read by stationary local thermometers at a redshifted temperature. In static coordinates this gives $T_{\mathrm{loc}}(x)\sqrt{-g_{00}(x)}=\text{constant}$. This does **not** say that the restriction to every small region is exactly KMS for an independently defined local flow; the KMS property belongs to a specified global automorphism group. The local temperature is the operational, proper-time reading of that same equilibrium state.
 
 ## 5. The trace as a KMS state at all temperatures
 
-**Proposition 5.1.** *Let $\tau$ be a faithful normal trace on a type II factor $\mathcal{M}$ (e.g., the hyperfinite II$_1$ factor). Let $\sigma_t = \mathrm{id}$ (the trivial automorphism group). Then $\tau$ is KMS at every $\beta \in \mathbb{R}$.*
+**Proposition 5.1 (proved below).** *Let $\tau$ be a faithful normal tracial **state** on a finite von Neumann algebra $\mathcal{M}$ (for example, a II$_1$ factor). Let $\sigma_t = \mathrm{id}$. Then $\tau$ is KMS for every strip width $\beta>0$. At $\beta=0$, the degenerate boundary condition is precisely traciality.*
 
 **Proof.** With $\sigma_t = \mathrm{id}$, the function $t \mapsto \tau(a\sigma_t(b)) = \tau(ab)$ is constant. By tracial property, $\tau(ab) = \tau(ba)$, which is the value at $t = 0$ — and at $t + i\beta$ — and at every $t$. The constant function $F(z) := \tau(ab)$ is trivially holomorphic on any strip and has boundary values $F(t) = \tau(ab) = \tau(a\sigma_t(b))$ and $F(t + i\beta) = \tau(ab) = \tau(ba) = \tau(\sigma_t(b)a)$. $\square$
 
 This is striking: the tracial state is KMS at *all* temperatures simultaneously, but with the trivial flow. Physically: type II factors with the trace flow have no notion of "thermal time" — the modular dynamics is degenerate. This is the algebraic content of "the trace is a uniform measure."
 
-> **Physical picture.** A cleaner way to say it: the trace is the *infinite-temperature* state. At $\beta = 0$ the Gibbs weight $e^{-\beta H}$ is flat regardless of $H$ — all microstates equally likely, all detailed-balance ratios equal to 1 ($\hat G_- = \hat G_+$ in the boxed identity of §2.2). A state that is "KMS at every $\beta$ for the trivial flow" and a state that is "KMS at $\beta = 0$" are the same degeneracy seen from two angles: when the strip width is zero, or the flow is trivial, the analyticity condition carries no dynamical information and only traciality $\omega(ab) = \omega(ba)$ remains. The hierarchy of types now acquires a thermal reading: type II = algebras that *can* reach infinite temperature (a trace exists); type III = algebras for which infinite temperature is unreachable — every state has nontrivial thermal structure, every clock ticks.
+> **Physical picture (heuristic).** A normalized trace is the finite-system analogue of an infinite-temperature state: at $\beta=0$ the Gibbs weight is flat and detailed-balance ratios become $1$. This analogy is exact for finite algebras with a tracial state, such as II$_1$ factors. A II$_\infty$ factor has a faithful normal semifinite trace but no normalized tracial state, so the slogan needs that qualification. Type III factors have no faithful normal semifinite trace at all; density-matrix thermodynamics must then be replaced by the KMS/modular formulation.
 
-In type III, by contrast, every *faithful normal* state has a non-trivial modular flow — non-trivial in the strong sense that it is *outer* (not implementable by any unitary inside $\mathcal{M}$). This is part of the Tomita-Takesaki theorem, applied to states represented by cyclic-separating vectors. The modular flow encodes a unique notion of thermal time intrinsic to the algebra-state pair.
+For a type III factor, the modular automorphism group of a faithful normal state cannot be trivial: a trivial modular group would make the state tracial. Its image in the outer automorphism group carries state-independent information, but one must not say that $\sigma_t^\omega$ is outer for every $t\ne0$. Exceptional inner times are measured by Connes' $T$-invariant; in a type III$_\lambda$ factor they form a non-zero discrete subgroup. Tomita-Takesaki constructs the flow; the finer inner/outer statement belongs to Connes' classification.
 
 ## 6. The Tomita-Takesaki preview
 
-**Theorem 6.1 (Preview of Tomita-Takesaki, full statement Week 5).** *Let $\mathcal{M}$ be a vN algebra and $\Omega$ a cyclic-separating vector for $\mathcal{M}$. Let $\omega(a) := \langle\Omega, a\Omega\rangle$ be the corresponding faithful normal state. There is a canonical positive operator $\Delta_\omega$ on the Hilbert space — the **modular operator** — and a canonical one-parameter automorphism group of $\mathcal{M}$,*
+**Theorem 6.1 (Preview of Tomita–Takesaki). [Stated only — full statement/proof refs in Week 5.]** *Let $\mathcal{M}$ be a vN algebra and $\Omega$ a cyclic-separating vector for $\mathcal{M}$. Let $\omega(a) := \langle\Omega, a\Omega\rangle$ be the corresponding faithful normal state. There is a canonical positive operator $\Delta_\omega$ on the Hilbert space — the **modular operator** — and a canonical one-parameter automorphism group of $\mathcal{M}$,*
 $$
 \sigma^\omega_t(a) \;:=\; \Delta_\omega^{-it}\, a\, \Delta_\omega^{it},
 $$
@@ -196,7 +202,7 @@ This theorem is the central result of Block B. We highlight three of its feature
 
 ### 6.1 The modular flow is canonical
 
-The modular flow depends only on $\mathcal{M}$ and $\omega$ — no Hamiltonian needs to be chosen externally. In QFT, this means: for any vacuum state on any local algebra, there is a canonical "thermal time" determined by the algebra-state pair.
+The modular flow depends only on $\mathcal{M}$ and $\omega$ — no Hamiltonian needs to be chosen externally. In QFT, whenever the vacuum is cyclic and separating for the chosen local algebra (equivalently, its vector state is faithful and normal there), the algebra–vacuum pair therefore determines a canonical modular flow. Reeh–Schlieder supplies precisely these hypotheses for the regions treated in Block C. Calling this flow physical “thermal time” is the further interpretation discussed in §6.4.
 
 The modular flow is *intrinsic* in the strongest sense: if $\mathcal{M}_1 \cong \mathcal{M}_2$ as vN algebras and $\omega_1, \omega_2$ are corresponding states, then the modular flows are isomorphic. There is no choice of Hamiltonian or any external structure required.
 
@@ -207,19 +213,19 @@ The construction goes through for type I, II, and III. In type I:
 - The modular flow on $\mathcal{B}(\mathcal{H}_R) \otimes 1$ is $\sigma^\omega_t(a) = \rho_\Omega^{-it}\, a\, \rho_\Omega^{it} = \mathrm{Ad}(e^{itK_\omega})(a)$, the Heisenberg evolution generated by the **modular Hamiltonian** $K_\omega := -\ln\rho_\Omega$ (a positive operator). One checks directly that $\omega(a\sigma_t(b))$ analytically continues to $\omega(\sigma_t(b)a)$ at $\beta = 1$, exactly as in §1.1.
 - For the maximally mixed state (= tracial state), $\rho_\Omega \propto 1$, so $K_\omega \propto 1$ and the modular flow is trivial.
 
-In type III: the modular flow is genuinely non-trivial; in fact, it is *outer* (cannot be implemented by an inner unitary in $\mathcal{M}$). Type III has a distinguished one-parameter family of dynamics built into the algebra-state pair.
+In type III, the modular flow is genuinely non-trivial. Its class modulo inner automorphisms is part of the structure used to classify type-III factors. Individual times may nevertheless be inner; this is why the $T$-invariant, rather than the blanket statement “every non-zero modular time is outer,” is the correct object.
 
 ### 6.3 It is non-trivial in type III
 
-When $\mathcal{M}$ is type III, the modular flow is genuinely outer. This is the Connes–Takesaki content: type III is the unique class of factors where the modular flow has a non-trivial *cohomological* structure (as a 1-cocycle on $\mathbb{R}$), and the cohomology class is the *Connes invariant* of the type III subtype.
+When $\mathcal{M}$ is type III, modular flow cannot be removed globally by choosing a trace: there is no faithful normal semifinite trace to provide a trivial modular reference state. Connes' cocycle theorem says that modular groups associated with two faithful normal states differ by an inner cocycle. Consequently their images in $\operatorname{Out}(\mathcal{M})$ define a state-independent flow. The kernel and spectral data of this outer flow enter the type-III classification.
 
-For type III$_1$ (the QFT case), the modular spectrum is $\mathbb{R}$ — the most non-trivial possible. This is what makes QFT inherently dynamical at the algebraic level, and why the [[2025-liu-lectures-entanglement-vna|holographic dictionary]] has such a rich structure.
+For type III$_1$, Connes' $S$-invariant is $\mathbb{R}_{\geq0}$; equivalently, the logarithmic modular spectrum is unrestricted. This is the strongest of the type-III spectral possibilities. The statement concerns the classification invariant, not a claim that modular flow by itself supplies the physical Hamiltonian of every QFT problem.
 
 ### 6.4 The "thermal time" interpretation
 
-Connes and Rovelli (1994) proposed the *thermal time hypothesis*: in a generally covariant quantum theory (gravity + matter), there is no preferred external time; rather, time emerges from the modular flow of the state we are in. The KMS condition is the "ground rule" — every physically reasonable state must be KMS for *some* flow at some temperature, and that flow is the time. In type III (the natural setting for QFT in gravity), the modular flow exists canonically; choose a state and time emerges.
+Connes and Rovelli (1994) proposed the *thermal time hypothesis*: in a generally covariant quantum theory, where no external time is preferred, the modular flow of a chosen state may identify the physically relevant time evolution. The mathematical input is exact: every faithful normal state is KMS at $\beta=1$ for its own modular group. The further identification of that group with observed physical time is a hypothesis, not a consequence of Tomita-Takesaki theory.
 
-This interpretation is philosophical but mathematically precise. We will use it as a guiding intuition throughout the rest of the course, especially in Block D and Sem II.
+We will use this as a guiding interpretation throughout the rest of the course, while keeping the exact modular theorem separate from the physical hypothesis.
 
 ## 7. Construction of a type III factor: Powers' construction
 
@@ -239,21 +245,25 @@ The state $\omega_\lambda$ can be written as a *Gibbs state* for the Hamiltonian
 
 Consider the inductive limit $\bigotimes_{n=1}^N M_2(\mathbb{C})$ as $N \to \infty$, in the state $\omega_\lambda^{\otimes\infty}$ — the consistent product state. The C\*-completion is the *uniformly hyperfinite C\*-algebra* (UHF) of type $2^\infty$.
 
-Form the GNS representation $\pi : (\text{UHF}) \to \mathcal{B}(\mathcal{H})$ of the state $\omega_\lambda^{\otimes\infty}$. The Hilbert space $\mathcal{H}$ is the completion of the UHF algebra in the inner product $\langle a, b\rangle = \omega_\lambda^{\otimes\infty}(b^*a)$. Take the WOT-closure $\mathcal{R}_\lambda := \pi(\text{UHF})''$.
+Form the GNS representation $\pi : (\text{UHF}) \to \mathcal{B}(\mathcal{H})$ of the state $\omega_\lambda^{\otimes\infty}$. In the course convention (inner products linear in the second slot), the Hilbert space $\mathcal{H}$ is the completion of the UHF algebra in the inner product $\langle a, b\rangle = \omega_\lambda^{\otimes\infty}(a^*b)$. Take the WOT-closure $\mathcal{R}_\lambda := \pi(\text{UHF})''$.
 
 This is the *Araki–Woods construction* (or, as Powers studied it, an *ITPFI* — infinite tensor product of finite type I — construction).
 
-> **Physical picture.** Think of $\mathcal{R}_\lambda$ as a half-infinite spin chain in which every site is independently thermalized: each $M_2(\mathbb{C})$ carries the same two-level Gibbs state at fixed temperature. Why does this change the *type*? Because the GNS construction builds the Hilbert space from the state (Week 1), and an infinite product state remembers its entanglement structure asymptotically. In the tracial case each site is purified by a maximally entangled pair, and the accumulated entanglement is "uniform" — coarse counting survives, and a trace exists in the limit. In the non-tracial case each site's purification is a *tilted* entangled pair with Schmidt ratio $\lambda$; infinitely many tilted pairs compound into a state whose Boltzmann-weight ratios $\lambda^n$ ($n \in \mathbb{Z}$) are visible at arbitrarily large $n$ and cannot be undone by any operation acting on finitely many sites. The thermal tilt becomes a property *of the algebra*, not of the state — which is precisely the Connes invariant $S(\mathcal{R}_\lambda) = \{0\}\cup\{\lambda^n\}$. The same mechanism, with a continuum of local "temperatures" replacing the single ratio $\lambda$, is how QFT local algebras end up type III$_1$: the vacuum is an infinitely-entangled product of tilted pairs across every scale (Week 12).
+> **Physical picture (heuristic, not the classification proof).** Think of $\mathcal{R}_\lambda$ as the weak closure of a half-infinite spin chain in which every site is placed in the same two-level Gibbs state. In a purification, each site is paired with an auxiliary copy and has Schmidt-weight ratio $\lambda$. Finite products only contain finitely many ratios; the infinite product contains $\lambda^n$ at arbitrarily large positive and negative $n$. Powers proved that the resulting factors for distinct parameters are non-isomorphic; Connes' later modular classification packages the distinction in the invariant
+> $$
+> S(\mathcal{R}_\lambda)=\{0\}\cup\{\lambda^n:n\in\mathbb{Z}\}.
+> $$
+> This is a useful model for how short-distance structure can determine algebraic type. It is **not** a derivation of the QFT type-III$_1$ result: that requires separate scaling and phase-space theorems, discussed in Week 12.
 
 ### 7.3 The Powers factor
 
-**Theorem 7.1 (Powers 1967).** *For $\lambda \in (0, 1)$, the algebra $\mathcal{R}_\lambda$ is a **hyperfinite type III$_\lambda$ factor**. Different values of $\lambda \in (0,1)$ give non-isomorphic algebras.*
+**Theorem 7.1 (Powers construction, in modern Connes notation). [Stated only.]** *For $\lambda \in (0, 1)$, the algebra $\mathcal{R}_\lambda$ is a **hyperfinite type III$_\lambda$ factor**. Different values of $\lambda \in (0,1)$ give non-isomorphic algebras.*
 
-**Theorem 7.2.** *For $\lambda = 1$ (the tracial case), $\mathcal{R}_1 = \mathcal{R}$, the hyperfinite II$_1$ factor.*
+**Theorem 7.2 (standard UHF construction). [Stated only.]** *For $\lambda = 1$ (the tracial case), $\mathcal{R}_1 = \mathcal{R}$, the hyperfinite II$_1$ factor.*
 
-**Why $\mathcal{R}_\lambda$ is type III for $\lambda \in (0,1)$ — the invariant-level argument.** Powers' theorem is delicate to prove from scratch and we treat it as a **black box** (full proof: Powers 1967; Bratteli-Robinson Vol. II §6.2; Takesaki Vol. III Ch. XII). What we *can* do honestly is identify the invariant that distinguishes $\mathcal{R}_\lambda$ from type II$_1$ and from the other type-III subtypes — without simulating a proof we have not given.
+**Why $\mathcal{R}_\lambda$ is type III for $\lambda \in (0,1)$ — the invariant-level argument.** Powers' theorem is delicate to prove from scratch and we treat it as a **black box** (full proof: Powers 1967; Bratteli–Robinson Vol. II §6.2; Takesaki Vol. II Ch. XII). What we *can* do honestly is compute the distinguished product-state modular data and then state the later invariant that distinguishes $\mathcal{R}_\lambda$ from type II$_1$ and from the other type-III subtypes—without simulating a classification proof we have not given.
 
-The relevant invariant is the **period of the modular flow**. Apply Theorem 6.1 (Tomita-Takesaki preview) to the GNS representation of $\omega_\lambda^{\otimes\infty}$. The cyclic-separating vector is the GNS vector $\Omega_\lambda$, the modular Hamiltonian on a single tensor factor is $K_{\omega_\lambda} = -\ln\rho_\lambda = \mathrm{diag}(0, -\log\lambda) + (\log(1+\lambda))\, I$, and the modular flow on that factor is
+The calculation available to us is the **period of the distinguished product-state modular flow**. It is state-level data, not by itself an isomorphism invariant. Apply Theorem 6.1 (Tomita–Takesaki preview) to the GNS representation of $\omega_\lambda^{\otimes\infty}$. The cyclic-separating vector is the GNS vector $\Omega_\lambda$, the modular Hamiltonian on a single tensor factor is $K_{\omega_\lambda} = -\ln\rho_\lambda = \mathrm{diag}(0, -\log\lambda) + (\log(1+\lambda))\, I$, and the modular flow on that factor is
 $$
 \sigma^{\omega_\lambda}_t(a) = \rho_\lambda^{-it}\, a\, \rho_\lambda^{it} = e^{itH}\, a\, e^{-itH}, \qquad H = \mathrm{diag}(0, -\log\lambda).
 $$
@@ -265,7 +275,7 @@ The modular flow on the full ITPFI $\mathcal{R}_\lambda$ is the infinite tensor 
 - **Type III$_1$** (the QFT case): the modular flow has *no* period — its spectrum is all of $\mathbb{R}$.
 - **Type III$_0$**: degenerate limit, no useful period.
 
-Powers' theorem says this finite, non-zero period — and the value of $\lambda$ — is enough to place $\mathcal{R}_\lambda$ in the *Connes type-III$_\lambda$ class*. In fact, distinct values of $\lambda \in (0,1)$ give *non-isomorphic* algebras: $\mathcal{R}_\lambda \cong \mathcal{R}_{\lambda'}$ iff $\lambda = \lambda'$.
+The finite, nonzero period is the visible clue. The actual conclusion that $\mathcal R_\lambda$ has type III$_\lambda$ is the quoted factor theorem together with Connes' later invariant theory; it cannot be inferred from the spectrum or period of one state alone. Distinct values of $\lambda \in (0,1)$ give non-isomorphic algebras: $\mathcal{R}_\lambda \cong \mathcal{R}_{\lambda'}$ iff $\lambda = \lambda'$.
 
 **On the absence of a faithful normal trace.** The structural fact that no faithful normal trace exists on $\mathcal{R}_\lambda$ for $\lambda \neq 1$ is a separate part of Powers' theorem and we do *not* prove it here. Naive arguments using the GNS vector state $\omega_\lambda^{\otimes\infty}$ as a "trace witness" fail — Murray-von Neumann equivalence of projections is internal to the algebra (existence of a partial isometry $u \in \mathcal{R}_\lambda$ with $u^* u = p$, $u u^* = q$), and a non-tracial vector state cannot certify or rule out such equivalences. The correct argument goes through the type classification of the relative commutant of the asymptotic tail algebra, and is in the references above.
 
@@ -279,25 +289,30 @@ A small change in the state — moving away from the tracial point — *qualitat
 
 By Tomita-Takesaki (Week 5), the modular automorphism group $\sigma^\omega_t$ on $\mathcal{R}_\lambda$ is a non-trivial one-parameter group. Its key invariant:
 
-**Theorem 7.3.** *On $\mathcal{R}_\lambda$, the modular flow is **periodic** with period $T_\lambda = \frac{2\pi}{|\log\lambda|}$. The modular flow on each tensor factor is the local Gibbs flow $\sigma^{\omega_\lambda}_t(a) = \rho_\lambda^{-it}\, a\, \rho_\lambda^{it}$ (in the $\beta = +1$ convention of §6.1).*
+**Theorem 7.3 (product-state modular flow). [Exact calculation.]** *For the distinguished product state on $\mathcal{R}_\lambda$, the modular flow is periodic with period $T_\lambda = \frac{2\pi}{|\log\lambda|}$. On each tensor factor it is the local Gibbs flow $\sigma^{\omega_\lambda}_t(a) = \rho_\lambda^{-it}\, a\, \rho_\lambda^{it}$ (in the $\beta = +1$ convention of §6).*
 
 The full modular flow is the infinite product of these local flows. At time $T_\lambda$, each local flow has completed one period, returning to the identity. So the global modular flow is also periodic with period $T_\lambda$.
 
-This identifies *Connes' invariant* of the type III$_\lambda$ factor with the period of the modular flow. The boundary cases:
-- $\lambda \to 1$: $T_\lambda \to \infty$, flow becomes trivial — recovers the trivial-flow type II$_1$ case.
-- $\lambda \to 0$: $T_\lambda \to 0$, flow becomes infinitely fast — the type III$_0$ case (limit is degenerate).
-- $\lambda$ between: nontrivial periodic flow.
+This computation exhibits the period of one particularly natural modular group. Powers' classification theorem then identifies the factor as type III$_\lambda$; in Connes' language, the corresponding outer-period subgroup is
+$$
+T(\mathcal{R}_\lambda)=\frac{2\pi}{|\log\lambda|}\mathbb{Z},
+$$
+while $S(\mathcal{R}_\lambda)=\{0\}\cup\lambda^{\mathbb{Z}}$. The endpoint behavior must be read carefully:
 
-For type III$_1$ (the QFT case), the modular flow has *no period*: its spectrum is all of $\mathbb{R}$. This is the algebraic content of "thermal time runs forever, with no return to the starting state." We will see this concretely in Week 10 (Bisognano–Wichmann gives the boost flow, which has no period since the boost generator has full real spectrum).
+- As $\lambda\to1$, the single-site state tends to the trace and the modular flow tends pointwise to the identity. At the endpoint $\lambda=1$, the GNS closure is type II$_1$.
+- As $\lambda\to0^+$, the period tends to zero, but this does **not** produce a type III$_0$ factor at $\lambda=0$. The endpoint state is pure and non-faithful; its GNS representation is irreducible and its weak closure is type I$_\infty$.
+- Type III$_0$ ITPFI factors require more general, typically non-stationary sequences of single-site weights. They are not the missing endpoint of the constant-$\lambda$ Powers family.
+
+For a type III$_1$ factor, the Connes $T$-invariant is trivial and the $S$-invariant is the full positive half-line. In the wedge example of Week 10, Bisognano–Wichmann gives an explicitly nonperiodic boost modular flow. That one calculation is consistent with the III$_1$ classification, but the separate type theorem is still needed.
 
 ### 7.5 Interpolating between the types
 
-The family $\mathcal{R}_\lambda$ for $\lambda \in (0, 1]$ provides a continuous (in some sense) interpolation between type II$_1$ and the various type III$_\lambda$. As $\lambda \to 1$:
+The formula for the product states varies continuously with $\lambda\in(0,1]$, but the resulting factor type does **not** vary continuously in any naive topology on isomorphism classes. As $\lambda \to 1$:
 - The state $\omega_\lambda$ approaches the trace.
 - The modular flow period goes to $\infty$.
 - The type changes from III$_\lambda$ to II$_1$.
 
-This continuous family is exceptional — most parameter changes in operator algebras are discrete (algebras either are or aren't isomorphic, with no in-between). The Powers family is a counterexample, showing that *types* can be parameterized continuously.
+Thus a continuous change in the local state parameter labels mutually non-isomorphic factors for $0<\lambda<1$ and reaches a different type at $\lambda=1$. This is the precise—and sufficiently surprising—statement; no topology on the space of factor types is being asserted.
 
 ## 8. Where this leaves us
 
@@ -305,7 +320,7 @@ We now have:
 - The KMS condition as the algebraic notion of thermal equilibrium.
 - The verification that KMS = Gibbs in finite dimensions.
 - The preview that Tomita-Takesaki, applied to a faithful normal state $\omega$ (equivalently, a cyclic-separating vector in a standard representation), produces the state's canonical modular flow $\sigma^\omega_t$; the state is KMS for this flow at $\beta = 1$ in our convention.
-- A concrete type III factor (the Powers factor) and its modular flow's period (Connes' invariant).
+- A concrete type III factor (the Powers factor), an exact calculation of its product-state modular period, and the later Connes invariants that turn the model data into algebra-level classification.
 - The thermal time interpretation: modular flow is the algebraic clock.
 
 Block B picks up exactly here: it constructs the modular operator $\Delta$ and modular conjugation $J$ from a cyclic-separating vector, proves Tomita-Takesaki, and develops the Connes cocycle and Araki-Uhlmann relative entropy. Block C applies all this to QFT.
@@ -324,7 +339,7 @@ Let $\mathcal{H} = \mathbb{C}^2$, $H = \mathrm{diag}(0, E)$ with $E > 0$, $\sigm
 (b) Show that any other state on $M_2(\mathbb{C})$ that satisfies KMS at $\beta$ for this $\sigma_t$ must equal $\omega_\beta$. (*Hint:* follow the matrix-units argument of Theorem 3.1's $(\Rightarrow)$ direction with $H = \mathrm{diag}(0, E)$ — diagonal weighting from $a = E_{12}, b = E_{21}$, off-diagonal vanishing from $a = E_{12}, b = E_{22}$.)
 
 **2. The trace as KMS for the trivial flow.**
-On $M_n(\mathbb{C})$ with $\sigma_t = \mathrm{id}$, verify the KMS condition for the normalized trace $\tau$ at every $\beta \in \mathbb{R}$. Specifically: identify the function $F_{a,b}(z)$ explicitly and verify the boundary conditions.
+On $M_n(\mathbb{C})$ with $\sigma_t=\mathrm{id}$, verify the KMS condition for the normalized trace $\tau$ at every $\beta>0$. Identify $F_{a,b}(z)$ explicitly and verify both boundary values. Then discuss $\beta=0$ only as the degenerate tracial limit of the strip condition; negative $\beta$ is outside the convention adopted in this course.
 
 **3. KMS detailed balance.**
 On $M_n(\mathbb{C})$ with $H, \sigma_t = \mathrm{Ad}\,e^{itH}$:
@@ -336,33 +351,81 @@ For the Powers state $\omega_\lambda^{\otimes\infty}$ on $\bigotimes_{n=1}^\inft
 (a) Find specific $a, b \in \mathcal{A}_\infty$ with $\omega_\lambda^{\otimes\infty}(ab) \neq \omega_\lambda^{\otimes\infty}(ba)$, demonstrating non-traciality.
 (b) Compute $\omega_\lambda^{\otimes\infty}(a\sigma_t(b))$ for $a, b$ on a single tensor factor and identify the periodic oscillation period $T_\lambda = 2\pi/|\log\lambda|$.
 
-**5. Connes invariant as a periodicity.**
+**5. Product-state modular period and its endpoint.**
 For the Powers factor $\mathcal{R}_\lambda$, the modular period is $T_\lambda = 2\pi/|\log\lambda|$. Verify:
 (a) $T_\lambda \to \infty$ as $\lambda \to 1$ (i.e., the flow becomes trivial).
 (b) $T_\lambda \to 0$ as $\lambda \to 0$ (i.e., the flow becomes very fast).
 (c) $T_{1/2} = 2\pi/\log 2 \approx 9.06$. Compute explicitly the modular flow at $t = T_{1/2}/4 \approx 2.26$ on the simplest non-trivial element (e.g., a single-site $\sigma_x$).
+(d) Explain why (b) is only an asymptotic statement inside the family $0<\lambda<1$: at $\lambda=0$ the product state is pure and non-faithful, and its GNS weak closure is type I$_\infty$, not type III$_0$.
 
 **6. KMS in QFT (warmup for Bisognano–Wichmann).**
-Anticipating Week 10: consider a free 2D massless scalar field in the right Rindler wedge. The vacuum two-point function is $W(x,y) \propto \log|(x-y)^2|$ (with appropriate $i\epsilon$). The boost generator on the wedge is $K = \int_0^\infty x^1 T^{00}(x^1) dx^1$.
+Anticipating Week 10, consider the derivative field of a free two-dimensional massless scalar—or, equivalently for this formal exercise, restrict scalar smearings to test functions of zero integral so that the infrared zero mode is absent. The vacuum two-point distribution is logarithmic, with the appropriate $i0$ prescription. In units $\hbar=c=1$, the formal **right-wedge modular Hamiltonian density** on the $t=0$ half-line is $2\pi\int_0^\infty x^1T^{00}(0,x^1)\,dx^1$. Denote the standard **global** boost generator by $K$, so that the unitary below is $U(B_s)=e^{isK}$. On right-wedge observables the one-sided stress-tensor expression and the global boost implementer induce the same geometric automorphism, but they are not the same global operator formula.
 (a) Compute $W(x, y)$ for $x, y$ in the wedge.
-(b) Verify formally that the boost flow $\sigma_t = \mathrm{Ad}(e^{2\pi i t K})$ acts on Weyl operators by $W(f) \mapsto W(f \circ B_{2\pi t})$ where $B_s$ is the boost.
+(b) With $U(B_s)=e^{isK}$ and scalar covariance $U(B_s)\phi(f)U(B_s)^*=\phi(f\circ B_{-s})$, verify formally that
+$$
+\sigma_t(W(f))=W(f_t),\qquad f_t(x)=f(B_{-2\pi t}x).
+$$
 (c) Check that the vacuum state, restricted to wedge observables, is KMS at $\beta = 1$ for this flow. (*Just outline; full details Week 10.*)
 
 **Starred problems.**
 
 **7\*. The KMS condition determines the dynamics.**
-Suppose $\omega$ is a faithful state on $\mathcal{B}(\mathcal{H})$ ($\dim\mathcal{H} < \infty$) and $\omega$ is KMS at $\beta = 1$ for some one-parameter group $\sigma_t$. Show that $\sigma_t$ is uniquely determined by $\omega$. (*Hint:* identify $\sigma_t = \mathrm{Ad}\,e^{itK}$ with $K$ determined by $\omega$ via $\rho = e^{-K}$.) State the analogous result on a finite-dim type II factor.
+Suppose $\omega$ is a faithful state on $\mathcal{B}(\mathcal{H})$ ($\dim\mathcal{H} < \infty$) and $\omega$ is KMS at $\beta = 1$ for a one-parameter automorphism group $\sigma_t$. Show that $\sigma_t$ is uniquely determined by $\omega$. (*Hint:* if $\omega(a)=\operatorname{Tr}(\rho a)$, compare the KMS condition with $\sigma_t^\omega(a)=\rho^{-it}a\rho^{it}$; adding a scalar to the implementing Hamiltonian changes no automorphism.) Explain why there is no “finite-dimensional type-II factor” analogue: every finite-dimensional factor is type I. Then state the von Neumann algebraic uniqueness theorem for the modular group of a faithful normal state.
 
-**8\*. KMS implies passivity (Pusz–Woronowicz).**
-A state $\omega$ on $\mathcal{B}(\mathcal{H})$ is *passive* (with respect to $\sigma_t = \mathrm{Ad}\,e^{itH}$) if $\omega(U^* H U) \ge \omega(H)$ for every unitary $U$ — i.e., one cannot extract energy from $\omega$ by a unitary process.
+**8\*. KMS and complete passivity (Pusz–Woronowicz).**
+For part (a), work in finite dimension so that no energy-domain issue is hidden. A state $\omega$ on $\mathcal{B}(\mathcal{H})$ is *passive* with respect to $\sigma_t = \mathrm{Ad}\,e^{itH}$ if $\omega(U^* H U) \ge \omega(H)$ for every unitary $U$—one cannot extract energy from $\omega$ by a cyclic unitary process.
 (a) Show that the Gibbs state at any $\beta > 0$ is passive.
-(b) State (without proof) the converse Pusz–Woronowicz theorem: a faithful normal passive state is KMS at *some* $\beta \ge 0$. Look up the proof for reference.
+(b) A state is *completely passive* if every tensor power is passive for the sum Hamiltonian. State, without proof, the Pusz–Woronowicz theorem: completely passive states are KMS states (including the tracial $\beta=0$ case) or ground states, under the theorem's dynamical hypotheses. Explain why passivity of a single copy is weaker and does not imply KMS.
 
 **9\*. Modular flow on a tensor product.**
 Verify that for $\mathcal{M} = M_n(\mathbb{C})$ and a generic non-tracial state $\omega = \omega_\rho$, the modular flow in the course convention ($\sigma^\omega_t = \mathrm{Ad}(\Delta^{-it})$, §6.1) is $\sigma^\omega_t(a) = \rho^{-it} a \rho^{it}$. Compute the period (if any) of this flow for $\rho = \mathrm{diag}(\rho_1, \ldots, \rho_n)$.
 
-**10\*\* (Optional, hard).** Read the original Powers paper (1967) and reproduce the proof that $\mathcal{R}_\lambda$ for distinct $\lambda \in (0, 1)$ are non-isomorphic. The key invariant is the *Connes invariant* $S(\mathcal{M})$, computable from the modular spectrum $\sigma(-\log\Delta)$. In fact, $S(\mathcal{R}_\lambda) = \{0\} \cup \{\lambda^n : n \in \mathbb{Z}\}$ — a discrete set when $\lambda \in (0,1)$, vs. all of $\mathbb{R}_+$ for type III$_1$.
+**10\*\* (Optional, hard).** Read Powers' original construction and then a modern account of Connes' later classification. Compute the product-state modular spectrum and use the later $S$-invariant
+$$
+S(\mathcal R_\lambda)=\{0\}\cup\{\lambda^n:n\in\mathbb Z\}
+$$
+to distinguish the factors for different $\lambda\in(0,1)$. Formulate $S$ using spectra of $\Delta$—or, equivalently, exponentials of the corresponding $\log\Delta$ spectral data. Do not attribute the Connes invariant, introduced after 1967, to Powers' original proof.
+
+## Self-study answer checkpoints
+
+These checkpoints cover the core calculations. The starred problems remain source-led extensions, particularly complete passivity and the Powers/Connes classification step.
+
+1. **Gibbs KMS state.** With $p_0=Z^{-1}$ and $p_1=e^{-\beta E}Z^{-1}$,
+   $$
+   F_{\sigma_x,\sigma_y}(t)
+   =i p_0e^{iEt}-i p_1e^{-iEt}.
+   $$
+   At $t+i\beta$, the relations $p_0e^{-\beta E}=p_1$ and $p_1e^{\beta E}=p_0$ give the reversed boundary ordering. Applying KMS to matrix units forces all off-diagonal state entries to vanish and the diagonal ratio $p_1/p_0=e^{-\beta E}$, hence the Gibbs state is unique.
+
+2. **Trivial flow.** Take the constant entire function $F_{a,b}(z)=\tau(ab)$. Its upper boundary is $\tau(ba)=\tau(ab)$. This works for every $\beta>0$; $\beta=0$ is only the collapsed tracial limit, not a positive-width KMS strip.
+
+3. **Detailed balance.** Matrix units between energy eigenspaces give
+   $$
+   \frac{\omega(P_E)}{\omega(P_{E'})}=e^{-\beta(E-E')}.
+   $$
+   Off-diagonal matrix elements vanish between distinct energies, while within degenerate eigenspaces KMS forces the normalized trace. Thus $\rho=Z^{-1}e^{-\beta H}$ block by block.
+
+4. **Powers non-traciality.** At one site choose $a=E_{12}$ and $b=E_{21}$. Then $\omega(ab)=1/(1+\lambda)$ while $\omega(ba)=\lambda/(1+\lambda)$. Moreover,
+   $$
+   \omega\!\left(a\,\sigma_t(b)\right)
+   =\frac{e^{-it\log\lambda}}{1+\lambda},
+   $$
+   whose fundamental period is $2\pi/|\log\lambda|$.
+
+5. **Period and endpoints.** $T_\lambda\to\infty$ as $\lambda\to1$ and $T_\lambda\to0$ as $\lambda\to0^+$. For $\lambda=1/2$, $T=2\pi/\log2$ and
+   $$
+   \sigma_{T/4}(\sigma_x)=\sigma_y.
+   $$
+   At $\lambda=0$ the state loses faithfulness and the GNS closure is type I$_\infty$; there is no type-III$_0$ endpoint.
+
+6. **Wedge KMS preview.** In the infrared-safe two-dimensional theory the two-point distribution is the logarithmic Wightman boundary value with the time prescription $x^0-y^0-i0$. Scalar covariance gives
+   $$
+   \sigma_t(W(f))=W(f\circ B_{-2\pi t}).
+   $$
+   Boost analyticity continues the correlator through the modular strip, and the upper boundary reverses the two wedge observables. This is the check; Week 10 supplies the theorem and its domain control.
+
+**Wiki connections.** [[2025-liu-lectures-entanglement-vna|Liu's lectures on entanglement and von Neumann algebras]]
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block A. Last revised 2026-06-11. End of Block A — the foundations of operator algebras.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block A. Last revised 2026-08-24. End of Block A — the foundations of operator algebras.*

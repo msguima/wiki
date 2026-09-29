@@ -2,7 +2,7 @@
 title: "Appendix C — Modular Theory Reference Sheet"
 type: appendix
 course: syllabus
-modified: 2026-06-11
+modified: 2026-08-24
 ---
 
 # Modular Theory Reference Sheet
@@ -121,15 +121,22 @@ $$
 
 **Properties.**
 - $S(\omega\|\phi) \ge 0$, with equality iff $\omega = \phi$ (Klein's inequality + spectral theorem).
-- Monotone under restriction to subalgebras: $S(\omega|_\mathcal{N}\|\phi|_\mathcal{N}) \le S(\omega|_\mathcal{M}\|\phi|_\mathcal{M})$ for $\mathcal{N} \subset \mathcal{M}$.
+- Monotone under restriction to subalgebras: $S(\omega|_{\mathcal{N}}\|\phi|_{\mathcal{N}}) \le S(\omega|_{\mathcal{M}}\|\phi|_{\mathcal{M}})$ for $\mathcal{N} \subset \mathcal{M}$.
 
 ## C.9 Bisognano–Wichmann (Week 10)
 
-For the right Rindler wedge $W_R = \{x: x^1 > |x^0|\}$ in a Wightman QFT, with vacuum $|0_M\rangle$:
+For the right Rindler wedge $W_R=\{x:x^1>|x^0|\}$ in a Wightman QFT, with
+vacuum $|0_M\rangle$:
 $$
 \Delta_{W_R} = e^{-2\pi K}, \qquad J_{W_R} = \Theta \cdot R_\perp(\pi),
 $$
-where $K$ is the boost generator and $\Theta$ is the antiunitary CPT operator. The modular flow:
+where $K$ is the boost generator and the displayed expression for $J$ is the
+neutral scalar form; fields with spin, charge, or braid statistics require the
+usual extra factors. We define
+$$
+U(\Lambda^{\mathrm{boost}}(u))=e^{iuK}.
+$$
+The modular flow is therefore
 $$
 \sigma_t^{W_R}(a) = U(\Lambda^{\mathrm{boost}}(2\pi t))\, a\, U(\Lambda^{\mathrm{boost}}(2\pi t))^*.
 $$
@@ -139,7 +146,9 @@ Modular time $t$ corresponds to boost rapidity $+2\pi t$. Unruh temperature $T_U
 
 - **Type II$_1$**: tracial state has $\Delta = 1$, $\sigma_t = \mathrm{id}$, $S(\mathcal{M}) = \{1\}$.
 - **Type III$_\lambda$ ($\lambda \in (0, 1)$)**: modular flow on Powers state is periodic, $T_\lambda = 2\pi/|\log\lambda|$, $S(\mathcal{M}) = \{0\}\cup\{\lambda^n: n \in \mathbb{Z}\}$.
-- **Type III$_1$**: modular spectrum is full $\mathbb{R}$ on every faithful normal state, $S(\mathcal{M}) = [0, \infty)$.
+- **Type III$_1$**: $S(\mathcal{M})=[0,\infty)$. Equivalently, for a
+  faithful normal state the logarithmic modular generator has full real
+  spectrum; the spectrum of $\Delta$ itself is $[0,\infty)$.
 
 ## C.11 Use in the Course
 
@@ -150,27 +159,27 @@ Modular time $t$ corresponds to boost rapidity $+2\pi t$. Unruh temperature $T_U
 | 7 | $\Delta_{\omega,\phi}$, $(D\omega/D\phi)_t$, $S(\omega\Vert\phi)$ |
 | 9 | Reeh–Schlieder licenses Tomita–Takesaki for local algebras |
 | 10 | Bisognano–Wichmann: $\Delta = e^{-2\pi K}$ on wedges |
-| 11 | Modular structure ⇒ Bell–CHSH saturation |
+| 11 | Modular tools in the hypothesis-sensitive Summers--Werner analysis; explicit Weyl lower bounds |
 | 12 | S-invariant classifies type III subtypes |
 | 13 | Crossed product by $\sigma^\omega$ |
-| 14 | Dressed entropy + modular boundary term $\omega(K_\phi) - \phi(K_\phi)$ |
-| 15 | TFD modular operator $\Delta = e^{-\beta(H_R - H_L)}$ |
+| 14 | Core entropy with a fixed trace + the finite-dimensional boundary-term identity |
+| 15 | One-sided TFD modular operator $\Delta_R=e^{-\beta(H_R-H_L)}$ in the type-I purification model |
 
 ## C.12 Math ↔ Physics Dictionary
 
 | Modular object | Physical meaning |
 |---|---|
-| Cyclic vector $\Omega$ | Fully entangled reference state; local ops reach everything (Reeh–Schlieder) |
-| Separating vector | No local annihilator; faithful state; "vacuum is nowhere empty" |
+| Cyclic vector $\Omega$ | The orbit $\mathcal M\Omega$ is dense. In a finite bipartite model this corresponds to full Schmidt support; in AQFT it expresses the Reeh--Schlieder reach of local operations, not a tensor-factor claim. |
+| Separating vector | No nonzero $a\in\mathcal M$ annihilates $\Omega$; equivalently, the induced vector state is faithful on $\mathcal M$. |
 | Tomita operator $S$ | State-flip $a \to a^*$; its non-isometry encodes the state's thermal tilt |
 | $J$ (modular conjugation) | Mirror into the commutant; CPT × rotation for wedges; system ↔ environment duality |
 | $\Delta$ (modular operator) | Boltzmann-weight ratios of the state; $e^{-2\pi K}$ for wedges |
-| $\sigma_t^\omega$ (modular flow) | Intrinsic thermal time of $(\mathcal{M}, \omega)$; boost for wedges; ADM time at large $N$ |
-| $K = -\log\Delta$ | Modular Hamiltonian; boost generator (×$2\pi$); $\beta(H_R - H_L)$ for TFD |
+| $\sigma_t^\omega$ (modular flow) | Canonical state-dependent automorphism group; a boost for wedges and identified with an ADM flow only in the specified holographic construction. Calling it "thermal time" is an interpretation. |
+| $K_{\mathrm{GNS}}=-\log\Delta$ | Modular generator on standard form; it equals $2\pi K_{\rm boost}$ for the right wedge and $\beta(H_R-H_L)$ in the regulated TFD model. The one-sided type-I generator $-\log\rho_R$ is related but acts on a different space. |
 | KMS at $\beta = 1$ | Equilibrium; imaginary-time periodicity; detailed balance $\hat G_- = e^{-\beta\nu}\hat G_+$ |
 | Spectrum of $\Delta$ | Thermal fingerprint; its state-independent core is the Connes invariant (type) |
 | Connes cocycle $(D\omega/D\phi)_t$ | Noncommutative Radon–Nikodym derivative; dressing converting one equilibrium dynamics into another |
-| $S(\omega\Vert\phi)$ | Optimal distinguishability rate (quantum Stein); finite in type III |
-| Crossed product $\mathcal{M}\rtimes_\sigma\mathbb{R}$ | Algebra of clock-dressed (relational/gauge-invariant) observables |
-| Dressed trace $\hat\tau$ | Counting measure restored by gauging time; unique up to scale |
-| Dressed entropy $S_{\mathrm{vN}}(\hat\rho)$ | Generalized entropy $A/4G_N + S_{\mathrm{out}}$ in holographic settings |
+| $S(\omega\Vert\phi)$ | Araki relative entropy; an operational distinguishability rate under the hypotheses of an appropriate quantum Stein theorem; intrinsic in type III but possibly $+\infty$ |
+| Crossed product $\mathcal{M}\rtimes_{\sigma^\omega}\mathbb{R}$ | The continuous core in the abstract theory. It becomes an algebra of relational or gravitationally dressed observables only after a model-specific physical identification. |
+| Canonical trace $\hat\tau$ | Faithful normal semifinite trace on the continuous core, characterized up to scale and obeying $\hat\tau\circ\theta_r=e^{-r}\hat\tau$. |
+| Core entropy $S_{\hat\tau}(h)$ | Semifinite entropy relative to a fixed trace. Its identification with $A/(4G_N)+S_{\mathrm{out}}$ requires the Witten/CPW holographic state construction. |

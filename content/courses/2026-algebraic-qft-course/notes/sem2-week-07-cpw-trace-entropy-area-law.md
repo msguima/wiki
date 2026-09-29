@@ -1,320 +1,471 @@
 ---
-title: "Sem II Week 7 — Trace, Entropy, and the Area Law (CPW Mini-Calc 2)"
+title: "Sem II Week 7 — CPW Trace Entropy and Generalized Entropy"
 type: lecture-notes
 course: syllabus
 semester: 2
 week: 7
 block: 2
-duration: 4 hours (computational lecture + problem session)
-prerequisites: Sem II Wks 5–6 (TFD, CPW dressing); Sem I Wks 13–14 (crossed product, dressed entropy)
-target_paper: "Chandrasekaran, Penington, Witten (CPW), arXiv:2209.10454 §4"
-modified: 2026-06-11
+duration: "master dossier: 4 hours of material; classroom core: 2-hour seminar + 1-hour office/self-study"
+prerequisites: Sem II Wks 5–6; Sem I Wks 13–14
+target_paper: "Chandrasekaran, Penington, Witten, arXiv:2209.10454 §§2.2–3"
+modified: 2026-08-24
 ---
 
-# Sem II Week 7 — Trace, Entropy, and the Area Law (CPW Mini-Calc 2)
+# Sem II Week 7 — CPW Trace Entropy and Generalized Entropy
 
-> *Last week we built the CPW dressed algebras $\hat{\mathcal{A}}_R, \hat{\mathcal{A}}_L$ for the two-sided eternal black hole. This week we compute the **dressed entropy** of the TFD vacuum and a coherent state in the free-field Rindler-Rindler analog, recovering the gravitational area law of the eternal-BH horizon. Like the Block 1 Wk 4 mini-calc, but **with both sides at once**: the trace is on the joint dressed algebra; the divergent part of the dressed vacuum entropy reproduces the **bifurcation-surface area** divided by a UV regulator (the eternal-BH analog of $A_{\mathrm{horizon}}/(4G_N)$); the coherent-state difference reproduces $-S(\omega_\alpha\|\omega_{\mathrm{TFD}}) + \mathcal{B}(\omega_\alpha, \omega_{\mathrm{TFD}})$ via Block D Theorem 3.1. The structural picture is "Witten 2022 with two sides." This is the CPW analog of Block 1's mini-calc.*
+> *The type II$_\infty$ trace makes entropy possible, but CPW's main result is not merely that the entropy exists. They construct a controlled class of semiclassical states, compute the corresponding density in the right algebra, and show that its trace entropy agrees with the generalized entropy of the black-hole bifurcation surface up to a state-independent constant. The energy-distribution entropy, the bulk relative entropy, and the horizon-area response enter separately. This separation is the calculation.*
 
 ## 0. Reading
 
 **Primary:**
-- Chandrasekaran, Penington, Witten (CPW), arXiv:2209.10454, **§4** (the dressed entropy and generalized entropy identification).
-- Sem II Wk 6 (the CPW dressed algebra).
-- Sem II Wk 3 (Block 1 derivation of the single-sided dressed entropy = generalized entropy).
 
-**Secondary:**
-- Witten, arXiv:2112.12828, §4.
-- Liu, arXiv:2510.07017, §6.
+- CPW, “Large $N$ algebras and generalized entropy,” arXiv:2209.10454, §§2.2–3.
+- Sem II Week 6 for $\mathcal N_L=\mathcal N_R'$.
 
-**Optional research reading:**
-- Faulkner, Lewkowycz, Maldacena, arXiv:1307.2892 (bulk relative entropy = boundary Araki-Uhlmann).
-- Jafferis, Lewkowycz, Maldacena, Suh, arXiv:1512.06431 (JLMS: bulk-boundary entropy relation).
+**Background:**
 
-## 1. Setup recap
+- Witten, arXiv:2112.12828, §§3.4–3.5.
+- Wall, arXiv:1105.3445, for horizon generalized entropy and relative entropy.
+- Bombelli et al. and Srednicki for the separate regulated matter area law.
 
-From Week 6:
+### 0.1 How to use this master dossier
 
-- $\hat{\mathcal{A}}_R = \mathcal{A}_R \rtimes_{\sigma^{\mathrm{TFD}}}\mathbb{R}$ on $\mathcal{H}_R \otimes \mathcal{H}_L \otimes L^2(\mathbb{R}_s)$, type II$_\infty$.
-- $\hat{\mathcal{A}}_L$ analogous; commutes with $\hat{\mathcal{A}}_R$.
-- Single clock $L^2(\mathbb{R}_s)$ corresponding to bulk-boost direction.
-- Trace formula: $\hat\tau_R(a) = \int e^{-\beta_H s}\langle\mathrm{TFD} \otimes \delta_s|a|\mathrm{TFD}\otimes\delta_s\rangle ds$.
+- **Classroom core:** §§1–4.2 and Problems 1–5. This route derives the three-term CPW entropy formula and shows exactly where the horizon equation enters.
+- **Full derivation / self-study:** §§4.3–8 and Problems 6–10. This route reconstructs the density, checks inner-unitary cancellation, audits right/left counting, and keeps the ADM wavepacket scale separate from the matter UV cutoff.
+- **Research extension:** Problems 11–12, using §§3–4 and 8 as the source-comparison spine. This route turns the chapter into a source-scope map suitable for a written exposition of CPW and its relation to Witten.
 
-This week we compute the dressed entropy explicitly.
+The guiding discipline is to keep three ledgers side by side: operator algebra, semiclassical gravity, and state preparation. The final equality is persuasive only when no term silently moves from one ledger to another.
 
-## 2. The dressed entropy and Witten's identification (recap)
+## 1. Algebraic setup
 
-From Block 1 Week 3:
-
-**Witten's claim (CPW §4 in two-sided form).** *In the holographic large-$N$ setting, the dressed entropy on $\hat{\mathcal{A}}_R$ in the TFD vacuum equals the bulk generalized entropy:*
-$$
-\boxed{S_{\mathrm{vN}}(\hat\rho_{\mathrm{TFD}}) = \frac{A_{\mathrm{horizon}}}{4G_N} + S_{\mathrm{out}} + \mathrm{const},}
-$$
-*where $A_{\mathrm{horizon}}$ is the area of the bifurcation surface (the BH horizon at $r = r_h, t = 0$).*
-
-For two-sided CPW, both $\hat{\mathcal{A}}_R$ and $\hat{\mathcal{A}}_L$ separately have dressed entropies of this form — with the **same** horizon area (the bifurcation surface is shared between the two sides).
-
-### 2.1 Structural derivation: same as Block 1
-
-The argument from Block 1 Week 3 works **identically** in the two-sided setting:
-
-1. **Block D dressed-entropy formula** (Sem I Wk 14 Theorem 3.1):
-$$
-S_{\mathrm{vN}}(\hat\rho_\omega) - S_{\mathrm{vN}}(\hat\rho_\phi) = -S(\omega\|\phi) + \mathcal{B}(\omega, \phi),
-$$
-with $\mathcal{B}(\omega, \phi) = \omega(K_\phi) - \phi(K_\phi)$, $K_\phi = -\log\rho_\phi$.
-
-2. **Modular Hamiltonian in TFD** = $\beta_H H_R$ (when restricted to $\mathcal{A}_R$ alone; see Wk 5 §3.3 and Wk 6 §2.2).
-
-3. **Modular boundary term**: $\mathcal{B}(\omega, \omega_{\mathrm{TFD}}) = \beta_H \cdot \big(\omega(H_R) - \omega_{\mathrm{TFD}}(H_R)\big)$.
-
-4. **Holographic identification** (Witten / CPW): the modular boundary term equals $\delta(A/(4G_N))$ via the first law of BH thermodynamics; the Araki–Uhlmann piece equals $\delta S_{\mathrm{out}}$ via FLM.
-
-Integrating along a path of states gives $S_{\mathrm{vN}} = A/(4G_N) + S_{\mathrm{out}} + \mathrm{const}$.
-
-**The two-sided structure adds:**
-
-- The horizon involved is the *bifurcation surface* (where both sides meet).
-- The bulk Hilbert space includes both interiors (regions II and IV) — these contribute to $S_{\mathrm{out}}$.
-- There are *two* dressed entropies, one per side. By the two-sided structure, they have the same divergent area piece (same horizon) but possibly different bulk-entropy pieces (e.g., different excitations on each boundary).
-
-## 3. The free-field two-sided trace
-
-We now do the explicit computation in the free-field Rindler-Rindler analog. This is **Mini-Calc 2** of the skeleton.
-
-### 3.1 The dressed Hilbert space
-
-Setup (from Week 6 §6): 4D massless free scalar on Minkowski space; $\mathcal{A}(W_R), \mathcal{A}(W_L)$ on Fock space $\mathcal{F}$; Minkowski vacuum is the TFD of the boost; modular Hamiltonian $2\pi(K_R - K_L)$; modular flow on $\mathcal{A}(W_R)$ is the boost.
-
-The dressed algebra: $\hat{\mathcal{A}}(W_R)$ on $\mathcal{F} \otimes L^2(\mathbb{R}_s)$.
-
-### 3.2 The trace
-
-The trace formula (Block 1 Wk 4 §3):
-$$
-\hat\tau_R(a) = \int_{-\infty}^\infty e^{-2\pi s}\,\langle 0_M\otimes\delta_s\,|\,a\,|\,0_M\otimes\delta_s\rangle\,ds.
-$$
-Same as Block 1; the only change is the interpretation: $|0_M\rangle$ now plays the role of the two-sided TFD, not just a single-sided thermal state.
-
-For $a = \pi_R(W(f)) \otimes g(X)$ with $f \in W_R$ and $g$ bounded measurable:
-$$
-\hat\tau_R(\pi_R(W(f)) \otimes g(X)) = \langle 0_M|W(f)|0_M\rangle \cdot \int e^{-2\pi s} g(s)\,ds.
-$$
-
-This factorizes into Weyl-vacuum-expectation (which is the Gaussian $e^{-W(f, f)/2}$) and clock integral. Semifinite, not finite.
-
-### 3.3 The same trace for both sides
-
-By the $\mathbb{Z}_2$ symmetry of the eternal-BH geometry, the left-side trace is structurally identical:
-$$
-\hat\tau_L(b) = \int_{-\infty}^\infty e^{-2\pi s}\,\langle 0_M\otimes\delta_{-s}\,|\,b\,|\,0_M\otimes\delta_{-s}\rangle\,ds.
-$$
-(The $-s$ comes from the opposite-direction modular flow on $\mathcal{A}_L$; equivalently, the clock variable runs backward.)
-
-For computational purposes in the symmetric case (both sides excited symmetrically), the two traces give the same numerical answer.
-
-## 4. The dressed TFD entropy: area law
-
-### 4.1 The dressed TFD state
-
-Define $\hat\omega_{\mathrm{TFD}}$ on $\hat{\mathcal{A}}(W_R)$:
-$$
-\hat\omega_{\mathrm{TFD}}(a) := \langle 0_M \otimes h\,|\,a\,|\,0_M \otimes h\rangle,
-$$
-with $h \in L^2(\mathbb{R}_s)$ normalized.
-
-### 4.2 The density relative to the trace
-
-By the same calculation as Block 1 Wk 4 §4.2, the density of $\hat\omega_{\mathrm{TFD}}$ relative to $\hat\tau_R$ is
-$$
-\hat\rho_d^{\mathrm{TFD}} = 1_\mathcal{F} \otimes |h(s)|^2\,e^{2\pi s}.
-$$
-
-### 4.3 Dressed TFD entropy
-
-By the formula derived in Block 1 Wk 4 §4.4:
-$$
-S_{\mathrm{vN}}(\hat\omega_{\mathrm{TFD}}) = S_{\mathrm{clock}}(h) - 2\pi\,\langle X\rangle_h,
-$$
-where $S_{\mathrm{clock}}(h) = -\int|h(s)|^2\log|h(s)|^2 ds$ is the Shannon entropy of the clock and $\langle X\rangle_h = \int s|h(s)|^2 ds$ is the clock-position expectation.
-
-**Identification with the gravitational area law.** The term $-2\pi\langle X\rangle_h$ is the **modular-Hamiltonian expectation** in the dressed vacuum. In the gravitational case (with $2\pi \to \beta_H$ and the corresponding rescaling), this becomes
-$$
--\beta_H\,\langle X\rangle_h \;\xrightarrow{\text{holographic}}\; -\delta\!\left(\frac{A_{\mathrm{horizon}}}{4G_N}\right).
-$$
-
-(Sign caveats: the absolute sign depends on the choice of clock state; for the natural "ground-clock" choice $h$ peaked near $s = 0$, $\langle X\rangle_h \approx 0$ and the entropy is dominated by $S_{\mathrm{clock}}$. The UV-divergent area-law piece emerges when $h$ is sharply peaked, with $S_{\mathrm{clock}}(h)$ diverging like $\log\sigma$ where $\sigma$ is the clock width.)
-
-The structural conclusion: the divergent piece of the dressed TFD entropy scales as the **transverse area** of the wedge boundary in 4D, divided by a UV regulator. Identifying the regulator with $\ell_{\mathrm{Planck}}$, this is the algebraic origin of $A/(4G_N)$.
-
-## 5. Coherent-state difference
-
-### 5.1 Setup
-
-Take a coherent state $|\alpha\rangle = W(f)|0_M\rangle$ with $f$ supported in $W_R$. The corresponding state on $\mathcal{A}(W_R)$ is $\omega_\alpha$.
-
-Dress: $\hat\rho_\alpha(a) = \langle\alpha \otimes h\,|\,a\,|\,\alpha \otimes h\rangle$ with the *same* clock state $h$.
-
-### 5.2 Dressed-entropy difference
-
-By Block D Theorem 3.1:
-$$
-S_{\mathrm{vN}}(\hat\rho_\alpha) - S_{\mathrm{vN}}(\hat\omega_{\mathrm{TFD}}) = -S(\omega_\alpha\|\omega_0) + \mathcal{B}(\omega_\alpha, \omega_0),
-$$
-where $\omega_0 = \omega_{\mathrm{TFD}}$ here (the Minkowski vacuum restricted to $\mathcal{A}(W_R)$).
-
-### 5.3 The Araki-Uhlmann piece
-
-By Sem I Wk 7 §7.3 (Araki–Uhlmann for coherent states in free-field theory):
-$$
-S(\omega_\alpha\|\omega_0) = \pi\,\sigma(f, P f),
-$$
-where $P = \tanh(\pi K_{\mathrm{boost}})$ is a positive operator from the modular Hamiltonian.
-
-For small $f$, this scales as $\|f\|^2$ (in an appropriate norm). For $f$ approaching the wedge boundary (boost-limit), it diverges.
-
-### 5.4 The modular boundary term
-
-$\mathcal{B}(\omega_\alpha, \omega_0) = \omega_\alpha(K_{\omega_0}) - \omega_0(K_{\omega_0}) = 2\pi(\omega_\alpha(K_{\mathrm{boost}}) - 0)$, since $\omega_0(K_{\mathrm{boost}}) = 0$ (vacuum-annihilated).
-
-$\omega_\alpha(K_{\mathrm{boost}}) = \langle 0|W(f)^* K_{\mathrm{boost}} W(f)|0\rangle$ — the "boost-energy" carried by the coherent excitation. For a Gaussian bump $f$ at fixed position $\xi_0$ in $W_R$, this is **finite** and scales as $|f|^2 \cdot \xi_0$ (the boost energy at boost-coordinate $\xi_0$).
-
-### 5.5 Result
+Let $\mathcal A_{R,0}$ be the type III$_1$ algebra of right-exterior fluctuations about the reference eternal black hole, and let $\Psi$ be the equilibrium TFD standard vector. CPW's microcanonical scaling includes a renormalized right ADM energy $h_R$ with $O(1)$ fluctuations. The enlarged algebra
 
 $$
-S_{\mathrm{vN}}(\hat\rho_\alpha) - S_{\mathrm{vN}}(\hat\omega_{\mathrm{TFD}}) = -\pi\sigma(f, Pf) + 2\pi\,\omega_\alpha(K_{\mathrm{boost}}).
+\mathcal A_R
+\cong
+\mathcal A_{R,0}\rtimes_{\sigma^\Psi}\mathbb R
 $$
 
-**Both pieces finite** for compactly-supported $f$. The UV-divergent area-law piece cancels in the difference. This is the algebraic-entropy difference between a coherent excitation and the dressed TFD vacuum.
+is a type II$_\infty$ factor. The left algebra is its commutant,
 
-### 5.6 Identification with bulk-side $\Delta S_{\mathrm{gen}}$
-
-Under the holographic dictionary:
-- $-\pi\sigma(f, Pf) \to -\delta S_{\mathrm{out}}$ (the bulk-entanglement piece, by FLM).
-- $2\pi\,\omega_\alpha(K_{\mathrm{boost}}) \to \delta(A/(4G_N))$ (the area piece, by the first law).
-
-So $S_{\mathrm{vN}}(\hat\rho_\alpha) - S_{\mathrm{vN}}(\hat\omega_{\mathrm{TFD}}) = \delta S_{\mathrm{out}} + \delta(A/(4G_N)) = \delta S_{\mathrm{gen}}$, the bulk generalized-entropy difference.
-
-**Verified.** In the free-field two-sided Rindler analog, the dressed-entropy formula reproduces the algebraic structure of $S_{\mathrm{gen}}$.
-
-## 6. Area-law check in detail
-
-A more pedagogical version of §4's structural statement. We will identify the leading $\epsilon$-divergence of $S_{\mathrm{vN}}(\hat\omega_{\mathrm{TFD}})$ with the wedge boundary area.
-
-### 6.1 The naive vacuum entanglement
-
-In QFT, the entanglement entropy of the vacuum state across a co-dimension-1 surface is *divergent*. For a $d$-dimensional QFT in flat spacetime, the leading divergence scales as $A/\epsilon^{d-1}$ where $A$ is the area of the surface and $\epsilon$ is a UV regulator (e.g., a lattice spacing or short-distance cutoff). This is the **area law** of vacuum entanglement entropy (Bombelli et al. 1986; Srednicki 1993).
-
-For 4D massless free scalar restricted to $W_R$, the area of the wedge boundary is *infinite* (it is the whole $\{x^1 = 0\}$ hyperplane). But for a *finite* region (e.g., a sphere of radius $R$ at $x^1 = 0$ at fixed time), the area is $4\pi R^2$ and the leading divergence is $4\pi R^2 / \epsilon^2$.
-
-### 6.2 Recovering this from the dressed entropy
-
-The dressed TFD entropy $S_{\mathrm{vN}}(\hat\omega_{\mathrm{TFD}}) = S_{\mathrm{clock}}(h) - 2\pi\langle X\rangle_h$ is a **1-dimensional** quantity (1D modular-time clock). The transverse 2D area at the wedge boundary is **not** directly encoded in this formula — instead, it would emerge in a fully-mode-resolved calculation that includes the transverse modes (frequencies of the field perpendicular to the boost direction).
-
-In a coarse pedagogical sense: the modular structure of the wedge algebra has a *1-parameter* modular flow (the boost rapidity), but the full vacuum entanglement involves *all modes* of the free scalar. The dressed-entropy formula captures the modular sector; the full area law requires integrating over transverse modes.
-
-A more careful calculation (Bombelli–Koul–Lee–Sorkin, Srednicki):
 $$
-S_{\mathrm{vN}}^{\mathrm{full}}(\hat\omega_{\mathrm{TFD}}) = \int \rho(\omega)\,S_\omega\,d\omega \cdot A_\perp / \epsilon^2 + \text{subleading},
+\mathcal A_L=\mathcal A_R'.
 $$
-where $\rho(\omega)$ is a density of transverse modes, $S_\omega$ is the per-mode contribution, and $A_\perp$ is the transverse area. The integral over $\omega$ gives a UV-divergent prefactor; multiplied by $A_\perp$ gives the area-law divergence.
 
-### 6.3 The structural takeaway
+There is no joint tensor-factor entropy of “right plus left” in this construction. We compute the entropy of a state restricted to the right type II factor; the left factor organizes its commutant.
 
-The 1D modular-time clock captures the **structural** part of the area law (logarithmic divergence in $\sigma \to 0$); the full multi-dimensional area law $A/\epsilon^{d-1}$ requires resolving all transverse modes.
+The right trace is faithful, normal, semifinite, and unique up to scale. CPW's convention has a shift of the energy coordinate rescale the trace. In the course convention this is the familiar law
 
-The CPW (and Witten 2022) dressed-entropy formula gives the algebraic **skeleton** of the area law. The full coefficient, with the right area-of-transverse-section dimension, requires the full QFT regulator. We do not derive the full coefficient $1/(4G_N)$ from the algebraic structure alone — that's the holographic dictionary input.
+$$
+\widehat\tau\circ\theta_r=e^{-r}\widehat\tau.
+$$
 
-### 6.4 Match with Block 1 Wk 4
+### 1.1 CPW notation versus the course notation
 
-This is the same conclusion as Block 1 Wk 4 §4.4: **the dressed entropy has the structural form of $S_{\mathrm{gen}}$, but the coefficient $1/(4G_N)$ comes from the holographic dictionary, not from the algebra alone.**
+CPW use
 
-The CPW two-sided case adds: the divergent area piece is the **same** on both sides (because both algebras share the bifurcation surface), and the total generalized entropy for the two-sided BH is *one copy* of $A/(4G_N)$ (not two), consistent with the bulk fact that the eternal BH has a single horizon.
+$$
+x=h_L,
+\qquad
+p_{\rm CPW}=-i\partial_x,
+\qquad
+h_\Psi=-\log\Delta,
+\qquad
+\beta_Hh_R=\beta_Hx+h_\Psi.
+$$
 
-## 7. Comparison with the single-sided story
+Their $x$ is the left-energy multiplication coordinate and their $p_{\rm CPW}$ is the relative timeshift. The course's regular coordinate is $q$, with $Q$ multiplying by $q$ and $P=-i\partial_q$; after Fourier transform, the spectral variable of $P$ is called $p$. The exact Fourier/sign map derived in Week 6 is
 
-### 7.1 What's the same
+$$
+\boxed{p=-\beta_Hx,\qquad Q=\frac{p_{\rm CPW}}{\beta_H}.}
+$$
 
-The structural derivation in §2 and the mini-calc in §3–5 are **identical** to Block 1 Wk 4. Algebraically, two-sided CPW = single-sided Witten 2022, with the joint Hilbert space $\mathcal{H}_R \otimes \mathcal{H}_L$ replacing $\mathcal{H}_R$.
+Consequently, for $\beta_H>0$, the pushforward of the positive measure is
 
-### 7.2 What's new
+$$
+e^{\beta_Hx}\,|dx|
+=\frac1{\beta_H}e^{-p}\,dp,
+$$
 
-The two-sided structure adds:
+where $p$ is integrated with increasing orientation. The factor $1/\beta_H$ is absorbed into the trace normalization. This is why CPW's $e^{\beta_Hx}$ trace and the course's $e^{-p}$ trace have the same scaling law. It is also why calling CPW's $p_{\rm CPW}$ an energy would reverse the physical roles of the canonical pair.
 
-1. **The horizon is the bifurcation surface**, shared between the two sides. In the single-sided story (Block 1), the "horizon" was a hypothetical entanglement surface (e.g., the RT surface for the boundary subregion); in the two-sided story, it is the unambiguous BH horizon of the eternal-BH geometry.
+## 2. CPW's class of semiclassical states
 
-2. **Two dressed entropies, one structure.** $S_{\mathrm{vN}}(\hat\rho^{R}_{\mathrm{TFD}}) = S_{\mathrm{vN}}(\hat\rho^{L}_{\mathrm{TFD}})$ by symmetry, but both equal the *same* $A_{\mathrm{horizon}}/(4G_N) + S_{\mathrm{out}}$. The two-sided structure makes this redundancy manifest.
+### 2.1 Energy wavepacket
 
-3. **The bulk interior contribution.** $S_{\mathrm{out}}$ now includes bulk fields in the interior regions (II and IV in the Penrose diagram), not just the exterior. The bulk-entanglement piece is genuinely two-sided.
+CPW consider states of the form
 
-### 7.3 What's NOT new
+$$
+|\widehat\Phi\rangle
+{}={}
+\int_{-\infty}^{\infty}dx\,
+\varepsilon^{1/2}g(\varepsilon x)
+|\Phi\rangle\otimes|x\rangle,
+$$
 
-The algebraic computation is **not new** — every step uses Block D + Block 1 machinery. The novelty of CPW (relative to Witten 2022) is the **physical setting** (eternal BH, TFD), not the algebraic technique.
+where $\Phi$ is a state of the bulk QFT fluctuations, $g\in L^2(\mathbb R)$ is normalized, and $\varepsilon\ll1$. To keep the course symbol $p$ reserved for the Fourier spectral variable, denote the probability density of the energy collective coordinate by
 
-This is consistent with Block 2's structural goal: extend Witten 2022 to the two-sided BH, identify what new physical content emerges (the bulk-Killing-vector structure, ER=EPR, etc.), but reuse the operator-algebra machinery wholesale.
+$$
+\mu_\varepsilon(x)=\varepsilon|g(\varepsilon x)|^2.
+$$
 
-## 8. Bell-CHSH preview
+Its width is $O(1/\varepsilon)$. The state is assumed to vary slowly enough across the relevant $O(1)$ energy range that the $O(\varepsilon)$ expansion is controlled.
 
-A brief look ahead to Week 8.
+### 2.2 Why this is not a clock cutoff
 
-The two-sided structure has one **purely new** content not available in the single-sided setting: **Bell-type correlations between the two sides**. The Minkowski vacuum is maximally entangled between $\mathcal{A}(W_R)$ and $\mathcal{A}(W_L)$ in the algebraic sense (Sem I Wk 11: Tsirelson saturation). The two-sided structure makes this a *physically interesting* statement about the eternal BH.
+The parameter $\varepsilon$ controls the spread of the ADM-energy wavepacket. It is not the short-distance cutoff of the matter field. In particular,
 
-Week 8 computes the Bell-CHSH correlator $\langle\mathrm{TFD}|\mathcal{C}|\mathrm{TFD}\rangle$ for cosine-Weyl observables on the two-sided wedge algebras. This is Mini-Calc 3 of the skeleton.
+$$
+H(\mu_\varepsilon)
+{}={}
+-\int \mu_\varepsilon(x)\log \mu_\varepsilon(x)dx
+{}={}
+H(|g|^2)-\log\varepsilon.
+$$
 
-The connection: **ER=EPR and Bell-CHSH saturation are two faces of the same algebraic structure**. The TFD's modular Hamiltonian $\beta_H(H_R - H_L)$ and the resulting type III$_1$ joint structure are what allow both the Tsirelson saturation (Sem I Wk 11) and the ER bridge (this block).
+This is the differential entropy of a collective coordinate. The matter UV divergence is instead encoded in the renormalized combination of horizon area and bulk entropy.
 
-> **Physical picture.** Bell–CHSH gives the two-sided story an *operational* edge that entropy formulas lack. Entropies are not observables — no single experiment measures $S_{\mathrm{gen}}$. A CHSH correlator, by contrast, is a finite combination of bounded expectation values: something two observers, one outside each asymptotic region, could in principle measure by exchanging classical records. Saturation of the Tsirelson bound between the two boundary algebras is therefore an *operational certificate* of the maximal entanglement that ER=EPR geometrizes. If a candidate microstate geometry failed to saturate (as a product of two thermal states would, having no cross-correlations at all), the failure would be detectable by bounded measurements. Week 8 builds exactly this certificate in the free-field analog.
+## 3. The CPW entropy formula
+
+### 3.1 Relative modular notation
+
+Let $\Delta_{\Psi|\Phi}$ be the relative modular operator for the reference state $\Psi$ and the excited state $\Phi$ on $\mathcal A_{R,0}$. Define
+
+$$
+h_{\Psi|\Phi}:=-\log\Delta_{\Psi|\Phi}.
+$$
+
+With CPW's ordering convention,
+
+$$
+S_{\rm rel}(\Phi\Vert\Psi)
+{}={}
+\langle\Phi|h_{\Psi|\Phi}|\Phi\rangle.
+$$
+
+### 3.2 The affiliated density and the slow-variation step
+
+In CPW's asymmetric $x$-representation, the density of the state in §2 is, with the displayed ordering,
+
+$$
+\rho_{\widehat\Phi}
+\approx
+\varepsilon\,
+\overline g(\varepsilon h_R)\,
+e^{-\beta_Hx}\,
+\Delta_{\Phi|\Psi}\,
+g(\varepsilon h_R).
+$$
+
+This is a positive operator affiliated with the right type II factor and normalized by the CPW trace to the working order. It is not an ordinary trace-class operator on the original type III algebra. The approximation uses that $g(\varepsilon y)$ varies on the broad scale $1/\varepsilon$: commuting it through an operator that changes the energy by $O(1)$ produces an $O(\varepsilon)$ correction.
+
+Taking the logarithm while preserving the operator order is the subtle step. CPW use the relative modular cocycle to compare the core built from $\Psi$ with the one adapted to $\Phi$. Their controlled result can be organized as
+
+$$
+\log\rho_{\widehat\Phi}
+\approx
+-\beta_Hh_R
++h_{\Psi|\Phi}
+-h_\Phi
++\log\!\left[\varepsilon|g(\varepsilon h_R)|^2\right]
++O(\varepsilon),
+$$
+
+where $h_\Phi=-\log\Delta_\Phi$ and $\langle\Phi|h_\Phi|\Phi\rangle=0$. The relative modular identity behind the rearrangement is the infinitesimal cocycle relation
+
+$$
+h_\Psi-h_{\Phi|\Psi}
+=h_{\Psi|\Phi}-h_\Phi.
+$$
+
+This is the precise place where the Connes cocycle enters CPW's density derivation. It is not a license to call every later deformation calculation a cocycle expansion.
+
+### 3.3 Entropy to controlled order
+
+For the states of §2, CPW derive
+
+$$
+\boxed{
+S(\widehat\Phi)_{\mathcal A_R}
+{}={}
+\beta_H\langle h_R\rangle_{\widehat\Phi}
+-S_{\rm rel}(\Phi\Vert\Psi)_{\mathcal A_{R,0}}
+-\left\langle
+\log\!\left[\varepsilon|g(\varepsilon h_R)|^2\right]
+\right\rangle_{\widehat\Phi}
++O(\varepsilon).}
+$$
+
+The three terms have distinct origins:
+
+1. $\beta_H\langle h_R\rangle$ is the mean energy contribution.
+2. $-S_{\rm rel}(\Phi\Vert\Psi)$ records how the bulk fluctuation state differs from equilibrium.
+3. $-\langle\log \mu_\varepsilon(h_R)\rangle$ is the entropy of the energy wavepacket.
+
+This is the detailed version of “modular energy minus relative entropy plus clock entropy.”
+
+The derivation is now one line, but every ingredient has already been earned:
+
+$$
+S(\widehat\Phi)_{\mathcal A_R}
+=-\langle\widehat\Phi|\log\rho_{\widehat\Phi}|\widehat\Phi\rangle.
+$$
+
+Insert the result of §3.2, use $\langle h_\Phi\rangle_\Phi=0$, and identify $\langle h_{\Psi|\Phi}\rangle_\Phi$ with $S_{\rm rel}(\Phi\Vert\Psi)$. The $O(\varepsilon)$ remainder includes precisely the commutators and state-identification corrections suppressed by the broad wavepacket.
+
+### 3.4 Trace normalization
+
+If the trace is rescaled by $e^c$, the density is rescaled by $e^{-c}$ and
+
+$$
+S(\widehat\Phi)_{\mathcal A_R}
+\longmapsto
+S(\widehat\Phi)_{\mathcal A_R}+c.
+$$
+
+The ambiguity is independent of $\Phi$. It is therefore meaningful to compare two states using the same normalization.
+
+## 4. Why this equals generalized entropy
+
+### 4.1 Relative entropy on the horizon
+
+For the stationary reference black hole, excitations outside the horizon eventually fall through it. Raychaudhuri's equation relates the resulting area change to the null energy flux. In the special setting used by CPW, this gives a relation between the relative entropy of the exterior state and a difference of generalized entropies between the bifurcation surface $b$ and a late horizon cut:
+
+$$
+S_{\rm rel}(\Phi\Vert\Psi)
+{}={}
+S_{\rm gen}(\infty)-S_{\rm gen}(b).
+$$
+
+This is a gravitational input. It uses the semiclassical horizon equations, the relaxation assumption, and the reference equilibrium state.
+
+The mechanism can be displayed without pretending to reproduce every geometric coefficient. Let $v$ be an affine parameter on a stationary horizon generator and $k^a=(\partial_v)^a$. Linearizing Raychaudhuri around a horizon with vanishing background expansion and shear gives
+
+$$
+\frac{d\theta}{dv}
+=-8\pi G_N\,\langle T_{kk}\rangle
++O(G_N^2),
+$$
+
+where the quadratic expansion and shear terms are beyond the working order. Impose the teleological late-time boundary condition $\theta(\infty)=0$. Then
+
+$$
+\theta(v)
+=8\pi G_N\int_v^\infty
+\langle T_{kk}(v')\rangle\,dv'.
+$$
+
+Integrating once more along the horizon relates the area change to the weighted null-energy integral. The same weighted integral is the modular-energy change for the equilibrium horizon algebra. Schematically, with the orientation fixed as above,
+
+$$
+\frac{\Delta A}{4G_N}=\Delta\langle K_\Psi\rangle.
+$$
+
+On the QFT side, relative entropy obeys
+
+$$
+S_{\rm rel}(\Phi\Vert\Psi)
+=\Delta\langle K_\Psi\rangle-\Delta S_{\rm bulk}.
+$$
+
+Combining the two equations turns “modular energy minus bulk entropy” into a difference of generalized entropies. CPW's precise choice of initial and late cuts yields the sign in the boxed relation above. The derivation requires the stationary reference, linearized semiclassical Einstein equation, late-time boundary condition, and relaxation; it is not a theorem about an arbitrary null surface.
+
+### 4.2 Late-time energy and area
+
+At late time, the exterior matter has relaxed and the ADM energy controls the stationary horizon area. Over the $O(1)$ energy range of the wavepacket,
+
+$$
+\frac{A}{4G_N}
+{}={}
+\frac{A_0}{4G_N}+\beta_H h_R+O(G_N).
+$$
+
+The energy-distribution term accounts for the entropy of area/energy fluctuations. Combining these statements with §3 gives
+
+$$
+\boxed{
+S(\widehat\Phi)_{\mathcal A_R}
+{}={}
+S_{\rm gen}(b)+\text{const}+O(\varepsilon)+O(G_N),}
+$$
+
+where
+
+$$
+S_{\rm gen}(b)=\frac{A(\partial b)}{4G_N}+S_{\rm bulk}(b).
+$$
+
+The constant diverges as $G_N\to0$, exactly as one expects for a type II$_\infty$ entropy obtained by subtracting a universal divergent piece.
+
+It is useful to perform the cancellation as a ledger. Write
+
+$$
+H_{\rm ADM}
+:=-\left\langle\log\left[\varepsilon|g(\varepsilon h_R)|^2\right]\right\rangle.
+$$
+
+At the late cut, relaxation and the black-hole first law identify
+
+$$
+S_{\rm gen}(\infty)
+=\beta_H\langle h_R\rangle+H_{\rm ADM}+C
+$$
+
+to the working order. The first term is the mean area response, the second is the classical entropy of the broad energy distribution, and $C$ fixes the reference area and trace normalization. Therefore
+
+$$
+\begin{aligned}
+S(\widehat\Phi)_{\mathcal A_R}
+&=\beta_H\langle h_R\rangle+H_{\rm ADM}
+-S_{\rm rel}(\Phi\Vert\Psi)+O(\varepsilon)\\
+&=S_{\rm gen}(\infty)-C
+-\big[S_{\rm gen}(\infty)-S_{\rm gen}(b)\big]
++O(\varepsilon)\\
+&=S_{\rm gen}(b)+\text{const}+O(\varepsilon).
+\end{aligned}
+$$
+
+This is the didactic heart of CPW's Eq. (3.19): the late-cut generalized entropy appears twice and cancels. What remains is the generalized entropy of the bifurcation surface, plus the unavoidable state-independent normalization.
+
+### 4.3 Claim status
+
+- **Exact operator-algebraic:** $\mathcal A_R$ is type II$_\infty$ in the stated large-$N$ construction; it has a trace and densities.
+- **Controlled semiclassical:** the CPW entropy formula for the slowly varying energy wavepacket, through $O(\varepsilon)$.
+- **Semiclassical gravitational:** equality with $S_{\rm gen}$ in the $G_N\to0$ black-hole regime and under the relaxation assumptions.
+- **Not claimed:** an exact fixed-$N$ identity for the full CFT, or a derivation of microscopic black-hole state counting.
+
+## 5. The inner-unitary check
+
+Take a unitary $U\in\mathcal A_{R,0}\subset\mathcal A_R$ and define $|\Phi\rangle=U|\Psi\rangle$, keeping the same energy wavepacket. The corresponding type-II density is unitarily conjugate to the reference density, so
+
+$$
+S(U\widehat\Psi)_{\mathcal A_R}=S(\widehat\Psi)_{\mathcal A_R}.
+$$
+
+The CPW formula must reproduce this. For a broad smooth wavepacket, changing an $O(1)$ bulk excitation changes the last, wavepacket term only at $O(\varepsilon)$. Consequently the displayed leading terms obey
+
+$$
+S_{\rm rel}(U\Psi\Vert\Psi)
+{}={}
+\beta_H\left(\langle h_R\rangle_{U\Psi}-\langle h_R\rangle_\Psi\right)
++O(\varepsilon).
+$$
+
+Hence the energy and relative-entropy contributions cancel at the controlled order. Exact unitary invariance says that the omitted corrections, including any change in the wavepacket expectation, cancel as well.
+
+For a local Weyl coherent state $U=W(f)$ in the right wedge, this is the correct free-field check. The excitation may carry positive boost energy and have positive relative entropy, but its entropy on the right algebra does not change under the inner unitary.
+
+> **Physical interpretation.** A local unitary rearranges the right degrees of freedom without changing their entropy. In the gravitational description, the bulk-matter and area responses must compensate. The cancellation is not an inconvenience; it is a stringent test of the generalized-entropy dictionary.
+
+## 6. The area law and renormalization
+
+### 6.1 Matter entropy
+
+Before gravity is included, the regulated vacuum entropy of a $3+1$-dimensional field across a smooth surface has
+
+$$
+S_{\rm bulk}(\epsilon)
+{}={}
+c_2\frac{A}{\epsilon^2}+\cdots.
+$$
+
+In $1+1$ dimensions the corresponding CFT divergence is logarithmic. These are short-distance matter effects.
+
+### 6.2 Generalized entropy
+
+In semiclassical gravity, divergences in $S_{\rm bulk}$ are absorbed into the renormalization of gravitational couplings, including the coefficient of the area term. Neither $A/(4G_N)$ nor $S_{\rm bulk}$ is separately regulator-independent; their generalized-entropy combination is the physical quantity.
+
+The type II trace entropy packages this renormalized combination up to one constant. It does not identify the matter cutoff $\epsilon$ with the energy-wavepacket parameter $\varepsilon$, and it does not obtain $A/(4G_N)$ from a one-dimensional Shannon entropy.
+
+## 7. Right and left without double counting
+
+Because $\mathcal A_L=\mathcal A_R'$, the two algebras describe complementary operator content in the standard representation. In a symmetric TFD state their entropies agree after compatible choices of trace normalization. This does not mean that one should add them and obtain twice the horizon area.
+
+The generalized entropy associated with the right exterior uses the bifurcation surface once. The left exterior uses the same geometric surface from the complementary side. They are two restrictions of one state, not two independent horizon contributions.
+
+## 8. Exact Fourier shadow
+
+The finite-dimensional Fourier model of Semester II Week 4 remains a useful audit. For a system state $\rho$ and energy distribution $\mu(p)$,
+
+$$
+S_{\widehat\tau}=S(\rho)+H(\mu)-\mathbb E[p].
+$$
+
+Use the exact map $p=-\beta_Hx$. If the control model's probability density is chosen as the pushforward of CPW's $\mu_\varepsilon(x)$, then
+
+$$
+-\mathbb E[p]=\beta_H\mathbb E[x],
+$$
+
+while differential entropy changes under the rescaling by
+
+$$
+H(\mu_p)=H(\mu_\varepsilon)+\log\beta_H.
+$$
+
+The $+\log\beta_H$ is state-independent and can be absorbed into the trace normalization. Thus the last two terms reproduce the same “mean energy plus distribution entropy” structure as §3. The shift from $x$ to the physical right energy $h_R=x+h_\Psi/\beta_H$ brings in the modular contribution, which in the genuine type-III calculation is organized by the relative modular operator. What the toy model lacks is precisely that relative modular structure and the gravitational horizon relation.
 
 ## 9. What to take away
 
-- **Dressed entropy on $\hat{\mathcal{A}}_R$ in TFD vacuum:** $S_{\mathrm{vN}}(\hat\omega_{\mathrm{TFD}}) = S_{\mathrm{clock}}(h) - 2\pi\langle X\rangle_h$ in the free-field analog.
-- **Witten-CPW identification (Witten 2022 §4 + CPW §4):** in the holographic large-$N$ setting, $S_{\mathrm{vN}}(\hat\rho_{\mathrm{TFD}}) = A_{\mathrm{horizon}}/(4G_N) + S_{\mathrm{out}} + \mathrm{const}$. Same horizon (the bifurcation surface) for both sides.
-- **Algebraic vs. holographic content:** the *structural form* $S_{\mathrm{vN}} = $ (modular energy) $-$ (Araki–Uhlmann) $+$ const is algebraic (Block D Theorem 3.1). The *coefficient $1/(4G_N)$* and the identification with the gravitational area come from the holographic dictionary, not from the algebra alone.
-- **Coherent-state difference:** $S_{\mathrm{vN}}(\hat\rho_\alpha) - S_{\mathrm{vN}}(\hat\omega_{\mathrm{TFD}}) = -\pi\sigma(f, Pf) + 2\pi\,\omega_\alpha(K_{\mathrm{boost}})$, both pieces finite. Verifies $\delta S_{\mathrm{gen}} = \delta S_{\mathrm{out}} + \delta(A/(4G_N))$ structurally.
-- **Area-law structural recovery:** the dressed-entropy formula captures the structural part of the area law (logarithmic divergence in clock width), but the full multi-dimensional area requires resolving transverse QFT modes.
-- **CPW = Witten 2022 with two sides:** algebraically identical to Block 1; new physics is the two-sided/TFD physical setting (eternal-BH horizon, bulk Killing vector, ER=EPR).
+- CPW compute entropy for a controlled energy-wavepacket state, not for an unspecified “clock vector.”
+- Their formula separates mean ADM energy, bulk relative entropy, and energy-distribution entropy.
+- The energy-wavepacket parameter $\varepsilon$ is not the matter UV cutoff $\epsilon$.
+- Trace rescaling by $e^c$ shifts entropy by $+c$.
+- Generalized entropy follows after adding the semiclassical horizon-relative-entropy relation and the area-energy first law.
+- A right-local inner unitary leaves the type-II entropy unchanged; modular energy and relative entropy cancel.
+- The right and left algebras are commutants. Their use of the same bifurcation surface does not double the area term.
 
 ## 10. Looking ahead
 
-Week 8 closes Block 2 with **Bell-CHSH between the two sides** — the algebraic content of "ER=EPR." Concretely: take cosine-Weyl observables on $\mathcal{A}(W_R)$ and $\mathcal{A}(W_L)$ in the Minkowski vacuum and compute $\langle\mathrm{TFD}|\mathcal{C}_{\mathrm{CHSH}}|\mathrm{TFD}\rangle$. By Summers-Werner (Sem I Wk 11), this approaches the Tsirelson bound $2\sqrt 2$. The mini-calc gives explicit numerical values from the bumpified-Haar-wavelet construction of the group's research program.
+Week 8 studies Bell correlations between the right algebra and its commutant. The algebraic prerequisites are now clean: bounded observables commute across the pair, while the state supplies the correlations. Neither the commutant relation nor type III$_1$ alone fixes the CHSH value for a specified quartet of observables.
 
 ## 11. Problem set
 
 **Core problems.**
 
-**1. Two-sided trace formula.** Verify the trace formula
-$$
-\hat\tau_R(a) = \int e^{-2\pi s}\langle 0_M\otimes\delta_s|a|0_M\otimes\delta_s\rangle ds
-$$
-on the two-sided dressed algebra $\hat{\mathcal{A}}(W_R)$ for operators $a = \pi_R(W(f)) \otimes g(X)$. Compare with the Block 1 Wk 4 §3 single-sided formula — they're identical.
+**1. Energy-wavepacket entropy.** For $\mu_\varepsilon(x)=\varepsilon|g(\varepsilon x)|^2$, prove $H(\mu_\varepsilon)=H(|g|^2)-\log\varepsilon$.
 
-**2. Dressed TFD entropy.** Compute $S_{\mathrm{vN}}(\hat\omega_{\mathrm{TFD}}) = S_{\mathrm{clock}}(h) - 2\pi\langle X\rangle_h$ for the Gaussian clock $h(s) = (2\pi\sigma^2)^{-1/4} e^{-s^2/(4\sigma^2)}$ and verify the area-law-like divergence as $\sigma \to 0$.
+**2. CPW formula bookkeeping.** Rewrite the boxed formula of §3.3 as “mean energy $-$ relative entropy $+$ distribution entropy.” State the approximation associated with each equality.
 
-**3. Coherent-state difference.** Take $|\alpha\rangle = W(f)|0_M\rangle$ with $f$ a Gaussian bump in $W_R$ at boost coordinate $\xi_0$. Compute $\omega_\alpha(K_{\mathrm{boost}})$ to leading order in $|f|^2$ and verify it is finite.
+**3. Trace normalization.** Derive the $+c$ entropy shift under $\widehat\tau\to e^c\widehat\tau$.
 
-**4. Verify Block D Theorem 3.1 in the free-field two-sided setting.** Combine Problem 2 (vacuum entropy) and Problem 3 (coherent-state boundary term) and verify
-$$
-S_{\mathrm{vN}}(\hat\rho_\alpha) - S_{\mathrm{vN}}(\hat\omega_{\mathrm{TFD}}) = -\pi\sigma(f, Pf) + 2\pi\omega_\alpha(K_{\mathrm{boost}})
-$$
-for small $|f|^2$.
+**4. Inner-unitary cancellation.** For $|\Phi\rangle=U|\Psi\rangle$ and an unchanged broad wavepacket, use exact type-II entropy invariance and the CPW expansion to derive the leading equality between relative entropy and the ADM-energy change. Estimate why the change of the wavepacket term is $O(\varepsilon)$, and explain what must cancel it at the next order.
 
-**5. Read CPW §4.** Identify CPW's explicit form of the dressed-entropy formula and the identification with $A/(4G_N) + S_{\mathrm{out}}$. Compare with our exposition.
+**5. No double counting.** Explain why equal right and left entropies in a symmetric state do not imply a generalized entropy with $2A/(4G_N)$.
 
 **Starred problems.**
 
-**6\*. The area-of-bifurcation-surface in 4D Rindler.** For the right Rindler wedge in 4D Minkowski space, the bifurcation surface is $\{x^0 = x^1 = 0\}$ — an infinite 2-plane. Truncating to a sphere of radius $R$ in the transverse $(x^2, x^3)$ directions, the area is $\pi R^2$. Sketch how this area enters the leading divergence of the vacuum entanglement entropy. Compare with the Bombelli-Koul-Lee-Sorkin 1986 result.
+**6\*. CPW density.** Read CPW §3.2 and reproduce the affiliated density operator for $|\widehat\Phi\rangle$ through $O(\varepsilon)$. Mark where the Connes cocycle is used.
 
-**7\*. Two-sided coherent excitation.** Take a coherent state with separate excitations $f_R \in W_R$ and $f_L \in W_L$. Compute $S_{\mathrm{vN}}(\hat\rho_{\alpha_R, \alpha_L}) - S_{\mathrm{vN}}(\hat\omega_{\mathrm{TFD}})$ for the two-sided state. How does the result split between the two sides?
+**7\*. Horizon derivation.** Reproduce CPW's use of the linearized Raychaudhuri equation to obtain the area-energy relation. List the boundary condition at late affine time.
 
-**8\*. Eternal-BH bulk-entropy piece.** In the eternal AdS-Schwarzschild BH, the bulk fields in the *interior* regions (II and IV) contribute to $S_{\mathrm{out}}$. Sketch what this looks like in the bulk picture: which bulk modes are responsible? (See CPW §4 for the precise statement.)
+**8\*. Gaussian energy profile.** Take $|g(y)|^2$ Gaussian. Compute all wavepacket terms in §3.2, including their $\varepsilon$ dependence, without interpreting $\varepsilon$ as a UV cutoff.
 
-**9\*. The state-independent constant.** In CPW §4, the state-independent constant in $S_{\mathrm{vN}} = A/(4G_N) + S_{\mathrm{out}} + \mathrm{const}$ depends on which clock state $h$ is chosen for the dressing. Identify the dependence: how does shifting $h$ shift the constant?
+**9\*. Coherent Rindler check.** Let $U=W(f)$ with support in $W_R$. Explain why $U$ is inner for the right wedge algebra and show that the increase in boost modular energy equals the Araki relative entropy. Do not claim a nonzero entropy difference.
+
+**10\*. Two independent scales.** Introduce symbols $\varepsilon_{\rm ADM}$ for the inverse wavepacket width and $\epsilon_{\rm UV}$ for the matter regulator. Track them through the CPW wavepacket and a regulated free-field entropy. Identify which dependence belongs to the chosen family of states and which is absorbed by UV renormalization; do not identify the two scales.
 
 **Project problems.**
 
-**10. Read CPW §§4–5.** Identify the precise hypotheses CPW use for the generalized-entropy identification. Compare with Witten 2022 §4 (single-sided) and identify the structural overlap.
+**11. CPW derivation map.** Write a six-page derivation of CPW's Eq. (3.19), with separate columns for operator-algebra, semiclassical-gravity, and relaxation assumptions.
 
-**11. Quantum extremal surface prescription.** Read Engelhardt-Wall 2014 (arXiv:1408.3203) §§1–2. Identify how the CPW dressed-entropy formula relates to the QES prescription of extremizing $S_{\mathrm{gen}}(\gamma)$ over bulk surfaces. Where does the *choice* of $\gamma$ enter the dressed-entropy framework? (The CPW story fixes $\gamma = $ horizon, so the extremization is trivial there.)
+**12. Comparison with Witten.** Compare Witten's canonical-ensemble collective coordinate with CPW's microcanonical scaling. Explain why their trace formulas have the same continuous-core structure even though the physical energy variables are introduced differently.
+
+## 12. Instructor checkpoints (internal)
+
+1. **Wavepacket entropy:** substitute $y=\varepsilon x$ to obtain $H(\mu_\varepsilon)=H(|g|^2)-\log\varepsilon$.
+2. **Three-term ledger:** the distribution term is exactly $H(\mu_\varepsilon)$ at the probability-law level; replacing the affiliated density and logarithm by the displayed CPW expression carries the $O(\varepsilon)$ control. The generalized-entropy interpretation is a separate semiclassical step.
+3. **Normalization:** $D'=e^{-c}D$ under $\widehat\tau'=e^c\widehat\tau$, so $S'=S+c$.
+4. **Inner unitary:** exact trace entropy is invariant. For $F(y)=\log[\varepsilon|g(\varepsilon y)|^2]$, an $O(1)$ energy shift changes $F$ by $O(\varepsilon)$ when the logarithmic derivative is controlled. The complete omitted terms must restore exact cancellation.
+5. **No double counting:** $\mathcal A_L=\mathcal A_R'$ describes the complementary restriction in one standard representation. The same bifurcation surface appears once in either generalized entropy; the two restrictions are not independent geometric systems to be summed.
+6. **Density:** the accepted ordering is $\varepsilon\bar g(\varepsilon h_R)e^{-\beta_Hx}\Delta_{\Phi|\Psi}g(\varepsilon h_R)$ to $O(\varepsilon)$. The cocycle derivative supplies $h_\Psi-h_{\Phi|\Psi}=h_{\Psi|\Phi}-h_\Phi$.
+7. **Horizon derivation:** linearize Raychaudhuri, impose $\theta(\infty)=0$, integrate twice, and match the weighted null-energy integral to the equilibrium modular Hamiltonian. Missing the late boundary condition leaves the integration constant undetermined.
+8. **Gaussian:** if $|g(y)|^2$ has mean $m$ and variance $s^2$, then $x$ has mean $m/\varepsilon$, variance $s^2/\varepsilon^2$, and entropy $\tfrac12\log(2\pi e s^2)-\log\varepsilon$. The mean-energy term inherits the $m/\varepsilon$ contribution; for the usual centered profile $m=0$.
+9. **Coherent state:** $W(f)$ is a unitary of the right algebra for $\operatorname{supp}f\subset W_R$. Same-clock conjugation gives $\Delta S=0$, hence relative entropy equals the boost modular-energy increase.
+10. **Two scales:** $\varepsilon_{\rm ADM}$ labels a family of broad energy states and appears in differential entropy; $\epsilon_{\rm UV}$ is a spacetime regulator and appears in $A/\epsilon_{\rm UV}^2$ in four dimensions. Only the latter participates in UV coupling renormalization.
+11. **Derivation-map rubric:** the final cancellation must show $S_{\rm gen}(\infty)$ appearing both in the late energy/distribution ledger and in $S_{\rm rel}=S_{\rm gen}(\infty)-S_{\rm gen}(b)$.
+12. **Witten comparison:** Witten retains the perturbative modular action around a leading canonical central variable; CPW keep an $O(1)$ noncentral energy in the strict microcanonical limit. Both yield covariant representations of the same continuous-core pattern.
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 2. Last revised 2026-06-11.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 2. Last revised 2026-08-24.*

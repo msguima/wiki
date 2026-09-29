@@ -7,31 +7,39 @@ week: 11
 block: C
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Weeks 8–10 (Weyl algebras, Reeh–Schlieder, Bisognano–Wichmann)
-modified: 2026-06-11
+modified: 2026-08-24
 ---
 
 # Week 11 — Bell–CHSH Inequalities in QFT
 
-> *Bell inequalities are usually presented as a statement about two qubits in an entangled state. In QFT they become a statement about **complementary local algebras**: the Summers–Werner theorem says that for any pair of spacelike-separated regions, the **vacuum** saturates the Tsirelson bound $2\sqrt 2$. There is no need for state preparation: the vacuum already is maximally Bell-violating between any two wedges. The mechanism is the type III$_1$ structure of local algebras (next week) combined with Bisognano–Wichmann (last week). This lecture is the direct foundation for the group's research line on Bell–CHSH in QFT.*
+> *Bell inequalities are usually presented for two qubits. In AQFT they are formulated for two commuting local algebras. The strongest theorem used here concerns complementary wedges: under weak net assumptions, every vector state has maximal Bell correlation for suitable observables in the two wedge algebras; injectivity extends the conclusion to normal density-matrix states on the ambient Hilbert space. This is not a theorem about every pair of separated bounded regions, nor a consequence of type III$_1$ alone. The distinction between the structural supremum and explicit observable families organizes the lecture.*
+
+### How to use this chapter
+
+- **In class:** prove the finite-dimensional Tsirelson bound, define the Bell supremum for commuting algebras, and state Summers–Werner with its wedge and injectivity hypotheses before turning to explicit Weyl families.
+- **For self-study:** reproduce the exact quasifree cosine correlator in §4.2 and one source-checked numerical row in §4.5. Mark every result as structural supremum, analytic value for an ansatz, or numerical lower bound.
+- **Instructor checkpoint:** ask why a fixed boost cannot move a packet to the bifurcation point, why type III$_1$ alone does not determine Bell correlations, and why type-I systems can still attain $2\sqrt2$ in special states.
 
 ## 0. Reading
 
 **Primary:**
-- Summers & Werner, "Bell's inequalities and quantum field theory," *J. Math. Phys.* 28 (1987) 2440 — the foundational paper.
-- Summers & Werner, "Maximal violation of Bell's inequalities is generic in quantum field theory," *Comm. Math. Phys.* 110 (1987) 247 — the generic-violation theorem.
-- Summers & Werner, "Bell's inequalities in algebraic quantum field theory," *Lett. Math. Phys.* 33 (1995) 321 — the refined statement under (N) + (SP).
+- Summers & Werner, “Bell's inequalities and quantum field theory. I. General setting,” *J. Math. Phys.* **28** (1987) 2440–2447, DOI 10.1063/1.527733.
+- Summers & Werner, “Bell's inequalities and quantum field theory. II. Bell's inequalities are maximally violated in the vacuum,” *J. Math. Phys.* **28** (1987) 2448–2456, DOI 10.1063/1.527734.
+- Summers & Werner, “Maximal violation of Bell's inequalities is generic in quantum field theory,” *Comm. Math. Phys.* **110** (1987) 247–259, DOI 10.1007/BF01207366.
 
 **Secondary:**
 - Summers, "On the independence of local algebras in quantum field theory," *Rev. Math. Phys.* 2 (1990) 201 — survey of statistical independence and Bell-type inequalities.
 - Haag, *Local Quantum Physics*, ch. V §5 (statistical independence of complementary algebras).
 
 **Group's research (course-tied):**
-- De Fabritiis, Sorella, Roditi, Guimarães et al., recent papers on Bell-CHSH in free scalar, Proca, and gauge theories — concrete observable constructions; instructor selects 2–3.
+- Dudal, De Fabritiis, Guimarães, Roditi & Sorella, “Maximal violation … via bumpified Haar wavelets,” *Phys. Rev. D* **108** (2023) L081701, arXiv:2307.04611 — massless spinor field.
+- De Fabritiis et al., “Weyl operators, Tomita–Takesaki theory, and Bell-CHSH inequality violations,” *Phys. Rev. D* **108** (2023) 085026, arXiv:2309.02941 — free real scalar field.
+- De Fabritiis et al., “Numerical approach to the Bell-CHSH inequality in quantum field theory,” *Phys. Rev. D* **110** (2024) 065006, arXiv:2406.20033 — scalar Gaussian numerical search.
+- Guimarães, Roditi & Sorella, “On a class of bounded Hermitian operators for the Bell-CHSH inequality in Quantum Field Theory,” arXiv:2506.00504 — scalar field and tangent diamonds.
 
 **Optional research reading:**
 - Tsirelson, "Quantum generalizations of Bell's inequality," *Lett. Math. Phys.* 4 (1980) 93 — the original Tsirelson bound.
 - Werner, "Quantum states with Einstein–Podolsky–Rosen correlations admitting a hidden-variable model," *Phys. Rev. A* 40 (1989) 4277 — what is and isn't classically simulable.
-- Hayden, Jozsa, Petz, Winter, "Structure of states which satisfy strong subadditivity of quantum entropy with equality," *Comm. Math. Phys.* 246 (2004) 359 — type III$_1$ as the unique setting for various optimal quantum-information tasks.
 
 ## 1. The CHSH inequality and the Tsirelson bound
 
@@ -63,11 +71,25 @@ For commuting subalgebras $\mathcal{M}_A, \mathcal{M}_B \subset \mathcal{B}(\mat
 
 **Theorem 1.1 (Tsirelson 1980). [Proved.]** $|\langle\mathcal{C}_{\mathrm{CHSH}}\rangle_\omega| \le 2\sqrt 2$ for any state $\omega$.
 
-**Proof sketch.** First take the *dichotomic* case $A_i^2 = B_j^2 = 1$. Squaring the CHSH operator and using $[A_i, B_j] = 0$ (commutativity of Alice and Bob), all cross terms cancel except one:
+**Proof.** First take the *dichotomic* case $A_i^2 = B_j^2 = 1$. Squaring the CHSH operator and using $[A_i, B_j] = 0$, all cross terms cancel except one:
 $$
 \mathcal{C}_{\mathrm{CHSH}}^2 = 4 - [A_1, A_2]\,[B_1, B_2]
 $$
-(expand and check: the $A_i^2 = B_j^2 = 1$ condition kills the diagonal terms into the constant 4, and the surviving off-diagonal terms assemble into the product of commutators). Then $\|[A_1, A_2]\| \le 2\|A_1\|\|A_2\| = 2$ and similarly for $B$, so $\|\mathcal{C}_{\mathrm{CHSH}}^2\| \le 4 + 4 = 8$ and $\|\mathcal{C}_{\mathrm{CHSH}}\| \le 2\sqrt 2$. The general spectrum-in-$[-1,1]$ case reduces to the dichotomic case: any self-adjoint contraction is a convex combination (an average over a dilation) of self-adjoint unitaries, and the CHSH expectation is affine in each observable, so the supremum is attained on dichotomic quadruples. $\square$
+(expand and check: the diagonal terms give $4$ and the off-diagonal terms assemble into the product of commutators). Then $\|[A_1,A_2]\|\le2$ and similarly for $B$, so $\|\mathcal C_{\mathrm{CHSH}}\|\le2\sqrt2$.
+
+For general self-adjoint contractions, write
+$$
+\mathcal C_{\mathrm{CHSH}}
+{}={}
+\begin{bmatrix}A_1&A_2\end{bmatrix}
+\begin{bmatrix}B_1+B_2\\ B_1-B_2\end{bmatrix}.
+$$
+The row norm is at most $\sqrt{\|A_1^2+A_2^2\|}\le\sqrt2$, while the squared column norm is
+$$
+\left\|(B_1+B_2)^2+(B_1-B_2)^2\right\|
+=2\|B_1^2+B_2^2\|\le4.
+$$
+Therefore $\|\mathcal C_{\mathrm{CHSH}}\|\le2\sqrt2$, and every state expectation obeys the same bound. $\square$
 
 This is the **Tsirelson bound**, the quantum-mechanical replacement for the classical bound.
 
@@ -85,236 +107,299 @@ $$
 $$
 **The singlet saturates Tsirelson.** Other states give weaker violations or none.
 
-In QFT, the story is radically different: the **vacuum** plays the role of the singlet, between **any** two spacelike-separated regions. This is the content of Summers–Werner.
+For complementary QFT wedges, Summers–Werner prove a much stronger genericity statement about the **supremum over local observables**. Positive spacelike separation changes the problem: maximal Bell correlation can decay with distance in massive theories, so one must not replace “complementary wedges” by “any two spacelike-separated regions.”
 
 ## 2. The Summers–Werner theorem
 
-### 2.1 Statement
+### 2.1 Bell value for a pair of commuting algebras
 
-**Theorem 2.1 (Summers–Werner). [Stated only — refs: Summers–Werner 1987a, 1987b, 1995.]** *Assume the Haag–Kastler axioms (Weeks 8–9) together with type III$_1$ structure of the local algebras (Week 12 — provided by (N) + (SP)). Let $\mathcal{A}(W_R), \mathcal{A}(W_L)$ be the local algebras of complementary right and left Rindler wedges. For every $\epsilon > 0$, there exist self-adjoint $A_1, A_2 \in \mathcal{A}(W_R)$ and $B_1, B_2 \in \mathcal{A}(W_L)$, each with spectrum in $[-1, 1]$, such that*
+For commuting von Neumann algebras $\mathcal M,\mathcal N$ and a state $\omega$, define the raw CHSH Bell value
 $$
-\big|\,\langle 0\,|\,\mathcal{C}_{\mathrm{CHSH}}(A_1, A_2, B_1, B_2)\,|0\rangle\,\big| \;\ge\; 2\sqrt 2 - \epsilon.
+\beta_{\mathrm{CHSH}}(\omega;\mathcal M,\mathcal N)
+:=
+\sup\left\{
+|\omega(\mathcal C_{\mathrm{CHSH}})|:
+A_i\in\mathcal M_{\mathrm{sa}},\
+B_j\in\mathcal N_{\mathrm{sa}},\
+\|A_i\|,\|B_j\|\le1
+\right\}.
 $$
+The classical bound is $2$ and the universal quantum bound is $2\sqrt2$. Calling the correlations **maximal** means that this supremum equals $2\sqrt2$; it does not automatically mean that one quadruple attains it.
 
-**Stronger forms (Summers–Werner 1987b, 1995). [Stated only — hypothesis-explicit; refs as above.]** Under the Haag–Kastler axioms plus the nuclearity (N) + split-property (SP) of Week 12, plus the assumption that the local algebras are type III$_1$:
-- The supremum $\sup |\langle\mathcal{C}_{\mathrm{CHSH}}\rangle_\omega|$ over admissible quadruples is exactly $2\sqrt 2$ for every faithful normal state $\omega$ on the joint algebra $\mathcal{A}(W_R) \vee \mathcal{A}(W_L)$, not just the vacuum.
-- The same holds for any pair of spacelike-separated wedge-like regions (regions whose local algebras admit Bisognano–Wichmann-style modular flow), not only Rindler wedges.
-- The supremum is approached arbitrarily closely but not generally attained by any concrete bounded-spectrum quadruple; the limit involves the modular flow of Bisognano–Wichmann.
+### 2.2 The precise wedge theorem
 
-The "every faithful normal state" claim is a non-trivial structural property of type III$_1$ algebras with commuting subalgebras admitting a joint cyclic-separating vector — it does **not** hold without these hypotheses. In particular, in a UV-regulated (type-I) version of the theory, Tsirelson saturation fails on generic states.
+**Theorem 2.1 (Summers–Werner 1987, generic maximal violation). [Stated only; DOI 10.1007/BF01207366.]** *Under weak technical assumptions on a local net that are satisfied by nets associated with quantum fields obeying the standard axioms, let $W$ and $W'$ be complementary wedges. Then every vector state $\omega_\psi(a)=\langle\psi,a\psi\rangle$ satisfies*
+$$
+\boxed{
+\beta_{\mathrm{CHSH}}\!\left(
+\omega_\psi;\mathcal A(W),\mathcal A(W')
+\right)=2\sqrt2.
+}
+$$
+*If, in addition, the wedge algebras are injective, the same maximal value holds for every normal state on $\mathcal B(\mathcal H)$ induced by a density matrix.*
 
-### 2.2 Structural ingredients
+The vacuum result for free Bose and Fermi fields was established in the companion *J. Math. Phys.* paper II. The *Comm. Math. Phys.* theorem is stronger: it is generic over vector states and over standard QFT nets, but it remains a statement about **complementary wedge-shaped regions**. The injectivity hypothesis is what licenses the all-normal-density-matrix-state extension.
 
-The Summers–Werner proof uses three structural inputs from previous weeks:
+### 2.3 What the theorem does not say
 
-1. **Reeh–Schlieder (Week 9):** the vacuum is cyclic-separating for $\mathcal{A}(W_R)$, hence faithful normal.
-2. **Bisognano–Wichmann (Week 10):** the modular flow on $\mathcal{A}(W_R)$ is the boost subgroup, with full real spectrum.
-3. **Type III$_1$ (Week 12, anticipated):** the wedge algebras are "as non-tracial as possible," with rich projection lattice.
+- It does not say that every pair of spacelike-separated bounded regions is maximally correlated. In massive theories the maximal Bell correlation can decay with positive separation.
+- It does not follow from “both algebras are type III$_1$” alone. Their relative position in the net, wedge complementarity, and the theorem's technical assumptions matter.
+- It does not identify a particular simple observable family that reaches the supremum.
+- It does not imply that a fixed UV-regulated vacuum has maximal Bell value. It only leaves open the usual type-I possibility of choosing another state and observables that attain $2\sqrt2$.
 
-Item 3 is the heart of the matter. In a type III$_1$ factor, the projection lattice has "enough room" — combined with the commuting pair $\mathcal{A}(W_R), \mathcal{A}(W_L)$ — to find a quadruple of observables saturating any bound below $2\sqrt 2$. In type I (e.g., finite-dim QM with the singlet), saturation is achievable but isolated to specific maximally entangled states; in type III$_1$, **every** faithful normal state saturates.
+### 2.4 Contrast with finite-dimensional quantum mechanics
 
-### 2.3 Contrast with finite-dimensional QM
-
-The qualitative difference is worth dwelling on:
-
-| Setting | Algebra type | When does Tsirelson saturate? |
+| Setting | Fixed state | Maximum over admissible local observables |
 |---|---|---|
-| Finite-dim QM | type I$_n$ | only on maximally entangled states (e.g., singlet) |
-| Generic mixed-state QM | type I | not generically; needs careful state engineering |
-| QFT wedge algebras | type III$_1$ (under (N) + (SP)) | every faithful normal state on the joint two-sided algebra, including vacuum |
+| Two-qubit singlet | maximally entangled pure state | $2\sqrt2$ |
+| Generic two-qubit mixed state | state-dependent | often $\le2$, sometimes between $2$ and $2\sqrt2$ |
+| Type-I bipartite system, optimized also over states | choose a Bell pair in a two-qubit sector | $2\sqrt2$ |
+| Complementary QFT wedges, vector state under Summers–Werner hypotheses | **every** vector state | $2\sqrt2$ as a supremum |
+| Complementary injective wedge algebras | every ambient normal density-matrix state | $2\sqrt2$ as a supremum |
 
-This is the algebraic content of "the vacuum is maximally entangled" in QFT. **Bell–CHSH saturation is not a finely-tuned property; it is a structural consequence of the algebra type.**
+The remarkable QFT statement is therefore genericity for a fixed geometric pair of algebras—not a larger universal quantum bound and not a prohibition on type-I saturation.
 
-## 3. The heuristic: why is the vacuum so entangled?
+## 3. What physical intuition survives?
 
-Reeh–Schlieder (Week 9) already told us that the vacuum is non-local: local operations near a point can produce any global state. Bisognano–Wichmann (Week 10) added a sharper picture: the vacuum, restricted to a wedge, is **thermal** at the Unruh temperature $T_U = a/(2\pi)$ relative to wedge-restricted observers.
+Three exact statements should remain separate:
 
-Putting these together: the **regulated** density matrix of the vacuum restricted to $\mathcal{A}(W_R)$ would be (formally)
+1. Reeh–Schlieder supplies strong vector-density properties for the vacuum.
+2. Bisognano–Wichmann makes the vacuum a KMS state for wedge boosts at inverse rapidity temperature $2\pi$.
+3. Summers–Werner fixes the Bell supremum for complementary wedges under its own hypotheses.
+
+A regulator can make the formal expression $\rho_R\propto e^{-2\pi K_R}$ meaningful in a type-I approximation, and short-distance correlations across the common wedge horizon then provide useful intuition. But the Unruh temperature is finite, not “infinite temperature,” and a regulator limit plus divergent entropy is not a proof of either type III$_1$ or Bell maximality. Positive separation also matters: once a collar separates the regions, clustering can suppress Bell correlations. The picture of an inexhaustible hierarchy of correlations near a shared boundary is helpful; the theorem, not the picture, establishes the supremum.
+
+## 4. Explicit calculations: what can be obtained from chosen fields
+
+The theorem fixes a supremum over **all** admissible local contractions. A calculation with a selected family asks a different question: how large a violation can *these* observables produce? Keeping the two levels separate prevents an existence theorem from being mistaken for an optimization result.
+
+### 4.1 Local Weyl-cosine contractions
+
+Let $f\in C_c^\infty(W_R;\mathbb R)$ and $g\in C_c^\infty(W_L;\mathbb R)$. The Weyl operator $W(\alpha f)=e^{i\alpha\phi(f)}$ is unitary, and its Hermitian part
 $$
-\rho_{W_R}^{\mathrm{reg}} \;\propto\; e^{-2\pi K_{\mathrm{reg}}},
+A(f,\alpha):=\frac{W(\alpha f)+W(\alpha f)^*}{2}
+=\cos\!\big(\alpha\phi(f)\big)
 $$
-i.e., a Gibbs state at the Unruh "temperature" with modular Hamiltonian $K$. In a finite-dim regularization, this looks like a thermal state with non-trivial entropy. In the **unregulated** limit, the regulator pushes the entanglement entropy to infinity, and the algebra becomes type III$_1$.
+is a self-adjoint contraction in $\mathcal A(W_R)$. Define $B(g,\beta)$ analogously in $\mathcal A(W_L)$. Locality gives $[A(f,\alpha),B(g,\beta)]=0$.
 
-The Tsirelson saturation is the algebraic content of: *the vacuum, when restricted to one side of a spacelike split, behaves like an infinite-temperature thermal state* — except that the right notion of "infinite temperature" is the type-III$_1$ algebra of the wedge, where every state is similarly thermal-like.
+These observables are **not dichotomic in the strict sense**: generally $A(f,\alpha)^2\ne1$. That causes no problem for CHSH, because the definition uses self-adjoint contractions. If a construction requires outcomes exactly $\pm1$, one must instead use self-adjoint unitaries, for example suitable spectral signs, or another explicitly bounded Hermitian construction.
 
-**This is why QFT differs structurally from finite-dim QM.** In finite-dim QM, "maximally entangled" is a special property of certain states (the singlet, the maximally mixed state on a bipartite system). In QFT, "maximally entangled" is the generic property of *every* state on a wedge — it is built into the algebra, not into the state.
+There is an infrared point peculiar to the massless scalar in $1+1$ dimensions. The unsmeared scalar vacuum does not define a positive Wightman field on arbitrary test functions. One may work with the derivative field, impose the infrared-safe condition $\int f=0$, or retain a mass/zero-mode regulator until the end. The formulas below assume one of these choices.
 
-## 4. Explicit construction in the 2D massless free scalar
+### 4.2 Mostly-plus Wightman prescription and the exact Gaussian formula
 
-The Summers–Werner theorem is existence; for the group's research program, we want **explicit observables**. The standard construction uses **Weyl-cosine observables** built from bumpified Haar wavelets.
-
-### 4.1 Dichotomic Weyl observables
-
-Take real test functions $f \in \mathcal{S}(W_R)_{\mathbb{R}}$, $g \in \mathcal{S}(W_L)_{\mathbb{R}}$, and a real parameter $\alpha > 0$. The Weyl operator $W(\alpha f) = e^{i\alpha\phi(f)}$ is unitary; its Hermitian part is the **dichotomic observable**
+With $\eta=\operatorname{diag}(-1,+1)$, a convenient representative of the massless two-point distribution is
 $$
-A(f, \alpha) := \frac{W(\alpha f) + W(\alpha f)^*}{2} = \cos(\alpha\,\phi(f)).
+W_2(x-y)
+=-\frac{1}{4\pi}
+\log\!\left[
+\mu_{\mathrm{IR}}^2
+\left(-\big(x^0-y^0-i0\big)^2+\big(x^1-y^1\big)^2\right)
+\right],
 $$
-$A(f, \alpha)$ is self-adjoint with spectrum in $[-1, 1]$ (since $\cos$ takes values in $[-1, 1]$). It is in $\mathcal{A}(W_R)$ (since both $W(\alpha f)$ and $W(\alpha f)^*$ are).
+up to the familiar additive infrared constant. That constant drops out for zero-integral smearings. The $-i0$ belongs to the **time difference inside the square**; writing an undirected $i\epsilon$ beside $(x-y)^2$ hides the positive-frequency prescription.
 
-Similarly define $B(g, \beta) := \cos(\beta\phi(g)) \in \mathcal{A}(W_L)$ for $g \in W_L$.
-
-These are *not* projections (no $\pm 1$ eigenvalues); they are bounded self-adjoint elements with spectrum in $[-1, 1]$. The Summers–Werner framework requires only spectrum-in-$[-1,1]$, not strict $\pm 1$ eigenvalues, so cosines suffice.
-
-### 4.2 Vacuum two-point functions
-
-Using the Gaussian character of the vacuum (Week 8 §4.2):
+Write
 $$
-\langle 0\,|\,\cos(\alpha\phi(f))\,|0\rangle = \tfrac{1}{2}\left(\langle 0|e^{i\alpha\phi(f)}|0\rangle + \langle 0|e^{-i\alpha\phi(f)}|0\rangle\right) = e^{-\alpha^2 W(f, f)/2},
+C(f,g):=\operatorname{Re}\langle0|\phi(f)\phi(g)|0\rangle .
 $$
-where $W(f, f) = \langle 0|\phi(f)^2|0\rangle$ is the vacuum two-point function (real and positive for real $f$, Week 8 §3).
-
-A useful identity for the two-cosine correlator (proved by expanding cosines into exponentials and using Weyl-relation BCH cancellations):
+For the quasifree vacuum,
 $$
-\langle 0\,|\,\cos(\alpha\phi(f))\cos(\beta\phi(g))\,|0\rangle = \tfrac{1}{2}\left(e^{-\frac{1}{2}\,\mathcal{Q}_+(f, g; \alpha, \beta)} + e^{-\frac{1}{2}\,\mathcal{Q}_-(f, g; \alpha, \beta)}\right),
+\langle0|W(h)|0\rangle=e^{-C(h,h)/2}.
 $$
-where
+If $f$ and $g$ are spacelike separated, their symplectic pairing vanishes. Expanding the two cosines then gives the exact identity
 $$
-\mathcal{Q}_\pm(f, g; \alpha, \beta) = \alpha^2 W(f, f) + \beta^2 W(g, g) \pm 2\alpha\beta\, \mathrm{Re}\,W(f, g).
+\begin{aligned}
+&\langle0|\cos(\alpha\phi(f))\cos(\beta\phi(g))|0\rangle\\
+&\quad=\frac12\!\left[
+e^{-\frac12 C(\alpha f+\beta g,\alpha f+\beta g)}
++e^{-\frac12 C(\alpha f-\beta g,\alpha f-\beta g)}
+\right]\\
+&\quad=e^{-\frac12[\alpha^2C(f,f)+\beta^2C(g,g)]}
+\cosh\!\big(\alpha\beta C(f,g)\big).
+\end{aligned}
 $$
-For real $f, g$, the symplectic-form part $\mathrm{Im}\,W(f, g)$ drops out for spacelike-separated $f, g$ (Week 8 §3 — $\sigma(f, g) = 0$ when supports are spacelike). So when $f \subset W_R$ and $g \subset W_L$, only $\mathrm{Re}\,W(f, g)$ enters.
+This is an **exact model calculation**, not yet a Bell-violation result.
 
-### 4.3 The CHSH expectation in the vacuum
+### 4.3 From four covariances to one CHSH value
 
-Pick four test functions: $f_1, f_2 \in \mathcal{S}(W_R)$, $g_1, g_2 \in \mathcal{S}(W_L)$, all real, and a common amplitude $\alpha$. Let
+Choose $f_1,f_2\in C_c^\infty(W_R;\mathbb R)$ and $g_1,g_2\in C_c^\infty(W_L;\mathbb R)$, with the infrared qualification above, and set
 $$
-A_i = \cos(\alpha\phi(f_i)), \qquad B_j = \cos(\alpha\phi(g_j)).
+A_i=\cos(\alpha_i\phi(f_i)),
+\qquad
+B_j=\cos(\beta_j\phi(g_j)).
 $$
-
-The CHSH expectation in the vacuum is
+The four terms in $\langle\mathcal C_{\mathrm{CHSH}}\rangle$ are obtained from the preceding formula. Thus a concrete calculation needs the covariance matrix
 $$
-\langle 0\,|\,\mathcal{C}_{\mathrm{CHSH}}\,|0\rangle = \sum_{i, j} \pm \langle A_i B_j\rangle = \sum_{i, j} \pm\,\tfrac{1}{2}\!\left(e^{-\frac{1}{2}\mathcal{Q}_+^{(ij)}} + e^{-\frac{1}{2}\mathcal{Q}_-^{(ij)}}\right),
+C(f_i,f_k),\qquad C(g_j,g_\ell),\qquad C(f_i,g_j),
 $$
-with signs as in $\mathcal{C}_{\mathrm{CHSH}} = A_1 B_1 + A_1 B_2 + A_2 B_1 - A_2 B_2$. Each $\mathcal{Q}_\pm^{(ij)}$ involves the Wightman matrix element $W(f_i, g_j)$ which is a 2D integral over the test-function supports.
+together with the amplitudes. The formula reduces the problem to finite-dimensional optimization once these smeared distributions are known.
 
-By appropriate choice of $f_i, g_j$ (in particular: by **boosting** $f_i$ toward the bifurcation surface and tuning the wavelet parameters), one can drive the inner products to extremal configurations and approach $2\sqrt 2$.
+What it does **not** prove is that the cosine family reaches $2\sqrt2$. The Summers–Werner supremum ranges over the whole unit ball of each wedge algebra. A convenient subfamily may violate CHSH and still have a strictly smaller supremum.
 
-### 4.4 Approach to Tsirelson: the boost-limit procedure
+### 4.4 A boost does not move a fixed packet to the bifurcation point
 
-Concretely (Summers–Werner 1987; De Fabritiis et al.):
-
-1. **Fix wavelet bases** on $W_R$ and $W_L$. Use **bumpified Haar wavelets** centered at $(\tau_R, \xi_R) \in W_R$ and $(\tau_L, \xi_L) \in W_L$ with a common width $\sigma$.
-
-2. **Boost the wavelets toward the bifurcation surface** $\{x^0 = x^1 = 0\}$. The boost parameter $\eta$ is the rapidity in the $(x^0, x^1)$ plane. As $\eta \to \infty$, the centers $\xi_R(\eta) \to 0^+$ (on the future null boundary of $W_R$) and $\xi_L(\eta) \to 0^-$ (on the future null boundary of $W_L$).
-
-3. **Compute the Wightman correlator** $W(f_i, g_j)$ in the boost-limit. The correlator approaches a fixed extremal value because the boosted wavelets approach the bifurcation surface.
-
-4. **The CHSH expectation approaches $2\sqrt 2$** from below, never attaining it for finite wavelet parameters.
-
-The Summers–Werner **saturation** statement is the supremum claim:
+Right-wedge Rindler coordinates are
 $$
-\sup_{f_i, g_j, \alpha} \big|\langle 0|\mathcal{C}_{\mathrm{CHSH}}|0\rangle\big| = 2\sqrt 2,
+x^0=\xi\sinh\eta,
+\qquad
+x^1=\xi\cosh\eta,
+\qquad \xi>0.
 $$
-attained as $\eta \to \infty$, and corresponding to "infinitely thin wavelets at the bifurcation surface."
+A Lorentz boost shifts $\eta$ and leaves $\xi$ fixed. Consequently, a fixed compact packet does **not** approach $(x^0,x^1)=(0,0)$ under a large boost; its center runs toward null infinity. The same point follows from vacuum invariance: if all four observables are transformed by the same global boost, their CHSH expectation is unchanged.
 
-The boost-limit is **exactly** the modular flow on the wedge algebras (Bisognano–Wichmann, Week 10), and this is the algebraic content of "saturating Tsirelson requires the full modular structure."
+To probe shorter distances from the common wedge edge, one needs a new localization sequence—for example supports with radial scale $\xi_n\to0$—not merely the modular orbit of one packet. The structural theorem guarantees the Bell supremum under its hypotheses, but does not identify that supremum with a particular boost orbit or with “infinitely thin wavelets at the bifurcation surface.”
 
-> **Physical picture.** Why must the wavelets crowd toward the bifurcation surface? Because that is where the vacuum's Bell pairs live. The entanglement of the vacuum across the cut is dominated by UV modes straddling the entangling surface — the same modes whose accumulation produces the area-law divergence (Week 9 §4.2) and the type III$_1$ structure (Week 12). A wavelet pair deep inside the two wedges sees only the exponential tail of these correlations and yields a sub-maximal violation; boosting the pair toward $x^0 = x^1 = 0$ zooms into shorter and shorter straddling modes, each of which is an ever-better approximation to a perfect Bell pair. Saturation is reached only in the limit — there is no "last Bell pair," just an inexhaustible scaling tower of them. This is the operational face of the type III$_1$ statement that the vacuum's entanglement is *infinite but nowhere locally cashable*: any finite experiment extracts $2\sqrt 2 - \epsilon$, never $2\sqrt 2$.
+> **Physical picture, explicitly heuristic.** Short-distance correlations across a common boundary are a useful guide when designing test functions. They should not be turned into literal Bell pairs sitting on the horizon: a type-III local algebra has no canonical tensor-product decomposition into such pairs. The picture motivates a scaling search; the algebraic theorem supplies the conclusion.
 
-### 4.5 Worked example: two wavelets and explicit numbers
+### 4.5 A source-checked numerical benchmark
 
-For concreteness: take 2D massless free scalar, and pick
+The 2024 scalar-field paper arXiv:2406.20033 used Gaussian functions and a Weyl-unitary Bell expression, with the classical normalization $2$. Gaussians are not compactly supported. The authors therefore tested locality numerically through the smeared Pauli–Jordan function and retained configurations below a threshold of $10^{-10}$. The resulting locality is numerical/approximate, not the exact support statement used in the Haag–Kastler theorem.
 
-- $f_1, f_2 \in W_R$ — Gaussian bumps with centers $(\tau_1, \xi_1) = (0.5, 1.5)$ and $(\tau_2, \xi_2) = (-0.5, 1.5)$, width $\sigma = 0.2$.
-- $g_1, g_2 \in W_L$ — Gaussian bumps with centers $(-\tau_j, -\xi_j)$, mirrored in $W_L$.
-- amplitude $\alpha = 1$.
+The largest reported values in Table 1 are:
 
-The Wightman correlator for the 2D massless scalar is $W(x, y) = -(4\pi)^{-1}\log[\,-(x-y)^2 + i\epsilon(y^0 - x^0)\,]$. Smearing against the Gaussian bumps gives finite real-and-imaginary parts; in this configuration $W(f_i, g_j)$ is real (because of the mirror symmetry), and $\mathrm{Re}\,W(f_i, g_j)$ is order $\sim -0.1$ to $-0.5$ depending on the bump separation.
+| mass parameter $m$ | reported Bell value |
+|---:|---:|
+| $1.5$ | $2.00148$ |
+| $1$ | $2.00722$ |
+| $0.1$ | $2.06382$ |
+| $0.01$ | $2.10044$ |
+| $0.001$ | $2.12661$ |
+| $0.0001$ | $2.13046$ |
 
-A numerical evaluation (typical of the group's papers) gives $\langle 0|\mathcal{C}_{\mathrm{CHSH}}|0\rangle \approx 2.1$ to $2.4$ in this configuration. Boosting the wavelets by rapidity $\eta$ and re-optimizing increases this toward $2\sqrt 2 \approx 2.828$. The group's papers report concrete numerical values for various configurations of wavelet parameters; verifying these is a Problem-set exercise.
+These numbers establish violations for the sampled configurations. They are numerical lower bounds on the optimized value of that chosen ansatz, not evidence that the ansatz reaches $2\sqrt2$. Their mass dependence is physically consistent with clustering for the effectively separated packets.
 
-## 5. The structural argument (no explicit wavelets)
+The 2025 paper arXiv:2506.00504 instead constructs bounded Hermitian operators from Weyl operators and studies tangent diamonds in $1+1$ dimensions. Its analytic modular construction and its numerical test-function construction must also be distinguished: the paper reports, for one displayed numerical bounded-Hermitian family, a value $2.752$, while using a very small mass as an infrared regulator.
 
-The Summers–Werner proof does **not** require wavelets. The argument is algebraic and works uniformly across QFTs satisfying the axioms.
+## 5. Where the structural theorem does its work
 
-**Structural argument (sketch).** 
+**Proof status: stated, not reproduced.** The Summers–Werner argument is a substantial operator-algebraic theorem. It should not be replaced by a three-line appeal to “type III$_1$ plus full modular spectrum.” In particular:
 
-1. By Reeh–Schlieder + Bisognano–Wichmann, $\mathcal{A}(W_R)$ has a faithful normal modular state (the vacuum) with explicit modular operator $\Delta_{W_R} = e^{-2\pi K}$.
+- Reeh–Schlieder gives cyclicity and, with locality for a complementary region, separatingness. It does not itself manufacture CHSH observables.
+- Bisognano–Wichmann identifies wedge modular flow geometrically. The Bell theorem is not a formal corollary of $\Delta=e^{-2\pi K}$.
+- Type III$_1$ is compatible with the required abundance of local operators, but the abstract type of two commuting factors does not determine their relative position or their Bell correlations.
+- A statement about the spectrum of one modular operator is not a license to posit ordinary projections satisfying $\sigma_t(P)=e^{i\lambda t}P$; that equation would usually be incompatible with $P=P^2$ unless the phase is trivial.
 
-2. In a type III$_1$ factor with such a state, the **modular flow has full real spectrum** (Week 12). The projection lattice contains projections of every "modular weight": for each $\lambda \in \mathbb{R}$, there are projections $P_\lambda$ with $\sigma_t^{W_R}(P_\lambda) = e^{i\lambda t} P_\lambda$ in a generalized sense.
+The reliable roadmap is therefore:
 
-3. The richness of the modular projection structure, combined with the commuting wedge algebras $\mathcal{A}(W_R), \mathcal{A}(W_L)$, allows construction of dichotomic quadruples saturating Tsirelson. The key technical lemma (Summers–Werner 1987b): for any two commuting type III$_1$ factors $\mathcal{M}, \mathcal{N}$ with a cyclic-separating vector for $\mathcal{M} \vee \mathcal{N}$, the **maximally violating** quadruple exists by a density argument in the joint projection lattice.
+1. formulate the Bell coefficient for the concrete commuting pair of wedge algebras;
+2. use the locality, covariance, spectrum, and nontriviality assumptions appearing in the original papers;
+3. obtain maximal correlation for complementary wedges, first in the free-field vacuum analysis and then in the generic vector-state theorem;
+4. add injectivity when extending the conclusion to all normal states induced by density matrices on $\mathcal B(\mathcal H)$.
 
-**This argument:**
-- is algebraic — no wavelets, no specific test functions;
-- works uniformly for any Wightman QFT under (N) + (SP);
-- gives the conclusion in any spacetime dimension;
-- holds for any pair of spacelike-separated wedge-like regions;
-- does **not** tell you *which* observables saturate — only that they exist.
-
-The explicit wavelet construction of §4 is needed for the *constructive* form of the saturation, which is what the group's research papers compute.
+This roadmap explains the role of the ingredients without simulating a proof. It also explains why neither an arbitrary pair of type-III$_1$ factors nor an arbitrary pair of separated double cones inherits the conclusion automatically.
 
 ## 6. Connection to the research program
 
-The group's papers — De Fabritiis, Guimarães, Roditi, Sorella, and collaborators — sit precisely at the **explicit observable** side of Summers–Werner. The pattern in each paper:
+The recent papers have different fields, observable classes, and proof status. They should be read one by one rather than blended into a single “wavelet construction.”
 
-1. **Pick a QFT** (free scalar, free Dirac, free Proca, ..).
-2. **Pick a wedge pair** (or two spacelike-separated regions).
-3. **Construct dichotomic observables** $A_i, B_j$ from Weyl-cosine or related operators with bumpified Haar wavelet test functions.
-4. **Compute $\langle 0|\mathcal{C}_{\mathrm{CHSH}}|0\rangle$** as a function of wavelet parameters.
-5. **Optimize** over parameters to maximize the violation.
-6. **Compare** with the Summers–Werner bound $2\sqrt 2$.
+- **arXiv:2307.04611 / PRD 108, L081701.** Free massless spinor field in $1+1$ dimensions. A finite Haar-wavelet optimization is bumpified with a Planck-taper window to obtain smooth compactly supported test functions to arbitrary precision. The reported violations can be made arbitrarily close to the maximal value within that construction.
+- **arXiv:2309.02941 / PRD 108, 085026.** Free real scalar field. The paper combines Tomita–Takesaki theory with direct correlators of Weyl operators to establish violations.
+- **arXiv:2406.20033 / PRD 110, 065006.** Massive scalar numerical search with Gaussian profiles and an explicit numerical Pauli–Jordan check. The verified Table 1 values are listed in §4.5.
+- **arXiv:2506.00504.** Bounded Hermitian operators built from Weyl operators, with analytic modular and numerical analyses for tangent diamonds in $1+1$ dimensions. This is the closest match to the standard self-adjoint-contraction formulation used in §1.
 
-Concrete topics covered in recent group papers:
+The methodological lesson is useful beyond these examples: specify the field, region, observable class, exact-versus-numerical locality criterion, and optimization domain before quoting a Bell value.
 
-- **Bell-CHSH inequality, local realism and quantum field theory** (and follow-ups) — explicit computation in 2D and 4D free scalar.
-- **Massive scalar field** (mass $m > 0$): the wedge modular structure is unchanged, but correlators decay differently, leading to different rate of approach to Tsirelson.
-- **Proca field** (massive vector): different field content, same algebraic structure, similar saturation pattern.
-- **Gauge fields** (BRST formulation): the algebra structure is more delicate due to gauge invariance; explicit construction works after BRST cohomology.
-
-**Open question** (wiki: [[bell-chsh-in-holographic-setting]]): does the Tsirelson saturation extend to the **boundary algebras of a holographic CFT**, and does the violation pattern probe topological features of the bulk? This is a research-level question with no consensus answer; it is one of the natural extensions for a final-paper topic.
+**Open project.** For holographic boundary regions, one would first have to state the commuting algebra pair and the state, and then ask whether an appropriate wedge or tangent-region theorem applies. A failure of one explicit ansatz to saturate would not by itself diagnose bulk topology; that would require an independent theorem relating the optimized Bell coefficient to the bulk structure.
 
 ## 7. What to take away
 
-- **Stated only (Summers–Werner):** the vacuum saturates the Tsirelson bound for CHSH expectations between any two spacelike-separated wedge-like regions in any Wightman QFT under (N) + (SP). The supremum is $2\sqrt 2$ and is approached as a limit.
-- **Computed (model proof in the 2D massless free scalar):** the CHSH expectation for cosine-Weyl observables built from real wedge-supported test functions approaches $2\sqrt 2$ in the boost-rapidity limit.
-- **Structural inputs:** Reeh–Schlieder + Bisognano–Wichmann + type III$_1$. The full real spectrum of the modular flow is the algebraic source of saturation.
-- **Distinction from QM (hypothesis-explicit):** in finite-dim QM, Tsirelson is achievable only on special maximally entangled states; in QFT, under (N) + (SP) + type III$_1$ structure on wedge-like algebras, it is approachable by faithful normal states on the joint two-sided algebra. The "every state" version of saturation requires the type-III$_1$ hypothesis on both sides; it fails in any UV-regulated (type-I) approximation.
-- **Research-program anchor:** the group's explicit wavelet constructions sit on the "constructive" side of Summers–Werner. Open question — Bell-CHSH in holographic settings.
+- **Proved in the cited literature:** under the precise Summers–Werner hypotheses, complementary wedge algebras have raw CHSH supremum $2\sqrt2$ in every vector state; injectivity yields the stated extension to ambient normal density-matrix states.
+- **Exact calculation:** quasifree Weyl expectations reduce chosen Bell correlators to smeared two-point functions. This does not by itself optimize over the local algebras.
+- **Numerical evidence:** finite test-function searches provide lower bounds for specified ansätze and tolerances. They should be reported with their regulator and locality checks.
+- **Geometry:** a boost changes Rindler time at fixed Rindler radius. Approaching the common edge requires a scaling/localization sequence, not the boost orbit of a fixed packet.
+- **Scope:** type III$_1$, Reeh–Schlieder, and Bisognano–Wichmann illuminate the result, but no one of them alone is the Summers–Werner theorem. Type-I systems can also attain $2\sqrt2$ in suitable states.
 
 ## 8. Looking ahead
 
-Week 12 closes Block C by completing the **type III$_1$ classification** of QFT local algebras. We state the precise hypothesis-explicit theorem (Buchholz–D'Antoni–Fredenhagen, building on Driessler and Fredenhagen) and discuss why type III$_1$ — rather than I, II, or III$_\lambda$ for $\lambda < 1$ — is the structurally inevitable type for relativistic QFT. The implications for entropy, density matrices, and crossed products set up Block D's central construction.
+Week 12 closes Block C by explaining the **type III$_1$ classification** of local algebras under explicit phase-space and scaling hypotheses. We separate the route to injectivity/hyperfiniteness from the route to the Connes type, then discuss what the result does—and does not—imply for density matrices, entropy, Bell correlation, and crossed products.
 
 ## 9. Problem set
 
 **Core problems.**
 
-**1. CHSH expectation in finite-dim QM (warmup).** For the singlet $|\psi^-\rangle$ on $\mathbb{C}^2 \otimes \mathbb{C}^2$, with $A_i = \vec a_i \cdot \vec\sigma$ and $B_j = \vec b_j \cdot \vec\sigma$ for unit vectors $\vec a_i, \vec b_j$ in the $xz$-plane, compute $\langle\psi^-|\mathcal{C}_{\mathrm{CHSH}}|\psi^-\rangle$ and show it equals $2\sqrt 2$ when the four unit vectors are placed at angles $0, \pi/2, \pi/4, 3\pi/4$. Verify the geometric interpretation: the four vectors at $45°$ separations.
+**1. CHSH expectation in finite-dimensional QM (warmup).** For the singlet $|\psi^-\rangle$ on $\mathbb C^2\otimes\mathbb C^2$, first prove
+$$
+\langle\psi^-|(\vec a\cdot\vec\sigma)\otimes(\vec b\cdot\vec\sigma)|\psi^-\rangle=-\vec a\cdot\vec b.
+$$
+In the $xz$-plane choose Alice's angles $0,\pi/2$ and Bob's angles $\pi/4,-\pi/4$. For the sign convention of §1, show that the CHSH expectation is $-2\sqrt2$, hence its absolute value is $2\sqrt2$. Then reverse both Bob observables and recover the positive value used in §1.3. **Checkpoint:** the relevant Alice–Bob separations are $\pi/4$ or $3\pi/4$; the four settings are not all mutually separated by $45^\circ$.
 
 **2. Tsirelson bound (proof in finite-dim).** For commuting self-adjoint $A_i \in \mathcal{B}(\mathcal{H}_A)$, $B_j \in \mathcal{B}(\mathcal{H}_B)$ with $A_i^2 = B_j^2 = 1$ (dichotomic), prove the operator identity
 $$
 \mathcal{C}_{\mathrm{CHSH}}^2 = 4 - [A_1, A_2]\,[B_1, B_2],
 $$
-hence $\|\mathcal{C}_{\mathrm{CHSH}}\| \le \sqrt{4 + \|[A_1, A_2]\|\,\|[B_1, B_2]\|} \le 2\sqrt 2$. Then extend the bound to general self-adjoint contractions (spectrum in $[-1,1]$) by an affinity/convexity argument as in §1.2.
+hence $\|\mathcal{C}_{\mathrm{CHSH}}\| \le \sqrt{4 + \|[A_1, A_2]\|\,\|[B_1, B_2]\|} \le 2\sqrt 2$. Then reproduce the row/column norm argument of §1.2 for general self-adjoint contractions. Do not assume that a contraction is a convex combination of two self-adjoint unitaries.
 
-**3. Locality from spacelike $\sigma$.** For $f_R \subset W_R$ and $g_L \subset W_L$ in the 2D massless free scalar, verify directly that $[\cos(\alpha\phi(f_R)), \cos(\beta\phi(g_L))] = 0$. Use the Weyl relation $W(f)W(g) = e^{-i\sigma(f,g)/2}W(f+g)$ and the spacelike vanishing of $\sigma$.
+**3. Locality from spacelike $\sigma$.** Let $f_R\in C_c^\infty(W_R;\mathbb R)$ and $g_L\in C_c^\infty(W_L;\mathbb R)$, with the infrared-safe restriction of §4.1 in the massless $1+1$-dimensional model. Verify directly that $[\cos(\alpha\phi(f_R)),\cos(\beta\phi(g_L))]=0$. Use the Weyl relation and the spacelike vanishing of $\sigma(f_R,g_L)$.
 
-**4. Compute $\langle A_1 B_1\rangle$ for cosine-Weyl observables.** In the 2D massless free scalar, take $f_1 \in W_R$ and $g_1 \in W_L$ as Gaussian bumps with parameters $(\tau, s; \sigma)$ and $(-\tau, -s; \sigma)$. Compute
+**4. A reproducible cosine-Weyl calculation.** Suppose two spacelike-separated, infrared-safe smearing functions have normalized covariance
 $$
-\langle 0\,|\,\cos(\alpha\phi(f_1))\,\cos(\alpha\phi(g_1))\,|0\rangle
+C(f,f)=C(g,g)=1,
+\qquad C(f,g)=c,
+\qquad |c|<1.
 $$
-as a function of $\alpha, \tau, s, \sigma$ using the Gaussian formula in §4.2. Verify that for $\alpha \to 0$ the expectation goes to 1 and for $\alpha \to \infty$ it goes to 0.
+Use §4.2 to compute
+$$
+\langle0|\cos(\alpha\phi(f))\cos(\alpha\phi(g))|0\rangle
+$$
+and verify the limits $\alpha\to0$ and $\alpha\to\infty$. Explain exactly where the strict inequality $|c|<1$ is used. **Extension:** choose compact zero-integral bumps, evaluate the three covariances numerically, and compare with the normalized model.
 
-**5. Read one group paper.** Pick a recent De Fabritiis–Sorella et al. paper on Bell-CHSH in QFT. Identify the precise observable construction (test functions, amplitude $\alpha$, wedge configuration), the parameters being optimized, and the highest $\langle\mathcal{C}_{\mathrm{CHSH}}\rangle$ value reported. Verify the parameter choices are consistent with the algebraic framework here.
+**5. Read one group paper.** Pick one paper in §6. Record: the field, spacetime dimension, region pair, observable class, state, optimization variables, exact or numerical locality test, and largest reported Bell value. End with two sentences separating what the paper proves from what its displayed ansatz demonstrates.
 
-**6. Real-vs-imaginary part of $W(f, g)$ for spacelike $f, g$.** Show explicitly that for $f \in W_R$ and $g \in W_L$ in the 2D massless free scalar, the imaginary part $\mathrm{Im}\,W(f, g)$ (= $\sigma(f, g)/2$) vanishes, while the real part $\mathrm{Re}\,W(f, g)$ is generically nonzero. (*Hint:* use the Pauli-Jordan support and the symmetric two-point function formulas of Week 8.)
+**6. Real versus imaginary part of $W_2(f,g)$.** For compact, infrared-safe $f$ and $g$ with spacelike-separated supports, show that $\operatorname{Im}W_2(f,g)=\sigma(f,g)/2=0$, while $\operatorname{Re}W_2(f,g)$ need not vanish. Explain why locality constrains the commutator, not the symmetric vacuum correlation.
 
 **Starred problems.**
 
-**7\*. Boost-limit of the CHSH expectation.** For the 2D massless free scalar, fix four real Gaussian wavelets supported in $W_R$ and $W_L$, then boost the $W_R$ wavelets by rapidity $\eta$ (and the $W_L$ wavelets by $-\eta$). Compute the limit of $\langle 0|\mathcal{C}_{\mathrm{CHSH}}|0\rangle$ as $\eta \to \infty$. Verify it approaches $2\sqrt 2$. (*Hint:* the Wightman correlator $W(f^\eta, g^{-\eta})$ approaches a fixed extremal value involving the bifurcation-surface correlator.)
+**7\*. Audit the proposed boost limit.** Starting from $x^0=\xi\sinh\eta$, $x^1=\xi\cosh\eta$, prove that a boost preserves $\xi$ and carries a fixed center toward null infinity as $|\eta|\to\infty$. Next use $U(\Lambda(s))|0\rangle=|0\rangle$ to show that applying the **same** boost to all four observables leaves the vacuum CHSH value unchanged. Finally propose a genuine scaling sequence with $\xi_n\to0$, and list the covariance estimates one would still need before claiming convergence to $2\sqrt2$.
 
-**8\*. Massive scalar.** Repeat the analysis for the 2D *massive* free scalar (mass $m > 0$). Show that the Tsirelson saturation still holds (the modular structure on wedges is unchanged), but that the rate of approach to $2\sqrt 2$ depends on $m$. (*Hint:* the massive two-point function involves Bessel functions and decays exponentially with $m \cdot d$ where $d$ is the spacelike separation, modifying the optimization.)
+**8\*. Mass and theorem scope.** For the free massive scalar, use Bisognano–Wichmann to explain why the wedge modular action remains geometric. Separately use the large-spacelike-distance asymptotics of the Bessel function in the two-point function to show why a fixed, positively separated packet ansatz has mass-suppressed correlations. Explain why the first statement concerns the full wedge algebra while the second concerns one restricted observable family; neither provides a universal “rate of approach” to the Summers–Werner supremum.
 
-**9\*. The Bell–CHSH operator on the modular flow.** Show that $\sigma_t^{W_R}(\mathcal{C}_{\mathrm{CHSH}}) = \mathcal{C}_{\mathrm{CHSH}}'$, where $\mathcal{C}_{\mathrm{CHSH}}'$ is the CHSH operator built from boosted observables (and dual-boosted on the $W_L$ side via the commutant). Use this to argue that the CHSH expectation in the vacuum is **invariant** under joint modular flow on the two wedges.
+**9\*. Joint boosts and modular notation.** Let $\alpha_s=\operatorname{Ad}U(\Lambda(s))$. Show algebraically that
+$$
+\alpha_s(\mathcal C[A_1,A_2;B_1,B_2])
+=\mathcal C[\alpha_s(A_1),\alpha_s(A_2);\alpha_s(B_1),\alpha_s(B_2)].
+$$
+Use boost invariance of the vacuum to prove equality of the two expectations. Finally translate $s=2\pi t$ into the course convention $\sigma_t^{W_R}=\operatorname{Ad}\Delta_{W_R}^{-it}$. **Checkpoint:** this is a common global boost of both wedge algebras, not an independently chosen opposite boost on each side.
 
-**10\*. Type-I would not saturate.** Take a finite-dim regulator of the free 2D massless scalar (e.g., a box of size $L$ with periodic boundary conditions, momentum cutoff $\Lambda$). Show that the local algebras at this regulated level are type I, and the maximum CHSH value over all admissible observables and states is *strictly less than* $2\sqrt 2$. Compute the leading dependence on $L\Lambda$. (*Hint:* type I$_n$ factors have Tsirelson supremum $2\sqrt 2$ only on highly specific states; on a generic regulated vacuum it falls short.)
+**10\*. What a type-I regulator does and does not imply.** Consider $M_2(\mathbb C)\otimes M_2(\mathbb C)$. Show that the Bell state and observables of Problem 1 attain $2\sqrt2$, whereas the maximally mixed state gives zero for all traceless Pauli choices and cannot violate CHSH. Conclude that type I does not force a strict gap below Tsirelson; the value depends on the state and observable pair. Then explain why a finite-mode cutoff of a continuum field does not, by itself, supply strictly local tensor factors or a universal formula depending only on $L\Lambda$.
 
 **Project problems.**
 
-**11. Bell–CHSH in holographic settings.** Read the wiki open question [[bell-chsh-in-holographic-setting]]. Identify a candidate test of "Bell-CHSH between two boundary subregions of a holographic CFT." What would maximally violating observables look like? What would non-saturation tell us about the bulk?
+**11. Bell–CHSH in a holographic setting.** Read the [[sem2-week-08-bell-chsh-on-tfd|Semester II Week 8 project brief]]. Specify a boundary state and a pair of commuting boundary algebras before choosing observables. State whether the regions are complementary, tangent, or positively separated. Design one computable lower bound using a restricted observable family, and list the extra argument needed before interpreting non-saturation as a statement about the bulk.
 
-**12. Reproduce one group calculation.** Take a specific paper from the De Fabritiis–Sorella program (instructor selects). Reproduce one of the numerical CHSH violation calculations using the wavelet construction of this lecture. Compare the numbers; discuss any discrepancies.
+**12. Reproduce a documented numerical benchmark.** Reproduce one row of Table 1 of arXiv:2406.20033 or the displayed bounded-Hermitian value in arXiv:2506.00504. Record integration tolerances, the Pauli–Jordan residual, parameter-search range, and random seed where applicable. Report the result as a reproducible numerical lower bound for the stated ansatz, not as a proof of the structural supremum.
+
+## Self-study answer checkpoints
+
+These checkpoints cover the core problems. Starred, project, and explicitly research-level problems remain source-led; they should be completed with the references and hypotheses named in the problem.
+
+1. The four correlations are $-\cos(\theta_A-\theta_B)$. For the stated angles they are $-1/\sqrt2,-1/\sqrt2,-1/\sqrt2,+1/\sqrt2$, so
+   $$
+   \langle\mathcal C_{\mathrm{CHSH}}\rangle=-2\sqrt2.
+   $$
+   Reversing both Bob observables changes the overall sign and gives $+2\sqrt2$.
+2. Expansion using $[A_i,B_j]=0$ gives
+   $$
+   \mathcal C_{\mathrm{CHSH}}^2=4-[A_1,A_2][B_1,B_2].
+   $$
+   Since each commutator has norm at most $2$, $\|\mathcal C_{\mathrm{CHSH}}\|\le2\sqrt2$. For general contractions, the row norm is at most $\sqrt2$ and the column norm at most $2$, giving the same bound without a dichotomic decomposition.
+3. Spacelike separation gives $\sigma(f_R,g_L)=0$, hence every $W(\pm\alpha f_R)$ commutes with every $W(\pm\beta g_L)$. The two cosines are linear combinations of these Weyl operators, so their commutator vanishes.
+4. The exact normalized correlator is
+   $$
+   \langle\cos(\alpha\phi(f))\cos(\alpha\phi(g))\rangle
+   =e^{-\alpha^2}\cosh(c\alpha^2)
+   =\frac12\!\left[e^{-(1-c)\alpha^2}+e^{-(1+c)\alpha^2}\right].
+   $$
+   It tends to $1$ as $\alpha\to0$ and to $0$ as $\alpha\to\infty$. The strict condition $|c|<1$ makes both decay exponents positive; at $|c|=1$ one term would not decay.
+5. There is no paper-independent numerical answer. A satisfactory record must reproduce the field, dimension, algebra pair, state, observable ansatz, optimization domain, locality test, and quoted value from the chosen source. Its concluding distinction should read: the structural statement concerns the supremum over the full local unit balls, whereas the displayed construction establishes only what its specified ansatz and optimization actually attain.
+6. For real smearings,
+   $$
+   W_2(f,g)-W_2(g,f)=2i\operatorname{Im}W_2(f,g)=i\sigma(f,g).
+   $$
+   Thus spacelike separation forces $\operatorname{Im}W_2(f,g)=0$, while the symmetric covariance $\operatorname{Re}W_2(f,g)$ may remain nonzero. Locality removes the commutator, not the vacuum correlation.
+
+**Wiki connections.** [[bell-chsh-in-holographic-setting|Bell–CHSH in holographic settings]] (open question)
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block C. Last revised 2026-06-11.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block C. Last revised 2026-08-24.*

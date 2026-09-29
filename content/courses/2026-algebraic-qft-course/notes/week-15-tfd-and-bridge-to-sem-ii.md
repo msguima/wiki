@@ -7,12 +7,12 @@ week: 15
 block: D
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Weeks 10 (Bisognano-Wichmann), 12 (type III$_1$), 13-14 (crossed product, dressed entropy)
-modified: 2026-06-11
+modified: 2026-08-24
 ---
 
 # Week 15 — The TFD and the Bridge to Semester II
 
-> *Semester I ends here. We have built the algebraic-QFT toolkit (Blocks A–C) and the crossed-product machinery (Block D). This week, we put them together in the specific construction that Semester II will use repeatedly: the **thermofield double** state. The TFD is the cyclic-separating vector for a two-sided pair of commuting algebras whose modular flow is the **boost** (in free QFT) or the **ADM Hamiltonian** (in holography). The TFD is what the eternal black hole's bulk geometry is dual to. Witten 2022, CPW 2022, and Ahmad–Jefferson 2025 all start here — by applying our Block D crossed-product machinery to a two-sided algebra in the TFD vacuum. **The entire Semester II program is one sentence: dress the modular flow of the TFD on a two-sided boundary algebra, and compute the dressed entropy.***
+> *Semester I ends with the thermofield double, the finite-dimensional model that makes modular theory visible as a matrix calculation. We will then separate this literal tensor-product construction from its type III counterpart. In QFT the vacuum is cyclic and separating for one wedge algebra, the opposite wedge is its commutant, and the modular flow is geometric; there is no density matrix for either wedge and no literal Hilbert-space factorization into left and right Rindler factors. This distinction is the bridge to Semester II: Witten and CPW retain the modular structure of the TFD while replacing the type-I tensor product by a type-III standard form and then by its continuous core.*
 
 ## 0. Reading
 
@@ -29,6 +29,14 @@ modified: 2026-06-11
 - Maldacena & Susskind, "Cool horizons for entangled black holes," *Fortsch. Phys.* 61 (2013) 781, arXiv:1306.0533 (ER=EPR).
 - Van Raamsdonk, "Building up spacetime with quantum entanglement," *Gen. Rel. Grav.* 42 (2010) 2323 (spacetime from entanglement).
 - Liu, "Lectures on entanglement, von Neumann algebras, and emergence of spacetime," arXiv:2510.07017 (the Sem II Block 3 connective-tissue paper).
+
+### 0.1 How to use this master dossier
+
+- **Classroom core:** §§1–4 and the take-home Problems 1–3. This route moves from the literal finite-dimensional TFD to the one-sided type-III standard form and then to Witten/CPW.
+- **Full derivation / self-study:** §§5–6, take-home Problems 4–5, and additional Problems 1–7. This route checks the regulated Rindler-mode analogy, unitary cancellation, and the AAJ-method distinction.
+- **Research extension:** §§7–10 and additional Problems 8–10. This route turns the Semester I toolkit into source-audited Semester II projects.
+
+The central comparison is deliberately asymmetric: the finite-dimensional TFD is a model one can calculate with, while the continuum wedge theorem is the structural result one is allowed to export.
 
 ## 1. The thermofield double state
 
@@ -54,11 +62,17 @@ the **Gibbs state** at inverse temperature $\beta$. The TFD is a **purification*
 
 **Modular operator.** By the standard type-I modular computation (Week 5 §5), the modular operator of $|\mathrm{TFD}_\beta\rangle$ for the right algebra is
 $$
-\Delta = \rho_R \otimes \rho_R^{-1} = \frac{e^{-\beta H_R}}{Z(\beta)} \otimes \frac{Z(\beta)}{e^{-\beta H_L}} = e^{-\beta(H_R - H_L)} \cdot (\text{constants}).
+\Delta = \rho_R \otimes \rho_L^{-1}
+= \frac{e^{-\beta H_R}}{Z(\beta)} \otimes Z(\beta)e^{\beta H_L}
+= e^{-\beta(H_R-H_L)}.
 $$
 The constants cancel under modular flow: $\sigma_t^{\mathrm{TFD}}(a) = \Delta^{-it}\,a\,\Delta^{it} = e^{i\beta t(H_R - H_L)}\,a\,e^{-i\beta t(H_R - H_L)}$.
 
-**Modular Hamiltonian.** $K_{\mathrm{TFD}} = -\log\Delta = \beta(H_R - H_L) + \text{const}$. This is the **two-sided Hamiltonian** $H_R - H_L$, scaled by $\beta$.
+**Modular Hamiltonian.** The normalization constants cancel exactly:
+$$
+K_{\mathrm{TFD}}=-\log\Delta=\beta(H_R-H_L).
+$$
+It is the two-sided Hamiltonian difference, scaled by $\beta$.
 
 ### 1.3 What the TFD is (physically)
 
@@ -66,7 +80,7 @@ In statistical mechanics, the TFD is the **purification of the Gibbs state at te
 
 > **Physical picture: thermality = entanglement with an inaccessible copy.** The TFD makes a conceptual identity manifest: a thermal state is what an entangled pure state looks like when half of it is out of reach. The Boltzmann weights $e^{-\beta E_n}$ of the mixed Gibbs state become Schmidt coefficients $e^{-\beta E_n/2}$ of a pure state; tracing out the copy converts entanglement spectrum into thermal spectrum. Statistical ignorance and quantum entanglement are, for the observer confined to one side, *operationally indistinguishable*. There is also a constructive picture worth keeping in mind: the TFD is prepared by the **Euclidean path integral over half the thermal circle** — evolving for imaginary time $\beta/2$ from the identity produces precisely the weights $e^{-\beta E_n / 2}$. This is the same half-circle that appeared in Week 10's Euclidean reading of $\Delta^{1/2} = e^{-\pi K}$ (rotation by angle $\pi$ = half of $2\pi$): the Tomita operator's positive part *is* the half-thermal-circle evolution, and the TFD is its fixed vector. Modular theory, Euclidean preparation, and two-sided entanglement are one structure seen three ways.
 
-In QFT (next subsection), the TFD acquires a *physical* interpretation: it is the Minkowski vacuum viewed across a two-sided Rindler split. The "fictitious copy" is the algebra of the *other* wedge.
+In QFT, the analogy becomes structural rather than literal. The opposite wedge supplies the commutant of the right-wedge algebra, and the vacuum supplies its cyclic-separating vector. A mode regulator can turn this into an ordinary TFD tensor product, but the continuum theory itself does not factorize in that way.
 
 In holography (§3), the TFD acquires a *gravitational* interpretation: it is the dual of the two-sided eternal AdS-Schwarzschild black hole. The two copies are the boundary algebras of the two asymptotic regions.
 
@@ -74,23 +88,30 @@ In holography (§3), the TFD acquires a *gravitational* interpretation: it is th
 
 ### 2.1 The two-sided algebra
 
-In the 2D massless free scalar, the right and left Rindler wedges $W_R, W_L$ are spacelike-separated and their local algebras commute:
+In the 2D massless free scalar, the right and left Rindler wedges $W_R,W_L$ are spacelike separated and their local algebras commute:
 $$
 [\mathcal{A}(W_R), \mathcal{A}(W_L)] = 0.
 $$
-By Bisognano–Wichmann (Week 10), the modular flow on $\mathcal{A}(W_R)$ is the boost subgroup, generated by $K_R = \int_0^\infty x^1 T^{00}\,dx^1$ (where the integral is over the wedge). Similarly, the modular flow on $\mathcal{A}(W_L)$ is generated by $K_L = -\int_{-\infty}^0 (-x^1) T^{00}\,dx^1$.
+By Bisognano–Wichmann (Week 10), the modular flow on $\mathcal A(W_R)$ is implemented in the vacuum representation by the **global** Lorentz-boost generator $K_{\rm boost}$. A regulated stress-tensor calculation may split it into right and left pieces proportional to integrals of $x^1T_{00}$ over the two half-spaces. In the continuum, however, those one-sided pieces need not exist as operators in the wedge algebras; the global boost unitary and the modular operator are the invariant objects.
 
-### 2.2 The Minkowski vacuum is a TFD
+### 2.2 The type III statement behind the TFD analogy
 
-**Theorem 2.1 (Bisognano–Wichmann TFD identification). [Stated only — refs: Bisognano–Wichmann 1975; Haag ch. V §1.]** *The Minkowski vacuum $|0_M\rangle$, restricted to the combined algebra $\mathcal{A}(W_R) \otimes \mathcal{A}(W_L)$, is cyclic-separating, and its modular operator for the right algebra $\mathcal{A}(W_R)$ is*
+**Theorem 2.1 (Bisognano–Wichmann, one-sided standard form). [Stated only — refs: Bisognano–Wichmann 1975; Haag ch. V.]** *The Minkowski vacuum $|0_M\rangle$ is cyclic and separating for the right-wedge algebra $\mathcal A(W_R)$. With the course convention,*
 $$
-\Delta_{\mathrm{Mink}}^{(W_R)} = e^{-2\pi (K_R - K_L)},
+\Delta_{W_R}=e^{-2\pi K_{\rm boost}},
+\qquad
+\sigma_t(a)=e^{i2\pi tK_{\rm boost}}a e^{-i2\pi tK_{\rm boost}},
 $$
-*so the modular Hamiltonian is $K_{\mathrm{Mink}} = 2\pi(K_R - K_L)$, the boost generator in our convention.*
+*and, assuming wedge duality,*
+$$
+J\mathcal A(W_R)J=\mathcal A(W_R)'=\mathcal A(W_L).
+$$
 
-This is the **two-sided** version of Bisognano–Wichmann (Week 10). The Minkowski vacuum *is* the TFD of the boost Hamiltonian at Rindler "temperature" $T = 1/(2\pi)$.
+The cyclic-separating statement is for the **one-sided algebra** $\mathcal A(W_R)$, not for the joined algebra $\mathcal A(W_R)\vee\mathcal A(W_L)$. Under wedge duality the joined algebra is irreducible, typically $\mathcal B(\mathcal F)$, and no vector is separating for $\mathcal B(\mathcal F)$ when $\dim\mathcal F>1$.
 
-In physical units, taking a Rindler observer with acceleration $a = 1$ (lapse $\xi_0 = 1$), the Rindler "temperature" $2\pi$ is the Unruh temperature, and the TFD identification is the algebraic content of the Unruh effect.
+The theorem has the same modular pattern as the finite-dimensional TFD: the commutant plays the role of the second side, and modular conjugation exchanges the sides. It is nevertheless misleading to write a continuum density matrix $e^{-2\pi K_R}/Z$ or to treat the Fock space as $\mathcal F_R\otimes\mathcal F_L$. Those objects appear only after a regulator or a modewise formalization.
+
+In physical units, a uniformly accelerated observer with proper acceleration $a$ detects the Unruh temperature $T_U=a/(2\pi)$, so the inverse temperature is $\beta_U=2\pi/a$.
 
 ### 2.3 What we have
 
@@ -99,15 +120,15 @@ Combining the structural pieces:
 | Object | Free scalar on Rindler-Rindler | Holographic eternal BH |
 |---|---|---|
 | Two-sided algebra | $\mathcal{A}(W_R), \mathcal{A}(W_L)$ | $\mathcal{A}_R, \mathcal{A}_L$ (large-$N$ single-trace) |
-| Cyclic-separating vector | Minkowski vacuum $\lvert 0_M\rangle$ | TFD of dual CFT |
-| Modular Hamiltonian | $K_R - K_L$ (boost) | $H_R - H_L$ (ADM) |
+| Cyclic-separating vector | Minkowski vacuum for $\mathcal A(W_R)$ | TFD standard vector for the right algebra |
+| Modular Hamiltonian | $2\pi K_{\rm boost}$; no separate continuum $K_R,K_L$ operators | $\beta_H\widehat H$, with $\widehat H=H_R-H_L$ well-defined in the TFD representation |
 | Modular flow | Boost subgroup | ADM-time translation |
 | Algebra type | type III$_1$ | type III$_1$ (large-$N$) |
 | Modular crossed product | $\hat{\mathcal{A}}_R = \mathcal{A}(W_R) \rtimes_{\mathrm{boost}}\mathbb{R}$ | $\hat{\mathcal{A}}_R$ (Witten 2022) |
 | Dressed algebra type | type II$_\infty$ | type II$_\infty$ |
-| Dressed entropy | Area law via boost | $A/(4G_N) + S_{\mathrm{out}}$ |
+| Core entropy | Trace entropy, when defined; matter UV law remains separate | $A/(4G_N) + S_{\mathrm{out}}+\mathrm{const}$ for the stated semiclassical construction |
 
-**This table is the entire structure of Sem II in compact form.** Each entry on the holography side is what Sem II Blocks 1, 2, 4 develop in detail. Each entry on the free-field side is the model verification that the holographic side is right.
+This table is the structural bridge to Semester II. The free-field side verifies modular geometry and the type of the core; it does not by itself verify the gravitational coefficient $1/(4G_N)$.
 
 ## 3. The eternal black hole and gravity
 
@@ -123,67 +144,66 @@ The geometry has:
 
 ### 3.2 Maldacena's identification
 
-**Theorem 3.1 (Maldacena 2001). [Stated only — refs: Maldacena, *JHEP* 04 (2003) 021.]** *The two-sided eternal AdS-Schwarzschild black hole is dual to the dual-CFT in the TFD state*
+**Holographic identification 3.1 (Maldacena 2001). [Dictionary statement, not a mathematical theorem — ref: Maldacena, *JHEP* 04 (2003) 021.]** *The two-sided eternal AdS-Schwarzschild black hole is dual to the doubled CFT in the TFD state*
 $$
 |\mathrm{BH}\rangle \;\leftrightarrow\; |\mathrm{TFD}_{\beta_H}\rangle_{\mathrm{CFT}_R \otimes \mathrm{CFT}_L},
 $$
-*where $\beta_H = 2\pi r_H / (\text{constants})$ is the inverse Hawking temperature.*
+*where $\beta_H=T_H^{-1}=2\pi/\kappa$ in terms of the horizon surface gravity $\kappa$.*
 
-This is the holographic counterpart of the Bisognano–Wichmann TFD identification (Theorem 2.1). It says: gravitational thermal physics in the bulk = TFD physics on the boundary.
+This has the same thermal/modular pattern as Bisognano–Wichmann, but it is a statement of the AdS/CFT dictionary rather than a consequence of the wedge theorem.
 
-> **Physical picture.** The dictionary between §2 and §3 is tighter than an analogy — it is the same modular geometry at two scales. Near its bifurcation surface, the eternal black hole *is* Rindler space: the near-horizon metric is flat, the Killing horizon is a Rindler horizon, and Hawking temperature is Unruh temperature measured at the redshifted asymptotic clock. What Maldacena's identification adds is *global, two-sided* content: the entanglement pattern of the TFD between the two boundary CFTs is dual to the *geometric connectedness* of the bulk (the Einstein–Rosen bridge). Disentangle the two CFTs (replace TFD by a product of two thermal states) and the bridge pinches off — two disconnected spacetimes. This is the seed of ER=EPR and Van Raamsdonk's "spacetime from entanglement": the wormhole's spatial connectivity is the geometrization of the Schmidt coefficients $e^{-\beta E_n/2}$. In algebraic terms — the language this course supplies — the bulk geometry is dual to the *modular structure* of the boundary pair $(\mathcal{A}_R, \mathcal{A}_L, |\mathrm{TFD}\rangle)$, with the horizon at the fixed locus of the modular flow.
+> **Physical picture.** Near a smooth bifurcate Killing horizon, the geometry is locally Rindler and Hawking temperature is the redshifted counterpart of Unruh temperature. Maldacena's construction adds global two-sided information: the TFD state is dual to the connected eternal-black-hole saddle. This motivates the broader idea that entanglement participates in bulk connectivity. It does not prove that continuously reducing boundary entanglement produces a smooth geometric “pinch-off,” nor that an arbitrary entangled state has a wormhole dual. Those are questions about the gravitational state and the code subspace, not consequences of Tomita–Takesaki theory.
 
 ### 3.3 The boundary algebras are type III$_1$
 
-At large $N$ (the classical-gravity limit), the algebras of single-trace operators on each boundary CFT are type III$_1$ — by the standard hypothesis-explicit type-III$_1$ universality theorem (Week 12). The TFD is their cyclic-separating vector.
+In the Leutheusser–Liu large-$N$ construction, the noncentral single-trace algebra on one side is a type III$_1$ factor and the TFD vector is cyclic and separating for it. This is a specific large-$N$ operator-algebraic limit, not a theorem that every large-$N$ single-trace algebra in every state is type III$_1$.
 
-The modular flow on the right algebra $\mathcal{A}_R$, in the TFD vacuum, is the **time-translation by the ADM Hamiltonian** of the right asymptotic region — analogous to how the modular flow on $\mathcal{A}(W_R)$ in the Minkowski vacuum is the boost.
+The modular operator satisfies $\Delta=e^{-\beta_H\widehat H}$ with $\widehat H=H_R-H_L$ well-defined in the TFD representation. On right-algebra elements its automorphism acts as right-boundary time translation. The individual $H_R$ and $H_L$ need not exist as operators in the strict large-$N$ TFD representation.
 
-(This identification — modular flow = ADM Hamiltonian — at large $N$ requires the holographic CFT setup; it is the central insight of Witten 2022 and is developed in Sem II Block 1.)
+(This physical link between modular flow, boundary time, and the ADM-energy collective coordinate requires the holographic large-$N$ setup; it is developed in Witten 2022 and in Sem II Block 1.)
 
 ### 3.4 The dressed algebra is the gravitational algebra
 
-Applying our Block D crossed-product construction:
+Applying our Block D crossed-product construction gives
 $$
-\hat{\mathcal{A}}_R \;:=\; \mathcal{A}_R \rtimes_{\sigma^{\mathrm{TFD}}}\mathbb{R} \;=\; \mathcal{A}_R \rtimes_{\mathrm{ADM\,time}}\mathbb{R}
+\hat{\mathcal{A}}_R
+:=
+\mathcal{A}_R\rtimes_{\sigma^{\mathrm{TFD}}}\mathbb R.
 $$
-is a type II$_\infty$ algebra. Witten's central claim:
+In the Witten regime, the modular automorphism acts physically as a rescaled right-boundary time translation and the added collective coordinate is related to black-hole energy. These identifications explain the shorthand “crossing by ADM time,” but the algebraic action in the formula is the modular action. The resulting core is a type II$_\infty$ factor.
 
-**Theorem 3.2 (Witten 2022). [Stated only — refs: Witten 2112.12828 §§3–4.]** *In the large-$N$ holographic CFT, the dressed algebra $\hat{\mathcal{A}}_R$ is the algebra of gravitationally dressed observables associated to the right asymptotic region. Its dressed entropy reproduces the generalized entropy:*
+**Result 3.2 (Witten 2022). [Stated only — refs: Witten 2112.12828 §§3.2–3.5.]** *Including the relevant perturbative $1/N$ collective coordinate enlarges the strict-large-$N$ type III$_1$ algebra to its type II$_\infty$ crossed product. The crossed product has a trace and densities; their entropy is defined up to a state-independent constant. Witten interprets that normalization relative to the entropy of the reference black hole.*
+
+**Two distinct claims, carefully separated.** First, the *operator-algebraic* construction: take a type III$_1$ algebra $\mathcal{A}_R$ with modular flow $\sigma^{\mathrm{TFD}}_t$ and form the crossed product $\hat{\mathcal{A}}_R = \mathcal{A}_R \rtimes_{\sigma^{\mathrm{TFD}}}\mathbb{R}$ — a type II$_\infty$ algebra on which suitable normal states have trace entropy, defined up to an additive constant. This is Block D, no gravity yet.
+
+Second, the *holographic realization*: in the relevant large-$N$ CFT, modular flow acts as a rescaled boundary-time translation, and the energy collective coordinate has an ADM interpretation. The more explicit equality between algebraic and generalized entropy,
 $$
-S_{\mathrm{vN}}(\hat\rho) \;=\; \frac{A_{\mathrm{horizon}}}{4 G_N} + S_{\mathrm{out}}(\rho) + \text{const}.
+S_{\rm alg}=\frac{A}{4G_N}+S_{\rm out}+\mathrm{const},
 $$
+is established in the CPW construction discussed in §4, using semiclassical gravity in addition to the operator algebra.
 
-**Two distinct claims, carefully separated.** First, the *operator-algebraic* construction: take a type III$_1$ algebra $\mathcal{A}_R$ with modular flow $\sigma^{\mathrm{TFD}}_t$ and form the crossed product $\hat{\mathcal{A}}_R = \mathcal{A}_R \rtimes_{\sigma^{\mathrm{TFD}}}\mathbb{R}$ — a type II$_\infty$ algebra with dressed entropy $S_{\mathrm{vN}}(\hat\rho)$ well-defined up to additive constant. This is Block D, no gravity yet.
-
-Second, the *holographic identification*: in the large-$N$ limit of a holographic CFT, the modular flow of the TFD on the boundary single-trace algebra is the ADM-time-translation, and the dressed entropy equals the generalized entropy $A/(4G_N) + S_{\mathrm{out}} + \mathrm{const}$. This identification requires the holographic dictionary, the large-$N$ limit, and the AdS/CFT framework — it is a **physics input** beyond the operator-algebraic construction.
-
-Witten 2022's contribution is the identification, not the algebraic construction. The algebraic construction is structural (Connes–Takesaki, Week 13); the holographic identification is the physical content that makes it apply to gravity. **The crossed product is not literally "the gravitational dressing"** at the operator-algebra level — it is the algebraic construction that, in the holographic setting, *equals* the gravitational dressing of observables modulo bulk gauge constraints. The equality is a theorem of holographic QFT, not of operator algebras alone.
+Witten's contribution is the physical realization of the construction. The crossed product itself is structural; its identification with the algebra obtained after including the black-hole energy collective coordinate is the large-$N$ gravitational statement. Nonperturbatively at fixed integer $N$, one expects the full boundary algebra to return to type I.
 
 ## 4. Two-sided CPW: Sem II Block 2
 
-The CPW (Chandrasekaran–Penington–Witten) construction of Sem II Block 2 is the two-sided version of Witten 2022. The setup is identical except:
-- The dressing operator is $H_R - H_L$ (the two-sided ADM Hamiltonian) instead of just $H_R$.
-- The cyclic-separating vector is the TFD vacuum.
-- The dressed algebra is type II$_\infty$, with the modular flow now identified with $\beta_H(H_R - H_L)$.
-- The dressed entropy is the generalized entropy with the area term coming from the bifurcation-surface horizon.
+CPW construct a type II$_\infty$ algebra appropriate to a microcanonical large-$N$ limit and identify its entropy with the generalized entropy of the black-hole bifurcation surface. The modular generator $\beta_H(H_R-H_L)$ is well-defined in the TFD representation, while the right and left algebras are arranged as commutants after the energy collective coordinate is included. Semester II Weeks 5–7 will derive this commutant construction carefully; it is not obtained by placing the same noncentral translation unitary in two allegedly commuting crossed products.
 
-The structural equivalence with the free-field Rindler-Rindler model (§2 above) is exact: replace boost by ADM, replace bifurcation surface by black-hole horizon, replace area law by gravitational area-times-$1/(4G_N)$.
+The free-field Rindler model verifies the modular and commutant structure. Replacing boost energy by ADM energy and matter entanglement by $A/(4G_N)+S_{\rm out}$ requires the semiclassical gravitational argument.
 
 ## 5. Ahmad–Jefferson: Sem II Block 4
 
-The Ahmad–Jefferson (AAJ) construction of Sem II Block 4 is **perturbations** of the CPW dressed-entropy story. The setup:
+The Ahmad–Jefferson (AAJ) construction of Sem II Block 4 is a **unitary deformation** of an algebra–state system and its crossed-product entropy. The setup is:
 
-1. Start with the unperturbed TFD vacuum + dressed algebra $\hat{\mathcal{A}}_R$ + dressed entropy $S_{\mathrm{vN}}(\hat\rho_{\mathrm{TFD}})$.
-2. Perturb by a **Gao–Jafferis–Wall deformation**: a double-trace operator $V = g\,\mathcal{O}_L\,\mathcal{O}_R$ that *traversifies* the wormhole.
-3. The perturbed state $\omega_V$ is related to the unperturbed state $\omega_0$ by the **Connes cocycle** (Week 7): $u_t = (D\omega_V / D\omega_0)_t$.
-4. The perturbed dressed entropy is computed to order $g^2$ — and AAJ identify **20 distinct corrections** at this order.
+1. Start with a reference algebra–state system, its modular data, the associated type-II crossed product, and its entropy weight.
+2. Transport the full system by a global unitary. In the gravitational application the interaction is the Gao–Jafferis–Wall double trace, with the sign and switching profile chosen so that the separate bulk calculation gives a traversable window.
+3. Use unitary covariance to reconstruct the deformed modular charge and crossed product. The entropy weight acquires a deformation-dependent spectral reweighting and Jacobian.
+4. Expand the modular charge by BCH and the weight/Jacobian in the deformation. In the current AAJ version, the result through $O(1/N^2)$ contains the GJW linear structure, **five additional linear structures**, and **fifteen quadratic structures**.
 
-AAJ's central technical input is exactly the **Connes cocycle** from Week 7. Their machinery is **perturbation theory on the dressed algebra**, with the cocycle as the expansion parameter. The structural picture is the Block D crossed product of Weeks 13–14, perturbed.
+AAJ's expansion is not a Connes-cocycle series. The Connes cocycle from Week 7 remains a useful comparison when two faithful states are varied on one fixed algebra, but AAJ organize a transported algebra–state system through unitary covariance, a changed weight and Jacobian, and BCH nested commutators. Nor does the algebraic entropy series by itself compute the bulk signal time advance: matching individual terms to area, matter entropy, or causal response requires an additional gravitational calculation.
 
-## 6. Worked computation: Minkowski vacuum as TFD
+## 6. Worked computation: the regulated Rindler TFD
 
-A concrete verification of Theorem 2.1 in the 2D massless free scalar.
+A modewise calculation that explains the TFD analogy. It is exact for a regulated mode decomposition; in the continuum it is formal because the Minkowski and Rindler representations are not related by a normalizable tensor-product vector.
 
 ### 6.1 Modes on Rindler-Rindler
 
@@ -199,7 +219,7 @@ with the same $e^{\pi\omega/2}$ vs $e^{-\pi\omega/2}$ ratios as Week 10 §4.3.
 
 ### 6.3 The Minkowski vacuum in Rindler modes
 
-The condition $a_k|0_M\rangle = 0$ for all $k$ translates, after the Bogoliubov transformation, to a constraint on the Rindler-mode content of $|0_M\rangle$. Solving:
+With a regulator that makes the left/right mode factorization legitimate, the condition $a_k|0_M\rangle=0$ gives
 $$
 |0_M\rangle \;=\; \prod_{\omega > 0} \frac{1}{\sqrt{Z_\omega}}\,\sum_n e^{-\pi n\omega}\,\frac{(b_\omega^{L\dagger} b_\omega^{R\dagger})^n}{n!}\,|0_R\rangle\otimes|0_L\rangle,
 $$
@@ -208,27 +228,29 @@ $$
 |0_M\rangle = \prod_\omega \frac{1}{\sqrt{Z_\omega}}\,\sum_{n_\omega} e^{-\pi n_\omega\,\omega}\,|n_\omega\rangle_R\otimes|n_\omega\rangle_L.
 $$
 
-This is *exactly* the TFD form (Definition 1.1) with $E_n = n\omega$ and $\beta = 2\pi$ (per mode). The Minkowski vacuum *is* the TFD of the Rindler-mode Hamiltonian, at the Unruh-temperature $T_U = 1/(2\pi)$ (in Rindler units; $T_U = a/(2\pi)$ in physical units).
+Mode by mode this is the TFD form with $E_n=n\omega$ and $\beta=2\pi$. Removing the regulator does not produce a trace-class wedge density matrix; the exact continuum statement is Theorem 2.1.
 
 ### 6.4 Modular operator from the TFD form
 
-Given the TFD form (§6.3), the modular operator is computed via the standard type-I bipartite-state modular calculation (Week 5 §5.2):
+At finite regulator, the type-I calculation gives
 $$
 \Delta = \prod_\omega \rho_\omega^R \otimes (\rho_\omega^L)^{-1} = e^{-2\pi (N_R - N_L)},
 $$
 where $N_R = \int d\omega\,\omega\,(b^R_\omega)^\dagger b^R_\omega$ is the Rindler-mode-number Hamiltonian on the right (and similarly $N_L$ on the left). The modular Hamiltonian is $K_{\mathrm{Mink}} = 2\pi(N_R - N_L)$.
 
-Identifying $N_R$ with the boost generator $K_R$ (which it equals modulo regularization, since both are integrals of the stress tensor weighted by $x^1$ inside $W_R$), we recover Theorem 2.1: $\Delta_{\mathrm{Mink}}^{(W_R)} = e^{-2\pi(K_R - K_L)}$.
+The regulator-independent combination tends to the global boost generator. What survives in the continuum is $\Delta_{W_R}=e^{-2\pi K_{\rm boost}}$; the separate one-sided operators $N_R$ and $N_L$ are not elements of the continuum wedge algebras.
 
 ### 6.5 What this confirms
 
-The free-field Rindler-Rindler model **explicitly verifies** that:
-- The Minkowski vacuum is the TFD of the boost Hamiltonian at $\beta = 2\pi$.
-- Its modular Hamiltonian is $K_R - K_L$ (the two-sided boost generator).
-- The modular flow is the joint left/right boost at modular rapidity $2\pi t$.
+The calculation verifies, in a regulator and then structurally in the continuum, that:
+
+- the modewise Schmidt weights are thermal with inverse Rindler temperature $2\pi$;
+- the finite-regulator modular generator is the right-minus-left boost energy;
+- the continuum modular flow is the geometric boost at rapidity $2\pi t$;
+- the continuum theorem must be expressed in standard-form language rather than with a wedge density matrix.
 
 This is the model that all of Sem II Block 2 (CPW) generalizes to the holographic eternal black hole. The substitutions:
-- Boost generator $K_R - K_L$ $\leftrightarrow$ ADM Hamiltonian $H_R - H_L$.
+- Global boost generator $K_{\rm boost}$ $\leftrightarrow$ the well-defined TFD generator $\widehat H=H_R-H_L$.
 - $\beta = 2\pi$ Unruh $\leftrightarrow$ $\beta_H$ Hawking.
 - Bifurcation surface (Minkowski's $\{x^0 = x^1 = 0\}$) $\leftrightarrow$ BH horizon (the Schwarzschild bifurcation sphere).
 - 2D massless free scalar $\leftrightarrow$ holographic CFT at large $N$.
@@ -237,14 +259,14 @@ This is the model that all of Sem II Block 2 (CPW) generalizes to the holographi
 
 Combining Block D with the TFD identification:
 
-> **Semester II = "apply the modular crossed product (Week 13) to a two-sided algebra in the TFD vacuum (this week), compute the dressed entropy (Week 14), and identify it with the generalized entropy of a bulk gravitational dual."**
+> **Semester II asks when the modular crossed product (Week 13), applied to the one-sided algebra of a two-sided standard-form state, becomes a gravitational exterior algebra, and when its trace entropy (Week 14) agrees with generalized entropy.**
 
 Each Sem II Block tackles a specific instance:
 
-- **Block 1 (Witten 2022):** single-sided story; dressed algebra of a single boundary algebra; dressed entropy = $A_{\mathrm{horizon}}/(4G_N) + S_{\mathrm{out}}$.
-- **Block 2 (CPW):** two-sided story; TFD vacuum; same crossed product applied to the eternal BH; dressed entropy = same generalized entropy.
+- **Block 1 (Witten 2022):** the right exterior algebra, its black-hole energy collective coordinate, and the emergence of the type II$_\infty$ crossed product with entropy defined up to a constant.
+- **Block 2 (CPW):** the right crossed product and its dressed commutant in the TFD setting, with the explicit generalized-entropy matching.
 - **Block 3 (Liu lectures):** structural overview; modular flow ↔ bulk Killing flow dictionary; algebraic ER=EPR.
-- **Block 4 (AAJ):** perturbations of the dressed entropy via Connes cocycle; 20 distinct corrections at order $g^2$ from a GJW deformation.
+- **Block 4 (AAJ):** unitary transport of the algebra–state system and its crossed-product weight; through $O(1/N^2)$ the current entropy expansion contains the GJW linear structure, five additional linear structures, and fifteen quadratic structures.
 - **Block 5 (MSY + outlook):** bulk-side complement; honest scoping; what the algebra sees and what it doesn't.
 
 Each block uses the Block D + Week 15 toolkit. **Semester I has built every algebraic ingredient needed for Semester II.**
@@ -252,12 +274,12 @@ Each block uses the Block D + Week 15 toolkit. **Semester I has built every alge
 ## 8. What to take away
 
 - **TFD definition:** $|\mathrm{TFD}_\beta\rangle = Z(\beta)^{-1/2}\sum_n e^{-\beta E_n/2}|n\rangle_R\otimes|n\rangle_L$, a purification of the Gibbs state.
-- **Modular structure of TFD:** $\Delta = \rho_R \otimes \rho_R^{-1}$, modular Hamiltonian $K = \beta(H_R - H_L)$ (up to additive constant).
-- **Stated only (Theorem 2.1):** the Minkowski vacuum in 2D free scalar is the TFD of the boost Hamiltonian at $\beta = 2\pi$; modular flow = two-sided boost.
-- **Stated only (Theorem 3.1, Maldacena):** the two-sided eternal BH is dual to the boundary CFT in the TFD state at Hawking temperature.
-- **Stated only (Theorem 3.2, Witten 2022):** dressed algebra (crossed product by ADM time) is type II$_\infty$ with dressed entropy = generalized entropy.
-- **Worked verification (free-field Rindler-Rindler, §6):** the Minkowski vacuum has the explicit TFD form in Rindler modes, with modular Hamiltonian $K_R - K_L$.
-- **The Sem II structural picture:** dress the modular flow of the TFD on a two-sided algebra; dressed entropy is the generalized entropy. Every Sem II paper applies this to a specific physical setting.
+- **Modular structure of TFD:** $\Delta=\rho_R\otimes\rho_L^{-1}$ and $K=\beta(H_R-H_L)$; the two normalization constants cancel exactly.
+- **Stated only (Theorem 2.1):** the Minkowski vacuum is cyclic and separating for one wedge algebra, wedge modular flow is the boost, and modular conjugation maps the wedge algebra to its commutant. The literal TFD is a regulated, modewise model of this standard form.
+- **Holographic dictionary (Maldacena):** the two-sided eternal black hole is dual to the doubled boundary CFT in the TFD state at Hawking temperature.
+- **Stated only (Result 3.2, Witten):** the perturbatively enlarged exterior algebra is the type II$_\infty$ modular crossed product, with trace entropy defined up to a constant. CPW supplies the explicit generalized-entropy identification in its setup.
+- **Worked verification (§6):** a regulated Rindler-mode calculation has TFD weights and a right-minus-left generator; the continuum limit is expressed by the global boost modular operator.
+- **The Sem II structural question:** which physical systems realize the modular core as a dressed exterior algebra, and under which additional hypotheses does its entropy become generalized entropy?
 
 ## 9. The take-home final
 
@@ -265,31 +287,27 @@ A take-home final is assigned at the end of Week 15, due 4 weeks later (over the
 
 **Problem 1: Modular operator for 4D massless scalar.** Compute the modular operator and Bisognano–Wichmann boost flow for the 4D massless free scalar restricted to the right Rindler wedge $W_R = \{x: x^1 > |x^0|\}$. (Generalize the 2D calculation of Week 10 §4.)
 
-**Problem 2: Connes cocycle for vacuum vs. coherent state.** For the 2D massless free scalar on $W_R$, compute the Connes cocycle $u_t = (D\omega_\alpha / D\omega_0)_t$ between the Minkowski vacuum $\omega_0$ and a coherent state $\omega_\alpha$ obtained by Weyl-operator dressing: $|\alpha\rangle = e^{i\phi(f)}|0_M\rangle$ for a test function $f \in W_R$. Express $u_t$ in terms of $f$ and the boost generator.
+**Problem 2: Connes cocycle for vacuum vs. coherent state.** For the 2D massless free scalar on $W_R$, let $U=W(f)$ with real test function $f$ supported in $W_R$, and set $\omega_f(a)=\omega_0(U^*aU)$. Starting from the inner-perturbation identity
+$$
+(D\omega_f:D\omega_0)_t=U\,\sigma_t^{\omega_0}(U^*),
+$$
+use Bisognano–Wichmann and the Weyl relations to express the cocycle as a phase times a Weyl operator built from $f$ and its boost transform. Check the cocycle equation explicitly.
 
-**Problem 3: Crossed product trace formula.** Construct the crossed product $\hat{\mathcal{A}}(W_R) = \mathcal{A}(W_R) \rtimes_{\mathrm{boost}}\mathbb{R}$ for the 2D massless free scalar. Verify the trace formula
-$$
-\hat\tau(a) = \int e^{-2\pi s}\,\langle 0_M \otimes \delta_s\,|\,a\,|\,0_M \otimes \delta_s\rangle\,ds
-$$
-on a dense subspace of operators of the form $a = W(f) \otimes g(X)$ with $f \in W_R$ and $g$ bounded.
+**Problem 3: Crossed-product variables and trace model.** Construct $\widehat{\mathcal A}(W_R)=\mathcal A(W_R)\rtimes_{\sigma}\mathbb R$ in the regular representation and identify the coordinate $q$, its multiplication operator $Q$, the momentum $P=-i\partial_q$, its Fourier variable $p$, the modular parameter $t$, the rapidity $u=2\pi t$, and the dual parameter $r$. Then verify $\widehat\tau\circ\theta_r=e^{-r}\widehat\tau$ in the exact inner-action Fourier model of Week 13. Explain why this model does not give a distributional diagonal formula for the genuine type-III core.
 
-**Problem 4: Bell-CHSH on the TFD vacuum.** For the TFD vacuum on the two-sided Rindler-Rindler algebra in 2D massless free scalar, compute $\langle\mathcal{C}_{\mathrm{CHSH}}\rangle$ between $\mathcal{A}(W_R)$ and $\mathcal{A}(W_L)$ for an optimized choice of cosine-Weyl observables (Week 11 §4). Verify approach to Tsirelson saturation as the test functions are boosted toward the bifurcation surface.
+**Problem 4: Bell-CHSH on a regulated Rindler pair.** Choose the finite-mode or split-regulated setup of Week 11 and compute $\langle\mathcal C_{\rm CHSH}\rangle$ for a stated family of cosine-Weyl observables on the two sides. Optimize within that family and report the value as an explicit lower bound on the CHSH supremum. Compare it with $2$ and $2\sqrt2$. State separately whether any approach to Tsirelson saturation is proved, supported numerically, or imported from a general operator-algebraic theorem.
 
-**Problem 5 (⋆): Dressed entropy difference for coherent state.** Compute the dressed-entropy difference between the vacuum and a coherent state on the crossed product algebra of Problem 3:
-$$
-S_{\mathrm{vN}}(\hat\rho_\alpha) - S_{\mathrm{vN}}(\hat\omega_0) = -S(\omega_\alpha\|\omega_0) + \mathcal{B}(\omega_\alpha, \omega_0).
-$$
-Compute each side explicitly to leading order in $|\alpha|$ and verify Theorem 3.1 of Week 14.
+**Problem 5 (⋆): Coherent-state cancellation.** Let $U=\pi(W(f))$ with $f$ supported in $W_R$, and dress the vacuum and coherent state with the same clock. Prove that their core densities obey $D_f=UD_0U^*$ and hence have equal trace entropy. Use Week 14 to show that the relative-entropy and modular-energy terms cancel exactly. Then list two changes of setup that could produce a nonzero entropy difference.
 
 ### Why these five problems
 
 Each problem will reappear in Sem II, expanded and applied to specific papers:
 
 - **Problem 1** generalizes to higher dimensions (4D massless is the standard setting of CPW and AAJ).
-- **Problem 2** is the structural input for AAJ's perturbation expansion.
-- **Problem 3** is *the* mini-calculation that Witten 2022, CPW, and AAJ all use as a free-field analogue.
+- **Problem 2** supplies the fixed-algebra Connes-cocycle comparison used in Sem II to clarify how AAJ's unitary weight/Jacobian expansion is different.
+- **Problem 3** fixes the representation dictionary needed to read the Witten and CPW formulas without mixing a coordinate with its conjugate momentum.
 - **Problem 4** is the technical setup for the open question "Bell-CHSH in holographic settings."
-- **Problem 5** is the central technical content of AAJ's leading-order result.
+- **Problem 5** is the unitary-invariance check that every later perturbative formula must pass.
 
 After the take-home final, students enter Sem II with everything in hand.
 
@@ -310,32 +328,70 @@ This is enough to begin Sem II Block 1 (Witten 2022) without further algebraic b
 
 **1. TFD reduced state.** Verify that $\mathrm{Tr}_L(|\mathrm{TFD}_\beta\rangle\langle\mathrm{TFD}_\beta|) = e^{-\beta H_R}/Z(\beta)$ in finite dimensions.
 
-**2. Modular operator of the finite-dim TFD.** Compute the modular operator $\Delta$ of $|\mathrm{TFD}_\beta\rangle$ for the right algebra $\mathcal{B}(\mathcal{H}_R) \otimes 1$. Verify $\Delta = (e^{-\beta H_R}/Z) \otimes (e^{-\beta H_L}/Z)^{-1}$ and $K = -\log\Delta = \beta(H_R - H_L) + 2\log Z$.
+**2. Modular operator of the finite-dimensional TFD.** Compute $\Delta$ for the right algebra and verify
+$$
+\Delta=(e^{-\beta H_R}/Z)\otimes(e^{-\beta H_L}/Z)^{-1},
+\qquad
+-\log\Delta=\beta(H_R-H_L).
+$$
+Show explicitly how the two factors of $Z$ cancel.
 
 **3. Mode-by-mode TFD form of Minkowski vacuum.** Expand the formula §6.3 to order $n_\omega = 1$ and identify the structure: $|0_M\rangle \approx \prod_\omega(1 + e^{-\pi\omega}\,b^R_\omega{}^\dagger b^L_\omega{}^\dagger + O(e^{-2\pi\omega}))|0_R\rangle\otimes|0_L\rangle$.
 
-**4. Two-sided modular flow.** Show that the modular flow on $\mathcal{A}(W_R)$ in the Minkowski vacuum, when extended to the two-sided algebra, is the joint flow generated by $K_R - K_L$. Specifically: $\sigma_t^{\mathrm{Mink}}(a_R \otimes 1) = (\text{boost}_t a_R) \otimes 1$ and $\sigma_t^{\mathrm{Mink}}(1 \otimes a_L) = 1 \otimes (\text{boost}_{-t} a_L)$.
+**4. Flow on an algebra and its commutant.** Starting from $\Delta_{W_R}=e^{-2\pi K_{\rm boost}}$, show that $\operatorname{Ad}(\Delta^{-it})$ acts by rapidity $+2\pi t$ on $\mathcal A(W_R)$ and by the inverse modular flow on $\mathcal A(W_R)'=\mathcal A(W_L)$. Do not introduce a tensor-product factorization of the continuum Fock space.
 
 **5. Reading bridge.** Read Maldacena 2003 §§1–3 (the eternal-BH/TFD identification). Identify the key claim and the level of evidence Maldacena gives.
 
 **Starred problems.**
 
-**6\*. Modular Hamiltonian on a one-sided thermal state.** For the Gibbs state $\rho_\beta = e^{-\beta H}/Z$ on a finite-dim system, viewed as a state on $\mathcal{B}(\mathcal{H})$, the modular Hamiltonian is $K_\beta = \beta H + \log Z$. Show that the dressed entropy of the Gibbs state, computed via the modular crossed product, is
+**6\*. Modular Hamiltonian on a one-sided thermal state.** For the Gibbs state $\rho_\beta = e^{-\beta H}/Z$ on a finite-dimensional system, viewed as a state on $\mathcal{B}(\mathcal{H})$, the modular Hamiltonian is $K_\beta = \beta H + \log Z$. Show that the dressed trace entropy of the Gibbs state, computed via the modular crossed product, is
 $$
-S_{\mathrm{vN}}(\hat\rho_{\beta, \mathrm{dressed}}) = S_{\mathrm{thermal}}(\beta) + (\text{clock contribution}),
+S_{\widehat\tau}(\widehat\rho_{\beta,\mathrm{dressed}})
+=S_{\mathrm{thermal}}(\beta)+(\text{clock contribution}),
 $$
-where $S_{\mathrm{thermal}}(\beta) = -\mathrm{Tr}(\rho_\beta\log\rho_\beta) = \beta\langle H\rangle_\beta + \log Z$ is the standard thermal entropy.
+where the clock contribution is $H(\mu)-\mathbb E_\mu[p]$ in the Fourier model, and $S_{\mathrm{thermal}}(\beta)=\beta\langle H\rangle_\beta+\log Z$.
 
-**7\*. ER=EPR (heuristic).** The Maldacena–Susskind ER=EPR proposal says that two boundary CFTs are "Einstein-Rosen-bridge-connected" in the bulk iff they share a TFD-like entangled state. Discuss informally: how does this manifest at the algebraic level (in terms of cyclic-separating vectors and modular structures)?
+**7\*. ER=EPR (heuristic, one-way audit).** In the eternal-black-hole example, a TFD-like faithful state supplies a one-sided standard pair and identifies the commutant with the opposite boundary algebra. Explain why $J\mathcal A_RJ=\mathcal A_R'$ is automatic for any standard pair and therefore cannot be an if-and-only-if criterion for a wormhole. What additional holographic input is needed before these modular data can be interpreted geometrically?
 
-**8\*. Generalized entropy in 2D toy model.** In the 2D Jackiw-Teitelboim (JT) gravity model, the bulk has a specific algebraic dual. Look up the dressed-algebra structure and verify that the dressed entropy reproduces the JT generalized entropy.
+**8\*. JT gravity source audit.** Choose one explicit published or arXiv construction of a dressed/type-II algebra in Jackiw–Teitelboim gravity. Record its boundary conditions, observable algebra, trace normalization, and state class. Reproduce one displayed entropy relation from that source and label separately what is exact in the model and what is semiclassical. If the source states rather than derives the generalized-entropy match, report it as stated rather than “verified.”
 
 **Project problems.**
 
-**9. Read Witten 2022 in full.** Identify how each ingredient of our Block D (crossed product, dual action, dressed entropy, area law) maps onto Witten's exposition.
+**9. Read Witten 2022 in full.** Identify how each ingredient of our Block D (crossed product, outer shift, trace, density, and entropy normalization) maps onto Witten's exposition. Separate what Witten derives from what is supplied later by the CPW generalized-entropy calculation.
 
 **10. Read CPW 2022 in full.** Identify the difference between Witten's single-sided story and CPW's two-sided TFD story. What does the two-sidedness add structurally?
 
+## 12. Instructor checkpoints (internal)
+
+### Take-home final
+
+1. **Four-dimensional wedge:** the accepted structural answer is $\Delta_{W_R}=e^{-2\pi K_{\rm boost}}$ and $\sigma_t=\operatorname{Ad}e^{i2\pi tK_{\rm boost}}$, with the scalar field transformed by the Lorentz pullback. No one-sided Gibbs density matrix is introduced in the continuum.
+2. **Coherent cocycle:** with $\sigma_t(W(f))=W(f_t)$,
+
+$$
+(D\omega_f:D\omega_0)_t
+=W(f)W(-f_t)
+=e^{iE(f,f_t)/2}W(f-f_t),
+$$
+
+for the Weyl convention in these notes. The Weyl phase and the modular composition law together verify the cocycle equation.
+3. **Crossed-product variables:** the answer must distinguish $q,Q,P,p,t,u,r$ and recover $\widehat\tau\circ\theta_r=e^{-r}\widehat\tau$ only in the legitimate Fourier trace model.
+4. **CHSH:** the reported optimized value is a lower bound for the chosen regulated family. It must be compared separately with the classical bound $2$, the Tsirelson bound $2\sqrt2$, and any general theorem being invoked.
+5. **Coherent cancellation:** $D_f=UD_0U^*$ gives exact equality of trace entropies. Nonzero differences require, for example, a different clock distribution or a non-inner/state-dependent comparison.
+
+### Additional problems
+
+1. The partial trace leaves the diagonal weights $e^{-\beta E_n}/Z$.
+2. $\Delta=\rho_R\otimes\rho_L^{-1}$; the two factors of $Z$ cancel, leaving $-\log\Delta=\beta(H_R-H_L)$.
+3. The $n_\omega=1$ amplitude is $e^{-\pi\omega}$; the omitted normalization and two-particle terms begin at the indicated higher order mode by mode.
+4. The right action has rapidity $+2\pi t$ in the course convention. On the commutant, the corresponding modular automorphism is the inverse flow; this does not require a continuum tensor factorization.
+5. Maldacena supplies a holographic saddle/dictionary statement, not an operator-algebra theorem about every entangled state.
+6. The answer is $S_{\rm thermal}+H(\mu)-\mathbb E[p]$, with $S_{\rm thermal}=\beta\langle H\rangle+\log Z$.
+7. Standardness makes $J\mathcal A_RJ=\mathcal A_R'$ automatic. A geometric conclusion needs a holographic code-subspace identification and a controlled bulk state; Liu's later algebraic ER=EPR proposal adds still more hypotheses.
+8. The JT audit is graded on source fidelity, explicit trace/state data, and honest status labels, not on claiming a universal JT theorem.
+9. Witten supplies the perturbative energy-inclusive core, trace, densities, and normalization; the explicit controlled $S_{\rm alg}=S_{\rm gen}+\mathrm{const}$ matching belongs to CPW.
+10. CPW add a strict microcanonical scaling, a physical relative timeshift, the right core together with its dressed commutant, and the horizon relative-entropy calculation.
+
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block D. Last revised 2026-06-11. **End of Semester I.***
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block D. Last revised 2026-08-24. **End of Semester I.***

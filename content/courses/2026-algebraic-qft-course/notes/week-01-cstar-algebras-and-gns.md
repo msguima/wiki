@@ -7,12 +7,18 @@ week: 1
 block: A
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Hilbert spaces, bounded operators, basic functional analysis
-modified: 2026-06-11
+modified: 2026-08-24
 ---
 
 # Week 1 — C\*-algebras, States, and the GNS Construction
 
 > *We could have started this course with operators on a Hilbert space, defined a "physical theory" as a Hilbert space plus a Hamiltonian, and proceeded as in any quantum mechanics class. We do not. The reason — which will become precise in Block C — is that quantum field theory has no natural Hilbert space: it has many, and they are mutually inequivalent. The algebraic language is the one that survives.*
+
+### How to use this chapter
+
+- **In class:** move from the concrete algebras $C(X)$ and $M_n(\mathbb C)$ to abstract positivity and states, then build the GNS representation in full. Keep the finite-dimensional examples on the board while each abstract definition is introduced.
+- **For self-study:** verify every claim first in $M_2(\mathbb C)$, then repeat it for $C(X)$. Do not leave the chapter until you can construct the GNS null ideal, representation, and cyclic vector without looking ahead.
+- **Instructor checkpoint:** ask students to distinguish an abstract state from a density matrix in a chosen representation, and a normal pure state on $\mathcal B(\mathcal H)$ from a singular pure state.
 
 ## 0. Reading
 
@@ -36,11 +42,11 @@ In a finite-dimensional quantum system, the observables are Hermitian matrices i
 
 In quantum field theory this neat picture fails, for three reasons that motivate the algebraic approach:
 
-1. **Hilbert spaces are non-unique.** The Stone–von Neumann theorem fails in infinite dimensions: distinct representations of the canonical commutation relations need not be unitarily equivalent. The free scalar field in two different vacuum states (e.g., a Minkowski vacuum versus a Rindler vacuum) gives non-isomorphic Hilbert spaces. Picking one Hilbert space is a *choice*, not a structural feature of the theory.
+1. **Representations are non-unique.** The Stone–von Neumann theorem fails for field systems: distinct regular representations of the canonical commutation relations need not be unitarily equivalent. Minkowski and Fulling–Rindler quasifree states, for example, lead to inequivalent representations in the relevant global setting. Their Hilbert spaces may be abstractly isomorphic as separable Hilbert spaces; what fails is a unitary intertwiner preserving the field representation and state. Picking one representation is therefore a *choice*, not a structural feature of the abstract algebra.
 
-2. **Local algebras have no traces.** As we will see in Block C (Week 12), the algebra of observables localized in a bounded spacetime region of relativistic QFT is a [[type-iii-von-neumann-algebras|type III₁ factor]], for which there is no trace and no notion of "density matrix." Standard quantum-mechanical reasoning ("the state is given by a density matrix $\rho$") simply cannot be applied. The algebraic framework supplies the right substitute: states are linear functionals.
+2. **Local algebras need not admit an intrinsic trace.** As we will see in [[week-12-type-III1-classification-of-qft-algebras|Week 12]], broad classes of relativistic QFT satisfying explicit factoriality, phase-space, and scaling hypotheses have bounded-region algebras isomorphic to the hyperfinite type III$_1$ factor. Such an algebra has no nonzero normal semifinite trace and hence no intrinsic density-matrix description relative to a local trace. An ambient representation may still express a vector state through a rank-one operator on the global Hilbert space; that is not a reduced density matrix inside the local algebra. The algebraic framework supplies the representation-independent substitute: states are positive linear functionals.
 
-3. **Modular theory needs algebras.** The whole content of the [[tomita-takesaki-modular-theory|Tomita–Takesaki theorem]] (Block B) is a structural statement about von Neumann algebras together with a cyclic and separating vector. Without the algebra, there is no statement.
+3. **Modular theory needs algebras.** The whole content of the [[week-05-tomita-operator|Tomita–Takesaki theorem]] (Block B) is a structural statement about von Neumann algebras together with a cyclic and separating vector. Without the algebra, there is no statement.
 
 This week sets up the foundations. We define C\*-algebras (the algebraic object), states (the linear functionals that play the role of "expectation values"), and the GNS construction (the canonical bridge from a state on an algebra to a Hilbert-space representation). The whole rest of the course is built on this.
 
@@ -55,12 +61,12 @@ This week sets up the foundations. We define C\*-algebras (the algebraic object)
 
 If there exists $1 \in \mathcal{A}$ with $1 \cdot a = a \cdot 1 = a$ for all $a$, we say $\mathcal{A}$ is *unital* and call $1$ the unit. We will assume unital throughout unless explicitly stated otherwise; the non-unital case can be handled by *unitization* (adjoining an external identity), which we touch on in Problem 2.
 
-**Definition 2.2.** A *\*-algebra* is a Banach algebra $\mathcal{A}$ together with an *involution* $a \mapsto a^*$ satisfying:
+**Definition 2.2.** A *\*-algebra* is a complex associative algebra $\mathcal A$ together with an *involution* $a \mapsto a^*$ satisfying:
 1. $(a^*)^* = a$ (involutive),
 2. $(a + \lambda b)^* = a^* + \overline{\lambda}\, b^*$ for $\lambda \in \mathbb{C}$ (conjugate-linear),
 3. $(ab)^* = b^* a^*$ (antimultiplicative).
 
-We do **not** yet require any compatibility between $\|\cdot\|$ and $*$. The whole point of the C\*-condition (§4) is to impose exactly such a compatibility.
+When the same space is also a Banach algebra and the involution is continuous, one speaks of a **Banach \*-algebra**. In our concrete examples the involution is isometric. We do **not** yet impose the C\*-identity; §4 adds exactly that decisive compatibility between norm and involution.
 
 ### 2.2 Examples
 
@@ -72,7 +78,7 @@ We do **not** yet require any compatibility between $\|\cdot\|$ and $*$. The who
 
 **Example 2.6 (Bounded measurable functions).** Let $(X, \Sigma, \mu)$ be a $\sigma$-finite measure space. The space $L^\infty(X, \mu)$ of essentially bounded measurable functions modulo equality $\mu$-almost-everywhere, with pointwise operations, the essential supremum norm, and pointwise conjugation, is a unital commutative Banach \*-algebra.
 
-We will eventually see that Examples 2.3–2.6 are *all* the C\*-algebras up to representation: this is the content of the Gelfand–Naimark theorems (§5).
+These examples exhibit the two main concrete forms we will use. The Gelfand–Naimark theorems (§5) say, more precisely, that every abstract C\*-algebra has a faithful representation as a norm-closed \*-subalgebra of some $\mathcal B(\mathcal H)$, and that every unital commutative C\*-algebra is a $C(X)$. They do not say that every C\*-algebra is literally one of the four examples just listed.
 
 ### 2.3 The spectrum
 
@@ -82,7 +88,7 @@ $$
 $$
 and the *spectrum* of $a$ is its complement, $\sigma(a) = \mathbb{C} \setminus \rho(a)$.
 
-> **Physical picture.** The spectrum is the algebraic substitute for "the set of possible measurement outcomes." In $M_n(\mathbb{C})$ it is the set of eigenvalues; in $C(X)$ it is the range of the function; in $\mathcal{B}(\mathcal{H})$ it contains the eigenvalues plus the continuous spectrum that physicists handle with "generalized eigenstates." The definition through *invertibility* is what makes the notion representation-independent: whether $a - \lambda 1$ has an inverse is a question about the algebra alone, asked without ever mentioning vectors or wave functions. When we later say "the spectrum of the modular operator determines the type of the algebra" (Week 12), it is exactly this representation-free notion of outcome set that does the work.
+> **Physical picture.** The spectrum is the algebraic substitute for "the set of possible measurement outcomes." In $M_n(\mathbb{C})$ it is the set of eigenvalues; in $C(X)$ it is the range of the function; in $\mathcal{B}(\mathcal{H})$ it contains the eigenvalues plus the continuous spectrum that physicists handle with "generalized eigenstates." The definition through *invertibility* is what makes the notion representation-independent: whether $a - \lambda 1$ has an inverse is a question about the algebra alone, asked without ever mentioning vectors or wave functions. In Week 12 this same notion enters the **Connes invariants extracted across all faithful modular data**. The spectrum of one preferred modular operator is useful evidence, but by itself it does not determine the algebra's type.
 
 **Theorem 2.8. [Proved.]** *For any $a \in \mathcal{A}$, the spectrum $\sigma(a)$ is a non-empty compact subset of $\mathbb{C}$ contained in the closed disk of radius $\|a\|$.*
 
@@ -99,8 +105,6 @@ $$
 (\lambda 1 - a)^{-1} - (\mu 1 - a)^{-1} = (\mu - \lambda)\,(\lambda 1 - a)^{-1}(\mu 1 - a)^{-1}
 $$
 (the resolvent identity) shows the difference quotient converges in norm as $\mu \to \lambda$. For $|\lambda| > \|a\|$ the Neumann series gives $\|(\lambda 1 - a)^{-1}\| \le (|\lambda| - \|a\|)^{-1} \to 0$ at infinity. If $\sigma(a)$ were empty, then for every bounded functional $\varphi \in \mathcal{A}^*$ the scalar function $\varphi((\lambda 1 - a)^{-1})$ would be entire and vanish at infinity, hence identically zero by Liouville. Since bounded functionals separate points (Hahn–Banach), $(\lambda 1 - a)^{-1} = 0$ for all $\lambda$ — contradicting $(\lambda 1 - a)^{-1}(\lambda 1 - a) = 1$. $\square$
-
-Non-emptiness: the resolvent function $\lambda \mapsto (\lambda 1 - a)^{-1}$ is holomorphic on $\rho(a)$ and tends to $0$ at infinity. If $\sigma(a)$ were empty, the resolvent would be a bounded entire $\mathcal{A}$-valued function vanishing at infinity, hence identically zero by Liouville's theorem in Banach-valued holomorphy, contradicting $(\lambda 1 - a)^{-1} \cdot (\lambda 1 - a) = 1$. $\square$
 
 The number
 $$
@@ -126,7 +130,7 @@ In a \*-algebra $\mathcal{A}$, certain elements are distinguished by their relat
 - *Self-adjoint* (or *Hermitian*) if $a = a^*$;
 - *Normal* if $a a^* = a^* a$;
 - *Unitary* if $a a^* = a^* a = 1$;
-- *Positive* if $a = b^* b$ for some $b \in \mathcal{A}$.
+- *Positive* if $a = b^* b$ for some $b \in \mathcal{A}$ (the order-theoretic force of this definition will be used once $\mathcal A$ is a C\*-algebra).
 
 Self-adjoints generalize Hermitian operators (real spectrum, real expectation values). Unitaries generalize unitary operators. Normals generalize operators that admit a spectral decomposition.
 
@@ -185,7 +189,9 @@ $$
 $$
 Expanding the LHS: $\alpha^2 + (\beta+t)^2 \le \|a\|^2 + t^2$, i.e., $\alpha^2 + \beta^2 + 2\beta t \le \|a\|^2$. As $t \to \pm\infty$, the inequality fails unless $\beta = 0$. $\square$
 
-**Corollary 4.6. [Stated only — follows from Theorem 4.5 applied to $u^*u = 1$.]** *In a C\*-algebra, the spectrum of a unitary lies in the unit circle $\{|\lambda| = 1\}$.*
+**Corollary 4.6. [Proved.]** *In a C\*-algebra, the spectrum of a unitary lies in the unit circle $\{|\lambda| = 1\}$.*
+
+**Proof.** If $u$ is unitary, then $\|u\|=\|u^{-1}\|=1$. Theorem 2.8 gives $|\lambda|\le1$ for $\lambda\in\sigma(u)$. Spectral mapping for inversion gives $\lambda^{-1}\in\sigma(u^{-1})=\sigma(u^*)$, so $|\lambda|^{-1}\le1$. Hence $|\lambda|=1$. $\square$
 
 ### 4.4 Positive elements: an order structure
 
@@ -224,6 +230,18 @@ These two theorems frame the course: the first says C\*-algebras generalize topo
 
 The state space, denoted $\mathcal{S}(\mathcal{A})$, is a convex subset of the dual $\mathcal{A}^*$.
 
+**Lemma 6.1a (Cauchy--Schwarz for a positive functional). [Proved.]** If $\omega$ is positive, then
+$$
+|\omega(a^*b)|^2\leq \omega(a^*a)\,\omega(b^*b).
+$$
+
+**Proof.** Positivity first implies $\omega(x^*)=\overline{\omega(x)}$: decompose $x$ into self-adjoint parts and each self-adjoint part into a difference of positive elements. Put $A=\omega(a^*a)$, $B=\omega(b^*b)$, and $z=\omega(a^*b)$. For every $\lambda\in\mathbb C$,
+$$
+0\leq \omega\!\left((a+\lambda b)^*(a+\lambda b)\right)
+=A+\lambda z+\overline\lambda\,\overline z+|\lambda|^2B.
+$$
+If $B>0$, choose $\lambda=-\overline z/B$ to obtain $0\leq A-|z|^2/B$. If $B=0$, the same quadratic expression is $A+2\operatorname{Re}(\lambda z)$; unless $z=0$, a suitable multiple of $-\overline z$ makes it negative. Thus $z=0$ in the zero-denominator case, and the inequality holds in both cases. $\square$
+
 It is a non-trivial fact that any state is automatically continuous, with $\|\omega\|_{\mathcal{A}^*} = \omega(1) = 1$. The key mechanism is worth seeing: for self-adjoint $a$ with $\|a\| \le 1$, the element $1 - a$ is positive (its spectrum lies in $[0,2]$ by Lemma 4.3 and Theorem 4.5, and positivity is spectral by Theorem 4.7), so $\omega(1-a) \ge 0$, i.e. $\omega(a) \le 1$; the same for $1 + a$ gives $|\omega(a)| \le 1$. The general element is then controlled by Cauchy–Schwarz, $|\omega(a)|^2 = |\omega(1^* a)|^2 \le \omega(1)\,\omega(a^*a) \le \|a^* a\| = \|a\|^2$. Continuity of states is thus a *consequence of positivity plus the spectral control the C\*-identity provides* — nothing needs to be assumed about $\omega$ beyond algebra. (Problem 7\*\* asks for the careful version.)
 
 > **Physical picture.** A state is a *preparation procedure*, described entirely by the statistics it produces. The lab never hands you a vector in a Hilbert space; it hands you a list of expectation values of the observables you measured. Definition 6.1 takes that operational data — a positive, normalized assignment of numbers to observables — as the primitive notion. Vectors and density matrices are *derived* objects, reconstructed (when possible) by the GNS construction of §7. This inversion of logic is precisely what lets the formalism survive in QFT, where a single preparation (say, the Minkowski vacuum restricted to a Rindler wedge) admits no density-matrix description at all, yet remains a perfectly good state in the present sense.
@@ -258,15 +276,15 @@ is a state on $C(X)$, and conversely (Riesz representation theorem): *every* sta
 
 The pure states are the *extreme points* of the convex set $\mathcal{S}(\mathcal{A})$. Krein–Milman ensures there are enough of them to recover the full state space by closure-of-convex-hull.
 
-**Fact 6.7.** *On $\mathcal{B}(\mathcal{H})$, the pure states are exactly the vector states (Example 6.2). On a commutative algebra $C(X)$, the pure states are exactly the Dirac measures $\delta_x$, $x \in X$.*
+**Fact 6.7. [Stated only — refs: Bratteli–Robinson Vol. I, §2.3.]** *On $\mathcal{B}(\mathcal{H})$, the **normal** pure states are exactly the vector states. If $\mathcal{H}$ is infinite-dimensional, however, $\mathcal{B}(\mathcal{H})$ also has singular pure states, which are not given by density operators or vectors in the defining representation. On a commutative algebra $C(X)$, the pure states are exactly the Dirac measures $\delta_x$, $x\in X$.*
 
-This already exhibits a striking algebraic phenomenon: in commutative algebras, the pure states are *points* of the underlying space — i.e., classical configurations with no quantum superposition. In non-commutative algebras, the pure states are *vectors*, i.e., genuinely quantum states. The non-commutativity of $\mathcal{A}$ measures the "quantumness" of the system.
+The qualifier “normal” is invisible in finite-dimensional quantum mechanics because every state is normal there. It becomes essential in infinite dimensions. The algebraic statement that survives without choosing a representation is Theorem 7.3 below: a state is pure precisely when its own GNS representation is irreducible. Thus pure states of a commutative algebra recover classical points, whereas pure states of a noncommutative algebra produce irreducible quantum representations, not necessarily vectors in a representation fixed in advance.
 
 ## 7. The GNS construction
 
 We come to the centerpiece of the week. The GNS construction takes a state on a C\*-algebra and produces a Hilbert-space representation in which the state is realized as a vector state. It is functorial, canonical, and the foundation of essentially everything in the algebraic framework. Tomita–Takesaki theory in Block B is built on it.
 
-> **Physical picture.** GNS is the rigorous version of a construction every field theorist already knows: *build the Hilbert space by acting with fields on the vacuum*. In canonical QFT one populates Fock space as $\phi(f_1)\cdots\phi(f_n)|0\rangle$; the inner products of such vectors are the vacuum correlation functions $\langle 0|\phi(f_1)^\dagger \cdots |0\rangle$. GNS says: that procedure needs nothing but the correlation functions themselves. Hand me the expectation functional $\omega$ (the full set of "Wightman functions" of the algebra), and I will manufacture the Hilbert space, the operators, and the vacuum vector, canonically and uniquely. This is the same logic as the Wightman reconstruction theorem, stripped to its algebraic skeleton. It also explains the central moral of the week: *the state picks the Hilbert space*. Different phases of a theory — different temperatures, different vacua, spontaneously broken versus unbroken — give inequivalent GNS representations of the same algebra. The Hilbert space is not part of the kinematics; it is part of the state.
+> **Physical picture.** GNS is the rigorous version of a construction every field theorist already knows: *build the Hilbert space by acting with fields on the vacuum*. In canonical QFT one populates Fock space as $\phi(f_1)\cdots\phi(f_n)|0\rangle$; the inner products of such vectors are the vacuum correlation functions $\langle 0|\phi(f_1)^\dagger \cdots |0\rangle$. GNS says: that procedure needs nothing but the correlation functions themselves. Hand me the expectation functional $\omega$ (the full set of correlation functions of the algebra), and I will manufacture the Hilbert space, the represented operators, and the cyclic vector, canonically up to unitary equivalence. This is the same logic as the Wightman reconstruction theorem, stripped to its algebraic skeleton. It also explains the central moral of the week: *the state picks the representation*. Different phases, temperatures, or vacua **can** give inequivalent GNS representations of the same algebra. The abstract algebra is kinematical; the concrete Hilbert-space realization also remembers the state.
 
 ### 7.1 Setup
 
@@ -290,7 +308,11 @@ $$
 $$
 This is *positive semidefinite*: $\langle a, a\rangle_\omega = \omega(a^* a) \ge 0$. (Note: with this convention the form is $\mathbb{C}$-linear in the second slot, conjugate-linear in the first, matching the physics convention.)
 
-The Cauchy–Schwarz inequality holds: $|\langle a, b \rangle_\omega|^2 \le \langle a, a\rangle_\omega \langle b, b\rangle_\omega$.
+The Cauchy–Schwarz inequality proved in Lemma 6.1a applies to this form:
+$$
+|\langle a,b\rangle_\omega|^2
+\leq \langle a,a\rangle_\omega\langle b,b\rangle_\omega.
+$$
 
 **Step 2: factor out the null space.** Define
 $$
@@ -399,7 +421,7 @@ Recall the Pauli matrices $\sigma_x, \sigma_y, \sigma_z$. Consider the state $\o
 
 Note that this state is *not pure* — it is the average of the two pure vector states $\omega_{e_1}$ and $\omega_{e_2}$, where $e_1, e_2$ are the standard basis vectors. Yet by Theorem 7.3 the corresponding GNS representation is reducible. Indeed, the Hilbert space $\mathcal{H}_\tau \cong \mathbb{C}^4$ decomposes under $\pi_\tau$ as $\mathbb{C}^2 \oplus \mathbb{C}^2$ (left multiplication by $a$ acts on each column independently), with $\pi_\tau(a)$ acting as $a$ on each $\mathbb{C}^2$.
 
-This decomposition is the explicit construction underlying the *type $\mathrm{II}_1$ structure*: two copies of the irreducible representation glued together by the trace. In this finite-dimensional case the pieces are visible; in the genuinely $\mathrm{II}_1$ case (e.g., the hyperfinite $\mathrm{II}_1$ factor, Week 3) the decomposition is "continuous" and the algebra is genuinely non-trivially type $\mathrm{II}$.
+This decomposition is a useful finite-dimensional preview of the **standard representation** of a finite algebra: left multiplication has a nontrivial right-multiplication commutant, and the trace vector is cyclic and separating. It is not itself type II—the represented algebra is still $M_2(\mathbb C)$, hence type I$_2$. Week 3 will show which additional infinite-dimensional feature, namely the absence of minimal projections, distinguishes a genuine type II$_1$ factor.
 
 ## 9. What to take away
 
@@ -427,7 +449,7 @@ Next week we strengthen "C\*-algebra" to "von Neumann algebra" by closing in the
 Let $\mathcal{A}$ be a non-unital Banach \*-algebra. Define $\widetilde{\mathcal{A}} = \mathcal{A} \oplus \mathbb{C}$ as a vector space, with multiplication $(a, \lambda)(b, \mu) = (ab + \lambda b + \mu a, \lambda \mu)$ and involution $(a, \lambda)^* = (a^*, \overline\lambda)$.
 (a) Verify that $\widetilde{\mathcal{A}}$ is a unital \*-algebra and embed $\mathcal{A}$ into it as $a \mapsto (a, 0)$.
 (b) Show that with the norm $\|(a,\lambda)\| = \|a\| + |\lambda|$, $\widetilde{\mathcal{A}}$ is a unital Banach \*-algebra.
-(c) (Harder.) When $\mathcal{A}$ is a C\*-algebra, the norm in (b) does *not* give $\widetilde{\mathcal{A}}$ the C\*-property in general. Find the correct norm by interpreting elements of $\widetilde{\mathcal{A}}$ as operators on $\mathcal{A}$ via $(a,\lambda) \cdot b := ab + \lambda b$. (Hint: think of $\widetilde{\mathcal{A}}$ inside $\mathcal{B}(\mathcal{A})$.)
+(c) (Harder.) When $\mathcal{A}$ is a C\*-algebra, the norm in (b) does *not* give $\widetilde{\mathcal{A}}$ the C\*-property in general. Construct the minimal-unitization norm by representing $(a,\lambda)$ as the adjointable left multiplier $b\mapsto ab+\lambda b$ of the standard Hilbert $\mathcal A$-module $\mathcal A$. Explain why merely writing $\mathcal B(\mathcal A)$ for bounded Banach-space operators would not supply the needed adjoint operation.
 
 **3. The C\*-identity has teeth.**
 (a) Show that in a C\*-algebra, $\|a\|^2 = \|a^* a\| = \|a a^*\|$.
@@ -437,22 +459,48 @@ Let $\mathcal{A}$ be a non-unital Banach \*-algebra. Define $\widetilde{\mathcal
 **4. GNS for the tracial state, completed.**
 (a) Verify all the steps in §8.2: that $\mathcal{N}_\tau = 0$, that the Hilbert space is the rescaled Hilbert–Schmidt space, that left multiplication is bounded with $\|\pi_\tau(a)\| = \|a\|$ (operator norm).
 (b) Show that the cyclic vector $\Omega_\tau$ is *also* cyclic for the *commutant* $\pi_\tau(M_2(\mathbb{C}))'$ — i.e., it is *cyclic and separating*. (The commutant $\pi_\tau(M_2(\mathbb{C}))'$ acts on $\mathcal{H}_\tau$ by *right* multiplication.)
-(c) Compute the modular conjugation $J : \mathcal{H}_\tau \to \mathcal{H}_\tau$ defined by $J [a] = [a^*]$. Verify that $J$ is anti-unitary, $J^2 = 1$, and $J \pi_\tau(a) J = \pi_\tau(a^*)^*$ — the "right multiplication" form. (This is a preview of Tomita–Takesaki, Week 5, in the simplest possible case where the modular operator is trivial.)
+(c) Compute the modular conjugation $J : \mathcal{H}_\tau \to \mathcal{H}_\tau$ defined by $J[a]=[a^*]$. Verify that $J$ is anti-unitary and $J^2=1$. If $L_aX=aX$ and $R_aX=Xa$, show carefully that
+$$
+J L_a J=R_{a^*}.
+$$
+Thus $J\pi_\tau(M_2)J=\pi_\tau(M_2)'$: modular conjugation exchanges left and right multiplication. (This previews Tomita–Takesaki in the simplest case, where the modular operator is trivial.)
 
 **Starred problems** (Ph.D. expected; ambitious M.Sc. encouraged).
 
-**5\*. Pure states are vector states (the easy direction).**
-Let $\xi \in \mathcal{H}$ be a unit vector and $\omega_\xi(a) = \langle \xi, a \xi\rangle$ on $\mathcal{B}(\mathcal{H})$. Show $\omega_\xi$ is pure.
-(*Hint:* if $\omega_\xi = t \omega_1 + (1-t) \omega_2$, the first task is to show that $\omega_1$ and $\omega_2$ are also vector states, by writing them as $\omega_i(a) = \mathrm{Tr}(\rho_i a)$ for positive trace-class $\rho_i$ summing to the rank-one projection onto $\xi$.)
+**5\*. Vector states are pure—and where normality enters.**
+Let $\xi\in\mathcal H$ be a unit vector and $\omega_\xi(a)=\langle\xi,a\xi\rangle$ on $\mathcal B(\mathcal H)$. Show that $\omega_\xi$ is pure without assuming that arbitrary states on $\mathcal B(\mathcal H)$ are trace-class. (*Hint:* if $\omega_\xi=t\omega_1+(1-t)\omega_2$, then for the projection $q=1-|\xi\rangle\langle\xi|$ positivity gives $\omega_1(q)=\omega_2(q)=0$. Use Cauchy–Schwarz for positive functionals to show $\omega_i(q a)=\omega_i(aq)=0$ for every $a$, and conclude that each $\omega_i$ is supported on the one-dimensional corner $(1-q)\mathcal B(\mathcal H)(1-q)$.) Then explain why the converse must be stated as “every **normal** pure state is a vector state” when $\mathcal H$ is infinite-dimensional.
 
 **6\*. A non-pure state and its GNS decomposition.**
 Take $\omega = \frac{1}{2} \omega_{e_1} + \frac{1}{2} \omega_{e_2}$ on $M_2(\mathbb{C})$ as in §8.4.
 (a) Compute the GNS representation of $\omega$ explicitly and identify the decomposition into two copies of the defining representation.
 (b) Find the projection in $\pi_\omega(M_2(\mathbb{C}))'$ (the commutant) onto the first copy.
-(c) Discuss: how does this 2-fold decomposition reflect that $\omega$ is the equal-weights mixture of two pure states? Generalize to $\omega = \sum_i p_i \omega_{e_i}$ with $\sum p_i = 1$.
+(c) Discuss: how does this 2-fold decomposition reflect that $\omega$ is the equal-weights mixture of two pure states? Generalize to $\omega = \sum_i p_i \omega_{e_i}$ with $p_i>0$ and $\sum_i p_i = 1$; if zero weights are allowed, explain why their summands disappear from the GNS space.
 
 **7\*\* (Optional, very hard).** Prove that every state on a C\*-algebra is bounded with norm 1 (i.e., $\sup_{\|a\| \le 1} |\omega(a)| = 1$), using only the positivity and normalization axioms. (*Hint:* the key step is to control $|\omega(a)|^2 \le \omega(a^* a)$ via Cauchy–Schwarz, then iterate using $a^* a$ self-adjoint and $\|a^*a\| = \|a\|^2$.)
 
+## Self-study answer checkpoints
+
+These are result checks, not substitute solutions. The starred problems remain extension work: use the cited theory, the supplied hints, and instructor feedback to control the harder steps.
+
+1. **Banach-algebra warm-ups.** For $|\lambda|>\|a\|$, the inverse of $\lambda1-a$ is the norm-convergent Neumann series $\sum_{n\ge0}\lambda^{-n-1}a^n$; completeness is what puts its sum back in the algebra. In $M_n(\mathbb C)$, non-invertibility is equivalent to $\det(a-\lambda1)=0$, so the spectrum is the eigenvalue set and $r(a)$ is the largest eigenvalue modulus.
+
+2. **Unitization.** The unit is $(0,1)$, and direct expansion verifies multiplication and the involution. The $\ell^1$ norm is submultiplicative and complete. For a non-unital C\*-algebra, the C\*-unitization norm is
+   $$
+   \|(a,\lambda)\|_{\widetilde{\mathcal A}}
+   =\|L_a+\lambda I\|_{\mathcal L(\mathcal A_{\mathcal A})},
+   $$
+   where $(L_a+\lambda I)^*=L_{a^*}+\overline\lambda I$ on the standard Hilbert $\mathcal A$-module. This adjoint is the ingredient absent from an arbitrary Banach-operator norm.
+
+3. **The C\*-identity.** Applying the identity to $a$ and $a^*$ gives $\|a^*a\|=\|aa^*\|=\|a\|^2$. For normal $a$, repeated use of commutativity of $a$ and $a^*$ gives $\|a^n\|=\|a\|^n$, hence $r(a)=\|a\|$. For unitary $u$, $\|u\|=\|u^{-1}\|=1$, so spectral mapping for inversion forces $|\lambda|=1$ on $\sigma(u)$.
+
+4. **Tracial GNS model.** Faithfulness of $\tau$ gives $\mathcal N_\tau=0$; the completion is $M_2$ with the rescaled Hilbert–Schmidt norm, and $\|L_a\|=\|a\|$. The commutant is the right-multiplication algebra and both left and right orbits of $1$ are all of $M_2$. Finally,
+   $$
+   JX=X^*,\qquad J^2=1,\qquad JL_aJ=R_{a^*},
+   $$
+   with $J$ antiunitary.
+
+**Wiki connections.** [[tomita-takesaki-modular-theory|Tomita–Takesaki modular theory]] · [[type-iii-von-neumann-algebras|type III₁ von Neumann algebras]]
+
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block A. Last revised 2026-06-11.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block A. Last revised 2026-08-24.*

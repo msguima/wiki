@@ -7,18 +7,24 @@ week: 5
 block: B
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Weeks 1–4, especially vN algebras and KMS states
-modified: 2026-06-11
+modified: 2026-08-24
 ---
 
 # Week 5 — Cyclic-Separating Vectors and the Tomita Operator
 
 > *Week 4 ended with the promise that every faithful normal state on a von Neumann algebra carries its own time evolution. This week we build the machine that produces it. The input is austere: a von Neumann algebra $\mathcal{M}\subset\mathcal{B}(\mathcal{H})$ and a vector $\Omega$ that is cyclic and separating. The output is the Tomita operator $S$, its polar decomposition $S=J\Delta^{1/2}$, and the two objects that will run the rest of the course: the modular conjugation $J$ and the modular operator $\Delta$.*
 
+### How to use this chapter
+
+- **In class:** establish cyclicity and separatingness in finite-dimensional standard form, define $S_0(A\Omega)=A^*\Omega$, and spend time on why $S_0$ is well defined and closable before taking its polar decomposition.
+- **For self-study:** compute $S$, $J$, and $\Delta$ for a faithful matrix state on Hilbert–Schmidt space. Use that calculation as the dictionary for every abstract formula in the chapter.
+- **Instructor checkpoint:** ask for the anti-linearity checks and for the exact identity $JL_aJ=R_{a^*}$. Cyclic/separating is information completeness, not a synonym for maximal entanglement.
+
 ## 0. Reading
 
 **Primary:**
 - Bratteli & Robinson, Vol. I, §2.5, for the standard Tomita-Takesaki setup.
-- Takesaki, *Theory of Operator Algebras I*, ch. VI, for the operator-theoretic version.
+- Takesaki, *Theory of Operator Algebras II*, ch. VI, for the operator-theoretic version.
 
 **Secondary:**
 - Kadison & Ringrose, Vol. II, ch. 9.
@@ -27,6 +33,8 @@ modified: 2026-06-11
 **Optional research reading:**
 - Takesaki, "Tomita's theory of modular Hilbert algebras and its applications," Lecture Notes in Mathematics 128.
 - Connes & Rovelli, "Von Neumann algebra automorphisms and time-thermodynamics relation in generally covariant quantum theories," *CQG* 11 (1994), for the later thermal-time interpretation.
+
+**Survival-kit background.** Before entering the domain arguments, review [[functional-analysis-survival-kit|Appendix A]] for closable operators, anti-linear adjoints and polar decomposition, and the use of graph norms and cores. These are the analytic prerequisites behind the proof; the finite-dimensional model below can be read without them.
 
 ## 1. Why cyclic and separating?
 
@@ -49,7 +57,7 @@ $$
 
 Cyclicity says $\Omega$ generates the Hilbert space by acting with observables. Separating says no nonzero observable annihilates the state. The two conditions are dual to one another through the commutant.
 
-> **Physical picture.** Both conditions are statements about *entanglement between $\mathcal{M}$ and its complement*, and QFT realizes them dramatically. Cyclicity: acting on $\Omega$ with operators from $\mathcal{M}$ alone reaches every state of the *global* system — in QFT this is the Reeh–Schlieder theorem (Week 9): operating inside a lab in São Paulo on the vacuum can approximate a state describing a particle behind the moon. That is only possible because $\Omega$ is highly entangled: local operations exploit pre-existing correlations to steer the far side. Separating: no local operation annihilates $\Omega$ — in particular no local number operator can certify "the vacuum is empty here," because $a\Omega = 0$ with $a \in \mathcal{M}$ forces $a = 0$. A product state $\xi_A \otimes \xi_B$ is neither cyclic nor separating for $\mathcal{B}(\mathcal{H}_A)\otimes 1$ (any $a$ with $a\,\xi_A = 0$ kills it); maximal entanglement is what makes both hold. So "cyclic and separating" is the operator-algebraic definition of *a fully entangled state across the cut* — and Tomita–Takesaki is the theory of what that entanglement canonically provides.
+> **Physical picture—with an important warning.** In a bipartite type-I model, cyclic and separating means that every Schmidt coefficient is nonzero: the reduced state has full support. It does **not** mean “maximally entangled”; unequal nonzero Schmidt coefficients work equally well. In QFT, Reeh–Schlieder says that vectors $a\Omega$ with $a$ localized in a small region are dense. This is a statement about approximation by algebra elements, whose norms may grow without bound, not a deterministic protocol for preparing a distant state or sending a signal. Separatingness says that no nonzero local operator annihilates the vacuum. Thus cyclicity and separatingness encode full support and exceptionally strong vacuum correlations, while operational entanglement claims require additional arguments.
 
 **Lemma 1.2. [Proved.]** $\Omega$ is cyclic for $\mathcal{M}$ iff $\Omega$ is separating for $\mathcal{M}'$. Likewise, $\Omega$ is separating for $\mathcal{M}$ iff $\Omega$ is cyclic for $\mathcal{M}'$.
 
@@ -89,7 +97,7 @@ Why is $S_0$ well-defined? If $a\Omega=b\Omega$, then $(a-b)\Omega=0$. Separatin
 
 It is worth pausing on how strange this operator is. It is not a Hamiltonian. It is not chosen. It is defined by the algebra and the vector alone: "turn $a$ into $a^*$ on the cyclic orbit of $\Omega$."
 
-> **Physical picture.** Why should "$a \mapsto a^*$ on the orbit of $\Omega$" contain dynamics? Because $S$ is *anti-linear and state-dependent*, and those two features smuggle in the thermal data. If $\Omega$ were a product state, flipping $a$ to $a^*$ would be a mere relabeling. But on an entangled $\Omega$, the vectors $a\Omega$ and $a^*\Omega$ have different lengths: in the type-I model of §5, $\|E_{ij}\Omega\|^2 = p_j$ while $\|E_{ji}\Omega\|^2 = p_i$ — the operation "exchange the roles of $i$ and $j$" costs a factor of the *ratio of Boltzmann weights*. The operator $S$ records, all at once, every such ratio. Its polar decomposition (§3) then cleanly separates the two ingredients: an anti-unitary part $J$ that performs the kinematical flip (system $\leftrightarrow$ mirror system, a CPT-like reflection), and a positive part $\Delta^{1/2}$ that performs the *weighting* — the thermal tilt of the state. Dynamics emerges because a positive operator has imaginary powers: $\Delta^{it}$ is a unitary group, and Week 6 shows the state is exactly thermal with respect to it. The slogan: **the failure of $a \mapsto a^*$ to be an isometry on the state is the temperature of the state.**
+> **Physical picture.** Why should "$a \mapsto a^*$ on the orbit of $\Omega$" contain dynamics? Because $S$ is *anti-linear and state-dependent*. In the tracial standard vector, this flip is isometric and $\Delta=1$. For a nontracial faithful vector, the vectors $a\Omega$ and $a^*\Omega$ need not have the same length: in the type-I model of §5, $\|E_{ij}\Omega\|^2=p_j$ while $\|E_{ji}\Omega\|^2=p_i$. The operator $S$ records all such modular weight ratios. Its polar decomposition separates an anti-unitary part $J$, which performs the kinematical mirror operation, from a positive part $\Delta^{1/2}$, which carries the weighting. Imaginary powers of $\Delta$ then form a unitary group. When an independently specified physical dynamics makes the state KMS, these modular weights acquire the usual thermal interpretation; modular theory itself does not require that extra identification.
 
 ### 2.1 Closability
 
@@ -132,7 +140,7 @@ $$
 $$
 This says exactly that every $b'\Omega \in \mathcal{D}(F_0)$ lies in $\mathcal{D}(S_0^*)$ with $S_0^* (b'\Omega) = F_0(b'\Omega)$. Hence $F_0 \subset S_0^* = S^*$, and since $S^*$ is closed, $F \subset S^*$.
 
-*The converse $S^* \subset F$.* This is the genuinely technical step. One must show: every $\eta \in \mathcal{D}(S^*)$ is reachable by vectors of the form $b'\Omega$ in the graph norm of $F$. The standard route (Takesaki's $2\times 2$ matrix trick; Bratteli–Robinson Vol. I, Prop. 2.5.9) takes $\eta \in \mathcal{D}(S^*)$, forms the candidate "operator affiliated to $\mathcal{M}'$" sending $a\Omega \mapsto a\eta$, and tames its unboundedness by passing to the bounded functions $b'_n := \eta_n(\cdot)$ of its polar data via spectral calculus, verifying at each stage that the cut-off operators lie in $\mathcal{M}'$ (this is where the bicommutant theorem works for us) and that $b'_n\Omega \to \eta$, $F(b'_n\Omega) \to S^*\eta$. We use the result; the missing details are confined to this approximation argument. Granting it, $F = S^*$, and $S = F^*$ follows by taking adjoints of closed operators. $\square$
+*The converse $S^* \subset F$. [Stated only for this direction -- refs: Takesaki Vol. II, ch. VI; Bratteli--Robinson Vol. I, §2.5.]* This is the genuinely technical step. It says that every $\eta\in\mathcal D(S^*)$ can be approximated by vectors $b'_i\Omega$, $b'_i\in\mathcal M'$, simultaneously in Hilbert norm and in the graph norm relevant to $F$. The standard proof uses the $2\times2$ matrix trick together with polar decomposition and bounded spectral cutoffs of an affiliated operator. Establishing that the cutoffs lie in $\mathcal M'$ and converge in graph norm is precisely the part we do not reproduce. With this cited input, $F=S^*$, and $S=F^*$ follows by taking adjoints of closed operators. $\square$
 
 ## 3. Polar decomposition: $S=J\Delta^{1/2}$
 
@@ -183,7 +191,7 @@ $$
 
 The relation $J\Delta J=\Delta^{-1}$ is the operator-theoretic shadow of the formal identity $S_0^2=1$ on $\mathcal{M}\Omega$. It should not be read as saying that $\Delta$ is bounded; $\Delta^{-1}$ is usually unbounded too, and the identities are identities of closed operators on their proper domains.
 
-> **Physical picture.** The polar decomposition splits the state-flip $S$ into kinematics and thermodynamics. $J$ is the *mirror*: an anti-unitary involution exchanging $\mathcal{M}$ with its commutant — in the type-I model it literally swaps the two tensor factors; for a Rindler wedge it is (Bisognano–Wichmann, Week 10) the CRT reflection through the entangling surface. $\Delta$ is the *thermometer*: a positive operator whose spectrum consists of the state's Boltzmann-weight ratios. The identity $J\Delta J = \Delta^{-1}$ then has a direct reading: viewed from the mirror side, all thermal weights invert — what the system sees as "hot direction of modular time," the mirror sees reversed. (In the two-sided black hole of Sem II, this is why the two exterior regions have opposite Killing-time orientations.) And $J^2 = 1$ says the mirror of the mirror is the system itself: the commutant construction is an exact duality, not a one-way loss of information.
+> **Physical picture.** The polar decomposition splits the state-flip $S$ into a mirror operation and a modular weighting. $J$ is the *mirror*: an anti-unitary involution exchanging $\mathcal{M}$ with its commutant—in the type-I model it swaps the two tensor factors; for a neutral bosonic Rindler-wedge algebra it becomes the CPT-plus-rotation wedge reflection (Bisognano–Wichmann, Week 10). In the type-I model, the spectrum of $\Delta$ consists of probability ratios; in general it is modular spectral data, not a list of density-matrix weights. The identity $J\Delta J=\Delta^{-1}$ says that the commutant carries the inverse modular weighting. The two-sided-black-hole interpretation used in Semester II is a further geometric realization of this exact operator identity.
 
 ## 4. Tomita's theorem
 
@@ -205,7 +213,7 @@ defines a one-parameter automorphism group of $\mathcal{M}$.
 
 This $\sigma^\Omega$ is the **modular automorphism group** of $(\mathcal{M},\Omega)$.
 
-> **Physical picture.** The two assertions of the theorem are two halves of one physical statement: *the entanglement structure of $(\mathcal{M},\Omega)$ generates a consistent thermodynamics.* $\Delta^{-it}\mathcal{M}\Delta^{it} = \mathcal{M}$ says the modular flow never leaks out of the algebra — thermal time evolution of an observable confined to a region remains confined to that region, so a constrained observer possesses an autonomous dynamics even when no global Hamiltonian restricts to her algebra. $J\mathcal{M}J = \mathcal{M}'$ says the complement is not merely compatible with the system but an *anti-isomorphic copy* of it — the environment, as reconstructed from the state, is the system's mirror image. Neither statement is visible from the definition of $S$; both require the hard analytic input of the theorem. The reason the proof is hard is also physical: one must show that the *unbounded* thermal weighting $\Delta^{it}$, built from a single vector, respects the *algebraic* structure of all of $\mathcal{M}$ — a statement that couples the state's analytic data to the algebra's multiplication globally.
+> **Physical picture.** The two assertions of the theorem say that the modular data of $(\mathcal M,\Omega)$ are algebraically self-consistent. The relation $\Delta^{-it}\mathcal{M}\Delta^{it}=\mathcal{M}$ says modular evolution preserves the algebra. The relation $J\mathcal{M}J=\mathcal{M}'$ gives a conjugate-linear identification with the commutant—not, for a generic spatial region, an automatic identification with a geometric complement. Both facts are invisible from the definition of $S$ and require the hard analytic theorem. Thermal and geometric interpretations become exact only when the additional KMS or Bisognano–Wichmann input is present.
 
 **Sign convention.** We use $\sigma^\Omega_t = \mathrm{Ad}(\Delta^{-it})$ so that $\omega$ is KMS at $\beta = +1$ in the upper-strip convention of Week 4 Definition 2.1. The opposite convention $\sigma_t = \mathrm{Ad}(\Delta^{+it})$ also appears in the literature (Bratteli–Robinson Vol. II) and gives KMS at $\beta = -1$. The two are related by $t \to -t$ and describe the same automorphism group running in opposite directions. Our convention matches Witten 1803.04993, where the modular Hamiltonian $K = -\log\rho$ generates the flow via $\sigma_t = \mathrm{Ad}(e^{itK}) = \mathrm{Ad}(\Delta^{-it})$.
 
@@ -291,7 +299,11 @@ $$
 \boxed{J(e_i\otimes f_j)=e_j\otimes f_i\text{, anti-linearly}.}
 $$
 
-> **Physical picture.** Read the eigenvalue formula $\Delta\,(e_i \otimes f_j) = (p_i/p_j)\, e_i\otimes f_j$: the modular operator weighs each "transition" $j \to i$ by the ratio of the state's probabilities. Its spectrum is the full set of Boltzmann ratios $\{p_i/p_j\}$ — this is the quantity whose state-independent residue defines the Connes invariant (Week 3 §6) and whose continuum limit characterizes type III$_1$. Note also what $\Delta$ is *not*: it is not $\rho_A$ alone. The factor $\rho_B^{-1}$ on the mirror side is required to make $\Delta$ act trivially on $\Omega$ itself ($\Delta\Omega = \Omega$, check it: $p_i/p_i = 1$ on the Schmidt diagonal) — equilibrium means the state is a fixed point of its own thermal flow, and only the *combination* $\rho_A \otimes \rho_B^{-1}$ achieves this. This explains why modular flow generated by $K = -\log\Delta = K_A \otimes 1 - 1 \otimes K_B$ is the *difference* of the two one-sided modular Hamiltonians — in Rindler language, the full boost generator, with opposite signs on the two wedges.
+> **Physical picture.** Read the eigenvalue formula $\Delta\,(e_i \otimes f_j) = (p_i/p_j)\, e_i\otimes f_j$: the modular operator weighs each “transition” $j\to i$ by a ratio of state probabilities. In a factor, the spectral data that survive after intersecting over faithful normal states enter Connes' $S$-invariant; the spectrum of this one finite-dimensional $\Delta$ is only the model, not yet the invariant. Note also what $\Delta$ is *not*: it is not $\rho_A$ alone. The factor $\rho_B^{-1}$ on the mirror side makes $\Delta\Omega=\Omega$. Consequently the full modular Hamiltonian is a difference,
+> $$
+> -\log\Delta=(-\log\rho_A)\otimes1-1\otimes(-\log\rho_B),
+> $$
+> anticipating the opposite boost orientations of the two Rindler wedges.
 
 ### 5.3 The modular flow
 
@@ -430,6 +442,36 @@ and identify $J\mathcal{M}J$ with the right multiplication algebra.
 
 **10\*. Reading bridge.** Read Witten's finite-dimensional modular discussion in arXiv:1803.04993 §3 and reproduce it in the notation of this note. Flag every place where the finite-dimensional argument uses a density matrix.
 
+## Self-study answer checkpoints
+
+The five core problems should be reproducible without outside sources. The starred domain, commutant, and reading problems remain guided extensions; compare them with the cited operator-theory references.
+
+1. **Cyclic versus separating.** For $K=\overline{\mathcal M\Omega}$, invariance under both $a$ and $a^*$ makes $K$ reducing for every $a\in\mathcal M$. Hence its orthogonal projection $P_K$ commutes with $\mathcal M$, so $P_K\in\mathcal M'$. If $\Omega$ is separating for $\mathcal M'$, $(1-P_K)\Omega=0$ forces $P_K=1$.
+
+2. **Faithfulness.** The decisive identity is
+   $$
+   \omega_\Omega(a^*a)=\|a\Omega\|^2.
+   $$
+   Thus $\omega_\Omega$ is faithful exactly when $a\Omega=0$ implies $a=0$, which is separatingness.
+
+3. **Closability.** If $a_n\Omega\to0$ and $a_n^*\Omega\to\eta$, commute $a_n$ through vectors $b'\Omega$ with $b'\in\mathcal M'$ to show $\langle b'\Omega,\eta\rangle=0$. Separatingness for $\mathcal M$ makes $\Omega$ cyclic for $\mathcal M'$, so $\eta=0$. Cyclicity for $\mathcal M$ makes the original Tomita domain dense; separatingness makes $S_0(a\Omega)=a^*\Omega$ well defined and supplies the dense commutant orbit used in the closability test.
+
+4. **Type-I modular spectrum.** On the matrix-unit vectors,
+   $$
+   \Delta(e_i\otimes f_j)=\frac{p_i}{p_j}\,e_i\otimes f_j.
+   $$
+   A useful check is $\Delta\Omega=\Omega$: only the $i=j$ terms occur in $\Omega$.
+
+5. **Thermal qubit.** Put $\theta=\beta Et$. In the course convention,
+   $$
+   \sigma_t^\beta(\sigma_x)
+   =\cos\theta\,\sigma_x+\sin\theta\,\sigma_y,
+   \qquad
+   \sigma_t^\beta(\sigma_y)
+   =\cos\theta\,\sigma_y-\sin\theta\,\sigma_x.
+   $$
+   These are the physical Heisenberg rotations evaluated at time $\beta t$.
+
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block B. Last revised 2026-06-11.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block B. Last revised 2026-08-24.*

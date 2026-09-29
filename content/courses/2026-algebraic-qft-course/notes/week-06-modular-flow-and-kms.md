@@ -7,12 +7,18 @@ week: 6
 block: B
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Week 5 (Tomita operator), Week 4 (KMS condition)
-modified: 2026-06-11
+modified: 2026-08-24
 ---
 
 # Week 6 — Modular Flow and the KMS Condition
 
-> *Last week we built $\Delta$ and $J$. The theorem said that $\Delta^{-it}$ does something highly non-obvious: it sends the algebra back to itself. This week we give that fact its physical name. The automorphisms $\sigma_t(a)=\Delta^{-it}a\Delta^{it}$ are the **modular flow**, and the state that produced them is **KMS at inverse temperature $1$**. In finite dimensions this reduces to Gibbs calculus. In type III it is the **replacement** for Gibbs calculus — the only thermal notion that survives where density matrices do not. The Takesaki uniqueness theorem then says: this is the unique flow for which the state is at modular equilibrium. The course's whole approach to thermal/dynamical questions in QFT runs through this identification.*
+> *Last week we built $\Delta$ and $J$. The theorem said that $\Delta^{-it}$ does something highly non-obvious: it sends the algebra back to itself. This week we give that fact its physical name. The automorphisms $\sigma_t(a)=\Delta^{-it}a\Delta^{it}$ are the **modular flow**, and the state that produced them is **KMS at inverse temperature $1$**. In finite dimensions this reduces to Gibbs calculus. In type III it supplies the standard equilibrium language that survives without an intrinsic Gibbs density matrix. Takesaki's uniqueness theorem then says that, at the fixed normalization $\beta=1$, this is the unique $\sigma$-weakly continuous flow for which the faithful normal state is KMS.*
+
+### How to use this chapter
+
+- **In class:** begin with $\rho^{it}A\rho^{-it}$ in matrix standard form, translate it into the course's $\Delta^{-it}$ convention, and then prove the KMS boundary relation before discussing uniqueness and outerness.
+- **For self-study:** make a one-page sign dictionary linking $\Delta$, the modular Hamiltonian, physical time, and inverse temperature. Recheck every later example against the matrix calculation.
+- **Instructor checkpoint:** separate point-norm continuity from $\sigma$-weak continuity, uniqueness of a KMS dynamics from a rescaling of its time parameter, and a state's centralizer from the centre of the algebra.
 
 ## 0. Reading
 
@@ -61,7 +67,7 @@ $$
 
 The group property follows formally from $\Delta^{-it}\,\Delta^{-is}=\Delta^{-i(t+s)}$ (functional calculus of the positive self-adjoint operator $\Delta$). The structural content — that conjugation by $\Delta^{-it}$ preserves $\mathcal{M}$ — is Tomita-Takesaki.
 
-**$\sigma$-weak continuity** is a regularity condition: the map $t \mapsto \omega'(\sigma_t^\omega(a))$ is continuous in $t$ for every $a \in \mathcal{M}$ and every normal state $\omega'$. This is weaker than norm continuity but is the right notion for von Neumann algebras (in type III, the modular flow is *never* norm-continuous on the whole algebra — only on a dense subalgebra of "smooth" elements).
+**$\sigma$-weak continuity** is the natural regularity condition: the map $t \mapsto \omega'(\sigma_t^\omega(a))$ is continuous for every $a \in \mathcal{M}$ and every normal functional $\omega'$. This is weaker than point-norm continuity. Tomita-Takesaki guarantees the former; it does not guarantee the latter. Norm-continuous and entire analytic elements form useful dense subalgebras on which stronger manipulations are legitimate.
 
 ### 1.3 $\omega$-invariance
 
@@ -105,7 +111,7 @@ $$
 
 The KMS-modular link goes both ways:
 
-**Theorem 2.2 (Takesaki uniqueness). [Stated only — refs: Takesaki Vol. II Theorem VIII.1.2.]** *Conversely, let $\omega$ be faithful and normal on $\mathcal{M}$. If a $\sigma$-weakly continuous one-parameter automorphism group $\alpha_t$ of $\mathcal{M}$ makes $\omega$ a KMS state at $\beta=1$, then*
+**Theorem 2.2 (Takesaki uniqueness). [Stated only — refs: Takesaki Vol. II, ch. VIII, modular/KMS section.]** *Conversely, let $\omega$ be faithful and normal on $\mathcal{M}$. If a $\sigma$-weakly continuous one-parameter automorphism group $\alpha_t$ of $\mathcal{M}$ makes $\omega$ a KMS state at $\beta=1$, then*
 $$
 \alpha_t=\sigma_t^\omega.
 $$
@@ -118,7 +124,7 @@ This is why the modular flow is **not merely one possible equilibrium dynamics**
 
 The combination of Theorems 2.1 and 2.2 is a **rigidity** result. Two consequences:
 
-- **No alternative thermal dynamics.** Once we have a faithful normal state on a vN algebra, there is exactly one $\sigma$-weakly continuous one-parameter flow that makes the state "thermal" in the KMS sense, at modular $\beta = 1$. (KMS at other $\beta$ for the modular flow would require a different state, by Theorem 2.2.)
+- **The temperature fixes the normalization of time.** Once we have a faithful normal state, there is exactly one $\sigma$-weakly continuous flow that makes it KMS at modular $\beta=1$. More generally, if $\omega$ is KMS at inverse temperature $\beta>0$ for $\alpha_t$, then $\alpha_{\beta t}=\sigma_t^\omega$. The same nontrivial flow cannot normally make the same faithful state KMS at two different inverse temperatures; the tracial state with trivial flow is the important degenerate exception.
 
 - **State-dependent vs. external Hamiltonians.** In ordinary quantum mechanics, the time evolution $\alpha_t = \mathrm{Ad}(e^{itH})$ is determined by an externally chosen Hamiltonian $H$; states are then "thermal" for $\alpha_t$ at appropriate $\beta$. In modular theory, the flow is determined *by the state* — flipping the relationship. This is the algebraic root of the Connes–Rovelli "thermal time hypothesis" (§7).
 
@@ -132,7 +138,7 @@ The state $\omega_\rho$ is faithful (since $\rho > 0$) and normal. The GNS repre
 $$
 \sigma_t^\rho(a)=\rho^{-it}\,a\,\rho^{it}
 $$
-(Week 5 §6.2, in our convention).
+(Week 5 §5.3, in our convention).
 
 ### 3.1 Verifying KMS at $\beta = 1$
 
@@ -233,7 +239,11 @@ The diagonal matrix units $E_{ii}$ are *fixed* by the flow; the off-diagonal mat
 
 **Periodicity.** If all log-ratios $\log p_j - \log p_i$ are commensurate (rational multiples of a common number), the flow is periodic. Generically (for irrational ratios), the flow is **not periodic** — it is an almost-periodic flow on the matrix algebra.
 
-> **Physical picture.** This computation is *spectroscopy without a Hamiltonian*. The off-diagonal matrix units are coherences between "levels," and the modular flow makes them precess at frequencies $\log p_j - \log p_i$ — energy differences in units where $\beta = 1$, read off from the *populations* of the state rather than from any externally given $H$. Diagonal observables (functions of the populations) are modular-invariant: the thermal clock does not see what is already equilibrated. The fixed-point subalgebra of the modular flow (the *centralizer* $\mathcal{M}^\omega$, Problem 2) is therefore the algebra of observables that the state treats as conserved quantities. In type III$_1$ this centralizer is small precisely because everything carries modular frequency — the algebra is all coherence and no rest frame; the crossed product of Block D enlarges the system until a meaningful centralizer (and with it a trace) reappears.
+> **Physical picture.** This computation is *spectroscopy without an externally supplied Hamiltonian*. Off-diagonal matrix units precess at frequencies $\log p_j-\log p_i$, read from the state populations. The fixed-point algebra
+> $$
+> \mathcal{M}^\omega=\{a:\sigma_t^\omega(a)=a\ \text{for all }t\}
+> $$
+> is the **centralizer** of the state. Its size is state-dependent—even on a type III$_1$ factor it need not be small—so one should not infer the factor subtype from one centralizer alone. The crossed product in Block D has a canonical semifinite trace for a different structural reason: adjoining the modular translation turns the outer modular action into an inner one on the enlarged algebra.
 
 **Powers state.** For the Powers state $\rho_\lambda = \mathrm{diag}(1, \lambda)/(1+\lambda)$ with $\lambda \in (0, 1)$, the ratio is $\lambda$, and the modular flow has period $T_\lambda = 2\pi/|\log\lambda|$ (Week 4 §7.4). On the infinite tensor product, this period survives and becomes the Connes T-invariant of the type III$_\lambda$ factor (Week 12).
 
@@ -280,9 +290,9 @@ $$
 
 **On the infinite tensor product.** The modular flow on $\mathcal{R}_\lambda$ (the type III$_\lambda$ factor of Week 4 §7) is the product of single-site flows. The period $T_\lambda$ survives to the infinite-product GNS representation — every single site returns to identity at the same modular time, so the global flow is periodic at $T_\lambda$.
 
-**Theorem 5.1 (Powers/Connes classification input). [Stated only — refs as Week 4 §7.3.]** *In the infinite tensor product GNS representation of $\omega_\lambda^{\otimes\infty}$, the von Neumann closure is the hyperfinite type III$_\lambda$ factor, and the modular-flow periodicity above is reflected in the Connes S-invariant: $S(\mathcal{R}_\lambda) = \{0\} \cup \{\lambda^n : n \in \mathbb{Z}\}$.*
+**Theorem 5.1 (Powers factor plus later Connes invariant). [Stated only — refs as Week 4 §7.3.]** *In the infinite-tensor-product GNS representation of $\omega_\lambda^{\otimes\infty}$, the von Neumann closure is the hyperfinite type III$_\lambda$ factor. Connes' later classification expresses its algebra-level invariant as $S(\mathcal{R}_\lambda)=\{0\}\cup\{\lambda^n:n\in\mathbb Z\}$.*
 
-We use this as a guide, not as a proof of type III classification (the actual proof requires more machinery). The important lesson for the course is that **non-tracial modular dynamics survives the infinite limit and becomes a type invariant**.
+We use the explicit product-state flow as a guide, not as a proof of type. Its periodicity survives the infinite limit and is consistent with the later invariant, but passing from one state's modular data to an algebra-level classification requires the quoted theorem.
 
 ## 6. Intrinsic character of modular flow
 
@@ -300,7 +310,7 @@ More concretely: if $\pi_i:\mathcal{M}\to\mathcal{B}(\mathcal{H}_i)$ are two fai
 
 ### 6.2 Why this matters for QFT
 
-This is the main reason modular theory belongs in an AQFT course. **Local algebras in QFT usually do not come with density matrices** — they are type III$_1$ (Week 12), so there is no faithful normal trace, and so no density matrix in the sense of "$\rho$ such that $\omega(a) = \mathrm{Tr}(\rho a)$." But:
+This is the main reason modular theory belongs in an AQFT course. **Local type-III algebras do not have intrinsic density matrices relative to a trace on the local algebra**: there is no faithful normal semifinite trace $\tau$ on $\mathcal{M}$ with respect to which one writes $\omega(a)=\tau(\rho a)$. In a concrete embedding $\mathcal{M}\subset\mathcal{B}(\mathcal{H})$, a vector state can of course be written using the ambient rank-one operator $|\Omega\rangle\langle\Omega|$ and the trace on $\mathcal{B}(\mathcal{H})$; that ambient formula does not supply a trace or density matrix internal to $\mathcal{M}$. But:
 
 - Faithful normal **states** exist (the vacuum, by Reeh–Schlieder).
 - Faithful normal states have canonical modular **flows** (Tomita–Takesaki + Proposition 6.1).
@@ -316,7 +326,7 @@ In practice, one often computes the modular flow as follows:
 2. **Compute $\Delta$ explicitly** in that representation (via the Tomita operator + polar decomposition, Week 5).
 3. **Define $\sigma_t^\omega(a) = \Delta^{-it} a \Delta^{it}$** and check that the result lies in $\mathcal{M}$.
 
-For free QFT on the Rindler wedge, step 2 is solved by Bisognano–Wichmann: $\Delta = e^{-2\pi K}$ with $K$ the boost generator. This is the *only* general case in physics where step 2 has an explicit closed-form answer.
+For a Wightman QFT on the Rindler wedge, step 2 is solved by Bisognano–Wichmann: $\Delta = e^{-2\pi K}$ with $K$ the boost generator (using $U(\Lambda(s))=e^{isK}$). This is the principal model-independent geometric example. Other explicit modular flows exist—for instance for vacuum balls in conformal field theory and in certain free-field or half-sided-modular settings—but they require additional symmetry or structure.
 
 ## 7. Type III and thermal time
 
@@ -390,7 +400,7 @@ Which elements of $M_n(\mathbb{C})$ are fixed by the flow? Identify the fixed-po
 
 **Starred problems.**
 
-**7\*. Periodicity criterion.** For $\rho=\mathrm{diag}(p_1,\ldots,p_n)$, find a necessary and sufficient condition on the $p_i$ for $\sigma_t^\rho$ to be periodic. (*Hint:* the flow is periodic iff all log-ratios $\log p_j - \log p_i$ are commensurate, i.e., lie in a common $\mathbb{Q}$-subspace of $\mathbb{R}$.)
+**7\*. Periodicity criterion.** For $\rho=\mathrm{diag}(p_1,\ldots,p_n)$, find a necessary and sufficient condition on the $p_i$ for $\sigma_t^\rho$ to have a positive period. Treat the tracial case separately: then the flow is trivial and every $T>0$ is a period. In the nontracial case, show that a period $T$ exists iff every difference $\log p_j-\log p_i$ lies in $(2\pi/T)\mathbb{Z}$; equivalently, all nonzero log-ratios are rational multiples of one chosen nonzero log-ratio.
 
 **8\*. Takesaki uniqueness in finite dimensions.** Suppose $\omega_\rho$ is faithful on $M_n(\mathbb{C})$ and KMS at $\beta=1$ for a one-parameter group $\alpha_t=\mathrm{Ad}(e^{itK})$. Show that, up to an additive scalar in $K$,
 $$
@@ -408,6 +418,48 @@ Equivalently, $K = K_\omega$ is the modular Hamiltonian and $\sigma_t^\rho=\math
 
 **12. Rindler preview.** Read the statement of the Bisognano-Wichmann theorem (Week 10 preview). Identify which part corresponds to $\Delta^{-it}$ (the modular operator → boost) and which part corresponds to $J$ (the modular conjugation → PCT × rotation) for the right-wedge algebra.
 
+## Self-study answer checkpoints
+
+These checks close the six core calculations. Starred and project problems are deliberately source-led: use the named theorems and later QFT chapters rather than treating the lines below as a replacement.
+
+1. **Finite-dimensional KMS.** For
+   $$
+   F_{a,b}(z)=\operatorname{Tr}\!\left(\rho a\rho^{-iz}b\rho^{iz}\right),
+   $$
+   the real boundary is $\omega_\rho(a\sigma_t^\rho(b))$. At $z=t+i$, move the leading block $\rho a$ cyclically to the end and cancel $\rho^{it-1}\rho=\rho^{it}$; the result is $\omega_\rho(\sigma_t^\rho(b)a)$. When $\rho=1/n$, all powers are scalar and the flow simply becomes the identity.
+
+2. **Matrix units and the centralizer.**
+   $$
+   \sigma_t^\rho(E_{ij})
+   =\left(\frac{p_j}{p_i}\right)^{it}E_{ij}.
+   $$
+   The fixed algebra consists of matrices preserving every eigenspace of $\rho$: it is the direct sum of full matrix blocks associated with equal eigenvalues, and reduces to the diagonal algebra only when the spectrum is simple.
+
+3. **Thermal qubit.** If $\theta=\beta Et$, the formulas are
+   $$
+   \sigma_t^\rho(\sigma_x)
+   =\cos\theta\,\sigma_x+\sin\theta\,\sigma_y,
+   \qquad
+   \sigma_t^\rho(\sigma_y)
+   =\cos\theta\,\sigma_y-\sin\theta\,\sigma_x.
+   $$
+   Since $\rho_\beta^{-it}$ differs from $e^{i\beta tH}$ only by a scalar phase, $\sigma_t^\rho=\alpha_{\beta t}$.
+
+4. **Trace.** Traciality makes $S[a]=[a^*]$ antiunitary, so $S^*S=1$, $\Delta=1$, and $\sigma_t^\tau=\mathrm{id}$.
+
+5. **Powers period.** On $E_{12}$ the phase is $\lambda^{it}=e^{it\log\lambda}$, so the least positive period is
+   $$
+   T_\lambda=\frac{2\pi}{|\log\lambda|}.
+   $$
+   The two-site flow has phases $\lambda^{ikt}$ with $k=-2,-1,0,1,2$; because $k=1$ still occurs, its least positive period is the same $T_\lambda$.
+
+6. **State invariance.** Directly,
+   $$
+   \operatorname{Tr}\!\left(\rho\,\rho^{-it}a\rho^{it}\right)
+   =\operatorname{Tr}(\rho a),
+   $$
+   using cyclicity and commutativity of the powers of $\rho$. Thus the modular state is stationary under its own flow.
+
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block B. Last revised 2026-06-11.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester I Block B. Last revised 2026-08-24.*

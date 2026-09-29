@@ -1,358 +1,378 @@
 ---
-title: "Sem II Week 8 — Bell-CHSH Between the Two Sides (Mini-Calc 3)"
+title: "Sem II Week 8 — Bell-CHSH Between the Two Sides: Exact Model and Continuum Protocol"
 type: lecture-notes
 course: syllabus
 semester: 2
 week: 8
 block: 2
-duration: 4 hours (computational lecture + discussion)
+duration: "master dossier: 4 hours of material; classroom core: 2-hour seminar + 1-hour office/self-study"
 prerequisites: Sem II Wks 5–7 (CPW); Sem I Wk 11 (Bell-CHSH in QFT)
-target_paper: "CPW; De Fabritiis–Sorella–Guimarães–Roditi recent papers"
-modified: 2026-06-11
+target_paper: "Summers–Werner Bell correlations; CPW for the two-sided algebraic setting"
+modified: 2026-08-24
 ---
 
-# Sem II Week 8 — Bell-CHSH Between the Two Sides (Mini-Calc 3)
+# Sem II Week 8 — Bell-CHSH Between the Two Sides
 
-> *Block 2 closes with the algebraic content of "ER=EPR." The two-sided TFD vacuum on $\mathcal{A}_R \otimes \mathcal{A}_L$ is maximally entangled in the type-III$_1$ sense — by Summers-Werner (Sem I Wk 11), every pair of dichotomic observables built from boundary single-trace operators can be optimized to saturate the Tsirelson bound. Today we make this concrete: take cosine-Weyl observables on the free-field Rindler-Rindler analog, compute $\langle\mathrm{TFD}|\mathcal{C}_{\mathrm{CHSH}}|\mathrm{TFD}\rangle$, and show the approach to $2\sqrt 2$. The setup is **exactly** the bumpified-Haar-wavelet program of De Fabritiis, Sorella, Roditi, Guimarães et al. — this is where the group's research connects directly to CPW. Block 2 ends; students enter Block 3 (Liu lectures) with the full two-sided CPW machinery in hand.*
+> *The TFD has strong correlations across two commuting algebras. That sentence is true, but it does not yet tell us which four observables violate a Bell inequality, by how much, or what the violation says about a bulk bridge. This week keeps those questions separate. We first solve a two-mode TFD exactly. We then turn the free-field calculation into a reproducible covariance-matrix protocol. Finally, we state the operator-algebraic maximality results at their proper level: they are existence theorems under specific AQFT hypotheses, not proofs that every convenient family of smeared fields reaches $2\sqrt2$, and not an if-and-only-if test for a wormhole.*
 
-## 0. Reading
+> **Route through this master dossier.** **Classroom core (two-hour seminar):** §§1–3, then the observable-class distinction that opens §4. **Full derivation or self-study:** the continuum covariance protocol in §4 and Problems 1–7. **Research extension or office hour:** §§5–7, the source-audit exercise, and the project problem. The exact two-mode solution is the board calculation; the Summers–Werner theorem and holographic interpretation remain visibly separate layers.
 
-**Primary:**
-- Sem I Wk 11 (Bell-CHSH in QFT; Summers-Werner).
-- One or two recent De Fabritiis-Sorella-Roditi-Guimarães Bell-CHSH papers (instructor selects).
+## 0. Reading and source map
 
-**Secondary:**
-- Sem II Wks 5–7 (TFD as cyclic-separating, dressed entropy).
-- Summers, "Yet more ado about nothing," arXiv:0802.1854 §3.
+**Primary.**
 
-**Optional research reading:**
-- Werner, "Quantum states with EPR correlations admitting a hidden-variable model," *Phys. Rev. A* 40 (1989) 4277 (Werner states).
-- Tsirelson, "Quantum generalizations of Bell's inequality," *Lett. Math. Phys.* 4 (1980) 93 (original Tsirelson bound).
-- The wiki open question [[bell-chsh-in-holographic-setting|Bell-CHSH in holographic settings]].
+- Sem I Week 11 for the CHSH operator, Tsirelson's bound, and the course statement of the Summers–Werner results.
+- S. J. Summers, “Yet More Ado About Nothing: The Remarkable Relativistic Vacuum State,” arXiv:0802.1854, especially the discussion of Bell correlations and its original references.
+- S. J. Summers and R. Werner, “Maximal violation of Bell's inequalities is generic in quantum field theory,” *Commun. Math. Phys.* **110** (1987) 247–259, especially Theorem 2.3, Corollary 3.1, and Theorem 3.2.
+- S. J. Summers and R. Werner, “Bell's inequalities and quantum field theory. II. Bell's inequalities are maximally violated in the vacuum,” *J. Math. Phys.* **28** (1987) 2448–2456, for the vacuum result that preceded the generic-vector theorem.
+- CPW, arXiv:2209.10454, for the two-sided large-$N$ algebraic setting. CPW does not supply the explicit CHSH calculation developed here.
 
-## 1. The setup
+**Optional constructive reading.**
 
-### 1.1 Two-sided algebras
+- A paper chosen by the instructor that gives explicit smeared-field Bell operators. Record its exact observable class, spacetime dimension, mass, state, and achieved numerical value before importing any conclusion into this dossier.
+- B. S. Tsirelson, *Lett. Math. Phys.* **4** (1980) 93, for the quantum bound.
 
-From Block 2:
+**Source boundary.** The two-qubit calculation in §3 is an exact course model. The Gaussian formula in §4 is an exact free-field identity once its covariance data are specified. The geometric and holographic discussion in §§6–7 is interpretation, not a theorem extracted from either calculation.
 
-- Two-sided boundary algebras $\mathcal{A}_R, \mathcal{A}_L$ at large $N$, both type III$_1$.
-- TFD vacuum $|\mathrm{TFD}\rangle$ cyclic-separating for both.
-- Causally complementary: $[\mathcal{A}_R, \mathcal{A}_L] = 0$.
+## 1. What is the Bell question here?
 
-In the free-field analog: $\mathcal{A}(W_R), \mathcal{A}(W_L)$ on Fock space, with Minkowski vacuum as the TFD of the boost.
+Let $\mathcal A_R$ and $\mathcal A_L$ be commuting von Neumann algebras represented on one Hilbert space, and let $\omega$ be the TFD state. Choose self-adjoint contractions
 
-### 1.2 The Bell-CHSH question
-
-The Bell-CHSH operator (Sem I Wk 11):
 $$
-\mathcal{C}_{\mathrm{CHSH}}(A_1, A_2, B_1, B_2) = A_1 B_1 + A_1 B_2 + A_2 B_1 - A_2 B_2,
-$$
-with $A_i \in \mathcal{A}_R$ self-adjoint, $\sigma(A_i) \subset [-1, 1]$; similarly $B_j \in \mathcal{A}_L$.
-
-By Sem I Wk 11 Theorem 1.2:
-- Classical (LHV) bound: $|\langle\mathcal{C}\rangle| \le 2$.
-- Tsirelson (quantum) bound: $|\langle\mathcal{C}\rangle| \le 2\sqrt 2$.
-
-By Summers-Werner (Sem I Wk 11 Theorem 2.1):
-- In the TFD vacuum, the Tsirelson bound is **approached** by an optimal choice of dichotomic Weyl-cosine observables, with the limit involving the boost-modular flow.
-
-This week we make the calculation explicit in the free-field analog.
-
-### 1.3 ER=EPR connection
-
-The pedagogical hook of this lecture:
-
-**Bell-CHSH saturation in the TFD vacuum is the algebraic content of "the two sides are maximally entangled," i.e., of ER=EPR.**
-
-Concretely: a TFD vacuum that did *not* maximally entangle the two algebras would correspond to a *disconnected* bulk geometry. The maximal entanglement (saturation of Tsirelson) is what makes the wormhole "present" in the algebraic structure.
-
-## 2. The cosine-Weyl observables (recap from Sem I Wk 11)
-
-### 2.1 Definition
-
-For real test functions $f \in \mathcal{S}(W_R)_\mathbb{R}, g \in \mathcal{S}(W_L)_\mathbb{R}$ and real parameter $\alpha > 0$:
-$$
-A(f, \alpha) = \cos(\alpha\phi(f)) = \tfrac{1}{2}(W(\alpha f) + W(\alpha f)^*),
-$$
-similarly $B(g, \beta) = \cos(\beta\phi(g))$.
-
-These are bounded self-adjoint operators in $\mathcal{A}(W_R), \mathcal{A}(W_L)$ respectively, with spectrum in $[-1, 1]$.
-
-### 2.2 Vacuum expectations
-
-By Sem I Wk 11 §4.2, the vacuum two-point function of two cosines:
-$$
-\langle 0_M|\cos(\alpha\phi(f))\cos(\beta\phi(g))|0_M\rangle = \tfrac{1}{2}\big(e^{-(\alpha^2 W(f,f) + \beta^2 W(g,g) + 2\alpha\beta\,W(f,g))/2} + (g \to -g)\big).
+A_1,A_2\in\mathcal A_R,
+\qquad
+B_1,B_2\in\mathcal A_L,
+\qquad
+\|A_i\|,\|B_j\|\leq1.
 $$
 
-For $f \in W_R, g \in W_L$ (spacelike separated): $W(f, g)$ is *real* (the imaginary part $\sigma(f, g)$ vanishes by spacelike separation), so the formula simplifies to
+The CHSH operator is
+
 $$
-\langle 0_M|A(f, \alpha)B(g, \beta)|0_M\rangle = \tfrac{1}{2}\big(e^{-Q_+/2} + e^{-Q_-/2}\big),
+\mathcal C
+=A_1(B_1+B_2)+A_2(B_1-B_2).
 $$
-$Q_\pm = \alpha^2 W(f,f) + \beta^2 W(g,g) \pm 2\alpha\beta\,\mathrm{Re}\,W(f, g)$.
 
-This is the structural formula for cosine-Weyl correlations.
+Because the two algebras commute, the $A$ and $B$ operators describe compatible measurements made on opposite sides. A local hidden-variable model obeys
 
-## 3. The Bell-CHSH expectation
-
-### 3.1 The four-correlator combination
-
-The CHSH operator is the difference combination:
 $$
-\langle\mathcal{C}\rangle = \langle A_1 B_1\rangle + \langle A_1 B_2\rangle + \langle A_2 B_1\rangle - \langle A_2 B_2\rangle.
+|\omega(\mathcal C)|\leq2,
 $$
-Each $\langle A_i B_j\rangle = \langle 0_M|\cos(\alpha\phi(f_i))\cos(\alpha\phi(g_j))|0_M\rangle$ is given by the formula in §2.2.
 
-### 3.2 Strategy
+whereas quantum mechanics gives the operator bound
 
-The strategy from Summers-Werner:
-1. Choose **four** test functions: $f_1, f_2 \in W_R$ and $g_1, g_2 \in W_L$.
-2. The free parameters are: positions and widths of the bumps, plus the cosine strength $\alpha$.
-3. Optimize over these parameters to maximize $|\langle\mathcal{C}\rangle|$.
-4. **Boost the test functions** toward the bifurcation surface: as boost rapidity $\eta \to \infty$, $|\langle\mathcal{C}\rangle| \to 2\sqrt 2$.
-
-### 3.3 Numerical answer (qualitative)
-
-Without doing the full optimization (which is the content of the group's research papers), the qualitative behavior:
-
-- **Compact, well-separated bumps:** $|\langle\mathcal{C}\rangle| \approx 0$ (no significant correlation).
-- **Bumps approaching the bifurcation surface:** $|\langle\mathcal{C}\rangle| \to 2\sqrt 2$.
-
-The transition is continuous as the wavelet parameters tune. The group's papers (e.g., De Fabritiis-Roditi-Sorella, ~2023–2024) compute $|\langle\mathcal{C}\rangle|$ explicitly for specific bumpified-Haar-wavelet configurations and report values up to $\approx 2.7$–$2.8$, very close to $2\sqrt 2 \approx 2.828$.
-
-### 3.4 The boost-limit
-
-The optimal limit is **boost rapidity $\eta \to \infty$**, where the test functions are "squeezed" toward the bifurcation surface in the boost direction. Concretely:
-
-- Take a reference $f^0$ at boost-coordinate $\xi_0 = 1$.
-- The boosted version is $f^\eta = f^0 \circ \Lambda^{\mathrm{boost}}(\eta)$ at $\xi = e^{-\eta}$, getting arbitrarily close to the bifurcation surface as $\eta \to \infty$.
-
-In this limit:
-- $W(f^\eta, f^\eta) \to \infty$ logarithmically (the test function approaches a delta on the horizon).
-- $W(f^\eta, g^\eta)$ tunes to give $|\langle\mathcal{C}\rangle| \to 2\sqrt 2$.
-
-The boost-limit is **exactly the modular flow** of the wedge algebra (Sem I Wk 10), so Tsirelson saturation requires the full modular structure. This is the algebraic content of Summers-Werner.
-
-## 4. Worked computation: the 2D massless analog
-
-A more explicit form to bring out the structure. Take the **2D massless free scalar** (which is more tractable than 4D for analytical work).
-
-### 4.1 Bumpified Haar wavelets
-
-A bumpified Haar wavelet is a smooth approximation of the discontinuous Haar wavelet
 $$
-h_{\mathrm{Haar}}(x) = \mathbf{1}_{[0, 1/2]}(x) - \mathbf{1}_{[1/2, 1]}(x).
+\|\mathcal C\|\leq2\sqrt2.
 $$
-A "bumpified" version $\tilde h$ is the Haar wavelet convolved with a smooth bump function — preserving the rough shape but smoothing the discontinuities. Used as test functions $f, g$ in the cosine-Weyl construction.
 
-> **Physical picture: why wavelets?** The choice is not aesthetic. A CHSH experiment needs each observer's two measurement settings to be *strongly incompatible* (Sem I Wk 11: the violation is bounded by the commutator norms $\|[A_1, A_2]\|$), while the pair across the horizon must couple to *strongly correlated* vacuum modes. Wavelets optimize both at once: their vanishing integral ($\int h = 0$) removes the IR-dominated zero-mode of the 2D massless field (which would otherwise swamp the correlators with divergent, setting-independent noise), and their localized oscillation selects a narrow band of boost frequencies — precisely the straddling modes whose Unruh-thermal entanglement drives the violation. Smoothing ("bumpification") keeps the test functions in $\mathcal{S}(W_R)$ so the smeared fields are honest self-adjoint operators. In short: Haar shape = mode selectivity and incompatibility; bump smoothing = operator-theoretic legality.
+Three claims must not be conflated:
 
-### 4.2 Locations
+1. **A chosen quartet violates CHSH:** $|\omega(\mathcal C)|>2$.
+2. **The state-algebra pair has maximal Bell value:** the supremum over allowed quartets is $2\sqrt2$.
+3. **A particular ansatz reaches the supremum:** for example, four cosine-Weyl contractions do so.
 
-Place:
-- $f_1$ bumpified at $(t_1, s_1)$ in $W_R$.
-- $f_2$ bumpified at $(t_2, s_2)$ in $W_R$.
-- $g_1$ bumpified at $(-t_1, -s_1)$ in $W_L$ (mirror of $f_1$).
-- $g_2$ bumpified at $(-t_2, -s_2)$ in $W_L$ (mirror of $f_2$).
+The second statement does not imply the third. An existence proof may use projections, partial isometries, or limiting sequences quite different from the ansatz we would like to evaluate numerically.
 
-The mirror-pair choice maximizes the natural two-sided correlations (since the TFD identifies $|n\rangle_R\otimes|n\rangle_L$ symmetrically).
+## 2. What the algebraic theorems do—and do not—say
 
-### 4.3 Two-point functions
+Summers and Werner established a particularly strong result for **complementary wedges**, not an unqualified result for any two type-III factors.
 
-For the 2D massless free scalar, the Wightman two-point function is logarithmic:
+> **Complementary-wedge vector-state theorem.** Let $W$ be a wedge and $W'$ its causal complement. For a local Poincaré-covariant net satisfying the spectrum condition and the technical field/net hypotheses stated in Summers–Werner, *Commun. Math. Phys.* **110** (1987) 247, Theorem 3.2, every vector state on the vacuum Hilbert space has maximal Bell value for $\mathcal A(W)$ and $\mathcal A(W')$. In the present unnormalized CHSH convention the supremum is $2\sqrt2$. Corollary 3.1 gives the closely related route from a type-III$_1$ wedge factor plus wedge duality $\mathcal A(W')=\mathcal A(W)'$.
+
+> **Normal-state extension.** Their Theorem 2.3, together with the QFT application in §III of the same paper, extends maximality from vector states to all normal states on $\mathcal B(\mathcal H)$ represented by density matrices when the complementary wedge algebras satisfy the additional injectivity/strong-stability and duality hypotheses. Injectivity is therefore an extra input, not a synonym for type III$_1$.
+
+These hypotheses matter. “Both algebras are type III$_1$” is not, by itself, the theorem. One must specify their complementary-wedge position, the representation/state class, wedge duality or the paper's alternative hypotheses, and—when claiming the all-normal-state version—injectivity. Likewise, maximality does not say that every pair of dichotomic observables is optimal; most choices are not.
+
+This distinction is useful in class. Type III structure explains why finite-dimensional intuition is too restrictive and why the local algebras contain extremely rich operator families. The explicit construction of good measurement settings remains a separate problem.
+
+### Instructor checkpoint
+
+Ask students to classify each sentence below:
+
+- “The Bell supremum is $2\sqrt2$.” — an optimization statement.
+- “These four operators give $2.41$.” — a constructive lower bound.
+- “These cosine operators approach $2\sqrt2$.” — a convergence claim requiring a proof or reproducible computation.
+- “The bulk is connected.” — a holographic interpretation requiring additional input.
+
+The lesson is not merely caution. It tells us exactly what a calculation must deliver.
+
+## 3. Exact mini-calculation: one TFD mode
+
+The cleanest finite-dimensional model keeps a single two-level mode on each side. It will not reproduce a type III algebra, but it gives an exact answer and makes the temperature dependence visible.
+
+### 3.1 State
+
+Let the excited level have energy $\omega$ and set
+
 $$
-W(x, y) = -\frac{1}{4\pi}\log\!\big|(x^0 - y^0 - i\epsilon)^2 - (x^1 - y^1)^2\big|.
+q=e^{-\beta\omega/2}.
 $$
-Integrated against bumpified Haar wavelets, this gives finite numerical values for $W(f_i, g_j)$ depending on the bump positions.
 
-### 4.4 Approach to Tsirelson
+The normalized two-mode TFD is
 
-The asymptotic structural form (Summers-Werner):
 $$
-|\langle\mathcal{C}\rangle|^2 \approx 8 - \mathrm{const}\cdot e^{-\pi\omega_{\max}},
+|\psi_q\rangle
+=\frac{|00\rangle+q|11\rangle}{\sqrt{1+q^2}}.
 $$
-where $\omega_{\max}$ is the dominant boost-frequency contribution. As $\omega_{\max} \to \infty$ (boost-limit), $|\langle\mathcal{C}\rangle|^2 \to 8$, i.e. $|\langle\mathcal{C}\rangle| \to 2\sqrt 2$ — Tsirelson saturation from below.
 
-(Aside: the ceiling $8$ is the operator bound $\|\mathcal{C}\|^2 \le 4 + \|[A_1,A_2]\|\,\|[B_1,B_2]\| \le 8$ from Sem I Wk 11 §1.2 — the classical 4 plus the maximal commutator contribution 4. The exponential deficit $e^{-\pi\omega_{\max}}$ is a Boltzmann factor at the Unruh temperature: the imperfection of the Bell pair formed by modes of boost frequency $\omega_{\max}$ straddling the horizon. Boosting deeper recruits higher-frequency, more perfectly entangled straddling pairs, exponentially closing the gap.)
+Its one-sided reduced state is thermal:
 
-## 5. The group's research program
+$$
+\rho_R
+=\frac{|0\rangle\langle0|+e^{-\beta\omega}|1\rangle\langle1|}
+{1+e^{-\beta\omega}}.
+$$
 
-The above is the **mathematical** setup. The group's research papers (De Fabritiis, Sorella, Roditi, Guimarães et al.) develop the **constructive** side:
+Define
 
-### 5.1 What they compute
+$$
+C_q:=\frac{2q}{1+q^2}
+=\operatorname{sech}\!\left(\frac{\beta\omega}{2}\right).
+$$
 
-For specific bumpified-Haar-wavelet test functions, the group computes:
-1. $W(f_i, g_j)$ exactly (numerical integration of the 2D Klein–Gordon Wightman function against the wavelet bumps).
-2. The CHSH expectation $\langle 0_M|\mathcal{C}|0_M\rangle$ as a function of the wavelet positions.
-3. Optimization over a parametric family of wavelets.
-4. Report the highest achievable $|\langle\mathcal{C}\rangle|$ in specific configurations.
+For this pure two-qubit state, $C_q$ is also the concurrence. Direct multiplication gives
 
-### 5.2 What this shows
+$$
+\langle\sigma_z\otimes\sigma_z\rangle=1,
+\qquad
+\langle\sigma_x\otimes\sigma_x\rangle=C_q,
+\qquad
+\langle\sigma_y\otimes\sigma_y\rangle=-C_q.
+$$
 
-The group's papers demonstrate that:
+### 3.2 Optimal observables and exact CHSH value
 
-- **Real numerical values** of $|\langle\mathcal{C}\rangle|$ up to $\approx 2.7$–$2.8$ are achievable with simple wavelet test functions.
-- The approach to $2\sqrt 2$ is monotonic in boost rapidity (as expected from the modular structure).
-- The **scaling** of the approach matches the Summers-Werner asymptotic.
+Choose
 
-This is **constructive evidence** for Summers-Werner saturation — an algebraic existence theorem is here made operational with explicit observables.
+$$
+A_1=\sigma_z,
+\qquad
+A_2=\sigma_x,
+$$
 
-### 5.3 Extensions
+and
 
-The same machinery extends to:
-- **Massive free scalar:** same wedge modular flow, different correlator decay.
-- **Proca field (massive vector):** different but still tractable algebra.
-- **Higher dimensions:** 4D massless scalar (relevant to the actual eternal-BH calculation).
+$$
+B_1=\frac{\sigma_z+C_q\sigma_x}{\sqrt{1+C_q^2}},
+\qquad
+B_2=\frac{\sigma_z-C_q\sigma_x}{\sqrt{1+C_q^2}}.
+$$
 
-The Block 2 problem set (Problem 5 below) asks students to read one such paper and verify a numerical value.
+Each is a dichotomic observable. Since
 
-### 5.4 Wiki connection: holographic Bell-CHSH
+$$
+B_1+B_2=\frac{2\sigma_z}{\sqrt{1+C_q^2}},
+\qquad
+B_1-B_2=\frac{2C_q\sigma_x}{\sqrt{1+C_q^2}},
+$$
 
-The wiki open question [[bell-chsh-in-holographic-setting]] asks whether the Bell-CHSH saturation extends to *holographic* boundary subregions (rather than just free-field wedges). The structural prediction from Summers-Werner is yes — under the hypothesis that the boundary single-trace algebra is type III$_1$ (Week 1 Theorem 4.1). The free-field analog of Week 8 is a controlled verification of the structural mechanism.
+we obtain
 
-## 6. ER=EPR: the algebraic content
+$$
+\begin{aligned}
+\langle\mathcal C\rangle_q
+&=\frac{2}{\sqrt{1+C_q^2}}
+\left(
+\langle\sigma_z\otimes\sigma_z\rangle
++C_q\langle\sigma_x\otimes\sigma_x\rangle
+\right)\\
+&=2\sqrt{1+C_q^2}\\
+&=2\sqrt{1+\operatorname{sech}^2(\beta\omega/2)}.
+\end{aligned}
+$$
 
-### 6.1 The Maldacena-Susskind proposal
+This is the maximal CHSH value for the state. It is larger than $2$ for every finite $\beta\omega$, tends to $2\sqrt2$ when $\beta\omega\to0$, and tends to $2$ when $\beta\omega\to\infty$.
 
-ER=EPR (Maldacena-Susskind, arXiv:1306.0533) proposes:
+### 3.3 What this model teaches
 
-> Two CFTs are connected by an Einstein-Rosen bridge in the bulk if and only if they are entangled in a TFD-like way on the boundary.
+The approach to Tsirelson's value here is a **high-temperature or low-frequency limit**, not a statement about boosting a fixed wave packet toward a bifurcation surface. A Lorentz boost translates Rindler time while preserving the Rindler radial coordinate; it does not by itself move a fixed support to the horizon. Any continuum localization limit must therefore be defined independently and checked on the test functions and their covariances.
 
-This is a heuristic with several proposed formal statements. The Block 2 / Week 8 algebraic version:
+The model also prevents an overly quick slogan. An entangled TFD mode violates CHSH, but maximal violation appears only in the maximally entangled limit. A field theory has infinitely many modes and a type III local algebra, so the algebraic supremum can behave differently from any fixed mode or fixed observable family.
 
-**Algebraic ER=EPR (CPW-style):** *Two boundary algebras $\mathcal{A}_R, \mathcal{A}_L$ are dual to a single connected bulk geometry (with an ER bridge) if and only if there exists a cyclic-separating vector on the joint algebra whose modular conjugation $J$ satisfies $J\mathcal{A}_R J = \mathcal{A}_L$.*
+## 4. Continuum free field: an honest computation protocol
 
-The Bell-CHSH saturation is **necessary but not sufficient** for this: maximal Bell-CHSH violation requires type III$_1$ + commuting subalgebras + cyclic-separating vector. Together these encode the algebraic content of the wormhole.
+We now use the right and left Rindler wedge algebras of a free scalar in the Minkowski vacuum. The vacuum is cyclic and separating for each one-sided wedge algebra, and the two wedge algebras commute. This is the controlled analog of the two-sided setup.
 
-### 6.2 Why the saturation is the wormhole
+### 4.1 Weyl and cosine operators
 
-Heuristic: a maximally entangled TFD state corresponds to a *bulk* state with the two boundaries glued together through the bridge. A *less entangled* state (e.g., a tensor product of two independent thermal states) corresponds to *two disconnected* bulk geometries.
+For a real test function $f$, let
 
-The Bell-CHSH saturation distinguishes these: maximal violation requires the type-III$_1$ joint structure, which only the **connected geometry** provides. So Bell saturation $\Leftrightarrow$ wormhole present.
+$$
+W(f)=e^{i\phi(f)}.
+$$
 
-### 6.3 What this is not
+Choose $f_i$ supported in $W_R$ and $g_j$ supported in $W_L$. The bounded self-adjoint contractions
 
-This is **not** a derivation of the bulk geometry from boundary entanglement (which would require much more — bulk reconstruction). It is an algebraic *necessary condition* for the bulk wormhole to be present in the dual.
+$$
+A_i=\cos\!\big(\alpha_i\phi(f_i)\big),
+\qquad
+B_j=\cos\!\big(\beta_j\phi(g_j)\big)
+$$
 
-In the **other direction**: bulk reconstruction goes from boundary algebras + state to bulk geometry. The CPW dressed-algebra construction (Weeks 6–7) is the algebraic side; the bulk reconstruction is a separate program (e.g., Faulkner-Lewkowycz-Maldacena 2013; Almheiri-Dong-Harlow 2014).
+belong to their respective local algebras. They are not generally dichotomic: their spectra need not be only $\{+1,-1\}$. They are nevertheless legitimate contractions for a CHSH test. If a project requires sharp binary measurements, students must replace them with spectral sign operators or projections and redo the expectation-value calculation.
 
-## 7. Final write-up topic options
+### 4.2 Gaussian input
 
-The end of Block 2 is the point in the course where students commit to **final write-up topics**. Per the course design (Sem II syllabus §5), each student writes a 15–20 page exposition of one technical topic by end of Week 14.
+Fix conventions by writing the vacuum Weyl functional as
 
-### 7.1 Topic options
+$$
+\omega_0(W(h))=\exp\!\left[-\frac12\mu(h,h)\right],
+$$
 
-Four directions, each connecting to a different part of the course:
+and the Weyl relation as
 
-**Option 1: Free-field cocycle perturbation.** Compute perturbations of the dressed entropy via the Connes cocycle (Sem I Wk 7). Setup: take the dressed Rindler algebra $\hat{\mathcal{A}}(W_R)$; perturb the modular flow by a small deformation $\delta H$ (e.g., a quench, a Gao-Jafferis-Wall double-trace, or a localized excitation). Compute the perturbed dressed entropy to order $g^2$. Connect to the AAJ Block 4 setup.
+$$
+W(h)W(k)=e^{-i\sigma(h,k)/2}W(h+k).
+$$
 
-**Option 2: Bell-CHSH in holographic settings.** Address the wiki open question [[bell-chsh-in-holographic-setting]]. Setup: take a holographic CFT at large $N$, two spacelike boundary regions, and ask whether the Tsirelson bound is saturated. What does this say about the bulk geometry? Speculative direction — but the algebraic setup is fully developed in Week 11 + Week 8 of this course.
+Here $\mu$ is the real symmetric covariance and $\sigma$ is the symplectic form. Opposite-wedge supports are spacelike separated, so
 
-**Option 3: Embezzlement on the crossed product.** Read recent work on entanglement embezzlement in type III$_1$ algebras (e.g., van Daele 2022). What does the crossed-product construction (Block D) add to the embezzlement story? Are dressed algebras still capable of exact embezzlement?
+$$
+\sigma(f_i,g_j)=0.
+$$
 
-**Option 4: Critical exposition.** A clean, mathematically careful exposition of one of: CPW 2022 (the paper studied this block), CLPW 2022 (de Sitter; Block 5 Wk 14 aside), or AAJ 2025 (Block 4). The exposition should:
-- Identify the key algebraic ingredients (modular structure, crossed product, dressed entropy).
-- Identify the holographic / physics inputs (large-$N$ identifications, first laws).
-- Verify one explicit calculation from the paper.
+Expanding each cosine into two Weyl operators gives the checkable identity
 
-### 7.2 Choosing a topic
+$$
+E_{ij}:=\omega_0(A_iB_j)
+=\exp\!\left[-\frac12\left(
+\alpha_i^2\mu(f_i,f_i)+\beta_j^2\mu(g_j,g_j)
+\right)\right]
+\cosh\!\left(\alpha_i\beta_j\mu(f_i,g_j)\right).
+$$
 
-Topics are confirmed at end of Wk 8. Students should:
-- Commit by end of Wk 8 to one of Options 1–4.
-- Draft a 1-page proposal by end of Wk 10 (mid-Block 3, when Liu lectures contextual material is fresh).
-- Submit a draft by end of Wk 13 (after AAJ).
-- Submit final by end of Wk 15.
+Therefore
 
-## 8. What we don't do
+$$
+\omega_0(\mathcal C)=E_{11}+E_{12}+E_{21}-E_{22}.
+$$
 
-A few honest exclusions in Block 2:
+No numerical value follows until the four test functions, four strengths, field mass, spacetime dimension, and covariance convention have been supplied.
 
-### 8.1 The bulk gravitational calculation
+### 4.3 Reproducibility checklist
 
-Block 2 (and Block 1) consistently keeps the **bulk gravitational calculation separate** from the algebraic structure. We do not:
-- Derive the Hawking temperature from the bulk Euclidean action.
-- Compute $A/(4G_N)$ from the bulk Einstein-Hilbert action.
-- Verify the first law $\delta M = T_H \delta S_{\mathrm{BH}}$ from the bulk side.
+A continuum mini-project is complete only if it records:
 
-These are inputs to Witten 2022 / CPW from the **gravitational** side of the AdS/CFT duality. The course assumes them as known and uses them as inputs.
+1. the field, dimension, mass, state, and two-point-function normalization;
+2. explicit smooth compactly supported $f_1,f_2,g_1,g_2$;
+3. a verified support plot or analytic support bounds;
+4. the covariance and symplectic data needed for all same-side and cross-side products;
+5. quadrature domain, tolerances, and convergence under refinement;
+6. the four $E_{ij}$ and the resulting CHSH value;
+7. an optimization domain fixed before quoting a maximum;
+8. a distinction between a lower bound obtained by the ansatz and the algebraic supremum.
 
-### 8.2 The path-integral / replica derivation
+This protocol is less spectacular than an invented asymptotic formula, but it is scientifically useful: another student can reproduce it, change the smearing functions, and see exactly where a violation comes from.
 
-CPW §5 (the "core technical result") involves a careful matching between bulk path integrals (replica method) and algebraic trace formulas. This is a deep technical point that we do not develop. The structural conclusion — dressed entropy = generalized entropy — is taken as the Witten-CPW-stated result, and we focus on its algebraic structure.
+### 4.4 Why a common boost is not an optimization parameter
 
-### 8.3 The QES prescription
+The Minkowski vacuum is invariant under boosts. If all four smearings are transformed by the same boost, their covariance matrix is unchanged; consequently the CHSH expectation is unchanged. In Rindler coordinates a boost shifts the time coordinate and leaves the radial coordinate fixed. Thus a statement such as “boost all bumps and they approach the bifurcation surface” is incorrect.
 
-The CPW dressed-entropy formula gives $S_{\mathrm{vN}}$ at a *fixed* choice of bulk surface (the BH horizon). The QES prescription (Engelhardt-Wall 2014; Penington 2019; Almheiri-Engelhardt-Marolf-Maxfield 2019) extremizes over surfaces. This is a separate development that we do not pursue.
+One may instead study a genuine **localization family** whose supports shrink toward a horizon, or use modularly transformed operators on only one side. Either procedure changes the relative covariance data and may be interesting, but it must be stated precisely. No universal monotonic approach to $2\sqrt2$ follows from modular flow alone.
 
-## 9. End-of-block synthesis
+## 5. From constructive lower bounds to algebraic maximality
 
-Block 2 has accomplished:
+The exact mode calculation and the Gaussian protocol play different roles.
 
-1. **Identified the TFD as the cyclic-separating vector** of the two-sided boundary algebras (Wk 5). Modular Hamiltonian = $\beta_H(H_R - H_L)$, the bulk-boost Killing generator.
+| Question | Exact two-mode model | Continuum cosine protocol | AQFT theorem |
+|---|---|---|---|
+| Are the observables explicit? | Yes | Yes, after smearings are given | Not necessarily |
+| Is the value checkable? | Analytically | Analytically/numerically | The supremum is proved |
+| Does it model type III locality? | No | Yes, through local field algebras | Yes, under theorem hypotheses |
+| Does it prove this ansatz is optimal? | Yes for the chosen state | No | No |
+| Does it establish a bulk bridge? | No | No | No |
 
-2. **Constructed the CPW dressed algebras** (Wk 6): $\hat{\mathcal{A}}_R, \hat{\mathcal{A}}_L$, type II$_\infty$, commuting on the dressed Hilbert space, single-clock structure.
+This table is the didactic center of the week. “Existence,” “construction,” and “geometric interpretation” are three layers of one research problem, not interchangeable phrasings of the same result.
 
-3. **Verified the dressed-entropy = generalized-entropy identification** in the free-field analog (Wk 7). Same as Block 1 (Witten 2022) but with the two-sided horizon and bulk-interior bulk entropy.
+### Connection to the group's work
 
-4. **Confirmed Bell-CHSH saturation between the two sides** (this week). Computational connection to the group's bumpified-Haar-wavelet research program. Algebraic content of ER=EPR.
+If the instructor assigns a De Fabritiis–Sorella–Roditi–Guimarães paper, use it as a source-specific case study. Students should extract rather than guess:
 
-We are now halfway through Semester II. Block 3 (Liu lectures) is connective tissue: it provides Liu's structural overview of the entire program (large $N$ → type III → crossed product → algebraic ER=EPR), giving students a synthesizing perspective before Block 4's AAJ perturbation theory.
+- whether the local observables are Weyl operators, cosine contractions, projections, or pseudospin operators;
+- whether the result is analytic, numerical, or an optimized lower bound;
+- whether the geometry is wedges, double cones, or another region pair;
+- the reported value and its numerical uncertainty;
+- whether a limit to $2\sqrt2$ is proved or merely suggested by data.
 
-## 10. What to take away
+This preserves the genuine connection to the research program without assigning a number or asymptotic law to an unspecified paper.
 
-- **Two-sided CPW Bell-CHSH:** dichotomic Weyl-cosine observables on $\mathcal{A}(W_R) \otimes \mathcal{A}(W_L)$ in the TFD vacuum approach Tsirelson saturation $|\langle\mathcal{C}\rangle| \to 2\sqrt 2$.
-- **Algebraic content of ER=EPR:** maximal Bell violation in the TFD ↔ type III$_1$ joint structure ↔ connected bulk geometry with ER bridge.
-- **Group's research program** (De Fabritiis-Sorella-Roditi-Guimarães et al.) is the **constructive** side of Summers-Werner: explicit bumpified-Haar-wavelet observables achieving $\sim 2.7$–$2.8$ in 2D massless.
-- **Boost-limit / modular-limit:** Tsirelson saturation requires the boost-modular flow of the wedge — i.e., the full modular structure of the two-sided algebra.
-- **Open question:** does Bell-CHSH saturation extend to holographic boundary subregions? See [[bell-chsh-in-holographic-setting]].
+## 6. What does Bell violation say about ER=EPR?
 
-## 11. Looking ahead
+The eternal black hole and its TFD boundary state provide the motivating example: a semiclassical bridge and strong cross-boundary correlations occur together. Bell violation is a sharp way to demonstrate that those correlations do not admit a local hidden-variable description for the chosen measurements.
 
-Block 3 (Liu lectures, Wks 9–10) is connective tissue. Liu (arXiv:2510.07017) provides:
-- A pedagogical overview of "type III at large $N$" (Wk 9 covers Liu §§3–4: type III at large $N$ + modular flow as bulk geometric flow).
-- The algebraic ER=EPR proposal made precise (Wk 10 covers Liu §§5–8: crossed products in holography, semiclassical limits, algebraic ER=EPR).
+It is not, however, a bridge detector.
 
-Block 3 should feel like a *consolidation* of Blocks 1–2 rather than new content. By the time students reach Block 4 (AAJ, Wks 11–13), they will have read Witten 2022, CPW, and Liu's lectures, with explicit free-field analog calculations for each.
+- **Not sufficient:** opposite wedges in the Minkowski vacuum possess strong and sometimes maximal Bell correlations, but the QFT calculation alone does not assert an Einstein–Rosen bridge.
+- **Not necessary in a fixed experiment:** a poor quartet of observables may give no violation even when the state has a known connected holographic dual.
+- **Not a reconstruction theorem:** the same CHSH number discards almost all information in the state and the net of algebras.
 
-## 12. Problem set
+Thus Bell correlation can be one useful datum in an ER=EPR discussion, but bulk connectivity additionally requires holographic dynamics, a semiclassical code subspace, and reconstruction of the geometry. The disciplined conclusion is “compatible with and diagnostically interesting for the TFD bridge,” not “Bell saturation if and only if wormhole.”
 
-**Core problems.**
+## 7. Research directions with honest deliverables
 
-**1. Vacuum two-cosine correlator.** Compute $\langle 0_M|\cos(\alpha\phi(f))\cos(\beta\phi(g))|0_M\rangle$ for the 2D massless free scalar with simple Gaussian $f, g$. Verify the form §2.2.
+### 7.1 Holographic Bell operators
 
-**2. Spacelike vanishing of $\sigma$.** For $f \in W_R, g \in W_L$ (spacelike separated), verify $\sigma(f, g) = 0$. (Used to simplify the two-cosine correlator.)
+Choose two commuting boundary subalgebras and a state with a controlled bulk dual. Establish the exact algebraic hypotheses before invoking a maximality theorem. Then construct a finite family of boundary observables and report a reproducible lower bound. A comparison with entanglement wedge connectivity belongs in the interpretation section, not in the theorem statement.
 
-**3. Bell-CHSH for mirror-symmetric wavelets.** Take 2D massless free scalar, four wavelets in the configuration §4.2 (mirror pairs across the bifurcation surface). Compute $\langle 0_M|\mathcal{C}|0_M\rangle$ analytically for small bumps, and verify $|\langle\mathcal{C}\rangle| < 2\sqrt 2$.
+### 7.2 Dressed versus undressed algebras
 
-**4. Approach to Tsirelson.** Boost the bumps toward the bifurcation surface (parameter $\eta$). Compute $|\langle\mathcal{C}\rangle|$ as a function of $\eta$ and verify $|\langle\mathcal{C}\rangle| \to 2\sqrt 2$ as $\eta \to \infty$.
+The crossed product changes the algebra type and introduces a trace, but Tsirelson's operator bound remains $2\sqrt2$. A tractable question is whether a chosen undressed quartet embeds into the dressed algebra with the same state correlations, and which clock correlations appear when the observables themselves carry dressing.
 
-**5. Read one group paper.** Pick one recent De Fabritiis-Sorella-Roditi-Guimarães paper. Identify the precise observable construction and the highest reported $|\langle\mathcal{C}\rangle|$. Reproduce one numerical computation.
+### 7.3 Embezzlement
 
-**Starred problems.**
+Van Dam and Hayden introduced finite-dimensional approximate embezzling families. Van Luijk, Stottmeister, Werner, and Wilming, arXiv:2401.07299, characterize universal embezzlement for von Neumann algebras and show a strong type-III$_1$ result in an operational, arbitrarily-accurate sense. A project should ask what survives in the type-II crossed product. It should not call the protocol exact at finite error or attribute the result to “van Daele.”
 
-**6\*. Bell-CHSH in 4D.** Repeat the structural calculation for the 4D massless free scalar. Identify what changes (transverse modes, Bessel-function correlators) but verify the same structural approach to Tsirelson.
+### 7.4 Finite-regulator perturbation project
 
-**7\*. The dressed Bell-CHSH.** Compute $\langle\mathrm{TFD}|\mathcal{C}|\mathrm{TFD}\rangle$ for cosine-Weyl observables on the **dressed** algebras $\hat{\mathcal{A}}(W_R), \hat{\mathcal{A}}(W_L)$. Does the dressing change the bound, or is the saturation preserved?
+For students heading toward AAJ, replace the vague request “compute the free-field cocycle to second order” by a finite-regulator task: choose a density matrix, a bounded perturbation, and four Bell observables; compute the perturbed expectations from nested commutators; and compare with exact matrix exponentiation. Week 11 explains how this course reconstruction differs from AAJ's own unitary perturbation calculation.
 
-**8\*. Massive scalar Tsirelson saturation.** Repeat §3 for the 2D massive free scalar. Show that Tsirelson saturation still holds (the modular structure of wedges is mass-independent), but that the rate of approach depends on $m$.
+## 8. What to take away
 
-**9\*. Read the wiki open question.** Read [[bell-chsh-in-holographic-setting]] in detail. What's a concrete proposal for "Bell-CHSH between two spacelike boundary subregions of a holographic CFT"? What would maximally-violating observables look like?
+- The CHSH question is an optimization over four contractions in two commuting algebras.
+- Type-III AQFT maximality theorems are powerful existence statements whose geometry, state, and algebraic hypotheses must be quoted.
+- A theorem about the supremum does not prove that a cosine-Weyl ansatz is optimal.
+- The two-mode TFD has the exact maximum
 
-**Project / final-writeup problems.**
+$$
+2\sqrt{1+\operatorname{sech}^2(\beta\omega/2)}.
+$$
 
-**10. Choose final write-up topic.** From §7.1, commit to one of:
-- Free-field cocycle perturbation (Option 1).
-- Bell-CHSH in holographic settings (Option 2).
-- Embezzlement on the crossed product (Option 3).
-- Critical exposition of CPW / CLPW / AAJ (Option 4).
+- For opposite-wedge Gaussian fields, a cosine-pair expectation is determined by a finite covariance matrix; this gives an honest computation protocol.
+- A common Lorentz boost does not move Rindler support toward the horizon and cannot change a boost-invariant vacuum covariance matrix.
+- Bell violation is neither a sufficient bridge criterion nor guaranteed for every measurement choice in a bridge state.
 
-Submit a 1-paragraph proposal by end of Wk 9.
+## 9. Problem set
 
-**11. Block 2 end-of-block writeup.** Each student writes a 3-page synthesis of Block 2 covering: (i) the TFD as cyclic-separating; (ii) the CPW dressed algebra; (iii) the dressed-entropy / area-law identification; (iv) the Bell-CHSH saturation. Submit by end of Wk 9.
+### Core problems
+
+**1. Derive the mode correlations.** Starting from $|\psi_q\rangle$, compute the three Pauli correlators in §3.1 and verify the normalization of $\rho_R$.
+
+**2. Derive the optimal value.** Insert the four observables of §3.2 into $\mathcal C$. Show directly that each $B_j$ squares to the identity and that the expectation is $2\sqrt{1+C_q^2}$. Evaluate the limits $\beta\omega\to0$ and $\beta\omega\to\infty$.
+
+**3. Locate the violation.** For which finite values of $\beta\omega$ is the exact mode value strictly larger than $2$? Explain why the limiting zero-temperature product state does not violate CHSH.
+
+**4. Derive the cosine formula.** Expand $\cos(\alpha\phi(f))\cos(\beta\phi(g))$ into four Weyl products. Using $\sigma(f,g)=0$, derive the formula for $E_{ij}$ in §4.2.
+
+**5. Covariance-matrix audit.** The instructor supplies a positive covariance dataset and the four self-covariances. Check positivity/uncertainty compatibility, compute all $E_{ij}$, and state whether the chosen contractions violate CHSH. Do not optimize beyond the supplied domain.
+
+### Starred problems
+
+**6*. Common-boost invariance.** Prove from Poincaré covariance and vacuum invariance that applying the same boost to all smearings leaves every $E_{ij}$ unchanged. Explain in Rindler coordinates why the boost does not change the radial coordinate.
+
+**7*. Sharp observables.** Replace one cosine contraction by $\operatorname{sgn}[\cos(\alpha\phi(f))]$ using bounded functional calculus. In a quasifree state, the joint law of finitely many commuting smeared fields is still Gaussian, so these expectations are determined in principle by the relevant covariance (and, for noncommuting ordered products, by the symplectic data and ordering prescription). What is lost is the simple four-Weyl/cosh formula of §4.2. Derive a defensible protocol using a multivariate Gaussian integral or a convergent Fourier approximation to the periodic sign function, and state how the discontinuity set and numerical convergence are controlled.
+
+**8*. Source audit.** Choose one constructive QFT Bell paper. Prepare a one-page ledger with columns “theorem,” “observable family,” “state,” “region geometry,” “analytic/numerical,” and “reported bound.” Reproduce one table entry or figure point.
+
+**9*. Theorem hypotheses.** Return to the precise Summers–Werner theorem assigned in Sem I Week 11. List every hypothesis and mark which are established, assumed, or unknown for the large-$N$ boundary algebras used by CPW.
+
+### Project problem
+
+**10. Bell data and geometry.** Write a five-page memo explaining why a CHSH value is too coarse to reconstruct a bulk geometry. Propose one additional algebraic or modular datum that could be compared across states, and label the proposal as heuristic unless you can supply a theorem.
+
+**Wiki connections.** [[bell-chsh-in-holographic-setting|Bell–CHSH in holographic settings]] (open question)
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 2. Last revised 2026-06-11.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 2. Last revised 2026-08-24.*
 
 *End of Sem II Block 2.*

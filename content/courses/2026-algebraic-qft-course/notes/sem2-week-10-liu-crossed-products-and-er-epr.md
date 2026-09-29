@@ -5,37 +5,45 @@ course: syllabus
 semester: 2
 week: 10
 block: 3
-duration: 4 hours (seminar with student presentations)
+duration: "master dossier: 4 hours of material; classroom core: 2-hour seminar + 1-hour office/self-study"
 prerequisites: Sem II Wk 9 (Liu I); Sem I Wks 13–14 (crossed product, dressed entropy); Sem II Wks 1–8
-target_paper: "Hong Liu, arXiv:2510.07017 §§5, 7, 8"
-modified: 2026-08-23
+target_paper: "Hong Liu, arXiv:2510.07017 §§V, VII–IX"
+modified: 2026-08-24
 ---
 
 # Sem II Week 10 — Liu Lectures II: Crossed Products, Semiclassical Limits, Algebraic ER=EPR
 
-> *Week 9 installed two pillars: type III at large $N$, and modular flow = bulk geometric flow. This week completes the Liu block with the construction that turns those pillars into gravitational entropy — the **modular crossed product**, read through Liu's lens as "adding a clock that witnesses time." We do three things: (i) make precise the **semiclassical reduction** $S_{\mathrm{vN}} \to A/4G_N + S_{\mathrm{out}}$ and verify it two ways in the free-field analog; (ii) state the **algebraic ER=EPR** criterion (bulk connectivity ⟺ a specific commutant relation); and (iii) draw Liu's **organizing diagram** placing Witten 2022, CPW, and AAJ relative to one another — the map students carry into Block 4. The final-write-up draft is due at the end of this week.*
+> *Week 9 installed two pillars: type III at large $N$, and modular flow as a candidate bulk geometric flow. This week completes the Liu block by synthesizing the continuous core, gravitational dressing, and Liu's conditional algebraic ER=EPR proposal. We will be deliberately precise about the arrows. The crossed product is an exact algebraic construction; the interpretation of its auxiliary variable as an ADM clock is model-dependent; and Liu's connectivity proposal is an “if and only if” classification only inside a stated semiclassical, non-stringy domain. The familiar standard-pair identity $J\mathcal A_RJ=\mathcal A_R'$ is not that proposal.*
 
 ## 0. Reading
 
 **Primary:**
-- Hong Liu, arXiv:2510.07017, **§5** (crossed products and gravitational entropy), **§7** (algebraic ER=EPR), **§8** (limits and outlook).
+- Hong Liu, arXiv:2510.07017, **§V** (crossed product by modular flow), **§VII** (subregion–subalgebra duality and islands), **§VIII**, especially §VIII.C (emergent connectivity and algebraic ER=EPR), and **§IX** (algebraic approaches to quantum-gravity regimes).
 
 **Secondary / gentler:**
 - Sem I Wks 13–14 (the abstract crossed product and dressed entropy).
 - Sem II Wks 2–3, 6–7 (Witten and CPW crossed-product constructions).
 
 **Optional research reading:**
-- Chandrasekaran, Penington, Witten, arXiv:2209.10454 (the eternal-BH crossed product Liu §5 abstracts).
-- Witten, "Gravity and the crossed product," arXiv:2112.12828 §§3–4.
+- Chandrasekaran, Penington, Witten, arXiv:2209.10454 (the eternal-BH crossed product Liu §§V and IX place in a wider framework).
+- Witten, "Gravity and the crossed product," arXiv:2112.12828 §§3.2–3.5 (with §4 for the extension to other conserved charges).
 - Maldacena, Susskind, "Cool horizons for entangled black holes," arXiv:1306.0533 (the original ER=EPR proposal).
+
+### 0.1 How to use this master dossier
+
+- **Classroom core:** §§1–2, 3.1, and 3.3, with Problems 1–4 and 7. This route derives the core, separates the Witten and CPW limits, and states Liu's actual three-branch proposal with its domain.
+- **Full derivation / self-study:** §§3.2, 3.4, and 4–6, with Problems 5, 6, and 8. This route checks the finite-dimensional standard pair, trace normalization, research map, and AAJ handoff.
+- **Research extension:** Problems 9–10. The deliverable is a source-scope table or long-form exposition that distinguishes exact algebra, limiting assumptions, and geometric interpretation.
+
+For this week, remembering a slogan is not enough. The student must be able to explain why a standard-pair commutant identity and Liu's algebraic ER=EPR proposal answer different questions.
 
 ## 1. The crossed product as "adding a clock"
 
 ### 1.1 Liu's framing
 
-We built the modular crossed product abstractly in Sem I Wk 13 and applied it in Blocks 1–2. Liu §5 reframes it in a way worth adopting because it makes the *physics* of the construction transparent.
+We built the modular crossed product abstractly in Sem I Wk 13 and applied it in Blocks 1–2. Liu §V reframes it in a way worth adopting because it makes the *physics* of the construction transparent.
 
-Start from a type III$_1$ boundary algebra $\mathcal{A}$ with modular flow $\sigma^\omega_t$. The flow is **outer** — there is no operator $H \in \mathcal{A}$ generating it (that is what type III means). Liu's reading: the modular flow is the system's *intrinsic thermal time*, but at $1/N = 0$ it is **not witnessed by any physical clock** inside the theory, because the would-be clock Hamiltonian (the ADM energy) is not in the algebra.
+Start from a type III$_1$ boundary algebra $\mathcal A$ with modular flow $\sigma_t^\omega$. Its modular action is nontrivial in the outer automorphism group; in particular, there is no unitary group inside $\mathcal A$ implementing the full flow. In the large-$N$ gravitational examples, the missing implementer is related to an energy collective coordinate.
 
 The crossed product
 $$
@@ -43,104 +51,113 @@ $$
 $$
 adjoins exactly such a clock: an auxiliary degree of freedom on $L^2(\mathbb{R})$, with the translation $\lambda(t)$ implementing the modular flow as an *inner* automorphism of $\hat{\mathcal{A}}$. Liu's slogan: **the crossed product makes the modular flow inner by adjoining the clock that reads modular time.**
 
-The slogan is worth checking rather than repeating, and it takes three lines. Recall the concrete realization from Sem I Wk 13 §2.3: $\hat{\mathcal{A}}$ acts on $\mathcal{H}\otimes L^2(\mathbb{R})$, and is generated by
+The slogan is worth checking rather than repeating, and it takes three lines. Recall the concrete realization from Sem I Wk 13 §2.1: $\hat{\mathcal{A}}$ acts on $\mathcal{H}\otimes L^2(\mathbb{R})$, and is generated by
 $$
-\big(\pi(a)\,\xi\big)(s) = \sigma_{-s}(a)\,\xi(s), \qquad \big(\lambda(t)\,\xi\big)(s) = \xi(s-t),
+\big(\pi(a)\,\xi\big)(q) = \sigma_{-q}(a)\,\xi(q), \qquad \big(\lambda(t)\,\xi\big)(q) = \xi(q-t),
 $$
-for $a \in \mathcal{A}$ and $t\in\mathbb{R}$, where $\xi$ is an $\mathcal{H}$-valued function of the clock variable $s$. Note that $\pi$ is a faithful representation of $\mathcal{A}$ and $\lambda$ a unitary representation of the translations. Conjugating one by the other, and using $(\lambda(t)^*\xi)(s) = \xi(s+t)$,
+for $a \in \mathcal{A}$ and $t\in\mathbb{R}$, where $\xi$ is an $\mathcal{H}$-valued function of the regular coordinate $q$. Here $(Q\xi)(q)=q\xi(q)$, $P=-i\partial_q$, and $\lambda(t)=e^{-itP}$. The Fourier spectral variable of $P$ is $p$; the parameter of the dual action will be $r$; and a physical time or rapidity $u$ is related to modular time only after a model supplies a scale, such as $u=\beta_Ht$. Note that $\pi$ is a faithful representation of $\mathcal{A}$ and $\lambda$ a unitary representation of the translations. Conjugating one by the other, and using $(\lambda(t)^*\xi)(q) = \xi(q+t)$,
 $$
-\big(\lambda(t)\,\pi(a)\,\lambda(t)^*\,\xi\big)(s)
-= \big(\pi(a)\lambda(t)^*\xi\big)(s-t)
-= \sigma_{-(s-t)}(a)\,\xi(s)
-= \sigma_{t-s}(a)\,\xi(s),
+\big(\lambda(t)\,\pi(a)\,\lambda(t)^*\,\xi\big)(q)
+= \big(\pi(a)\lambda(t)^*\xi\big)(q-t)
+= \sigma_{-(q-t)}(a)\,\xi(q)
+= \sigma_{t-q}(a)\,\xi(q),
 $$
-while acting directly with the flowed element gives $\big(\pi(\sigma_t(a))\xi\big)(s) = \sigma_{-s}\big(\sigma_t(a)\big)\xi(s) = \sigma_{t-s}(a)\xi(s)$. The two agree, so
+while acting directly with the flowed element gives $\big(\pi(\sigma_t(a))\xi\big)(q) = \sigma_{-q}\big(\sigma_t(a)\big)\xi(q) = \sigma_{t-q}(a)\xi(q)$. The two agree, so
 $$
 \boxed{\;\lambda(t)\,\pi(a)\,\lambda(t)^{*} = \pi\big(\sigma_t(a)\big)\quad\text{for all } a\in\mathcal{A},\ t\in\mathbb{R}.\;}
 $$
 The modular flow is implemented by conjugation with an element of $\hat{\mathcal{A}}$ — it has become inner. **[Proved.]**
 
-And the reason this could not have happened inside $\mathcal{A}$ alone is exactly the type. Were $\sigma_t = \mathrm{Ad}(u_t)$ for unitaries $u_t \in \mathcal{A}$, the modular flow would be inner already; but Connes' invariant (Sem I Wk 7 Cor 4.3) says the modular flow of a type III factor is nontrivial in the outer automorphism group, and state-independently so. The clock is not a convenience. It is the smallest thing one can adjoin to make the flow inner, and adjoining it is what changes the type.
+Were $\sigma_t=\operatorname{Ad}(v_t)$ for a unitary representation $v_t$ inside $\mathcal A$, the action would already be inner and the crossed product would reduce to the inner-action tensor-product model. The III$_1$ case is different: the continuous core is a II$_\infty$ factor.
 
-> **Physical picture.** Without the clock, modular time is real but "no one is keeping it" — the type III algebra ticks (Sem I Wk 7 Cor 4.3: the outer-automorphism class $\delta_t$ is nontrivial and state-independent) but there is no observable whose evolution registers the tick. The crossed product adds the registrar. In gravity this is not a fictitious device: the clock is the ADM Hamiltonian / horizon area, a genuine gravitational degree of freedom that *must* be included once $G_N \ne 0$ because the time-translation it generates is a gauge constraint (Sem II Wk 2 §1). So "adding a clock" and "including the leading gravitational backreaction" are the same operation. The promotion III$_1 \to$ II$_\infty$ — and with it the appearance of a trace and a finite entropy — is the algebraic statement that *gravity supplies the clock that the matter QFT lacked.*
+> **Physical picture.** The crossed product supplies an internal implementer for a flow that was outer on the original algebra. Calling the auxiliary canonical pair a clock is natural when a physical construction identifies one of its variables with energy and the conjugate one with time. Witten and CPW provide such an identification in particular large-$N$ black-hole limits. Outside those settings, “clock” remains an interpretation of the group representation, not a theorem about gravity.
 
 ### 1.2 Gauging gravity
 
-Liu §5 makes the gauge-theory reading precise, matching Sem II Wk 2 §1: the dressed algebra $\hat{\mathcal{A}}$ is the algebra of observables invariant under the gravitational time-translation constraint, in the relational sense. Observables in $\hat{\mathcal{A}}$ are "the field, relative to the clock reading," and the fixed-point algebra of the dual action recovers the original $\mathcal{A}$ (Sem I Wk 13 §3; Takesaki duality).
+In relational models the crossed product can be realized as a constraint-invariant algebra of system plus clock. In asymptotically AdS gravity, however, the ADM Hamiltonian is a boundary charge rather than a constraint that vanishes on all states. The precise Witten/CPW statement is that including the energy collective coordinate and its conjugate timeshift realizes the continuous core.
 
 The one-line summary, which we adopt as the block's thesis:
 
-> **Semiclassical gravity is the crossed product of a type III$_1$ matter algebra by its modular flow.**
+> **In the Witten/CPW regime, the relevant semiclassical exterior algebra is realized as the continuous core of the strict-$N$ type III$_1$ algebra.**
 
 ## 2. The semiclassical reduction
 
 ### 2.1 The statement
 
-Liu §5 states the reduction that Blocks 1–2 used:
+Liu §§V and IX organize the entropy statement that Blocks 1–2 used. There is, however, no single undifferentiated “large-$N$ limit” behind both constructions.
 
-**Semiclassical reduction (Liu §5). [Stated only — hypothesis-explicit; refs: Liu §5; Witten 2112.12828 §4; CPW §4.]** *In the $1/N \to 0$ (semiclassical) limit, the von Neumann entropy of a state $\hat\rho$ on the dressed algebra $\hat{\mathcal{A}}$ reduces to the generalized entropy:*
+**Semiclassical reduction. [Stated only — hypothesis-explicit; refs: Liu §§V, IX; CPW §§3–4, with Witten §§3.4–3.5 for the trace framework.]** *For the controlled class of gravitational states to which the CPW calculation applies, the entropy of the corresponding normal state on the dressed algebra agrees, to the stated semiclassical order, with generalized entropy:*
 $$
 S_{\mathrm{vN}}(\hat\rho) \;\longrightarrow\; \frac{A_{\rm RT}}{4 G_N} + S_{\mathrm{out}} + \mathrm{const},
 $$
-*where $A_{\rm RT}$ is the area of the RT/horizon surface bounding the entanglement wedge, $S_{\mathrm{out}}$ is the bulk matter entropy outside it, and the state-independent constant reflects the trace-rescaling ambiguity (Sem I Wk 14 §2.3).*
+*where $A_{\rm RT}$ is the area of the RT/horizon surface bounding the entanglement wedge, $S_{\mathrm{out}}$ is the bulk matter entropy outside it, and the state-independent constant reflects the trace-rescaling ambiguity (Sem I Wk 14 §1.3).*
 
-The structural derivation is exactly Sem I Wk 14 Theorem 3.1 plus the holographic identification of the modular boundary term with the area term — and it is identical to the Block 1 Wk 3 and Block 2 Wk 7 derivations. Liu's contribution is to present it as the universal output of the crossed-product machine, independent of which geometry one started from.
+The structural derivation combines the exact semifinite entropy identity of Sem I Wk 14 with a further gravitational input: the modular-energy and relative-entropy terms must be identified with the area response and bulk entropy. Witten supplies the crossed-product trace framework and a black-hole entropy normalization; CPW performs the explicit generalized-entropy matching in its controlled microcanonical regime. Liu presents these results in a common language; the crossed product by itself does not prove the geometric identification for an arbitrary spacetime.
 
-> **Physical picture.** The two terms have cleanly separated origins in the crossed product. $S_{\mathrm{out}}$ is the *matter* entropy — the Araki–Uhlmann/relative-entropy content of the type III$_1$ algebra, finite as a difference (Sem I Wk 14). $A_{\rm RT}/4G_N$ is the *clock* entropy — the contribution of the gravitational mode (horizon area) that the crossed product adjoined; its UV divergence is the area law, regulated by $G_N$ (equivalently by the clock's width, Sem II Wk 7 §6 physical-picture). The slogan "generalized entropy = matter entanglement + area/4G" is, algebraically, "dressed entropy = relative-entropy sector + clock sector." This is why the area term is state-independent up to the matter excitation: it lives in the clock factor, which the matter state barely touches.
+> **Physical picture.** The generalized entropy combines matter correlations with a gravitational area term, but neither term is simply “the entropy of one tensor factor.” In CPW the ADM-energy distribution, bulk relative entropy, and area response appear as separate contributions to one type-II density. Their recombination into $A/(4G_N)+S_{\rm out}$ uses the semiclassical horizon equations.
 
-### 2.2 Verifying it two ways (free-field analog)
+### 2.2 Auditing the reduction in three layers
 
-The skeleton's worked example: compute the dressed entropy of the free-field Rindler analog **two ways** and check that the two agree. We do it with an explicit clock, because the identification is easy to state loosely and easy to get wrong.
+The safest calculation keeps the algebraic model, the QFT regulator, and the gravitational identification separate.
 
-**Way 1 — the algebraic trace formula.** From Sem I Wk 14 §5 and Sem II Wk 7 §4.3, the dressed entropy of the TFD-analog (Minkowski vacuum on Rindler–Rindler, clock wavefunction $h$) is
+**Layer 1 — exact Fourier model.** In the inner-action laboratory of Sem I Week 14, a system state $\rho$ and a probability distribution $\mu(p)$ in the spectral variable of $P$ have
+
 $$
-S_{\mathrm{vN}}(\hat\omega_{\rm TFD}) = S_{\rm clock}(h) - 2\pi\,\langle X\rangle_h ,
+S_{\widehat\tau}=S(\rho)+H(\mu)-\mathbb E_\mu[p].
 $$
-where $S_{\rm clock}(h) = -\int |h(s)|^2\log|h(s)|^2\,ds$ is the differential Shannon entropy of the clock and $\langle X\rangle_h = \int s\,|h(s)|^2\,ds$ its mean position. Both terms are elementary once a clock is chosen. Take the Gaussian
+
+For a Gaussian of mean $p_0$ and width $\sigma$,
+
 $$
-|h(s)|^2 = \frac{1}{\sqrt{2\pi}\,\sigma}\,\exp\!\Big[-\frac{(s - s_0)^2}{2\sigma^2}\Big],
+\boxed{
+S_{\widehat\tau}
+{}={}
+S(\rho)+\frac12\log(2\pi e\sigma^2)-p_0.}
 $$
-of width $\sigma$ centred at $s_0$. Then $\langle X\rangle_h = s_0$, and the differential entropy is the standard Gaussian value
+
+This is an exact trace calculation, but the inner-action crossed product is not the type III$_1$ Rindler core.
+
+**Layer 2 — regulated matter QFT.** The matter entropy is computed independently. In $1+1$ dimensions it is logarithmic; in $3+1$ dimensions its leading term is $c_2A/\epsilon_{\rm UV}^2$. The cutoff $\epsilon_{\rm UV}$ is not $\sigma$.
+
+**Layer 3 — semiclassical gravity.** Witten identifies the energy collective coordinate and interprets the entropy normalization relative to a black hole. CPW then uses the first law plus horizon relative entropy to obtain
+
 $$
-S_{\rm clock}(h) = -\!\int |h|^2\log|h|^2\,ds = \tfrac12\log\!\big(2\pi e\,\sigma^2\big) = \log\sigma + \tfrac12\log(2\pi e),
+S_{\rm alg}=\frac{A}{4G_N}+S_{\rm out}+\mathrm{const}
 $$
-so that
+
+in their stated regimes. The operator algebra alone does not determine $G_N$ or the area coefficient.
+
+Notice the sign in Layer 1: as $\sigma\to0$, the differential entropy tends to $-\infty$. The positive matter UV divergence has a different origin and, in gravity, is absorbed together with the renormalization of the area coupling.
+
+> **Physical picture.** The crossed product supplies a trace and therefore a controlled notion of renormalized entropy. Gravity tells us what the collective coordinate means and how its mean energy changes the horizon area. Matter QFT supplies the short-distance divergence. These are cooperating ingredients, not three names for the same regulator.
+
+### 2.3 Witten and CPW take different routes to the core
+
+This distinction is easy to lose because the final operator algebra is the same continuous core.
+
+**Witten's canonical-ensemble route.** At leading strict large $N$, the rescaled energy fluctuation $U=(H_R-\langle H_R\rangle)/N$ becomes central relative to the single-trace algebra. If one stopped there, the algebra would have a classical $L^\infty$ energy sector. Witten retains the perturbative $1/N$ action that couples this collective coordinate to the modular generator. It is this retained correction—not the leading central algebra by itself—that realizes the type II$_\infty$ crossed product. The construction is therefore a perturbative large-$N$ algebra; it is not a claim that the exact finite-$N$ CFT algebra has become type II.
+
+**CPW's microcanonical route.** CPW first choose a microcanonical TFD window centered at $E_0=O(N^2)$ and keep the subtracted energy $h_R=H_R-E_0$ with $O(1)$ fluctuations as $N\to\infty$. In this scaling $h_R$ acts nontrivially on the limiting type III$_1$ algebra, so the right algebra is already the type II$_\infty$ core in the strict microcanonical limit. Their “semiclassical state” condition then concerns a separate narrow distribution in the conjugate timeshift, controlled by a parameter $\varepsilon$ that is taken small only after the algebraic limit has been defined.
+
+These are not competing answers. Witten explains how the noncentral collective coordinate appears when the leading canonical large-$N$ algebra is corrected; CPW choose a microcanonical scaling in which the appropriate $O(1)$ generator survives from the outset and can be used in an explicit entropy calculation. The common continuous-core structure is exact once the corresponding action has been specified. The gravitational interpretation and the error estimates retain the hypotheses of the route used to obtain it.
+
+## 3. Algebraic ER=EPR: exact preliminaries and Liu's conditional proposal
+
+### 3.1 The standard-form pattern
+
+Before stating Liu §VIII.C, recall an exact modular fact that is often confused with the proposal. A standard pair $(\mathcal A_R,\Omega)$ gives a canonical antiunitary $J$ and a commutant. If the physical left algebra has separately been identified as that commutant, then the two-sided modular pattern follows.
+
+**Two-sided modular pattern. [Exact algebraic statement.]** *Let $\Omega$ be cyclic and separating for $\mathcal A_R$, and suppose the physical left algebra is represented as $\mathcal A_L=\mathcal A_R'$. Tomita–Takesaki theory then gives*
 $$
-\boxed{\;S_{\mathrm{vN}}(\hat\omega_{\rm TFD}) = \log\sigma + \tfrac12\log(2\pi e) - 2\pi s_0 \;+\; \mathrm{const}.\;}
+J\,\mathcal{A}_R\,J = \mathcal{A}_L = \mathcal{A}_R'.
 $$
-The additive constant is the trace-rescaling ambiguity of Sem I Wk 14 §2.3, which no computation on the dressed algebra can fix.
+The vector is cyclic and separating for the **one-sided algebra** $\mathcal A_R$, not for the joined algebra $\mathcal A_R\vee\mathcal A_L$. In an irreducible two-sided representation the joined algebra may be $\mathcal B(\mathcal H)$, for which no vector is separating when $\dim\mathcal H>1$.
 
-**Way 2 — the semiclassical reduction.** Now read the same three terms through $S_{\rm vN} \to A_{\rm RT}/4G_N + S_{\rm out} + \mathrm{const}$, matching term by term:
-
-| Algebraic term | Semiclassical term | Why |
-|---|---|---|
-| $-2\pi s_0 = -2\pi\langle X\rangle_h$ | $\delta\!\big(A/4G_N\big)$ | $X$ is the clock/ADM energy conjugate to modular time; shifting its mean shifts the horizon area by the first law (Sem II Wk 7 §4.3) |
-| $\log\sigma + \tfrac12\log(2\pi e)$, plus the matter contribution of an excited state | $S_{\rm out}$ | entropy of everything outside the horizon that is not the area: here the observer's own clock, plus bulk matter once the state is excited off the vacuum |
-| $\mathrm{const}$ | the bare $A_{\rm horizon}/4G_N$ | both are the same normalization-dependent, state-independent offset |
-
-Note what the match does and does not establish. The **first row is the physical content**: a state-dependent, finite, computable shift on both sides, and the two agree because the crossed-product trace was built from the modular flow whose generator is the boost energy. The **third row is an identity of ambiguities**, not a derivation of the area law — the bare $A/4G_N$ sits in the additive constant precisely because the dressed trace fixes entropy only up to a scale.
-
-**A correction worth stating plainly.** It is tempting to say that the area law is recovered as the divergence of $S_{\rm clock}$ when the clock sharpens. It is not, and the sign shows why: as $\sigma \to 0$ the Gaussian differential entropy $\log\sigma + \tfrac12\log(2\pi e)$ tends to $-\infty$, not $+\infty$. A sharper clock *reduces* the dressed entropy, because a better-localized observer energy is a less uncertain observer. The area-law divergence lives in a different place — in the matter sector, as the usual short-distance divergence of $S_{\rm out}$ when the entangling surface is resolved to a UV cutoff $\epsilon$ — and it is *already absorbed* into the additive constant by the time one writes the dressed entropy. The two regulators, clock width $\sigma$ and matter cutoff $\epsilon$, are independent and must not be conflated.
-
-> **Physical picture.** What the crossed product buys is not the area law; it is *finiteness of differences*. The bare type III$_1$ theory has no entropy at all, so there is nothing to subtract. Dressing produces a type II$_\infty$ algebra with a trace, hence a von Neumann entropy defined up to one overall additive constant — and every difference of dressed entropies is then finite and unambiguous. The area term appears in that difference as the response of the clock's mean energy, $-2\pi\,\delta\langle X\rangle$, which is the first law of horizon thermodynamics written algebraically. The bare $A/4G_N$ never appears, and it should not: no purely algebraic construction can know Newton's constant.
-
-## 3. Algebraic ER=EPR
-
-### 3.1 The criterion
-
-Liu §7 sketches an algebraic version of the Maldacena–Susskind ER=EPR proposal. We met it in Block 2 Wk 5 (modular conjugation swaps the two sides) and Wk 8 (Bell-CHSH saturation); Liu packages it as a criterion.
-
-**Algebraic ER=EPR (Liu §7). [Hypothesis-explicit; refs: Liu §7; CPW §2.]** *Two boundary algebras $\mathcal{A}_R, \mathcal{A}_L$ are dual to a single connected bulk geometry (an Einstein–Rosen bridge joining them) if and only if there is a cyclic-separating state on the joint algebra $\mathcal{A}_R \vee \mathcal{A}_L$ whose modular conjugation $J$ satisfies*
-$$
-J\,\mathcal{A}_R\,J = \mathcal{A}_L = \mathcal{A}_R',
-$$
-*i.e. the two algebras are commutants of one another and the connecting state is the cyclic-separating modular vector (the TFD).*
-
-> **Physical picture.** The criterion turns "are these two boundary systems joined by a wormhole?" into a sharp algebraic question: "is there a TFD-like state making each algebra the modular mirror of the other?" The condition $\mathcal{A}_R' = \mathcal{A}_L$ (Haag duality across the bridge) is the algebraic content of "no bulk region is hidden from both sides" — the wedges of the two boundaries together tile the whole bulk, which is exactly what a connected, horizon-only geometry looks like. A *factorized* state (two independent thermal systems, no entanglement) fails the criterion: its commutant is larger than $\mathcal{A}_L$ (there are operators correlated with neither side), dual to a *disconnected* pair of geometries with no bridge. So ER=EPR, algebraically, is the statement that *maximal modular entanglement is what glues two bulk regions into one connected spacetime.* Block 2 Wk 8's Bell-CHSH saturation is the operational witness of the same fact.
+The equality $J\mathcal A_RJ=\mathcal A_R'$ is automatic once $\Omega$ is cyclic and separating; by itself it cannot diagnose a wormhole. The holographic content lies in identifying that commutant with the opposite boundary algebra inside a code subspace and in establishing what sort of bulk dual the state has. In particular, this standard-pair identity is not the algebraic ER=EPR classification below.
 
 ### 3.2 Model proof: the finite-dimensional TFD
 
-The criterion is stated for type III$_1$ algebras, where we cannot verify it by hand. But the whole structure is visible in finite dimensions, where every object is a matrix, and the check takes ten lines. **[Model proof — finite dimensions.]**
+The structure is visible in finite dimensions, where every object is a matrix. **[Model proof — finite dimensions.]**
 
 Take $\mathcal{H} = \mathcal{H}_R\otimes\mathcal{H}_L$ with $\mathcal{H}_R \cong \mathcal{H}_L \cong \mathbb{C}^n$, and
 $$
@@ -176,104 +193,201 @@ $$
 J\,\mathcal{A}_R\,J = \mathcal{A}_L = \mathcal{A}_R' . \qquad\square
 $$
 
-**And how it fails.** Now take a factorized pure state $|\psi_R\rangle\otimes|\psi_L\rangle$ — two boundary systems with no entanglement. Then
+**And how standardness fails.** Now take a factorized pure state $|\psi_R\rangle\otimes|\psi_L\rangle$. Then
 $$
 \mathcal{A}_R\,\big(|\psi_R\rangle\otimes|\psi_L\rangle\big) = \mathcal{H}_R\otimes|\psi_L\rangle ,
 $$
-a proper subspace of $\mathcal{H}$ whenever $\dim\mathcal{H}_L > 1$. So the vector is **not cyclic**, and it is not separating either: any $a$ annihilating $|\psi_R\rangle$ gives $(a\otimes1)|\psi_R\psi_L\rangle = 0$ with $a\neq0$. There is no Tomita operator, no $\Delta$, no $J$ — the criterion fails at its first hypothesis rather than at its conclusion.
+a proper subspace of $\mathcal H$ whenever $\dim\mathcal H_L>1$. The vector is neither cyclic nor separating: any nonzero $a$ annihilating $|\psi_R\rangle$ gives $(a\otimes1)|\psi_R\psi_L\rangle=0$. The standard-form construction fails at its first hypothesis.
 
-The mixed case is the same story with one more step. A product state $\rho_R\otimes\rho_L$ is not a vector state on $\mathcal{H}_R\otimes\mathcal{H}_L$ at all; purifying it requires an ancilla $\mathcal{H}_{\rm anc}$, and on the enlarged space the commutant of $\mathcal{A}_R$ contains the ancilla operators, so $\mathcal{A}_R' \supsetneq \mathcal{A}_L$. The two boundary algebras are no longer each other's full commutant, which is the algebraic statement that something is correlated with neither side.
+A mixed product density $\rho_R\otimes\rho_L$ defines a perfectly good normal state, but it is not a vector state on the original bipartite Hilbert space. A purification introduces ancillary factors. In that enlarged representation, the commutant of the represented right algebra contains both the original left operators and the relevant ancilla operators, so the original boundary algebra $\mathcal A_L$ is generally smaller than the full commutant. This is a reminder that the commutant statement concerns a **specified representation**; it is not a state-independent label for geometry.
 
-> **Physical picture.** The finite-dimensional check isolates what the criterion is actually testing. It is not testing that the two systems are entangled — plenty of entangled states fail it. It is testing that they are entangled *maximally in the algebraic sense*: that nothing outside the two boundary algebras is correlated with either. When the TFD is cyclic-separating, $\mathcal{A}_R$ and $\mathcal{A}_L$ exhaust the operator content, and the bulk dual has no room for a third region — the geometry is a single connected spacetime with the two exteriors joined behind a horizon. Introduce an ancilla and the commutant grows; dually, some of the bulk is now hidden from both boundaries, and the picture of one bridge joining exactly two exteriors breaks down. Bulk connectivity is the geometric reading of "the commutant is exhausted."
+> **Physical picture.** The finite-dimensional check tests faithfulness of the one-sided state: every Schmidt coefficient must be nonzero. It does not test maximal entanglement, since unequal positive Schmidt coefficients still give a cyclic-separating vector. Whether those modular data admit a smooth connected bulk interpretation is a further holographic question.
 
-### 3.3 Necessary, not sufficient — and not bulk reconstruction
+### 3.3 Liu §VIII.C: the proposal and its domain
 
-Two honest caveats, following Liu §7 and our Block 2 Wk 8 §6:
+Liu reviews the algebraic ER=EPR proposal of Engelhardt and Liu. It is a **conditional proposal**, not a theorem of Tomita–Takesaki theory. Its starting assumptions already contain substantial bulk information:
 
-- The criterion is a statement about the **eternal-BH/TFD setting**. It says the TFD's modular structure encodes the bridge; it does **not** claim that *any* entangled boundary state builds a smooth bulk wormhole (that stronger conjecture requires bulk reconstruction and is false for generic entanglement).
-- Bell-CHSH saturation (Block 2 Wk 8) is **necessary** for the type III$_1$ + commuting + cyclic-separating structure, hence a witness of the algebraic ER=EPR conditions — but saturation alone does not reconstruct the bulk geometry.
+- two entangled systems $R_1$ and $R_2$ are in a pure semiclassical state;
+- the state has a gravitational bulk dual $\mathcal W_{R_1R_2}$ in the $G_N\to0$ limit;
+- every part of that bulk is connected to at least one asymptotic boundary, excluding baby-universe components;
+- the discussion is in the $\alpha'\to0$ regime, where the geometric notions used in the classification are meaningful.
 
-## 4. Liu's organizing diagram
+Let $\mathcal M_{R_1}$ and $\mathcal M_{R_2}$ be the corresponding large-$N$ boundary algebras. Within this domain, the proposal is:
+
+1. $\mathcal W_{R_1R_2}$ is **disconnected** if and only if both boundary algebras are type I.
+2. It has a **classical wormhole** connecting the boundaries if and only if both algebras are type III$_1$ and $\mathcal W_{R_1R_2}$ is classical.
+3. It has a **quantum wormhole** if and only if $\mathcal W_{R_1R_2}$ is quantum volatile and neither boundary algebra is type I.
+
+The word “classical” in item 2 is not decorative. Liu calls the geometry classical when, as $G_N\to0$, fluctuations of diffeomorphism-invariant observables vanish as $O(G_N^a)$ for some $a>0$, while invariant lengths, areas, and volumes do not themselves grow as $O(G_N^{-a})$. A geometry is **quantum volatile** when one or both conditions fail. An evaporating black-hole interior whose proper length grows like $O(G_N^{-1})$ is the paradigm: even when local fluctuations appear controlled, a parametrically large invariant makes the limit geometrically volatile.
+
+This definition repairs a weakness of the slogan “enough entanglement implies a bridge.” The amount of entanglement alone does not distinguish a smooth classical bridge from a long, fluctuating quantum region, nor does it exclude disconnected entangled phases. The algebra type records the *structure* of entanglement, while the classical/volatile condition records the behavior of the bulk limit.
+
+Two examples make the three branches concrete.
+
+- For the low-temperature TFD below the Hawking–Page transition, the large-$N$ boundary algebras are type I in Liu's account. The two bulks are disconnected despite nonzero entanglement; the proposal assigns neither a classical nor a quantum wormhole.
+- In the evaporating-black-hole example, the boundary algebra may remain type III$_1$ on both sides of the Page transition. Before the Page time the relevant entanglement wedge is quantum volatile and the proposal calls the connection a quantum wormhole. After the Page time the wedge becomes classical and the connection is through a classical wormhole anchored at the quantum extremal surface. Algebra type alone does not distinguish these two stages; the volatility condition is essential.
+
+Finally, Liu explicitly restricts this classification to $\alpha'\to0$. In a stringy regime, the geometric concepts entering “classical wormhole” and “quantum volatile” need revision, and type III$_1$ alone is not enough to infer connectivity. Thus even the proposal's if-and-only-if language must be carried together with its domain.
+
+### 3.4 What the standard-pair calculation does—and does not—test
+
+The finite-dimensional calculation in §3.2 tests whether a one-sided density is faithful: full Schmidt rank makes the vector cyclic and separating. It does not determine the large-$N$ algebra type, the $G_N\to0$ scaling of bulk invariants, or the $\alpha'$ regime. Conversely, Liu's three-way proposal does not replace the commutant construction needed to describe two exterior observable algebras.
+
+The two ideas should therefore be used at different stages:
+
+$$
+\text{standard pair}
+\Longrightarrow
+\text{exact modular mirror/commutant structure},
+$$
+
+whereas
+
+$$
+\text{large-$N$ algebra types + bulk classicality/volatility + domain assumptions}
+\Longrightarrow
+\text{the proposed connectivity classification}.
+$$
+
+One last warning is orthogonal to both statements. CHSH violation is a state-and-observable property. Type III$_1$ structure permits strong violations under additional hypotheses, but neither algebra type nor cyclic-separating property forces a specified quartet to saturate $2\sqrt2$.
+
+## 4. A course research map prompted by Liu
 
 The single most useful page of the block: where the three research papers sit.
 
 ```
-                    type III_1 boundary algebra  A  (large N, classical gravity)
+                    type III_1 boundary algebra  A  (strict large-N limit)
                                    |
-                                   |  crossed product by modular flow  (= gauge ADM time / add a clock)
+                                   |  crossed product by modular flow
+                                   |  (ADM-clock meaning requires the Witten/CPW input)
                                    v
-                    type II_infty dressed algebra  Â   (semiclassical gravity)
+                    type II_infty continuous core  Â
                                    |
-                                   |  dressed entropy  S_vN  =  A/4G_N + S_out + const
+                                   |  gravitational matching in a controlled regime
+                                   |  S_alg  =  A/4G_N + S_out + const
                                    v
         ┌──────────────────────────┼───────────────────────────┐
         |                          |                            |
-   one-sided                   two-sided                    perturbed
+   one-sided                   two-sided                    unitary deformation
    (Witten 2022)               (CPW 2022)                   (AAJ 2025)
-   single boundary             eternal BH / TFD             GJW deformation
-   A_R ⋊ ADM                   A_R, A_L ⋊ boost             cocycle-perturbed Â
-   S_gen of a wedge            S_gen of the BH              δS_gen from traversal
+   retained 1/N action         strict microcanonical N→∞    GJW input
+   right exterior core         right core + commutant       weight/Jacobian + BCH
+   BH entropy normalization    controlled S_gen matching    type-II entropy series
         |                          |                            |
-        └──────────── all three: the SAME crossed-product machine ────────────┘
+        └────────── related uses of the crossed-product framework ────────────┘
                                    |
                             de Sitter sibling (CLPW, Block 5 Wk 14):
-                            same machine, compact horizon  ⇒  type II_1 (finite trace)
+                            invariant observer algebra with a positive
+                            observer Hamiltonian  ⇒  type II_1 (finite trace)
 ```
 
 The reading:
 
-1. **Witten 2022** (Block 1): the machine applied to one boundary of the eternal BH. Output: $S_{\rm gen}$ of a single wedge.
-2. **CPW 2022** (Block 2): the machine applied to both boundaries (TFD). Output: $S_{\rm gen}$ of the eternal BH, plus the two-sided ER=EPR structure.
-3. **AAJ 2025** (Block 4): the machine's dressed algebra *perturbed* by a GJW deformation. Output: $\delta S_{\rm gen}$ from making the wormhole traversable.
-4. **CLPW** (Block 5 Wk 14 aside): the same machine on de Sitter, where the compact horizon forces a *finite* trace — type II$_1$ rather than II$_\infty$. The contrast that proves the type is a property of the geometry, not the construction.
+1. **Witten 2022** (Block 1): the right exterior algebra with its energy collective coordinate, after retaining the perturbative action that is invisible in the leading central large-$N$ algebra. Output: a type II$_\infty$ factor, trace entropy up to a constant, and its normalization relative to the reference black-hole entropy.
+2. **CPW 2022** (Block 2): the right core together with its dressed commutant in the strict microcanonical large-$N$ setting. Output: the explicit $S_{\rm gen}$ matching for CPW's semiclassical states and the two-sided modular pattern.
+3. **AAJ 2025** (Block 4): unitary transport of the algebra–state system, with a GJW deformation as the application. AAJ expand the deformation-dependent crossed-product weight and spectral Jacobian using BCH nested commutators. Through $O(1/N^2)$ their source-controlled ledger contains the GJW linear structure, five additional linear structures, and fifteen quadratic structures. This is a type-II von Neumann entropy expansion; it is not automatically a calculation of a bulk time advance or a term-by-term proof of $\delta S_{\rm alg}=\delta S_{\rm gen}$.
+4. **CLPW** (Block 5 Wk 14 aside): a closely related observer construction in de Sitter gives a type II$_1$ algebra. The finite trace follows from the detailed invariant-observer setup, including the positive observer Hamiltonian; compactness of the horizon alone is not an operator-algebraic proof of the type.
 
-> **Physical picture.** The diagram is the answer to "what is this subject?" One construction — gauge the modular flow of a type III$_1$ algebra — produces a type II$_\infty$ algebra with a gravitational entropy. Everything else is *which geometry, which state, and whether you perturb.* Witten picks one wedge; CPW picks the TFD; AAJ perturbs; CLPW changes the horizon topology. Holding the machine fixed and varying the input is the entire research literature of the past few years, and it is why a two-week lectures block can unify a whole subfield.
+> **Physical picture.** The diagram is a map, not an equivalence theorem. The continuous core supplies the type II$_\infty$ algebraic backbone in the Witten/CPW setting. The identification of its entropy with generalized entropy uses additional semiclassical dynamics. AAJ transports and reweights a deformed algebra–state system, while CLPW is a related invariant-observer construction whose trace is finite. Seeing the common pattern is useful precisely because it also makes the different hypotheses visible.
 
-## 5. What Liu does not cover (the handoff to Block 4)
+## 5. What the Liu block prepares us to compare
 
-Liu's lectures stop at the *unperturbed* dressed algebra and its entropy. The natural next question — **how does the dressed entropy change when the modular structure is perturbed?** — is exactly the AAJ program (Block 4).
+Liu §§VIII–IX go beyond an unperturbed entropy formula: they use algebra type, modular structure, subregion duality, and observer dressing to discuss classical and quantum-volatile gravitational regimes. Block 4 asks a different, more narrowly perturbative question: **how does a type-II crossed-product entropy change when the full algebra–state system is transported by a specified unitary deformation?**
 
-The perturbation that matters is the **Gao–Jafferis–Wall (GJW) double-trace deformation**: turning on $V = g\,\mathcal{O}_L\mathcal{O}_R$ coupling the two boundaries, which makes the wormhole momentarily traversable. AAJ compute the resulting corrections to the dressed entropy via cocycle perturbation theory (Sem I Wk 7). Students enter Block 4 with:
+The application is the **Gao–Jafferis–Wall (GJW) double-trace deformation**, with a sign and switching profile chosen so that the bulk calculation produces negative averaged null energy and a traversable window. AAJ use the corresponding interaction as an input to their unitary algebraic framework. Their entropy series comes from the changed crossed-product weight, a spectral Jacobian, and BCH nested commutators. It is **not** a Connes-cocycle expansion. The Araki/Connes cocycle remains a valuable course comparison for fixed-algebra state perturbations, but the two perturbative machines must not be identified.
+
+Students enter Block 4 with:
 
 1. the structural picture from Liu (this block);
 2. explicit dressed-entropy computations from Witten and CPW (Blocks 1–2);
 3. the Casini–Huerta–Myers / boundary-modular-flow dictionary (Wk 9);
-4. the Connes cocycle as the perturbation tool (Sem I Wk 7).
+4. the Connes cocycle as a comparison formalism whose domain must be kept distinct from AAJ's unitary transport.
 
 ## 6. What to take away
 
-- **Crossed product = adding a clock:** the dressing adjoins the gravitational degree of freedom (ADM/horizon) that witnesses modular time, making the outer modular flow inner and promoting III$_1 \to$ II$_\infty$. "Semiclassical gravity = crossed product of type III$_1$ by its modular flow."
-- **Semiclassical reduction (stated only; matched explicitly in the free-field analog):** $S_{\mathrm{vN}}(\hat\rho) \to A_{\rm RT}/4G_N + S_{\rm out} + \mathrm{const}$. With a Gaussian clock of width $\sigma$ and mean $s_0$, $S_{\mathrm{vN}} = \log\sigma + \tfrac12\log(2\pi e) - 2\pi s_0 + \mathrm{const}$; the state-dependent $-2\pi s_0$ is the area response $\delta(A/4G_N)$, and the bare $A/4G_N$ sits in the additive constant. The area law is *not* the $\sigma\to0$ behaviour of the clock entropy, which goes to $-\infty$.
-- **Algebraic ER=EPR (hypothesis-explicit; model proof in finite dimensions):** bulk connectivity ⟺ a TFD-like cyclic-separating state with $J\mathcal{A}_R J = \mathcal{A}_L = \mathcal{A}_R'$. Verified line by line for the finite-dimensional TFD, where $J(a\otimes1)J = 1\otimes\bar a$; a factorized state fails it by not being cyclic-separating at all. Necessary structure for a bridge; not a claim that all entanglement builds geometry, and not bulk reconstruction.
-- **Liu's organizing diagram:** Witten 2022, CPW, AAJ, and (aside) CLPW are one crossed-product machine applied to different geometries/states/perturbations.
-- **Handoff:** Liu stops at the unperturbed dressed algebra; Block 4 (AAJ) perturbs it.
+- **Crossed product and clock:** the crossed product makes the outer modular flow inner. Its canonical pair becomes an ADM-energy/timeshift pair only after the physical identification made in the Witten/CPW regime. For a type III$_1$ factor the continuous core is type II$_\infty$.
+- **Semiclassical reduction (stated only):** the exact Fourier laboratory gives $S_{\widehat\tau}=S(\rho)+H(\mu)-\mathbb E_\mu[p]$ and, for a Gaussian, $S(\rho)+\tfrac12\log(2\pi e\sigma^2)-p_0$. The further equality with $A/(4G_N)+S_{\rm out}+\mathrm{const}$ is a gravitational matching. The clock-width term is not the matter area-law divergence.
+- **Standard pair versus algebraic ER=EPR:** a faithful TFD-like vector gives the exact relation $J\mathcal{A}_R J=\mathcal{A}_R'=\mathcal A_L$. Liu's §VIII.C proposal is different: within a pure semiclassical bulk domain and the $\alpha'\to0$ limit, it classifies disconnected, classical-wormhole, and quantum-volatile-wormhole regimes using boundary algebra types together with bulk classicality.
+- **Research map:** Witten, CPW, AAJ, and the CLPW aside use related operator-algebraic structures with different physical inputs; their conclusions should not be transferred without their hypotheses.
+- **Handoff:** AAJ use unitary covariance, a deformation-dependent weight and Jacobian, and BCH—not the course's Connes-cocycle series—to organize the deformed type-II entropy.
 
 ## 7. Looking ahead
 
-Block 4 (Weeks 11–13) is the climax: **Ahmad–Jefferson's algebraic perturbation theory**. Week 11 develops the Connes-cocycle perturbation series (extending Sem I Wk 7) and applies it to the GJW deformation. Week 12 is the central mini-calculation — the leading correction to the dressed entropy in the free-field GJW analog. Week 13 surveys AAJ's open-question landscape. The final-write-up draft from this week's problem set will be refined throughout Block 4.
+Block 4 (Weeks 11–13) studies **Ahmad–Jefferson's unitary algebraic perturbation theory**. Week 11 separates AAJ's transported algebra–state system from an Araki/Connes fixed-algebra comparison and introduces the GJW application. Week 12 audits AAJ's actual linear and quadratic term ledgers, then builds an exact finite-matrix model and a reproducible finite-regulator field-theory protocol. Week 13 separates AAJ's stated outlook from course-generated research questions. The final-write-up draft from this week's problem set will be refined throughout Block 4.
 
 ## 8. Problem set
 
 **Core problems.**
 
-**1. The dual action, and what it undoes.** The crossed product carries a second flow, the *dual* action $\hat\theta_p$, acting by $(\hat\theta_p\xi)(s) = e^{ips}\xi(s)$ on the clock. Verify that $\hat\theta_p$ fixes $\pi(\mathcal{A})$ pointwise and multiplies $\lambda(t)$ by a phase, so that the fixed-point algebra of $\hat\theta$ is exactly $\pi(\mathcal{A})$. Then explain in one paragraph, using §1.1, in what sense gauging the modular flow and then taking $\hat\theta$-invariants returns you to where you started (Takesaki duality, Sem I Wk 13 §3) — and why this is the algebraic statement that the clock carries no physical information of its own.
+**1. The dual action, and what it remembers.** Let $q$ be the regular coordinate, let $(Q\xi)(q)=q\xi(q)$, and let the dual action have parameter $r$:
+$$
+\theta_r(\pi(a))=\pi(a),\qquad \theta_r(\lambda(t))=e^{itr}\lambda(t).
+$$
+In the regular representation it is implemented ambiently by $e^{irQ}$. Verify both formulas directly and show that the fixed-point algebra is $\pi(\mathcal A)$. Then distinguish this fixed-point statement from Takesaki duality, which says
+$$
+(\mathcal A\rtimes_\sigma\mathbb R)\rtimes_\theta\mathbb R
+\cong \mathcal A\,\overline\otimes\,\mathcal B(L^2(\mathbb R)).
+$$
+Explain what information the dual action retains about the extension. Do **not** conclude that a physically identified clock is automatically gauge redundancy.
 
-**2. A different clock.** Redo the §2.2 computation for a clock with the exponential profile $|h(s)|^2 = \theta(s)\,\mu\,e^{-\mu s}$. Compute $S_{\rm clock}(h)$ and $\langle X\rangle_h$, assemble $S_{\rm vN}$, and check that the state-dependent structure (one term linear in the mean clock position, one term logarithmic in the width) is the same as for the Gaussian. Which features of the answer are clock-independent, and which are not?
+**2. A different clock distribution.** In the exact Fourier model take
+$$
+\mu_\eta(p)=\eta e^{-\eta p}\,\mathbf 1_{p\ge0},\qquad \eta>0.
+$$
+Check that $H(\mu_\eta)=1-\log\eta$ and $\mathbb E[p]=1/\eta$. Hence compute
+$$
+S_{\widehat\tau}=S(\rho)+H(\mu_\eta)-\mathbb E[p].
+$$
+Which part follows from the trace weight $e^{-p}dp$, and which part depends on the shape of the probability distribution? Compare its standard deviation $1/\eta$ with the Gaussian width $\sigma$.
 
-**3. What the clock width does.** Using the boxed result of §2.2, compute $\partial S_{\mathrm{vN}}/\partial\sigma$ and $\partial S_{\mathrm{vN}}/\partial s_0$. Explain in one paragraph why the first is positive and the second negative, and why neither is the area-law divergence. (See the correction at the end of §2.2 — this problem exists because the opposite claim is easy to make.)
+**3. What the distribution parameters do.** Using the boxed result of §2.2, compute $\partial S_{\widehat\tau}/\partial\sigma$ and $\partial S_{\widehat\tau}/\partial p_0$. Explain why the answers are $1/\sigma$ and $-1$, respectively. Then explain why neither derivative computes the matter area-law divergence, and why identifying $p_0$ with a horizon-energy variable requires an extra physical dictionary.
 
-**4. The organizing diagram from memory.** Reproduce §4's diagram and write one sentence per node (Witten / CPW / AAJ / CLPW) stating what input each feeds into the common machine and what output it gets.
+**4. The research map from memory.** Reproduce §4's diagram and write one sentence per node (Witten / CPW / AAJ / CLPW) stating which operator-algebraic framework it uses, which extra physical input it adds, and what output it obtains. For AAJ, name the weight/Jacobian and BCH ingredients and state the perturbative scope. Include one sentence explaining why these are related constructions rather than four instances of one theorem.
 
 **Starred problems.**
 
-**5\*. Partial entanglement.** Between the TFD and the product state lies a one-parameter family: $|\Psi_\alpha\rangle = \sqrt{1-\alpha}\,|\Psi_{\rm TFD}\rangle + \sqrt{\alpha}\,|\psi_R\rangle\otimes|\psi_L\rangle$. For $n = 2$, determine for which $\alpha$ the vector remains cyclic-separating for $\mathcal{A}_R$, and compute $\Delta$ and $J$ at one intermediate value. Does the criterion $J\mathcal{A}_RJ = \mathcal{A}_R'$ survive, and what does your answer say about how sharply "connected" and "disconnected" are separated?
+**5\*. Full Schmidt rank, not a geometry test.** To avoid reusing the regular-coordinate symbol $q$, let $0<\zeta<1$ and
+$$
+|\Psi_{\rm TFD}\rangle=\sqrt{\zeta}\,|00\rangle+\sqrt{1-\zeta}\,|11\rangle,
+$$
+and normalize
+$$
+|\Psi_\alpha\rangle=\mathcal N_\alpha
+\left(\sqrt{1-\alpha}\,|\Psi_{\rm TFD}\rangle+\sqrt{\alpha}\,|00\rangle\right),
+\qquad 0\le\alpha\le1.
+$$
+Determine for which $\alpha$ the coefficient matrix has full rank and hence the vector is cyclic and separating for $\mathcal A_R$. At $\alpha=1/2$, compute its two Schmidt probabilities, then write $\Delta=\rho_R\otimes\rho_L^{-1}$ and the corresponding $J$. Verify that $J\mathcal A_RJ=\mathcal A_R'$ whenever the vector has full Schmidt rank. Why does this calculation supply no sharp criterion for a connected bulk geometry?
 
-**6\*. Where the constant lives.** The semiclassical $A/4G_N$ has a state-independent additive ambiguity. Trace it to the trace-rescaling freedom $\hat\tau \to c\hat\tau$ (Sem I Wk 14 §2.3) and show it shifts $S_{\rm vN}$ by $-\log c$, the same for every state. Why does this not affect any physical (difference) quantity?
+**6\*. Where the constant lives.** Let $\widehat\tau'=c\widehat\tau$ with $c>0$, and hold the normalized state functional fixed. Show that its density changes from $D$ to $D'=D/c$, and therefore
+$$
+S_{\widehat\tau'}=-\widehat\tau'(D'\log D')
+=S_{\widehat\tau}+\log c.
+$$
+Why does this not affect entropy differences computed with one fixed trace normalization?
+
+**7\*. Liu's three branches.** For each of the following data, say what Liu's §VIII.C proposal concludes and which extra hypothesis is doing work: (a) both boundary algebras are type I; (b) both are type III$_1$ and the bulk is classical; (c) neither is type I and the bulk is quantum volatile. Then explain why knowing only $J\mathcal A_RJ=\mathcal A_R'$ answers none of the three classification questions.
+
+**8\*. Classical or volatile?** Consider three hypothetical $G_N\to0$ families: (i) all invariant fluctuations are $O(G_N^{1/2})$ and all invariant lengths are $O(1)$; (ii) fluctuations are $O(G_N^{1/2})$ but one proper length is $O(G_N^{-1})$; (iii) all invariant sizes are $O(1)$ but the variance of an invariant area remains $O(1)$. Classify each family using Liu's definition. State why the classification is not determined by algebra type alone.
 
 **Project problems.**
 
-**7. Final-write-up draft due.** Submit the ≥10-page draft (begun Wk 9). Incorporate Liu's organizing diagram to position your topic relative to Witten/CPW/AAJ. Feedback only; no grade.
+**9. Final-write-up draft due.** Submit the ≥10-page draft (begun Wk 9). Incorporate the course research map to position your topic relative to Witten/CPW/AAJ. Feedback only; no grade.
+
+**10. Source-scope audit.** Build a four-column table for Liu §§V, VII, VIII.C, and IX: exact algebraic input; bulk assumption; limiting procedure; conclusion. Add one final row for AAJ and record that its series uses unitary covariance, a deformation-dependent weight/Jacobian, and BCH. The table must not label AAJ's method as a Connes-cocycle expansion or equate its entropy coefficients with a bulk time advance without a separate calculation.
+
+## 9. Instructor checkpoints (internal)
+
+1. **Dual action:** $e^{irQ}\lambda(t)e^{-irQ}=e^{itr}\lambda(t)$ and $e^{irQ}$ fixes $\pi(a)$. Fourier-mode invariance leaves only the zero mode $\pi(\mathcal A)$; the second crossing, not the fixed-point statement alone, gives $\mathcal A\bar\otimes\mathcal B(L^2\mathbb R)$.
+2. **Exponential profile:** normalization is immediate, $H=1-\log\eta$, $\mathbb E[p]=1/\eta$, and $S_{\widehat\tau}=S(\rho)+1-\log\eta-1/\eta$. The mean term comes from the trace weight; the first two distribution terms depend on $\mu_\eta$.
+3. **Gaussian derivatives:** $\partial_\sigma S=1/\sigma$ and $\partial_{p_0}S=-1$. Neither differentiates a spacetime cutoff.
+4. **Research map:** Witten must be labeled perturbative canonical, CPW strict microcanonical, AAJ weight/Jacobian plus BCH through the stated orders, and CLPW an observer construction whose positive-energy compression is essential for finiteness.
+5. **Schmidt rank:** the $|11\rangle$ coefficient is nonzero exactly for $\alpha<1$, so standardness fails only at $\alpha=1$. At $\alpha=1/2$, the Schmidt probabilities are $(1+\sqrt{\zeta})/2$ and $(1-\sqrt{\zeta})/2$. In the Schmidt basis $J$ swaps the factors and conjugates coefficients; $\Delta=\rho_R\otimes\rho_L^{-1}$.
+6. **Trace constant:** $D'=D/c$ and the shift is $+\log c$; it cancels from differences taken with one normalization.
+7. **Three branches:** type I/type I gives disconnected; type III$_1$/type III$_1$ plus a classical bulk gives a classical wormhole; non-type-I algebras plus volatility gives a quantum wormhole. These are branches of Liu's conditional proposal, not consequences of the standard-pair identity.
+8. **Volatility:** family (i) is classical; (ii) is volatile because an invariant length grows as a negative power of $G_N$; (iii) is volatile because invariant fluctuations do not vanish.
+9. **Final draft rubric:** every use of “if and only if” must list the pure semiclassical bulk, no-baby-universe, $G_N\to0$, and $\alpha'\to0$ assumptions.
+10. **Source audit:** §V supplies crossed-product structure, §VII subregion/subalgebra and island context, §VIII.C the conditional connectivity proposal, and §IX observer dressing and quantum-volatile applications. AAJ is a later comparison, not a theorem stated in those Liu sections.
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 3. Last revised 2026-08-23.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 3. Last revised 2026-08-24.*

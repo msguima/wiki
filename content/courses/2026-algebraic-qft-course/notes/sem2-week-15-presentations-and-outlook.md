@@ -5,238 +5,254 @@ course: syllabus
 semester: 2
 week: 15
 block: 5
-duration: 4 hours (student presentations + closing lecture)
+duration: "master dossier: 4 hours of material; classroom core: 2-hour seminar + 1-hour office/self-study"
 prerequisites: the entire course
 target_paper: "(synthesis week — no new target paper)"
-modified: 2026-08-23
+modified: 2026-09-29
 ---
 
-# Sem II Week 15 — Final Presentations and Outlook (Course Capstone)
+# Sem II Week 15 — Final Presentations and Outlook
 
-> *The last week. Students present their final write-ups; the instructor gives a closing synthesis. This note is the capstone: it records the structure of the final assessment, synthesizes the whole two-semester arc into one picture, lays out the open-question landscape and possible thesis topics, and connects the course back to the group's live research program. There is no new physics here — the value is in seeing the whole machine at once and knowing where to go next.*
+> *A useful capstone does more than repeat the slogans. It tells students which statements are intrinsic operator algebra, which are exact models, which depend on AQFT hypotheses, which use the holographic dictionary, and which remain open. The course has given us one common language—standard pairs, modular flow, crossed products, traces, and relative entropy—but not one theorem that turns every algebraic datum into geometry. The last week is where that discipline becomes visible.*
 
-## 0. Reading
+> **Route through this master dossier.** **Classroom core (two-hour seminar):** the student presentations, the synthesis diagram, and the regime/claim-status ledger. **Full derivation or self-study:** the conceptual audit and the complete self-test, with earlier weeks reopened whenever an answer depends on a hypothesis. **Research extension or office hour:** the open-direction map, release checklist, and one-page proposal exercise. The capstone is a diagnostic map of the full course, not a compressed replacement for it.
 
-**Primary:** none new — students consolidate the full course.
+## 0. No new reading
 
-**For the closing synthesis, revisit:**
-- Sem I Wks 13–15 (the crossed product, dressed entropy, TFD bridge — the structural hinge of the course).
-- Sem II Wk 10 (Liu's organizing diagram — the map of the whole field).
+Revisit only what the final project needs:
 
-**Pointers for continuing:**
-- The group's [[bell-inequalities-qft|Bell-CHSH]], [[relative-entropy-qft|relative entropy]], and [[entanglement-embezzlement|embezzlement]] programs.
-- The wiki open questions: [[bell-chsh-in-holographic-setting]], [[embezzlement-cost-relative-entropy]], [[relative-entropy-interacting-theories]].
+- Sem I Weeks 5–7 for standard pairs, modular flow, Connes cocycles, and [[relative-entropy-qft|relative entropy]];
+- Sem I Weeks 10–14 for Bisognano–Wichmann, Bell inequalities, type III, the continuous core, and type-II entropy;
+- Sem II Weeks 1–3 for Witten's strict-$N=\infty$ versus perturbative-$1/N$ regimes;
+- Sem II Weeks 5–8 for the TFD, CPW, and the exact Bell models/protocol;
+- Sem II Weeks 9–10 for modular geometry and the large-$N$ synthesis;
+- Sem II Weeks 11–13 for AAJ's unitary perturbation framework and its distinction from Araki perturbation;
+- Sem II Week 14 for the MSY comparison and CLPW's positive-energy corner.
 
 ## 1. Final presentations
 
 ### 1.1 Format
 
-- Each student gives a **20-minute talk** on their final write-up topic.
-- **5 minutes** of Q&A from the group.
-- Final write-up due (**15+ pages**).
+- 20-minute talk;
+- 5 minutes of questions;
+- final write-up of at least 15 pages, or the length stated in the current syllabus;
+- all numerical/symbolic work submitted in a reproducible form.
 
-### 1.2 Suggested talk structure
+### 1.2 A presentation structure that exposes understanding
 
-1. **Background (5 min):** what is the topic, why does it matter, what is the state of the art?
-2. **Technical content (10 min):** the main calculation or argument — typically the student's piece of Mini-Calc 4 (Sem II Wk 12) extended, or a critical exposition with one worked check.
-3. **Outlook (5 min):** what is still open, what would the next paper look like?
+1. **Question and motivation — 3 minutes.** What is the narrow question, and why is it not already answered by the cited theorem?
+2. **Controlled input — 5 minutes.** State the algebra, state/vector, representation, regulator, and imported result.
+3. **Calculation or argument — 9 minutes.** Show one derivation in enough detail that the audience can check a sign or normalization.
+4. **Status ledger — 3 minutes.** Separate proved/exact, finite-regulator, numerical, holographic interpretation, and open claims.
 
-### 1.3 The four topic families (recap)
+The talk should contain at least one sentence of the form: “This step uses ___ and would fail without ___.” That sentence is often the clearest evidence that the speaker owns the argument.
 
-From Block 2 §7, refined through Blocks 3–5:
+### 1.3 Defensible topic families
 
-1. **Free-field cocycle perturbation** — extend Mini-Calc 4 (Sem II Wk 12); the most self-contained, building directly on the course's central calculation.
-2. **Bell-CHSH in holographic settings** — the wiki open question [[bell-chsh-in-holographic-setting]]; connect Summers–Werner (Sem I Wk 11) to large-$N$ boundary algebras (Sem II Wk 1).
-3. **Embezzlement on the crossed product** — the group's program; the cocycle as the shared tool of AAJ perturbation theory and type-III$_1$ embezzlement (Sem II Wk 13 §2.5).
-4. **Critical exposition** — of CPW, AAJ, or CLPW (de Sitter), with one explicit calculation reproduced.
+1. **Finite-regulator algebraic perturbation.** Compare AAJ's unitary BCH deformation with a fixed-algebra Araki/Gibbs perturbation. Do not call them the same series.
+2. **[[bell-inequalities-qft|Bell-CHSH]] in a specified QFT or holographic setup.** Give explicit observables and a reproducible lower bound; distinguish it from the algebraic supremum and from bulk connectivity.
+3. **Embezzlement under passage to a crossed product.** Start from the operational invariants of arXiv:2401.07299; do not use “exact” when the theorem means arbitrarily small error.
+4. **Critical source exposition.** Audit one of Witten, CPW, AAJ, or CLPW equation by equation and reproduce one real calculation.
+5. **Modular geometry.** Derive a symmetric modular Hamiltonian or compare a nongeometric case, keeping the code-subspace/holographic assumptions explicit.
 
-## 2. The closing synthesis: the whole course in one picture
-
-The instructor's closing lecture assembles the two semesters into a single arc.
-
-### 2.1 The spine
+## 2. The course in one diagram
 
 $$
-\underbrace{\text{C*-algebras} \to \text{vN algebras} \to \text{type I/II/III}}_{\text{Block A}}
-\to \underbrace{\text{Tomita–Takesaki} \to \text{modular flow} \to \text{Connes cocycle}}_{\text{Block B}}
-$$
-$$
-\to \underbrace{\text{free QFT} \to \text{Bisognano–Wichmann} \to \text{type III}_1}_{\text{Block C}}
-\to \underbrace{\text{crossed product} \to \text{dressed entropy} \to \text{TFD}}_{\text{Block D}}
-$$
-$$
-\to \underbrace{\text{Witten} \to \text{CPW} \to \text{Liu} \to \text{AAJ} \to \text{MSY}}_{\text{Semester II}}.
+\text{operator algebras}
+\longrightarrow
+\text{standard pairs and modular flow}
+\longrightarrow
+\text{AQFT local algebras}
 $$
 
-### 2.2 The one-sentence summary
+$$
+\longrightarrow
+\text{continuous core / crossed product}
+\longrightarrow
+\text{semifinite trace and entropy}
+\longrightarrow
+\text{gravity applications and perturbations}.
+$$
 
-> **The local algebras of quantum field theory are type III$_1$; this is why they have no entropy of their own, and why gravity — by gauging their modular flow through a crossed product — manufactures the entropy we call the generalized entropy $A/4G_N + S_{\rm out}$.**
+This is a dependency diagram, not an equivalence chain. In particular:
 
-Everything in Semester II is this sentence applied to a specific geometry, state, or perturbation (Liu's organizing diagram, Sem II Wk 10 §4).
+- Tomita–Takesaki theory applies to a standard pair without gravity.
+- The continuous core of a type-III factor is type II independently of holography.
+- Witten, CPW, and CLPW identify particular gravitational degrees of freedom with the algebraic extension in specified semiclassical regimes.
+- A type-II entropy becomes a generalized gravitational entropy only after the state, trace normalization, and holographic/gravitational dictionary have been supplied.
 
-> **Physical picture: the arc as a single idea.** Semester I built one fact — that a region of a continuum QFT has a type III$_1$ algebra, with all the strange consequences (no trace, no density matrix, no von Neumann entropy, modular flow as intrinsic thermal time). Semester II turned that fact from a curiosity into a tool: the type III$_1$ structure is *precisely* what makes the crossed-product dressing nontrivial, and the dressing is *precisely* how semiclassical gravity supplies the entropy the matter algebra lacks. The whole course is the claim that the operator-algebraic type of a local region and the gravitational entropy of a horizon are two views of the same structure — and that modular theory is the bridge. A student who leaves with this single picture, and the ability to run the free-field analog of any step, has the course.*
+### The calibrated one-sentence summary
 
-### 2.3 What the free-field analog gave us
+> **Under the standard AQFT hypotheses, sharp local QFT algebras are often type III$_1$ and have no intrinsic trace. Their modular crossed products are semifinite. In the Witten/CPW/CLPW gravitational constructions, the added charge/observer degrees of freedom realize this extension and permit a renormalized entropy that agrees, in the stated semiclassical regime and up to the stated constant, with generalized entropy.**
 
-A methodological thread worth naming explicitly: **every holographic step had a free-field Rindler analog** where the calculation was fully explicit.
+Every phrase is doing work. “Often” prevents a theorem about a class of nets from becoming a definition of QFT. “Intrinsic” permits ambient trace-class representatives without inventing a trace on the factor. “In the stated regime” keeps exact finite $N$, strict $N=\infty$, and perturbative $1/N$ separate.
 
-| Holographic (Sem II) | Free-field analog | Where |
+## 3. Regime map
+
+The four most frequently confused regimes are:
+
+| Regime/object | Algebraic feature | What one may say |
 |---|---|---|
-| boundary algebra type III$_1$ at large $N$ | wedge algebra type III$_1$ | Wk 1 / Sem I Wk 12 |
-| modular flow = ADM time | modular flow = boost (Bisognano–Wichmann) | Wks 1, 5 / Sem I Wk 10 |
-| crossed product, dressed entropy | Rindler crossed product, explicit trace | Wks 2–3, 6–7 / Sem I Wks 13–14 |
-| Bell-CHSH / ER=EPR | Summers–Werner saturation, Minkowski-as-TFD | Wk 8 / Sem I Wks 11, 15 |
-| GJW cocycle corrections | boost-evolved Weyl bilinear, Mini-Calc 4 | Wks 11–12 |
+| sharp local continuum region | commonly type III$_1$ under AQFT assumptions | no intrinsic trace/density element |
+| strict large-$N$ simple algebra in Witten's setup | type III$_1$; rescaled energy fluctuation central in the extended algebra | extended algebra is not yet a factor |
+| Witten's perturbatively corrected algebra | $U$ is dressed by $\widehat h/(\beta_HN)$ and the result is a type-II$_\infty$ crossed-product factor; physical gravitational terms are organized with $G_N\sim1/N^2$ | canonical trace up to scale; entropy differences; do not identify the displayed $1/N$ generator correction with every $1/N^2$ observable correction |
+| exact finite-$N$ complete boundary theory | expected type I globally | ordinary Hilbert-space quantum mechanics; local continuum nuance remains |
 
-The analog is the course's pedagogical engine: it makes every abstract holographic claim checkable in a theory where everything is computable, with the holography-specific physics carefully flagged as input (the honest-scoping thread, Sem II Wks 7, 12, 14).
+This table prevents two common mistakes: calling Witten's strict-$N=\infty$ extended algebra type II$_\infty$, and calling every finite-$N$ sharp subregion type I.
 
-### 2.4 The course's results in one table
+## 4. What the free-field analog did for us
 
-The closing lecture's most useful single artifact. Every load-bearing result of the two semesters, with **what the course actually established about it** — because a student's next job is to write a paper, and knowing which results they own outright and which they are quoting is the difference between a careful manuscript and a sloppy one.
+The Rindler free field is a controlled laboratory for some, not all, arrows in the course.
 
-| Result | Where | Status in this course |
+| Question | Free-field status | Gravitational status |
 |---|---|---|
-| Gelfand–Naimark (commutative and general) | I.1 | Stated only |
-| von Neumann bicommutant | I.2 | Proved in finite dimensions; general case sketched via Kaplansky |
-| Murray–von Neumann comparison; type I/II/III trichotomy | I.3 | Sketched; type III examples stated |
-| Trace exists on II$_1$, fails on III | I.3, I.4 | Stated only |
-| KMS ⇔ Gibbs in finite dimensions | I.4 | Proved |
-| Powers factors $R_\lambda$ are type III$_\lambda$ | I.4 | Stated; recomputed as a model proof in II.9 §2.3 |
-| Tomita–Takesaki ($\Delta^{it}\mathcal{M}\Delta^{-it} = \mathcal{M}$, $J\mathcal{M}J = \mathcal{M}'$) | I.5 | Stated only; key lemmas proved |
-| Modular flow is KMS at $\beta = 1$ | I.6 | Model proof (type I) |
-| Connes cocycle; Radon–Nikodym theorem | I.7 | Stated only; state-independence of the flow proved from it |
-| Araki–Uhlmann relative entropy, positivity and monotonicity | I.7 | Model proof (finite dim); general stated |
-| Weyl relations; Slawny uniqueness | I.8 | Weyl relation proved; Slawny stated |
-| Reeh–Schlieder | I.9 | Stated only |
-| **Bisognano–Wichmann** ($\Delta_{W_R} = e^{-2\pi K}$) | I.10 | Stated from the axioms — **the course's one imported modular computation**, and the source of every closed form that follows |
-| Tsirelson bound $2\sqrt2$ | I.11 | Proved |
-| Summers–Werner (maximal violation between wedges) | I.11 | Stated, hypothesis-explicit |
-| Local algebras are hyperfinite III$_1$ | I.12 | Stated, hypothesis-explicit (nuclearity, split property) |
-| Crossed product: III $\rtimes\,\mathbb{R} \to$ II$_\infty$; trace exists | I.13 | Stated only (trace existence, Connes–Takesaki duality); construction carried out explicitly |
-| Dressed-entropy difference $= -S(\omega\Vert \phi) + \mathcal{B}(\omega,\phi)$ | I.14 | Stated; model derivation in §4.4 |
-| TFD is cyclic-separating; $J$ swaps the sides | I.15, II.5 | Proved (finite dim), II.10 §3.2 |
-| Large-$N$ factorization of single-trace correlators | II.1 | Stated, hypothesis-explicit |
-| Boundary single-trace algebra is III$_1$ at $N=\infty$ | II.1, II.9 | Stated for the holographic algebra; **mechanism proved** as an Araki–Woods computation (II.9 §2.3) |
-| Witten / CPW crossed-product dressing; $S_{\rm gen}$ on $\hat{\mathcal{A}}$ | II.2–II.3, II.6–II.7 | Constructed; mini-calculations computed in the free-field analog |
-| Bell-CHSH between the two TFD sides | II.8 | Computed in the free-field analog; approaches but does not attain $2\sqrt2$ |
-| **Casini–Huerta–Myers** ball modular Hamiltonian | II.9 | **Proved** in $d=2$ from Bisognano–Wichmann plus the conformal map; general $d$ by the same argument |
-| Modular flow $=$ bulk geometric flow (the dictionary) | II.9 | Stated, hypothesis-explicit (requires a Killing symmetry) |
-| Crossed product makes the modular flow inner | II.10 | Proved |
-| Semiclassical reduction $S_{\rm vN}\to A/4G_N + S_{\rm out} + \text{const}$ | II.10 | Stated; matched term by term with an explicit Gaussian clock |
-| Algebraic ER=EPR ($J\mathcal{A}_RJ = \mathcal{A}_L = \mathcal{A}_R'$) | II.10 | Model proof (finite dim), with the failure mode exhibited |
-| Cocycle perturbation series $u_t = \overline{\mathcal{T}}e^{\,i\int_0^t\sigma_s(V)ds}$ | II.11 | Model proof (finite dim); checked against unitarity at $O(V^2)$ |
-| GJW deformation makes the wormhole traversable | II.11, II.14 | Stated |
-| $\Delta S^{(1)} = \delta\langle K_0\rangle$ (first law of entanglement) | II.12 | Proved; vanishing for GJW proved from $JVJ = V$ |
-| Second-order $\Delta S$, all three terms in closed form | II.12 | **Computed** (model case), verified three ways |
-| Kubo–Mori metric governs $S(\omega_V\Vert \omega_0)$ at $O(V^2)$ | II.12 | Stated; checked against the model |
-| AAJ's twenty $O(g^2)$ corrections | II.12–II.13 | Stated — the count is AAJ's, under their grouping conventions |
-| Embezzlement fidelity $1 - O(1/\log n)$; exact in III$_1$ | II.13 | Mechanism computed ($\ln 2$ mismatch); bound stated |
-| ANEC violation $\Rightarrow$ horizon shrinks $\Rightarrow$ throat opens | II.14 | **Proved** from linearized Raychaudhuri and the teleological condition |
-| Shapiro advance magnitude $\Delta u \propto -g$ | II.14 | Stated (Dray–'t Hooft shockwave) |
-| dS dressed algebra is II$_1$; vacuum is max-entropy | II.14 | **Computed** ($\hat\tau(1)$ finite on a half-line); max-entropy theorem proved |
-| AAJ corrections $\leftrightarrow$ MSY bulk geometry | II.14 | **Open.** Conjectured, not established at any order |
+| one-sided cyclicity/separatingness | Reeh–Schlieder/BW hypotheses | assumed or argued for chosen large-$N$ algebra |
+| modular flow | exact geometric boost | ADM/Killing identification uses holographic input |
+| KMS thermality | exact | Hawking/TFD interpretation in chosen state |
+| continuous core and trace | genuine type-III free-field core and trace available abstractly; the explicit $e^{-p}dp$ weighted integral is the separate inner-action/type-I Fourier audit | charge/clock receives gravitational interpretation |
+| Bell correlations | exact two-mode model; Gaussian protocol; AQFT supremum theorem under hypotheses | explicit boundary observable construction remains model dependent |
+| unitary perturbation | exact nested commutators and Gaussian expectations | AAJ weight plus gravity data |
+| horizon area or Shapiro shift | absent—no dynamical gravity | bulk calculation required |
 
-The "status" column records the course's own proof-status labels, not the state of the literature: a row reading *Stated only* means the theorem is true and referenced, and that we did not prove it here. Several of the deepest results — Tomita–Takesaki, Bisognano–Wichmann, Connes–Takesaki — are in that column, and that is the correct pedagogical choice for a one-year course. What matters is knowing which is which.
+The analog catches algebraic errors, sign errors, and unsupported observable claims. It cannot verify an area term, a QES motion, or a wormhole.
 
-Three things are worth saying out loud about this table.
+## 5. Proof-status map
 
-First, **Bisognano–Wichmann is the course's single imported modular computation.** Every closed-form modular Hamiltonian we possess — the ball (CHM), the eternal black hole, the free-field analogs — is B–W moved by a symmetry. When a student writes "the modular Hamiltonian is," they should be able to say which symmetry carried it there from a wedge, and if they cannot, the formula is probably wrong.
+This is the instructor's capstone reference. “Course proof” means the notes derive the stated version. “Source result” means the notes identify and quote the primary source. “Model” means a deliberately restricted calculation.
 
-Second, **the free-field analog is a laboratory, not a proof.** Every mini-calculation of Semester II was done in a Rindler free-field model where Bisognano–Wichmann supplies the modular data explicitly. Those calculations establish structure and catch errors; they do not establish holographic statements, and a manuscript that blurs the two will be caught.
+| Result | Course location | Status and boundary |
+|---|---|---|
+| Gelfand–Naimark and bicommutant theorems | I.1–I.2 | Gelfand–Naimark stated, finite/model components proved; bicommutant proved in general (I.2 §4.2) |
+| Murray–von Neumann type classification | I.3 | structural theorem stated; examples developed |
+| Tomita–Takesaki, $J\mathcal MJ=\mathcal M'$ | I.5 | source theorem; requires a cyclic-separating vector |
+| KMS/modular relation | I.6 | finite-dimensional proof; general theorem stated |
+| course cocycle convention | I.7, II.11 | $(D\omega_\rho/D\omega_\sigma)_t=\rho^{-it}\sigma^{it}$ in type I |
+| relative entropy identity/first law | I.7, II.12 | exact finite-dimensional identity; general results stated |
+| Reeh–Schlieder | I.9 | source theorem under QFT assumptions |
+| Bisognano–Wichmann | I.10 | source theorem; geometric wedge modular flow |
+| Tsirelson bound | I.11 | proved |
+| Summers–Werner maximality | I.11, II.8 | source result with state/geometry/algebra hypotheses; not every quartet is optimal |
+| local hyperfinite type III$_1$ | I.12 | source synthesis requiring factoriality, phase-space/hyperfinite input, and a separate scaling or modular-spectrum type-III$_1$ input |
+| continuous core is semifinite | I.13 | Connes–Takesaki result stated; representation constructed |
+| type-II entropy and trace-scale ambiguity | I.14, II.3 | algebraic calculation plus source theorem |
+| finite-dimensional TFD standard pair | I.15, II.5 | proved for each one-sided matrix algebra |
+| continuum TFD/Rindler statement | II.5 | one-sided standard pairs; formal mode TFD is not a literal continuum tensor product |
+| $J\mathcal A_RJ=\mathcal A_L$ | II.5 | $J\mathcal A_RJ=\mathcal A_R'$ is automatic; equality with $\mathcal A_L$ needs duality input |
+| ER=EPR criterion | II.5, II.8 | heuristic/structural analogy, not an iff theorem |
+| Witten strict-$N=\infty$ extension | II.1 | central rescaled energy mode; nonfactor |
+| Witten perturbative $1/N$ algebra | II.1–II.3 | type-II$_\infty$ crossed product in source regime |
+| Witten entropy | II.3 | exact trace/density calculation in §§3.4–3.5; gravitational interpretation separately identified |
+| CPW two-sided construction | II.5–II.7 | source construction; free-field modular analog only |
+| exact two-mode TFD CHSH maximum | II.8 | course calculation: $2\sqrt{1+\operatorname{sech}^2(\beta\omega/2)}$ |
+| continuum cosine-Weyl CHSH | II.8 | exact covariance formula and computation protocol; no claimed universal saturation by this ansatz |
+| large-$N$ type-III mechanism | II.9 | source result; ITPFI mode-ratio section is a diagnostic, not a proof from one modular spectrum |
+| CHM ball modular Hamiltonian | II.9 | $d=2$ conformal-map derivation; general symmetric result sourced |
+| modular flow as bulk geometry | II.9 | exact in special QFT symmetries; holographic version conditional/code-subspace dependent |
+| Araki implementing-cocycle series | II.11 | course finite-dimensional reconstruction, with partition phase restored for normalized states |
+| AAJ method | II.11–II.13 | unitary covariance, changed weight/Jacobian, BCH—not the course cocycle series |
+| GJW deformation | II.11, II.14 | source linear-order traversability result for suitable sign/profile |
+| $M_2$ quadratic entropy model | II.12 | exact course calculation; no linear term because $V$ was chosen off diagonal |
+| AAJ new-term count | II.12 | five additional linear plus fifteen quadratic, through $O(1/N^2)$ |
+| free-field AAJ “mini-calc” | II.12 | honest finite-regulator protocol; continuum reproduction not claimed |
+| type-III$_1$ universal [[entanglement-embezzlement\|embezzlement]] | II.13 | source operational theorem: arbitrarily small error; every normal state embezzling |
+| harmonic finite catalyst | II.13 | van Dam–Hayden source; edge estimate is course intuition, not a new fidelity proof |
+| Raychaudhuri area response | II.14 | derived at leading order with stated horizon boundary condition |
+| generalized second law in GJW geometry | II.14 | not proved by Raychaudhuri; requires separate theorem hypotheses |
+| MSY time advance | II.14 | source bulk result |
+| CLPW type-II$_1$ algebra | II.14 | source construction with $\Pi=\Theta(-H-x)$; its trace reduces to the half-line integral in the de Sitter reference sector |
+| CLPW maximum-entropy state | II.14 | proved from normalized finite trace; generalized entropy agrees up to constant semiclassically |
+| detailed AAJ–MSY term matching | II.14 | open in these notes; no blanket literature claim |
 
-Third, **the last row is the honest frontier.** The course computed the algebraic side (AAJ) and the bulk side (MSY) of the same traversal and did not match them. Nobody has. That is not a gap in the lectures; it is where the subject currently stops.
+### How to use the map
 
-### 2.5 A self-test
+Before writing “we have shown,” find the row. If it says “source result,” name the source. If it says “model,” keep the model in the sentence. If it says “conditional,” state the condition before the conclusion. This habit is more valuable than memorizing another formula.
 
-A student who has absorbed the course should be able to do the following without notes. Anyone who cannot do most of them has a specific gap, and the pointer says where to go.
+## 6. A final conceptual audit
 
-1. Explain why a local algebra in QFT has no density matrix, and what replaces the von Neumann entropy. *(I.12, I.7)*
-2. State Tomita–Takesaki and say what cyclic-separating buys you. *(I.5)*
-3. Derive the modular Hamiltonian of a ball in a CFT vacuum from Bisognano–Wichmann. *(II.9 §4)*
-4. Explain what the crossed product adjoins, why it changes the type, and why gravity supplies it. *(I.13, II.10 §1)*
-5. Write the dressed-entropy difference and say which term is the area and which is the matter. *(I.14, II.10 §2)*
-6. Write the cocycle perturbation series and say why Dyson will not do. *(II.11 §2)*
-7. Compute a second-order entropy correction in a two-level model. *(II.12 §2)*
-8. Say why de Sitter gives II$_1$ and a black hole II$_\infty$ — in one sentence, about one integral. *(II.14 §4.3)*
-9. Name one thing the algebra computes that the bulk does not, and one the reverse. *(II.14 §2)*
-10. Name one open problem you could start on Monday. *(II.13 §2, §3.1 below)*
+### 6.1 TFD and two sides
 
-## 3. Outlook (instructor's one-page sketch)
+The TFD vector is cyclic and separating for a one-sided algebra in the standard representation. It is not separating for the full matrix algebra generated by both sides in finite dimensions, nor for $\mathcal B(\mathcal H)$ in the wedge-dual continuum representation. Tomita theory is therefore applied to $(\mathcal A_R,\Omega_{\rm TFD})$ or $(\mathcal A_L,\Omega_{\rm TFD})$, not casually to the joint algebra.
 
-### 3.1 Where the course leaves us
+### 6.2 Entropy and generalized entropy
 
-We now know:
-- The local algebras of QFT are type III$_1$ (hypothesis-explicit).
-- Modular theory gives them an intrinsic dynamics; the crossed product gives them an entropy.
-- In holography, that entropy is the generalized entropy, and perturbing it (AAJ) describes traversable wormholes.
+A type-II trace can be rescaled. In a type-II$_\infty$ factor this shifts entropy by a state-independent constant, so entropy differences are the robust quantities. In CLPW's type-II$_1$ corner, the normalization $\operatorname{Tr}1=1$ selects the tracial maximum, while the comparison with gravitational generalized entropy still contains the usual state-independent renormalization constant.
 
-We do **not** know (the honest frontier):
-- The rigorous match between AAJ's algebraic corrections and MSY's bulk geometry (Sem II Wk 14 §2.2).
-- The non-perturbative / higher-order structure of the corrections (Sem II Wk 13 §2).
-- Whether Bell-CHSH saturation extends cleanly to holographic boundary subregions ([[bell-chsh-in-holographic-setting]]).
+### 6.3 Bell, embezzlement, and geometry
 
-### 3.2 Possible thesis topics
+Strong Bell correlation and universal embezzlement are genuine operational consequences of rich infinite-algebra structure under their theorem hypotheses. Neither is an automatic wormhole detector. Minkowski wedges already show that modular duality and maximal Bell correlations can arise without inferring a dynamical Einstein–Rosen bridge.
 
-For a student continuing in the group:
+### 6.4 Perturbations
 
-1. **Free-field cocycle perturbation to higher order** — extend Mini-Calc 4; the most tractable, self-contained direction.
-2. **Embezzlement cost on the crossed product** — connect cocycle perturbation theory to type-III$_1$ embezzlement protocols ([[entanglement-embezzlement]]); the group's [[embezzlement-cost-relative-entropy|embezzlement-cost question]].
-3. **Bell-CHSH in holographic settings** — the [[bell-chsh-in-holographic-setting|wiki question]]; does Summers–Werner saturation probe bulk connectivity?
-4. **Relative entropy in interacting theories** — push beyond free-field/Gaussian computations ([[relative-entropy-interacting-theories]]).
+There are at least three distinct objects:
 
-### 3.3 Connections to the group's program
+1. physical-time Dyson evolution;
+2. fixed-algebra Araki/Gibbs perturbation and its Connes cocycle;
+3. AAJ's unitary transport of the algebra-state system and the resulting crossed-product reweighting.
 
-The course was built to feed the group's existing research:
+Formal similarities among their nested integrals do not make them interchangeable.
 
-- **Bell-CHSH (De Fabritiis–Sorella–Roditi–Guimarães):** Sem I Wk 11 and Sem II Wk 8 are the course's home for this; the bumpified-Haar-wavelet observables are exactly the group's tool.
-- **Embezzlement (group Ph.D. work):** Sem I Wk 12 (type III$_1$ makes it exact) and Sem II Wk 13 (cocycle as the shared tool).
-- **Relative entropy (group program):** Sem I Wk 7 and throughout Sem II (the relative-entropy piece of every dressed-entropy difference).
+## 7. Self-test
 
-> **Physical picture: why this course serves this group.** The group's research lives in the type III$_1$ regime — Bell-CHSH violations between wedges, exact embezzlement, relative entropy in QFT. These are not three separate topics; they are three windows onto the same algebraic structure, the one the course is about. A student who has done this course can read the group's papers, reproduce their free-field calculations, and see where each connects to the recent holographic literature. That is the course's purpose: not to make holographers, but to make researchers fluent in the modular/operator-algebraic toolkit that the group already uses and the recent literature has made central.
+A student ready to use the material should be able to answer these without slogans:
 
-### 3.4 Collaborator referrals
+1. Why does “no intrinsic density matrix” not forbid an ambient trace-class representative of a normal functional?
+2. For which algebra is the TFD vector cyclic and separating?
+3. What is central in Witten's strict-$N=\infty$ extended algebra, and what removes the center?
+4. Why is Witten's entropy discussion in §3.5 rather than §4?
+5. State the course cocycle convention and retain the normalized partition-function phase.
+6. Explain in one line why a common Rindler boost does not move a packet toward the horizon.
+7. Compute the exact two-mode TFD CHSH maximum.
+8. Explain why a dense ratio group in one modular spectrum does not by itself prove type III$_1$.
+9. Distinguish AAJ's five linear plus fifteen quadratic terms from “twenty quadratic terms.”
+10. Explain why $\sigma(f_L,f_R)=0$ and which same-side symplectic form controls a right-Weyl commutator.
+11. Starting from the general CLPW projection $\Pi=\Theta(-H-x)$, use $H\Psi_{\rm dS}=0$ to derive the reference-sector half-line integral and $\operatorname{Tr}\Pi=1$.
+12. Give one algebra/bulk comparison that remains a proposal rather than a proved equality.
 
-For each open direction, the natural co-supervisors within and around the group (Sorella, Roditi, Dudal, Palhares, and collaborators) are listed in the [[courses/2026-algebraic-qft-course/syllabus]] and matched to topics in the closing lecture.
+## 8. Research directions with first deliverables
 
-## 4. Assessment
+### 8.1 Finite-regulator AAJ audit
 
-**Final assessment (per the syllabus):**
-- Weekly seminar presentations + participation: **40%**.
-- Final write-up (15+ pages): **60%** (oral presentation included).
-- Letter grade or pass/fail per UERJ convention.
+Implement Eqs. (77)–(78) in a small matrix system, include the Jacobian and $\beta$ expansion, and compare with exact subsystem entropy. First deliverable: a verified $h$/$h^2$ coefficient table.
 
-## 5. What to take away (the course)
+### 8.2 Bell observables beyond existence
 
-- **The central fact:** local QFT algebras are type III$_1$ (hypothesis-explicit: nuclearity + split property). No trace, no density matrix, no von Neumann entropy — but a canonical modular flow.
-- **The central tool:** Tomita–Takesaki modular theory, and the Connes cocycle for comparing states. These are the type-III-native replacements for Hamiltonians and density matrices.
-- **The central construction:** the modular crossed product, which gauges the modular flow (adds a gravitational clock) and promotes III$_1 \to$ II$_\infty$, manufacturing a trace and a (renormalized) entropy.
-- **The central identification:** the dressed entropy equals the generalized entropy $A/4G_N + S_{\rm out}$ in holography (Witten, CPW); perturbing it describes traversable wormholes (AAJ); the bulk picture is MSY.
-- **The structural punchline:** the algebra type reads off the geometry — II$_\infty$ for the eternal BH, II$_1$ for de Sitter (CLPW). The construction is universal; the type is geometric.
-- **The method:** every holographic claim has a free-field Rindler analog where it is explicit, with holography-specific physics flagged as input. This honesty about what is proved, modeled, or assumed is the course's discipline.
+Choose a concrete QFT state and region pair; specify four operators; compute a lower bound with errors. First deliverable: a reproducible covariance or correlation matrix, not a geometric slogan.
 
-## 6. End of the course
+### 8.3 Crossed-product embezzlement
 
-The two semesters took students from "no operator algebras" to "reading and critically engaging with the recent literature, with original calculation experience." Concretely, the course:
+Translate the operational invariants of arXiv:2401.07299 to a type-II$_\infty$ continuous core or finite corner. First deliverable: a theorem-led literature map that identifies what is already implied by factor type and what needs a new protocol.
 
-- Built operator-algebra and modular-theory fluency.
-- Embedded students in the group's computational toolkit (Bell-CHSH, relative entropy, embezzlement).
-- Provided real entry points to the recent literature (Witten, CPW, Liu, AAJ, MSY, CLPW).
-- Created a permanent wiki resource — these 30 weeks of notes — for next year's students.
+### 8.4 Moving-region algebras
 
-The natural continuations are a thesis project (§3.2), a follow-up reading course on a single paper in depth, or research in the group's adjacent programs. This is the natural end of the course.
+Define comparison maps between $\mathcal A_h$ for perturbed regions/QESs. First deliverable: one finite or free-field example in which the embeddings/channels are explicit.
 
-## 7. Problem set
+### 8.5 Interacting relative entropy
 
-There is no problem set for Week 15. The deliverable is the **final write-up (15+ pages)** and its **20-minute presentation**.
+Start from a perturbatively controlled interacting QFT and compute a relative-entropy coefficient with renormalization conditions stated. First deliverable: one regulator-independent difference or a clear obstruction.
 
-**For students continuing:** pick one open question from §3.1–§3.2 and draft a one-page research proposal — the seed of a thesis. Bring it to the instructor for a continuation conversation.
+## 9. Assessment and release checklist
 
-**For everyone, before the talk:** work through the §2.5 self-test and note which items you cannot do. Each maps to a specific week; revisit that week rather than rereading the course. The most common gaps in past cohorts are items 3 (the conformal map behind CHM) and 8 (the trace integral behind II$_1$ vs II$_\infty$) — both are half a page, and both are the kind of thing a seminar audience asks about.
+Use the current syllabus percentages. Independently of weighting, a passing final project must satisfy:
 
-**For anyone writing this up:** before submitting, check every result your manuscript uses against the §2.4 table and make sure your prose claims no more than the course established. A sentence beginning "it is a theorem that" carries a different obligation from one beginning "in the free-field analog one computes", and referees notice.
+- correct algebra/state/representation specified;
+- source claims tied to exact sections, equations, or theorems;
+- conventions fixed, including the mostly-plus metric and modular-flow sign;
+- no density matrix assigned intrinsically to a type-III factor;
+- finite-regulator results not presented as continuum theorems;
+- numerical values accompanied by inputs and convergence/error information;
+- interpretations labeled separately from calculations;
+- bibliography identifiers verified.
+
+## 10. End of the course
+
+The durable skill from these two semesters is not the ability to repeat “type III becomes type II.” It is the ability to ask: which algebra, in which representation, for which state, in which limit, with which trace normalization, and with what proof status? Once those questions are answered, the physical picture becomes clearer rather than less intuitive. That is the point of an instructor's master dossier: it preserves the derivations, the analogies, and the caveats in one place, so the classroom can move quickly without becoming careless.
+
+There is no separate problem set. The deliverables are the final write-up, the talk, the self-test, and—if the student is continuing—a one-page proposal whose first calculation is small enough to begin next week.
+
+**Wiki connections.** [[bell-chsh-in-holographic-setting|Bell–CHSH in holographic settings]] (open question) · [[embezzlement-cost-relative-entropy|embezzlement cost and relative entropy]] (open question) · [[relative-entropy-interacting-theories|relative entropy beyond free fields]] (open question)
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 5. Last revised 2026-08-23.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 5. Last revised 2026-09-29.*
 
 ***End of the course.***

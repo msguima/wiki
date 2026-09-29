@@ -1,283 +1,461 @@
 ---
-title: "Sem II Week 12 — Ahmad–Jefferson II: Corrections Beyond Subleading Order (Mini-Calc 4)"
+title: "Sem II Week 12 — Ahmad–Jefferson II: Source Audit, Exact Model, and Computation Protocol"
 type: lecture-notes
 course: syllabus
 semester: 2
 week: 12
 block: 4
-duration: 4 hours (computational lecture — the central mini-calculation)
-prerequisites: Sem II Wk 11 (cocycle perturbation, GJW); Sem I Wks 7, 14
-target_paper: "Ahmad & Jefferson, arXiv:2501.01487 §§4–5"
-modified: 2026-08-23
+duration: "master dossier: 4 hours of material; classroom core: 2-hour seminar + 1-hour office/self-study"
+prerequisites: Sem II Wk 11 (AAJ unitary framework and Araki comparison); Sem I Wks 7, 14
+target_paper: "Ahmad & Jefferson, arXiv:2501.01487v2 §§3–4"
+modified: 2026-08-24
 ---
 
-# Sem II Week 12 — Ahmad–Jefferson II: Corrections Beyond Subleading Order (Mini-Calc 4)
+# Sem II Week 12 — Ahmad–Jefferson II: Source Audit, Exact Model, and Computation Protocol
 
-> *This is the technical centerpiece of Semester II. Last week we built the cocycle perturbation series and the free-field GJW analog. This week we compute: take the dressed Rindler-Rindler algebra, perturb the dressed TFD state by the GJW-analog cocycle, and evaluate the **dressed-entropy correction to second order in $g$**. Ahmad–Jefferson find **20 distinct corrections at quadratic order** in the holographic setting; we organize them, compute the free-field analog of the leading ones explicitly, and identify which survive without holographic input and which are holography-specific. This is **Mini-Calc 4**, and the full write-up is the basis for the student's final paper.*
+> *This week has three layers, and the layers must remain visible. First, we read Ahmad–Jefferson's actual formulas: five additional terms at linear order in $h$ and fifteen at $h^2$, through $O(1/N^2)$. Second, we solve a $2\times2$ Gibbs perturbation exactly through quadratic order. That model teaches the entropy/relative-entropy bookkeeping, but its linear term vanishes only because we chose an off-diagonal perturbation. Third, we formulate a finite-regulator free-field protocol that another student can execute. We do not advertise an unspecified kernel or a cross-wedge symplectic form as a completed calculation: locality makes that cross symplectic form vanish, and the continuum entropy needs a regulator plus a convergence analysis.*
 
-## 0. Reading
+> **Route through this master dossier.** **Classroom core (two-hour seminar):** §1, the exact $2\times2$ calculation in §3, and the term-counting logic in §4. **Full derivation or self-study:** §§2–5 in sequence, followed by the nonstarred problems. **Research extension or office hour:** the regulator-removal questions, the source-audit tasks, and the starred/project problems. The exact matrix model is a checkable lesson in bookkeeping; the free-field part is deliberately presented as a reproducible protocol.
 
-**Primary:**
-- Ahmad & Jefferson, arXiv:2501.01487, **§§4–5** (the second-order corrections; the enumeration of 20 terms).
-- Sem II Wk 11 (cocycle perturbation series, GJW analog).
-- Sem I Wk 14 (dressed entropy and the $-S(\omega\|\phi) + \mathcal{B}(\omega,\phi)$ structure).
+## 0. Reading and exact source map
 
-**Secondary / gentler:**
-- Sem II Wks 3, 7 (Witten/CPW dressed-entropy mini-calcs — the unperturbed versions of this one).
-- Sem I Wk 7 (relative entropy second-order = energy variance; the heat-capacity physical picture).
+**Primary.** Ahmad and Jefferson, arXiv:2501.01487v2:
 
-**Optional research reading:**
-- Lashkari, Liu, Rajagopal, "Perturbation theory for the logarithm of a positive operator," arXiv:1811.05619.
-- Faulkner, Li, "Bulk locality from modular flow," arXiv:1806.10560.
+- §3.1: covariance of modular data under a unitary transformation;
+- §3.2: deformation of the spectral weighting and Jacobian;
+- §3.3: entropy expansion through second order;
+- §4.1: review of the GJW traversable-wormhole deformation;
+- §4.2: deformed exterior algebras and modular charges;
+- §4.3: application of the entropy formulas, especially Eqs. (74)–(78);
+- §5: discussion. There is no §6 in v2.
 
-## 1. The structure of the calculation
+Equation numbers here follow the arXiv v2 HTML. The corresponding v2 PDF
+numbers are listed in [[sem2-week-11-aaj-cocycle-perturbation-and-gjw|Week 11 §0]].
 
-### 1.1 What we compute
+**Comparison source.** GJW, arXiv:1608.05687, is a linear-order treatment of the double-trace deformation.
 
-We want
+**Course model.** Sections 2–3 below concern the fixed-algebra Gibbs family $\rho_v\propto e^{-(K+v\sigma_x)}$. This is not AAJ's changing-algebra calculation.
+
+## 1. What is linear, what is quadratic?
+
+### 1.1 The source-level answer
+
+AAJ's own summary is unambiguous. Working through $O(1/N^2)$, they find
+
 $$
-\Delta S := S_{\mathrm{vN}}(\hat\omega_V) - S_{\mathrm{vN}}(\hat\omega_0)
-$$
-to second order in the GJW coupling $g$, where $\hat\omega_0$ is the dressed TFD-analog vacuum and $\hat\omega_V$ is its cocycle-perturbation by $V = g\,W(f_L)W(f_R)$ (Sem II Wk 11 §5).
-
-### 1.2 The organizing identity
-
-The whole calculation hangs on the Sem I Wk 14 dressed-entropy difference formula:
-$$
-S_{\mathrm{vN}}(\hat\omega_V) - S_{\mathrm{vN}}(\hat\omega_0) = -S(\omega_V\|\omega_0) + \mathcal{B}(\omega_V, \omega_0),
-$$
-with the modular boundary term $\mathcal{B}(\omega_V,\omega_0) = \omega_V(K_0) - \omega_0(K_0)$, $K_0 = -\log\rho_0$ the unperturbed modular Hamiltonian (template §Convention Rules: reference state's modular Hamiltonian).
-
-So $\Delta S$ splits into two perturbative pieces:
-$$
-\boxed{\Delta S = \underbrace{-S(\omega_V\|\omega_0)}_{\text{relative-entropy piece}} + \underbrace{\big[\omega_V(K_0) - \omega_0(K_0)\big]}_{\text{modular-energy / boundary piece}}.}
+\boxed{
+5\ \text{additional terms at }O(h)
+\quad+\quad
+15\ \text{terms at }O(h^2).
+}
 $$
 
-> **Physical picture.** The two pieces have the same split as the generalized entropy itself (Sem II Wk 10 §2.1): the boundary/modular-energy piece is the **area** response — how much the perturbation changes the expectation of the (unperturbed) modular Hamiltonian, i.e. the horizon-area shift via the first law; the relative-entropy piece is the **bulk-matter** response, the distinguishability of the perturbed state from the vacuum. AAJ's "20 corrections" are the distinct ways these two pieces receive contributions at order $g^2$ once you expand $\omega_V$ via the cocycle. Computing $\Delta S$ is therefore computing $\delta S_{\rm gen}$ for the traversed wormhole — area-shift plus matter-entropy-shift — at second order.
+Thus there are twenty **new terms through quadratic order**, not twenty terms all at quadratic order. The word “additional” matters at linear order: AAJ recover the GJW first-law contribution and display five further linear contributions.
 
-### 1.3 Order counting, and what actually vanishes at first order
+### 1.2 Where the counts appear
 
-The cocycle is $u_t = 1 + u^{(1)} + u^{(2)} + \cdots$ with $u^{(n)} = O(g^n)$ (Sem II Wk 11 §2.2), and the perturbed state expands as $\omega_V = \omega_0 + g\,\omega^{(1)} + g^2\,\omega^{(2)} + \cdots$. Expanding the organizing identity term by term:
+AAJ Eq. (77) groups the linear entropy by powers of $1/N$:
 
-**The relative-entropy piece starts at $g^2$.** Relative entropy is non-negative and vanishes only when the two states coincide, so as a function of $g$ it has a minimum at $g=0$; its Taylor expansion therefore has no linear term. This is a genuine consequence of positivity and holds for any perturbation.
+- two displayed structures at $O(N^0)$;
+- two at $O(1/N)$, one of which is the GJW term;
+- two at $O(1/N^2)$.
 
-**The boundary piece starts at $g^1$ in general.** Positivity says nothing about $\mathcal{B}$, and in general $\mathcal{B}$ does have a linear term. Computing it in the type-I model with $\rho_V \propto e^{-(K_0+V)}$, the Kubo (Duhamel) formula gives $\delta\rho = -\int_0^1 d\lambda\,\rho_0^{1-\lambda}\big(V - \langle V\rangle_0\big)\rho_0^{\lambda}$ at first order, and since $\rho_0$ commutes with $K_0$ the $\lambda$-integral is trivial under the trace:
-$$
-\mathcal{B}^{(1)} = \mathrm{Tr}\big(\delta\rho\,K_0\big) = -\Big(\langle V K_0\rangle_0 - \langle V\rangle_0\langle K_0\rangle_0\Big).
-$$
-So at first order the whole effect is the boundary term,
-$$
-\boxed{\;\Delta S^{(1)} = \mathcal{B}^{(1)} = \delta\langle K_0\rangle,\;}
-$$
-which is the **first law of entanglement**: to linear order the entropy change equals the modular-energy change. It is not zero as a matter of principle, and saying so would be the wrong lesson to take from positivity of relative entropy.
+There are six displayed linear structures in total: one GJW contribution plus five new ones.
 
-**Why it nevertheless vanishes for GJW.** The leading effect in the GJW problem *is* $O(g^2)$, but for a specific structural reason worth isolating. **[Proved, given the stated hypothesis.]** Suppose the perturbation is invariant under the modular conjugation of the unperturbed state, $JVJ = V$. For the TFD this is the statement that the coupling treats the two boundaries symmetrically, and it holds for $V = g\,\mathcal{O}_L\mathcal{O}_R$ with matched operators, since $J$ exchanges the two sides and the two factors commute:
-$$
-J\,(\mathcal{O}_L\mathcal{O}_R)\,J = (J\mathcal{O}_LJ)(J\mathcal{O}_RJ) = \mathcal{O}_R\mathcal{O}_L = \mathcal{O}_L\mathcal{O}_R .
-$$
-Now use two standard facts: $J\Omega = \Omega$, and $J K_0 J = -K_0$ (because $J\Delta J = \Delta^{-1}$, Sem I Wk 5). For an antiunitary $J$ fixing $\Omega$, expectation values obey $\langle JAJ\rangle_0 = \overline{\langle A\rangle_0}$. Since $\rho_0$ commutes with $K_0$ we have $\langle VK_0\rangle_0 = \langle K_0V\rangle_0 = \tfrac12\langle\{V,K_0\}\rangle_0$, which is real, so
-$$
-\langle VK_0\rangle_0 = \overline{\langle VK_0\rangle_0} = \big\langle J(VK_0)J\big\rangle_0 = \big\langle V\,(-K_0)\big\rangle_0 = -\langle VK_0\rangle_0
-\;\Longrightarrow\; \langle VK_0\rangle_0 = 0 .
-$$
-The same argument applied to $K_0$ alone gives $\langle K_0\rangle_0 = 0$. Hence $\mathcal{B}^{(1)} = 0$, and the leading correction is $O(g^2)$. $\square$
+AAJ Eq. (78) groups the quadratic entropy as
 
-> **Physical picture.** The vanishing is a symmetry statement, not a positivity statement, and the distinction matters when the symmetry is broken. $K_0$ for the TFD is $\beta_H(H_R - H_L)$ — an *antisymmetric* quantity, boosting one side forward and the other backward — while a symmetric coupling is even under the exchange. An even perturbation cannot shift the expectation of an odd operator, so the first-order area response is zero and the wormhole's leading reaction is quadratic in the coupling. Turn on an *asymmetric* deformation — couple the boundaries with unequal weights — and a first-order term reappears, with the throat responding linearly. This is worth remembering, because the $O(g^2)$ counting that organizes all of AAJ is a consequence of a symmetry that a more general deformation would not respect.
+- two structures at $O(N^0)$;
+- six at $O(1/N)$;
+- seven at $O(1/N^2)$.
 
-## 2. The leading correction, computed in a model
+The sum is $2+6+7=15$.
 
-Before assembling the free-field calculation, it is worth doing the whole thing once in a setting where every quantity is a $2\times2$ matrix and all three terms of the organizing identity come out in closed form. This is the Week 11 warmup, now carried through to the entropy. **[Computed — model case, every step inline.]**
+This is the count students should reproduce. It does not arise from an invented “matter/clock/cross” combinatorics, and it does not come from expanding a Connes cocycle. It comes from AAJ's deformation-dependent weight and Jacobian after the BCH expansion of the modular charge and the perturbative expansion of $\beta$.
 
-### 2.1 Setup
+### 1.3 The two commutators that carry the deformation
 
-Take $\mathcal{M} = M_2(\mathbb{C})$ with $K = \mathrm{diag}(0,\varepsilon)$, so that
-$$
-\rho_0 = \frac{1}{Z_0}\begin{pmatrix}1&0\\0&e^{-\varepsilon}\end{pmatrix},\qquad Z_0 = 1 + e^{-\varepsilon},\qquad K_0 = -\log\rho_0 = K + \log Z_0,
-$$
-and perturb with the off-diagonal $V = v\,\sigma_x$, so that $\rho_V = e^{-(K+V)}/Z_V$. Note that $V$ is off-diagonal in the modular eigenbasis, which is this model's version of the symmetry hypothesis above: $\langle V\rangle_0 = 0$ and $\langle VK_0\rangle_0 = 0$, because a purely off-diagonal matrix has no diagonal part to pair with a diagonal $\rho_0K_0$. So the first-order term vanishes here too, and the leading effect is $O(v^2)$.
+In AAJ's GJW application, the interaction $\delta H_0$ enters through
 
-### 2.2 The spectrum
-
-Everything follows from diagonalizing $K + V = \begin{pmatrix}0&v\\v&\varepsilon\end{pmatrix}$, whose eigenvalues are
 $$
-E_\pm = \frac{\varepsilon \pm \sqrt{\varepsilon^2+4v^2}}{2}
-= \begin{cases}\varepsilon + \dfrac{v^2}{\varepsilon} + O(v^4)\\[2mm] -\dfrac{v^2}{\varepsilon} + O(v^4).\end{cases}
-$$
-Writing $\delta := v^2/\varepsilon$, the perturbation pushes the two levels apart by $2\delta$ — ordinary level repulsion, and the only effect that survives at this order.
-
-### 2.3 The three quantities
-
-Using $S_{\mathrm{vN}} = \log Z + \langle E\rangle$ for a Gibbs state and expanding to first order in $\delta$ (which is already $O(v^2)$),
-$$
-Z_V = e^{\delta} + e^{-\varepsilon-\delta} = Z_0 + \delta\big(1 - e^{-\varepsilon}\big) + O(v^4),
-$$
-and carrying the same expansion through $\langle E\rangle_V$ and collecting terms, the entropy difference is
-$$
-\Delta S = -\frac{2v^2 e^{-\varepsilon}}{\big(1+e^{-\varepsilon}\big)^2} + O(v^4)
-\;=\; \boxed{\;-\frac{v^{2}}{2\cosh^{2}(\varepsilon/2)}\;} + O(v^4).
-$$
-For the two pieces separately, the relative entropy at second order is most easily obtained from the Kubo–Mori formula of §2.4 below, which gives
-$$
-S(\omega_V\|\omega_0) = \frac{v^{2}}{\varepsilon}\tanh\frac{\varepsilon}{2} + O(v^4),
-$$
-and the boundary term then follows from the identity $\mathcal{B} = \Delta S + S(\omega_V\|\omega_0)$:
-$$
-\mathcal{B}(\omega_V,\omega_0) = \frac{v^{2}}{\varepsilon}\tanh\frac{\varepsilon}{2} \;-\; \frac{v^{2}}{2\cosh^{2}(\varepsilon/2)} + O(v^4).
+C_1=[\delta H_0,\widetilde H_{L,0}],
+\qquad
+C_2=[\delta H_0,[\delta H_0,\widetilde H_{L,0}]].
 $$
 
-**Three checks.** Each of these can be verified independently, and each catches a different kind of error.
+Their Eq. (74) rewrites $C_1$ using a Heisenberg time derivative of the left operator, and Eq. (76) displays $C_2$. The paper does not evaluate every resulting correlator for a specified CFT Hamiltonian; it gives the perturbative algebraic structures into which those model-dependent data must be inserted.
 
-1. *Sign.* $\Delta S < 0$ for all $\varepsilon$ and all $v \ne 0$. Level repulsion sharpens the eigenvalue distribution, so the state becomes more pure and the entropy falls. Note that $S(\omega_V\|\omega_0) > 0$, as positivity requires.
-2. *Infinite temperature, $\varepsilon\to0$.* Here $\rho_0 = \mathbb{1}/2$ and $K_0$ is a multiple of the identity, so $\mathcal{B} \to 0$ identically and $\Delta S = -S(\omega_V\|\omega_0) \to -v^2/2$. This can be checked against the exact answer at $\varepsilon = 0$: the eigenvalues of $V$ are $\pm v$, so $S = \log(2\cosh v) - v\tanh v = \log 2 - v^2/2 + O(v^4)$, which agrees.
-3. *Zero temperature, $\varepsilon\to\infty$.* Now $\Delta S \to -2v^2e^{-\varepsilon} \to 0$: a pure state has no entropy to lose. Both $\mathcal{B}$ and $S(\omega_V\|\omega_0)$ tend to $v^2/\varepsilon$, which is exactly second-order Rayleigh–Schrödinger: the excited level is populated with probability $(v/\varepsilon)^2$ and carries modular energy $\varepsilon$.
+There is an important convention behind these two commutators. AAJ decompose $H=H_0+\delta H_0$, impose $[H_0,\widetilde H_{L,0}]=0$, and then use the interaction-only replacement displayed in their Eqs. (52)–(53). We will reproduce that ledger only in an interaction-picture model generated by $\delta H_0$, or under extra assumptions that eliminate all mixed nested commutators. If a regulator instead uses the literal Schrödinger-picture unitary $e^{-i\tau(H_0+\delta H_0)}$, the full Hamiltonian belongs in every BCH commutator.
 
-### 2.4 The Kubo–Mori metric, stated correctly and checked
+### 1.4 Why a first-order term is expected
 
-The second-order relative entropy of nearby states is governed by the **Kubo–Mori (Bogoliubov) metric**. In the type-I model, for $\rho_V = \rho_0 + \delta\rho$ with $\mathrm{Tr}\,\delta\rho = 0$,
+For two nearby faithful states on one fixed finite-dimensional algebra,
+
 $$
-S(\omega_V\|\omega_0) = \frac{1}{2}\int_0^\infty \! ds\;\mathrm{Tr}\Big[\delta\rho\,\big(\rho_0+s\big)^{-1}\delta\rho\,\big(\rho_0+s\big)^{-1}\Big] + O(\delta\rho^3),
+S(\rho_h\Vert\rho_0)=O(h^2),
 $$
-where the $s$-integral is the integral representation of the derivative of the logarithm, $\log$ being the source of all the non-commutativity. The expression is manifestly positive, which is the second-order face of $S \ge 0$.
 
-Applying it to the model: at first order the Kubo formula gives $\delta\rho$ purely off-diagonal, with
+because relative entropy is minimized at $h=0$. But the entropy itself obeys the first-law relation
+
 $$
-(\delta\rho)_{12} = (\delta\rho)_{21} = -\frac{v\,(1-e^{-\varepsilon})}{Z_0\,\varepsilon} =: w .
+\Delta S^{(1)}=\Delta\langle K_0\rangle^{(1)},
+\qquad
+K_0=-\log\rho_0,
 $$
-With $\rho_0 = \mathrm{diag}(p_1,p_2)$ and $\delta\rho = w(E_{12}+E_{21})$, the trace evaluates to $2w^2/\big[(p_1+s)(p_2+s)\big]$, so
+
+and need not vanish. AAJ's situation is more elaborate because the algebra and crossed-product weighting also change, but the same basic warning applies: positivity of relative entropy never proves that the entropy has no linear term.
+
+The proposed argument “$JVJ=V$ and $JKJ=-K$, therefore the GJW linear term vanishes” mixes different modular objects. The $J$-odd standard Liouvillean of the doubled representation is not the one-sided reference modular Hamiltonian that appears in the entropy first law, and AAJ explicitly display linear terms. We therefore discard that cancellation argument.
+
+## 2. An exact identity on a fixed finite algebra
+
+Before reading the more elaborate crossed-product formula, it helps to have one identity we can prove without approximation. For faithful density matrices $\rho$ and $\rho_0$, let $K_0=-\log\rho_0$. Then
+
 $$
-S(\omega_V\|\omega_0) = w^{2}\!\int_0^\infty\!\frac{ds}{(p_1+s)(p_2+s)} = w^{2}\,\frac{\log(p_1/p_2)}{p_1-p_2}
-= w^{2}\,\frac{\varepsilon\,Z_0}{1-e^{-\varepsilon}} = \frac{v^{2}}{\varepsilon}\,\frac{1-e^{-\varepsilon}}{1+e^{-\varepsilon}},
+D(\rho\Vert\rho_0)
+=\operatorname{Tr}\rho(\log\rho-\log\rho_0)
+=-S(\rho)+\operatorname{Tr}(\rho K_0).
 $$
-which is $\tfrac{v^2}{\varepsilon}\tanh(\varepsilon/2)$, the value quoted in §2.3. The metric formula and the direct diagonalization agree.
 
-> **Physical picture.** The model already contains the whole structure AAJ organize in the holographic setting. The **relative-entropy piece** grows like $v^2/\varepsilon$ at low temperature and saturates at $v^2/2$ at high temperature — it measures how distinguishable the perturbed state has become, and it always lowers the dressed entropy. The **boundary piece** measures how much modular energy the perturbation deposited, and it always raises it. Their competition is decided by the temperature: at $\varepsilon\to0$ the boundary term switches off entirely and the entropy strictly decreases, while at large $\varepsilon$ the two nearly cancel and $\Delta S$ is exponentially small. In the wormhole problem the same two numbers are the area response and the bulk-matter response, and the same competition decides whether the traversal raises or lowers $S_{\rm gen}$. What the model does not have is a clock sector, which is where the genuinely gravitational corrections live.
+Subtract the same expression at $\rho_0$ to obtain
 
-## 3. The 20 corrections
-
-### 3.1 Where they come from, and how to count them
-
-AAJ §§4–5 enumerate the distinct $O(g^2)$ contributions. They arise from the combinatorics of expanding, to second order, three nested structures:
-
-1. the cocycle $u_t = 1 + u^{(1)} + u^{(2)}$, which reaches order $g^2$ in two ways — one insertion of $u^{(2)}$, or two of $u^{(1)}$;
-2. the logarithm $\log\hat\rho_V$ in the entropy, whose expansion around $\hat\rho_0$ does not truncate because $\delta\hat\rho$ does not commute with $\hat\rho_0$ (the Lashkari–Liu–Rajagopal expansion, and the source of the $s$-integral we met in §2.4);
-3. the trace pairing on the dressed algebra, which factorizes into a matter sector and a clock sector.
-
-**How the counting works.** It is worth seeing the shape of the enumeration rather than accepting a number. Each $O(g^2)$ term is specified by three independent choices:
-
-- **Where the two insertions sit.** With two perturbation insertions and two sectors (matter $m$, clock $c$), the unordered assignments are $(m,m)$, $(m,c)$, $(c,c)$ — three families. This is the grouping AAJ use to organize the result.
-- **Which expansion produced them.** A given family receives contributions both from $u^{(2)}$ (one second-order cocycle insertion) and from $u^{(1)}\!\cdot u^{(1)}$ (two first-order ones), and these are genuinely different terms because the modular-time integrals differ — nested $\int_0^t\!\int_0^{s_1}$ versus factorized $\int_0^t\!\int_0^t$.
-- **How the modular flow connects them.** Within each of the above, the two insertions may be separated by the modular flow in either order, and the non-commutativity of $\delta\hat\rho$ with $\hat\rho_0$ means the $\lambda$- or $s$-integral of the log expansion does not collapse — so orderings that would be identical classically remain distinct.
-
-Multiplying these choices and discarding those that vanish by the symmetry argument of §1.3 is what produces AAJ's enumeration. **A caution on the number itself:** "20" is AAJ's count under *their* grouping conventions — what counts as one term rather than two depends on whether one keeps the $\lambda$-integrals unevaluated, whether Hermitian conjugate pairs are counted once or twice, and whether clock-sector terms that differ only by which side's clock is used are identified. Reproducing exactly 20 is an exercise against §§4–5 of the paper, and it is Problem 5\* below. What the course asserts independently is the *structure*: three sectors, two cocycle routes into each, and orderings that do not collapse. **[Stated — refs: AAJ §§4–5. The count is theirs; the structural decomposition is what we use.]**
-
-> **Physical picture.** Twenty looks like a lot, but the structure is simple: each correction is one way of distributing two insertions of the perturbation across (matter, matter), (matter, clock), or (clock, clock), with the modular flow connecting them at various modular-time orderings. The "beyond subleading order" in AAJ's title means precisely this — the leading ($g^2$) generalized-entropy change is not a single term but a structured sum, and getting it right requires tracking how the perturbation reshuffles *both* the bulk matter entanglement *and* the horizon area, including their cross-talk. The cross terms $(m,c)$ are the most interesting: they are where "the matter falling in changes the area, which changes the matter entanglement" is encoded algebraically. Note that the model of §2 has only the $(m,m)$ family, which is why it produced a single clean answer rather than a sum.
-
-### 3.2 Which survive in the free-field analog
-
-The skeleton's key question. Of the 20:
-
-- **Matter-sector terms survive.** They are computable from Bisognano–Wichmann modular data alone — the free-field analog reproduces them via the boost-evolved Weyl bilinears (§4 below).
-- **Clock/area-sector terms partially survive.** The clock sector exists in the free-field crossed product (Sem II Wk 6–7), so the modular-energy shift is computable; but its *identification with $\delta A/4G_N$* needs the holographic dictionary.
-- **Cross terms requiring the full holographic algebra do not survive.** Terms that mix the genuine type III$_1$ holographic structure with the gravitational clock in a way that has no Bisognano–Wichmann counterpart are **holography-specific** — the free-field analog cannot see them.
-
-**Claim (Example-only / hypothesis-explicit). [Refs: AAJ §5.]** *In the free-field Rindler-Rindler analog, the matter-sector and clock-sector corrections to $\Delta S$ are reproduced exactly; the holography-specific cross terms are absent. The free-field calculation therefore captures the *structure* of AAJ's result but not the full bulk content.*
-
-This is the honest scoping the course maintains throughout: the free-field analog is a controlled laboratory that reproduces the algebraic skeleton, with the holographic-specific physics flagged as input.
-
-## 4. Mini-Calc 4: the free-field computation
-
-The deliverable. (Skeleton's Mini-Calc 4 — students compute parts, instructor consolidates.)
-
-### 4.1 Setup
-
-- **Algebra:** $\hat{\mathcal{A}}(W_R) = \mathcal{A}(W_R)\rtimes_{\rm boost}\mathbb{R}$, the dressed Rindler algebra (Sem II Wk 6).
-- **Unperturbed state:** $\hat\omega_0$ = dressed TFD-analog (Minkowski vacuum × clock wavefunction $h$), Sem II Wk 7 §4.
-- **Perturbation:** $V = g\,W(f_L)W(f_R)$ with bumpified Haar wavelet test functions $f_L \in W_L$, $f_R \in W_R$ (Sem II Wk 8, Wk 11 §5).
-
-### 4.2 Tasks
-
-1. **Cocycle.** Write $u_t$ to first order (Sem II Wk 11 §5.3): the boost-evolved Weyl bilinear. Compute the relevant matrix elements via the symplectic form $\sigma(f_L\circ\Lambda, f_R\circ\Lambda)$.
-
-2. **Perturbed state.** Build $\hat\omega_V$ from $u_t$ and $\hat\omega_0$. The Gaussian structure of the free field makes all expectations computable in closed form (products of Weyl two-point functions, Sem II Wk 8 §2).
-
-3. **Relative-entropy piece.** Compute $S(\omega_V\|\omega_0)$ to $O(g^2)$ using the Kubo–Mori metric (§2.4). For the free field this is a Gaussian integral over the symplectic data:
 $$
-S(\omega_V\|\omega_0) = \tfrac{1}{2}g^2\,\sigma(f_L, f_R)\,P\,\sigma(f_L, f_R) + O(g^3),
+\boxed{
+S(\rho)-S(\rho_0)
+=-D(\rho\Vert\rho_0)
++\left[\operatorname{Tr}(\rho K_0)-\operatorname{Tr}(\rho_0K_0)\right].
+}
 $$
-with $P$ a positive kernel built from $\tanh(\pi K_{\rm boost})$ (Sem II Wk 7 §5.3).
 
-4. **Modular-energy piece.** Compute $\omega_V(K_0) - \omega_0(K_0)$ to $O(g^2)$, with $K_0 = 2\pi K_{\rm boost}$ the boost modular Hamiltonian. This is the boost-energy injected by the deformation.
+This identity separates distinguishability from modular energy. In a gravitational crossed product, one may sometimes interpret parts of the type-II entropy as matter and area contributions, but AAJ caution that the fundamental quantity is the total von Neumann entropy and that the area/matter split is normalization- and regime-sensitive. The boxed finite-dimensional identity should therefore be used as a pedagogical comparison, not declared to be AAJ's derivation.
 
-5. **Assemble $\Delta S$.** Combine: $\Delta S = g^2(\text{boost-energy shift} - \tfrac12\,\text{Kubo–Mori})$. Both pieces are explicit functions of the wavelet test functions.
+## 3. Exact mini-calculation: the off-diagonal $M_2$ model
 
-6. **Compare with AAJ.** Identify which of the 20 corrections this reproduces (the matter-sector and clock-sector ones) and which are absent (holography-specific cross terms).
+### 3.1 Setup and scope
 
-### 4.3 The leading correction, explicitly
+Take
 
-Assembling the pieces, the free-field analog gives
 $$
-\Delta S = g^{2}\Big(\underbrace{2\pi\,\big\langle \delta K_{\rm boost}\big\rangle}_{\text{modular-energy / area}} \;-\; \underbrace{\tfrac{1}{2}\,\big\|\sqrt{P}\,\varsigma(f_L,f_R)\big\|^{2}}_{\text{Kubo–Mori / matter}}\Big) + O(g^{3}),
+K=\begin{pmatrix}0&0\\0&\varepsilon\end{pmatrix},
+\qquad
+\rho_0=\frac{e^{-K}}{Z_0},
+\qquad
+Z_0=1+e^{-\varepsilon},
 $$
-with $\varsigma$ the symplectic form of the boosted test functions and $P$ the positive kernel built from $\tanh(\pi K_{\rm boost})$ (Sem II Wk 7 §5.3). Both pieces are explicit functionals of the wavelet test functions, finite, and sign-definite: the boost-energy term is positive (energy injected), the Kubo–Mori term negative (distinguishability increases).
 
-The structure is exactly the model result of §2.3 with the two-level modular spectrum replaced by the continuous boost spectrum. The dictionary between the two is worth writing down, because it is the fastest way to see what the free-field calculation adds and what it does not:
+and perturb the Gibbs exponent by
 
-| Model (§2) | Free-field analog (§4) |
+$$
+V=v\sigma_x,
+\qquad
+\rho_v=\frac{e^{-(K+V)}}{Z_v}.
+$$
+
+Because $V$ is off-diagonal in the eigenbasis of $K$, both $\operatorname{Tr}(\rho_0V)$ and the first-order change of $\langle K_0\rangle$ vanish. This is why this **particular model** starts at $v^2$. It is not a theorem about GJW.
+
+### 3.2 Exact spectrum and entropy
+
+The two eigenvalues of $K+V$ are
+
+$$
+E_\pm
+=\frac{\varepsilon\pm\sqrt{\varepsilon^2+4v^2}}{2}.
+$$
+
+Only the gap
+
+$$
+d(v)=\sqrt{\varepsilon^2+4v^2}
+=\varepsilon+\frac{2v^2}{\varepsilon}+O(v^4)
+$$
+
+affects the entropy. A two-level Gibbs state with gap $d$ has
+
+$$
+S(d)=\log(1+e^{-d})+\frac{d}{1+e^d}.
+$$
+
+Since
+
+$$
+\frac{dS}{dd}=-\frac{d}{4\cosh^2(d/2)},
+$$
+
+we find
+
+$$
+\boxed{
+S(\rho_v)-S(\rho_0)
+=-\frac{v^2}{2\cosh^2(\varepsilon/2)}+O(v^4).
+}
+$$
+
+The negative sign has a simple interpretation: the off-diagonal perturbation increases the energy gap by level repulsion and makes the Gibbs probabilities less balanced.
+
+### 3.3 Relative entropy
+
+The first-order density variation is off-diagonal:
+
+$$
+(\delta\rho)_{12}=(\delta\rho)_{21}
+=-\frac{v(1-e^{-\varepsilon})}
+{\varepsilon(1+e^{-\varepsilon})}
+=:w.
+$$
+
+The quadratic Kubo–Mori formula is
+
+$$
+D(\rho_0+\delta\rho\Vert\rho_0)
+=\frac12\int_0^\infty ds\,
+\operatorname{Tr}\!\left[
+\delta\rho(\rho_0+s)^{-1}
+\delta\rho(\rho_0+s)^{-1}
+\right]
++O(\delta\rho^3).
+$$
+
+Writing $\rho_0=\operatorname{diag}(p_1,p_2)$, the integral reduces to
+
+$$
+\begin{aligned}
+D(\rho_v\Vert\rho_0)
+&=w^2\int_0^\infty
+\frac{ds}{(p_1+s)(p_2+s)}+O(v^4)\\
+&=w^2\frac{\log(p_1/p_2)}{p_1-p_2}+O(v^4)\\
+&=\boxed{
+\frac{v^2}{\varepsilon}
+\tanh\!\left(\frac{\varepsilon}{2}\right)
+}+O(v^4).
+\end{aligned}
+$$
+
+This is positive, as it must be.
+
+### 3.4 Modular-energy term and checks
+
+The exact identity of §2 now gives
+
+$$
+\Delta\langle K_0\rangle
+=\frac{v^2}{\varepsilon}\tanh\!\left(\frac{\varepsilon}{2}\right)
+-\frac{v^2}{2\cosh^2(\varepsilon/2)}
++O(v^4).
+$$
+
+Three checks are worth assigning:
+
+1. **High-temperature point.** At $\varepsilon=0$, $K_0$ is scalar and the modular-energy difference vanishes. Direct diagonalization of $V$ gives
+   $$
+   S(\rho_v)=\log(2\cosh v)-v\tanh v
+   =\log2-\frac{v^2}{2}+O(v^4).
+   $$
+2. **Fixed positive $\varepsilon$.** Exact numerical diagonalization agrees with the $v^2$ coefficient and the Kubo–Mori expression.
+3. **Large-$\varepsilon$ asymptotics.** Taking the coefficient at finite $\varepsilon$ and then sending $\varepsilon\to\infty$ gives $\Delta S\to0$ and an approximate cancellation between $D$ and $\Delta\langle K_0\rangle$. At strictly zero temperature $\rho_0$ is nonfaithful, so relative entropy requires a separate support analysis; do not infer it by naive substitution.
+
+### 3.5 What the model does not contain
+
+The model has neither a changing algebra, a spectral Jacobian, an independent clock coordinate, nor a $1/N$ hierarchy. It therefore cannot “reproduce AAJ's twenty terms.” What it does provide is a fully checkable example of noncommuting Gibbs perturbation, entropy, relative entropy, and modular energy.
+
+## 4. AAJ term map: follow the source organization
+
+The following map keeps the paper's actual organizational variables visible.
+
+| Order | AAJ location | Source of structures | Count at $N^0,1/N,1/N^2$ | Status |
+|---|---|---|---|---|
+| $h$ | Eq. (77) | $C_1$, $\beta_1$, weight/Jacobian | $2+2+2$ displayed | one is GJW; five are additional |
+| $h^2$ | Eq. (78) | $C_2$, $C_1^2$, $\beta_2$, $\beta_1^2$, mixed terms | $2+6+7$ | fifteen quadratic terms |
+
+Terms involving $\beta_1$ or $\beta_2$ are candidates for an area interpretation because the inverse-temperature change is tied to the shifted horizon radius in the chosen gravitational setup. Terms containing modular-charge commutators can contribute to matter and quantum-gravity pieces. AAJ themselves caution that the type-II von Neumann entropy is primary and that the area/matter split should be made with care. The course therefore does not impose an independent “matter/clock/cross” label on every term unless the paper or a subsequent calculation supplies it.
+
+### Instructor comparison procedure
+
+For each displayed term in Eqs. (77)–(78), students record:
+
+1. its perturbative order in $h$;
+2. its stated order in $1/N$;
+3. whether it contains $C_1$, $C_2$, $\beta_1$, or $\beta_2$;
+4. whether AAJ explicitly interpret it as area, matter, or quantum correction;
+5. which Hamiltonian/correlator data would be needed to evaluate it.
+
+This creates a source-faithful table and makes the missing dynamical inputs visible.
+
+## 5. Mini-Calc 4: a reproducible finite-regulator protocol
+
+The continuum calculation previously promised by these notes was not specified enough to be checked. We replace it with a protocol whose output can be audited.
+
+### 5.1 Required input
+
+Choose and record:
+
+- a finite-dimensional regulator $\mathcal H_L^{(D)}\otimes\mathcal H_R^{(D)}$;
+- matrices $H_{L,0}$ and $H_{R,0}$ and the reference TFD vector/density matrix;
+- a bounded self-adjoint interaction $\delta H_0$;
+- a duration $\tau$ and one of two explicitly labeled evolutions: either the full Schrödinger-picture unitary $U=e^{-i\tau(H_0+\delta H_0)}$, or the time-independent interaction-picture model $U_I=e^{-i\tau\delta H_0}$ used to reproduce AAJ's simplified commutator ledger;
+- a finite clock regulator only if a crossed-product trace is being modeled;
+- numerical values or a declared model assumption for $\beta_1$ and $\beta_2$;
+- the precise entropy/subalgebra being compared.
+
+Setting $\beta_1=\beta_2=0$ is allowed as a toy-model choice, but it must not be described as the GJW or AAJ result.
+
+### 5.2 Algebraic checks before entropy
+
+First decide which evolution is being checked.
+
+**Full Schrödinger-picture check.** Put $H=H_0+\delta H_0$ and compute
+
+$$
+D_1=[H,H_{L,0}],
+\qquad
+D_2=[H,[H,H_{L,0}]].
+$$
+
+Then verify
+
+$$
+UH_{L,0}U^*
+=H_{L,0}-i\tau D_1-\frac{\tau^2}{2}D_2+O(\tau^3).
+$$
+
+Expanding the second commutator gives
+
+$$
+\begin{aligned}
+D_2={}&[H_0,[H_0,H_{L,0}]]
++[H_0,[\delta H_0,H_{L,0}]]\\
+&+[\delta H_0,[H_0,H_{L,0}]]
++[\delta H_0,[\delta H_0,H_{L,0}]].
+\end{aligned}
+$$
+
+Thus $[H_0,H_{L,0}]=0$ removes the first and third displayed pieces, but it generally leaves both $[H_0,[\delta H_0,H_{L,0}]]$ and the interaction-only term $[\delta H_0,[\delta H_0,H_{L,0}]]$. It is not legitimate to drop the mixed term silently.
+
+**AAJ interaction-only check.** If the regulator is explicitly placed in the time-independent interaction-picture model $U_I=e^{-i\tau\delta H_0}$, compute
+
+$$
+C_1=[\delta H_0,H_{L,0}],
+\qquad
+C_2=[\delta H_0,[\delta H_0,H_{L,0}]].
+$$
+
+and verify
+
+$$
+U_IH_{L,0}U_I^*
+=H_{L,0}-i\tau C_1-\frac{\tau^2}{2}C_2+O(\tau^3)
+$$
+
+against exact matrix conjugation. Check Hermiticity: $C_1^*=-C_1$, $C_2^*=C_2$, so the displayed correction is self-adjoint through second order. For a time-dependent interaction-picture generator, replace the simple exponential by a time-ordered exponential and evaluate the corresponding Dyson integrals; the constant-$\delta H_0$ formula is then only a special case.
+
+If the model uses a right-local observable $A_R$, also compare
+
+$$
+UA_RU^*
+=A_R-i\tau[H,A_R]
+-\frac{\tau^2}{2}[H,[H,A_R]]+O(\tau^3)
+$$
+
+with exact conjugation.
+
+### 5.3 Entropy computation
+
+There are two legitimate routes.
+
+**Route A: direct finite matrix.** Construct the specified reduced or type-II-regulator density matrix after the deformation, normalize it, diagonalize it, and compute $-\operatorname{Tr}\rho\log\rho$. Fit the difference to $a_1h+a_2h^2$ over a shrinking symmetric interval and report convergence of $a_1,a_2$ with the regulator.
+
+**Route B: AAJ ledger.** Evaluate the matrix analogs of the terms in Eqs. (77)–(78), including the weight and Jacobian chosen for the regulator. Sum the linear and quadratic pieces separately and compare them with Route A. Any mismatch is diagnostic: a normalization, Jacobian, or BCH term has been omitted.
+
+### 5.4 Free-field specialization
+
+For a Gaussian free-field regulator, take
+
+$$
+V=\frac12\left[W(f_L)W(f_R)+W(-f_L)W(-f_R)\right].
+$$
+
+Opposite-wedge locality gives $\sigma(f_L,f_R)=0$. Expectations of the Weyl monomials generated by nested commutators follow from
+
+$$
+\omega_0\!\left(\prod_{j=1}^nW(f_j)\right)
+=\exp\!\left[
+-\frac{i}{2}\sum_{j<k}\sigma(f_j,f_k)
+-\frac12\mu\!\left(\sum_jf_j,\sum_jf_j\right)
+\right].
+$$
+
+The student must supply the finite covariance matrix $\mu$, the symplectic matrix $\sigma$, the smearing functions, and the truncation. There is no universal formula proportional to $\sigma(f_L,f_R)$: that quantity is zero. Nontrivial response of a right observable arises from same-side commutators such as $\sigma(f_R,h_R)$, as shown in Week 11.
+
+### 5.5 Continuum claim only after convergence
+
+A finite-regulator number becomes evidence for a continuum result only after:
+
+1. increasing the mode/energy cutoff;
+2. controlling clock-window dependence;
+3. checking normalization and positivity;
+4. reporting quadrature/matrix precision;
+5. demonstrating convergence or giving an error bound.
+
+Without these steps the honest deliverable is “computation protocol plus finite-regulator example,” not “explicit free-field reproduction of AAJ.”
+
+## 6. Interpretation map
+
+| Statement | Status |
 |---|---|
-| level splitting $\varepsilon$ | continuous boost spectrum, weight $\tanh(\pi K_{\rm boost})$ |
-| $S(\omega_V\Vert \omega_0) = \tfrac{v^2}{\varepsilon}\tanh\tfrac{\varepsilon}{2}$ | $\tfrac12 g^2\Vert \sqrt P\,\varsigma(f_L,f_R)\Vert ^2$ — the same $\tanh$ weight, integrated over the spectrum |
-| $\mathcal{B} = \langle K\rangle_V - \langle K\rangle_0$, a number | $2\pi g^2\langle\delta K_{\rm boost}\rangle$, a test-function functional |
-| no clock sector | clock sector present (Sem II Wk 6–7), carrying the area interpretation |
+| GJW contains a linear-order double-trace result | Source result |
+| AAJ add five linear and fifteen quadratic terms through $O(1/N^2)$ | Source result, v2 |
+| Eq. (77) has $2+2+2$ displayed structures | Direct source count |
+| Eq. (78) has $2+6+7$ structures | Direct source count |
+| $M_2$ off-diagonal Gibbs model starts at $v^2$ | Exact model calculation |
+| GJW must start at $h^2$ by $J$ symmetry | Incorrect; removed |
+| A specified finite Gaussian regulator evaluates the nested commutators | Checkable protocol |
+| The free scalar protocol reproduces a gravitational area shift | Not established |
 
-The $\tanh$ is not a coincidence: it is the same Kubo–Mori denominator $\log(p_1/p_2)/(p_1-p_2)$ of §2.4, evaluated on a thermal spectrum rather than on two levels. This is why the model computation is worth doing first — the free-field answer is its continuum limit, and a student who has done §2 by hand knows what every factor in §4.3 is doing.
+## 7. What to take away
 
-### 4.4 Deliverable
+- The central correction is factual: five **additional linear** terms plus fifteen quadratic terms, twenty new terms through $h^2$.
+- AAJ's §3 is the general perturbation framework and §4 is the GJW application; §5 is discussion.
+- Relative entropy begins quadratically near an identical faithful state, while entropy and modular energy can begin linearly.
+- The missing linear term in the $M_2$ example follows from the chosen off-diagonal perturbation, not from a universal TFD/GJW symmetry.
+- The $M_2$ entropy coefficient
 
-Each student writes 2 pages of their assigned part (cocycle / relative-entropy piece / modular-energy piece / assembly / AAJ comparison). The instructor consolidates into the full Mini-Calc 4 writeup, which is the technical basis for the final paper.
-
-## 5. What to take away
-
-- **Organizing identity:** $\Delta S = -S(\omega_V\|\omega_0) + [\omega_V(K_0) - \omega_0(K_0)]$ — matter-entropy piece plus modular-energy/area piece, the perturbative $\delta S_{\rm gen}$.
-- **First order is the first law, not zero:** $\Delta S^{(1)} = \delta\langle K_0\rangle$. Positivity of relative entropy kills only the relative-entropy piece's linear term. For GJW the boundary term's linear piece vanishes as well, but by a *symmetry* argument — $JVJ = V$ while $JK_0J = -K_0$ — and an asymmetric deformation would restore it.
-- **The 20 corrections** are the distinct $O(g^2)$ contributions from expanding cocycle × log × trace-pairing, grouped into matter / clock / cross-sector terms.
-- **Free-field analog (example-only):** reproduces the matter- and clock-sector corrections exactly via boost-evolved Weyl bilinears; the holography-specific cross terms are absent. The analog captures the structure, not the full bulk content.
-- **Model result, in closed form (§2):** for $M_2$ with $K = \mathrm{diag}(0,\varepsilon)$ and $V = v\sigma_x$,
 $$
-\Delta S = -\frac{v^2}{2\cosh^2(\varepsilon/2)},\qquad
-S(\omega_V\|\omega_0) = \frac{v^2}{\varepsilon}\tanh\frac{\varepsilon}{2},\qquad
-\mathcal{B} = S(\omega_V\|\omega_0) + \Delta S,
+-\frac{1}{2\cosh^2(\varepsilon/2)}
 $$
-checked against direct diagonalization, against the Kubo–Mori metric, and in both temperature limits. The free-field answer is this with the two-level spectrum replaced by the boost continuum.
-- **Mini-Calc 4 result:** $\Delta S = g^2(\text{boost-energy shift} - \tfrac12\,\text{Kubo–Mori})$, finite and explicit — the competition deciding the sign of the generalized-entropy change under traversal.
 
-## 6. Looking ahead
+and the relative-entropy coefficient
 
-Week 13 closes Block 4 with **AAJ's open-question landscape**: beyond perturbative regimes, higher-order corrections, the bulk interpretation of each algebraic term, other deformations, and the connection to entanglement embezzlement (the group's program). Students present their final-write-up topics for group feedback and refine their plans against AAJ's frontier. Block 5 (MSY) then supplies the bulk side of the same traversal, so the algebra/bulk comparison can be made honestly.
+$$
+\frac{1}{\varepsilon}\tanh(\varepsilon/2)
+$$
 
-## 7. Problem set
+are independently checkable.
+- A credible continuum mini-calc specifies a regulator, covariance data, nested commutators, trace normalization, and convergence. Until then it is a protocol.
 
-**Core problems.**
+## 8. Problem set
 
-**1. Break the symmetry.** Take the asymmetric deformation $V = g\,(\mathcal{O}_L\mathcal{O}_R + c\,\mathcal{O}_R^2)$ with $c \ne 0$, which is *not* invariant under $J$. Show that the §1.3 argument no longer forces $\langle VK_0\rangle_0 = 0$, and hence that $\Delta S$ now has a first-order term equal to $\delta\langle K_0\rangle$. What does a linear-in-$g$ area response mean physically for the wormhole?
+### Core problems
 
-**2. Relative-entropy piece.** For the free-field GJW analog, compute $S(\omega_V\|\omega_0)$ to $O(g^2)$ as a Gaussian functional of $\varsigma(f_L, f_R)$, using the §2.4 metric. Identify the positive kernel $P$ in terms of $\tanh(\pi K_{\rm boost})$, and check that your answer reduces to the §2.3 model result when the boost spectrum is replaced by two levels.
+**1. Linear-term logic.** Derive the first law $\Delta S^{(1)}=\Delta\langle K_0\rangle^{(1)}$ from the exact identity in §2. Explain why it does not imply either side vanishes.
 
-**3. Modular-energy piece.** Compute $\omega_V(K_0) - \omega_0(K_0)$ to $O(g^2)$ with $K_0 = 2\pi K_{\rm boost}$. Show it is the boost energy injected by the deformation and that it is positive.
+**2. Exact $M_2$ calculation.** Starting from the exact gap $d(v)$, derive the entropy coefficient in §3.2. Verify it by diagonalizing the density matrix at three decreasing values of $v$.
 
-**4. Assemble $\Delta S$.** Combine Problems 2 and 3 into the leading $\Delta S$. Discuss the sign competition between the two pieces.
+**3. Kubo–Mori calculation.** Evaluate the integral in §3.3 and derive $v^2\tanh(\varepsilon/2)/\varepsilon$.
 
-**Starred problems.**
+**4. AAJ linear ledger.** Read Eq. (77), identify the GJW term singled out by AAJ, and list the five additional structures with their $1/N$ order.
 
-**5\*. Reproduce the count.** Read AAJ §§4–5 and reconstruct their enumeration of the twenty $O(g^2)$ corrections, using the three choices set out in §3.1. State explicitly the grouping conventions they adopt — whether $\lambda$-integrals are left unevaluated, whether Hermitian-conjugate pairs are counted once or twice, whether the two clocks are identified — and say how the total would change under a different convention. Then classify each term as matter / clock / cross sector and state which the free-field analog reproduces.
+**5. AAJ quadratic ledger.** Read Eq. (78) and reproduce $2+6+7=15$. Tag every term by $C_2$, $C_1^2$, $\beta_2$, $\beta_1^2$, or mixed dependence.
 
-**6\*. Kubo–Mori = Fisher.** Starting from the §2.4 integral formula, show that when $\delta\rho$ commutes with $\rho_0$ the $s$-integral collapses and the metric reduces to the classical Fisher information $\sum_j (\delta p_j)^2/p_j$. Then explain why the model of §2, where $\delta\rho$ is purely *off*-diagonal, is the opposite extreme, and why its answer carries the factor $\tanh(\varepsilon/2)/\varepsilon$ instead of $1/p_j$. Relate to the energy-variance/heat-capacity result of Sem I Wk 7.
+### Starred problems
 
-**Project problems.**
+**6*. Break the off-diagonal choice.** Add $a\sigma_z$ to $V$. Compute the linear entropy change and show explicitly which covariance with $K_0$ produces it.
 
-**7. Mini-Calc 4 writeup.** Complete your assigned 2-page part of Mini-Calc 4. This is the technical core of your final paper; write it to publication standard.
+**7*. BCH verification.** Choose a two-qubit interaction, evaluate $C_1$ and $C_2$, and compare the quadratic BCH approximation with exact conjugation over a range of $\tau$.
 
-**8\*\*. Higher order (hard, optional).** Sketch what changes at $O(g^3)$: the cocycle gets $u^{(3)}$, the log expansion a cubic term, and new orderings appear. Estimate the number of distinct corrections (AAJ stop at $g^2$; the higher-order enumeration is open — Block 5 Wk 13).
+**8*. Gaussian Weyl protocol.** Supply four explicit finite-mode smearings and a valid covariance/symplectic matrix. Evaluate one first-order and one second-order nested-commutator expectation. State exactly which AAJ structure the calculation is intended to model.
+
+### Project problem
+
+**9. Mini-Calc 4 report.** Submit a reproducible notebook or symbolic worksheet plus a three-page interpretation. Separate: exact finite-regulator result, convergence evidence, AAJ source comparison, and gravitational interpretation.
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 4. Last revised 2026-08-23.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 4. Last revised 2026-08-24.*

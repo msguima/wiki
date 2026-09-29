@@ -5,15 +5,17 @@ course: syllabus
 semester: 2
 week: 14
 block: 5
-duration: 4 hours (reading-and-discussion + the dS aside)
+duration: "master dossier: 4 hours of material; classroom core: 2-hour seminar + 1-hour office/self-study"
 prerequisites: Sem II Wks 11–13 (AAJ); Sem I Wk 12 (type classification)
 target_paper: "Maldacena, Stanford, Yang, arXiv:1704.05333; aside: CLPW, arXiv:2206.10780"
-modified: 2026-08-23
+modified: 2026-08-24
 ---
 
 # Sem II Week 14 — MSY: The Bulk Side; and a de Sitter Aside (CLPW, type II$_1$)
 
-> *Block 4 (AAJ) computed the generalized-entropy corrections of a traversable wormhole from the **boundary algebra**. This week supplies the **bulk** side: Maldacena–Stanford–Yang's "Diving into traversable wormholes" (arXiv:1704.05333), the gravitational geometry of the same GJW deformation. The point is complementarity — the algebra sees the entropy corrections; the bulk sees the geometry (ANEC violation, the Shapiro time advance, the opening throat); the two are descriptions of one system, and matching them precisely is open. We close with an aside that completes the course's structural picture: Chandrasekaran–Longo–Penington–Witten on de Sitter space, where the **same** crossed-product machine gives **type II$_1$** rather than II$_\infty$ — proving the algebra type is a property of the geometry, not the construction.*
+> *Block 4 studied AAJ's perturbative formulas for the crossed-product entropy of a deformed traversable-wormhole setup. This week supplies the bulk comparison: Maldacena–Stanford–Yang's gravitational account of the GJW deformation, including negative averaged null energy and a time advance. Matching individual AAJ terms to individual geometric observables remains a separate calculation. We close with CLPW's de Sitter construction. Its type-II$_1$ result follows from adding a bounded-below observer energy and then compressing the continuous core by the positive-energy projection. The resulting finite trace is exact in the model; it does not follow merely from saying that the cosmological horizon is compact.*
+
+> **Route through this master dossier.** **Classroom core (two-hour seminar):** §§1–3 and the defining CLPW corner computation. **Full derivation or self-study:** the linearized Raychaudhuri calculation, the maximum-entropy argument, and the nonstarred problems. **Research extension or office hour:** the unresolved AAJ–MSY matching, the full CLPW source route, and the starred/project problems. The wormhole and de Sitter constructions share operator-algebraic language but are not presented as one theorem.
 
 ## 0. Reading
 
@@ -36,25 +38,32 @@ modified: 2026-08-23
 
 ### 1.1 The setup
 
-Maldacena–Stanford–Yang work in the **bulk gravitational** description of the GJW-deformed eternal black hole. The deformation $V = g\,\mathcal{O}_L\mathcal{O}_R$ (Sem II Wk 11) couples the two boundaries; in the bulk it sources a quantum stress tensor that backreacts on the geometry.
+Maldacena–Stanford–Yang work in the **bulk gravitational** description of the GJW-deformed eternal black hole. We fix the GJW Hamiltonian convention used in Week 11,
 
-### 1.2 ANEC violation
+$$
+\delta H(t)=-\int d^{d-1}x\,h(t,x)\,
+\mathcal O_R(t,x)\mathcal O_L(-t,x).
+$$
 
-**Average null energy across the horizon (MSY). [Stated only — refs: MSY arXiv:1704.05333.]** *The GJW coupling produces a quantum stress tensor whose integral along a null geodesic crossing the horizon is **negative**:*
+For the positive $h$ profile in the controlled scalar example, the computed horizon-averaged null energy is negative. If one abbreviates the same interaction as $+g\mathcal O_L\mathcal O_R$, then $g=-h<0$ after matching the time arguments and smearing. All sign statements below refer to this fixed convention.
+
+### 1.2 Negative averaged null energy on the relevant horizon generator
+
+**Horizon-averaged null energy (MSY). [Stated only — ref: MSY arXiv:1704.05333.]** *For the appropriate coupling sign and switching profile, the GJW deformation produces a negative integral of the null stress tensor on the horizon generator relevant to the signal:*
 $$
 \int T_{vv}\,dv < 0,
 $$
-*violating the averaged null energy condition (ANEC) along that geodesic. This is permitted because ANEC is only required to hold under conditions the deformed state does not meet (the coupling is non-local across the two boundaries).*
+*and the corresponding gravitational backreaction gives the time advance used by the protocol.*
 
 **Definitions.**
 - **Average null energy:** $\int T_{vv}\,dv$ along a null geodesic with affine parameter $v$.
-- **ANEC:** the condition $\int T_{vv}\,dv \ge 0$ for all complete null geodesics; holds in many QFT settings but is *violated* by the GJW-deformed state across the horizon.
+- **ANEC:** the condition $\int_{-\infty}^{\infty} T_{vv}\,dv\ge 0$ on a complete null geodesic, under the hypotheses of the relevant theorem. The two-boundary interaction is nonlocal from the viewpoint of either decoupled boundary theory, so one should not cite a standard single-QFT ANEC theorem and then announce a paradox. What MSY need is the sign of the horizon integral in their coupled system; the precise relation between that integral and a theorem formulated on a complete achronal geodesic is setup-dependent.
 
-> **Physical picture.** Classically, the Einstein–Rosen bridge of the eternal BH is non-traversable: any null ray that tries to cross is bent away by the positive energy it must pass, and the throat pinches off before a signal gets through. To open it you need *negative* averaged null energy — a region where matter gravitates "the wrong way," defocusing rather than focusing null rays. The GJW double-trace coupling supplies exactly this: it correlates quantum fluctuations across the two horizons so that the averaged null energy along the crossing geodesic goes negative. This is the bulk meaning of "turning on $g\mathcal{O}_L\mathcal{O}_R$" — it is the only known controlled way to source the negative energy that holds a wormhole open, and it works only briefly and only by a tiny amount.
+> **Physical picture.** The eternal bridge is non-traversable because the horizon geometry prevents a causal curve from one boundary from reaching the other. With the suitable sign and time profile, the GJW coupling produces negative averaged null energy on the relevant horizon generator. The resulting gravitational backreaction shifts the causal relation enough to let a controlled signal through. This is a specific quantum protocol, not a claim that any bilocal coupling or any negative local energy density produces a traversable wormhole.
 
 ### 1.3 The Shapiro time advance
 
-**Shapiro time advance (MSY). [Stated only.]** *Gravitational backreaction from the negative-energy GJW stress tensor shifts a crossing null geodesic so it emerges on the far side **earlier** than naive (undeformed) causality would allow — a Shapiro time advance $\Delta v \propto -g$. A signal injected on the left can reach the right boundary.*
+**Shapiro time advance (MSY). [Stated only.]** *For the positive-$h$ GJW convention fixed in §1.1, gravitational backreaction from the negative-energy stress tensor shifts the relevant crossing null geodesic in the advance direction, so a signal injected on one side can reach the other during a controlled window.* The shift is linear in the coupling at leading order, but its signed symbol depends on the orientation chosen for the Kruskal coordinate; we therefore do not write a convention-free formula such as $\Delta v\propto-g$.
 
 **Definitions.**
 - **Shapiro time delay/advance:** the change in arrival time of a signal due to its passage through a gravitational field; positive (delay) for ordinary matter, **negative** (advance) for the negative-energy GJW shockwave.
@@ -62,7 +71,7 @@ $$
 
 ### 1.4 Only just traversable
 
-A crucial honest point MSY emphasize: the wormhole is **only just** traversable. The throat opens for a moment, lets a parametrically small signal through, then closes. There is no causality violation in any cosmologically meaningful sense — the advance is bounded, and a signal through the wormhole never beats a signal sent through the ambient spacetime (chronology is protected). It is a controlled, marginal effect, which is exactly why it is theoretically clean.
+In the perturbative regime emphasized here, the traversable window and the amount of information that can be sent are limited. GJW and MSY analyze compatibility with the causal structure of the directly coupled boundary system; our Raychaudhuri calculation below does not prove a separate chronology-protection theorem. The detailed bounds depend on the geometry, coupling profile, and backreaction of the signal. “Only just traversable” is therefore a regime statement, not a universal definition of traversable wormholes.
 
 ## 2. Algebra vs. bulk: the complementarity
 
@@ -72,25 +81,25 @@ This is the pedagogical heart of the week. The **same** physical system — the 
 
 | | AAJ (boundary algebra) | MSY (bulk geometry) |
 |---|---|---|
-| Computes | $\delta S_{\rm gen}$ corrections (Mini-Calc 4) | the deformed wormhole geometry |
-| Sees directly | dressed-entropy change, cocycle structure | ANEC violation, Shapiro advance, open throat |
+| Computes | perturbative type-II entropy structures | bulk response and signal propagation |
+| Sees directly | changed trace weight, Jacobian, BCH commutators | negative null energy, time advance, traversable window |
 | Does **not** see directly | the Shapiro shift (geometric) | the dressed entropy (algebraic) |
-| Tool | Connes cocycle on type II$_\infty$ | gravitational backreaction, null geodesics |
+| Tool | unitary modular covariance and crossed-product trace | gravitational backreaction and null geodesics |
 
-> **Physical picture.** These are not competing descriptions but **complementary** ones, in the precise sense that each captures cleanly what the other accesses only indirectly. The algebra is the natural home of *entropy and information* — relative entropy, dressed entropy, the cocycle — and it computes $\delta S_{\rm gen}$ effortlessly while saying nothing direct about where the signal comes out. The bulk is the natural home of *geometry and causality* — null energy, Shapiro shifts, the throat — and it gives the traversal geometry while saying nothing direct about the von Neumann entropy. The full duality says these must encode the same physics; but the *dictionary* relating "this algebraic correction" to "that geometric feature" is established only in pieces. Seeing both calculations side by side is the clearest way to feel where the understood part ends.
+> **Physical picture.** These are complementary descriptions in the ordinary holographic sense: the algebraic calculation organizes entropy and modular data, while the bulk calculation organizes geometry and causal propagation. Neither result is effortless, and neither individual term comes with an automatic translation into the other language. A valid matching must use the same state, coupling profile, normalization, order in $h$, and order in $1/N$.
 
 ### 2.2 The conjecture and the gap
 
-**Conjecture (modular shift ↔ Killing-vector shift). [Heuristic — open at the rigorous level.]** *The shift in the modular flow computed by AAJ (the perturbed $\sigma^V_t$, Sem II Wk 11 §3.2) corresponds in the bulk to a shift of the modular Killing vector by the GJW backreaction — and the algebraic boundary term shift equals the geometric Shapiro shift. One should be able to verify this at lowest order.*
+**Course-generated matching question. [Heuristic.]** *Can a specified change in the AAJ modular charge or entropy weight be related, in one common perturbative scheme, to the bulk stress tensor, shifted QES, or null-geodesic time advance?* Entropy and a time shift have different dimensions and operational meanings, so no direct equality is assumed.
 
 **Honest scoping (the course does not close this).**
 - The course has **not** derived the Shapiro shift from the algebra side.
 - The course has **not** shown the equivalence of AAJ's algebraic corrections and MSY's bulk corrections at the rigorous level.
 - These are **open research questions** — excellent final-paper or follow-up-project material, and exactly the frontier the group's program sits near.
 
-## 3. Worked computation: focusing, and why negative energy opens the throat
+## 3. Worked computation: the linearized horizon-area response
 
-The previous section quoted ANEC violation and the Shapiro advance from MSY. The link between them — *why* negative averaged null energy opens a wormhole — is not a quotation. It is the Raychaudhuri equation, and it takes half a page. **[Proved, given Einstein's equation and the teleological horizon condition.]**
+The previous section quoted the negative horizon integral and the Shapiro advance from the sources. Raychaudhuri gives a precise intermediate result: the linearized response of the chosen horizon congruence and its area. **[Proved below, given Einstein's equation, perturbative control, and the teleological horizon condition.]** It does not by itself prove that a causal curve connects the two asymptotic boundaries; that global statement also needs the metric solution, boundary conditions, and geodesic shift computed by GJW/MSY.
 
 ### 3.1 Null focusing
 
@@ -104,9 +113,9 @@ R_{\mu\nu}k^{\mu}k^{\nu} = 8\pi G\,T_{vv}.
 $$
 Note that neither the cosmological constant nor the Ricci scalar appears — null focusing is sensitive only to the null energy, which is why ANEC is the relevant condition and not, say, the weak energy condition.
 
-On the unperturbed bifurcate Killing horizon of the eternal black hole, $\theta = \sigma_{ab} = 0$ identically: the horizon is stationary. Turning on the GJW coupling makes $T_{vv} = O(g)$, hence $\theta = O(g)$ and $\sigma = O(g)$, so the quadratic terms are $O(g^2)$ and drop at leading order. The equation linearizes to
+On the unperturbed bifurcate Killing horizon of the eternal black hole, $\theta = \sigma_{ab} = 0$ identically: the horizon is stationary. In the positive-$h$ convention fixed in §1.1, turning on the GJW coupling makes $T_{vv}=O(h)$, hence $\theta=O(h)$ and $\sigma=O(h)$, so the quadratic terms are $O(h^2)$ and drop at leading order. The equation linearizes to
 $$
-\boxed{\;\frac{d\theta}{dv} = -8\pi G\,T_{vv} + O(g^{2}).\;}
+\boxed{\;\frac{d\theta}{dv} = -8\pi G\,T_{vv} + O(h^{2}).\;}
 $$
 
 ### 3.2 The boundary condition fixes the sign
@@ -123,105 +132,168 @@ the generators *converge*, and since the transverse area along the generators ob
 $$
 \frac{\delta A}{A} = \int \theta\,dv \;<\; 0 .
 $$
-**The horizon area decreases.** That is the geometric content of the traversal: the horizon recedes, exposing part of what was behind it, and a signal that would have been trapped can now get out. The Shapiro advance of §1.3 is the same statement told in terms of the crossing geodesic rather than the horizon generators.
+**The chosen horizon area decreases at linear order.** This is the focusing/defocusing response that makes traversability plausible, but it is not yet the global two-boundary result. To show that a signal actually escapes, one must solve for the perturbed metric and follow the relevant null geodesic with the correct asymptotic boundary conditions. The Shapiro advance of §1.3 is that additional source-level result, not an algebraic restatement of the area integral.
 
-### 3.3 Where the entropy went
+### 3.3 What Raychaudhuri does not prove about entropy
 
-This is the point at which the bulk story meets Week 12, and it is worth pausing on. Hawking's area theorem is not violated, because it assumes the null energy condition, which the GJW state does not satisfy. But something must still be monotone, and that something is the *generalized* entropy:
+The calculation above determines the leading change of the chosen horizon generators under the stated boundary condition. It does not by itself determine $\delta S_{\rm out}$, prove that $\delta S_{\rm out}>0$, or establish a generalized second law for arbitrary cuts. A GSL statement requires a precisely defined future causal horizon, a choice of outside algebra/state, renormalization of $S_{\rm out}$, and the hypotheses of the relevant theorem.
+
+When those hypotheses apply, the generalized entropy is
+
 $$
-\delta S_{\rm gen} = \underbrace{\delta\!\Big(\frac{A}{4G}\Big)}_{<\,0\ \text{by §3.2}} + \underbrace{\delta S_{\rm out}}_{>\,0} \;\ge\; 0 .
+S_{\rm gen}=\frac{A}{4G}+S_{\rm out},
 $$
-The area term falls, so the bulk-matter entropy outside must rise to compensate — the generalized second law survives where the classical one fails. Note that these are exactly the two terms of the organizing identity in Week 12 §1.2: the modular-energy/boundary piece is the area response, the relative-entropy piece is the matter response, and their competition is what we computed in closed form in the model of Week 12 §2.3. The bulk and the algebra are keeping the same two books.
 
-> **Physical picture.** The chain is short enough to hold in the head: a non-local coupling between the two boundaries correlates quantum fluctuations across the horizon; those correlations make the averaged null energy negative; negative null energy defocuses nothing and *focuses* the horizon generators under the teleological condition, so the horizon shrinks; a shrinking horizon exposes the throat; and the entropy that the area gave up reappears as matter entanglement outside. Every arrow in that chain is a line of the Raychaudhuri equation except the first, which is the quantum field theory of the deformation. Note also what the argument does *not* need: no detailed knowledge of the deformed metric, no shockwave profile, no transverse Green's function. Those are needed for the *magnitude* of the Shapiro advance — the Dray–'t Hooft computation MSY carry out — but the sign and the mechanism follow from focusing alone.
+and its monotonicity constrains the sum rather than either term separately. In the present notes, the area decrease is the Raychaudhuri result; the matter-entropy response must be calculated. Week 12's finite-matrix identity illustrates how entropy and modular energy can compensate, but it is not a proof of the gravitational GSL for the GJW spacetime.
+
+> **Physical picture.** The safe causal chain is: the chosen boundary coupling changes the bulk stress tensor; negative averaged null energy changes the horizon expansion; the shifted geometry can admit a crossing signal. The entropy chain is parallel but requires additional input. Keeping those chains separate prevents the Raychaudhuri equation from being asked to prove a quantum-information statement it does not contain.
 
 ### 3.4 What remains stated
 
-The magnitude is a genuine bulk computation we do not reproduce. **[Stated only — refs: MSY arXiv:1704.05333 §§2–3; Dray–'t Hooft 1985 for the shockwave metric.]** *The leading averaged null energy is $\int T_{vv}\,dv = -g\,C\,\langle\mathcal{O}_L\mathcal{O}_R\rangle_{\rm TFD} + O(g^2)$ with $C>0$ set by the bulk-to-boundary propagator, and solving the linearized Einstein equation for a thin shock at $v=0$ gives a crossing-geodesic shift $\Delta u = h(x_\perp)$ with $\nabla^2_\perp h = -16\pi G\int T_{vv}\,dv$, hence $\Delta u \propto -g$ at leading order.*
+The magnitude is a genuine bulk computation we do not reproduce. **[Stated only — refs: MSY arXiv:1704.05333 and GJW arXiv:1608.05687.]** The stress tensor is obtained from bulk propagators with the specified boundary coupling, and the metric/geodesic shift follows from the linearized gravitational equation in that geometry. Coefficients, signs, and transverse operators depend on conventions and dimension; students should extract the actual formula from the assigned section rather than use a universal schematic Poisson equation.
 
-The violation is largest when $\mathcal{O}_L, \mathcal{O}_R$ sit symmetrically across the bifurcation surface and their bulk-to-boundary profiles overlap maximally on the crossing geodesic — the bulk counterpart of the free-field analog's "boost the test functions toward the bifurcation surface" (Sem II Wk 11 §5.2). The same placement that maximizes the symplectic overlap $\varsigma(f_L, f_R)$ maximizes the ANEC violation, which is the sharpest available hint that the two calculations are computing one number in two languages — and the content of the conjecture in §2.2.
+There is no free-field cross-wedge symplectic counterpart to maximize: locality gives $\sigma(f_L,f_R)=0$, and a Lorentz boost does not move the Rindler radius toward the horizon. Comparing a Gaussian Weyl commutator with the MSY time advance would require a new observable-level dictionary.
 
 ## 4. The de Sitter aside: CLPW and type II$_1$
 
-A self-contained ~1-lecture aside that completes the course's structural picture.
+### 4.1 The actual starting point
 
-### 4.1 Why this aside
+CLPW work in the limit $G_N\to0$ with quantum fields in a de Sitter static patch. The field algebra $\mathcal A$ is type III$_1$. Because de Sitter has no asymptotic boundary to which one can dress a local operator, CLPW add an observer and dress observables to the observer's worldline.
 
-The course has followed the crossed-product machine through **one** geometry: the two-sided eternal BH (CPW, type II$_\infty$). CLPW apply the *same* machine to the **de Sitter static patch** and get a *different* type — **II$_1$**, with a finite trace and a maximum-entropy state. The contrast proves the structural punchline:
+Their minimal observer has
 
-> **The type of the dressed algebra is not a property of the construction — it is a property of the geometry the construction is applied to.**
-
-### 4.2 The de Sitter static patch
-
-**Definitions.**
-- **de Sitter static patch:** for the maximally symmetric solution of the vacuum Einstein equations with $\Lambda > 0$, the causal diamond accessible to a single inertial (comoving) observer, bounded by a **cosmological horizon**.
-- **Observer Hamiltonian $H_{\rm obs}$:** the energy along the observer's worldline; unlike the ADM Hamiltonian, it is **bounded below**.
-
-### 4.3 The CLPW construction, and the one-line reason the type changes
-
-**The CLPW dressing (CLPW arXiv:2206.10780). [Stated only for the holographic input; the type computation below is a model proof.]** *At large $N$, the single-trace algebra on the dS static patch is type III$_1$ (as for the BH). Adjoin the **observer's clock** — a crossed product by the observer Hamiltonian $H_{\rm obs}$, which is bounded below. The resulting dressed algebra is type **II$_1$**, not II$_\infty$: it has a **finite** trace, and a normalizable maximum-entropy state.*
-
-The type change is usually quoted. It is in fact a one-line integral, and doing it makes the whole aside land. Recall the crossed-product trace from Sem II Wk 7 §3.2, in which the clock variable $s$ labels the spectrum of the adjoined Hamiltonian:
 $$
-\hat\tau(a) = \int_{\mathrm{spec}} e^{-2\pi s}\,\big\langle \Psi\otimes\delta_s\,\big|\,a\,\big|\,\Psi\otimes\delta_s\big\rangle\,ds .
+H_{\rm obs}=q,
+\qquad
+q\geq0,
+\qquad
+\mathcal H_{\rm obs}=L^2(\mathbb R_+).
 $$
-Evaluate it on the identity, which is the quantity that decides semifinite-versus-finite. **Everything except the range of integration is the same in the two cases.**
 
-For the eternal black hole, the dressing Hamiltonian is the ADM energy, whose spectrum is all of $\mathbb{R}$:
+The nonnegative-energy assumption is the decisive algebraic input. It is not a finite-dimensional observer and does not assert that the de Sitter Hilbert space is finite dimensional.
+
+### 4.2 Continuous core first, positive-energy compression second
+
+CLPW first ignore $q\geq0$. Imposing the combined time-translation constraint then produces the usual modular crossed product $\mathcal A_{\rm cr}$, a type-II$_\infty$ continuous core. In a convenient representation set
+
 $$
-\hat\tau_{\rm BH}(1) = \int_{-\infty}^{\infty} e^{-2\pi s}\,ds = \infty ,
+x=-q.
 $$
-divergent at $s\to-\infty$. The trace is semifinite but not finite: **type II$_\infty$**.
 
-For the de Sitter static patch, the observer Hamiltonian is bounded below, so the spectrum is a half-line, which we may take to be $[0,\infty)$:
+The canonical trace is
+
 $$
-\hat\tau_{\rm dS}(1) = \int_{0}^{\infty} e^{-2\pi s}\,ds = \frac{1}{2\pi} \;<\; \infty .
+\operatorname{Tr}_{\rm cr}\widehat a
+=\int_{-\infty}^{\infty}
+\beta_{\rm dS}\,dx\,e^{\beta_{\rm dS}x}
+\langle\Psi_{\rm dS}|a(x)|\Psi_{\rm dS}\rangle.
 $$
-The trace is finite: **type II$_1$**. $\square$
 
-That is the entire difference. One integral over a line, one over a half-line, and the exponential weight — which is there because the modular flow rescales the trace, and which is the same weight in both cases — converges in one and not the other. Note that the same computation explains why boundedness *below* is what matters rather than boundedness above: the weight $e^{-2\pi s}$ blows up in the direction of decreasing $s$, so it is the lower end of the spectrum that must be cut off.
+Now restore positive observer energy. Before the conjugation that put the core in the displayed $H+x$ form, the projection is $\Theta(q)$. In the standard core representation it is the operator
 
-### 4.4 The maximum-entropy theorem, proved
-
-A finite trace immediately gives something the black-hole case cannot have. Normalize $\hat\tau$ so that $\hat\tau(1) = 1$ — possible precisely because the trace is finite, and note that this *fixes* the trace-rescaling freedom of Sem I Wk 14 §2.3, which in the II$_\infty$ case remains a genuine ambiguity. For a state with density $\hat\rho$, so that $\hat\tau(\hat\rho) = 1$, the dressed entropy is $S_{\mathrm{vN}} = -\hat\tau(\hat\rho\log\hat\rho)$, and
 $$
--S_{\mathrm{vN}} = \hat\tau(\hat\rho\log\hat\rho) - \hat\tau(\hat\rho)\log\hat\tau(\hat\rho) \;=\; S(\hat\rho\,\|\,1) \;\ge\; 0,
+\boxed{\Pi=\Theta(-H-x),}
 $$
-where the middle expression is zero by $\hat\tau(\hat\rho) = 1$, and the inequality is positivity of relative entropy against the tracial state (equivalently, Jensen's inequality for the convex function $x\log x$ under the tracial state). Hence
+
+because the observer constraint becomes $H+x\leq0$. The physical algebra is the corner
+
 $$
-\boxed{\;S_{\mathrm{vN}}(\hat\rho) \;\le\; 0\quad\text{for every state, with equality iff } \hat\rho = 1.\;}
+\widehat{\mathcal A}
+=\Pi\mathcal A_{\rm cr}\Pi.
 $$
-The tracial state is the unique maximum-entropy state, and CLPW identify it with the de Sitter vacuum. **[Proved, given the normalized finite trace.]**
 
-The contrast with the black hole is now sharp rather than rhetorical. In II$_\infty$ the operator $\hat\rho = 1$ has $\hat\tau(1) = \infty$ and is therefore not a state at all, so no maximum-entropy state exists and the entropy is unbounded above — which is why black-hole entropy is meaningful only as a difference. In II$_1$ the same operator *is* a state, it is the maximum, and the entropy of every other state is an absolute number measured from it.
+The projection is not generally the scalar half-line indicator $\Theta(-x)$, because $H$ acts on the field Hilbert space. The trace of the identity can nevertheless be evaluated in the de Sitter reference vector, for which $H|\Psi_{\rm dS}\rangle=0$. Only in this matrix element does $\Pi$ reduce to $\Theta(-x)$, and CLPW obtain
 
-> **Physical picture: why II$_1$ here and II$_\infty$ for the BH.** The whole difference is whether the dressing Hamiltonian is bounded below and whether the horizon is compact. For the eternal BH, the ADM Hamiltonian is unbounded and the horizon is non-compact in modular time, so the crossed-product trace runs off to infinity — type II$_\infty$, with the famous divergent $A/4G_N$ entropy regulated only as a difference. For de Sitter, the observer Hamiltonian is bounded below and the cosmological horizon is compact, so the trace converges — type II$_1$, with a finite total entropy and a genuine maximum-entropy state. Same crossed product, same modular flow, different boundedness of the clock. The dS finite entropy is not put in by hand; it falls out of the trace being normalizable, which falls out of the observer's energy being bounded below. This is the cleanest illustration in the whole course that *the algebra type reads off the global causal structure of the geometry* — and the reason a cosmological horizon has an absolute entropy while a black-hole horizon has only entropy differences is, in the end, the range of one integral.
+$$
+\boxed{
+\operatorname{Tr}_{\widehat{\mathcal A}}1
+=\operatorname{Tr}_{\mathcal A_{\rm cr}}\Pi
+=\int_{-\infty}^{0}
+\beta_{\rm dS}\,dx\,e^{\beta_{\rm dS}x}
+=1.
+}
+$$
 
-### 4.5 The entropy contrast
+Thus $\Pi$ is a finite projection in the type-II$_\infty$ core, and the corner is type II$_1$. This is the source's calculation. Saying only “the horizon is compact” misses the operator that makes the trace finite.
 
-| | CPW (eternal BH) | CLPW (de Sitter static patch) |
-|---|---|---|
-| Dressing Hamiltonian | ADM $H_R$ (unbounded above) | observer $H_{\rm obs}$ (bounded below) |
-| Horizon | non-compact (in modular time) | compact (cosmological) |
-| Dressed algebra type | II$_\infty$ | **II$_1$** |
-| Trace | semifinite (infinite on $1$) | **finite** (normalizable) |
-| Dressed entropy | finite only as a difference; $A/4G_N$ divergent piece | **finite individually**; vacuum saturates a maximum |
-| Special state | none (no max-entropy state) | dS vacuum = maximum-entropy state |
+### 4.3 Why the black-hole core stays II$_\infty$
 
-### 4.6 Where this sits in the type classification
+CLPW's black-hole comparison uses subtracted ADM energies
 
-It is worth naming the object. The dS dressed algebra is a holographic realization of the **hyperfinite type II$_1$ factor** of Sem I Wk 12 — the same algebra that appears there as the abstract example of a factor with a finite tracial state, now with the trace carrying physical meaning as the normalized static-patch entropy functional. The II$_\infty$ Rindler/BH dressed algebra of Sem II Wks 6–7 is its semifinite sibling, and the relation between them is the standard one: $\mathrm{II}_\infty \cong \mathrm{II}_1 \bar\otimes \mathcal{B}(\ell^2)$, the extra factor being exactly the non-normalizable direction that the unbounded ADM clock supplies and the dS observer clock does not.
+$$
+h_{L,R}=H_{L,R}-M_0.
+$$
 
-So the course has now exhibited, holographically, three of the four types it classified abstractly in Semester I: III$_1$ (the undressed large-$N$ algebra, Wk 9), II$_\infty$ (the dressed eternal BH, Wks 6–7), and II$_1$ (the dressed dS static patch, here). Type I is what one gets at finite $N$ (Wk 9 §2.3). The abstract classification of Sem I Wk 3 was not a taxonomy for its own sake; every entry in it turned out to be a geometry.
+The physical $H_{L,R}$ need not be unbounded below. Rather, after subtracting the background mass $M_0\sim1/G_N$ and taking the semiclassical limit, $h_{L,R}$ can range over all real values. There is no analog of the finite positive-energy projection $\Pi$ that cuts the core to a finite corner. The right-exterior algebra therefore remains type II$_\infty$.
+
+The correct contrast is:
+
+| Black-hole exterior | de Sitter static patch |
+|---|---|
+| continuous core with subtracted ADM fluctuation taking real values | same continuous-core stage |
+| no finite compression imposed | positive observer energy gives $\Pi=\Theta(-H-x)$ |
+| $\operatorname{Tr}1=\infty$ | $\operatorname{Tr}\Pi=1$ |
+| type II$_\infty$ | type II$_1$ corner |
+
+This is an algebraic mechanism tied to the observer/constraint model. Compactness of the cosmological horizon is part of the physical setting, but it is not the proof of the type.
+
+### 4.4 Maximum entropy
+
+Normalize the finite trace as CLPW do, so $\operatorname{Tr}1=1$. For a density $\rho\geq0$ with $\operatorname{Tr}\rho=1$,
+
+$$
+D(\rho\Vert1)
+=\operatorname{Tr}(\rho\log\rho)
+=-S(\rho)\geq0.
+$$
+
+Therefore
+
+$$
+\boxed{S(\rho)\leq0,}
+$$
+
+with equality only for $\rho=1$ when the relative-entropy equality condition applies. The tracial state is the unique maximum-entropy state.
+
+CLPW identify its purification as
+
+$$
+\Psi_{\max}
+=\Psi_{\rm dS}\sqrt{\beta_{\rm dS}}
+e^{\beta_{\rm dS}x/2},
+\qquad x\leq0,
+$$
+
+so the observer energy has the normalized distribution
+
+$$
+p(q)=\beta_{\rm dS}e^{-\beta_{\rm dS}q},
+\qquad q\geq0.
+$$
+
+For semiclassical states, CLPW relate the type-II entropy to $A/(4G_N)+S_{\rm out}$ up to a state-independent additive constant. The normalized algebraic maximum is $0$; the large positive Gibbons–Hawking entropy is recovered after restoring that conventional constant. Thus “finite trace” does not mean “no renormalization ambiguity.”
+
+### 4.5 Scope ledger
+
+- **Exact in the CLPW model:** positive-energy projection, finite trace, type-II$_1$ corner, maximum tracial state.
+- **Semiclassical relation:** entropy agrees with generalized entropy up to a state-independent constant.
+- **Not claimed:** a finite-dimensional static-patch Hilbert space, a proof from compact-horizon geometry alone, or a universal rule that causal structure uniquely determines von Neumann-algebra type.
+
+The last point matters. The algebra is sensitive to the observer, constraints, limiting procedure, and allowed spectrum. It can reflect global geometry without being a one-to-one classifier of geometries.
 
 ## 5. What to take away
 
-- **MSY bulk picture (magnitude stated only; mechanism proved):** the GJW deformation sources negative averaged null energy across the horizon; backreaction gives a Shapiro time **advance** $\Delta v \propto -g$; the wormhole becomes *just* traversable, with chronology protected.
-- **Why negative energy opens the throat (proved, §3):** on a null congruence Einstein's equation gives $R_{\mu\nu}k^\mu k^\nu = 8\pi G\,T_{vv}$ with the $\Lambda$ and $R$ terms dropping, so linearized Raychaudhuri reads $d\theta/dv = -8\pi G\,T_{vv}$. With the teleological condition $\theta(\infty)=0$, negative averaged null energy gives $\theta<0$ and $\delta A<0$: the horizon shrinks. The area the horizon gives up reappears as $\delta S_{\rm out}$ — the same two terms Week 12 computed algebraically.
-- **Algebra/bulk complementarity:** AAJ (algebra) sees $\delta S_{\rm gen}$ and the cocycle; MSY (bulk) sees the Shapiro shift and the throat. Same system, complementary descriptions; the precise dictionary between algebraic corrections and geometric features is **open** (honest scoping — the course does not close it).
-- **Largest ANEC violation** ↔ largest symplectic overlap of the deformation operators across the bifurcation surface — the bulk counterpart of the free-field "boost toward the horizon."
-- **CLPW de Sitter aside (type computed):** the same machine on the dS static patch gives **type II$_1$**, and the reason is one integral — $\hat\tau(1) = \int_{\mathbb{R}}e^{-2\pi s}ds = \infty$ for the BH's unbounded ADM clock, against $\int_0^\infty e^{-2\pi s}ds = 1/2\pi$ for dS's bounded-below observer clock. The maximum-entropy theorem then follows in two lines: normalizing $\hat\tau(1)=1$ gives $-S_{\mathrm{vN}} = S(\hat\rho\|1) \ge 0$, so $S \le 0$ with equality only at the tracial state.
-- **Structural punchline:** the dressed-algebra type (II$_1$ vs II$_\infty$) is determined by the **geometry** (boundedness of the clock, compactness of the horizon), not by the construction. The algebra type reads off the global causal structure.
+- **MSY bulk picture (source result):** in the fixed GJW convention $\delta H=-\int h\mathcal O_R\mathcal O_L$ with the controlled positive-$h$ profile, the deformation sources negative horizon-averaged null energy; the computed backreaction gives a Shapiro time advance and a limited traversable window. No convention-independent sign formula for an undefined $g$ is used.
+- **What §3 proves:** on a null congruence Einstein's equation gives $R_{\mu\nu}k^\mu k^\nu=8\pi G T_{vv}$, so linearized Raychaudhuri reads $d\theta/dv=-8\pi G T_{vv}$. With the stated teleological condition, negative averaged null energy yields a decreasing horizon area. The global crossing geodesic, matter-entropy response, and any GSL or chronology claim require additional input.
+- **Algebra/bulk comparison:** AAJ organize the perturbed type-II entropy; MSY organize bulk stress energy and causal propagation. A term-by-term dictionary is not supplied by either calculation alone.
+- **No cross-wedge symplectic match:** $\sigma(f_L,f_R)=0$ by locality, and a common boost does not localize test functions at the horizon.
+- **CLPW type computation:** start with the type-II$_\infty$ continuous core and impose positive observer energy with $\Pi=\Theta(-H-x)$. On the de Sitter reference vector $H\Psi_{\rm dS}=0$, the trace check reduces to
+  $$
+  \operatorname{Tr}\Pi
+  =\int_{-\infty}^{0}\beta_{\rm dS}e^{\beta_{\rm dS}x}dx=1.
+  $$
+  The finite corner is type II$_1$.
+- **Maximum entropy:** with $\operatorname{Tr}1=1$, $-S(\rho)=D(\rho\Vert1)\geq0$; the tracial state is the unique maximum. Generalized entropy agrees up to a state-independent constant in the semiclassical regime.
 
 ## 6. Looking ahead
 
@@ -231,19 +303,19 @@ Week 15 closes the course: final-write-up presentations, the instructor's outloo
 
 **Core problems.**
 
-**1. ANEC violation sign.** Explain why the GJW deformation can violate ANEC across the horizon without contradiction. (*Hint:* ANEC holds under hypotheses — completeness of the geodesic, a non-deformed state — that the GJW configuration does not satisfy.)
+**1. Averaged null energy and hypotheses.** Identify the precise horizon integral used in GJW/MSY and compare it with a standard ANEC theorem's hypotheses. Do not say merely “the state is deformed”; state which completeness, boundary-condition, locality, or achronality assumptions differ.
 
-**2. Shapiro advance is linear.** Argue that the leading Shapiro advance is $\Delta v \propto -g$ (linear in the coupling), matching the AAJ first-order cocycle. Where does the negative sign come from?
+**2. Linear response on both sides.** Explain why the leading bulk response and several AAJ entropy structures are linear in the deformation. Why does equal perturbative order not make an entropy coefficient equal to a time advance?
 
-**3. Ordinary matter, ordinary horizon.** Rerun §3.2 with $T_{vv} \ge 0$ and show that it reproduces Hawking's area theorem, $\delta A \ge 0$. Then identify precisely which hypothesis of that theorem the GJW state violates, and explain why the generalized second law survives anyway (§3.3).
+**3. Ordinary matter, ordinary horizon.** Rerun §3.2 with $T_{vv}\geq0$ and obtain the sign of the area response under the stated boundary condition. Then list the extra definitions and theorem hypotheses needed before asserting a generalized second law.
 
-**4. A clock bounded above.** Suppose a hypothetical dressing Hamiltonian had spectrum $(-\infty, 0]$ — bounded *above* rather than below. Evaluate $\hat\tau(1)$ for that case using §4.3 and determine the resulting type. Then explain why the physical clocks of this course (ADM energy, observer energy) are never of this kind, and what it would mean for the entropy if one were.
+**4. Reverse the reference-sector half-line.** Start from the general CLPW projection $\Pi=\Theta(-H-x)$ and show why its trace in the de Sitter reference vector reduces to an integral over $x\leq0$. As a deliberately unphysical comparison, reverse only that reference-sector half-line to $x\geq0$, evaluate $\int\beta e^{\beta x}dx$, and explain why it diverges. State why this toy reversal is neither the general operator constraint nor a claim about the physical ADM Hamiltonian.
 
 **Starred problems.**
 
-**5\*. How far below the maximum.** Using the §4.4 result $-S_{\mathrm{vN}}(\hat\rho) = S(\hat\rho\|1)$, compute the entropy deficit of a state whose density is $\hat\rho = 1 + \epsilon\,x$ with $\hat\tau(x) = 0$ and $\|x\|$ small, to second order in $\epsilon$. Identify the quadratic form you obtain as the Kubo–Mori metric of Sem II Wk 12 §2.4 evaluated at the tracial state, and say why it is the *flat* case of that metric.
+**5\*. How far below the maximum.** Using $-S(\rho)=D(\rho\Vert1)$, expand $\rho=1+\epsilon x$ with $\operatorname{Tr}x=0$ and $\|x\|$ small. Show that the leading entropy deficit is $\epsilon^2\operatorname{Tr}(x^2)/2$.
 
-**6\*. Modular-shift / Killing-shift conjecture.** Set up (do not fully solve) the lowest-order check of the §2.2 conjecture: relate the AAJ perturbed modular flow shift to a shift of the bulk modular Killing vector. Identify precisely what would need to be computed on each side to match them.
+**6\*. Algebra/bulk matching protocol.** Choose one term in AAJ Eq. (77) and one bulk observable in MSY. List the state, coupling profile, normalization, and correlators required to compare them. Explain why matching perturbative order alone is insufficient.
 
 **Project problems.**
 
@@ -253,4 +325,4 @@ Week 15 closes the course: final-write-up presentations, the instructor's outloo
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 5. Last revised 2026-08-23.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 5. Last revised 2026-08-24.*

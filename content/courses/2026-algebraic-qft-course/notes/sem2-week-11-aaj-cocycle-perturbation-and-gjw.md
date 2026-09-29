@@ -1,297 +1,417 @@
 ---
-title: "Sem II Week 11 — Ahmad–Jefferson I: Cocycle Perturbation Theory and the GJW Deformation"
+title: "Sem II Week 11 — Ahmad–Jefferson I: Unitary Perturbations, Araki Comparison, and GJW"
 type: lecture-notes
 course: syllabus
 semester: 2
 week: 11
 block: 4
-duration: 4 hours (seminar with student presentations)
-prerequisites: Sem I Wk 7 (Connes cocycle, Araki–Uhlmann); Sem II Wks 1–10
-target_paper: "Ahmad & Jefferson, arXiv:2501.01487 §§1–3; Gao–Jafferis–Wall, arXiv:1608.05687"
-modified: 2026-08-23
+duration: "master dossier: 4 hours of material; classroom core: 2-hour seminar + 1-hour office/self-study"
+prerequisites: Sem I Wk 7 (Connes cocycle, relative entropy); Sem II Wks 1–10
+target_paper: "Ahmad & Jefferson, arXiv:2501.01487v2 §§2–4; Gao–Jafferis–Wall, arXiv:1608.05687"
+modified: 2026-08-24
 ---
 
-# Sem II Week 11 — Ahmad–Jefferson I: Cocycle Perturbation Theory and the GJW Deformation
+# Sem II Week 11 — Ahmad–Jefferson I: Unitary Perturbations, Araki Comparison, and GJW
 
-> *Block 3 (Liu) closed the structural picture: the crossed-product machine produces $S_{\mathrm{gen}}$ on the unperturbed dressed algebra. Block 4 is the climax — Ahmad–Jefferson (arXiv:2501.01487) **perturb** the dressed algebra and compute the resulting corrections to the generalized entropy. The tool is the **Connes cocycle** of Sem I Wk 7, now developed as a full perturbation series in a self-adjoint deformation $V$. The physical target is the **Gao–Jafferis–Wall (GJW) deformation** $V = g\,\mathcal{O}_L\mathcal{O}_R$, which couples the two boundaries of the eternal BH and makes the wormhole momentarily traversable. This week: the cocycle series, its careful distinction from the Dyson series, the GJW setup, and two worked examples (a finite-dimensional warmup and the free-field GJW analog). Week 12 turns this into the central mini-calculation.*
+> *Ahmad and Jefferson ask how the crossed-product entropy changes when the background-defining algebra is unitarily deformed. Their paper does not derive the answer by expanding a Connes cocycle. It transports the modular data covariantly, computes the changed weight in the type-II trace, and organizes the deformation by BCH nested commutators. Because the course has already developed Connes cocycles, we place a separate Araki perturbation interlude beside their calculation. The comparison is valuable precisely when the two constructions are not identified: one changes a state by a Gibbs-type modular perturbation; the other transports an algebra/state system by a unitary and tracks the crossed-product weight.*
 
-## 0. Reading
+> **Route through this master dossier.** **Classroom core (two-hour seminar):** §§1–2, §3.1, and §4, with the AAJ/Araki distinction and the GJW sign convention kept on the board. **Full derivation or self-study:** the finite-dimensional reconstruction in §3, the computation protocol in §5, and the core exercises. **Research extension or office hour:** the AAJ term ledger, the starred problems, and the project/source-comparison tasks. The comparison interlude is pedagogical scaffolding and is never substituted for AAJ's actual calculation.
 
-**Primary:**
-- Ahmad & Jefferson, "Algebraic perturbation theory: traversable wormholes and generalized entropy beyond subleading order," **arXiv:2501.01487**, §§1–3 (motivation, cocycle setup, application to GJW).
-- Sem I Wk 7 (Connes cocycle $(D\omega/D\phi)_t$, relative entropy).
-- Gao, Jafferis, Wall, "Traversable wormholes via a double trace deformation," **arXiv:1608.05687**, §§1–3 (the original deformation).
+## 0. Reading and source map
 
-**Secondary / gentler:**
-- Sem I Wk 6 (modular flow, KMS) — the cocycle intertwines two modular flows.
-- Sem II Wks 5–7 (CPW two-sided structure) — the unperturbed setting AAJ perturb.
+**Primary.**
 
-**Optional research reading:**
-- Faulkner, Li, Wang, "A modular toolkit for bulk reconstruction," arXiv:1806.10560.
-- Lashkari, "Modular Hamiltonian of excited states in conformal field theory," arXiv:1508.03506 (perturbative modular Hamiltonians).
+- S. Ali Ahmad and R. Jefferson, “Algebraic perturbation theory: traversable wormholes and generalized entropy beyond subleading order,” arXiv:2501.01487v2.
+  - §2: crossed products in AdS–Schwarzschild;
+  - §3: weighting of expectation values under a general unitary perturbation;
+  - §4: black-hole evaporation and the traversable-wormhole application;
+  - §5: discussion.
+- P. Gao, D. L. Jafferis, and A. C. Wall, “Traversable Wormholes via a Double Trace Deformation,” arXiv:1608.05687. GJW work to linear order in their deformation strength.
 
-## 1. Why perturbation theory, and why cocycles
+**Equation-number convention.** This dossier follows the arXiv v2 **HTML**
+numbering. In the v2 PDF, HTML Eqs. (52)--(53) are Eqs. (3.41)--(3.42),
+while HTML Eqs. (74), (76)--(78) are Eqs. (4.17), (4.19)--(4.21).
 
-### 1.1 The question
+**Course interlude.** Sem I Week 7 supplies the Connes cocycle. Sections 2–3 below reconstruct a bounded finite-dimensional Araki perturbation as a comparison model. It is not attributed to AAJ.
 
-Blocks 1–3 computed the dressed entropy of *equilibrium* states — the TFD vacuum and simple coherent excitations. But the physically rich questions are about **deformed** states: turn on a coupling between the two boundaries, watch the wormhole respond. The GJW deformation is the canonical example. We need a perturbation theory for the dressed entropy.
+**Optional.** T. Faulkner, M. Li, and H. Wang, “A modular toolkit for bulk reconstruction,” arXiv:1806.10560.
 
-The naive approach — expand the density matrix $\rho_V = \rho_0 + g\,\delta\rho + \cdots$ and plug into $-\mathrm{Tr}(\rho\log\rho)$ — **fails in type III**, where there is no density matrix and no trace (Sem I Wk 12). AAJ's insight: the right perturbative object is the **Connes cocycle**, which exists for any pair of states on any von Neumann algebra, trace or no trace.
+## 1. The perturbation that AAJ actually study
 
-> **Physical picture.** In ordinary QM, "how does the state change under a perturbation?" is answered by perturbing $\rho$. In a type III algebra there is no $\rho$ to perturb — but there is always the *relation between two states*, captured by the relative modular operator and the Connes cocycle (Sem I Wk 7). AAJ's move is to make the cocycle the primitive perturbative object: instead of "the perturbed density matrix," compute "the cocycle relating the perturbed state to the unperturbed one." This is the type-III-native version of perturbation theory, and it is why the framework works where density-matrix methods break down. The cocycle is to type III what $\delta\rho$ is to type I.
+### 1.1 Unitarily related algebra-state systems
 
-### 1.2 Recall: the Connes cocycle
-
-From Sem I Wk 7: given two faithful normal states $\omega, \phi$ on $\mathcal{M}$, the **Connes cocycle** is the one-parameter family of unitaries
-$$
-u_t := (D\omega/D\phi)_t \in \mathcal{M},
-$$
-the noncommutative Radon–Nikodym derivative. It intertwines the two modular flows,
-$$
-\sigma^\omega_t(a) = u_t\,\sigma^\phi_t(a)\,u_t^*,
-$$
-and satisfies the **cocycle identity**
-$$
-u_{s+t} = u_s\,\sigma^\phi_s(u_t).
-$$
-In the type-I model, $u_t = \rho_\omega^{it}\rho_\phi^{-it}$ (with $\rho_\omega, \rho_\phi$ the density matrices), and the cocycle identity is immediate.
-
-## 2. The cocycle perturbation series
-
-### 2.1 Setup
-
-Let $\mathcal{M}$ be a von Neumann algebra, $\Omega$ a cyclic-separating vector with state $\omega$ and modular flow $\sigma_t \equiv \sigma^\omega_t$. Let $V = V^* \in \mathcal{M}$ be a bounded self-adjoint **perturbation**. Define the perturbed state $\omega_V$ as the state of the vector obtained by the unitary/exponential deformation generated by $V$ (precisely: $\omega_V$ is the state whose modular structure is shifted by $V$; in the type-I model $\rho_V \propto e^{-(K + V)}$ with $K = -\log\rho_\omega$).
-
-We want the cocycle $u_t = (D\omega_V/D\omega)_t$ as a power series in $V$.
-
-### 2.2 The series
-
-**Proposition 2.1 (Cocycle perturbation series). [Model proof — finite dimensions, bounded $V$; refs: AAJ §2; Sem I Wk 7.]** *To all orders in $V$,*
-$$
-u_t = 1 + i\int_0^t \sigma_{s_1}(V)\,ds_1 + i^2\!\int_0^t\!\!ds_1\!\int_0^{s_1}\!\!ds_2\;\sigma_{s_2}(V)\,\sigma_{s_1}(V) + \cdots
-\;=\; \overline{\mathcal{T}}\exp\!\Big(i\int_0^t \sigma_{s}(V)\,ds\Big),
-$$
-*an anti-time-ordered exponential of the modular-flowed perturbation, with **earlier modular times standing to the left**.*
-
-**Model proof (finite dimensions).** With $\rho_\omega = e^{-K}/Z$ and $\rho_V = e^{-(K+V)}/Z_V$, the cocycle in this course's conventions ([[courses/2026-algebraic-qft-course/conventions]]: $\sigma_t = \mathrm{Ad}(\Delta^{-it}) = \mathrm{Ad}(e^{itK})$) is
-$$
-u_t = (D\omega_V/D\omega)_t = e^{it(K+V)}\,e^{-itK},
-$$
-up to the scalar partition-function factors, which cancel. That this is the right object is checked directly: it intertwines the two modular flows, $\sigma^{\omega_V}_t(a) = u_t\,\sigma^\omega_t(a)\,u_t^*$, and satisfies the cocycle identity $u_{s+t} = u_s\,\sigma_s(u_t)$, both by cancelling adjacent exponentials.
-
-Differentiate, using that $K+V$ commutes with $e^{it(K+V)}$:
-$$
-\frac{d}{dt}\Big(e^{it(K+V)}e^{-itK}\Big)
-= e^{it(K+V)}\big[i(K+V) - iK\big]e^{-itK}
-= e^{it(K+V)}\,iV\,e^{-itK}.
-$$
-Now insert $e^{-itK}e^{itK} = 1$ after the first factor:
-$$
-\frac{d}{dt}u_t = \underbrace{e^{it(K+V)}e^{-itK}}_{u_t}\;\cdot\; i\,\underbrace{e^{itK}\,V\,e^{-itK}}_{\sigma_t(V)}
-\;=\; i\,u_t\,\sigma_t(V).
-$$
-Note the flow argument: $e^{itK}Ve^{-itK}$ is $\sigma_{+t}(V)$ in our convention, and $u_t$ stands to the **left** of it. With $u_0 = 1$ this is equivalent to the integral equation
-$$
-u_t = 1 + i\int_0^t u_{s}\,\sigma_{s}(V)\,ds ,
-$$
-and iterating it — substituting the equation into itself and keeping track of which factor came from the earlier iteration — produces the displayed series, with $\sigma_{s_2}(V)$ ($s_2 < s_1$) standing to the left of $\sigma_{s_1}(V)$. Equivalently, $u_t^*$ satisfies $\tfrac{d}{dt}u_t^* = -i\,\sigma_t(V)\,u_t^*$ and is therefore an ordinary time-ordered exponential; $u_t$ is its adjoint, hence anti-time-ordered. $\square$
-
-The ordering is worth stating explicitly rather than hiding inside a $\mathcal{T}$ symbol, because both conventions appear in the literature and the second-order term changes sign structure between them.
-
-### 2.3 Distinction from the Dyson series
-
-A point AAJ §2 emphasizes and worth dwelling on:
-
-| | Dyson series | Connes-cocycle series |
-|---|---|---|
-| Object | time-evolution operator $U(t) = \mathcal{T}e^{-i\int H_{\rm int}(s)ds}$ | cocycle $u_t = (D\omega_V/D\omega)_t$ relating two **states** |
-| "Free evolution" | the unperturbed Hamiltonian $H_0$ | the **modular flow** $\sigma_{s}$ |
-| Lives on | Hilbert space (vectors) | the **algebra** (intertwines modular automorphisms) |
-| Needs | a Hamiltonian, a Hilbert space | only two faithful normal states; **no trace, no Hamiltonian** |
-| Type III? | breaks (no global $H_0$) | works |
-
-> **Physical picture.** The two series look formally identical — both are time-ordered exponentials of an interaction-picture perturbation — but they answer different questions. Dyson evolves a *vector* forward in *physical* time under a Hamiltonian. The cocycle relates two *states* across *modular* time, and it is an element of the algebra, not an operator on a fixed Hilbert space. The reason AAJ need the cocycle and not Dyson is that the type III$_1$ boundary algebra has no Hamiltonian generating its modular flow (the flow is outer) — there is no $H_0$ to build a Dyson series from. The cocycle sidesteps this: it never needs a generator, only the flow itself. This is the precise sense in which AAJ's perturbation theory is "algebraic."
-
-## 3. The GJW deformation
-
-### 3.1 The deformation
-
-**The GJW double-trace deformation (GJW arXiv:1608.05687; AAJ §3). [Stated only.]** *On the two-sided eternal BH (Block 2), turn on the coupling*
-$$
-V = g\,\mathcal{O}_L\,\mathcal{O}_R,
-$$
-*where $\mathcal{O}_L \in \mathcal{A}_L$, $\mathcal{O}_R \in \mathcal{A}_R$ are matched single-trace operators on the two boundaries and $g$ is the deformation strength. Turning on $V$ for a finite time makes the eternal-BH wormhole **traversable**: a signal sent from the left boundary can reach the right.*
-
-The mechanism (bulk side, MSY, Block 5 Wk 14): $V$ sources a quantum stress tensor with negative averaged null energy across the horizon, the gravitational backreaction opens the throat, and a signal gets a Shapiro **time advance**. AAJ's question is the *boundary-algebra* counterpart: how does the dressed entropy respond?
-
-> **Physical picture.** $\mathcal{O}_L\mathcal{O}_R$ couples the two otherwise-causally-disconnected boundaries. Algebraically it is an operator that does **not** live in $\mathcal{A}_R$ or $\mathcal{A}_L$ alone — it straddles the commutant boundary, which is exactly why it can change the entanglement structure (and hence the bulk connectivity). Turning it on briefly is the algebraic act of "opening the wormhole": it shifts the modular flow of each side by an amount that, in the bulk, is the negative-energy shockwave that holds the throat open. The cocycle $u_t$ generated by $V$ *is* this shift, computed to whatever order in $g$ one needs.
-
-### 3.2 Perturbed modular flow
-
-Using the cocycle, the perturbed modular flow is
-$$
-\sigma^V_t(a) = u_t\,\sigma_t(a)\,u_t^*,
-$$
-where $u_t$ is the cocycle perturbation series of §2.2 with $V = g\mathcal{O}_L\mathcal{O}_R$. To first order in $g$,
-$$
-\sigma^V_t(a) = \sigma_t(a) + ig\int_0^t \big[\sigma_{s}(\mathcal{O}_L\mathcal{O}_R),\,\sigma_t(a)\big]\,ds + O(g^2).
-$$
-The shift in the flow is what, in the bulk, advances signals across the wormhole. We make this precise in the free-field analog below and quantitatively in Week 12.
-
-### 3.3 Perturbed dressed entropy
-
-On the dressed (type II$_\infty$) algebra, the perturbed state $\hat\omega_V$ has a well-defined von Neumann entropy (Sem I Wk 14), and
-$$
-S_{\mathrm{vN}}(\hat\omega_V) - S_{\mathrm{vN}}(\hat\omega_0) = O(g)\ \text{or}\ O(g^2),
-$$
-computable via the cocycle. AAJ's main result (Week 12) is the systematic enumeration of these corrections through quadratic order. This week we set up the machinery; Week 12 computes.
-
-## 4. Worked example I: finite-dimensional warmup
-
-The cleanest place to see the cocycle series concretely. (This is the skeleton's finite-dim warmup.)
-
-### 4.1 Setup
-
-Take $\mathcal{M} = M_2(\mathbb{C})$, $\rho_\omega = e^{-K}/Z$ with $K = \mathrm{diag}(0, \varepsilon)$ a "thermal" Hamiltonian (so $\omega$ is a Gibbs state at $\beta = 1$, $\rho_\omega = \mathrm{diag}(1, e^{-\varepsilon})/Z$, $Z = 1 + e^{-\varepsilon}$). Let $V = V^* \in M_2(\mathbb{C})$ be a perturbation, e.g. $V = v\,\sigma_x$ for real $v$.
-
-### 4.2 The cocycle to second order
-
-The modular flow is $\sigma_t(a) = e^{itK}a\,e^{-itK}$, which acts on matrix units by $\sigma_t(E_{jk}) = e^{it(K_j - K_k)}E_{jk}$ with $K_1 = 0$, $K_2 = \varepsilon$. Since $\sigma_x = E_{12}+E_{21}$ and $K_1 - K_2 = -\varepsilon$,
-$$
-\sigma_s(V) = v\big(e^{-is\varepsilon}\,E_{12} + e^{+is\varepsilon}\,E_{21}\big).
-$$
-
-**First order.** Integrating term by term,
-$$
-u_t^{(1)} = i\int_0^t \sigma_{s}(V)\,ds
-= iv\Big(\frac{1-e^{-it\varepsilon}}{i\varepsilon}\,E_{12} + \frac{e^{it\varepsilon}-1}{i\varepsilon}\,E_{21}\Big)
-= \frac{v}{\varepsilon}\Big[\big(1-e^{-it\varepsilon}\big)E_{12} + \big(e^{it\varepsilon}-1\big)E_{21}\Big].
-$$
-Write $\alpha := 1 - e^{-it\varepsilon}$, so that the $E_{21}$ coefficient is $e^{it\varepsilon}-1 = -\bar\alpha$ and
-$$
-u^{(1)}_t = \frac{v}{\varepsilon}\big(\alpha E_{12} - \bar\alpha E_{21}\big).
-$$
-In this form anti-self-adjointness is immediate — $(u^{(1)}_t)^* = \tfrac{v}{\varepsilon}(\bar\alpha E_{21} - \alpha E_{12}) = -u^{(1)}_t$ — which is exactly what unitarity of $u_t$ requires at first order.
-
-**Second order.** The nested integral is
-$$
-u_t^{(2)} = i^2\!\int_0^t\!\!ds_1\!\int_0^{s_1}\!\!ds_2\;\sigma_{s_2}(V)\,\sigma_{s_1}(V),
-$$
-with the earlier time on the left, per Proposition 2.1. The product of the two flowed perturbations collapses immediately, because $E_{12}E_{12} = E_{21}E_{21} = 0$ while $E_{12}E_{21} = E_{11}$ and $E_{21}E_{12} = E_{22}$:
-$$
-\sigma_{s_2}(V)\,\sigma_{s_1}(V) = v^2\Big[e^{\,i(s_1-s_2)\varepsilon}\,E_{11} + e^{-i(s_1-s_2)\varepsilon}\,E_{22}\Big].
-$$
-Only the *difference* of modular times survives — the perturbation is off-diagonal, so a product of two insertions is diagonal and depends only on the modular-time separation. Substituting $\tau = s_1 - s_2$ and doing both integrals,
-$$
-I(t) := \int_0^t\!\!ds_1\!\int_0^{s_1}\!\!d\tau\;e^{i\tau\varepsilon}
-= \int_0^t \frac{e^{is_1\varepsilon}-1}{i\varepsilon}\,ds_1
-= \frac{it}{\varepsilon} - \frac{e^{it\varepsilon}-1}{\varepsilon^{2}},
-$$
-so that
-$$
-\boxed{\;u_t^{(2)} = -v^{2}\Big[I(t)\,E_{11} + \overline{I(t)}\,E_{22}\Big],\qquad
-I(t) = \frac{it}{\varepsilon} - \frac{e^{it\varepsilon}-1}{\varepsilon^{2}}.\;}
-$$
-
-**Unitarity check.** Unitarity at second order requires $u^{(2)} + u^{(2)*} + u^{(1)*}u^{(1)} = 0$. Both pieces are multiples of the identity, so the check is a single scalar identity. From the boxed result,
-$$
-u^{(2)} + u^{(2)*} = -v^{2}\big(I + \bar I\big)\mathbb{1} = -\frac{2v^{2}\big(1-\cos t\varepsilon\big)}{\varepsilon^{2}}\,\mathbb{1},
-$$
-using $2\,\mathrm{Re}\,I = -2(\cos t\varepsilon - 1)/\varepsilon^2$. For the other piece, $u^{(1)}u^{(1)} = \tfrac{v^2}{\varepsilon^2}(\alpha)(-\bar\alpha)\mathbb{1} = -\tfrac{v^2|\alpha|^2}{\varepsilon^2}\mathbb{1}$, and $|\alpha|^2 = |1-e^{-it\varepsilon}|^2 = 2(1-\cos t\varepsilon)$, so
-$$
-u^{(1)*}u^{(1)} = -u^{(1)}u^{(1)} = +\frac{2v^{2}\big(1-\cos t\varepsilon\big)}{\varepsilon^{2}}\,\mathbb{1}.
-$$
-The two cancel exactly. Thus $u_t$ is unitary through $O(v^2)$, which is a genuine check on both the ordering convention and the second-order integral — get either wrong and the cancellation fails.
-
-### 4.3 The two limits
-
-The warmup's payoff is checking the two limits AAJ highlight:
-
-- **$\beta \to 0$ (high temperature, $K \to 0$):** the modular flow becomes trivial ($\sigma_{s}(V)\to V$), and the cocycle series collapses to $u_t = e^{itV}$ — the ordinary **Dyson/unitary** series with $V$ as a Hamiltonian. The warmup shows this explicitly: as $\varepsilon\to0$ we have $1-e^{-it\varepsilon}\to it\varepsilon$ and $e^{it\varepsilon}-1\to it\varepsilon$, so $u^{(1)}_t \to \tfrac{v}{\varepsilon}\,it\varepsilon\,(E_{12}+E_{21}) = itV$, which is the first-order term of $e^{itV}$.
-- **$\beta \to \infty$ (zero temperature, ground state):** the modular flow becomes the ground-state modular flow, and the cocycle reduces to **vacuum-state perturbation theory**. The series is the modular analog of old-fashioned Rayleigh–Schrödinger perturbation theory.
-
-> **Physical picture.** The finite-$\beta$ cocycle *interpolates* between Dyson (high $T$) and vacuum perturbation theory (low $T$). At high temperature the modular flow is sluggish and $V$ is integrated almost statically — pure Dyson. At low temperature the modular flow is the sharp ground-state flow and the corrections organize by energy denominators — Rayleigh–Schrödinger. The genuinely thermal regime in between (where the eternal BH lives, at $\beta = \beta_H$) is neither: the modular flow drags $V$ around at the Hawking rate, and the corrections carry the Boltzmann weights of the horizon. This is why the cocycle is the right tool for a *thermal* deformation like GJW — it sits in the regime no single textbook perturbation theory covers.
-
-## 5. Worked example II: the free-field GJW analog
-
-The setting we carry into the Week 12 mini-calculation. (Skeleton's free-field analog.)
-
-### 5.1 Setup
-
-Take the dressed Rindler-Rindler algebra of the 4D massless free scalar (Sem II Wks 6–7): $\hat{\mathcal{A}}(W_R)$, with the Minkowski vacuum as the TFD-analog and modular flow = boost. The GJW analog deformation is the **Weyl-operator bilinear**
-$$
-V = g\,W(f_L)\,W(f_R), \qquad f_L \in W_L,\ f_R \in W_R,
-$$
-coupling the two wedges across the bifurcation surface. (More precisely one takes a self-adjoint combination, e.g. $V = g\,(W(f_L)W(f_R) + \text{h.c.})/2$ or the bilinear $\phi(f_L)\phi(f_R)$; we keep $V = V^*$.)
-
-### 5.2 The modular-flowed perturbation
-
-The modular flow on the wedge algebra is the boost (Bisognano–Wichmann, Sem I Wk 10), normalized in [[courses/2026-algebraic-qft-course/conventions]] so that modular time $s$ corresponds to boost rapidity $2\pi s$:
-$$
-\sigma_s(a) = U\big(\Lambda(2\pi s)\big)\,a\,U\big(\Lambda(2\pi s)\big)^{*}.
-$$
-On a Weyl operator this acts by transporting the test function, $U(\Lambda)W(f)U(\Lambda)^{*} = W(f\circ\Lambda^{-1})$, so
-$$
-\sigma_s\big(W(f)\big) = W\big(f\circ\Lambda(-2\pi s)\big) =: W(f_s),
-$$
-where $f_s$ is $f$ pushed forward by the boost of rapidity $2\pi s$. Note the inverse: the *operator* is boosted forward, so the *test function* is composed with the inverse boost. Getting this backwards flips the direction of the Shapiro shift in §5.4, which is why it is worth writing once and reusing.
-
-The left wedge boosts in the opposite direction (Sem II Wk 6 §3.1), and therefore
-$$
-\sigma_{s}(V) = g\,W\big(f_{L,-s}\big)\,W\big(f_{R,s}\big),
-\qquad f_{R,s} = f_R\circ\Lambda(-2\pi s),\quad f_{L,-s} = f_L\circ\Lambda(+2\pi s).
-$$
-As modular time $s$ grows, both test functions slide toward the bifurcation surface — the right one from the right, the left one from the left — with exponentially growing boost factors. That exponential is where all the interesting behaviour of the series comes from.
-
-### 5.3 The cocycle to first order
+AAJ begin with a type-III$_1$ algebra $\mathfrak A_0$, a cyclic-separating vector $|\Psi_0\rangle$, and the corresponding crossed product $\widehat{\mathfrak A}_0$. A unitary $U$ defines
 
 $$
-u_t = 1 + ig\int_0^t W\big(f_{L,-s}\big)\,W\big(f_{R,s}\big)\,ds + O(g^2).
+\mathfrak A=U\mathfrak A_0U^\dagger,
+\qquad
+|\Psi\rangle=U|\Psi_0\rangle.
 $$
-This is the free-field analog of AAJ Eq. (2.5). The first-order cocycle is a smeared, boost-evolved Weyl bilinear — fully explicit, computable from the symplectic form $\sigma(f_L, f_R)$ between the (boosted) test functions.
 
-### 5.4 The Shapiro-shift analog
+The adjoined $L^2(\mathbb R)$ factor is not acted on by $U$, so the full crossed product transforms covariantly. The modular operator and modular Hamiltonian transform by conjugation as well. This covariance is exact; the perturbative work enters when AAJ compare the trace weight and entropy of the deformed construction with the undeformed one.
 
-The perturbed modular flow $\sigma^V_t(a) = u_t\sigma_t(a)u_t^*$ shifts the flow of a right-wedge observable. To first order the shift is controlled by the commutator $[\sigma_{s}(V),\,\cdot\,]$, and for Weyl operators the commutator is fixed entirely by the Weyl relation $W(f)W(h) = e^{-\tfrac{i}{2}\varsigma(f,h)}W(f+h)$, which turns it into a **phase proportional to the symplectic form** $\varsigma(f_{R,s}, h)$ of the boosted test functions. Tracking when this phase becomes $O(1)$:
+In the two-sided application, $U$ mixes left and right observables. It is therefore unsafe to say that each one-sided deformed algebra is simply $U\mathfrak A_{R,0}U^\dagger$ or $U\mathfrak A_{L,0}U^\dagger$ in isolation. AAJ emphasize the full exterior algebra and then analyze its one-sided structure.
 
-**Claim (Example-only, free-field analog). [Heuristic for the bulk Shapiro shift.]** *The perturbed modular flow advances "later" modular times by an amount linear in $g\,\sigma(f_L, f_R)$ — the symplectic overlap of the two test functions. This is the algebraic shadow of the GJW/MSY Shapiro time advance: the signal arrives earlier by an amount $\propto g$.*
+### 1.2 Where the series comes from
 
-> **Physical picture.** In the bulk (Block 5 Wk 14), the GJW coupling sources a negative-energy shockwave that shifts the trajectory of a crossing signal — the Shapiro time advance, $\Delta v \propto -g$. On the boundary algebra, the *same* physics appears as a shift in the modular flow: the cocycle $u_t$ conjugates the boost, and a right-wedge operator's modular evolution is displaced by an amount set by the symplectic overlap $\sigma(f_L, f_R)$ of the coupled test functions. The algebra "sees" the traversal as a reorganization of modular time; the bulk "sees" it as a geometric shift of the throat. They are the same number computed in two languages — and matching them precisely is one of the open problems (Block 5 Wk 14 honest scoping). The free-field analog makes the algebraic side fully explicit; the bulk side needs gravity.
+AAJ choose
+
+$$
+U=e^{-i\tau H},
+\qquad
+H=H_0+\delta H_0,
+$$
+
+where $H_0=H_{L,0}+H_{R,0}$ is the decoupled part and $\delta H_0$ couples the two sides. AAJ impose, by construction,
+
+$$
+[H_0,\widetilde H_{L,0}]=0,
+$$
+
+and in their Eqs. (52)–(53) replace $H$ by $\delta H_0$ in the BCH series. For a checkable model, this step should be read as using the interaction-picture evolution generated by the interaction (with a time-independent $\delta H_0$ over the interval), or as adding the stronger commutator assumptions needed to make the replacement exact. The single condition $[H_0,\widetilde H_{L,0}]=0$ does **not**, by itself, remove a second-order term $[H_0,[\delta H_0,\widetilde H_{L,0}]]$ from a Schrödinger-picture BCH expansion of $e^{-i\tau(H_0+\delta H_0)}$. Within AAJ's stated replacement, if $\widetilde H_{L,0}$ is the relevant undeformed left modular charge, then
+
+$$
+\delta\widetilde H_{L,0}
+:=U\widetilde H_{L,0}U^\dagger-\widetilde H_{L,0}
+$$
+
+has the BCH expansion
+
+$$
+\delta\widetilde H_{L,0}
+=-i\tau[\delta H_0,\widetilde H_{L,0}]
+-\frac{\tau^2}{2}
+[\delta H_0,[\delta H_0,\widetilde H_{L,0}]]
++O(h^3),
+$$
+
+when the interaction is of order $h$. Outside that setup one must expand with the full $H$ or use the time-ordered interaction-picture Hamiltonian $\delta H_I(t)$; mixed commutators may then survive. AAJ insert their displayed $\delta H_0$ series, together with
+
+$$
+\beta=\beta_0+\beta_1+\beta_2+\cdots,
+\qquad
+\beta_n=O(h^n),
+$$
+
+into the spectral weight and Jacobian that appear in the type-II trace. The resulting entropy formulas are organized simultaneously in $h$ and $1/N$.
+
+This is the method to remember: **unitary covariance $\rightarrow$ changed modular charge $\rightarrow$ changed trace weight and Jacobian $\rightarrow$ entropy expansion**.
+
+### 1.3 What not to say
+
+AAJ do not present §2 as a Connes-cocycle construction, and §2 is not their perturbation section. Nor do they claim twenty quadratic terms. Their current v2 result, through $O(1/N^2)$, is:
+
+- five additional contributions at linear order in $h$;
+- fifteen contributions at order $h^2$;
+- twenty new contributions through quadratic order in total.
+
+Week 12 audits that count against the displayed AAJ equations.
+
+## 2. Course interlude: two different notions of perturbation
+
+The comparison with Connes theory is illuminating if we first keep two operations distinct.
+
+### 2.1 Unitary transport
+
+Given $(\mathfrak A_0,\Psi_0)$ and a unitary $U$, transport both:
+
+$$
+(\mathfrak A_0,\Psi_0)
+\longmapsto
+(U\mathfrak A_0U^\dagger,U\Psi_0).
+$$
+
+All modular data transform covariantly. If one transports an observable and the state together, its ordinary expectation value is unchanged. AAJ nevertheless obtain a nontrivial entropy comparison because the crossed-product trace is expressed with a deformation-dependent spectral weighting and a changed subsystem/algebraic assignment.
+
+### 2.2 Araki/Gibbs perturbation of a state
+
+Fix one algebra and, in a finite-dimensional model, take
+
+$$
+\rho_0=\frac{e^{-K}}{Z_0},
+\qquad
+\rho_V=\frac{e^{-(K+V)}}{Z_V},
+\qquad
+V=V^*.
+$$
+
+This changes the state on the same algebra. Abstract Araki perturbation theory reconstructs an analogous state from modular data under suitable hypotheses. The Connes cocycle relates the two states. This is not the same operation as transporting both the algebra and vector by $U$.
+
+The distinction answers a common student question: “If both are called perturbations, why do their series look different?” Because they compare different objects.
+
+## 3. Correct cocycle convention and a checkable finite model
+
+### 3.1 The sign convention
+
+Throughout the course,
+
+$$
+\sigma_t^\rho(a)=\rho^{-it}a\rho^{it}
+=e^{itK}ae^{-itK},
+$$
+
+and therefore
+
+$$
+\boxed{
+\left(\frac{D\omega_\rho}{D\omega_\sigma}\right)_t
+=\rho^{-it}\sigma^{it}.
+}
+$$
+
+It follows that the normalized-state cocycle for the Gibbs perturbation is
+
+$$
+u_t
+=\left(\frac{Z_V}{Z_0}\right)^{it}
+e^{it(K+V)}e^{-itK}.
+$$
+
+The scalar partition-function phase does **not** cancel. It drops out of the inner automorphism $\operatorname{Ad}u_t$, but it belongs to the Connes cocycle of the normalized states.
+
+It is useful to isolate the implementing cocycle
+
+$$
+v_t:=e^{it(K+V)}e^{-itK}.
+$$
+
+It obeys
+
+$$
+\frac{d v_t}{dt}=i\,v_t\sigma_t^0(V),
+\qquad
+v_0=1,
+$$
+
+and hence
+
+$$
+v_t
+=\overline{\mathcal T}
+\exp\!\left(i\int_0^t\sigma_s^0(V)\,ds\right),
+$$
+
+with earlier modular times to the left. This is a bounded finite-dimensional reconstruction of an Araki implementing cocycle. Multiplying by $(Z_V/Z_0)^{it}$ gives the normalized-state Connes cocycle.
+
+### 3.2 Why this is not AAJ's series
+
+Both calculations involve modular objects, but their expansion variables are arranged differently:
+
+| Course Araki model | AAJ v2 |
+|---|---|
+| same algebra, Gibbs-perturbed state | unitarily deformed algebra-state system |
+| expand modular-time-ordered $\sigma_s(V)$ | expand conjugated modular charge with BCH |
+| cocycle relates two states | trace weight/Jacobian compares crossed products |
+| partition-function phase required for normalized states | inverse-temperature and spectral-variable changes enter explicitly |
+
+The course uses the left column to consolidate Sem I. The source audit and entropy calculation use the right column.
+
+### 3.3 $M_2$ warmup through second order
+
+Let
+
+$$
+K=\begin{pmatrix}0&0\\0&\varepsilon\end{pmatrix},
+\qquad
+V=v\sigma_x=v(E_{12}+E_{21}).
+$$
+
+The unperturbed modular flow gives
+
+$$
+\sigma_s^0(V)
+=v\left(e^{-is\varepsilon}E_{12}
++e^{is\varepsilon}E_{21}\right).
+$$
+
+For the implementing cocycle $v_t=1+v_t^{(1)}+v_t^{(2)}+O(v^3)$,
+
+$$
+v_t^{(1)}
+=\frac{v}{\varepsilon}
+\left[(1-e^{-it\varepsilon})E_{12}
++(e^{it\varepsilon}-1)E_{21}\right].
+$$
+
+At second order,
+
+$$
+v_t^{(2)}
+=-v^2\left[I(t)E_{11}+\overline{I(t)}E_{22}\right],
+$$
+
+where
+
+$$
+I(t)=\frac{it}{\varepsilon}
+-\frac{e^{it\varepsilon}-1}{\varepsilon^2}.
+$$
+
+The calculation is short: $E_{12}^2=E_{21}^2=0$, while $E_{12}E_{21}=E_{11}$ and $E_{21}E_{12}=E_{22}$. A decisive check is
+
+$$
+v_t^{(2)}+v_t^{(2)*}+v_t^{(1)*}v_t^{(1)}=0,
+$$
+
+which verifies unitarity through second order. The full normalized-state cocycle is obtained only after multiplying by the exact phase $(Z_V/Z_0)^{it}$.
+
+### 3.4 Temperature limits, carefully stated
+
+If $K\to0$ while $V$ is held fixed, the implementing cocycle tends to $e^{itV}$. The normalized cocycle retains its scalar partition-function phase. At the opposite limit, a finite-dimensional Gibbs state tends toward a nonfaithful ground-state density matrix. The faithful-state Connes cocycle used above therefore has no automatic $\beta\to\infty$ limit. One may formulate vacuum perturbation theory with support projections or a different standard form, but it is not simply Rayleigh–Schrödinger theory obtained by taking the limit in these formulas.
+
+## 4. GJW and AAJ's application
+
+### 4.1 The original deformation
+
+Gao, Jafferis, and Wall add a time-dependent double-trace coupling between the two boundaries. In their Hamiltonian convention,
+
+$$
+\boxed{
+\delta H(t)=-\int d^{d-1}x\,h(t,x)\,
+\mathcal O_R(t,x)\mathcal O_L(-t,x).
+}
+$$
+
+For the positive $h$ profile used in their controlled scalar example, this convention produces negative horizon-averaged null energy. If one instead writes $\delta H=+g\mathcal O_L\mathcal O_R$, the traversable choice is correspondingly $g<0$ after matching the left-time argument and smearing. Invariantly, the required sign is the one for which the computed horizon integral is negative. GJW work to linear order in the deformation. The resulting gravitational backreaction shifts a null trajectory and makes the wormhole traversable for an appropriate window of signals.
+
+The qualifier “appropriate” matters. An arbitrary sign, profile, or operator does not automatically open the wormhole.
+
+### 4.2 AAJ's use of GJW
+
+AAJ use the GJW interaction as a concrete $\delta H_0$ in their general unitary framework. The nested commutators
+
+$$
+[\delta H_0,\widetilde H_{L,0}],
+\qquad
+[\delta H_0,[\delta H_0,\widetilde H_{L,0}]]
+$$
+
+feed into the changed crossed-product weight. Their calculation extends the linear-order GJW entropy discussion and produces the five-plus-fifteen term ledger quoted above. It does not follow by identifying a Connes cocycle with a bulk shockwave.
+
+## 5. A genuine free-field comparison protocol
+
+The free-field analog is useful if its scope is kept modest. It checks unitary conjugation, Weyl commutators, and Gaussian expectation values. It does not reproduce gravitational backreaction or a Shapiro time advance.
+
+### 5.1 Regulated joint algebra
+
+Let $f_L$ and $f_R$ be real test functions supported in opposite Rindler wedges. Since the supports are spacelike separated,
+
+$$
+\sigma(f_L,f_R)=0.
+$$
+
+Define
+
+$$
+Q=W(f_L)W(f_R)=W(f_L+f_R),
+\qquad
+V=\frac12(Q+Q^*).
+$$
+
+Then $V$ is a bounded self-adjoint element of the **joint** algebra $\mathcal A(W_L)\vee\mathcal A(W_R)$, not of either one-sided algebra alone. Work first with a finite-volume or finite-mode regulator if entropy or density matrices will be used.
+
+Take
+
+$$
+U_g=e^{-igV},
+\qquad
+A_g=U_gAU_g^*.
+$$
+
+For bounded $A$,
+
+$$
+\left.\frac{dA_g}{dg}\right|_{g=0}
+=-i[V,A],
+\qquad
+\left.\frac{d^2A_g}{dg^2}\right|_{g=0}
+=-[V,[V,A]].
+$$
+
+These identities are the exact finite-regulator counterpart of the BCH structure used by AAJ.
+
+### 5.2 A checkable Weyl commutator
+
+For a right-wedge Weyl observable $W(h_R)$,
+
+$$
+[Q,W(h_R)]
+=W(f_L)[W(f_R),W(h_R)].
+$$
+
+The Weyl relations give
+
+$$
+[Q,W(h_R)]
+=-2i\sin\!\left(\frac{\sigma(f_R,h_R)}{2}\right)
+W(f_L+f_R+h_R).
+$$
+
+The left-right symplectic form does not generate this response—it vanishes by locality. The response is controlled by the same-side form $\sigma(f_R,h_R)$, while the left Weyl factor remains in the resulting joint operator.
+
+Vacuum expectations of all products can then be evaluated from
+
+$$
+\omega_0\!\left(\prod_{j=1}^nW(f_j)\right)
+=\exp\!\left[-\frac{i}{2}\sum_{j<k}\sigma(f_j,f_k)
+-\frac12\mu\!\left(\sum_jf_j,\sum_jf_j\right)\right].
+$$
+
+This is a real mini-calculation: specify the functions and covariance, evaluate the nested commutators, and compare their Taylor series with exact finite-matrix conjugation.
+
+### 5.3 Modular boosts do not push support to the horizon
+
+Bisognano–Wichmann transports $W(f)$ by a Lorentz boost. In Rindler coordinates that boost translates Rindler time and preserves the radial coordinate. A common boost of the full vacuum configuration therefore does not “slide both test functions toward the bifurcation surface.” A horizon-localization family must be defined by changing the support itself, not by relabeling a common boost orbit.
+
+### 5.4 What this protocol cannot claim
+
+The free scalar has no dynamical gravity. Its Weyl commutator is not a negative-energy shockwave, and there is no bulk Shapiro shift to match. The calculation provides an algebraic perturbation laboratory. Any equality between its commutator coefficient and a gravitational time advance would be a new, separately derived result.
 
 ## 6. What to take away
 
-- **Cocycle perturbation series (model proof):** $u_t = (D\omega_V/D\omega)_t = \overline{\mathcal{T}}\exp(i\int_0^t \sigma_{s}(V)\,ds)$, an *anti*-time-ordered exponential (earlier modular times to the left) of the modular-flowed perturbation. Derived in finite dimensions from $u_t = e^{it(K+V)}e^{-itK}$, whose derivative is $i\,u_t\,\sigma_t(V)$.
-- **Cocycle vs. Dyson:** same formal shape, different object — the cocycle relates two *states* across *modular* time and lives on the algebra; it needs no Hamiltonian and no trace, so it works in type III where Dyson cannot.
-- **GJW deformation (stated only):** $V = g\,\mathcal{O}_L\mathcal{O}_R$ couples the two boundaries and makes the wormhole traversable. The cocycle it generates is the algebraic content of "opening the throat."
-- **Two limits of the warmup:** $\beta\to 0$ recovers Dyson (checked explicitly: $u^{(1)}_t \to itV$ as $\varepsilon\to0$); $\beta\to\infty$ recovers vacuum perturbation theory; the thermal regime $\beta = \beta_H$ is the genuinely new one GJW lives in. The $M_2$ warmup is carried to second order and passes the unitarity check $u^{(2)}+u^{(2)*}+u^{(1)*}u^{(1)} = 0$.
-- **Free-field GJW analog:** $V = g\,W(f_L)W(f_R)$ with boost-evolved test functions; the first-order cocycle is an explicit smeared Weyl bilinear, and the perturbed modular flow shifts by $\propto g\,\sigma(f_L, f_R)$ — the algebraic shadow of the Shapiro advance.
+- AAJ v2 use unitary covariance, spectral reweighting, a Jacobian, and BCH nested commutators; they do not compute their entropy series from a Connes cocycle.
+- The course's Araki interlude is complementary and explicitly labeled as such.
+- With $\sigma_t=\operatorname{Ad}\rho^{-it}$,
+
+$$
+\left(D\omega_V/D\omega_0\right)_t
+=\left(Z_V/Z_0\right)^{it}e^{it(K+V)}e^{-itK}.
+$$
+
+- The partition-function phase is part of the normalized-state cocycle, although it does not affect the implemented automorphism.
+- GJW is a linear-order result for a suitable double-trace profile/sign. AAJ extend the entropy analysis with five additional linear terms and fifteen quadratic terms through $O(1/N^2)$.
+- The free-field protocol checks BCH and Gaussian algebra. It does not derive traversability.
 
 ## 7. Looking ahead
 
-Week 12 is the **central mini-calculation of Semester II** (Mini-Calc 4): take the free-field GJW analog, build the perturbed dressed state via the cocycle, and compute the dressed-entropy correction to second order in $g$. AAJ find **20 distinct corrections at quadratic order**; the mini-calc asks which survive in the free-field analog and which are holography-specific. This calculation is the technical basis for the final write-up.
+Week 12 audits AAJ's actual $O(h)$ and $O(h^2)$ ledgers, preserves the exact $M_2$ calculation as a model, and turns the continuum “mini-calc” into a reproducible protocol. The deliverable will distinguish what AAJ calculate, what the finite regulator verifies, and what remains a gravity interpretation.
 
 ## 8. Problem set
 
-**Core problems.**
+### Core problems
 
-**1. The warmup with a diagonal perturbation.** Redo §4.2 for $V = v\,\sigma_z$ instead of $v\,\sigma_x$. Show that $\sigma_s(V) = V$ for all $s$, so the series sums to $u_t = e^{itV}$ exactly, at every temperature. Explain what feature of $\sigma_x$ made the $\sigma_x$ case non-trivial, and state the general criterion on $V$ for the cocycle to be a simple exponential.
+**1. Cocycle sign audit.** Starting from $\sigma_t^\rho(a)=\rho^{-it}a\rho^{it}$, derive $(D\omega_\rho/D\omega_\sigma)_t=\rho^{-it}\sigma^{it}$. Insert the two Gibbs densities and recover the partition-function phase.
 
-**2. Cocycle identity to second order.** Verify $u_{s+t} = u_s\,\sigma_s(u_t)$ to $O(V^2)$ using the series of Proposition 2.1. (This is the consistency condition that makes $u_t$ a genuine cocycle.)
+**2. Implementer versus normalized cocycle.** Verify that $v_t=e^{it(K+V)}e^{-itK}$ and $u_t=(Z_V/Z_0)^{it}v_t$ implement the same automorphism. Which one is the cocycle of the normalized states?
 
-**3. The two limits.** Show that as $\varepsilon \to 0$ (i.e. $\beta\to 0$, $K\to 0$) the warmup cocycle becomes $u_t = e^{itV}$ (Dyson). Describe qualitatively what happens as $\varepsilon\to\infty$.
+**3. Second-order check.** Derive $I(t)$ in §3.3 and verify the second-order unitarity identity. Compare the truncated series with direct exponentiation for numerical values of $t,\varepsilon,v$.
 
-**4. Free-field first-order cocycle.** Write $u_t$ to first order for $V = g\,W(f_L)W(f_R)$ in the free-field analog, with the test functions boost-evolved. Identify the dependence on the symplectic form $\sigma(f_L, f_R)$. (This is AAJ Eq. (2.5) in the free-field setting.)
+**4. Two perturbations.** Give one sentence explaining why $\rho_0\mapsto e^{-(K+V)}/Z_V$ is not the same as $(\mathfrak A_0,\Psi_0)\mapsto(U\mathfrak A_0U^*,U\Psi_0)$.
 
-**Starred problems.**
+**5. AAJ source map.** Locate unitary covariance, the general weight, the entropy expansion, and the GJW application in v2. Record the section and equation number for each.
 
-**5\*. Cocycle to second order, free field.** Compute $u_t^{(2)}$ for the free-field GJW analog and verify the cocycle identity. Identify which term carries the leading Shapiro-shift contribution.
+### Starred problems
 
-**6\*. Shift of "later" times.** Show that the perturbed modular flow $\sigma^V_t$ shifts later modular times by an amount linear in $g\,\sigma(f_L, f_R)$. Relate the sign of the shift to the sign of $g$ (advance vs. delay).
+**6*. Weyl response.** Derive the exact commutator in §5.2, including its sign. Repeat for $Q^*$ and assemble $[V,W(h_R)]$.
 
-**Project problems.**
+**7*. Gaussian verification.** Choose an explicit finite covariance matrix satisfying the Weyl uncertainty condition. Evaluate the first two derivatives of $\omega_0(A_g)$ and compare them with exact matrix data in a truncated oscillator representation.
 
-**7. GJW bulk reading.** Read GJW (arXiv:1608.05687) §§1–3 and write one page connecting the boundary double-trace $g\mathcal{O}_L\mathcal{O}_R$ to the bulk negative-energy shockwave. This primes the Block 5 Wk 14 bulk/algebra comparison.
+**8*. Faithfulness at zero temperature.** Explain precisely why the $\beta\to\infty$ density matrix ceases to be faithful and which support projection enters a relative modular construction.
+
+### Project problem
+
+**9. GJW/AAJ ledger.** Make a two-column memo: “proved/computed in GJW at linear order” and “added in AAJ v2.” Cite exact equations and keep bulk negative-energy statements separate from crossed-product entropy statements.
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 4. Last revised 2026-08-23.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 4. Last revised 2026-08-24.*

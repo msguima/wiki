@@ -5,20 +5,26 @@ course: syllabus
 semester: 2
 week: 9
 block: 3
-duration: 4 hours (seminar with student presentations)
+duration: "master dossier: 4 hours of material; classroom core: 2-hour seminar + 1-hour office/self-study"
 prerequisites: Sem II Wks 1–8 (Witten 2022, CPW); Sem I Wks 10, 12, 13 (Bisognano–Wichmann, type III$_1$, crossed product)
 target_paper: "Hong Liu, Lectures on entanglement, von Neumann algebras, and emergence of spacetime, arXiv:2510.07017"
-modified: 2026-08-23
+modified: 2026-08-24
 ---
 
 # Sem II Week 9 — Liu Lectures I: Type III at Large $N$ and Modular Flow as Geometry
 
-> *Blocks 1–2 gave us two worked examples of the same machine: Witten 2022 (single-sided) and CPW (two-sided). Both identified a holographic boundary algebra as type III$_1$, then dressed its modular flow by a crossed product. Block 3 steps back and reads Hong Liu's lecture notes (arXiv:2510.07017), the cleanest modern synthesis of the whole program. This week covers two structural pillars: (i) **why type III appears at large $N$** — not as a technical accident but as the algebraic translation of "energy unbounded above, no local trace"; and (ii) the **modular-flow-equals-bulk-geometric-flow dictionary**, of which Bisognano–Wichmann (Sem I Wk 10) and the ADM/boost identifications (Blocks 1–2) are special cases. The Casini–Huerta–Myers ball modular Hamiltonian is the concrete touchstone we carry into Block 4.*
+> *Blocks 1–2 gave us two worked examples of the same machine: Witten 2022 (single-sided) and CPW (two-sided). Both identified a holographic boundary algebra as type III$_1$, then dressed its modular flow by a crossed product. Block 3 steps back and reads Hong Liu's lecture notes (arXiv:2510.07017), the cleanest modern synthesis of the whole program. This week covers two structural pillars: (i) the representation-theoretic mechanism by which type III$_1$ can emerge in the specified large-$N$ GNS limits; and (ii) the conditional modular-flow/bulk-flow dictionary in symmetric holographic examples. An unbounded Hamiltonian spectrum alone classifies no von Neumann algebra. The Casini–Huerta–Myers ball modular Hamiltonian—supplementary to Liu's discussion—is the concrete touchstone we carry into Block 4.*
+
+> **Route through this master dossier.** **Classroom core (two-hour seminar):** §§2.1–2.2 and 3, followed by the statement and central steps of the CHM derivation in §4. **Full derivation or self-study:** §§2.3 and 4 in full, including the null-coordinate flow, then Problems 1–5. **Research extension or office hour:** §5, the starred/project problems, and the primary-source route through Liu §§VI–VIII and Hislop–Longo/CHM. The board route emphasizes what is proved, what is imported, and what is a geometric dictionary.
 
 ## 0. Reading
 
 **Primary:**
-- Hong Liu, "Lectures on entanglement, von Neumann algebras, and emergence of spacetime," **arXiv:2510.07017**, §1 (introduction/motivation), §3 (type III at large $N$), §4 (modular flow ↔ bulk geometric flow).
+- Hong Liu, "Lectures on entanglement, von Neumann algebras, and emergence of spacetime," **arXiv:2510.07017**:
+  - §§II–IV: operator-algebra, type, and modular-flow background;
+  - §VI, especially §§VI.1–VI.3 and VI.6: the algebraic formulation of large-$N$ AdS/CFT and conserved-charge corrections;
+  - §VII, especially §VII.2: subregion–subalgebra duality and reconstruction;
+  - §VIII, especially §§VIII.1–VIII.3: emergence of causal structure, modular time, and the conditional algebraic ER=EPR proposal.
 
 **Secondary / gentler:**
 - Sem I Wk 10 (Bisognano–Wichmann) and Wk 12 (type III$_1$ classification) — the free-field/axiomatic versions of what Liu does holographically.
@@ -35,49 +41,53 @@ Two weeks on a pedagogical review, in the middle of a research-paper course, des
 
 Liu's lectures do three things no single research paper does:
 
-1. **They unify.** Witten 2022 (Block 1), CPW (Block 2), and AAJ (Block 4) look like three different constructions. Liu shows they are one construction — the modular crossed product — applied to three geometries. The organizing diagram of Week 10 is worth the price of admission.
+1. **They unify the large-$N$ and crossed-product spine.** Liu provides the language in which the course compares Witten and CPW. We then extend that comparison to AAJ as a later perturbative development; Liu's cited sections do not present AAJ's target framework. The course-built organizing diagram of Week 10 makes this extension explicit.
 
-2. **They make the large-$N$ → type III logic explicit.** Blocks 1–2 *asserted* that the boundary single-trace algebra is type III$_1$ (Block 1 Theorem 4.1, hypothesis-explicit). Liu §3 explains *why*, structurally, and connects it to the Leutheusser–Liu emergence-of-time program.
+2. **They make the large-$N$ → type III logic explicit.** Blocks 1–2 *asserted* that the boundary single-trace algebra is type III$_1$ (Block 1 §4.2, hypothesis-explicit). Liu §VI explains the large-$N$ algebraic formulation, while §§VII–VIII connect it to the Leutheusser–Liu emergence-of-time and subregion programs.
 
-3. **They install the dictionary.** "Modular flow = bulk geometric flow" is the single most useful slogan in the field. Liu §4 states it precisely and gives the Casini–Huerta–Myers ball example as the canonical instance.
+3. **They install the dictionary.** "Modular flow = bulk geometric flow" is a useful slogan when its hypotheses are visible. Liu §§VII–VIII formulate the algebra/region and emergent-geometry claims; CHM and Hislop–Longo provide the supplementary exact ball example developed below.
 
-This block is therefore **consolidation, not new content**. Students who have done Blocks 1–2 should find Liu mostly familiar — the value is in the synthesis. The seminar format (students present §3 and §4) is appropriate.
+This block is therefore **consolidation, not new content**. Students who have done Blocks 1–2 should find Liu mostly familiar—the value is in the synthesis. The seminar format assigns selected passages from §§VI–VIII, with §§II–IV routed only when background is needed.
 
 ## 2. Type III at large $N$: the structural story
 
 ### 2.1 The three faces of type III
 
-Recall from Sem I (Wks 3, 12) that a type III factor is characterized by any of the following equivalent conditions:
+Recall from Sem I (Wks 3, 12) that a type III factor can be recognized by the following intrinsic features:
 
 - **No trace.** There is no faithful normal semifinite trace.
 - **All projections infinite.** Every nonzero projection is Murray–von Neumann equivalent to a proper subprojection of itself.
-- **No density matrices.** No normal state is of the form $\omega(a) = \mathrm{Tr}(\rho a)$.
+- **No intrinsic density matrices.** Because the factor has no faithful normal semifinite trace, a normal state cannot be represented by a density element $\rho\in\mathcal M$ relative to such a trace. In a concrete representation a normal functional may still be written using an ambient trace-class operator on $\mathcal B(\mathcal H)$; that is not an intrinsic density matrix of $\mathcal M$.
 
-Liu §3 adds a fourth, physics-facing face, which is the one that explains *why QFT lands here*:
+Liu §IV adds a fourth, modular-theoretic face:
 
-- **Modular spectrum is all of $\mathbb{R}$ (for III$_1$).** The generator $K = -\log\Delta$ of the modular flow has continuous, unbounded, two-sided spectrum on every cyclic-separating state.
+- **Connes spectrum is maximal (for III$_1$).** The invariant
+  $$
+  S(\mathcal M)=\bigcap_{\varphi}\operatorname{spec}(\Delta_\varphi)
+  $$
+  (with the appropriate faithful normal weights/states in the standard definition) is $[0,\infty)$. Since each $\Delta_\varphi$ is positive, this equality of the intersection forces $\operatorname{spec}(\Delta_\varphi)=[0,\infty)$ for every faithful normal state/weight entering that definition; correspondingly the logarithmic modular spectrum fills $\mathbb R$. The conclusion should not be transferred to a nonfaithful state, a support-restricted construction, or an unrelated effective Hamiltonian merely called “modular.”
 
-> **Physical picture.** Type III is the operator-algebraic signature of *unbounded energy with no ground state inside the region*. A type-I algebra has a trace because it has minimal projections — "atoms," smallest yes/no questions — and you can count them. A local region of a relativistic QFT has no smallest excitation: the vacuum entangles modes at every scale across the entangling surface, so there is always a finer excitation localized nearer the boundary. "No minimal projection" *is* "no shortest-wavelength mode," and "no trace" *is* "the entanglement entropy across the boundary diverges." The same physics that makes the area law divergent (Sem I Wk 12) makes the algebra type III. This is not a pathology to regulate away; it is the structural fingerprint of a continuum field theory with a sharp boundary.
+> **Heuristic physical picture—not an equivalence theorem.** Continuum vacuum entanglement across a sharp boundary involves arbitrarily short scales, and cutoff entropies typically diverge. This picture is compatible with the absence of minimal projections and of an intrinsic semifinite trace in local type-III algebras. But “no shortest wavelength,” “no minimal projection,” “divergent regulated entropy,” and “type III” are not pairwise mathematical equivalences. Nor does energy being unbounded above imply a type. The classification requires the algebra, its representation, and the relevant modular/Connes invariants. The heuristic is useful because it tells us what physical structure the theorem is encoding; it must not replace the theorem.
 
 ### 2.2 How large $N$ produces it
 
-At finite $N$, a holographic CFT on a compact spatial slice has a discrete energy spectrum and a finite-dimensional (or at least trace-class) algebra — type I. The boundary single-trace algebra has a density matrix; everything is conventional quantum mechanics.
+At finite $N$, the **global** boundary theory in its ordinary Hilbert-space representation is expected to generate a type-I algebra, and on a compact spatial slice its thermal partition function can be trace class. This does not make sharp local continuum algebras finite dimensional: local subregion algebras may remain type III even at finite $N$. The large-$N$ discussion below concerns the emergent single-trace algebra in the specified GNS limit, not every possible boundary algebra.
 
-The large-$N$ limit changes the type. Liu §3 (following Leutheusser–Liu) frames it as follows:
+The relevant large-$N$ limit can change the type. Liu §VI (following Leutheusser–Liu) frames it as follows:
 
-**Theorem 2.1 (Type III emergence at large $N$). [Stated only — hypothesis-explicit; refs: Liu §3; Leutheusser–Liu arXiv:2110.05497, 2112.12156.]** *In a holographic CFT with a large-$N$ limit in which single-trace operators become generalized free fields (Block 1 §3), the boundary single-trace algebra associated with a time band (or a Rindler-like boundary region) of the eternal black hole is, at $N = \infty$, a type III$_1$ von Neumann factor. At finite $N$ the algebra is type I.*
+**Large-$N$ type statement used in this block. [Stated only and hypothesis-explicit; refs: Liu §VI; Leutheusser–Liu arXiv:2110.05497, 2112.12156.]** *For the thermal large-$N$ single-trace GNS representations analyzed in these sources, the resulting von Neumann algebras can be type III$_1$. Restoring finite-$N$ relations changes the relevant global algebraic description, but it does not justify a blanket statement about all sharp local CFT subregions.*
 
 The mechanism, structurally:
 
-1. At $N = \infty$, single-trace correlators factorize (Block 1 Theorem 3.2): the algebra is a **generalized free field** with a fixed two-point function.
+1. At $N = \infty$, single-trace correlators factorize (Block 1 §3.3): the algebra is a **generalized free field** with a fixed two-point function.
 2. The relevant boundary region (one side of the eternal BH, or a time band) sees the GFF modes with a **thermal, continuous** spectrum — the boundary two-point function in the BTZ/TFD state is the thermal correlator (Block 1 §6).
-3. The modular flow of this thermal GFF state has continuous unbounded spectrum (the ADM/boost generator), so the algebra is III$_1$ (Sem I Wk 12 mechanism).
+3. The type is then established from the full representation and its modular/Connes invariants. A continuous two-point spectral density is important evidence in the examples, but the spectrum of one modular operator is not by itself a classification proof.
 
-Step 3 is the one worth doing rather than asserting, because it is where the type is actually decided. The next subsection carries it out in the controlled case where the modes are discrete, which is enough to exhibit the whole mechanism.
+The next subsection gives a finite-mode and infinite-product **diagnostic model**. It illustrates how Boltzmann ratios enter modular spectra; it is not a substitute for the source's large-$N$ representation-theoretic argument.
 
-### 2.3 Model proof: how the mode spectrum fixes the type
+### 2.3 Toy ITPFI diagnostic: what mode ratios can teach us
 
-A thermal generalized free field is an infinite collection of independent thermal oscillators. Restricted to one side, its algebra is an **infinite tensor product of type I factors in a product state** — an Araki–Woods (ITPFI) factor — and for these the type is completely determined by the frequencies. We compute it.
+An infinite tensor product of matrix algebras in a product state is an ITPFI factor. Such models are useful because their modular spectra can be computed directly. The classification of a particular ITPFI factor, however, depends on the entire asymptotic eigenvalue sequence (and the associated ratio-set/flow-of-weights data), not just on spotting two ratios in one state.
 
 **Setup.** Take one mode of frequency $\omega$ at inverse temperature $\beta$, and truncate it to its lowest two levels, so the one-mode algebra is $M_2(\mathbb{C})$ in the Gibbs state
 $$
@@ -87,7 +97,7 @@ The full one-sided algebra of a GFF with mode frequencies $\{\omega_k\}$ is then
 $$
 \mathcal{M} = \bigotimes_{k}\big(M_2(\mathbb{C}),\, \phi_{\lambda_k}\big), \qquad \lambda_k = e^{-\beta\omega_k},
 $$
-built in the GNS representation of the product state $\phi = \bigotimes_k \phi_{\lambda_k}$. Note that the two-level truncation is a genuine restriction on the model and not on the argument: the harmonic-oscillator Gibbs state has eigenvalue ratios $e^{-\beta\omega n}$, which generate the same multiplicative group as $\lambda = e^{-\beta\omega}$, so the spectrum computed below is unchanged.
+built in the GNS representation of the product state $\phi = \bigotimes_k \phi_{\lambda_k}$. The two-level truncation is a genuine restriction on the model. For the narrower ratio-group diagnostic used below, however, a harmonic-oscillator Gibbs state has ratios $e^{-\beta\omega n}$ and therefore generates the same multiplicative group as $\lambda=e^{-\beta\omega}$. Its literal one-mode modular spectrum has more points, so only the generated group—not the full spectrum—is being preserved by this truncation.
 
 **The modular spectrum of one factor.** For a finite-dimensional algebra in a faithful state with density $\rho$, the modular operator on $\mathcal{H} = M_2 \cong \mathbb{C}^2\otimes\mathbb{C}^2$ is $\Delta = \rho\otimes\rho^{-1}$ (Sem I Wk 5 §3), so its eigenvalues are the **ratios** of the eigenvalues of $\rho$. With $\rho$ having eigenvalues proportional to $1$ and $\lambda$,
 $$
@@ -95,40 +105,45 @@ $$
 $$
 The state's overall normalization drops out, which is why only the ratio $\lambda$ matters.
 
-**The modular spectrum of the product.** Modular operators of a tensor product in a product state multiply, $\Delta_\phi = \bigotimes_k \Delta_{\phi_{\lambda_k}}$, so the spectrum of $\Delta_\phi$ is the closure of the set of finite products of the individual eigenvalues:
+**A product-state modular-spectrum diagnostic.** On finite tensor subproducts the modular eigenvalues multiply. Consequently the closure
 $$
-\mathrm{spec}\,\Delta_\phi = \overline{\Big\{\textstyle\prod_k \lambda_k^{n_k} \;:\; n_k\in\mathbb{Z},\ \text{finitely many nonzero}\Big\}}.
+G_\lambda:=\overline{\Big\{\textstyle\prod_k \lambda_k^{n_k} \;:\; n_k\in\mathbb{Z},\ \text{finitely many nonzero}\Big\}}
 $$
-This closure is a closed multiplicative subgroup of $\mathbb{R}_{>0}$, and Connes' invariant $S(\mathcal{M})$ — the intersection of the modular spectra over all faithful normal states — is exactly this group together with $0$. Closed subgroups of $\mathbb{R}_{>0}$ come in only three kinds, and they are precisely the three type III cases.
+records the multiplicative ratios visible in the chosen product state. One must not silently identify $\{0\}\cup G_\lambda$ with Connes' invariant $S(\mathcal M)$: $S(\mathcal M)$ is an intersection over weights/states, and proving equality requires the ITPFI classification theorem plus its hypotheses.
 
-**Case (i) — all frequencies equal, $\omega_k \equiv \omega_0$.** Every $\lambda_k = \lambda = e^{-\beta\omega_0}$, the generated group is $\lambda^{\mathbb{Z}}$, which is discrete, and
+**Benchmark (i)—the Powers construction.** If every factor has the same eigenvalue ratio $\lambda=e^{-\beta\omega_0}$ and infinitely many factors are present, the standard Powers construction gives
 $$
-S(\mathcal{M}) = \{0\}\cup\lambda^{\mathbb{Z}} \quad\Longrightarrow\quad \mathcal{M} \ \text{is type III}_\lambda .
+S(\mathcal M)=\{0\}\cup\lambda^{\mathbb Z},
+\qquad
+\mathcal M\text{ is type III}_\lambda.
 $$
-This is the Powers factor $R_\lambda$ of Sem I Wk 3 — the standard example of a type III$_\lambda$ factor, here obtained as the thermal algebra of infinitely many copies of one oscillator.
+This conclusion uses the known Powers-factor theorem; the elementary ratio calculation is its visible input, not its full proof.
 
-**Case (ii) — two incommensurate frequencies.** Suppose the spectrum contains $\omega_1$ and $\omega_2$ with $\omega_1/\omega_2$ irrational. The generated group contains $e^{-\beta(n_1\omega_1 + n_2\omega_2)}$ for all integers $n_1, n_2$, and by Weyl's equidistribution theorem $\{n_1\omega_1 + n_2\omega_2\}$ is dense in $\mathbb{R}$. Thus the group is dense, its closure is all of $\mathbb{R}_{>0}$, and
+**Benchmark (ii)—dense ratios.** If the asymptotic product contains infinitely recurring incommensurate ratios with the regularity assumptions needed by the ITPFI theorem, then $G_\lambda$ can be dense in $\mathbb R_{>0}$. The relevant classification theorem can then yield
 $$
-S(\mathcal{M}) = [0,\infty) \quad\Longrightarrow\quad \mathcal{M}\ \text{is type III}_1 .
+S(\mathcal M)=[0,\infty),
+\qquad
+\mathcal M\text{ is type III}_1.
 $$
+Density of integer combinations follows from the elementary irrational-ratio argument; the passage from that density to $S(\mathcal M)$ is the non-elementary step.
 
-**Case (iii) — a continuum of frequencies.** A fortiori dense, so type III$_1$. This is the GFF case: at $N=\infty$ the single-trace two-point function has a continuous spectral density, the mode frequencies fill an interval, and the algebra is III$_1$. $\square$ **[Model proof — two-level truncation of a discrete mode set; the continuum statement is the $N=\infty$ GFF case, refs: Araki–Woods 1968; Liu §3.]**
+**Benchmark (iii)—finite products.** With only finitely many tensor factors, the algebra is a matrix algebra, hence type I, however irrational its energy ratios may be. This is the quickest demonstration that a dense subgroup appearing in a modular spectrum is not by itself enough to prove type III$_1$.
 
-Note what decided the answer: not the size of the algebra, but whether the set of Boltzmann ratios $\{e^{-\beta\omega_k}\}$ generates a discrete or a dense subgroup of $\mathbb{R}_{>0}$. Finite $N$ on a compact slice gives a discrete spectrum with a gap and only finitely many modes below any energy, which is the type I case; the large-$N$ limit fills in the continuum, and the type jumps to III$_1$.
+The safe conclusion is therefore conditional: Boltzmann ratios help diagnose an infinite product, but the type is decided by the von Neumann algebra in its limiting representation and the appropriate Connes invariants. The large-$N$ result should be cited to the full argument in Liu and Leutheusser–Liu, not presented as an automatic consequence of “continuous frequencies.”
 
-> **Physical picture.** The computation says the type is a statement about *level spacings*, not about dimensions. A finite-$N$ CFT on a sphere has energies spaced by $O(1)$, so its thermal state has a discrete, gapped set of Boltzmann weights — countably many "atoms" the trace can count. Taking $N\to\infty$ collapses the spacing to zero: the single-trace spectrum becomes continuous, the Boltzmann ratios fill $\mathbb{R}_{>0}$, and there is no scale at which the counting can start. In the bulk this is the statement that the horizon has a continuous absorption spectrum — a quasinormal-mode continuum rather than a discrete line spectrum — which is exactly what distinguishes a genuine black hole from a very hot star. Type III$_1$ is the algebra's way of recording that the horizon absorbs at every frequency.
+> **Physical picture.** The toy model shows why an infinite hierarchy of modular ratios matters. In the holographic examples, continuous large-$N$ spectral data and thermal modular dynamics accompany the type-III$_1$ representation. It is tempting to translate this immediately into horizon absorption, but that is a physical interpretation, not the operator-algebraic classification theorem: quasinormal spectra, finite-volume recurrences, and Connes invariants are distinct objects and should be compared rather than identified.
 
 ### 2.4 Why this matters downstream
 
-The type III$_1$ structure is what makes the crossed product non-trivial (Sem I Wk 13: dressing an *outer* flow promotes the type; dressing an inner flow does not). If the boundary algebra were type I, the whole Witten/CPW/AAJ program would collapse to ordinary density-matrix quantum mechanics. The interest of the program is precisely that classical-gravity boundary algebras are type III$_1$, so the gravitational entropy must be *manufactured* by the crossed product rather than read off a density matrix.
+The type III$_1$ structure is what makes the modular crossed product a type-II$_\infty$ factor (Sem I Wk 13). If the starting factor were type I, its modular automorphisms would be inner; the analogous crossed product would untwist to a tensor product with an abelian factor and would not produce the same outer-flow type promotion. Ordinary density-matrix entropies might already exist in that type-I setting, so the physics would be different—not nonexistent. The interest of the Witten/CPW construction is precisely that the relevant semiclassical algebra is type III$_1$, while the crossed product supplies a trace only after the modular generator is adjoined.
 
 ## 3. Modular flow as bulk geometric flow
 
 ### 3.1 The dictionary
 
-The central content of Liu §4 is a dictionary entry that Blocks 1–2 used in special cases:
+The relevant content of Liu §§VII–VIII is a dictionary entry that Blocks 1–2 used in special cases:
 
-**The modular-flow/geometric-flow dictionary (Liu §4). [Hypothesis-explicit; refs: Liu §4; CHM arXiv:1102.0440; Hislop–Longo 1982.]** *For a boundary subregion $\mathcal{O}$ whose bulk causal/entanglement wedge $W_\mathcal{O}$ admits a Killing vector $\zeta$ fixing the RT surface and generating a flow that preserves $W_\mathcal{O}$, the boundary modular flow $\sigma_t^{\mathcal{O}}$ of the vacuum (or the relevant cyclic-separating state) is implemented in the bulk by the geometric flow along $\zeta$.*
+**Modular-flow/geometric-flow dictionary. [Conditional; refs: Liu §§VII–VIII; supplementary exact examples: CHM arXiv:1102.0440 and Hislop–Longo 1982.]** *In the symmetric examples where the algebra/state pair and its bulk wedge admit the required (conformal) Killing symmetry, boundary modular flow is represented semiclassically by the corresponding bulk geometric flow fixing the RT surface. For generic states or regions, modular flow still exists but need not be local or geometric.*
 
 Instances we have already met:
 
@@ -138,14 +153,14 @@ Instances we have already met:
 | Eternal BH, one boundary | full boundary | horizon boost ($\partial_t$) | CPW, Sem II Wk 5 |
 | CFT vacuum, ball | ball of radius $R$ | conformal Killing vector | Casini–Huerta–Myers, this week |
 
-> **Physical picture.** The dictionary says the *intrinsic thermal time* of a region (its modular flow, defined purely from the state and the algebra — Sem I Wk 6) coincides with a *geometric symmetry* of the dual bulk. This is remarkable: the modular flow is defined with no reference to dynamics, geometry, or a Hamiltonian, yet it turns out to move points around in the bulk along a Killing orbit. The slogan "modular flow = bulk geometric flow" is the dynamical core of holography — kinematics on the boundary (Tomita–Takesaki) is geometry in the bulk. It is exact only when the wedge has the requisite Killing symmetry (Rindler, ball-in-vacuum, eternal BH); for a generic region the modular flow exists but acts non-geometrically (non-locally) — a fact we flag carefully, because the whole subject's tractability rests on choosing geometrically nice regions.
+> **Physical picture.** The dictionary says the *intrinsic thermal time* of a region (its modular flow, defined purely from the state and the algebra — Sem I Wk 6) can coincide with a geometric symmetry. For Rindler wedges, and for vacuum balls in a CFT, this is an exact QFT statement under the theorem's hypotheses. For the eternal black hole it is a holographic/semiclassical identification in the chosen code subspace, not a consequence of Tomita--Takesaki alone. For a generic region the modular flow still exists but is usually nongeometric and nonlocal. The tractable examples are special precisely because additional symmetry turns the abstract flow into a spacetime motion.
 
 ### 3.2 Generalizing Bisognano–Wichmann
 
 Bisognano–Wichmann (Sem I Wk 10) is the dictionary's free-field, flat-space instance: the modular flow of the Rindler wedge is the boost, with modular Hamiltonian $K = 2\pi K_{\rm boost}$ and the famous $2\pi$ (Unruh temperature). Liu's dictionary is the holographic generalization:
 
 - **B–W (flat space):** modular flow on $\mathcal{A}(W_R)$ = boost. Proven from Wightman axioms.
-- **Liu (holographic):** modular flow on a boundary subregion = bulk Killing flow on the dual wedge. Established under the large-$N$ + geometric-symmetry hypotheses, using the bulk equations of motion.
+- **Holographic symmetric cases:** boundary modular flow is matched to bulk geometric flow under large-$N$, code-subspace, and geometric-symmetry assumptions.
 
 The conceptual content is identical: a thermal-looking restricted vacuum, whose modular flow is a spacetime symmetry fixing the entangling surface. The difference is that B–W is a theorem about a fixed QFT, while Liu's version is a statement about the bulk dual of a large-$N$ boundary theory.
 
@@ -155,15 +170,15 @@ The concrete worked example of the dictionary, and the one we carry into Block 4
 
 ### 4.1 The statement
 
-**Theorem 4.1 (Casini–Huerta–Myers). [Proved below in $d=2$ from Bisognano–Wichmann plus conformal invariance; general $d$ by the same argument — refs: CHM arXiv:1102.0440; Hislop–Longo 1982.]** *Let $\mathcal{O} = B_R$ be a ball of radius $R$ at fixed time in the vacuum of a CFT$_d$ on Minkowski space. The vacuum modular Hamiltonian of $\mathcal{A}(B_R)$ is local, given by an integral of the energy density weighted by a parabolic profile:*
+**Theorem 4.1 (Casini–Huerta–Myers). [Proved below in $d=2$ from Bisognano–Wichmann plus conformal invariance; general $d$ by the same argument — refs: CHM arXiv:1102.0440; Hislop–Longo 1982.]** *Let $\mathcal{O} = B_R$ be a ball of radius $R$ at fixed time in the vacuum of a CFT$_d$ on Minkowski space. The conventional one-sided vacuum modular charge—the generator of the restricted automorphism on $\mathcal A(B_R)$—is local:*
 $$
-K_{B_R} = 2\pi \int_{B_R} \frac{R^2 - r^2}{2R}\, T_{00}(\vec x)\, d^{d-1}x,
+K_{B_R} = 2\pi \int_{B_R} \frac{R^2 - r^2}{2R}\, T_{00}(\vec x)\, d^{d-1}x+c\mathbf 1,
 $$
-*where $r = |\vec x|$ and $T_{00}$ is the energy density. The modular flow $\sigma^{B_R}_t$ generated by $K_{B_R}$ is a one-parameter group of conformal transformations preserving $B_R$ (the conformal boost fixing the boundary sphere $\partial B_R$).*
+*where $r = |\vec x|$, $T_{00}$ is the energy density, and the scalar $c$ fixes the normalization of the state (formally, the analogue of a $\log Z$ term). It drops out of $\operatorname{Ad}e^{itK_{B_R}}$. On the standard GNS Hilbert space, the genuine operator $-\log\Delta_{B_R}$ is the difference of this charge and the corresponding commutant/complement charge. The modular flow restricted to $\mathcal A(B_R)$ is a one-parameter group of conformal transformations preserving the diamond (the conformal boost fixing $\partial B_R$).*
 
 The profile $(R^2 - r^2)/(2R)$ vanishes on $\partial B_R$ (the entangling surface) and is maximal at the center — the modular flow slows to a stop at the boundary and runs fastest at the center, exactly as a conformal boost does.
 
-The proof is short and it is worth doing, because it shows that CHM carries no independent content: it is Bisognano–Wichmann transported by a conformal map. Everything hinges on the fact that the causal diamond of a ball and the Rindler wedge are conformally equivalent, and that a CFT vacuum does not notice the difference.
+The proof is short and worth doing because it shows the structural lineage of the CHM formula: Bisognano–Wichmann is transported by a conformal map. CHM adds the holographic thermal/hyperbolic-space interpretation and its use in the entropy argument; the local modular-Hamiltonian formula itself follows from the conformal equivalence of the diamond and wedge.
 
 ### 4.2 The conformal map from wedge to diamond
 
@@ -172,21 +187,21 @@ We work in $d = 2$, where the map is a Möbius transformation on each null coord
 - the **right Rindler wedge** $W = \{x > |t|\}$ is $\{x^+ > 0,\ x^- > 0\}$,
 - the **causal diamond** $D_R$ of the interval $(-R,R)$ at $t = 0$, namely $\{|y| + |t| < R\}$, is $\{-R < y^\pm < R\}$.
 
-In two dimensions any pair of maps $x^+ \mapsto y^+(x^+)$, $x^- \mapsto y^-(x^-)$ is a conformal transformation, so we need one Möbius map carrying $(0,\infty)$ onto $(-R,R)$. Take
+In two dimensions any pair of maps $x^+ \mapsto y^+(x^+)$, $x^- \mapsto y^-(x^-)$ is a conformal transformation. Introduce an arbitrary length $L>0$ and the dimensionless wedge coordinates $\xi^\pm=x^\pm/L$; the final diamond flow will not depend on $L$. We need one Möbius map carrying $(0,\infty)$ onto $(-R,R)$. Take
 $$
-y^\pm = R\,\frac{x^\pm - 1}{x^\pm + 1},
+y^\pm = R\,\frac{\xi^\pm - 1}{\xi^\pm + 1},
 \qquad\text{with inverse}\qquad
-x^\pm = \frac{R + y^\pm}{R - y^\pm},
+\xi^\pm = \frac{R + y^\pm}{R - y^\pm},
 $$
-which sends $x^\pm = 0 \mapsto y^\pm = -R$ and $x^\pm \to \infty \mapsto y^\pm \to R$, monotonically. Thus it maps $W$ onto $D_R$ and, being a Möbius map on each null line, it is conformal.
+which sends $x^\pm=0$ (equivalently $\xi^\pm=0$) to $y^\pm=-R$ and $x^\pm\to\infty$ to $y^\pm\to R$, monotonically. Thus it maps $W$ onto $D_R$ and, being a Möbius map on each null line, it is conformal. The scale $L$ only chooses which wedge point maps to the center of the diamond.
 
 Now push the boost forward. The boost of rapidity $\lambda$ acts on null coordinates by $x^\pm \mapsto e^{\pm\lambda}x^\pm$, so its Killing vector is $\zeta_W = x^+\partial_+ - x^-\partial_-$. Differentiating the map,
 $$
-\frac{dy^\pm}{dx^\pm} = \frac{2R}{(x^\pm+1)^2},
+\frac{dy^\pm}{d\xi^\pm} = \frac{2R}{(\xi^\pm+1)^2},
 \qquad
-\frac{dx^\pm}{d\lambda} = \pm x^\pm,
+\frac{d\xi^\pm}{d\lambda} = \pm \xi^\pm,
 $$
-and using $x^\pm + 1 = 2R/(R - y^\pm)$ from the inverse map, we obtain
+and using $\xi^\pm + 1 = 2R/(R - y^\pm)$ from the inverse map, we obtain
 $$
 \frac{dy^\pm}{d\lambda}
 = \pm\,\frac{R + y^\pm}{R - y^\pm}\cdot 2R \cdot \frac{(R-y^\pm)^2}{4R^2}
@@ -210,20 +225,28 @@ purely timelike, with the parabolic profile already visible.
 
 Two inputs finish the argument.
 
-First, Bisognano–Wichmann (Sem I Wk 10, and [[courses/2026-algebraic-qft-course/conventions]]): on the wedge algebra the vacuum modular flow is the boost, at the rate modular time $t$ ↔ rapidity $2\pi t$, with modular Hamiltonian
+First, Bisognano–Wichmann (Sem I Wk 10, and [[courses/2026-algebraic-qft-course/conventions]]): on the standard Hilbert space the vacuum modular operator of the right wedge obeys
 $$
-K_W = 2\pi K_{\rm boost} = 2\pi\int_0^\infty x\,T_{00}(x)\,dx \qquad (d=2).
+-\log\Delta_W=2\pi K_{\rm global}
+=2\pi(K_R-K_L),
 $$
+where $K_{\rm global}$ is the global Lorentz-boost generator. Its restriction to the right wedge algebra is implemented by the conventional one-sided charge
+$$
+K_{W_R}^{\rm one\mbox{-}sided}
+:=2\pi K_R
+=2\pi\int_0^\infty x\,T_{00}(x)\,dx+c\mathbf1,
+$$
+where $K_R$ in the preceding decomposition is the unnormalized right boost-energy piece. The left/complement contribution commutes with $\mathcal A(W_R)$, so $-\log\Delta_W$ and $K_{W_R}^{\rm one\mbox{-}sided}$ implement the same automorphism on right observables, but they are not the same operator. This notation also prevents an accidental second factor of $2\pi$: $K_R$ is unnormalized, whereas $K_{W_R}^{\rm one\mbox{-}sided}=2\pi K_R$ is the conventional modular charge.
 
 Second, conformal invariance: the CFT$_2$ vacuum is invariant under the Möbius map of §4.2, and that map carries $\mathcal{A}(W)$ onto $\mathcal{A}(D_R)$. Modular data are determined by the pair (algebra, state), so a transformation preserving the state and mapping one algebra onto the other must carry the modular flow of the first onto the modular flow of the second. The modular flow of $\mathcal{A}(D_R)$ in the vacuum is therefore the flow along $\zeta_D$, at the same rate — modular time $t$ ↔ flow parameter $2\pi t$.
 
-The generator of the $\zeta_D$-flow on the slice $t = 0$ is $\int \zeta_D^t\,T_{00}\,dy$, so
+The one-sided generator of the $\zeta_D$-flow on the slice $t = 0$ is $\int \zeta_D^t\,T_{00}\,dy$, so
 $$
 K_{D_R} \;=\; 2\pi \int_{-R}^{R} \frac{R^2 - y^2}{2R}\; T_{00}(y)\,dy ,
 $$
-which is Theorem 4.1 in $d=2$. $\square$
+up to the scalar normalization $c\mathbf 1$, which does not affect the flow. This is Theorem 4.1 in $d=2$. $\square$
 
-> **Physical picture.** The derivation explains why CHM looks like a "second" closed-form modular Hamiltonian and is really the first one in disguise. Bisognano–Wichmann is the only modular Hamiltonian we ever compute from scratch; every other closed form in this subject is obtained by moving it with a symmetry. A CFT has enough symmetry to move the wedge onto a diamond, so the diamond inherits a local $K$. A generic region in a generic theory has no symmetry connecting it to a wedge, which is exactly why no closed form exists there — and why the subject keeps returning to wedges, balls, and horizons. The parabolic profile is nothing but the linear Rindler profile $x$ seen through a Möbius map.
+> **Physical picture.** The derivation explains why the wedge and vacuum ball are members of one symmetry family. A CFT has enough symmetry to move the wedge onto a diamond, so the diamond inherits a local $K$. Generic regions lack that symmetry and their modular Hamiltonians are usually nonlocal. The parabolic profile is the linear Rindler profile seen through a Möbius map; this does not exclude other solvable modular Hamiltonians obtained by different methods.
 
 ### 4.4 General $d$
 
@@ -234,7 +257,7 @@ $$
 $$
 where $P_0 = \partial_t$ generates time translations and $K_0$ is the special conformal generator in the time direction. That the two expressions agree is a one-line check: with mostly-plus signature $K_0 = x^2\partial_t - 2x_0(x\cdot\partial) = (t^2+r^2)\partial_t + 2rt\,\partial_r$, so $\tfrac{1}{2R}(R^2\partial_t - K_0)$ is the displayed vector field. Since $\zeta_D$ is a fixed linear combination of conformal generators, it is a conformal Killing vector for any $d$, and the pullback argument of §4.3 goes through verbatim, giving
 $$
-K_{B_R} = 2\pi\int_{B_R}\frac{R^2-r^2}{2R}\,T_{00}(\vec x)\,d^{d-1}x .
+K_{B_R} = 2\pi\int_{B_R}\frac{R^2-r^2}{2R}\,T_{00}(\vec x)\,d^{d-1}x+c\mathbf 1 .
 $$
 
 ### 4.5 The Rindler limit as a check
@@ -245,61 +268,71 @@ $$
 $$
 The parabolic weight straightens into the linear Rindler weight, and
 $$
-K_{B_R} \;\longrightarrow\; 2\pi\int_{\xi>0}\xi\,T_{00}(\xi)\,d^{d-1}x = 2\pi K_{\rm boost},
+K_{B_R}^{\rm one\mbox{-}sided} \;\longrightarrow\; 2\pi\int_{\xi>0}\xi\,T_{00}(\xi)\,d^{d-1}x+c\mathbf1,
 $$
-the wedge modular Hamiltonian. This closes the circle: we obtained CHM from Bisognano–Wichmann by a conformal map, and CHM returns it in the limit where the map becomes the identity.
+the conventional right-wedge modular charge. Subtracting the complementary charge reconstructs the global standard-space generator $2\pi(K_R-K_L)$. This closes the circle: we obtained CHM from Bisognano–Wichmann by a conformal map, and CHM returns its restricted wedge flow in the half-space limit.
 
 ### 4.6 The bulk Killing vector
 
-In pure AdS$_{d+1}$, the boundary ball $B_R$ has a bulk **entanglement wedge** bounded by the RT surface (a hemisphere anchored on $\partial B_R$). There is a bulk Killing vector $\zeta_{\rm bulk}$ that (i) restricts to $\zeta_D$ on the boundary and (ii) fixes the RT surface. The bulk modular flow is the geometric flow along $\zeta_{\rm bulk}$; the boundary modular flow is its restriction. This is the explicit bulk realization of Liu's dictionary, and the picture to keep in mind: *the boundary ball's thermal time is a rigid rotation of its bulk wedge about the RT surface.*
+In pure AdS$_{d+1}$, the boundary ball $B_R$ has a bulk **entanglement wedge** bounded by the RT surface (a hemisphere anchored on $\partial B_R$). There is a bulk Killing vector $\zeta_{\rm bulk}$ that (i) restricts to $\zeta_D$ on the boundary and (ii) vanishes on the RT surface. The bulk modular flow is the boost-like geometric flow along $\zeta_{\rm bulk}$; the boundary modular flow is its restriction. This is the explicit bulk realization of Liu's dictionary. Near the fixed surface the local picture is Rindler-like, with the RT surface playing the role of a bifurcation surface—not an axis of a rigid Euclidean rotation.
 
-> **Physical picture.** The CHM formula is the closest the subject comes to a *closed-form modular Hamiltonian* outside the wedge case. Two features carry physical weight. First, **locality**: $K_{B_R}$ is an integral of the local energy density, so the vacuum modular flow of a ball is a genuine geometric flow — this is the special feature of the vacuum plus a CFT plus a ball, where the required conformal symmetry exists. For a generic region or state, $K$ is non-local and no such formula exists. Second, the **weight vanishing at the entangling surface** is universal and physical: modular time grinds to a halt at the boundary, which is why the entangling surface is a fixed point of the flow and why the area term in the generalized entropy localizes there. When we perturb the state in Block 4 (the GJW deformation), it is precisely this boundary-anchored structure that shifts, producing the Shapiro-time-advance analog.
+> **Physical picture.** Two features carry physical weight in this symmetric example. First, **locality**: $K_{B_R}$ is an integral of the local energy density because the vacuum, the CFT, and the ball furnish the required conformal symmetry. Second, the weight vanishes at the ball's entangling surface, consistently with that surface being fixed by the conformal modular flow. Neither feature should be promoted to a universal formula for generic modular Hamiltonians, and the localization of a gravitational area term requires the separate holographic entropy dictionary. The GJW deformation studied later changes the state/algebraic setup; its time-advance interpretation is not derived from this weight alone.
 
 ## 5. Subregion–subalgebra duality
 
-Liu §4 packages the dictionary into a duality between bulk regions and boundary subalgebras.
+Liu §VII packages the dictionary into a duality between bulk regions and boundary subalgebras.
 
-**Subregion–subalgebra duality (Liu §4). [Hypothesis-explicit.]** *A boundary subregion $\mathcal{O}$ corresponds to a boundary subalgebra $\mathcal{A}(\mathcal{O})$; the bulk dual is the entanglement wedge $W_\mathcal{O}$, and bulk operators in $W_\mathcal{O}$ are reconstructible from $\mathcal{A}(\mathcal{O})$ (entanglement-wedge reconstruction). Inclusions of regions correspond to inclusions of algebras; causal complements correspond to commutants (when Haag duality holds).*
+**Subregion–subalgebra duality (Liu §VII). [Hypothesis-explicit.]** *A boundary subregion $\mathcal{O}$ corresponds to a boundary subalgebra $\mathcal{A}(\mathcal{O})$; the bulk dual is the entanglement wedge $W_{\mathcal{O}}$, and bulk operators in $W_{\mathcal{O}}$ are reconstructible from $\mathcal{A}(\mathcal{O})$ in the stated code-subspace/approximation regime. Inclusions of regions correspond to inclusions of algebras; causal complements correspond to commutants when the required duality holds.*
 
-> **Physical picture.** This is the algebraic skeleton of the Ryu–Takayanagi / entanglement-wedge-reconstruction circle of ideas. "Which bulk region does a boundary observer with access to $\mathcal{A}(\mathcal{O})$ control?" is answered by "the entanglement wedge $W_\mathcal{O}$." The commutant $\mathcal{A}(\mathcal{O})' = \mathcal{A}(\mathcal{O}')$ (Haag duality) is dual to "the complementary wedge"; the failure of Haag duality (when it occurs) is dual to a bulk region — the *entanglement shadow* — that neither side reconstructs, the algebraic signature of a nontrivial RT phase transition or a bulk region behind both horizons. We use the clean (Haag-dual) version; the subtleties are exactly where current research lives.
+> **Physical picture.** This is the algebraic skeleton of the Ryu–Takayanagi / entanglement-wedge-reconstruction circle of ideas. The slogan “access to $\mathcal A(\mathcal O)$ corresponds to reconstructibility in $W_{\mathcal O}$” is code-subspace and approximation dependent. When Haag duality holds, commutants match complementary algebras. Its failure can signal extra superselection or generalized-symmetry structure; identifying that failure with a particular entanglement shadow or RT transition requires an additional holographic argument.
 
-[[subregion-subalgebra-duality|See the wiki page on subregion–subalgebra duality]] for the connection to the group's program.
+See §5 below and Liu §VII for the subregion–subalgebra connection used in the group's program.
 
 ## 6. What to take away
 
-- **Type III at large $N$ (stated only for the holographic algebra; model proof for the mechanism):** the $N = \infty$ boundary single-trace algebra of a holographic CFT is type III$_1$; finite $N$ gives type I. The mechanism is decided by the Boltzmann ratios $\{e^{-\beta\omega_k}\}$: a discrete subgroup of $\mathbb{R}_{>0}$ gives III$_\lambda$, a dense one gives III$_1$ (§2.3). The transition is the algebraic content of "classical gravity vs. quantum gravity."
-- **$1/N$ as $\hbar_{\rm bulk}$:** classical gravity ($1/N = 0$) ↔ type III$_1$; the crossed product keeps one gravitational mode and lands at semiclassical gravity ↔ type II$_\infty$.
+- **Type III at large $N$ (source result under its stated GNS hypotheses):** the thermal large-$N$ single-trace algebras studied by Liu and Leutheusser–Liu can be type III$_1$. The ITPFI exercise illustrates modular ratios but is not the proof of that result.
+- **Regime dictionary:** strict large-$N$ single-trace limits can produce type III$_1$ factors; retaining the leading gravitational fluctuation in the Witten/CPW construction produces a type-II$_\infty$ crossed product. Exact finite-$N$ and sharp local-subregion statements must be treated separately.
 - **Modular flow = bulk geometric flow (the dictionary):** the boundary modular flow of a geometrically nice region is the bulk Killing flow fixing the RT surface. Bisognano–Wichmann (boost) and CPW (horizon boost) are special cases.
-- **Casini–Huerta–Myers (derived, $d=2$ complete):** for a ball in the CFT vacuum, $K_{B_R} = 2\pi\int (R^2 - r^2)/(2R)\,T_{00}$ — a *local* modular Hamiltonian. It is Bisognano–Wichmann transported by the conformal map $y^\pm = R(x^\pm-1)/(x^\pm+1)$, and it degenerates back to $2\pi K_{\rm boost}$ as $R\to\infty$. Every closed-form modular Hamiltonian in this subject is the wedge answer moved by a symmetry.
+- **Casini–Huerta–Myers (supplementary source; derived here, $d=2$ complete):** for a ball in the CFT vacuum, $K_{B_R}=2\pi\int (R^2-r^2)/(2R)\,T_{00}+c\mathbf1$ is local up to its scalar normalization. It is Bisognano–Wichmann transported by a conformal map and returns to the wedge formula in the half-space limit.
 - **Subregion–subalgebra duality:** boundary subalgebras ↔ bulk entanglement wedges; commutants ↔ causal complements (under Haag duality).
 - This block is **synthesis**: the same crossed-product machine, three geometries. The organizing diagram comes in Week 10.
 
 ## 7. Looking ahead
 
-Week 10 completes the Liu block: the crossed product as "adding a clock that witnesses time," the **semiclassical reduction** $S_{\rm vN} \to A/4G_N + S_{\rm out}$ done two ways and shown to agree, and the **algebraic ER=EPR** criterion. We also draw Liu's organizing diagram placing Witten 2022, CPW, and AAJ relative to one another — the map students carry into Block 4 (AAJ), where the dressed algebra is finally *perturbed*. The final-write-up draft is due at the end of Week 10.
+Week 10 completes the Liu block: the crossed product as "adding a clock that witnesses time," the **semiclassical reduction** $S_{\rm vN} \to A/4G_N + S_{\rm out}$ done two ways and shown to agree, and the **algebraic ER=EPR** criterion. We also draw a **course synthesis diagram**: Liu supplies the Witten/CPW spine, and the course adds AAJ as a later perturbative comparison. Students carry that map into Block 4, where the dressed algebra is finally *perturbed*. The final-write-up draft is due at the end of Week 10.
 
 ## 8. Problem set
 
 **Core problems.**
 
-**1. The diamond flow is complete.** Using the boxed $\zeta_D$ of §4.2, verify directly that $\zeta_D$ is null on the boundary of the diamond (i.e. $\zeta_D\cdot\zeta_D = 0$ on $|y|+|t| = R$) and vanishes at the two tips of the entangling surface $y=\pm R,\ t=0$. Then integrate the flow on the slice $t=0$ and show that a point starting at $y_0 \in (-R,R)$ takes infinite flow parameter to reach $y = \pm R$ — modular time never leaves the diamond.
+**1. The diamond flow is complete.** Using the boxed $\zeta_D$ of §4.2, verify directly that $\zeta_D$ is null and tangent on the null boundary $|y|+|t|=R$. It vanishes at the interval endpoints $(t,y)=(0,\pm R)$ and at the future/past diamond tips $(t,y)=(\pm R,0)$. Do **not** assume that an orbit starting at $t=0$ remains on that slice. Instead, put
+$$
+\xi_0=\frac{R+y_0}{R-y_0},
+\qquad
+\xi^\pm(\lambda)=e^{\pm\lambda}\xi_0,
+\qquad
+y^\pm(\lambda)=R\frac{\xi^\pm(\lambda)-1}{\xi^\pm(\lambda)+1}.
+$$
+Recover $t(\lambda)$ and $y(\lambda)$ from $y^\pm=y\pm t$. Show that the orbit approaches $(R,0)$ as $\lambda\to+\infty$ and $(-R,0)$ as $\lambda\to-\infty$, reaching neither tip at finite flow parameter. This is the correct completeness statement.
 
 **2. Two intervals, and why the derivation stops.** The §4.2 argument used one Möbius map carrying the wedge onto one diamond. Explain why no conformal transformation carries a wedge onto the union of *two* disjoint diamonds, and hence why the CHM derivation gives nothing for two intervals. (This is the structural reason for the non-locality quoted in Problem 6*.)
 
-**3. Type from the mode spectrum.** Using the §2.3 criterion, determine the type in each case and justify by computing the closed subgroup of $\mathbb{R}_{>0}$ generated by the Boltzmann ratios: (i) frequencies $\omega_k = k\omega_0$, $k = 1,2,3,\dots$; (ii) frequencies $\omega_k \in \{\omega_0, \sqrt2\,\omega_0\}$; (iii) a single mode of frequency $\omega_0$ (finitely many tensor factors). Then say in one sentence which of these models a finite-$N$ CFT on a sphere and which models the $N=\infty$ limit.
+**3. Modular ratios are not yet a type proof.** Compute $G_\lambda$ for (i) infinitely many identical ratios $e^{-\beta\omega_0}$; (ii) infinitely recurring frequencies $\omega_0$ and $\sqrt2\omega_0$; and (iii) a finite tensor product containing those same two frequencies. Use the known Powers theorem only in case (i). Explain why case (iii) is type I despite its irrational ratio data, and identify the extra ITPFI classification input needed before declaring case (ii) type III$_1$.
 
 **4. Dictionary table.** Reconstruct the dictionary table of §3.1 from memory and add a fourth row for a generic (non-symmetric) boundary region: what is known about its modular flow? (Answer: exists by Tomita–Takesaki, but acts non-geometrically; no closed form.)
 
 **Starred problems.**
 
-**5\*. Non-vacuum ball.** The CHM formula is for the *vacuum*. State what is known if the global state is a low-energy excitation of the vacuum (first-law/linearized regime): the modular Hamiltonian acquires a state-dependent correction $\delta K$, and $\delta\langle K\rangle = \delta S_{\rm EE}$ to first order (the "first law of entanglement"). Sketch why this follows from $\delta S = \delta\langle K\rangle$ at first order (positivity of relative entropy, Sem I Wk 7).
+**5\*. Non-vacuum ball.** The CHM formula is the modular Hamiltonian $K_0$ of the *vacuum* restriction. For a differentiable family of nearby states, prove the first-law statement $\delta S=\delta\langle K_0\rangle$ from the fact that relative entropy about the reference state begins at second order. The modular Hamiltonian of the perturbed state generally has its own state-dependent correction, but the first-law formula does not require computing it and does not imply that the full non-vacuum modular flow remains local.
 
-**6\*. Modular flow non-geometric for two intervals.** For two disjoint intervals in the CFT$_2$ vacuum, the modular Hamiltonian is **non-local** (it couples the two intervals). State this (Casini–Huerta for free fields) and explain why it breaks the naive dictionary — and why this is the algebraic origin of the mutual-information phase transition.
+**6\*. Modular flow for two intervals.** In a free-field example, describe the nonlocal terms that couple two disjoint intervals and explain why the one-ball conformal-map derivation no longer applies. Separately, state what additional large-$c$ holographic input is needed to discuss a mutual-information/RT phase transition; do not derive that transition from nonlocality alone.
 
 **Project problems.**
 
 **7. Final-write-up draft.** (Due end of Week 10.) Produce a ≥10-page draft of your chosen final topic (Block 2 §7 options). Incomplete is fine; the goal is to surface scope/understanding problems before Block 4.
 
+**Wiki connections.** [[subregion-subalgebra-duality|subregion–subalgebra duality]]
+
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 3. Last revised 2026-08-23.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 3. Last revised 2026-08-24.*

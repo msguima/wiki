@@ -1,351 +1,539 @@
 ---
-title: "Sem II Week 6 — The CPW Construction: Dressing by ADM"
+title: "Sem II Week 6 — CPW: The Right Algebra and Its Commutant"
 type: lecture-notes
 course: syllabus
 semester: 2
 week: 6
 block: 2
-duration: 4 hours (2 lectures × 2 hours)
+duration: "master dossier: 4 hours of material; classroom core: 2-hour seminar + 1-hour office/self-study"
 prerequisites: Sem II Wk 5 (TFD modular structure); Sem I Wks 13–15
-target_paper: "Chandrasekaran, Penington, Witten (CPW), arXiv:2209.10454 §3"
-modified: 2026-06-11
+target_paper: "Chandrasekaran, Penington, Witten, arXiv:2209.10454 §§2.2–2.3"
+modified: 2026-08-24
 ---
 
-# Sem II Week 6 — The CPW Construction: Dressing by ADM
+# Sem II Week 6 — CPW: The Right Algebra and Its Commutant
 
-> *Last week we identified the two-sided modular Hamiltonian: $K_{\mathrm{TFD}} = \beta_H(H_R - H_L)$ in the TFD vacuum. This week we form the **two-sided dressed algebra** $\hat{\mathcal{A}}_R$ by adjoining the ADM clock on the right boundary. The construction is **structurally identical** to Block 1 Wk 2 (Witten 2022 single-sided), but with a crucial subtlety: on the doubled Hilbert space $\mathcal{H}_R \otimes \mathcal{H}_L$, the dressing of $\mathcal{A}_R$ uses the same $H_R$ Hamiltonian, and by symmetry the same construction dresses $\mathcal{A}_L$. The dressed algebras are type II$_\infty$; they commute on the dressed Hilbert space; together they form the full two-sided dressed structure. This is the CPW setup.*
+> *A two-sided black hole does not require us to place the same clock translation inside two commuting algebras. That construction cannot work: the translation is noncentral and implements modular flow. CPW instead build one right type II$_\infty$ algebra and define the left algebra as its commutant. In the regular representation the commutant contains a **dressed** translation, not the bare right translation. This week derives that statement directly on generators and then matches it to CPW's energy/timeshift variables.*
 
 ## 0. Reading
 
 **Primary:**
-- Chandrasekaran, Penington, Witten (CPW), "Large $N$ algebras and generalized entropy," arXiv:2209.10454, **§3** (the dressed algebra and the crossed-product construction).
-- Sem II Wks 1–2 (Witten 2022 single-sided dressing).
 
-**Secondary:**
-- Witten, arXiv:2112.12828, §3 (the single-sided crossed product, recap).
-- Liu, arXiv:2510.07017, §5 (modular crossed products in two-sided settings).
+- CPW, “Large $N$ algebras and generalized entropy,” arXiv:2209.10454, §§2.2–2.3.
+- Witten, arXiv:2112.12828, §3.1, especially the construction of commuting left and right algebras.
 
-**Optional research reading:**
-- Chandrasekaran, Longo, Penington, Witten (CLPW), arXiv:2206.10780 (de Sitter; type II$_1$ contrasting example, Block 5).
-- Witten & Yang, "Algebras of operators in the conformal group covariant universe," arXiv:2110.13638 (related algebraic constructions).
+**Background:**
 
-## 1. Setup recap
+- Sem I Week 13 and Appendix D.
+- Sem II Week 2 for the distinction between the TFD generator and the individual boundary Hamiltonians.
 
-From Week 5:
-- Two-sided boundary algebras $\mathcal{A}_R, \mathcal{A}_L$ on $\mathcal{H}_R \otimes \mathcal{H}_L$ at large $N$, each type III$_1$.
-- TFD vacuum $|\mathrm{TFD}\rangle$ is cyclic-separating for both.
-- Modular Hamiltonian: $K_{\mathrm{TFD}} = \beta_H(H_R - H_L)$ (Theorem 3.1 of Wk 5).
-- Modular flow on $\mathcal{A}_R$: $\sigma^{\mathrm{TFD}}_t(a) = e^{i\beta_H t H_R}\,a\,e^{-i\beta_H t H_R} = \alpha^{H_R}_{\beta_H t}(a)$ (for $a \in \mathcal{A}_R$, since $H_L$ commutes with $a$).
-- Causal complementarity: $[\mathcal{A}_R, \mathcal{A}_L] = 0$; Haag duality: $J\mathcal{A}_R J = \mathcal{A}_L$.
+### 0.1 What the student should be able to do
 
-This week we form the CPW dressed algebra and explore the two-sided structure.
+By the end of the week, the student should be able to do four things without relying on a picture of two tensor factors:
 
-## 2. The right dressed algebra
+1. construct the right crossed product in the regular representation;
+2. derive the generators that lie in its commutant;
+3. explain why the same bare translation cannot be assigned to both commuting factors;
+4. translate, with all signs and units visible, between the course variables and CPW's energy/timeshift variables.
 
-### 2.1 Definition
+- **Classroom core:** §§1–4 and Problems 1–6. Derive the right core, its commutant, and the CPW dictionary.
+- **Full derivation / self-study:** §§5–8 and Problems 7–10. Separate physical time from modular time, verify the exact Rindler realization, and audit the tempting wrong constructions.
+- **Research extension:** Problems 11–12, using §§4.1–4.3 as the source-comparison template. Produce either the full CPW commutant note or a bounded-observable Bell bridge.
 
-**Definition 2.1 (CPW dressed algebra, right side).** The **right gravitationally dressed boundary algebra** is
+## 1. Starting data
+
+Let
+
 $$
-\hat{\mathcal{A}}_R := \mathcal{A}_R \rtimes_{\sigma^{\mathrm{TFD}}}\mathbb{R}
-$$
-acting on the **doubly extended** Hilbert space $\mathcal{H}_R \otimes \mathcal{H}_L \otimes L^2(\mathbb{R}_s)$, generated by:
-
-- $\pi_R(a)\,\xi(s) = \sigma^{\mathrm{TFD}}_{-s}(a)\,\xi(s)$ for $a \in \mathcal{A}_R$,
-- $\lambda_R(t)\,\xi(s) = \xi(s - t)$, the translation on $L^2(\mathbb{R}_s)$.
-
-### 2.2 The subtlety: which Hamiltonian?
-
-The skeleton flagged a key subtlety: *which Hamiltonian generates the dressing*?
-
-**Three a priori candidates:**
-
-1. $H_R$ (the right CFT's Hamiltonian).
-2. $H_L$ (the left CFT's Hamiltonian).
-3. $H_R - H_L$ (the two-sided combination = modular Hamiltonian up to a factor of $\beta_H$).
-
-**The correct answer:** the modular crossed product is by the modular flow $\sigma^{\mathrm{TFD}}_t$. By the explicit identification $\sigma^{\mathrm{TFD}}_t(a) = e^{i\beta_H t H_R}\,a\,e^{-i\beta_H t H_R}$ on $a \in \mathcal{A}_R$ (Wk 5 §4.1), **the dressing on $\mathcal{A}_R$ is by $H_R$** — not by $H_R - H_L$.
-
-The reason: on operators in $\mathcal{A}_R$ alone, $H_L$ acts trivially (since $a \otimes 1$ commutes with $1 \otimes H_L$). So the modular flow on $\mathcal{A}_R$ is implemented by $e^{i\beta_H t H_R}$, and the crossed product is by this flow.
-
-**However**, the *full* modular Hamiltonian on the joint Hilbert space is $\beta_H(H_R - H_L)$ — this is what acts on $\mathcal{H}_R \otimes \mathcal{H}_L$ in a way that fixes the TFD. The crossed product on $\mathcal{A}_R$ uses only the $H_R$-component of this full structure.
-
-### 2.3 Equivalent characterization
-
-Equivalently: the right dressed algebra is the modular crossed product of $\mathcal{A}_R$ by the action $\alpha^{H_R}$ rescaled by $\beta_H$:
-$$
-\hat{\mathcal{A}}_R = \mathcal{A}_R \rtimes_{\alpha^{H_R}}\mathbb{R}
-$$
-(where the rescaling $\sigma^{\mathrm{TFD}}_t = \alpha^{H_R}_{\beta_H t}$ is absorbed in the parameterization of the $\mathbb{R}$-action).
-
-The two formulations are equivalent up to reparametrization of the $\mathbb{R}$-direction; the resulting algebras are isomorphic. CPW use the modular-flow parametrization (corresponding to KMS at modular $\beta = 1$); equivalent to the ADM-time parametrization (KMS at $\beta_H$).
-
-### 2.4 Connes–Takesaki type promotion
-
-By the Connes–Takesaki theorem (Sem I Wk 13 Theorem 4.1), since $\mathcal{A}_R$ is type III$_1$ and $\sigma^{\mathrm{TFD}}$ is its outer modular flow:
-
-**$\hat{\mathcal{A}}_R$ is a type II$_\infty$ factor with a faithful normal semifinite trace $\hat\tau_R$.**
-
-Same as Block 1, but now on the **two-sided doubled Hilbert space** $\mathcal{H}_R \otimes \mathcal{H}_L \otimes L^2(\mathbb{R}_s)$. The trace and structure are formally identical to the Block 1 single-sided case, since the dressing only sees the $\mathcal{H}_R$-side; $\mathcal{H}_L$ is a "spectator."
-
-## 3. The left dressed algebra
-
-### 3.1 By symmetry
-
-The two-sided geometry has a $\mathbb{Z}_2$ symmetry swapping the two sides. By this symmetry, there is a corresponding **left dressed algebra**:
-$$
-\hat{\mathcal{A}}_L := \mathcal{A}_L \rtimes_{\sigma^{\mathrm{TFD}}}\mathbb{R}
-$$
-acting on $\mathcal{H}_R \otimes \mathcal{H}_L \otimes L^2(\mathbb{R}_{s'})$, where $s'$ is a *separate* clock variable for the left side.
-
-The relevant left modular flow: on $\mathcal{A}_L$, the modular flow $\sigma^{\mathrm{TFD}}_t$ from Wk 5 §4.1 acts as
-$$
-\sigma^{\mathrm{TFD}}_t(b) = e^{-i\beta_H t H_L}\,b\,e^{i\beta_H t H_L} = \alpha^{H_L}_{-\beta_H t}(b), \quad b \in \mathcal{A}_L.
+\mathcal M:=\mathcal A_{R,0}
 $$
 
-(The minus sign: on the *left* side, the bulk Killing vector generates *backward* time translation. This is consistent with the $-H_L$ in $K_{\mathrm{TFD}} = \beta_H(H_R - H_L)$.)
+be the right strict-large-$N$ type III$_1$ factor in the TFD standard representation $(\mathcal H_{\rm TFD},\Omega)$. Assume Haag/TFD duality in this representation:
 
-### 3.2 Two clocks?
-
-A subtle question: do we need **one clock** or **two clocks**?
-
-**Answer:** **One clock**, in the CPW construction. The dressed algebra on the joint structure uses a *single* $L^2(\mathbb{R}_s)$ factor, with:
-- $\hat{\mathcal{A}}_R$ dressed via the right modular flow (positive direction on $s$).
-- $\hat{\mathcal{A}}_L$ dressed via the left modular flow (negative direction on $s$, since the left modular flow is $\alpha^{H_L}_{-\beta_H t}$).
-
-Both algebras use the *same* clock translation $\lambda(t) \in L^2(\mathbb{R}_s)$, but acting in opposite directions on each side. This is the **bulk-symmetric** dressing: a single auxiliary degree of freedom (the bulk "boost clock") couples to both boundaries simultaneously.
-
-In the bulk picture: the auxiliary $s$ is the conjugate variable to the **bulk boost Killing vector**, which generates positive time on the right and negative time on the left. A single clock for the unified two-sided structure.
-
-### 3.3 The joint dressed structure
-
-**Definition 3.1 (CPW two-sided dressed algebras).** The CPW dressed structure consists of two type II$_\infty$ algebras $\hat{\mathcal{A}}_R, \hat{\mathcal{A}}_L$ acting on $\mathcal{H}_R \otimes \mathcal{H}_L \otimes L^2(\mathbb{R}_s)$, generated as follows:
-
-- $\hat{\mathcal{A}}_R$: by $\pi_R(a)$ for $a \in \mathcal{A}_R$ (fiberwise modular flow on $\mathcal{H}_R$) and $\lambda(t)$ (translation on $L^2(\mathbb{R}_s)$).
-- $\hat{\mathcal{A}}_L$: by $\pi_L(b)$ for $b \in \mathcal{A}_L$ (fiberwise modular flow on $\mathcal{H}_L$, opposite direction) and the *same* translation $\lambda(t)$.
-
-**Both are type II$_\infty$** by Connes–Takesaki.
-
-## 4. Commutativity of the two dressed algebras
-
-A key structural claim of CPW: the two dressed algebras commute on the doubled+clock Hilbert space.
-
-**Theorem 4.1 ($\hat{\mathcal{A}}_R$ and $\hat{\mathcal{A}}_L$ commute). [Stated only — refs: CPW §3.]** *In the doubly extended Hilbert space $\mathcal{H}_R \otimes \mathcal{H}_L \otimes L^2(\mathbb{R}_s)$, $\hat{\mathcal{A}}_R$ and $\hat{\mathcal{A}}_L$ commute:*
 $$
-[\hat{\mathcal{A}}_R, \hat{\mathcal{A}}_L] = 0.
+\mathcal M'=\mathcal A_{L,0}.
 $$
 
-**Sketch.** Two ingredients:
+The modular operator is
 
-1. The original algebras commute: $[\mathcal{A}_R, \mathcal{A}_L] = 0$ (causal complementarity, Wk 5 §2.2). Hence $[\pi_R(a), \pi_L(b)] = 0$ for any $a \in \mathcal{A}_R, b \in \mathcal{A}_L$.
-2. The clock $\lambda(t)$ is shared, so it appears in both algebras. But $\lambda(t)$ is in the center of $L^2(\mathbb{R}_s)$ and acts as an inner unitary in both $\hat{\mathcal{A}}_R$ and $\hat{\mathcal{A}}_L$ — specifically, it implements the modular flow in both via $\lambda(t)\pi_R(a)\lambda(t)^* = \pi_R(\sigma_t(a))$ on the right and $\lambda(t)\pi_L(b)\lambda(t)^* = \pi_L(\sigma_{-t}(b))$ on the left (opposite sign).
-
-So the commutator of $\hat{\mathcal{A}}_R$ and $\hat{\mathcal{A}}_L$ on generators is:
 $$
-[\pi_R(a)\lambda(t), \pi_L(b)\lambda(t')] = \pi_R(a)\,\lambda(t)\,\pi_L(b)\,\lambda(t') - \pi_L(b)\,\lambda(t')\,\pi_R(a)\,\lambda(t)
-$$
-Using $[\pi_R(a), \pi_L(b)] = 0$ and that $\lambda$'s commute with each other:
-$$
-= \pi_R(a)\,\pi_L(\sigma_{-t}(b))\,\lambda(t)\lambda(t') - \pi_L(\sigma_{-t'}(b))\,\pi_R(a)\,\lambda(t')\lambda(t).
-$$
-For this to vanish, we need a compatibility between the modular-flow-rotations and the original commutator. This holds because:
-- $\lambda(t)\pi_L(b)\lambda(t)^* = \pi_L(\sigma_{-t}(b))$ (modular flow on left is $\sigma_{-t}$).
-- $\sigma_t$ preserves the commutation: if $[a, b] = 0$ then $[\sigma_t(a), \sigma_{-t}(b)] = 0$ as well (this is a $\sigma_t$-invariance of the original commutation).
-
-The full commutativity proof requires more care; the conclusion is structural ($[\hat{\mathcal{A}}_R, \hat{\mathcal{A}}_L] = 0$ on the doubled+clock Hilbert space). $\square$
-
-### 4.1 Physical interpretation
-
-Causal complementarity on the original boundary algebras propagates to the dressed algebras. **Adding a clock does not generate communication between the two sides** — they remain causally disconnected in an algebraic sense.
-
-This is exactly the algebraic content of "the two CFTs of the eternal BH are dynamically independent": dressing each by its own ADM Hamiltonian preserves the independence. The wormhole connection is bulk-geometric, not communication-enabling.
-
-## 5. Inner-ifying the ADM Hamiltonian
-
-Recall Block 1 §1.3: the crossed product was motivated by **making the ADM Hamiltonian inner** on the dressed algebra. Let's check this for the two-sided case.
-
-### 5.1 Right side
-
-On $\hat{\mathcal{A}}_R$, the modular flow $\sigma^{\mathrm{TFD}}_t$ is implemented by $\lambda(t)$:
-$$
-\lambda(t)\,\pi_R(a)\,\lambda(t)^* = \pi_R(\sigma^{\mathrm{TFD}}_t(a)) = \pi_R(\alpha^{H_R}_{\beta_H t}(a)).
-$$
-Identifying $u = \beta_H t$:
-$$
-\lambda(u/\beta_H)\,\pi_R(a)\,\lambda(u/\beta_H)^* = \pi_R(\alpha^{H_R}_u(a)).
-$$
-So $\Lambda_R(u) := \lambda(u/\beta_H)$ implements ADM time translation on $\mathcal{A}_R$ inside $\hat{\mathcal{A}}_R$. **$H_R$ becomes inner on $\hat{\mathcal{A}}_R$.**
-
-### 5.2 Left side
-
-By symmetry, on $\hat{\mathcal{A}}_L$, the modular flow is $\sigma^{\mathrm{TFD}}_t(b) = \alpha^{H_L}_{-\beta_H t}(b)$. Implementing with the same clock $\lambda(t)$:
-$$
-\lambda(t)\,\pi_L(b)\,\lambda(t)^* = \pi_L(\alpha^{H_L}_{-\beta_H t}(b)).
-$$
-Identifying $u = -\beta_H t$, we get $\lambda(-u/\beta_H)$ implementing $\alpha^{H_L}_u$ on $\mathcal{A}_L$. **$H_L$ becomes inner on $\hat{\mathcal{A}}_L$.**
-
-### 5.3 The clock implements $H_R - H_L$, not $H_R$ or $H_L$ separately
-
-Combining: with a *single* clock $\lambda(t)$, both $H_R$ and $H_L$ become inner — but in a *correlated* way. The clock translation $\lambda(t)$ corresponds to **simultaneous** time translation on the right and backward time translation on the left:
-$$
-\lambda(t) = e^{i t \beta_H (H_R - H_L)/(\beta_H)} = e^{i t(H_R - H_L)}\quad(\text{up to factor}),
-$$
-i.e., the clock momentum is $H_R - H_L$ (up to a factor of $\beta_H$).
-
-**This is the algebraic content of the bulk Killing vector.** The auxiliary $L^2(\mathbb{R}_s)$ is the conjugate variable to $H_R - H_L$, the boost-like Killing generator at the bifurcation surface. The clock is the bulk-boost coordinate.
-
-### 5.4 Why this is the "right" dressing
-
-A natural question: why not dress separately by $H_R$ on the right and $H_L$ on the left, with two independent clocks $L^2(\mathbb{R}_s) \otimes L^2(\mathbb{R}_{s'})$?
-
-**Answer:** Because the bulk gravitational constraint is that the **total** Killing generator $H_R - H_L$ is gauge. Bulk diffeomorphism invariance requires gauging the boost across the bifurcation surface, which mixes the two boundaries. Dressing them independently would over-gauge the system.
-
-The single-clock CPW construction implements **exactly one gauge constraint** corresponding to the bulk boost Killing vector, with the right amount of gauging. This is why CPW is the "right" construction for the two-sided eternal BH.
-
-(For de Sitter / CLPW, the analog is the static-patch observer's worldline, which uses a single observer-Hamiltonian clock. We discuss CLPW briefly in Block 5 Wk 14.)
-
-## 6. Worked example: free-field two-sided Rindler
-
-### 6.1 Setup
-
-Take the 4D massless free scalar on Minkowski space. Two-sided algebras: $\mathcal{A}(W_R), \mathcal{A}(W_L)$ on the Fock space $\mathcal{F}$.
-
-TFD vacuum is the Minkowski vacuum (Wk 5 §6.2). Modular Hamiltonian: $K_{0_M} = 2\pi(K_R - K_L)$ where $K_R, K_L$ are boost generators on each wedge.
-
-The modular flow on $\mathcal{A}(W_R)$: $\sigma^{0_M}_t(a) = e^{2\pi i t K_R}\,a\,e^{-2\pi i t K_R}$ for $a \in \mathcal{A}(W_R)$ (since $K_L$ commutes with $\mathcal{A}(W_R)$).
-
-### 6.2 The two-sided dressing
-
-Form $\hat{\mathcal{A}}(W_R)$ on $\mathcal{F} \otimes L^2(\mathbb{R}_s)$:
-- $\pi_R(W(f))\,\xi(s) = W(f \circ \Lambda^{\mathrm{boost}}(2\pi s))\,\xi(s)$ for $f$ in $W_R$.
-- $\lambda(t)\,\xi(s) = \xi(s - t)$.
-
-And $\hat{\mathcal{A}}(W_L)$ on the same space:
-- $\pi_L(W(g))\,\xi(s) = W(g \circ \Lambda^{\mathrm{boost}}(-2\pi s))\,\xi(s)$ for $g$ in $W_L$ (note the minus sign in the boost rapidity for the left side).
-- $\lambda(t)\,\xi(s) = \xi(s - t)$ (same clock).
-
-### 6.3 Type promotion
-
-Each of $\hat{\mathcal{A}}(W_R), \hat{\mathcal{A}}(W_L)$ is type II$_\infty$ by Connes–Takesaki (same as Block 1 Wk 4 §2.3). Both have explicit trace formulas (Block 1 Wk 4 §3):
-$$
-\hat\tau_R(a) = \int e^{-2\pi s}\,\langle 0_M \otimes \delta_s\,|\,a\,|\,0_M \otimes \delta_s\rangle\,ds,
-$$
-and similarly $\hat\tau_L$ with $\sigma_{-s}$ acting on the left.
-
-### 6.4 Commutativity
-
-The two dressed algebras commute on $\mathcal{F} \otimes L^2(\mathbb{R}_s)$:
-$$
-[\hat{\mathcal{A}}(W_R), \hat{\mathcal{A}}(W_L)] = 0.
+\Delta=e^{-\beta_H\widehat H},
+\qquad
+\widehat H=H_R-H_L,
 $$
 
-**Proof sketch.** Generators of $\hat{\mathcal{A}}(W_R)$: $\pi_R(W(f))$ for $f \in W_R$, plus $\lambda(t)$. Generators of $\hat{\mathcal{A}}(W_L)$: $\pi_L(W(g))$ for $g \in W_L$, plus the same $\lambda(t)$.
+where the difference has a large-$N$ limit even though the individual subtracted Hamiltonians need not. The course modular convention is
 
-For $f \in W_R, g \in W_L$ (spacelike separated): $[W(f), W(g)] = 0$ (Sem I Wk 8 §5). The fiberwise actions are then both "Weyl-of-boosted-test-function" with $f \circ \Lambda(2\pi s)$ on the right and $g \circ \Lambda(-2\pi s)$ on the left. **At every fixed $s$**, the boosted functions are still spacelike separated (the boost preserves spacelike separation): $\Lambda(2\pi s) W_R \subset W_R$, $\Lambda(-2\pi s) W_L \subset W_L$. Hence $[\pi_R(W(f))\,\xi(s),\pi_L(W(g))\,\xi(s)] = 0$ at every $s$, and the algebras commute.
+$$
+\sigma_t(a)=\Delta^{-it}a\Delta^{it}.
+$$
 
-The clock $\lambda(t)$ is shared but acts on a separate factor; it commutes with both fiberwise actions modulo the modular-flow conjugation. The conjugation respects commutativity (as in §4 of this lecture, structural proof). $\square$
+On $\mathcal M'$ the same modular operator generates the inverse flow:
 
-### 6.5 Comparison with Block 1
+$$
+\sigma_t'(b)=\Delta^{it}b\Delta^{-it}.
+$$
 
-Block 1 Wk 4 constructed only $\hat{\mathcal{A}}(W_R)$ — the right side, single-sided story. This week's construction adds $\hat{\mathcal{A}}(W_L)$ acting on the same Hilbert space, and the new structural input is **two-sided commutativity**.
+Two cautions belong here, before any calculation.
 
-The new picture:
+First, $\mathcal H_{\rm TFD}$ denotes the standard Hilbert-space representation selected by the TFD state. The commutant relation $\mathcal M'=\mathcal A_{L,0}$ is the algebraic statement we need; no continuum factorization $\mathcal H_{\rm TFD}=\mathcal H_L\otimes\mathcal H_R$ is being assumed. Second, $\widehat H$ is the well-defined two-sided generator in the limiting representation. Writing it as $H_R-H_L$ records its physical origin, but does not license us to manipulate $H_R$ and $H_L$ separately when those operators fail to survive the limit.
 
-| Block 1 Wk 4 (single-sided) | Block 2 Wk 6 (two-sided) |
+## 2. The right crossed product
+
+### 2.1 Regular representation
+
+Before writing the representation, fix the dictionary. The symbols in the middle column belong to the course convention; the final two CPW symbols will enter only in §4.
+
+| Symbol | Role |
 |---|---|
-| $\hat{\mathcal{A}}(W_R)$ on $\mathcal{F}\otimes L^2(\mathbb{R}_s)$ | $\hat{\mathcal{A}}(W_R), \hat{\mathcal{A}}(W_L)$ on same space |
-| Type II$_\infty$ | Each type II$_\infty$ |
-| Single-side trace $\hat\tau_R$ | $\hat\tau_R, \hat\tau_L$ |
-| Commutant of $\hat{\mathcal{A}}(W_R)$: includes $\mathcal{A}(W_L)$ (undressed) and clock-direction operators | $\hat{\mathcal{A}}(W_R)' \supset \hat{\mathcal{A}}(W_L)$ (and equality under Haag duality + dressing) |
+| $t$ | dimensionless modular parameter |
+| $u=\beta_Ht$ | physical boundary time in the equilibrium black-hole application |
+| $q$ | scalar coordinate of the regular representation |
+| $Q$ | multiplication by $q$ |
+| $P=-i\partial_q$ | momentum conjugate to $Q$ |
+| $p$ | Fourier spectral variable of $P$ |
+| $r$ | parameter of the dual action |
 
-The two-sided structure is what allows Block 2 Wk 7 to discuss the **joint dressed entropy** and the **bulk generalized entropy from both wedges**.
+In particular, $q$ is not an operator name, $Q$ is not a physical energy, and $p$ is not CPW's timeshift variable. Keeping those three sentences in view prevents most of the sign errors in this week.
 
-## 7. Independence of GNS vector
+On
 
-A technical fact useful for the rest of Block 2: the dressed algebra is **canonical** in the algebraic sense.
-
-**Theorem 7.1 (Independence of cyclic-separating vector). [Stated only — refs: Sem I Wk 13 Problem 7; Takesaki Vol. II §X.1.]** *For two different cyclic-separating vectors $\Omega_1, \Omega_2$ for $\mathcal{A}_R$ (e.g., the TFD vacuum and a coherent excitation), the dressed algebras*
 $$
-\mathcal{A}_R \rtimes_{\sigma^{\Omega_1}}\mathbb{R} \quad \text{and} \quad \mathcal{A}_R \rtimes_{\sigma^{\Omega_2}}\mathbb{R}
+\widehat{\mathcal H}=\mathcal H_{\rm TFD}\otimes L^2(\mathbb R_q)
 $$
-*are canonically isomorphic.*
 
-**Sketch.** The Connes cocycle (Sem I Wk 7) $u_t = (D\omega_1/D\omega_2)_t$ implements a unitary intertwiner between the two modular flows. The dressed algebras are then unitarily equivalent via the cocycle-intertwining unitary.
+define
 
-### 7.1 Why this matters
+$$
+(\pi_R(a)\xi)(q)=\sigma_{-q}(a)\xi(q),
+\qquad
+(\lambda(t)\xi)(q)=\xi(q-t).
+$$
 
-The CPW construction does not depend on the *choice* of state used to define the modular flow. The dressed algebra is **intrinsic** to $\mathcal{A}_R$ alone (which is type III$_1$); the state choice is a gauge.
+With $(Q\xi)(q)=q\xi(q)$ and $P=-i\partial_q$,
 
-In particular: dressing by the TFD's modular flow gives the same algebra as dressing by, e.g., a coherent state's modular flow. The dressed entropy *of a particular state* depends on the state, but the underlying algebraic structure does not.
+$$
+\lambda(t)=e^{-itP},
+\qquad
+[Q,P]=i.
+$$
 
-This is the **canonical** nature of Takesaki duality (Sem I Wk 13 §4.2): the type II$_\infty$ dressed algebra is determined by $\mathcal{A}_R$ alone.
+Indeed, on $C_c^\infty(\mathbb R_q)$,
 
-> **Physical picture.** State-independence of the dressed algebra is the algebraic echo of *background independence*. One might worry that the whole CPW construction is anchored to a particular bulk solution (the eternal black hole, dual to the TFD), so that perturbing the state — adding matter, shifting the horizon — would require rebuilding the algebra from scratch. Theorem 7.1 says no: every faithful normal state's modular flow produces the *same* dressed algebra, with the Connes cocycle (Sem I Wk 7) supplying the canonical identification. The algebra of gravitationally dressed observables is a property of the *theory* (the type III$_1$ boundary algebra), not of the *solution* (the state). Different states then appear as different density matrices on one fixed type II$_\infty$ algebra — which is exactly what makes perturbation theory (AAJ, Block 4) possible: one perturbs the state and the cocycle, never the algebra.
+$$
+[Q,P]\xi(q)
+=-iq\xi'(q)+i\frac{d}{dq}\big(q\xi(q)\big)
+=i\xi(q).
+$$
 
-## 8. The dressed Hilbert space and the bulk picture
+Exponentiating $P$ gives the translation in the displayed convention:
 
-A brief preview of the bulk interpretation, to be developed in Week 7.
+$$
+(e^{-itP}\xi)(q)=\xi(q-t).
+$$
 
-### 8.1 The clock direction
+This elementary check fixes the sign of every later covariance formula.
 
-The auxiliary $L^2(\mathbb{R}_s)$ is the **conjugate variable to the bulk boost Killing vector**. In the bulk, the boost Killing vector at the bifurcation surface generates a Lorentz transformation that mixes the two asymptotic regions.
+The right dressed algebra is
 
-The clock variable $s$ is the conjugate **boost coordinate** — a "boost time" that parameterizes the boost orbit through the bulk. Mathematically: $\partial_s$ generates translation, $X = -i\partial_s$ is the position operator, and the canonical pair $(X, \lambda(t))$ has $[X, \lambda(t)] = it\lambda(t)$.
+$$
+\mathcal N_R
+:=
+\mathcal M\rtimes_\sigma\mathbb R
+{}={}
+\{\pi_R(\mathcal M),\lambda(t):t\in\mathbb R\}^{\prime\prime}.
+$$
 
-### 8.2 What the dressing represents physically
+The covariance relation is
 
-Dressing by the modular flow corresponds to **gauging the bulk Killing symmetry**. The dressed algebra contains observables that are invariant under the bulk boost (modulo the clock direction). Specifically:
+$$
+\lambda(t)\pi_R(a)\lambda(t)^*=\pi_R(\sigma_t(a)).
+$$
 
-- Operators in $\pi_R(\mathcal{A}_R)$ alone are not invariant — they transform under the modular flow.
-- The clock $\lambda(t)$ implements the modular flow as an inner unitary.
-- Combinations like $\pi_R(a)\,\lambda(\text{appropriate } t)$ can be made invariant under the dual action $\theta_r$.
-- The fixed-point algebra under the dual action is exactly $\pi_R(\mathcal{A}_R)$, the original boundary algebra.
+To see the relation rather than merely quote it, apply both sides to $\xi$:
 
-This is the algebraic statement of "gauging $H_R - H_L$": the original boundary observables sit inside the larger constrained algebra. The new observables in $\hat{\mathcal{A}}_R$ but not in $\pi(\mathcal{A}_R)$ involve the clock, and are interpreted as "conditioned-on-clock" boundary observables.
+$$
+\begin{aligned}
+(\lambda(t)\pi_R(a)\lambda(t)^*\xi)(q)
+&=\sigma_{-(q-t)}(a)\xi(q)\\
+&=\sigma_{-q}(\sigma_t(a))\xi(q).
+\end{aligned}
+$$
+
+Since $\mathcal M$ is type III$_1$, $\mathcal N_R$ is a type II$_\infty$ factor.
+
+> **Status of the type statement.** This is the continuous-core theorem for a type III$_1$ factor. It is not inferred from the displayed representation alone. For a type I algebra, whose modular action is inner, the analogous crossed product is $\mathcal M\bar\otimes L^\infty(\mathbb R)$ and has a centre; the type-III hypothesis is doing the work.
+
+### 2.2 What “one clock” means
+
+There is one auxiliary canonical pair $(Q,P)$ in this representation. This does not mean that both the right algebra and its commutant contain the bare translation $\lambda(t)$. Indeed, if $\lambda(t)$ belonged to both, it would lie in the centre of the factor $\mathcal N_R$, which is impossible for $t\neq0$ because it implements nontrivial modular flow.
+
+The correct question is therefore not “one clock or two clocks?” but:
+
+> How is the same auxiliary canonical pair represented in the right algebra and in its commutant?
+
+## 3. Deriving the left algebra as the commutant
+
+### 3.1 The easy generators
+
+For $b\in\mathcal M'$, let
+
+$$
+\pi_L(b):=b\otimes1.
+$$
+
+This commutes with $\pi_R(a)$ because $\sigma_{-q}(a)\in\mathcal M$ on every fibre, and it commutes with $\lambda(t)$ because it is independent of $q$. Thus
+
+$$
+\pi_L(\mathcal M')\subset\mathcal N_R'.
+$$
+
+These generators alone do not exhaust the commutant: $\mathcal N_R'$ must itself be a type II$_\infty$ factor.
+
+### 3.2 The dressed left translation
+
+Define
+
+$$
+\rho(t):=\Delta^{it}\otimes\lambda(t).
+$$
+
+It commutes with the bare translations because $\lambda(t)$ is an abelian representation of $\mathbb R$. To check commutation with $\pi_R(a)$, act on a vector:
+
+$$
+\begin{aligned}
+(\rho(t)\pi_R(a)\rho(t)^*\xi)(q)
+&=\Delta^{it}\sigma_{-(q-t)}(a)\Delta^{-it}\xi(q)\\
+&=\sigma_{-t}(\sigma_{t-q}(a))\xi(q)\\
+&=\sigma_{-q}(a)\xi(q)\\
+&=(\pi_R(a)\xi)(q).
+\end{aligned}
+$$
+
+Hence $\rho(t)\in\mathcal N_R'$.
+
+### 3.3 The commutant theorem
+
+The standard commutant theorem for crossed products gives
+
+$$
+\boxed{
+\mathcal N_L
+:=
+\mathcal N_R'
+{}={}
+\{\pi_L(\mathcal M'),\rho(t):t\in\mathbb R\}^{\prime\prime}.}
+$$
+
+The left algebra is therefore a crossed-product realization of the commutant with the inverse modular action. It is also a type II$_\infty$ factor.
+
+The generator calculation proves the inclusion from right to left in the boxed formula. Equality is the content of the crossed-product commutant theorem. This distinction is useful in class: checking commutators never proves that one has found the entire commutant. One needs the standard theorem—or an equivalent double-commutant argument using the regular representation—to rule out missing operators.
+
+The decisive distinction is
+
+$$
+\lambda(t)\in\mathcal N_R,
+\qquad
+\rho(t)=\Delta^{it}\otimes\lambda(t)\in\mathcal N_L.
+$$
+
+The two group unitaries use the same $L^2(\mathbb R)$ translation, but the left one is dressed by the system modular implementer. This dressing is exactly what makes the algebras commute.
+
+### 3.4 Left covariance
+
+For $b\in\mathcal M'$,
+
+$$
+\rho(t)\pi_L(b)\rho(t)^*
+{}={}
+\Delta^{it}b\Delta^{-it}\otimes1
+{}={}
+\pi_L(\sigma_t'(b)).
+$$
+
+Thus $\rho(t)$ implements the inverse modular flow appropriate to the left side.
+
+## 4. Matching the abstract commutant to CPW
+
+### 4.1 CPW variables
+
+CPW work in a microcanonical large-$N$ scaling in which the renormalized right and left energies have $O(1)$ fluctuations. Their notation is
+
+$$
+x=h_L,
+\qquad
+p_{\rm CPW}=-i\partial_x,
+\qquad
+[x,p_{\rm CPW}]=i.
+$$
+
+Thus $x$ is an **energy multiplication variable**, whereas $p_{\rm CPW}$ is the relative boundary timeshift. Neither is the course variable with the same printed letter. The two-sided QFT generator is $\widehat h$, and CPW identify
+
+$$
+h_\Psi:=-\log\Delta=\beta_H\widehat h,
+\qquad
+\boxed{\beta_Hh_R=\beta_Hx+h_\Psi.}
+$$
+
+This is the key relation. The right energy is not a second independent clock observable placed beside $x$: it is the sum of the left energy coordinate and the modular generator. Since energies are unbounded, statements such as “$h_R$ belongs to the algebra” mean that its bounded spectral functions, or equivalently its spectral projections, are affiliated with and generate the von Neumann algebra.
+
+In CPW's asymmetric presentation the two algebras are generated schematically by
+
+$$
+\mathcal A_R
+=\{\mathcal A_{R,0},h_R\}^{\prime\prime},
+$$
+
+and
+
+$$
+\mathcal A_L
+=\left\{
+x,
+e^{ip_{\rm CPW}\widehat h}\mathcal A_{L,0}e^{-ip_{\rm CPW}\widehat h}
+\right\}^{\prime\prime}.
+$$
+
+The notation $\{\mathcal A_{R,0},h_R\}^{\prime\prime}$ is shorthand for generation by $\mathcal A_{R,0}$ and the bounded functional calculus of $h_R$. The same qualification applies to $x$. The left QFT operators are conjugated because an operator dressed to one asymptotic boundary must be shifted by the physical relative timeshift to be dressed to the other boundary.
+
+This is the physical version of the abstract formula
+
+$$
+\mathcal N_R'=\{\mathcal M'\otimes1,\Delta^{it}\otimes\lambda(t)\}^{\prime\prime}.
+$$
+
+The extra modular factor in $\rho(t)$ is the regular-representation counterpart of CPW's conjugation of left operators by the timeshift and the two-sided generator.
+
+### 4.2 Deriving the source-to-course dictionary
+
+The dictionary is not a verbal analogy; it follows from a unitary change of representation. Set $h_\Psi=-\log\Delta$ and define the decomposable unitary
+
+$$
+(U\xi)(q)=e^{iqh_\Psi}\xi(q)=\Delta^{-iq}\xi(q).
+$$
+
+It untwists the system algebra:
+
+$$
+U\pi_R(a)U^*=a\otimes1.
+$$
+
+For the right translation,
+
+$$
+U\lambda(t)U^*
+=e^{ith_\Psi}\otimes\lambda(t).
+$$
+
+After Fourier transforming $q$, the operator $P$ is multiplication by the course variable $p$, so
+
+$$
+U\lambda(t)U^*
+=e^{it(h_\Psi-p)}.
+$$
+
+CPW's right group unitary is $e^{it(h_\Psi+\beta_Hx)}=e^{it\beta_Hh_R}$. Therefore the exact sign-and-scale map is
+
+$$
+\boxed{p=-\beta_Hx,\qquad Q=\frac{p_{\rm CPW}}{\beta_H}.}
+$$
+
+The second identity follows from $Q=i\partial_p$ in the chosen Fourier convention and $p=-\beta_Hx$. It is now clear why the two symbols called $p$ must never be identified: course $p$ is the Fourier energy coordinate, while $p_{\rm CPW}$ is the conjugate timeshift.
+
+The left generators transform just as cleanly. Since
+
+$$
+U\rho(t)U^*=\lambda(t),
+$$
+
+their bounded functional calculus becomes the multiplication algebra generated by $x=-p/\beta_H$. Meanwhile
+
+$$
+U(b\otimes1)U^*
+=e^{iQh_\Psi}b e^{-iQh_\Psi}
+=e^{ip_{\rm CPW}\widehat h}b e^{-ip_{\rm CPW}\widehat h},
+$$
+
+where $h_\Psi=\beta_H\widehat h$ was used in the last step. This reproduces CPW's left dressing exactly. The regular commutant formula and CPW's asymmetric energy/timeshift formula are therefore unitarily equivalent descriptions of the same pair.
+
+### 4.3 Symmetric and asymmetric presentations
+
+Witten and CPW sometimes use an asymmetric presentation because it makes the right algebra simple and puts the dressing on the left. A unitary conjugation can distribute half of the dressing to each side, producing a symmetric presentation. The two presentations are unitarily equivalent.
+
+This explains why a diagram that writes two bare crossed products side by side is too crude. The pair is determined jointly by
+
+$$
+(\mathcal N_R,\mathcal N_L)=(\mathcal N_R,\mathcal N_R').
+$$
+
+## 5. Physical time and the modular parameter
+
+The modular parameter $t$ is dimensionless. On the right algebra, physical boundary time is
+
+$$
+u=\beta_Ht.
+$$
+
+The unitary $\lambda(u/\beta_H)$ implements the right modular automorphism inside $\mathcal N_R$. This statement does not require the individual operator $H_R$ to exist in the strict-large-$N$ TFD representation.
+
+On the left commutant, $\rho(u/\beta_H)$ implements the opposite physical time orientation. The opposite sign is encoded by the commutant modular action, not by putting $\lambda(-t)$ into a second algebra.
+
+## 6. Free-field Rindler realization
+
+Let $\mathcal M=\mathcal A(W_R)$ and assume wedge duality $\mathcal M'=\mathcal A(W_L)$. Bisognano–Wichmann gives
+
+$$
+\Delta=e^{-2\pi K_{\rm boost}}.
+$$
+
+The right core is
+
+$$
+\mathcal N_R
+{}={}
+\{\pi_R(\mathcal A(W_R)),\lambda(t)\}^{\prime\prime},
+$$
+
+and its commutant is
+
+$$
+\mathcal N_L
+{}={}
+\{\mathcal A(W_L)\otimes1,
+e^{-i2\pi tK_{\rm boost}}\otimes\lambda(t)
+\}^{\prime\prime}.
+$$
+
+The sign in the modular factor follows from $\Delta^{it}=e^{-i2\pi tK_{\rm boost}}$. Commutativity is now a generator-level theorem, not an appeal to the claim that the clock is “central.”
+
+### 6.1 Direct generator checks
+
+For $a\in\mathcal A(W_R)$ and $b\in\mathcal A(W_L)$:
+
+$$
+[\pi_R(a),b\otimes1]=0,
+$$
+
+by wedge duality,
+
+$$
+[\lambda(t),b\otimes1]=0,
+$$
+
+because $b$ is constant in $q$, and
+
+$$
+[\pi_R(a),e^{-i2\pi tK_{\rm boost}}\otimes\lambda(t)]=0
+$$
+
+by the calculation in §3.2. These relations generate $[\mathcal N_R,\mathcal N_L]=0$.
+
+### 6.2 What is and is not explicit
+
+The type and commutant are exact. The canonical traces on $\mathcal N_R$ and $\mathcal N_L$ exist abstractly and are unique up to separate scales. We do not use a $\delta_q$ integral kernel for either trace. Semester II Week 7 will compute entropy in the exact inner-action Fourier laboratory and then state CPW's gravitational identification with its hypotheses.
+
+## 7. State independence
+
+If $\Omega_1$ and $\Omega_2$ are faithful standard vectors for $\mathcal M$, their modular actions are cocycle conjugate. Consequently,
+
+$$
+\mathcal M\rtimes_{\sigma^{\Omega_1}}\mathbb R
+\cong
+\mathcal M\rtimes_{\sigma^{\Omega_2}}\mathbb R.
+$$
+
+This is the state independence of the continuous core. It should be read as a canonical isomorphism, not literal equality of the represented algebras. Once the right cores are identified, their commutants are identified as well.
+
+The result is what makes perturbation theory possible: the perturbed state can be studied in one algebraic core. However, the cocycle identification may entangle the system and auxiliary variables, so one must not assume that a product clock state remains a product.
+
+## 8. Common wrong constructions
+
+### 8.1 Same bare translation in both algebras
+
+If both alleged commuting algebras contain $\lambda(t)$, then $\lambda(t)$ lies in their intersection. If one is the other's commutant and the right algebra is a factor, that intersection is $\mathbb C1$. But $\lambda(t)$ is not scalar for $t\neq0$. Contradiction.
+
+### 8.2 Calling $\lambda(t)$ central
+
+$\lambda(t)$ satisfies
+
+$$
+\lambda(t)\pi_R(a)\lambda(t)^*=\pi_R(\sigma_t(a)),
+$$
+
+so it is central only if the flow is trivial. The noncentrality is the point of the crossed product.
+
+### 8.3 Two independent clocks without a physical reason
+
+Two clocks produce a different enlarged system and generally a different constraint structure. Such a construction may be useful in another model, but it is not CPW's one-energy-collective-coordinate algebra and cannot be introduced merely to make commutativity obvious.
 
 ## 9. What to take away
 
-- **CPW dressed algebras:** $\hat{\mathcal{A}}_R = \mathcal{A}_R \rtimes_{\sigma^{\mathrm{TFD}}}\mathbb{R}$ and $\hat{\mathcal{A}}_L$ analogously. Both type II$_\infty$ by Connes–Takesaki.
-- **Single clock, opposite directions:** the auxiliary $L^2(\mathbb{R}_s)$ is shared between the two dressings; the right side uses positive boost, the left side uses negative boost. The clock momentum is $H_R - H_L$ (the bulk Killing generator).
-- **Inner ADM:** the right ADM Hamiltonian $H_R$ becomes inner on $\hat{\mathcal{A}}_R$ via the clock unitary $\Lambda_R(u) = \lambda(u/\beta_H)$. Similarly $H_L$ on $\hat{\mathcal{A}}_L$.
-- **Commutativity:** $[\hat{\mathcal{A}}_R, \hat{\mathcal{A}}_L] = 0$ on the dressed Hilbert space. Causal complementarity is preserved.
-- **Single-gauge-constraint:** the CPW single-clock construction implements exactly one gauge constraint (the bulk boost Killing vector), not two independent ADM constraints.
-- **Independence of state:** the dressed algebra is intrinsic to $\mathcal{A}_R$ (canonical via the Connes cocycle).
-- **Free-field analog:** $\hat{\mathcal{A}}(W_R), \hat{\mathcal{A}}(W_L)$ on $\mathcal{F}\otimes L^2(\mathbb{R}_s)$ with explicit trace formulas. Verified commutativity from the spacelike separation of boosted test functions.
+- Build the right core $\mathcal N_R=\mathcal M\rtimes_\sigma\mathbb R$ first.
+- Define the left dressed algebra as $\mathcal N_L=\mathcal N_R'$.
+- In the regular representation,
+
+$$
+\mathcal N_L
+{}={}
+\{\mathcal M'\otimes1,\Delta^{it}\otimes\lambda(t)\}^{\prime\prime}.
+$$
+
+- The right contains $\lambda(t)$; the left contains the dressed unitary $\Delta^{it}\otimes\lambda(t)$. They do not both contain the same bare noncentral translation.
+- One auxiliary canonical pair can support both algebras because it is embedded differently on the two sides.
+- Physical time is $u=\beta_Ht$; the separate $H_R$ and $H_L$ need not exist in the strict-large-$N$ representation.
+- The free-field wedge realizes the same commutant construction exactly.
 
 ## 10. Looking ahead
 
-Week 7 puts the dressed algebra to work: define the **dressed entropy** on $\hat{\mathcal{A}}_R$ in the two-sided CPW setting, and **identify it with the bulk generalized entropy** $S_{\mathrm{gen}} = A_{\mathrm{horizon}}/(4G_N) + S_{\mathrm{out}}$. The mini-calculation (Mini-Calc 2) does this explicitly in the free-field Rindler-Rindler analog. The two-sided structure adds **no new structural ingredient** beyond Block 1 — the algebraic computation is the same — but the physical interpretation is "the generalized entropy of the eternal BH" rather than "the generalized entropy of a single bounded region."
+Week 7 studies trace entropy on the right type II$_\infty$ algebra and CPW's identification with generalized entropy. The two-sided novelty is not a “joint entropy” on two tensor factors. It is the existence of a right factor and a geometrically meaningful commutant sharing the black-hole collective coordinate.
 
 ## 11. Problem set
 
 **Core problems.**
 
-**1. Modular flow on $\mathcal{A}_R$.** For $a \in \mathcal{A}_R$, verify that $\sigma^{\mathrm{TFD}}_t(a) = e^{i\beta_H t H_R}\,a\,e^{-i\beta_H t H_R}$. Where does $H_L$ go?
+**1. Right covariance.** Verify $\lambda(t)\pi_R(a)\lambda(t)^*=\pi_R(\sigma_t(a))$.
 
-**2. Modular flow on $\mathcal{A}_L$.** For $b \in \mathcal{A}_L$, verify that $\sigma^{\mathrm{TFD}}_t(b) = e^{-i\beta_H t H_L}\,b\,e^{i\beta_H t H_L}$ — i.e., the flow on the left is in the **opposite direction**. Identify the sign with the bulk Killing-vector direction.
+**2. Easy commutant.** Prove $b\otimes1$ commutes with both $\pi_R(a)$ and $\lambda(t)$ for every $b\in\mathcal M'$.
 
-**3. Single-clock argument.** Show that the single clock $\lambda(t)$ has momentum $X = -i\partial_s$ generated by **$H_R - H_L$** (up to a factor of $\beta_H$), not by $H_R$ or $H_L$ separately.
+**3. Dressed left translation.** Starting from $\rho(t)=\Delta^{it}\otimes\lambda(t)$, reproduce §3.2 and show that $\rho(t)$ commutes with $\pi_R(a)$ and $\lambda(v)$ for every group parameter $v$. Keep $u=\beta_Ht$ reserved for physical time.
 
-**4. Commutativity of dressed algebras.** Take $a \in \mathcal{A}(W_R), b \in \mathcal{A}(W_L)$ both compactly supported. Show that the corresponding $\pi_R(a), \pi_L(b) \in \hat{\mathcal{A}}(W_R), \hat{\mathcal{A}}(W_L)$ commute on the dressed Hilbert space $\mathcal{F}\otimes L^2(\mathbb{R}_s)$.
+**4. Left covariance.** Show $\rho(t)(b\otimes1)\rho(t)^*=\Delta^{it}b\Delta^{-it}\otimes1$.
 
-**5. Read CPW §3.** Identify CPW's notation for the dressed algebra and the explicit form of the dressed unitary $\lambda(t) = e^{iH_R t/\beta_H}$ (or equivalent). Compare with our Definition 2.1.
+**5. Why the bare-clock proposal fails.** Assume $\mathcal N_R$ and $\mathcal N_L=\mathcal N_R'$ both contain $\lambda(t)$. Use factoriality to derive a contradiction.
+
+**6. Rindler signs.** Substitute $\Delta=e^{-2\pi K_{\rm boost}}$ into $\rho(t)$ and verify every sign in §6.
 
 **Starred problems.**
 
-**6\*. Free-field trace formula.** Write the trace on $\hat{\mathcal{A}}(W_R)$ explicitly as in Block 1 Wk 4 §3. Verify it is the *same* formula in the two-sided setting (the $\mathcal{H}_L$ factor is a spectator).
+**7\*. Commutant theorem.** Starting from the generator inclusions proved here, consult the crossed-product commutant theorem and identify the step required to establish equality rather than only inclusion.
 
-**7\*. Verify $\hat{\mathcal{A}}(W_R)' \supset \hat{\mathcal{A}}(W_L)$ in the free-field analog.** Take a generator $\pi_R(W(f))\lambda(t)$ of $\hat{\mathcal{A}}(W_R)$ and verify it commutes with $\pi_L(W(g))$ for $g$ in $W_L$.
+**8\*. Symmetric presentation.** Let $(V\xi)(q)=\Delta^{-iq/2}\xi(q)$. Conjugate every right and left generator by $V$ and show that the two group unitaries become $\Delta^{-it/2}\otimes\lambda(t)$ and $\Delta^{it/2}\otimes\lambda(t)$. Compare with Witten's symmetric formulas for the two algebras.
 
-**8\*. Why a single clock?** Suppose hypothetically we used two independent clocks $L^2(\mathbb{R}_{s_R}) \otimes L^2(\mathbb{R}_{s_L})$ for $\hat{\mathcal{A}}_R$ and $\hat{\mathcal{A}}_L$. What goes wrong, structurally? (*Hint:* the algebras would no longer share the modular structure; the dressing would not respect causal complementarity in the right way.)
+**9\*. CPW energy/timeshift dictionary.** Read CPW §2.2. Match their $x$, $p$, and $\widehat h$ to the abstract regular-representation variables, noting that the match involves a Fourier transform and convention-dependent signs.
 
-**9\*. CLPW de Sitter contrast.** Read CLPW arXiv:2206.10780 §3. Identify the de Sitter dressing: a single static-patch observer with their own observer-Hamiltonian clock. Compare with the CPW two-sided / single-clock structure of this week.
+**10\*. Two-clock countermodel.** On $\mathcal H_{\rm TFD}\otimes L^2(\mathbb R_{q_R})\otimes L^2(\mathbb R_{q_L})$, build the right regular core using only $q_R$ and the left regular core for the inverse commutant action using only $q_L$. Show that the two represented cores commute. Each core is a factor under the III$_1$ hypothesis, but the construction carries two independent dual actions and two canonical pairs. Explain why commutativity alone does not make either represented core the full commutant of the other, and why this is not CPW's one-timeshift system.
 
 **Project problems.**
 
-**10. Read CPW §3 in full.** Write a 3–5 page exposition of the CPW dressed-algebra construction emphasizing: (i) what is the same as Witten 2022 single-sided; (ii) what is new (single clock, two-sided commutativity); (iii) the bulk-Killing-vector interpretation.
+**11. CPW construction note.** Write a five-page account deriving $\mathcal N_L=\mathcal N_R'$ in both the abstract regular representation and CPW's energy/timeshift representation. The two derivations must meet in an explicit dictionary.
 
-**11. Bell-CHSH connection.** The Bell-CHSH question (Sem I Wk 11; Sem II Wk 8) requires the **joint** two-sided algebra. Sketch how the CPW dressed structure of this week could enter a Bell-CHSH calculation: do the *dressed* algebras still saturate Tsirelson? Or does the dressing change the bound?
+**12. Bell bridge.** Explain which bounded observables from $\mathcal N_R$ and $\mathcal N_L$ could enter a CHSH operator. State why the commutant relation is necessary for locality, and why it does not by itself guarantee Tsirelson saturation in a chosen state.
+
+## 12. Instructor checkpoints (internal)
+
+1. **Right covariance:** the fibre calculation must end with $\sigma_{-q}(\sigma_t(a))$.
+2. **Easy commutant:** $b\in\mathcal M'$ commutes with every $\sigma_{-q}(a)\in\mathcal M$, and $b\otimes1$ is independent of $q$.
+3. **Dressed translation:** conjugation by $\rho(t)$ gives $\sigma_{-t}\sigma_{t-q}(a)=\sigma_{-q}(a)$; $\rho(t)$ commutes with $\lambda(v)$ because the translation group is abelian and the modular factor acts on the other tensor factor.
+4. **Left covariance:** it is exactly $\operatorname{Ad}\Delta^{it}$ on $\mathcal M'$, the inverse of the course right modular action.
+5. **Bare-clock failure:** if the same $\lambda(t)$ lies in $\mathcal N_R$ and $\mathcal N_R'$, factoriality makes it scalar; covariance shows it is non-scalar whenever the modular action is nontrivial.
+6. **Rindler signs:** $\Delta^{it}=e^{-i2\pi tK_{\rm boost}}$, so the left unitary is $e^{-i2\pi tK_{\rm boost}}\otimes\lambda(t)$.
+7. **Commutant theorem:** generator commutation proves only inclusion. Equality is the standard regular crossed-product commutant theorem.
+8. **Symmetric presentation:** $V\lambda(t)V^*=\Delta^{-it/2}\lambda(t)$ and $V\rho(t)V^*=\Delta^{it/2}\lambda(t)$.
+9. **CPW dictionary:** $h_\Psi=-\log\Delta=\beta_H\widehat h$, $p=-\beta_Hx$, and $p_{\rm CPW}=\beta_HQ$. The source $p_{\rm CPW}$ is a timeshift, not course Fourier momentum.
+10. **Two-clock model:** the separate variables make commutativity easy but leave two independent dual shifts and an extra relative-clock sector. A commutant equality is not obtained merely from the inclusion of two commuting cores.
+11. **Construction note rubric:** the unitary $U(q)=\Delta^{-iq}$ and the Fourier transform must explicitly turn the regular right generator into $e^{it(h_\Psi-p)}=e^{it\beta_Hh_R}$ and the left generators into CPW's $x$ plus timeshift-dressed $\mathcal A_{L,0}$.
+12. **Bell bridge:** use bounded self-adjoint contractions or unitaries in the two commuting factors. The algebraic commutant relation supplies cross-commutativity; the state and chosen observables determine the numerical CHSH value.
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 2. Last revised 2026-06-11.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 2. Last revised 2026-08-24.*

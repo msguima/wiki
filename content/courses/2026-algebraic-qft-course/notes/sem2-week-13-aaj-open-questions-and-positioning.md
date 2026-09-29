@@ -5,162 +5,237 @@ course: syllabus
 semester: 2
 week: 13
 block: 4
-duration: 4 hours (seminar + student final-topic presentations)
-prerequisites: Sem II Wks 11–12 (cocycle perturbation, Mini-Calc 4)
-target_paper: "Ahmad & Jefferson, arXiv:2501.01487 §6 and outlook"
-modified: 2026-08-23
+duration: "master dossier: 4 hours of material; classroom core: 2-hour seminar + 1-hour office/self-study"
+prerequisites: Sem II Wks 11–12 (AAJ framework, source audit, and computation protocol)
+target_paper: "Ahmad & Jefferson, arXiv:2501.01487v2 §5"
+modified: 2026-08-24
 ---
 
 # Sem II Week 13 — Ahmad–Jefferson III: Open Questions and Positioning the Field
 
-> *Block 4 computed the second-order generalized-entropy correction under a GJW traversal — the technical climax of the course. This week we step back and ask: where does AAJ leave the program? We survey the open-question landscape (non-perturbative regimes, higher orders, bulk interpretation of the algebraic corrections, other deformations, and the embezzlement connection to the group's own research), and students present their final-write-up topics for group feedback. The goal is to position each student's work against the live frontier before the final paper. Block 5 (MSY) then supplies the bulk side, so the algebra/bulk gap can be stated honestly.*
+> *AAJ show that a crossed-product entropy can be followed under a unitary deformation of the full algebra-state system, and they apply the construction to a traversable wormhole through second order in the deformation and through $O(1/N^2)$. The next questions are not all questions AAJ themselves pose. This week therefore uses two labels: “AAJ outlook” for directions stated in §5, and “course-generated direction” for connections we propose after comparing the paper with modular reconstruction and entanglement [[entanglement-embezzlement|embezzlement]]. The distinction makes the literature map useful rather than decorative.*
 
-## 0. Reading
+> **Route through this master dossier.** **Classroom core (two-hour seminar):** §§1–3, ending with the claim-status and literature-positioning ledger. **Full derivation or self-study:** §4's catalyst calculation and the core exercises. **Research extension or office hour:** §5, the starred/project problems, and the proposal-building exercise that separates AAJ's outlook from course-generated directions. The aim is to teach how a research frontier is delimited, not merely how it is advertised.
 
-**Primary:**
-- Ahmad & Jefferson, arXiv:2501.01487, **§6 and outlook** (limitations, open directions).
-- Re-read of CPW (arXiv:2209.10454) final section (limitations of the unperturbed construction).
+## 0. Reading and corrected references
 
-**Secondary / gentler:**
-- Sem II Wks 11–12 (the cocycle machinery and Mini-Calc 4 these questions extend).
+**Primary.**
 
-**Optional research reading:**
-- Faulkner, Li, Wang, "A modular toolkit for bulk reconstruction," arXiv:2206.00027 (modular methods that may go beyond perturbative).
-- van Daele / recent embezzlement-in-type-III literature (the group's [[entanglement-embezzlement|embezzlement]] program).
-- Gesteau, "Large N von Neumann algebras and the renormalization of Newton's constant," arXiv:2302.01938 (algebraic running of $G_N$).
+- Ahmad and Jefferson, arXiv:2501.01487v2, §5, “Discussion: the fate of the algebraic approach in quantum gravity.” The paper has five numbered sections; there is no §6.
+- Re-read Eqs. (77)–(78): five additional linear terms and fifteen quadratic terms, twenty new terms through quadratic order.
 
-## 1. What AAJ achieved, and where it stops
+**Secondary.**
 
-### 1.1 The achievement
+- CPW, arXiv:2209.10454, final discussion.
+- T. Faulkner, M. Li, and H. Wang, “A modular toolkit for bulk reconstruction,” arXiv:1806.10560. The title and identifier should be kept together; arXiv:2206.00027 is not this paper.
 
-AAJ's contribution, in one sentence: **algebraic perturbation theory for the generalized entropy**, taken to second order in a GJW deformation, yielding a structured set of 20 corrections that assemble into a bulk-interpretable $\delta S_{\rm gen}$. The tool — cocycle perturbation theory on the dressed type II$_\infty$ algebra — is reusable and is the main deliverable beyond the specific numbers.
+**Embezzlement reading.**
 
-> **Physical picture.** Before AAJ, the crossed-product framework (Witten, CPW, Liu) computed the generalized entropy of *equilibrium* configurations. AAJ made it a *dynamical* tool: you can now perturb the dressed algebra and watch $S_{\rm gen}$ respond, order by order, with the cocycle as the expansion parameter. This is the difference between "here is the entropy of the black hole" and "here is how the entropy changes when you throw something in / open the wormhole." The framework is young, and the natural questions are all about how far it extends.
+- W. van Dam and P. Hayden, “Universal entanglement transformations without communication,” quant-ph/0201041.
+- L. van Luijk, A. Stottmeister, R. F. Werner, and H. Wilming, “Embezzlement of entanglement, quantum fields, and the classification of von Neumann algebras,” arXiv:2401.07299.
 
-### 1.2 Where it stops
+## 1. What AAJ established
 
-AAJ go to **quadratic order** in $g$, in the **perturbative** regime, for the **GJW (double-trace)** deformation, with the bulk interpretation of individual terms **partially** established. Each of these four boundaries is an open direction.
+AAJ study type-III$_1$ algebra-state systems related by a unitary on the full algebra and its commutant. They transport the modular data, reconstruct the corresponding crossed products, and compute how the spectral weighting in the type-II trace changes. In the GJW application they obtain an entropy expansion containing
 
-## 2. The open-question landscape
-
-We organize AAJ §6's outlook into five questions, each a candidate final-paper or thesis direction.
-
-### 2.1 Beyond perturbative
-
-**Question 1.** AAJ expand to finite order in $g$. What is the **non-perturbative** structure? Does the dressed algebra itself change character at large deformation (e.g. a phase transition in the wormhole's traversability)?
-
-> **Physical picture.** Perturbatively, the GJW pulse is a small reorganization of modular time. Non-perturbatively, a strong enough coupling could change the *causal structure* — fully merging the two sides, or collapsing the wormhole. Algebraically this would show up as a change in the commutant relation $\mathcal{A}_R' = \mathcal{A}_L$ (the algebraic ER=EPR criterion, Sem II Wk 10): a strong deformation might break or restructure it. No one has a controlled non-perturbative handle; this is wide open.
-
-### 2.2 Higher-order corrections
-
-**Question 2.** AAJ enumerate 20 corrections at $O(g^2)$. What is the **full enumeration at higher orders**? Is there a generating function or a diagrammatic organization (a "modular Feynman rules")?
-
-This is the most concrete and tractable direction — a careful combinatorial/diagrammatic extension of the Mini-Calc 4 bookkeeping. A good final-paper topic for a computationally inclined student.
-
-### 2.3 Bulk interpretation
-
-**Question 3.** Each of AAJ's algebraic corrections — which **bulk geometric feature** does it correspond to? The throat shift, the shape of the deformed ER bridge, the Shapiro advance? AAJ establish the dictionary partially; completing it is open.
-
-> **Physical picture.** The algebra produces a sum of 20 numbers; the bulk produces a deformed geometry. Some terms clearly map (the modular-energy shift ↔ horizon-area change). Others — especially the cross-sector terms — do not yet have a clean bulk reading. Closing this is exactly the algebra/bulk matching the course flags as unfinished (Block 5 Wk 14 honest scoping). MSY gives the bulk Shapiro shift; AAJ gives the algebraic corrections; the precise map between them is not established at the rigorous level.
-
-### 2.4 Other deformations
-
-**Question 4.** AAJ focus on GJW (a double-trace $\mathcal{O}_L\mathcal{O}_R$). What about deformations by **conserved currents** or the **stress tensor**? These are more constrained (Ward identities) and may be more or less lossy. Different deformations probe different aspects of the dressed algebra.
-
-### 2.5 Connection to embezzlement (the group's program)
-
-**Question 5.** The Connes cocycle is *also* the natural tool for **entanglement embezzlement** in type III$_1$ algebras (van Daele; the group's Ph.D. work, [[entanglement-embezzlement]]). What is the relation between cocycle *perturbation theory* (AAJ) and cocycle-based *embezzlement protocols*?
-
-This is the question in the list that touches the group's own program most directly, so it is worth making concrete rather than leaving at the level of a slogan. The mechanism of embezzlement can be exhibited completely in finite dimensions, and doing so shows exactly what the type III$_1$ limit supplies. **[Computed — finite-dimensional catalyst; the exactness claim in III$_1$ is stated with refs.]**
-
-**The van Dam–Hayden catalyst.** Take the bipartite state
 $$
-|\mu_n\rangle = \frac{1}{\sqrt{C_n}}\sum_{j=1}^{n}\frac{1}{\sqrt j}\;|j\rangle_A\otimes|j\rangle_B,
-\qquad C_n = \sum_{j=1}^{n}\frac1j = H_n \simeq \ln n + \gamma,
+5\ \text{additional }O(h)\text{ terms}
+\quad\text{and}\quad
+15\ O(h^2)\text{ terms},
 $$
-whose Schmidt probabilities are $p_j = 1/(jC_n)$ — a harmonic, and therefore nearly scale-invariant, spectrum. The claim is that Alice and Bob can extract a Bell pair from $|\mu_n\rangle$ by local unitaries alone, leaving the catalyst almost unchanged.
 
-**Why it works, computed.** Tensoring the catalyst with a Bell pair doubles the Schmidt rank and halves every probability, so $|\mu_n\rangle\otimes|\Phi^+\rangle$ has spectrum
+through $O(1/N^2)$. The original GJW first-law term is among the linear structures but is not counted among the five additional terms.
+
+This achievement has a clear boundary:
+
+- the deformation of the full system is unitary;
+- the regional change is controlled perturbatively;
+- the detailed application is a bilocal double-trace deformation;
+- evaluating every term still requires a concrete boundary Hamiltonian/correlator input;
+- the interpretation of the total type-II entropy as separate area and matter contributions is regime- and normalization-sensitive.
+
+The reusable tool is not “a Connes-cocycle expansion.” It is the combination of unitary modular covariance, a changed trace weight/Jacobian, and a BCH expansion of the modular charge.
+
+## 2. Outlook questions stated or directly motivated by AAJ §5
+
+### 2.1 Beyond global unitary transformations
+
+AAJ explicitly point to **quantum channels** as a natural extension. A global unitary that mixes an algebra with its commutant need not descend to unitary dynamics on either subsystem. In a type-I regulator the reduced map is a completely positive trace-preserving channel; the algebraic question is how to formulate the corresponding perturbative crossed product and entropy weighting without relying on a tensor-product partial trace.
+
+**Concrete deliverable.** Start with a finite-dimensional Stinespring dilation, derive the subsystem channel, and identify which steps in AAJ's covariance argument fail when the effective map has more than one Kraus operator. Then state what operator-algebraic replacement would be needed.
+
+### 2.2 Regions that move, fluctuate, or change topology
+
+AAJ emphasize a basic tension: AQFT normally assigns an algebra to a fixed region, while in gravity the region and its QES can move under a perturbation. Controlled unitary deformation handles a small change, but a topology-changing or nongeometric regime is not covered.
+
+The difficult question is therefore not simply whether $\mathcal A_R'=\mathcal A_L$ continues to hold. Tomita commutant relations are representation-theoretic and can survive many physically different geometries. One needs a rule that assigns algebras to quantum regions and compares those assignments across states.
+
+**Concrete deliverable.** Define a family $h\mapsto(\mathcal A_h,\omega_h)$ and specify embeddings or channels between different $h$. Without such comparison maps, the phrase “the algebra changed type/topology” has no precise content.
+
+### 2.3 Heavy operators and loss of semiclassical geometry
+
+AAJ note that sufficiently heavy boundary excitations may leave the regime in which a smooth bulk region is available. The crossed product still has an abstract algebraic meaning, but the geometric interpretation of its modular charge may fail.
+
+This gives a useful research boundary: determine which statements require only a standard pair and which require a semiclassical bulk. Semifiniteness of the continuous core belongs to the first column; “this term is a QES area shift” belongs to the second.
+
+### 2.4 Evaporation as mixing of algebra and commutant
+
+AAJ use the traversable wormhole as a controlled analog of information transfer between a black hole and radiation. The global process may be unitary while the effective one-sided description is nonunitary and nonlocal. Extending this picture to a genuinely evaporating one-sided black hole requires a state- and time-dependent algebraic assignment, not merely reusing the eternal-TFD formulas.
+
+## 3. Course-generated directions
+
+The directions below are motivated by AAJ but are not presented as claims from their §5.
+
+### 3.1 Higher-order organization
+
+AAJ give an all-orders formal expression for the perturbed weight and work out the entropy through $h^2$. A natural project is to develop a verified symbolic organization of $h^3$ terms. The goal is not to guess a number from “cocycle × logarithm × clock sectors,” but to expand AAJ's own weight/Jacobian formula, impose BCH order, and test the result against finite matrices.
+
+**Status:** course-generated computational project.
+
+### 3.2 Other interactions
+
+Conserved-current or stress-tensor bilocals bring Ward identities and contact terms absent from a generic scalar double trace. One may ask which of AAJ's displayed structures simplify, which new renormalization data enter, and whether the unitary deformation still has a controlled regional interpretation.
+
+**Status:** course-generated extension; the number of terms cannot be predicted without carrying out the expansion and fixing grouping conventions.
+
+### 3.3 Bulk matching term by term
+
+Terms containing $\beta_1$ or $\beta_2$ invite an area interpretation, while commutator terms can contain matter and quantum-gravity information. A rigorous term-by-term map to a Shapiro time advance or a changed QES requires a bulk calculation in the same state, normalization, and perturbative scheme.
+
+**Status:** partially motivated by AAJ's interpretation, but the proposed detailed matching is open.
+
+### 3.4 Embezzlement and the flow of weights
+
+The strongest proven bridge between embezzlement and von Neumann-algebra type comes from van Luijk–Stottmeister–Werner–Wilming, not from AAJ. They define an operational worst-case error. A state is embezzling when the infimum error vanishes: arbitrary targets can be produced with arbitrarily small disturbance/error. In this sense type-III$_1$ factors are **universal embezzlers**, and every normal state is embezzling.
+
+“Error infimum zero” must not be rewritten as “one finite protocol has literally zero error.” It means that for every tolerance $\epsilon>0$ there is an admissible protocol with error below $\epsilon$.
+
+The paper relates embezzling states to invariant probability measures on the flow of weights. That suggests a genuine question for the course: how does passing from a type-III$_1$ algebra to its type-II$_\infty$ crossed product change the relevant operational invariants? This is much sharper than saying that the same Connes cocycle “implements both” AAJ perturbation and embezzlement. AAJ do not compute a Connes-cocycle protocol, and the embezzlement theorem is organized by the flow of weights.
+
+**Status:** course-generated bridge to the group's research program.
+
+## 4. Finite-dimensional embezzlement: what can be checked
+
+### 4.1 The van Dam–Hayden family
+
+The standard catalyst has Schmidt coefficients
+
 $$
-\Big\{\tfrac{1}{2jC_n}\ \text{with multiplicity } 2\Big\}_{j=1}^{n},
+|\mu_n\rangle
+=\frac1{\sqrt{H_n}}
+\sum_{j=1}^n\frac1{\sqrt j}|j\rangle_A|j\rangle_B,
+\qquad
+H_n=\sum_{j=1}^n\frac1j.
 $$
-while the larger catalyst $|\mu_{2n}\rangle$ has spectrum $\{1/(kC_{2n})\}_{k=1}^{2n}$. Compare them by pairing $k = 2j-1$ with $k = 2j$: the target contributes $\tfrac{1}{2j-1} + \tfrac{1}{2j}$ where the doubled state contributes $\tfrac{1}{2j}+\tfrac{1}{2j} = \tfrac1j$. The two agree in the large-$j$ tail, and the *total* discrepancy is
+
+Its Schmidt probabilities $p_j=1/(jH_n)$ are approximately scale invariant over a long range. Van Dam and Hayden prove that for any fixed finite target state, local unitaries can produce the target while returning the catalyst with fidelity tending to one as $n\to\infty$; the error decreases only logarithmically in the catalyst size.
+
+The useful hand calculation is not an alleged exact fidelity formula. It is the edge-mass estimate. Rescaling the index by a fixed target Schmidt rank $m$ changes $1/j$ approximately by the compensating factor $m$ away from the first and last few indices. The unmatched edge weight is bounded by a fixed harmonic sum divided by $H_n$:
+
 $$
-\sum_{j\ge1}\Big(\frac{1}{2j-1} - \frac{1}{2j}\Big) = \ln 2,
+\text{edge weight}
+\lesssim\frac{H_m}{H_n}
+\xrightarrow[n\to\infty]{}0.
 $$
-the alternating harmonic series. Note what this says: the mismatch between "catalyst plus one ebit" and "bigger catalyst" is **finite and $n$-independent**, while the normalization $C_{2n}\simeq\ln 2n$ **diverges**. The relative error is therefore of order $\ln 2/C_{2n} = O(1/\log n)$, and since the overlap of two pure states with sorted Schmidt spectra $\{p_i\}$, $\{q_i\}$ is $\sum_i\sqrt{p_iq_i}$, the extraction fidelity satisfies
+
+This explains why a harmonic spectrum works. The precise fidelity/error bound should be cited to van Dam–Hayden rather than reconstructed from an informal pairing of Schmidt coefficients.
+
+### 4.2 Why a flat catalyst fails
+
+Let
+
 $$
-\big|\langle \mu_{2n}\,|\,U_A\otimes U_B\,|\,\mu_n\otimes\Phi^+\rangle\big| \;=\; 1 - O\!\big(1/\log n\big) \;\xrightarrow[n\to\infty]{}\; 1 .
+|\nu_n\rangle=\frac1{\sqrt n}\sum_{j=1}^n|jj\rangle.
 $$
-**[Stated — refs: van Dam & Hayden, quant-ph/0201041, for the error bound; the $\ln 2$ mismatch above is the computation behind it.]** A Bell pair has been produced from nothing but local unitaries, and the catalyst is returned in a state arbitrarily close to its original — but only *arbitrarily* close, never exactly, at any finite $n$.
 
-**Where type III$_1$ enters.** The obstruction at finite $n$ is that the Schmidt spectrum is only *approximately* scale-invariant: it has a top ($j=1$) and a bottom ($j=n$), and the $\ln 2$ mismatch is the price of those edges. A type III$_1$ algebra has no such edges. Its modular spectrum is all of $\mathbb{R}$ (Sem II Wk 9 §2.3), which is exactly the statement that the "Schmidt spectrum" is scale-invariant with no top and no bottom, and the finite-$n$ error has nowhere to come from. Embezzlement becomes **exact**, and every normal state on a III$_1$ factor is an embezzling state. The $n\to\infty$ limit of the catalyst is not a technical convenience; it is the passage from type I to type III$_1$.
+Its Schmidt rank is $n$. Adding a product ancilla does not change that rank, while the desired state $|\nu_n\rangle\otimes|\Phi^+\rangle$ has Schmidt rank $2n$ with uniform coefficients. Local unitaries preserve the Schmidt spectrum. Even after embedding in a larger space, the largest possible squared overlap of a rank-$n$ state with that rank-$2n$ uniform target is at most
 
-**The link to AAJ.** Both programs use the same object for the same structural reason. Embezzlement asks: given two states of the catalyst, what unitary in the algebra carries one to the other? Cocycle perturbation theory asks: given two states of the dressed algebra, what unitary relates their modular flows? The answer to both is the Connes cocycle $(D\omega_V/D\omega)_t$, because in the absence of a trace it is the only object that compares two states, and both questions are questions about comparing states. So a GJW deformation *is*, read from the embezzlement side, a particular cocycle-implemented state change — and one can ask whether the entropy corrections AAJ compute have an information-theoretic reading as embezzlement costs. That question is open, and it is the most direct bridge from the recent holographic literature to the group's [[bell-inequalities-qft|Bell-CHSH]] and [[entanglement-embezzlement|embezzlement]] program.
+$$
+\left[
+\sum_{j=1}^{n}
+\left(\frac1{\sqrt n}\frac1{\sqrt{2n}}\right)
+\right]^2
+=\left(\frac1{\sqrt2}\right)^2
+=\frac12.
+$$
 
-> **Physical picture.** Embezzlement extracts entanglement from a catalyst with arbitrarily good fidelity — exact in type III$_1$, impossible exactly in type I or II (Sem I Wk 12). The computation above says why in one line: the catalyst works to the extent that its entanglement spectrum looks the same after you take a piece out of it, and a harmonic spectrum looks the same up to its two edges. Type III$_1$ is the algebra of a system with no edges — no largest mode, no smallest — which is the same absence of a scale that made the local algebras of QFT type III$_1$ in the first place (Wk 9 §2.1). The vacuum of a quantum field theory is an infinitely good catalyst for the same reason that its entanglement entropy diverges. That is a genuinely striking statement, and it is why the group's embezzlement line and its Bell-CHSH line are the same subject seen from two sides.
+after optimal alignment of the nonzero Schmidt directions. Increasing $n$ does not improve the bound. Large rank alone is therefore insufficient; the slowly varying, scale-free tail is essential.
 
-## 3. Positioning the field
+### 4.3 What type III$_1$ changes
 
-### 3.1 Two kinds of progress
+The operator-algebraic theorem should be stated operationally:
 
-AAJ enables both:
+> For a type-III$_1$ factor, every normal state is an embezzling state in the sense that the optimal worst-case error is zero.
 
-- **Incremental:** "compute more orders," "do other deformations," "nail down the bulk dictionary term by term." Tractable, valuable, good for a first paper.
-- **Structural:** "the cocycle perturbation framework is now a standard tool." This reframes how one thinks about gravitational entropy dynamics — as algebraic perturbation theory on a type II$_\infty$ algebra. The structural shift may matter more than any single number.
+The theorem is not proved by calling the modular spectrum a literal infinite Schmidt spectrum. That analogy is suggestive but can mislead because a type-III factor admits no underlying tensor-product density matrix of the kind used above. The proof uses the flow of weights and von Neumann-algebraic invariants.
 
-### 3.2 The natural next papers
+## 5. A positioning matrix for final projects
 
-For a student wanting to continue:
+| Direction | Exact starting point | Missing ingredient | Defensible deliverable |
+|---|---|---|---|
+| AAJ $h^3$ | v2 all-orders weight; BCH | controlled symbolic bookkeeping | verified finite-matrix expansion |
+| Quantum-channel extension | AAJ §5 suggestion | crossed-product analog of reduced channel | finite Stinespring model + formal gap |
+| Moving QES/algebra | unitary covariance | comparison maps between region algebras | precise family of inclusions/channels |
+| Bulk term matching | Eqs. (77)–(78) | same-scheme gravity calculation | one term matched with assumptions |
+| Holographic Bell | AQFT existence theorems | explicit boundary observables and theorem hypotheses | reproducible lower bound, no bridge iff |
+| Crossed-product [[entanglement-embezzlement\|embezzlement]] | arXiv:2401.07299 invariants | type-II operational analysis | theorem-led literature memo or toy model |
 
-- AAJ's own outlook (higher orders, other deformations).
-- Faulkner–Li–Wang modular-toolkit methods (arXiv:2206.00027) for going beyond perturbative.
-- The Gesteau-style algebraic renormalization of $G_N$ (arXiv:2302.01938) — connecting the dressed-algebra structure to the running of Newton's constant.
-- The group's embezzlement program — applying cocycle perturbation theory to embezzlement cost.
+This table forces a project to name both its controlled input and its missing step. That is what “positioning” should do.
 
-## 4. Student final-topic presentations
+## 6. Student presentations
 
-The second half of the week is **student presentations** (the seminar deliverable). Each student gives a short talk on their chosen final-write-up topic (Block 2 §7 options, refined through Blocks 3–4):
+Each student gives a ten-minute talk with four slides:
 
-1. **Free-field cocycle perturbation** — extend Mini-Calc 4; the most self-contained option, directly building on Week 12.
-2. **Bell-CHSH in holographic settings** — the wiki open question [[bell-chsh-in-holographic-setting]]; connect Summers–Werner (Sem I Wk 11) to large-$N$ boundary algebras.
-3. **Embezzlement on the crossed product** — Question 5 above; the group's program.
-4. **Critical exposition** — of CPW, AAJ, or CLPW (de Sitter, Block 5 Wk 14).
+1. **Question.** One sentence, narrow enough to answer.
+2. **Controlled input.** The theorem, equation, or finite model actually available.
+3. **Proposed calculation.** A deliverable that can be checked.
+4. **Scope ledger.** Exact/proved, numerical, heuristic, and open claims in separate rows.
 
-Feedback from the group sharpens each plan against the open-question landscape before the final paper. Students refine their Week 10 drafts; the final is due Week 14 (with presentations in Week 15).
+Recommended topic forms:
 
-## 5. What to take away
+- finite-regulator BCH/entropy perturbation following AAJ;
+- explicit Bell lower bound for a specified observable family;
+- operational embezzlement under passage to a crossed product;
+- critical, equation-by-equation exposition of CPW, AAJ, or CLPW.
 
-- **AAJ's achievement:** algebraic (cocycle) perturbation theory for $S_{\rm gen}$, to second order in a GJW deformation — a reusable dynamical tool, not just a number.
-- **Four boundaries, each an open direction:** quadratic order (→ higher orders / generating function), perturbative regime (→ non-perturbative / traversability transition), GJW deformation (→ currents, stress tensor), partial bulk dictionary (→ complete it).
-- **The embezzlement bridge (computed, §2.5):** the van Dam–Hayden catalyst works because its harmonic Schmidt spectrum is nearly scale-invariant; the mismatch between "catalyst + one ebit" and "bigger catalyst" is exactly $\ln 2$, finite, against a normalization $C_{2n}\simeq\ln 2n$ that diverges — hence fidelity $1 - O(1/\log n)$. Type III$_1$ removes the spectrum's edges and makes embezzlement exact. The same Connes cocycle drives this and AAJ's perturbation theory, because without a trace it is the only object that compares two states.
-- **Two kinds of progress:** incremental (more orders, other deformations) and structural (the framework itself as a standard tool). Both are open.
-- **The algebra/bulk gap is real and acknowledged:** AAJ's algebraic corrections and MSY's bulk geometry are not yet matched rigorously — the honest frontier the course does not pretend to close.
+“Free-field cocycle perturbation reproducing AAJ” is no longer offered without qualification. A good version is “finite-regulator comparison between an Araki cocycle and AAJ's unitary BCH deformation.”
 
-## 6. Looking ahead
+## 7. What to take away
 
-Block 5 (Weeks 14–15) supplies the **bulk side**: Maldacena–Stanford–Yang's "Diving into traversable wormholes," the gravitational picture of the GJW deformation AAJ computed algebraically. Seeing the two side by side is the clearest way to understand what the algebra captures (entropy corrections) and what it does not (the Shapiro shift, directly). Week 14 also includes the de Sitter / CLPW aside — the same crossed-product machine on a compact horizon, giving type II$_1$ — the contrast that closes the structural picture. Week 15 is final presentations and the instructor's outlook.
+- AAJ v2 ends with §5, not §6.
+- AAJ's method is unitary crossed-product perturbation, not a Connes-cocycle expansion.
+- Their new-term count is five linear plus fifteen quadratic.
+- AAJ's stated outlook includes quantum channels and the problem of algebras attached to moving, fluctuating, or topology-changing regions.
+- Higher-order diagrams, other bilocals, detailed bulk matching, and the embezzlement connection are useful **course-generated** directions unless a more specific source is supplied.
+- Type-III$_1$ universal embezzlement is an arbitrarily-accurate operational theorem. It does not mean a single finite protocol has exactly zero error.
+- The correct embezzlement source is van Luijk–Stottmeister–Werner–Wilming, arXiv:2401.07299; the finite catalyst is due to van Dam–Hayden, quant-ph/0201041.
 
-## 7. Problem set
+## 8. Problem set
 
-**Core problems.**
+### Core problems
 
-**1. Map the four boundaries.** For each of AAJ's four limitations (order, perturbative, GJW-specific, partial bulk dictionary), state in 2–3 sentences what a concrete next step would look like and what tool it would need.
+**1. Source/outlook split.** Make two lists from this week: statements directly present in AAJ §5 and course-generated research proposals. Verify each source statement by paragraph or footnote.
 
-**2. A worse catalyst.** Repeat the §2.5 computation for the flat catalyst $|\nu_n\rangle = n^{-1/2}\sum_{j=1}^n |jj\rangle$, whose Schmidt spectrum is uniform. Show that tensoring with a Bell pair now produces a spectrum that is *not* close to $|\nu_{2n}\rangle$ for any $n$, and identify precisely which property of the harmonic spectrum the flat one lacks. Why does scale-invariance, rather than large rank, make a catalyst work?
+**2. Count audit.** Explain in one paragraph why “twenty quadratic corrections” is false. Reproduce the $2+2+2$ linear and $2+6+7$ quadratic groupings from Eqs. (77)–(78).
 
-**3. Other deformations.** The GJW deformation is a double-trace $\mathcal{O}_L\mathcal{O}_R$. Sketch what changes if the deformation is by a conserved current $J_L J_R$: which Ward identities constrain the corrections, and would you expect more or fewer than 20 terms at $O(g^2)$?
+**3. Flat catalyst.** Prove the $1/2$ squared-overlap bound in §4.2 from Schmidt coefficients. State which assumptions about local operations are used.
 
-**Starred problems.**
+**4. Harmonic edge estimate.** For fixed $m$, show $H_m/H_n\to0$. Explain why this is only intuition for the van Dam–Hayden construction and cite the source for the actual protocol error bound.
 
-**4\*. Higher-order counting.** Estimate the number of distinct corrections at $O(g^3)$ in the AAJ scheme by extending the §3.1 (Wk 12) combinatorics of cocycle × log × trace-pairing. Is there a pattern suggesting a generating function?
+### Starred problems
 
-**5\*. Non-perturbative criterion.** Propose an algebraic diagnostic for "the wormhole has become non-perturbatively traversable" in terms of the commutant relation $\mathcal{A}_R' = \mathcal{A}_L$ (algebraic ER=EPR, Sem II Wk 10). What would its breakdown look like?
+**5*. Channel extension.** Work out a two-qubit global unitary whose reduced dynamics has two Kraus operators. Identify the precise step in AAJ's conjugation argument that cannot be copied for the reduced channel.
 
-**Project problems.**
+**6*. Embezzlement definition.** Read the definitions in arXiv:2401.07299. Distinguish “error zero,” “infimum error zero,” and “exact finite operation.” Which one appears in the universal-embezzler theorem?
 
-**6. Final-topic presentation.** Prepare and deliver a 10-minute talk on your final-write-up topic, positioned against the open-question landscape of §2. Incorporate group feedback into your final paper (due Wk 14).
+**7*. Nonperturbative diagnostic.** Propose comparison maps for a family of region algebras $\mathcal A_h$. Explain why the bare relation $J\mathcal A_hJ=\mathcal A_h'$ cannot by itself decide whether a wormhole has changed topology.
+
+### Project problem
+
+**8. Final-topic presentation.** Deliver the four-slide talk of §6 and revise the written project scope in response to questions. Every claimed source result must carry an equation, theorem, or section pointer.
+
+**Wiki connections.** [[bell-inequalities-qft|Bell inequalities in QFT]] (research area) · [[bell-chsh-in-holographic-setting|Bell–CHSH in holographic settings]] (open question)
 
 ---
 
-*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 4. Last revised 2026-08-23.*
+*Notes prepared for [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]], Semester II Block 4. Last revised 2026-08-24.*
