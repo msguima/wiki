@@ -3,7 +3,7 @@ title: Bell-CHSH Inequality
 type: concept
 areas: [bell-inequalities-qft]
 aliases: [CHSH inequality, Bell inequality, Tsirelson bound]
-modified: 2026-04-06
+modified: 2026-09-30
 ---
 
 ## Definition
@@ -12,7 +12,11 @@ Consider a bipartite scenario with two parties (Alice and Bob) each performing o
 
 $$\mathcal{C} = \langle A_1 B_1\rangle + \langle A_1 B_2\rangle + \langle A_2 B_1\rangle - \langle A_2 B_2\rangle.$$
 
-**Classical (local hidden-variable) bound:** $|\mathcal{C}| \leq 2$. This follows from the assumption that outcomes are determined by hidden variables $\lambda$ with local statistics: $|A_i(\lambda)B_j(\lambda)| \leq 1$ implies $|\mathcal{C}| \leq 2$ by triangle inequality.
+**Classical (local hidden-variable) bound:** $|\mathcal{C}| \leq 2$. Suppose the outcomes are fixed by a hidden variable $\lambda$ through local response functions $A_i(\lambda)$, $B_j(\lambda)$ with values in $[-1,1]$, and that the distribution $\rho(\lambda)$ does not depend on the settings. Grouping the four terms for each $\lambda$,
+
+$$|A_1(B_1+B_2) + A_2(B_1-B_2)| \leq |B_1+B_2| + |B_1-B_2| = 2\max(|B_1|,|B_2|) \leq 2,$$
+
+and averaging over $\lambda$ gives $|\mathcal{C}| \leq 2$. For dichotomic outcomes one of $B_1 \pm B_2$ vanishes and the other equals $\pm 2$. The triangle inequality applied term by term, with $|A_i(\lambda)B_j(\lambda)| \leq 1$, only gives $|\mathcal{C}| \leq 4$.
 
 **Tsirelson bound:** In quantum mechanics, $|\mathcal{C}| \leq 2\sqrt{2} \approx 2.828$. This is a tight bound, achieved by the singlet state with optimal measurement settings.
 
