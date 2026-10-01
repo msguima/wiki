@@ -3,7 +3,7 @@ title: JT Gravity
 type: concept
 areas: [gauge-gravity-duality]
 aliases: [Jackiw-Teitelboim gravity, Schwarzian theory, nearly-AdS₂]
-modified: 2026-05-26
+modified: 2026-10-01
 ---
 
 ## Definition
@@ -28,4 +28,4 @@ JT gravity is introduced in Sem I Wk 15 and returned to as the workhorse of Sem 
 
 ## Notes
 
-Course coverage: sem1-block-C Wk 15 and sem2-block-1 Wk 6.
+Course coverage: [[lecture-25-jt-and-bath|Lecture 25]] (the JT model with a bath), [[lecture-26-island-calculation|Lecture 26]] (the island) and [[lecture-31-emergent-time|Lecture 31]] (emergent time).

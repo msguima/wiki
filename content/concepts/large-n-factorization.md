@@ -3,7 +3,7 @@ title: Large-N Factorization
 type: concept
 areas: [gauge-gravity-duality, bell-inequalities-qft, relative-entropy-qft]
 aliases: ["planar limit", "'t Hooft limit", "generalized free fields"]
-modified: 2026-05-26
+modified: 2026-10-01
 ---
 
 ## Definition
@@ -12,7 +12,7 @@ In a $\mathrm{U}(N)$ or $\mathrm{SU}(N)$ gauge theory at large $N$, single-trace
 
 ## Role in Research
 
-Large-$N$ factorization is covered in Sem I Block B Wk 7 of the AdS/CFT course. It also appears in the AQFT course's holography-large-n-primer §E.2, which discusses how the $N \to \infty$ limit drives the type I $\to$ type III₁ transition in the boundary algebra. This concept bridges the 't Hooft counting of Feynman diagrams (planar dominance) to the algebraic structure exploited in [[subregion-subalgebra-duality]].
+Large-$N$ factorization is covered in [[lecture-14-large-n-and-semiclassical-limits|Lecture 14]] of the [[courses/ads-cft-course/syllabus|holography course]], and its algebraic consequences in [[lecture-29-large-n-algebras|Lecture 29]]. It also appears in the AQFT course's holography-large-n-primer §E.2, which discusses how the $N \to \infty$ limit drives the type I $\to$ type III₁ transition in the boundary algebra. This concept bridges the 't Hooft counting of Feynman diagrams (planar dominance) to the algebraic structure exploited in [[subregion-subalgebra-duality]].
 
 ## Relations
 
@@ -29,4 +29,4 @@ Large-$N$ factorization is covered in Sem I Block B Wk 7 of the AdS/CFT course. 
 
 This concept page is shared with the AQFT course — see also `wiki/courses/2026-algebraic-qft-course/appendices/holography-large-n-primer.md` §E.2.
 
-Course coverage: sem1-block-B Wk 7.
+Course coverage: [[lecture-14-large-n-and-semiclassical-limits|Lecture 14]] and [[lecture-29-large-n-algebras|Lecture 29]].

@@ -3,7 +3,7 @@ title: Replica Trick (Gravity)
 type: concept
 areas: [gauge-gravity-duality]
 aliases: [gravitational replica trick, replica wormholes]
-modified: 2026-05-26
+modified: 2026-10-01
 ---
 
 ## Definition
@@ -28,4 +28,4 @@ The gravitational replica trick appears at Sem II Wks 4 and 10. It bridges the c
 
 ## Notes
 
-Course coverage: sem2-block-1 Wk 4 and sem2-block-2 Wk 10.
+Course coverage: [[lecture-16-geometric-entropy|Lecture 16]] (replicas and twist fields) and [[lecture-27-replicas-and-limits|Lecture 27]] (replica wormholes).

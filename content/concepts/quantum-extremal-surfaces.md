@@ -3,7 +3,7 @@ title: Quantum Extremal Surfaces
 type: concept
 areas: [gauge-gravity-duality]
 aliases: [QES prescription, quantum RT, island formula]
-modified: 2026-05-26
+modified: 2026-10-01
 ---
 
 ## Definition
@@ -12,7 +12,7 @@ The quantum extremal surface (QES) prescription generalises the Ryu-Takayanagi /
 
 ## Role in Research
 
-The QES prescription is introduced in Sem II Block 1 Wk 5 and is a key entry point to Block 2 (black-hole information). It provides the mechanism by which the [[page-curve]] is reproduced from semiclassical gravity, via islands that appear at late times and cause the entropy to decrease.
+The QES prescription enters the [[courses/ads-cft-course/syllabus|holography course]] with the entanglement wedges of [[lecture-19-entanglement-wedges|Lecture 19]] and is used for the island of [[lecture-26-island-calculation|Lecture 26]]. It provides the mechanism by which the [[page-curve]] is reproduced from semiclassical gravity, via islands that appear at late times and cause the entropy to decrease.
 
 ## Relations
 
@@ -28,4 +28,4 @@ The QES prescription is introduced in Sem II Block 1 Wk 5 and is a key entry poi
 
 ## Notes
 
-Course coverage: sem2-block-1 Wk 5.
+Course coverage: [[lecture-19-entanglement-wedges|Lecture 19]], [[lecture-25-jt-and-bath|Lecture 25]] and [[lecture-26-island-calculation|Lecture 26]].

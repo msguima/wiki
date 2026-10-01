@@ -3,7 +3,7 @@ title: Holographic Dictionary
 type: concept
 areas: [gauge-gravity-duality]
 aliases: [AdS/CFT dictionary, bulk-boundary dictionary]
-modified: 2026-05-26
+modified: 2026-10-01
 ---
 
 ## Definition
@@ -12,7 +12,7 @@ The holographic dictionary is the operational map between a $d$-dimensional CFT 
 
 ## Role in Research
 
-The dictionary is the central organizing apparatus of Block B of the AdS/CFT course. In the wiki, it is the bridge from the algebraic-QFT-side type III₁ structure (active research) to the bulk geometric picture of black-hole entropy.
+The dictionary is the central organizing apparatus of Lectures 12–16 of the [[courses/ads-cft-course/syllabus|holography course]]. In the wiki, it is the bridge from the algebraic-QFT-side type III₁ structure (active research) to the bulk geometric picture of black-hole entropy.
 
 ## Relations
 
@@ -28,4 +28,4 @@ The dictionary is the central organizing apparatus of Block B of the AdS/CFT cou
 
 ## Notes
 
-Course coverage: sem1-block-B Wk 8.
+Course coverage: [[lecture-13-ads-geometry-and-fields|Lecture 13]] and [[lecture-15-scalar-source-response|Lecture 15]]; bulk reconstruction in [[lecture-18-causal-wedges|Lecture 18]].

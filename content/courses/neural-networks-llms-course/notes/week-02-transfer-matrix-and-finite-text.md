@@ -350,7 +350,7 @@ and the uncertainty supporting it. The protocol does not prescribe the outcome.
   computable correlation structure.
 - The same transfer-matrix machinery opens the wiki's generalized-symmetries
   course, where a rotor chain is diagonalized by character expansion
-  ([[wiki/courses/generalized-symmetries-course/syllabus|course syllabus]],
+  ([[courses/generalized-symmetries-course/syllabus|course syllabus]],
   Semester I Week 1).
   A student who has taken either course recognizes the other's Week 1
   immediately.

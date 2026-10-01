@@ -1,7 +1,7 @@
 ---
 title: Research Landscape Overview
 type: overview
-modified: 2026-04-06
+modified: 2026-10-01
 ---
 
 # Research Landscape Overview
@@ -26,7 +26,7 @@ A closely related line opened in 2025 concerns Araki-Uhlmann relative entropy fo
 
 **[[condensed-matter-connections|Condensed matter connections]]** captures the cross-disciplinary work on topological materials, Weyl semimetals, and axionic electrodynamics. The chiral anomaly and axion electrodynamics appear in both high-energy and condensed matter contexts, and methods developed for confinement (such as topological field theory descriptions of phases) transfer directly.
 
-**Gauge/gravity duality (exploratory).** Not a primary research line but adjacent to the active programs. The AdS/CFT course (syllabus) is the wiki's main artefact here, treating [adscft.org](https://adscft.org/) as the primary text and adding framing, notation alignment, and the type-III₁ / modular-flow connections to the [[bell-inequalities-qft]] and [[relative-entropy-qft]] programs. See [[gauge-gravity-duality]].
+**Gauge/gravity duality (exploratory).** Not a primary research line but adjacent to the active programs. The course [[courses/ads-cft-course/syllabus|Holography through Quantum Information and Operator Algebras]] is the wiki's main artefact here: it starts from what an observer can recover in finite quantum systems and reaches the holographic dictionary, black holes, islands and the type-III₁ algebras of large-N theories, with modular-flow connections to the [[bell-inequalities-qft]] and [[relative-entropy-qft]] programs. See [[gauge-gravity-duality]].
 
 ## Key Themes Across Areas
 

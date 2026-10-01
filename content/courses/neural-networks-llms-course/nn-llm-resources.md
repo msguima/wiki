@@ -3,7 +3,7 @@ title: "Neural networks and LLMs — Reading and experiments"
 type: course-resources
 course: nn-llm-syllabus
 status: draft
-modified: 2026-09-19
+modified: 2026-10-01
 ---
 
 # Reading and experiments
@@ -53,14 +53,14 @@ folder alone does not include the other courses and concept pages to which it
 links. This is a reading instruction; this revision does not change vault
 settings. Use Reading view to see equations, tables and figures.
 
-- [[wiki/courses/2026-algebraic-qft-course/syllabus|Algebraic QFT course]]:
+- [[courses/2026-algebraic-qft-course/syllabus|Algebraic QFT course]]:
   compare classical relative entropy in Week 1 with
   [[araki-uhlmann-relative-entropy]] and [[relative-entropy-qft]]. The finite
   probability calculation remains sufficient for this course.
-- [[wiki/courses/ads-cft-course/syllabus|Gauge/gravity course]]:
+- [[courses/ads-cft-course/syllabus|Holography course]]:
   [[replica-trick-gravity]] supplies a comparison of replica constructions
   after Week 4. It is an optional connection, not a prerequisite.
-- [[wiki/courses/generalized-symmetries-course/syllabus|Generalized symmetries course]]:
+- [[courses/generalized-symmetries-course/syllabus|Generalized symmetries course]]:
   [[kramers-wannier-duality]] connects to the transfer-matrix perspective of
   Week 2.
 

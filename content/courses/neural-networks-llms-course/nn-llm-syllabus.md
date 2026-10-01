@@ -252,7 +252,7 @@ student meets each of them several times in different clothing.
 
 ## 9. Relation to the other courses and to the group's research
 
-**To [[wiki/courses/generalized-symmetries-course/syllabus|the generalized-symmetries course]]
+**To [[courses/generalized-symmetries-course/syllabus|the generalized-symmetries course]]
 (`generalized-symmetries-course`).** The strongest technical overlap. That
 course opens with compact variables, transfer matrices and the
 character-expansion treatment of a rotor chain; this one opens with a transfer
@@ -261,7 +261,7 @@ subleading eigenvalue. The Ising connection is made explicit in Week 2 of this
 course, and a student who has taken either will recognize the machinery
 immediately.
 
-**To [[wiki/courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]] (`2026-algebraic-qft-course`).** A
+**To [[courses/2026-algebraic-qft-course/syllabus|the algebraic-QFT course]] (`2026-algebraic-qft-course`).** A
 conceptual rather than technical overlap, and worth stating carefully.
 Relative entropy appears in both — here as the Kullback–Leibler divergence
 between a source and a fitted model in Week 1, and as the exact decay of

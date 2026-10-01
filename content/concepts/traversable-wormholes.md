@@ -3,7 +3,7 @@ title: Traversable Wormholes
 type: concept
 areas: [gauge-gravity-duality, bell-inequalities-qft, relative-entropy-qft]
 aliases: [traversable wormhole, GJW wormhole, Gao-Jafferis-Wall]
-modified: 2026-06-04
+modified: 2026-10-01
 ---
 
 ## Definition
@@ -30,7 +30,7 @@ Traversable wormholes are the sharpest meeting point between the group's algebra
 
 3. **A teleportation resource.** Regenesis through the wormhole is a physical channel for moving quantum information, inviting comparison with [[entanglement-embezzlement|embezzlement]] from a [[type-iii-von-neumann-algebras|type III₁]] resource.
 
-This concept anchors Semester II of the algebraic-QFT course (Blocks 4–5: GJW, MSY, AAJ).
+This concept anchors Semester II of the [[courses/2026-algebraic-qft-course/syllabus|algebraic-QFT course]] (Blocks 4–5: GJW, MSY, AAJ). In the holography course, the Gao–Jafferis–Wall coupling appears in [[lecture-23-thermal-black-holes|Lecture 23]] and Jefferson's description of it as a modular inclusion in [[lecture-30-modular-inclusions|Lecture 30]].
 
 ## Relations
 

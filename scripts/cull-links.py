@@ -11,7 +11,10 @@ Passes over each markdown file:
      [[syllabus]] inside a course's files means that course's file, so it is
      rewritten to the folder-qualified target Quartz resolves by path;
      the same bare link from outside courses/ cannot be attributed and
-     becomes plain text.
+     becomes plain text. The vault writes such links from its root, as
+     [[wiki/courses/<course>/syllabus|...]]; content/ is the vault's wiki/,
+     so the wiki/ prefix is dropped when the target is published, and the
+     link becomes plain text when the target stays private.
   3. wikilinks: [[target]] or [[target|alias]] pointing at a vault note that
      is not part of the published subset is replaced by plain text (the alias
      when one is given). Links to targets that exist nowhere in the vault are
@@ -61,6 +64,7 @@ def main() -> int:
     culled: Counter[str] = Counter()
     dead: Counter[str] = Counter()
     disambiguated: Counter[str] = Counter()
+    rooted: Counter[str] = Counter()
     files_touched = 0
 
     for path in published_files:
@@ -88,6 +92,21 @@ def main() -> int:
             stem = target.strip().rstrip("/")
             if not stem or stem.startswith("#"):
                 return match.group(0)  # same-page section link
+
+            if stem.startswith("wiki/"):
+                # a path from the vault root; content/ is the vault's wiki/
+                inner = stem[len("wiki/") :]
+                had_alias = "|" in match.group(1)
+                if (content / f"{inner}.md").is_file():
+                    rooted[inner] += 1
+                    if had_alias:
+                        return f"{embed}[[{inner}{anchor}|{display}]]"
+                    return f"{embed}[[{inner}{anchor}]]"
+                if (vault / f"{inner}.md").is_file():
+                    culled[inner] += 1
+                    return display if had_alias else Path(inner).name
+                dead[stem] += 1
+                return match.group(0)
 
             if stem in ambiguous:
                 # inside a course, a bare ambiguous stem means that course's file
@@ -120,6 +139,10 @@ def main() -> int:
     if disambiguated:
         print(f"  ambiguous stems -> folder-qualified ({sum(disambiguated.values())} links):")
         for stem, n in sorted(disambiguated.items(), key=lambda kv: -kv[1]):
+            print(f"    {stem} x{n}")
+    if rooted:
+        print(f"  vault-rooted wiki/ paths -> site paths ({sum(rooted.values())} links):")
+        for stem, n in sorted(rooted.items(), key=lambda kv: -kv[1]):
             print(f"    {stem} x{n}")
     if culled:
         print(f"  private targets -> plain text ({sum(culled.values())} links):")

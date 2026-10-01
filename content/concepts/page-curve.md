@@ -3,7 +3,7 @@ title: Page Curve
 type: concept
 areas: [gauge-gravity-duality]
 aliases: [information paradox curve, Page time]
-modified: 2026-05-26
+modified: 2026-10-01
 ---
 
 ## Definition
@@ -12,7 +12,7 @@ The Page curve is the time-dependence of the fine-grained entanglement entropy o
 
 ## Role in Research
 
-The Page curve is the central physical object that the second half of the AdS/CFT course is organised around, covered in Sem II Block 2 Wk 9. Its derivation from semiclassical gravity — via [[quantum-extremal-surfaces]] and [[replica-trick-gravity|replica wormholes]] — is one of the main results of the modern black-hole information program.
+The Page curve is a central object of the second semester of the [[courses/ads-cft-course/syllabus|holography course]]: [[lecture-24-page-models|Lecture 24]] derives it in finite quantum mechanics, and [[lecture-26-island-calculation|Lecture 26]] obtains it from an island in the JT model. Its derivation from semiclassical gravity — via [[quantum-extremal-surfaces]] and [[replica-trick-gravity|replica wormholes]] — is one of the main results of the modern black-hole information program.
 
 ## Relations
 
@@ -28,4 +28,4 @@ The Page curve is the central physical object that the second half of the AdS/CF
 
 ## Notes
 
-Course coverage: sem2-block-2 Wk 9.
+Course coverage: [[lecture-24-page-models|Lecture 24]], [[lecture-26-island-calculation|Lecture 26]] and [[lecture-27-replicas-and-limits|Lecture 27]].

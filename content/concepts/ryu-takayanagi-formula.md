@@ -3,7 +3,7 @@ title: Ryu-Takayanagi Formula
 type: concept
 areas: [gauge-gravity-duality]
 aliases: [RT formula, HRT formula, holographic entanglement entropy]
-modified: 2026-05-26
+modified: 2026-10-01
 ---
 
 ## Definition
@@ -12,7 +12,7 @@ The Ryu-Takayanagi (RT) formula expresses the entanglement entropy of a boundary
 
 ## Role in Research
 
-The RT formula is covered in Sem I Wks 13–14 and re-encountered in Sem II Block 1. It is central to [[subregion-subalgebra-duality]] and to the modern algebraic understanding of holographic entropy, connecting the area of bulk surfaces to the entanglement structure of boundary subalgebras.
+The RT formula is covered in [[lecture-16-geometric-entropy|Lecture 16]] of the [[courses/ads-cft-course/syllabus|holography course]] and re-encountered in Lectures 17–22, where its quantum and algebraic forms are developed. It is central to [[subregion-subalgebra-duality]] and to the modern algebraic understanding of holographic entropy, connecting the area of bulk surfaces to the entanglement structure of boundary subalgebras.
 
 ## Relations
 
@@ -29,4 +29,4 @@ The RT formula is covered in Sem I Wks 13–14 and re-encountered in Sem II Bloc
 
 ## Notes
 
-Course coverage: sem1-block-C Wks 13–14.
+Course coverage: [[lecture-16-geometric-entropy|Lecture 16]], [[lecture-19-entanglement-wedges|Lecture 19]], [[lecture-21-jlms|Lecture 21]] and [[lecture-22-first-law-and-gravity|Lecture 22]].

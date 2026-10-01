@@ -7,7 +7,7 @@ week: 4
 unit: 1
 duration: "4 hours (2 hr lecture + 2 hr guided calculation)"
 status: draft
-modified: 2026-09-19
+modified: 2026-10-01
 ---
 
 # Week 4 — Gardner's Capacity Calculation
@@ -365,8 +365,8 @@ integer $n$ and which require the continuation.
   results has a different meaning and a different number.
 - [[replica-trick-gravity|The gravitational replica trick]] shares this week's
   technical move and little else; §4 states the comparison precisely, and the
-  wiki's gauge/gravity course develops that side
-  ([[wiki/courses/ads-cft-course/syllabus|course syllabus]], Semester II).
+  wiki's holography course develops that side
+  ([[lecture-27-replicas-and-limits|Lecture 27]] of the [[courses/ads-cft-course/syllabus|course syllabus]]).
 - Week 13 reads claimed transitions in trained models against the standard
   Week 3 sets and §5 sharpens.
 - nn-llm-unit-1 — the block skeleton this note implements.

@@ -2,7 +2,7 @@
 title: Gauge/Gravity Duality
 type: area
 status: exploratory
-modified: 2026-05-26
+modified: 2026-10-01
 ---
 
 ## Overview
@@ -11,7 +11,7 @@ Gauge/gravity duality — the conjecture that certain quantum gauge theories in 
 
 **Status in this wiki.** Gauge/gravity duality is not a primary research line for the group. It is *exploratory / adjacent*: it sits next to the [[bell-inequalities-qft|Bell inequalities in QFT]] and [[relative-entropy-qft|relative entropy in QFT]] programs as a *structural source of concepts* (in particular, the [[type-iii-von-neumann-algebras|type III₁ algebra]] of single-trace operators at large $N$) and as a *target of speculation* (whether the Bell-CHSH and modular tools developed for flat-space QFT can probe boundary subalgebras of holographic CFTs — see [[bell-chsh-in-holographic-setting]]).
 
-This area page exists primarily as the home of a two-semester graduate course (the *AdS/CFT course* — see syllabus under `wiki/courses/`) and as a scaffold for the concept pages that the course's lecture notes will reference. The external resource [adscft.org](https://adscft.org/) is treated as the course's primary text; this wiki adds framing, notation alignment, and explicit connections to the group's research programs.
+This area page is the home of a two-semester graduate course, [[courses/ads-cft-course/syllabus|Holography through Quantum Information and Operator Algebras]], and a scaffold for the concept pages that its lecture notes reference. The course begins with recoverable information, modular structure and entropy in finite quantum systems, passes through continuum algebras and the holographic dictionary, and ends with black holes, islands and the algebras of large-$N$ theories; its notes carry explicit connections to the group's research programs. It replaced on 2026-10-01 the earlier course built over [adscft.org](https://adscft.org/).
 
 ## Key Results
 
@@ -57,7 +57,7 @@ This area page exists primarily as the home of a two-semester graduate course (t
 - [[2021-kundu-wormholes-holography]] — Kundu, *Wormholes & Holography: An Introduction* (arXiv:2110.14958; EPJC 82, 447, 2022). 89-page pedagogical review of Euclidean and traversable wormholes, the TFD/eternal-black-hole picture, replica wormholes, and GJW/Maldacena–Qi traversability.
 - [[2026-goto-rethinking-qi-gravity-fields]] — Goto et al., *Rethinking quantum information in gravity and fields* (arXiv:2606.30853, 2026). Nine-author open-problems agenda at the gravity/QI interface (operational characterization, observers, QEC, infinite-dimensional Hilbert spaces); its type II–III / operational-characterization themes map directly onto the group's programs — see [[gravity-qi-open-problems]].
 
-Paper-page candidates (to be ingested as the course is taught — see `wiki/courses/ads-cft-course/appendices/bibliography-and-paper-map.md`):
+Paper-page candidates (to be ingested as the course is taught — see the [[course-reading-map|course reading map]] and the older catalogue `wiki/courses/ads-cft-course/appendices/bibliography-and-paper-map.md`):
 
 - Maldacena 1997 — *The large-N limit of superconformal field theories and supergravity* (arXiv:hep-th/9711200).
 - Gubser, Klebanov, Polyakov 1998 — *Gauge theory correlators from non-critical string theory* (arXiv:hep-th/9802109).
@@ -82,4 +82,4 @@ Paper-page candidates (to be ingested as the course is taught — see `wiki/cour
 - [[crossed-product-and-island-formula]] (new) — both involve dressing/regulating a type III₁ algebra; one ends in a generalized entropy, the other in an island.
 - [[wormholes-and-quantum-information-qft]] (new) — the wormhole/traversability story of [[2021-kundu-wormholes-holography|Kundu's review]] mapped onto the group's flat-space Bell-CHSH, relative-entropy, and embezzlement programs via the TFD = two-wedge identification.
 - [[gravity-qi-open-problems]] (new) — [[2026-goto-rethinking-qi-gravity-fields|Goto et al.'s]] gravity/QI open-problems agenda mapped onto the group's OQP roadmap and toolkit; an independent, holography-side confirmation that operational characterization and QI in infinite dimensions are the live frontiers.
-- 2026 Algebraic-QFT course (Estrutura Algébrica da Teoria Quântica de Campos) — Semester II of the AQFT course covers Witten 2022 / CPW / AAJ, which use exactly the large-$N$ type III₁ structure of this area as their starting point.
+- 2026 Algebraic-QFT course ([[courses/2026-algebraic-qft-course/syllabus|Estrutura Algébrica da Teoria Quântica de Campos]]) — Semester II of the AQFT course covers Witten 2022 / CPW / AAJ, which use exactly the large-$N$ type III₁ structure of this area as their starting point.

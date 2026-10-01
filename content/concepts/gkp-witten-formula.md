@@ -3,7 +3,7 @@ title: GKP-Witten Formula
 type: concept
 areas: [gauge-gravity-duality]
 aliases: [GKP-Witten formula, bulk-boundary correspondence]
-modified: 2026-05-26
+modified: 2026-10-01
 ---
 
 ## Definition
@@ -12,7 +12,7 @@ The Gubser-Klebanov-Polyakov-Witten (GKP-W) formula is the operational statement
 
 ## Role in Research
 
-The GKP-W formula is the foundational machinery of Block B Wk 8 of the AdS/CFT course, providing the basis for all subsequent boundary-correlator computations in holography. It operationalizes the [[holographic-dictionary]] by giving a precise prescription for extracting CFT data from bulk solutions.
+The GKP-W formula is the foundational machinery of [[lecture-15-scalar-source-response|Lecture 15]] of the [[courses/ads-cft-course/syllabus|holography course]], providing the basis for all subsequent boundary-correlator computations in holography. It operationalizes the [[holographic-dictionary]] by giving a precise prescription for extracting CFT data from bulk solutions.
 
 ## Relations
 
@@ -26,4 +26,4 @@ The GKP-W formula is the foundational machinery of Block B Wk 8 of the AdS/CFT c
 
 ## Notes
 
-Course coverage: sem1-block-B Wk 8.
+Course coverage: [[lecture-15-scalar-source-response|Lecture 15]], with the large-N counting of [[lecture-14-large-n-and-semiclassical-limits|Lecture 14]].

@@ -43,6 +43,8 @@ PUBLISH=(
   courses/2026-algebraic-qft-course/conventions.md
   courses/ads-cft-course/notes
   courses/ads-cft-course/appendices
+  # Figures embedded in the holography lectures, prefixed ads-cft-.
+  courses/ads-cft-course/assets
   courses/ads-cft-course/syllabus.md
   courses/ads-cft-course/conventions.md
   courses/generalized-symmetries-course/notes

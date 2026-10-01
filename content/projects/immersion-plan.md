@@ -4,14 +4,14 @@ type: project
 status: active
 priority: high
 duration: ~18 months (phase 0 from 2026-07)
-modified: 2026-07-05
+modified: 2026-10-01
 ---
 
 # Immersion program: speaking the language of the entanglement–symmetries–holography school
 
 A personal fluency program for the research culture of eleven authors: Witten, Komargodski, Shao, Swingle, Hong Liu, Maldacena, Harlow, Stanford, Yonekura, Calabrese, Casini. The goal is not a new research project; it is to read their new papers the week they appear, follow any seminar in the area, and write in the register. Every arXiv ID below was verified against the arXiv API on 2026-07-05.
 
-**Where this sits in the wiki.** The three reading tracks below are the personal traversal of ground the three graduate courses cover institutionally: Track A runs parallel to Generalized Symmetries and Topological Matter (`wiki/courses/generalized-symmetries-course/syllabus.md`), Track B to Estrutura Algébrica da TQC (`wiki/courses/2026-algebraic-qft-course/syllabus.md`), Track C to Gauge/Gravity Duality (`wiki/courses/ads-cft-course/syllabus.md`). The OQP pages ([[long-range-bell-decay-project]], [[bell-in-type-iii-project]], [[embezzlement-capacity-project]]) are the research arm; this page is the reading-and-culture arm that feeds them.
+**Where this sits in the wiki.** The three reading tracks below are the personal traversal of ground the three graduate courses cover institutionally: Track A runs parallel to [[courses/generalized-symmetries-course/syllabus|Generalized Symmetries and Topological Matter]] (`wiki/courses/generalized-symmetries-course/syllabus.md`), Track B to [[courses/2026-algebraic-qft-course/syllabus|Estrutura Algébrica da TQC]] (`wiki/courses/2026-algebraic-qft-course/syllabus.md`), Track C to [[courses/ads-cft-course/syllabus|Holography through Quantum Information and Operator Algebras]] (`wiki/courses/ads-cft-course/syllabus.md`). The OQP pages ([[long-range-bell-decay-project]], [[bell-in-type-iii-project]], [[embezzlement-capacity-project]]) are the research arm; this page is the reading-and-culture arm that feeds them.
 
 ---
 
@@ -39,7 +39,7 @@ Goal: open any paper by these eleven and parse the introduction without stalling
 - J. Cardy, *Conformal Field Theory and Statistical Mechanics*, arXiv:0807.3472. Short, and in Cardy's plain style.
 - P. Calabrese, J. Cardy, *Entanglement entropy and conformal field theory*, arXiv:0905.4013. Do the single-interval computation by hand, twist fields and all.
 
-**Higher-dimensional CFT**, pick one: S. Rychkov, *EPFL Lectures on CFT in D ≥ 3*, arXiv:1601.05000, or D. Simmons-Duffin, *TASI Lectures on the Conformal Bootstrap*, arXiv:1602.07982. Conformal symmetry, primaries, and the OPE are what's needed; the numerical bootstrap itself is optional. (Semester I of the AdS/CFT course covers the same grammar in course form.)
+**Higher-dimensional CFT**, pick one: S. Rychkov, *EPFL Lectures on CFT in D ≥ 3*, arXiv:1601.05000, or D. Simmons-Duffin, *TASI Lectures on the Conformal Bootstrap*, arXiv:1602.07982. Conformal symmetry, primaries, and the OPE are what's needed; the numerical bootstrap itself is optional. (Lecture 12 of the holography course covers the same grammar in course form.)
 
 **Quantum information, hep-th register:** E. Witten, *A Mini-Introduction To Information Theory*, arXiv:1805.11965. Known material rewritten in his voice; reading it is style study as much as physics. Preskill's Ph219 notes stay on the shelf as reference.
 
@@ -90,7 +90,7 @@ Semester II of the algebraic-QFT course is this track's seminar arm; several ent
 
 ### Track C — holography, chaos, gravity as information
 
-The AdS/CFT course is this track in course form; this list is the fast personal traversal.
+The holography course is this track in course form; this list is the fast personal traversal.
 
 1. J. Maldacena, *The Large N Limit of Superconformal Field Theories and Supergravity*, arXiv:hep-th/9711200 (sections 1–3), with E. Witten, *Anti De Sitter Space And Holography*, arXiv:hep-th/9802150. Careful; the goal is the [[holographic-dictionary|dictionary]] and the [[gkp-witten-formula|GKP–Witten formula]], not the brane engineering.
 2. Geometry from entanglement: [[ryu-takayanagi-formula|Ryu–Takayanagi]], arXiv:hep-th/0603001; Hubeny–Rangamani–Takayanagi, arXiv:0705.0016; M. Van Raamsdonk, *Building up spacetime with quantum entanglement*, arXiv:1005.3035; B. Swingle, *Entanglement Renormalization and Holography*, arXiv:0905.1317. Careful; Swingle's tensor-network reading is the conceptual one.
