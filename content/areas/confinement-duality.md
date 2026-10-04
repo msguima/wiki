@@ -2,7 +2,7 @@
 title: Confinement, Duality, and Topological Defects
 type: area
 status: historical
-modified: 2026-07-01
+modified: 2026-10-04
 ---
 
 ## Overview
@@ -60,7 +60,7 @@ The [[julia-toulouse-mechanism|Julia-Toulouse mechanism]] is being revisited thr
 - **Project 17 — Julia-Toulouse as higher-form symmetry breaking**: Defect condensation can be understood as spontaneous breaking of a higher-form (or generalized) symmetry. This reinterpretation connects early work to one of the most active areas in current theoretical physics. See [[julia-toulouse-higher-form-symmetries]] and [[julia-toulouse-meets-generalized-symmetries]].
 - **Project 18 — Non-invertible symmetries and Maxwell-Chern-Simons**: Investigation of non-invertible (categorical) symmetries in Maxwell-Chern-Simons theories in (2+1)d, their interplay with the Julia-Toulouse mechanism, and potential connections to topological phases in condensed matter. See [[non-invertible-symmetries-mcs]].
 
-**Pedagogical arm — the generalized-symmetries course.** A two-semester graduate course (`wiki/courses/generalized-symmetries-course/`) rebuilds this line's foundations in modern language, running from the lattice classics (Wegner, Wilson, Kogut–Susskind, Polyakov, Fradkin–Shenker) to higher-form symmetries, anomalies, and topological order, and landing on the group's Julia–Toulouse / higher-gauging manuscript. It introduces concept pages for the toolkit and targets: [[lattice-gauge-theory]], [[wilson-loop]], [[villain-action]], [[kramers-wannier-duality]], [[higher-form-symmetries]], [[t-hooft-anomaly]], and [[condensation-defects]] — the last being the precise object the manuscript realizes constructively (higher gauging on a hypersurface = the restricted Villain defect ensemble). The companion master-project (condensation defects in $\mathbb{Z}_N$ lattice gauge theory) is the M.Sc. on-ramp.
+**Pedagogical arm — the generalized-symmetries course.** A two-semester [[courses/generalized-symmetries-course/syllabus|graduate course]] rebuilds this line's foundations in modern language, running from the lattice classics (Wegner, Wilson, Kogut–Susskind, Polyakov, Fradkin–Shenker) to higher-form symmetries, anomalies, topological order and non-invertible symmetries, and landing on the group's manuscript in preparation on higher-gauging walls in four-dimensional $\mathbb{Z}_N$ gauge theory, whose completion lines carry a finite cost motivated by the Julia–Toulouse picture. It introduces concept pages for the toolkit and targets: [[lattice-gauge-theory]], [[wilson-loop]], [[villain-action]], [[kramers-wannier-duality]], [[higher-form-symmetries]], [[t-hooft-anomaly]], and [[condensation-defects]] — the last being the setting of the manuscript, a subgroup of the electric 1-form symmetry gauged on a hypersurface. The companion master-project (condensation defects in $\mathbb{Z}_N$ lattice gauge theory) is the M.Sc. on-ramp.
 
 ## Key Papers
 

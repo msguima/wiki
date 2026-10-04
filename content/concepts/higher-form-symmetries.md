@@ -3,7 +3,7 @@ title: Higher-Form Symmetries
 type: concept
 areas: [confinement-duality, condensed-matter-connections]
 aliases: [higher-form symmetry, generalized global symmetries, p-form symmetry, 1-form symmetry, generalized symmetries]
-modified: 2026-07-01
+modified: 2026-10-04
 ---
 
 ## Definition
@@ -18,7 +18,7 @@ The framework gives the Landau paradigm back for phases with no local order para
 
 ## Role in Research
 
-Higher-form symmetry is the language that connects the group's historical [[confinement-duality]] work to the current research frontier. Every Semester I object of the generalized-symmetries course — center symmetry, the magnetic shift symmetry of compact QED, monopole and vortex conservation — is a higher-form symmetry; the Julia–Toulouse/higher-gauging manuscript is a statement about **gauging a higher-form symmetry on a hypersurface** (see [[condensation-defects]]).
+Higher-form symmetry is the language that connects the group's historical [[confinement-duality]] work to the current research frontier. Every Semester I object of the generalized-symmetries course — center symmetry, the magnetic shift symmetry of compact QED, monopole and vortex conservation — is a higher-form symmetry; the group's manuscript in preparation studies the wall made by **gauging a subgroup of the electric 1-form symmetry on a hypersurface** of four-dimensional $\mathbb{Z}_N$ gauge theory, and gives a finite cost to the lines that run along it (see [[condensation-defects]]).
 
 - **Gauging** a discrete $p$-form symmetry (summing over backgrounds) produces a dual "quantum" $\mathbb{Z}_N^{(d-p-2)}$ symmetry — the rule behind [[kramers-wannier-duality]] and behind the global-form ambiguity ($SU(N)$ vs $SU(N)/\mathbb{Z}_N$).
 - **Spontaneous breaking** of a 1-form symmetry is the sharp definition of a deconfined phase and of [[topological-order]] (ground-state degeneracy = broken 1-form symmetry).

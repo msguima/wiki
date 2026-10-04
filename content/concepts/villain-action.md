@@ -3,7 +3,7 @@ title: Villain Action
 type: concept
 areas: [confinement-duality, condensed-matter-connections]
 aliases: [Villain form, Villain model, periodic Gaussian, modified Villain]
-modified: 2026-07-01
+modified: 2026-10-04
 ---
 
 ## Definition
@@ -18,7 +18,7 @@ The Villain form matters because **every duality in abelian lattice theory is on
 
 ## Role in Research
 
-The Villain action is the computational backbone of Semester I of the generalized-symmetries course and of the group's Julia–Toulouse construction. The manuscript's central object — the restricted electric-brane ensemble that realizes higher gauging — is a restriction of exactly the integer Villain field $n$, reduced mod $N$ on a hypersurface. See [[condensation-defects]] and [[julia-toulouse-mechanism]].
+The Villain action is the computational backbone of Semester I of the generalized-symmetries course, and in Semester II it carries the course's bridge to [[condensation-defects]]. Restricted to a surface, a charge-$k$ Villain condensate gives in its London limit the condensation sheet of higher gauging, whose field is $-k$ times the matter current reduced mod $N$; in four dimensions the field of a higher-gauging wall is the restricted Villain integer reduced mod $N$, a reparametrization that by itself assigns no weight to the lines on the wall. The group's manuscript in preparation keeps the ordinary Villain form, rather than the modified one, for its microscopic regulator, because monopole worldlines are the candidate source of the cost it gives to those lines, and its current–clock duality is a periodic-Gaussian self-duality. See [[condensation-defects]] and [[julia-toulouse-mechanism]].
 
 - It makes the [[dual-superconductor]] and monopole-plasma pictures of confinement exact statements rather than approximations.
 - The modified-Villain version supplies the exact lattice backgrounds needed to see [[t-hooft-anomaly|'t Hooft anomalies]] and [[higher-form-symmetries|higher-form symmetries]] without a continuum limit.
@@ -28,7 +28,7 @@ The Villain action is the computational backbone of Semester I of the generalize
 - [[lattice-gauge-theory]] — the Villain form is the abelian corner where lattice gauge theory dualizes exactly
 - [[kramers-wannier-duality]] — the same Poisson-resummation engine, applied to the Ising/scalar case
 - [[julia-toulouse-mechanism]] — defect condensation described through the Villain integer field
-- [[condensation-defects]] — the restricted Villain ensemble realizes higher gauging
+- [[condensation-defects]] — a charge-$k$ Villain condensate restricted to a surface gives the condensation sheet in the London limit
 - [[higher-form-symmetries]] — modified Villain carries these exactly on the lattice
 
 ## Papers
