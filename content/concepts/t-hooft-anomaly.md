@@ -3,7 +3,7 @@ title: "'t Hooft Anomaly"
 type: concept
 areas: [confinement-duality, condensed-matter-connections]
 aliases: ["'t Hooft anomaly", anomaly matching, anomaly inflow, mixed anomaly, Lieb-Schultz-Mattis]
-modified: 2026-07-01
+modified: 2026-09-21
 ---
 
 ## Definition
@@ -30,6 +30,8 @@ Anomalies enter the [[higher-form-symmetries|generalized-symmetry]] program as s
 - [[spt-phases]] — inflow: the anomalous theory lives on the boundary of a bulk SPT
 - [[lattice-gauge-theory]] — the θ = π anomaly as fractional instanton number with a center background
 - [[villain-action]] — exact lattice backgrounds that make the anomaly visible without a continuum limit
+- [[quantum-hall-effect]] — the chiral quantum Hall edge is the textbook continuum example of inflow
+- [[chern-simons-theory]] — the bulk term whose boundary non-invariance the edge cancels
 
 ## Papers
 
@@ -39,3 +41,4 @@ Anomalies enter the [[higher-form-symmetries|generalized-symmetry]] program as s
 
 - The Pontryagin square $\mathcal{P}(B)$ is the honest lattice object; the non-commutativity of the cup product is what carries the anomaly, so it must not be "simplified away."
 - LSM being an anomaly is the clean statement that "an anomaly can live in an ordinary spin chain" — anomalies are not the exclusive property of chiral gauge theories.
+- **The quantum Hall edge is the textbook continuum example of inflow** ([[2026-witten-chern-simons-quantum-hall|Witten 2026]], §3). On a film with boundary, $\exp(2\pi i k\,\mathrm{CS}(A))$ is not a number but a unit vector in a line fixed by the boundary data (Ramadas–Singer–Weitsman). A chiral edge theory whose partition function lives in the inverse line compensates it (Callan–Harvey). The edge is not unique for given $k$; the simplest is $k$ chiral fermions. The edge current's anomaly coefficient, i.e. its Schwinger term, is the Hall conductance. See [[quantum-hall-effect]] and [[chern-simons-theory]].

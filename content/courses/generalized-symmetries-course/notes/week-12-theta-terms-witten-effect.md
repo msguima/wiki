@@ -7,7 +7,7 @@ week: 12
 block: C
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Weeks 8–11; the Villain formulation and cup products (Weeks 2, 8); electromagnetic duality
-modified: 2026-09-29
+modified: 2026-10-04
 ---
 
 # Week 12 — θ-Terms, the Witten Effect, and Oblique Responses
@@ -28,6 +28,7 @@ modified: 2026-09-29
 - Wilczek, "Two applications of axion electrodynamics", *Phys. Rev. Lett.* 58 (1987) 1799, after §8.
 - Sulejmanpasic & Gattringer, *Nucl. Phys. B* 943 (2019) 114616 [arXiv:1901.02637]: a Villain-type lattice formulation obtained by gauging the center symmetry of a noncompact abelian theory, with a four-dimensional θ-term and the Witten effect for magnetically charged matter; read after §6.
 - Qi, Hughes, Zhang, *Phys. Rev. B* 78 (2008) 195424 [arXiv:0802.3537], the θ-term as the effective theory of time-reversal-invariant topological insulators, after §8.3.
+- Witten, "The Chern–Simons function and the quantum Hall effect", to appear in *Bull. Amer. Math. Soc.* [arXiv:2609.21182], §§1–3, after §8: the Chern–Simons function defined by extending the connection over a 4-manifold (his (25)), the integrality of $\frac1{8\pi^2}\int F\wedge F$ only on spin manifolds (his (23)–(24), our §3.3), and the integer Hall level of a two-dimensional insulator, in one argument written for mathematicians. See [[2026-witten-chern-simons-quantum-hall]].
 - The concept page [[axionic-electrodynamics]] and the area [[condensed-matter-connections]].
 
 **Optional research reading:** 't Hooft, *Nucl. Phys. B* 190 (1981) 455, where oblique confinement was proposed; Zyuzin & Burkov, *Phys. Rev. B* 86 (2012) 115133 [arXiv:1206.1868], and Vazifeh & Franz, *Phys. Rev. Lett.* 111 (2013) 027201 [arXiv:1303.5784], for Problem 7⋆⋆; Gorantla, Lam, Seiberg, Shao, arXiv:2103.01257, for the modified Villain theories of Semester II Week 12; the group's papers listed in §8.3.
@@ -502,4 +503,4 @@ These checkpoints cover the core problems; starred and ⋆⋆ problems remain so
 
 ---
 
-*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester I Block C. Rewritten to the note-quality-template standard on 2026-09-28 (first draft 2026-07-01). Last revised 2026-09-29.*
+*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester I Block C. Rewritten to the note-quality-template standard on 2026-09-28 (first draft 2026-07-01). Last revised 2026-10-04.*

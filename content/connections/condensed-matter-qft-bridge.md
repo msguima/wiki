@@ -3,7 +3,7 @@ title: "Condensed Matter and QFT Quantum Information: Shared Mathematical Struct
 type: connection
 areas: [condensed-matter-connections, bell-inequalities-qft]
 maturity: speculative
-modified: 2026-04-06
+modified: 2026-09-21
 ---
 
 ## The Link
@@ -24,6 +24,7 @@ The third link is through entanglement in many-body systems. The condensed matte
 - **Effective field theories for Weyl superconductors** (Ann. Phys. 374, 2016; 8 citations): The effective electromagnetic description of Weyl superconductors involves p-form gauge fields and duality transformations — the same mathematical toolkit used in the massive p-form and duality papers in the confinement program.
 - **Topological entanglement entropy** (Kitaev-Preskill, Levin-Wen, 2006): The topological entanglement entropy S_topo = −ln D (where D is the total quantum dimension) is a key diagnostic for topological order. This is a purely entanglement-based probe of a quantum phase, and it is precisely the kind of connection between entanglement measures and phase structure that the [[entanglement-probes-of-phases|entanglement probes of phases]] connection explores in the gauge theory context.
 - **Chiral anomaly in Weyl semimetals**: The chiral anomaly, familiar from QFT, has a direct condensed matter manifestation in Weyl semimetals — the anomalous Hall effect and negative magnetoresistance. The chiral anomaly modifies the commutation relations of currents, which affects operator algebras. This is a concrete route from anomaly physics to the algebraic structure studied in the Bell program.
+- **Witten, "The Chern-Simons Function and the Quantum Hall Effect"** (arXiv:2609.21182, 2026). The paper derives the integer and fractional Hall responses from the electromagnetic effective action and makes anomaly inflow explicit at the edge. In the language of this page, the edge of a quantum Hall fluid is a chiral $U(1)$ current algebra whose Pauli–Jordan distribution is the Hall conductance, $[\rho(x),\rho(y)]=\frac{i\nu}{2\pi}\delta'(x-y)$. That is a quasi-free CCR net of type III₁ algebras, exactly the setting of the group's [[weyl-operators|Weyl-operator]] Bell-CHSH and coherent-state relative-entropy work, here attached to a real topological material. The same anomaly argument that forbids $\nu\notin\mathbb{Z}$ for a 2d insulator without topological order is what makes the θ = π surface of the first link above anomalous. See [[2026-witten-chern-simons-quantum-hall]] and [[quantum-hall-effect]].
 
 ## Gaps
 
@@ -52,6 +53,9 @@ The primary gap is that no paper in the portfolio has yet directly applied [[wey
 5. **Topological entanglement entropy from Araki-Uhlmann relative entropy**: Attempt to recover the topological entanglement entropy S_topo of BF theory (which should give the quantum dimension D of the anyonic theory) from an Araki-Uhlmann relative entropy computation in the BF field theory. This would unify the condensed matter and relativistic QFT entanglement diagnostics.
 
 6. **Axionic electrodynamics and modular Hamiltonian**: Derive the modular Hamiltonian for the vacuum state of axionic electrodynamics (theta-Maxwell theory) in a Rindler wedge, generalizing the standard result (2π times the boost generator) to the theta ≠ 0 case. This would give the full Tomita-Takesaki modular theory for topological insulator effective field theories.
+7. **Bell-CHSH and relative entropy on a quantum Hall edge**, prompted by [[2026-witten-chern-simons-quantum-hall]]. The most direct route from the Bell/relative-entropy toolkit to a measurable topological phase has two parts:
+   - Extend the group's chiral-boson vertex-operator Tsirelson construction (Caribé–Guimarães–Roditi–Sorella, arXiv:2604.18513) to the compact edge boson of a $\nu=1/m$ fluid. There only electron-type vertex operators are local, and they are fermionic for odd $m$, so graded locality applies.
+   - Compute the Araki–Uhlmann relative entropy of quasiparticle-sector states localized in an interval. Longo's $U(1)$-current formula suggests it scales as $q^2/\nu$ at fixed profile.
 
 ## Related
 

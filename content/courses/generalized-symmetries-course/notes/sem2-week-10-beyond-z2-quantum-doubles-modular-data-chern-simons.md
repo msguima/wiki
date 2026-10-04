@@ -7,7 +7,7 @@ week: 10
 block: 3
 duration: 4 hours (3 hr lectures + 1 hr seminar)
 prerequisites: Sem II Weeks 2, 7 and 8; Semester I Week 12
-modified: 2026-10-03
+modified: 2026-10-04
 ---
 
 # Sem II Week 10 — The Zoo Beyond ℤ₂: Quantum Doubles, Modular Data, Chern–Simons
@@ -24,7 +24,7 @@ modified: 2026-10-03
 
 **Primary:** Wen, Zee, "A classification of Abelian quantum Hall states and matrix formulation of topological fluids", *Phys. Rev. B* 46 (1992) 2290: $K$ and $t$ as the data of an abelian Hall fluid. Kitaev, quant-ph/9707021, cited in the arXiv numbering (§§5 and 7 in the Annals version): §4, the lattice model on the group algebra of a finite group $G$, and §6, "Topological operators, braiding, and fusion", for the flux–charge anyons of §7. Kitaev, *Ann. Phys.* 321 (2006) 2 [cond-mat/0506438], App. E, as a reference for $S$, $T$, the Verlinde formula and the relation of $c$ to the spins.
 
-**Secondary:** Wen, *Quantum Field Theory of Many-Body Systems* (2004), the chapters on the fractional quantum Hall effect and its edge; Preskill, *Lecture Notes*, ch. 9, as a companion to §6; Laughlin, *Phys. Rev. Lett.* 50 (1983) 1395 (the $\nu=1/m$ wave function and its fractional charge).
+**Secondary:** Wen, *Quantum Field Theory of Many-Body Systems* (2004), the chapters on the fractional quantum Hall effect and its edge; Preskill, *Lecture Notes*, ch. 9, as a companion to §6; Laughlin, *Phys. Rev. Lett.* 50 (1983) 1395 (the $\nu=1/m$ wave function and its fractional charge); Witten, "The Chern–Simons function and the quantum Hall effect", to appear in *Bull. Amer. Math. Soc.* [arXiv:2609.21182], §§3–4: the Hall level quantized from the effective action alone, odd levels needing a spin structure, inflow at the edge, and the emergent-field model $\frac{k}{4\pi}A\,dA+\frac{s}{2\pi}A\,da+\frac{r}{4\pi}a\,da$, which is (2.1) with $K=r$, $t=s$ and a background level $k$, so that $\sigma_{xy}=(k-s^2/r)\,e^2/2\pi$ by (4.6); his $\nu=1/3$ example, $(k,s,r)=(0,1,-3)$, is the mirror image of the $K=3$ of §5. See [[2026-witten-chern-simons-quantum-hall]].
 
 **Seminar paper:** Wen, Niu, "Ground-state degeneracy of the fractional quantum Hall states in the presence of a random potential and on high-genus Riemann surfaces", *Phys. Rev. B* 41 (1990) 9377 (§9).
 
@@ -430,4 +430,4 @@ Problems 1–4 are the classroom core; 5⋆–8⋆ consolidate the self-study se
 
 ---
 
-*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester II Block 3. Written to the note-quality-template standard on 2026-10-02. Last revised 2026-10-03.*
+*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester II Block 3. Written to the note-quality-template standard on 2026-10-02. Last revised 2026-10-04.*

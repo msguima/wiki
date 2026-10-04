@@ -3,7 +3,7 @@ title: Topological Order
 type: concept
 areas: [condensed-matter-connections, confinement-duality]
 aliases: [topological order, long-range entanglement, anyons, topological entanglement entropy]
-modified: 2026-07-01
+modified: 2026-09-21
 ---
 
 ## Definition
@@ -32,6 +32,8 @@ Topological order is the quantum-information face of the [[confinement-duality]]
 - [[higher-form-symmetries]] — topological order as spontaneously broken 1-form symmetry
 - [[lattice-gauge-theory]] — the deconfined phase of a discrete gauge theory is topologically ordered
 - [[spt-phases]] — the short-range-entangled cousins (protected only with symmetry)
+- [[chern-simons-theory]] — abelian topological orders are abelian Chern–Simons ($K$-matrix) theories
+- [[quantum-hall-effect]] — the fractional quantum Hall fluids are the experimentally realized topological orders
 
 ## Papers
 
@@ -41,3 +43,4 @@ Wen (1990, definition and GSD); Kitaev, quant-ph/9707021; Kitaev–Preskill and 
 
 - Topological order (long-range entangled, stable without symmetry) is sharply distinct from [[spt-phases|SPT order]] (short-range entangled, protected only by symmetry) — the difference is the presence of anyons and topological degeneracy.
 - "Intrinsic" topological order (toric code, FQHE) has anyons in the bulk; the FQHE Laughlin state is the experimentally realized example, with charge-$e/3$ anyons at $\nu = 1/3$.
+- **Continuum description.** Abelian topological orders are abelian Chern–Simons ($K$-matrix) theories. They have ground-state degeneracy $|\det K|^g$, anyon data read from $K^{-1}$, and $\gamma=\ln\sqrt{|\det K|}$. The toric code is $K=\begin{pmatrix}0&2\\2&0\end{pmatrix}$, i.e. $\mathbb{Z}_2$ BF theory. [[2026-witten-chern-simons-quantum-hall|Witten (2026)]] gives the cleanest statement of how such a TQFT couples to electromagnetism, $\sigma_{xy}=k-s^2/r$, and flags that its emergence from electrons is interpretation, not theorem. See [[chern-simons-theory]] and [[quantum-hall-effect]].

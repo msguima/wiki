@@ -2,7 +2,7 @@
 title: "Condensed Matter Connections: Topological Materials and Effective Field Theories"
 type: area
 status: historical
-modified: 2026-07-01
+modified: 2026-09-21
 ---
 
 ## Overview
@@ -39,6 +39,8 @@ This line is currently dormant, but the following questions remain open and may 
 2. **[[julia-toulouse-higher-form-symmetries|Julia-Toulouse condensation in topological superconductors]]**: Whether the topological phase transitions in Weyl superconductors can be understood as spontaneous breaking of higher-form symmetries via the Julia-Toulouse mechanism. See [[julia-toulouse-meets-generalized-symmetries]].
 3. **Entanglement structure of topological phases**: The tools from the [[bell-inequalities-qft|quantum information program]] (modular theory, relative entropy, Bell inequalities) may be applicable to the many-body ground states of topological materials. See [[condensed-matter-qft-bridge]].
 4. **[[non-invertible-symmetries-mcs|Non-invertible symmetries in (2+1)d topological theories]]**: Maxwell-Chern-Simons and BF theories in (2+1)d — central to both this line and the [[confinement-duality]] line — are known to possess non-invertible symmetries; their physical consequences in the topological material context are unexplored.
+5. **Quantization and global structure of the pseudo-axion response.** Two lessons of [[2026-witten-chern-simons-quantum-hall|Witten (2026)]] have not been applied to the dynamical pseudo-axion of the Weyl-superconductor papers, where the condensate carries charge $2e$: $\theta\cong\theta+2\pi$ only with a spin structure, and half-integer Chern–Simons levels are anomalous. What are the correct θ-periodicity and the Callan–Harvey zero modes on pseudo-axion strings and walls? See [[axionic-electrodynamics]].
+6. **The quantum Hall edge as a type III₁ laboratory.** By anomaly inflow, the Pauli–Jordan distribution of the edge current is proportional to the Hall conductance. Bell-CHSH with edge vertex operators, and the Araki–Uhlmann entropy of quasiparticle sectors, would bring the [[bell-inequalities-qft|quantum-information program]] to a real topological material. See [[quantum-hall-effect]] and [[condensed-matter-qft-bridge]].
 
 ## Key Concepts
 
@@ -46,6 +48,7 @@ This line is currently dormant, but the following questions remain open and may 
 - **Topological superconductors**: Superconductors with topologically non-trivial bulk gap and topologically protected gapless surface states (e.g., Majorana modes). The effective field theory involves multivalued order parameter fields and monopole operators.
 - **[[axionic-electrodynamics|Axionic electrodynamics]]**: Electrodynamics modified by a term θ(x) E·B in the Lagrangian. When θ is a dynamical axion (or pseudo-axion) field, as in Weyl superconductors, this produces a topologically non-trivial, massive photon spectrum.
 - **Topological magnetoelectric effect (TME)**: In topological insulators, a static θ = π bulk θ-term causes an applied electric field to induce a magnetic polarization and vice versa — the hallmark of the topological insulator phase at the level of electromagnetic response.
+- **[[quantum-hall-effect|Quantum Hall effect]] and [[chern-simons-theory|Chern–Simons theory]]**: The Hall conductance of a 2d insulator is the level of a Chern–Simons term in its electromagnetic effective action. It is integer-quantized because $e^{iI}$ must be well defined, and odd levels need a spin structure. The fractional effect adds an emergent Chern–Simons field. [[2026-witten-chern-simons-quantum-hall|Witten (2026)]] derives all of this from the effective action alone, and it is the cleanest statement of the logic behind this line's θ-electrodynamics: a θ-wall of height Δθ carries level Δθ/2π, so the θ = π surface is half-quantized and necessarily anomalous.
 - **Monopole operators**: Non-local (disorder) operators that create vortex or monopole configurations in the order parameter field. They are the natural operators to insert in topological phases where the order parameter field is multivalued. Dual to the standard local operators, they are the condensed matter analog of 't Hooft operators.
 - **[[julia-toulouse-mechanism|Julia-Toulouse mechanism]]**: The field-theoretic procedure for deriving effective theories from defect condensation. In the condensed matter context, condensation of vortices drives the transition from a superfluid to an insulating phase, and condensation of monopoles (in 3+1d) can drive confinement.
 

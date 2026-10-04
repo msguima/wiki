@@ -18,7 +18,7 @@ Non-invertible symmetries have emerged as a major organizing principle in modern
 
 Maxwell-Chern-Simons in 2+1d is particularly natural for this analysis because:
 1. It is exactly solvable and has a known dual (self-dual model) — a well-established example of a duality that acts on the Hilbert space.
-2. The [[chern-simons-level]] $k$ controls anyon statistics: at level $k$, the theory has anyonic excitations with statistical phase $e^{i\pi/k}$. The fusion rules of these anyons are generally non-group-like, suggesting non-invertible symmetries.
+2. The [[chern-simons-theory|Chern-Simons level]] $k$ controls anyon statistics: at level $k$, the theory has anyonic excitations with statistical phase $e^{i\pi/k}$. The fusion rules of these anyons are generally non-group-like, suggesting non-invertible symmetries.
 3. The earlier work on Maxwell-Chern-Simons duality in noncommutative spaces (Phys. Lett. B 605, 2005) and the connection between Chern-Simons terms and [[julia-toulouse-mechanism]] (Phys. Rev. D 88, 2013) provide technical tools that can be deployed.
 4. This connects the earliest research line (duality, 2003–2013) to one of the most active current frontiers, providing a natural revival and modernization of that program (Project 18).
 
@@ -26,8 +26,13 @@ Maxwell-Chern-Simons in 2+1d is particularly natural for this analysis because:
 
 **Maxwell-Chern-Simons — established:**
 - MCS action in 2+1d: $S = \int d^3x \left[-\frac{1}{4e^2} F_{\mu\nu}F^{\mu\nu} + \frac{k}{4\pi} \epsilon^{\mu\nu\rho} A_\mu \partial_\nu A_\rho \right]$. The parameter $k$ is the Chern-Simons level; for $k \in \mathbb{Z}$, the theory is gauge-invariant under large gauge transformations.
-- The photon acquires a gauge-invariant mass $m = ke^2/4\pi$; at energies below $m$, the theory flows to pure Chern-Simons theory, which is a topological field theory with anyon excitations.
-- Duality between MCS and the self-dual model (Deser-Jackiw, 1984; Fradkin-Schaposnik, 1994): the two theories have identical S-matrices and partition functions. In Marcelo's thesis (2005), this duality was extended to noncommutative space.
+- The photon acquires a gauge-invariant mass $m = ke^2/2\pi$; at energies below $m$, the theory flows to pure Chern-Simons theory, which is a topological field theory with anyon excitations. (Corrected 2026-09-21 from $ke^2/4\pi$. With $A\to eA$ the action becomes $-\tfrac14F^2+\frac{ke^2}{4\pi}\epsilon A\partial A$, which is the Deser–Jackiw–Templeton form $\frac{m}{2}\epsilon A\partial A$ with $m=ke^2/2\pi$.)
+- **Global data** (see [[chern-simons-theory]]).
+  - $k\in\mathbb{Z}$ because the Chern–Simons function is defined only mod $\mathbb{Z}$ and $e^{iI}$ must be single-valued ([[2026-witten-chern-simons-quantum-hall|Witten 2026]], §3).
+  - For odd $k$ the theory needs a spin structure: it is a spin TQFT, since $\int F\wedge F/8\pi^2$ is an integer only on spin 4-manifolds (Witten 2026, §3).
+  - On a spatial torus the holonomy zero modes form a Landau problem with cyclotron frequency exactly $m$ and a $k$-fold degenerate lowest level (Dunne–Jackiw–Trugenberger 1989). That is the $U(1)_k$ TQFT sector, and the self-dual model has no counterpart. The MCS/self-dual duality is therefore a *local* statement, expected to hold globally only up to the TQFT factor.
+  - The spin ($k$ odd) and bosonic ($k$ even) cases must be classified separately. The anomaly of the $\mathbb{Z}_k$ 1-form symmetry is read off from the line spins $h_n=n^2/2k$, and those differ between the two cases (Hsin–Lam–Seiberg 2019).
+- Duality between MCS and the self-dual model (Deser-Jackiw, 1984; Fradkin-Schaposnik, 1994): the two theories have identical S-matrices and partition functions locally (for the global statement, see the caveat above). In Marcelo's thesis (2005), this duality was extended to noncommutative space.
 - In the presence of magnetic monopoles (Julia-Toulouse context): monopoles in 2+1d are instantons (Polyakov monopoles), and the Chern-Simons term gives them an electric charge, leading to dyonic excitations. This was studied explicitly (Phys. Rev. D 88, 2013; Phys. Lett. B 674, 2009).
 
 **Non-invertible symmetries — modern framework:**

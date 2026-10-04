@@ -2,7 +2,7 @@
 title: "Appendix — Bibliography and Paper Map"
 type: appendix
 course: syllabus
-modified: 2026-10-03
+modified: 2026-10-04
 ---
 
 # Bibliography and Paper Map
@@ -116,6 +116,7 @@ Three levels, same discipline as the AQFT course:
 | Arovas, Schrieffer, Wilczek, *Phys. Rev. Lett.* 53 (1984) 722 | Wk 10 | statements | Fractional statistics of the Laughlin quasiholes. |
 | Wen, *Phys. Rev. B* 41 (1990) 12838 | Wk 10 | statements | Chiral edge states of fractional quantum Hall states. |
 | Wen & Zee, *Phys. Rev. B* 46 (1992) 2290 | Wk 10 | statements | The K-matrix classification of abelian quantum Hall states. |
+| Witten, "The Chern–Simons function and the quantum Hall effect", to appear in *Bull. Amer. Math. Soc.* [arXiv:2609.21182] | Sem I Wk 12; Sem II Wk 10 | §§1–4 | The θ-term and the Chern–Simons function from a 4-manifold extension, integrality on spin manifolds, the integer Hall level and the emergent-field model of the fractional effect. |
 | Witten, "Quantum field theory and the Jones polynomial", *Commun. Math. Phys.* 121 (1989) 351 | Wk 10 | statements | Chern–Simons theory, Wilson lines and their framing. |
 | Coste, Gannon, Ruelle, *Nucl. Phys. B* 581 (2000) 679 [hep-th/0001158] | Wk 10 | statements | The modular data of finite-group quantum doubles. |
 | Levin & Wen, "Fermions, strings, and gauge fields in lattice spin models", *Phys. Rev. B* 67 (2003) 245316 [cond-mat/0302460] | Wk 8 | statements | Anyon statistics from string operators: the T-junction argument. |
