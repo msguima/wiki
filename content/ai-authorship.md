@@ -1,7 +1,7 @@
 ---
 title: "Authorship of this wiki"
 type: course-standard
-modified: 2026-10-01
+modified: 2026-10-04
 ---
 
 # Authorship of this Wiki
@@ -51,7 +51,7 @@ none. The counts therefore understate the earliest work.
 |---|---|---|
 | Estrutura Algébrica da Teoria Quântica de Campos<br>`2026-algebraic-qft-course` | Claude Opus 4.7 (14 commits), Claude Opus 4.8 (2), Claude Opus 5 (2) | 2026-05-08 → 2026-08-23 |
 | Holography through Quantum Information and Operator Algebras<br>`ads-cft-course` | GPT Astra 6 (redesign, 32 notes); Claude Opus 5.5 (Lectures 8–32 rewritten, with independent audits) | 2026-09-29 → 2026-10-01 |
-| Generalized Symmetries and Topological Matter<br>`generalized-symmetries-course` | Claude Opus 4.8 (5), Claude Fable 5 (3) | 2026-07-05 → 2026-07-10 |
+| Generalized Symmetries and Topological Matter<br>`generalized-symmetries-course` | Claude Opus 5.5 (7 commits in the `courses` repository: Semester I rewritten and Semester II written, with independent verification passes) | 2026-09-28 → 2026-10-03 |
 | Statistical Physics of Neural Networks and Language Models<br>`neural-networks-llms-course` | Claude Opus 5 (initial wiki draft); Codex (OpenAI, pedagogical revision) | 2026-09-19 → |
 | Research notes<br>`concepts`, `areas`, `connections`, `papers`, `projects`, `questions`, `entities` | Claude Opus 4.8 (7 commits), Claude Opus 5 (2), Claude Opus 4.6 (2), Claude Fable 5 (1) | 2026-04-06 → 2026-09-19 |
 
@@ -72,6 +72,15 @@ replaced the earlier CFT-first course of this wiki, *Gauge/Gravity Duality:
 Foundations and Black-Hole Information*, written by Claude Opus 4.7 (35 commits),
 Claude Sonnet 4.6 (5) and Claude Opus 5 (2) between 2026-05-26 and 2026-08-25,
 which remains in the repository history.
+
+The generalized-symmetries course is also carried from the `courses` repository.
+Claude Opus 5.5 reviewed it against the AQFT course's standard on 2026-09-27,
+rewrote the fifteen Semester I notes and wrote the fifteen Semester II notes
+between 2026-09-28 and 2026-10-03, each block followed by an independent
+verification pass, and the commits there carry the trailers. On 2026-10-04 it
+replaced the earlier copy of this wiki, written by Claude Opus 4.8 (5 commits)
+and Claude Fable 5 (3) between 2026-07-05 and 2026-07-10, which remains in the
+repository history.
 
 The neural-networks course has both a wiki reading route and printable lecture
 notes maintained in Marcelo's `courses` repository. The printable notes were

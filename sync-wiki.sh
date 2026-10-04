@@ -66,12 +66,15 @@ PUBLISH=(
 )
 
 # People notes that stay private (junior researchers; see wiki/entities/),
-# plus internal course documents (organizational crosswalk).
+# plus internal course documents (organizational crosswalk), plus the one
+# generalized-symmetries note that follows the group's unpublished manuscript
+# in detail, held back until the manuscript is public (decision of 2026-10-04).
 EXCLUDE=(
   entities/ismael-porfirio.md
   entities/erick-landim.md
   entities/luigi-carvalho-ferreira.md
   courses/ads-cft-course/appendices/adscft-org-crosswalk.md
+  courses/generalized-symmetries-course/notes/sem2-week-14-defect-condensation-and-julia-toulouse.md
 )
 
 # Clear the previous copy, keeping the hand-written landing page.
