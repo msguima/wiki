@@ -7,7 +7,7 @@ week: 9
 block: 3
 duration: 4 hours (3 hr lectures + 1 hr seminar)
 prerequisites: Sem II Weeks 3, 7 and 8; Semester I Weeks 4, 5 and 7
-modified: 2026-10-03
+modified: 2026-10-04
 ---
 
 # Sem II Week 9 — Long-Range Entanglement and Error Correction
@@ -51,13 +51,19 @@ $$
 \langle\psi|O_XO_Y|\psi\rangle=\langle\Omega|U^\dagger O_XU\,U^\dagger O_YU|\Omega\rangle=\langle\psi|O_X|\psi\rangle\langle\psi|O_Y|\psi\rangle .\tag{2.3}
 $$
 
-### 2.2 Phases and long-range entanglement [Definitions; the gapped-path equivalence Stated — refs: CGW §III.]
+### 2.2 Phases and long-range entanglement [Definitions; the gapped-path equivalence and the circuit approximation Stated — refs: CGW §§III–V and Appendix.]
 
-CGW §III argue that two gapped ground states are in the same phase exactly when a local-unitary evolution, the quasi-adiabatic continuation of a gapped path of Hamiltonians, relates them, and §V relates such evolutions to circuits of finite depth. Their §IV defines a family $|\psi_L\rangle$ on systems of linear size $L$ to be **short-range entangled** (SRE) if
+CGW §III argue that two gapped ground states are in the same phase exactly when a local-unitary (LU) evolution relates them, the quasi-adiabatic continuation of a gapped path of Hamiltonians,
 $$
-|\psi_L\rangle=U_L\,|\Omega_L\rangle\tag{2.4}
+|\psi(1)\rangle=\mathcal T\,e^{-i\int_0^1dg\,\tilde H(g)}\,|\psi(0)\rangle ,
 $$
-for product states $|\Omega_L\rangle$ and circuits $U_L$ whose depth and range do not depend on $L$, and **long-range entangled** (LRE) otherwise. All SRE states form one phase, and topological order is a pattern of long-range entanglement. The cluster chain of Week 7 §4.6 is SRE, made by two layers of $CZ$ gates on alternating bonds, and yet a nontrivial SPT: its gates break the symmetry, and its projective class (Week 7 §4.3) cannot change under symmetric circuits (CGW §VI). Without symmetry every injective matrix-product state is SRE (Week 7 §4.3), so one-dimensional gapped states have no topological order.
+where $\tilde H(g)$ is a sum of quasi-local terms whose tails decay faster than any power of the distance, and exponentially if the equality is relaxed to agreement of every local measurement (their Appendix). An LU evolution spreads an operator with such tails instead of the sharp light cone (2.2), and their §V states that it can be simulated, to any fixed accuracy, by a circuit (2.1) whose depth and range stay bounded as $L$ grows. A family $|\psi_L\rangle$ on systems of linear size $L$ is **short-range entangled** (SRE) when an LU evolution connects it to a product state, so that
+$$
+|\psi_L\rangle\simeq U_L\,|\Omega_L\rangle\tag{2.4}
+$$
+with product states $|\Omega_L\rangle$ and circuits $U_L$ whose depth and range depend on the accuracy of (2.4), measured on every local expectation value, and not on $L$; it is **long-range entangled** (LRE) otherwise.
+
+Two levels of this definition must be kept apart. *Exact* preparation, with equality in (2.4) for a circuit of fixed depth and range, is the strict version: by (2.3) it kills every connected correlation beyond $2R$, and it is what the model proof of §2.3 excludes. *Membership in the trivial phase* allows the exponential tails. The AKLT state of Week 7 has $\langle S^z_jS^z_{j+r}\rangle=\tfrac43\big(-\tfrac13\big)^r$, Week 7 (3.9), nonzero at every distance, so no exact circuit of fixed depth makes it; without symmetry it is nevertheless joined to a product state by a gapped path, and it is SRE in the sense of (2.4). All SRE states form one phase, and topological order is a pattern of long-range entanglement. The cluster chain of Week 7 §4.6 is exactly SRE, made by two layers of $CZ$ gates on alternating bonds, and yet a nontrivial SPT: its gates break the symmetry, and its projective class (Week 7 §4.3) cannot change under symmetric circuits (CGW §VI). Without symmetry every injective matrix-product state is SRE in the phase sense (Week 7 §4.3), so one-dimensional gapped states have no topological order.
 
 ### 2.3 The toric code is long-range entangled [Model proof.]
 
@@ -75,7 +81,7 @@ $$
 $$
 Since $W^2=1$, $\|(W-z)\psi\|^2=1-z^2=0$, and $|\psi\rangle$ is an eigenvector of $\bar Z_1$ with $z=\pm1$. The cuts $U(\tilde C_y)$ through $x=\tfrac12$ and $x=\tfrac12+\lfloor L_1/2\rfloor$, which differ by the stars between them, make it an eigenvector of $\bar X_1$ with eigenvalue $\xi=\pm1$. But $\bar Z_1\bar X_1=-\bar X_1\bar Z_1$ (Week 8 (3.8)), so $z\xi=-\xi z$, a contradiction. ∎
 
-The proof needs only distant homologous copies of two anticommuting logical operators: a shallow circuit can make one nonlocal observable sharp, as $|{\Uparrow}\rangle$ does for every Wilson loop, but not two anticommuting ones (Problem 7⋆ treats the planar code). For Hamiltonian evolution, BHV prove with Lieb–Robinson bounds that creating topological order from a product state takes a time growing with the system size [Stated — refs: BHV].
+The proof needs only distant homologous copies of two anticommuting logical operators: a shallow circuit can make one nonlocal observable sharp, as $|{\Uparrow}\rangle$ does for every Wilson loop, but not two anticommuting ones (Problem 7⋆ treats the planar code). (2.5) excludes exact circuits. For the LU evolutions of §2.2, tails included, BHV prove with Lieb–Robinson bounds that creating topological order from a product state takes a time growing with the system size, so the toric code is LRE in the sense of (2.4) as well [Stated — refs: BHV].
 
 ## 3. The Schmidt decomposition across a disk
 
@@ -399,7 +405,7 @@ Proved on every finite torus: (3.4), (3.6), (3.7), (3.10), (4.2), (4.4) and (5.3
 
 ## 9. Subtleties and fine print
 
-**F1. Cat states.** By (2.3) an SRE state has no connected correlations beyond $2R$, so the GHZ state, a sum of two product states, is LRE. CGW's classification concerns gapped ground states, applied with a degenerate ground space to the states that cluster, here the two product states. (2.5) needs no such choice: it excludes every state of $V_{\mathcal S}$, all of which cluster for local operators by (5.5).
+**F1. Cat states.** By (2.3) an exactly SRE state has no connected correlations beyond $2R$, and an SRE state in the phase sense of (2.4) has connected correlations that decay exponentially. The GHZ state, a sum of two product states, keeps a connected correlation of order one at every distance, so it is LRE in both senses. CGW's classification concerns gapped ground states, applied with a degenerate ground space to the states that cluster, here the two product states. (2.5) needs no such choice: it excludes every state of $V_{\mathcal S}$, all of which cluster for local operators by (5.5).
 
 **F2. Ancillas.** CGW let circuits act together with ancillas in a product state, so that systems of different sizes can be compared; the proof of (2.5) is unchanged.
 
@@ -427,7 +433,7 @@ Kitaev introduced the toric code as a quantum code in 1997, and Bravyi and Kitae
 
 ## 12. What to take away
 
-1. **Technical:** a circuit of depth $M$ and range $l$ moves supports by at most $Ml$, (2.2), and SRE means made from a product state by such a circuit, (2.4). **Physical:** such states cannot make two anticommuting nonlocal observables sharp, so the toric code is LRE, (2.5).
+1. **Technical:** a circuit of depth $M$ and range $l$ moves supports by at most $Ml$, (2.2); SRE means connected to a product state by an LU evolution, which such circuits approximate, (2.4), and exact preparation by one kills every connected correlation beyond $2R$, (2.3). **Physical:** a shallow circuit cannot make two anticommuting nonlocal observables sharp, so no exact shallow circuit makes the toric code, (2.5), and BHV extend this to LU evolutions.
 2. **Technical:** a group state has $|\mathcal G|/(|\mathcal G_A||\mathcal G_B|)$ equal Schmidt coefficients, (3.4), and a disk has $S=|\partial A|\ln2-\ln2$, (3.6). **Physical:** one bit per cut star, minus the bit fixed by Gauss's law, (3.8).
 3. **Technical:** the KP and LW combinations cancel the boundary terms star by star and give $-\ln2$ and $-2\ln2$, (4.2) and (4.4). **Physical:** $\gamma=\ln\mathcal D$ is read from the wavefunction alone.
 4. **Technical:** the toric code is $[\![2L_1L_2,2,\min(L_1,L_2)]\!]$ and the planar code $[\![L^2+(L-1)^2,1,L]\!]$. **Physical:** logical operators are homology classes, rough and smooth edges absorb $e$ and $m$, and nothing on fewer than $d$ qubits sees the encoded information, (5.5).
@@ -477,4 +483,4 @@ Kitaev introduced the toric code as a quantum code in 1997, and Bravyi and Kitae
 
 ---
 
-*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester II Block 3. Written to the note-quality-template standard on 2026-10-02. Last revised 2026-10-03.*
+*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester II Block 3. Written to the note-quality-template standard on 2026-10-02. Last revised 2026-10-04.*

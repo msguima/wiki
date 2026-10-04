@@ -7,7 +7,7 @@ week: 3
 block: A
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Weeks 1–2 (compact fields, cochain calculus, Hodge decomposition, Poisson resummation); Gaussian integrals with sources
-modified: 2026-09-28
+modified: 2026-10-04
 ---
 
 # Week 3 — The Villain Form and the Exact Duality of the XY Model
@@ -64,7 +64,7 @@ d\,(d\theta - 2\pi n) = -2\pi\, dn = -2\pi v,
 $$
 so the branch-reduced angle winds by $-2\pi v_P$ around a plaquette $P$, and a counter-clockwise $+2\pi$ vortex, such as the explicit one of Week 1 §4.1, has $v_P=-1$ (the sign is pinned in [[courses/generalized-symmetries-course/conventions|conventions]] §4). Week 1's vortex is now one line of cochain algebra. Section 5 shows, by an exact lattice computation, that these integers carry the Coulomb gas that §4 derives from the dual variables.
 
-> **Physical picture.** The split "$n = $ branch junk $+$ vorticity" is the split "spin waves $+$ vortices." The part $dk$ is unwound by letting θ roam $\mathbb{R}$; the part with $dn \ne 0$ *cannot* be unwound — it is the topological obstruction, and it is all that survives of $n$ in any physical answer. Week 1's move "let $\theta\in\mathbb{R}$ to get the Gaussian model" is precisely: keep the junk, discard $v$. This week keeps both.
+> **Physical picture.** The split "$n$ = branch junk + vorticity" is the split "spin waves + vortices." The part $dk$ is unwound by letting θ roam $\mathbb{R}$; the part with $dn \ne 0$ *cannot* be unwound — it is the topological obstruction, and it is all that survives of $n$ in any physical answer. Week 1's move "let $\theta\in\mathbb{R}$ to get the Gaussian model" is precisely: keep the junk, discard $v$. This week keeps both.
 
 ### 1.3 A vortex pair, walked through the variables [Computed.]
 
@@ -148,9 +148,9 @@ $$
 m \;=\; \star\, d\tilde h \;+\; w_1\, M^{(1)} + w_2\, M^{(2)},
 \qquad \tilde h \in C^0(\Lambda^*,\mathbb{Z})\ \text{(mod global shift)},\quad w_{1,2}\in\mathbb{Z},
 $$
-where $\tilde h$ is an integer **height field on dual sites** and $M^{(1,2)}$ are two *fixed reference currents of unit winding* — e.g. $M^{(1)} = $ a single closed loop of current along one chosen row of $x$-links. (Note what the $M^{(i)}$ are **not**: they are not the harmonic cochains $h^{(i)}$ of Week 2 §6, which have value 1 on *every* parallel link and therefore carry winding $L$, not 1. Over the integers there is no harmonic representative of unit winding — the real harmonic one would be $h^{(i)}/L$, which is not integer-valued. This distinction matters below.)
+where $\tilde h$ is an integer **height field on dual sites** and $M^{(1,2)}$ are two *fixed reference currents of unit winding* — e.g. $M^{(1)}$ is a single closed loop of current along one chosen row of $x$-links. (Note what the $M^{(i)}$ are **not**: they are not the harmonic cochains $h^{(i)}$ of Week 2 §6, which have value 1 on *every* parallel link and therefore carry winding $L$, not 1. Over the integers there is no harmonic representative of unit winding — the real harmonic one would be $h^{(i)}/L$, which is not integer-valued. This distinction matters below.)
 
-**Construction (this is the proof).** Transport $m$ to the dual lattice: $\star m$ is a *closed* integer 1-cochain on $\Lambda^*$ (§5.2 of Week 2: divergence becomes curl). Measure its two winding numbers $w_i = $ (sum of $\star m$ along the $i$-th dual cycle) and subtract $w_1 M^{(1)} + w_2 M^{(2)}$, whose windings are $(1,0)$ and $(0,1)$ by construction: the remainder $r$ is closed with zero winding. Now define $\tilde h(\tilde x) = -\sum_{\gamma:\, \tilde x_0 \to \tilde x} \star r$ along any dual path γ: **path-independence** holds because two paths differ by a closed dual loop, on which a closed zero-winding cochain sums to zero. So $d\tilde h=-\star r$, and since $\star\star=-1$ on 1-cochains in $d=2$ ([[courses/generalized-symmetries-course/conventions|conventions]] §2), $r = \star d\tilde h$ with $\tilde h$ integer-valued, unique up to the constant $\tilde h(\tilde x_0)$. $\square$
+**Construction (this is the proof).** Transport $m$ to the dual lattice: $\star m$ is a *closed* integer 1-cochain on $\Lambda^*$ (§5.2 of Week 2: divergence becomes curl). Measure its two winding numbers $w_i$, the sums of $\star m$ along the two dual cycles, and subtract $w_1 M^{(1)} + w_2 M^{(2)}$, whose windings are $(1,0)$ and $(0,1)$ by construction: the remainder $r$ is closed with zero winding. Now define $\tilde h(\tilde x) = -\sum_{\gamma:\, \tilde x_0 \to \tilde x} \star r$ along any dual path γ: **path-independence** holds because two paths differ by a closed dual loop, on which a closed zero-winding cochain sums to zero. So $d\tilde h=-\star r$, and since $\star\star=-1$ on 1-cochains in $d=2$ ([[courses/generalized-symmetries-course/conventions|conventions]] §2), $r = \star d\tilde h$ with $\tilde h$ integer-valued, unique up to the constant $\tilde h(\tilde x_0)$. $\square$
 
 Equivalently and more usefully: $m = \star d\tilde h$ with a **multivalued** height, $\tilde h$ shifting by $w_i$ around the $i$-th cycle — "tilted" or twisted boundary conditions, the lattice version of a screw dislocation. The partition function splits **exactly as a sum over tilt sectors**,
 $$
@@ -238,7 +238,7 @@ Read the status of each symbol correctly: the **logarithmic interaction between 
 
 **Check against Week 1.** One $+$ at $\tilde x_1$, one $-$ at $\tilde x_2$, well separated: the double sum over ordered pairs gives $2\cdot(+1)(-1)\ln r_{12}$, so $S = 2\pi\beta\ln r_{12} + 2E_{\rm core}$ — exactly the pair energy $2\pi\beta\ln(r/a_0) + 2E_{\rm core}$ estimated in Week 1 §4.3, with the core energy now *identified* in the long-distance normalization: $E_{\rm core} = 2\pi^2\beta\kappa$, the lattice Green-function constant doing physics. Like charges repel, opposite charges attract logarithmically, the gas is neutral: the two-dimensional Coulomb gas, derived.
 
-> **Physical picture.** The XY model is two decoupled theories wearing one set of variables: a free field that is critical at every temperature and never does anything dramatic (spin waves), and a neutral logarithmic plasma that undergoes a dielectric-to-conductor transition (vortices). The duality is valuable because it *diagonalizes* the model into these sectors exactly — with the bonus that the plasma's fugacity is a computed number, $y = e^{-2\pi^2\beta\kappa}$, fixed at the long-distance matching of §4 by the same lattice constant κ that normalized Week 1's correlator. When Week 4 tunes the vortex fugacity in the RG, this is the microscopic value it starts from.
+> **Physical picture.** The Villain XY model is two decoupled theories wearing one set of variables: a free field that is critical at every temperature and never does anything dramatic (spin waves), and a neutral logarithmic plasma that undergoes a dielectric-to-conductor transition (vortices). The duality is valuable because it *diagonalizes* the Villain model into these sectors exactly in the zero-tilt sector of §3; with the winding sectors restored the spin waves still factor off exactly, and the vortices see the windings only through their total dipole moment, $\Theta(v)$ of §5 (F1). It is a statement about the Villain weight that the cosine model inherits only through the Villain approximation. The plasma's fugacity comes with it, $y = e^{-2\pi^2\beta\kappa}$, in the long-distance matching convention of §4, where the constant κ of the asymptote of the lattice Green function, the one that normalized Week 1's correlator, becomes a core energy by neutrality, and the short-distance deviations of $a(r)$ are left to renormalize $y$ further. When Week 4 tunes the vortex fugacity in the RG, this is the value it starts from, in that convention.
 
 ## 5. Cross-check: the lattice vorticity carries the same Coulomb gas [Proved.]
 
@@ -470,8 +470,8 @@ Villain (1975) introduced the periodic Gaussian precisely to make the low-temper
 
 ## 12. What to take away
 
-1. **The duality is four exact rewritings**: Villain → conserved currents (compactness ⟹ integer Kronecker constraints) → heights + windings (integer Hodge) → spin waves + neutral Coulomb gas (Poisson + zero mode). Every constant tracked; factorization exact.
-2. **The vortex gas comes out quantitative**: interaction $-\pi\beta\sum_{\ne} vv\ln r$, exact neutrality from the zero mode, and fugacity $y = e^{-2\pi^2\beta\kappa}$ with κ the Week-1 lattice constant — microscopics feeding the RG.
+1. **The duality is four exact rewritings**: Villain → conserved currents (compactness ⟹ integer Kronecker constraints) → heights + windings (integer Hodge) → spin waves + neutral Coulomb gas (Poisson + zero mode). Every constant tracked; factorization exact in the zero-tilt sector (F1).
+2. **The vortex gas comes out quantitative**: interaction $-\pi\beta\sum_{\ne} vv\ln r$, exact neutrality from the zero mode, and fugacity $y = e^{-2\pi^2\beta\kappa}$ with κ the Week-1 lattice constant, in the long-distance matching convention of §4 — the value the RG of Week 4 starts from.
 3. **Sine-Gordon is the same theory once more**, with the vortex operator $e^{i\chi}$ of dimension $\pi\beta$: relevant/irrelevant across $\beta = 2/\pi$. That single dimension is Week 4's input.
 4. **The mechanism of decoupling is orthogonality** (§5): in the Hodge split of $2\pi n$ the vortex part of the Villain field strength is co-exact and the spin-wave part exact, so they cannot exchange energy at quadratic order; in the continuum this is the harmonicity of the vortex configuration, and it is the physical reason a free field and a plasma coexist in one model without mixing.
 
@@ -526,4 +526,4 @@ the constant of Week 4, so $\beta_{\rm eff}<\beta$. At $\pi\beta=2.2$: $\beta=0.
 
 ---
 
-*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester I Block A. Rewritten to the note-quality-template standard on 2026-07-10 (first draft 2026-07-01). Last revised 2026-09-28.*
+*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester I Block A. Rewritten to the note-quality-template standard on 2026-07-10 (first draft 2026-07-01). Last revised 2026-10-04.*

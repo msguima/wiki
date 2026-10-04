@@ -7,7 +7,7 @@ week: 15
 block: D
 duration: 4 hours (2 hr synthesis lecture + take-home final assigned)
 prerequisites: All of Semester I (Weeks 1–14)
-modified: 2026-10-02
+modified: 2026-10-04
 ---
 
 # Week 15 — Consolidation: Everything Was Symmetry All Along
@@ -261,7 +261,7 @@ Gaiotto, Kapustin, Seiberg and Willett (2014) wrote in continuum language, with 
 
 ## 12. Looking ahead: Semester II
 
-Semester II opens (Block 1) with the definitions of §2: Week 1 defines symmetries as topological operators, Week 2 builds $\mathbb{Z}_N$ gauge theory as BF theory and constructs the operators whose algebra (3.2) we used, Week 3 makes the SSB criterion precise, and Week 4 defines gauging, which turns the forward references of §§2 and 3.6 into theorems. Block 2 treats 't Hooft anomalies, including the mixed anomaly at θ = π that grows out of Week 12; Block 3 solves the toric code, the deconfined phase of §3; Block 4 makes the dualities of Table 1 exact with the modified Villain construction (Week 12) and turns the Kramers–Wannier operator of Week 4 §4.4 into a non-invertible defect (Week 13). Block 5 returns to the residual symmetry of Week 14 with the group's manuscript on Julia–Toulouse condensation as higher gauging (in preparation) and the master-project.
+Semester II opens (Block 1) with the definitions of §2: Week 1 defines symmetries as topological operators, Week 2 builds $\mathbb{Z}_N$ gauge theory as BF theory and constructs the operators whose algebra (3.2) we used, Week 3 makes the SSB criterion precise, and Week 4 defines gauging, which turns the forward references of §§2 and 3.6 into theorems. Block 2 treats 't Hooft anomalies, including the mixed anomaly at θ = π that grows out of Week 12; Block 3 solves the toric code, the deconfined phase of §3; Block 4 makes the dualities of Table 1 exact with the modified Villain construction (Week 12) and turns the Kramers–Wannier operator of Week 4 §4.4 into a non-invertible defect (Week 13). Block 5 returns to the residual symmetry of Week 14 through higher-gauging walls, the setting of the group's manuscript in preparation, and the master-project.
 
 ## 13. Problem set
 
@@ -299,4 +299,4 @@ The take-home final is handed out at the end of this week and is due fourteen da
 
 ---
 
-*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester I Block D — the close of Semester I. Rewritten to the note-quality-template standard on 2026-09-29 (first draft 2026-07-01). Last revised 2026-10-02.*
+*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester I Block D — the close of Semester I. Rewritten to the note-quality-template standard on 2026-09-29 (first draft 2026-07-01). Last revised 2026-10-04.*

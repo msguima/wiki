@@ -7,7 +7,7 @@ week: 3
 block: 1
 duration: 4 hours (2 lectures × 2 hours) plus the seminar hour
 prerequisites: Sem I Weeks 5, 8–11 and 13–15; Sem II Weeks 1–2; Goldstone's theorem for ordinary symmetries
-modified: 2026-10-02
+modified: 2026-10-04
 ---
 
 # Sem II Week 3 — Spontaneous Breaking of Higher-Form Symmetries: the Landau Paradigm Regained
@@ -324,7 +324,7 @@ The other phases depend on the model as well. The monopole-free model has no con
 ```
 **Figure 3. The (β, κ) plane of compact four-dimensional $U(1)$ gauge theory with charge-2 matter in the cosine form (Week 14 (8.1)), annotated by the realization of the exact $\mathbb{Z}_2^{(1)}$; schematic, with the edge values of Week 14 §8.2 and of Arnold–Bunk–Lippert–Schilling for the pure theory. Monopoles are dynamical, so the magnetic symmetry is explicitly broken throughout; the monopole-free model has no confined region. The confinement boundary separates phases that realize the exact symmetry differently, so it cannot be crossed analytically; the Coulomb–Higgs boundary is the loss of the massless photon.**
 
-> **Physical picture.** An experiment cannot place a superconductor on a torus with periodic electromagnetism, but it sees the ingredients of points 1–4: flux enters in quanta $h/2e$, a quasiparticle of odd charge acquires the phase $-1$ around each quantum, and a magnetic field is expelled over the London length. The exact content is the lattice chain §5.1(a) → (5.5) → the deconfined phase of Wegner's model; the physical conditions are the assumptions of Week 14 §8.4, of which the dimension of electromagnetism matters most, since a film coupled to the electromagnetic field of $3+1$ dimensions keeps a gapless in-plane mode. For the research line, a condensate of charge $k$ leaves ${\rm Ann}(\langle k\rangle)$ (Week 14 §3.3) and level-$k$ BF theory, which the group's manuscript on Julia–Toulouse condensation as higher gauging (in preparation) reads as subgroup gauging; Semester II Week 14 takes it up (forward reference).
+> **Physical picture.** An experiment cannot place a superconductor on a torus with periodic electromagnetism, but it sees the ingredients of points 1–4: flux enters in quanta $h/2e$, a quasiparticle of odd charge acquires the phase $-1$ around each quantum, and a magnetic field is expelled over the London length. The exact content is the lattice chain §5.1(a) → (5.5) → the deconfined phase of Wegner's model; the physical conditions are the assumptions of Week 14 §8.4, of which the dimension of electromagnetism matters most, since a film coupled to the electromagnetic field of $3+1$ dimensions keeps a gapless in-plane mode. For the research line, a condensate of charge $k$ leaves ${\rm Ann}(\langle k\rangle)$ (Week 14 §3.3) and level-$k$ BF theory, and Semester II Week 14 relates this arithmetic to subgroup gauging on a hypersurface, the setting of the group's manuscript in preparation (forward reference).
 
 ## 6. The Semester I realizations, justified
 
@@ -453,4 +453,4 @@ These checkpoints cover the core problems; starred and ⋆⋆ problems remain so
 
 ---
 
-*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester II Block 1. Written to the note-quality-template standard on 2026-10-01. Last revised 2026-10-02.*
+*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester II Block 1. Written to the note-quality-template standard on 2026-10-01. Last revised 2026-10-04.*

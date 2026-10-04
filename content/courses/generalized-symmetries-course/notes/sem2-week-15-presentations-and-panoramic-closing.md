@@ -7,7 +7,7 @@ week: 15
 block: 5
 duration: 4 hours (2 hr write-up presentations and discussion + 2 hr closing lecture)
 prerequisites: All of Semester I, in particular Week 15; Sem II Weeks 1–14; the student's revised write-up
-modified: 2026-10-03
+modified: 2026-10-04
 ---
 
 # Sem II Week 15 — Write-Up Presentations and Panoramic Closing
@@ -97,11 +97,11 @@ where $H(g)=-\sum_i(\sigma^z_i\sigma^z_{i+1}+g\,\sigma^x_i)$ (Sem I Week 4 §4.4
 
 ### 3.2 1971–1979: sheets, and the flux they count
 
-In Wegner's gauge theory the seam becomes a sheet on a closed dual $(d-2)$-chain, removed by a change of variables, so that at every β
+In Wegner's gauge theory the seam becomes a sheet on a closed dual $(d-2)$-chain. When the sheet bounds, $\tilde\Sigma=\partial\tilde V$, a change of variables removes it, so that at every β
 $$
 \langle U(\tilde\Sigma)\rangle=1,\qquad \langle W(C)\,U(\tilde\Sigma)\rangle=(-1)^{{\rm Link}(C,\tilde\Sigma)}\,\langle W(C)\rangle
 $$
-(Sem I Week 15 (3.1), Proved; [[week-05-wegner-z2-gauge-theory|Sem I Week 5]] §8.1). Open sheets end on visons in $d=3$ and on 't Hooft loops in $d=4$ (Sem I Week 5 §§7.3, 8.2), and in the deconfined phase the sheets and the Wilson loops that cross them on a spatial torus give $|H^1(T^2,\mathbb{Z}_2)|=4$ ground states (Sem I Week 15 (3.2)–(3.3)). For $U(1)$ the twisted sheet generates $U(1)^{(1)}$, and the integer 't Hooft loop of the Villain theory equals 1, screened by the monopoles ([[week-11-monopole-condensation-4d|Sem I Week 11]] §§5.1–5.2, Proved). With charge-$q$ matter only ${\rm Ann}(H)\cong\mathbb{Z}_r$, $H=\langle q\rangle$, $r=\gcd(N,q)$, stays topological, the kernel of $0\to{\rm Ann}(H)\to\mathbb{Z}_N\to\widehat H\to0$ ([[week-14-fradkin-shenker-order-parameters|Sem I Week 14]] (3.5), Proved).
+(Sem I Week 15 (3.1), Proved; [[week-05-wegner-z2-gauge-theory|Sem I Week 5]] §8.1). A sheet around a noncontractible cycle is a twist instead: its expectation value is the ratio of the twisted to the untwisted partition function, which need not be 1, and the eigenvalues of the corresponding operator label the torus sectors (Sem I Week 5 F6; Sem I Week 15 §3.4). Open sheets end on visons in $d=3$ and on 't Hooft loops in $d=4$ (Sem I Week 5 §§7.3, 8.2), and in the deconfined phase the sheets and the Wilson loops that cross them on a spatial torus give $|H^1(T^2,\mathbb{Z}_2)|=4$ ground states (Sem I Week 15 (3.2)–(3.3)). For $U(1)$ the twisted sheet generates $U(1)^{(1)}$, and the integer 't Hooft loop of the Villain theory equals 1, screened by the monopoles ([[week-11-monopole-condensation-4d|Sem I Week 11]] §§5.1–5.2, Proved). With charge-$q$ matter only ${\rm Ann}(H)\cong\mathbb{Z}_r$, $H=\langle q\rangle$, $r=\gcd(N,q)$, stays topological, the kernel of $0\to{\rm Ann}(H)\to\mathbb{Z}_N\to\widehat H\to0$ ([[week-14-fradkin-shenker-order-parameters|Sem I Week 14]] (3.5), Proved).
 
 ### 3.3 1975–1977: Poisson resummation exchanges the operators
 
@@ -239,7 +239,7 @@ Problems 1–3 are the classroom core (Problem 3 prepared before the talk), 4⋆
 
 ### ⋆⋆ problems
 
-**Problem 6⋆⋆ (from the write-up to a project).** Choose one of the twelve open problems of Sem II Week 14 §10. *Known:* at least three results of §3 that bear on it. *Explored:* the first computation that would test it in the smallest lattice model of the course, with its inputs. *Sources:* the entries of §5 for it, and the group's manuscript. *Completion:* a plan of at most two pages whose first computation is finite and checked in its simplest case against the course or a §5 source, with its scale argued and accepted by the instructor.
+**Problem 6⋆⋆ (from the write-up to a project).** Choose one of the twelve open problems of Sem II Week 14 §10; a reader without that chapter can choose among the four that do not depend on the group's manuscript: fractons via the exotic symmetries of GLSS, non-abelian condensates, measurement-based realizations of gauging, and the $3+1$d duality-defect connection. *Known:* at least three results of §3 that bear on it. *Explored:* the first computation that would test it in the smallest lattice model of the course, with its inputs. *Sources:* the entries of §5 for it and, for the eight items drawn from it, the group's manuscript. *Completion:* a plan of at most two pages whose first computation is finite and checked in its simplest case against the course or a §5 source, with its scale argued and accepted by the instructor.
 
 ## Self-study answer checkpoints
 
@@ -255,4 +255,4 @@ Problems 1–3 are the classroom core (Problem 3 prepared before the talk), 4⋆
 
 ---
 
-*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester II Block 5. Written to the note-quality-template standard on 2026-10-03. Last revised 2026-10-03.*
+*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester II Block 5. Written to the note-quality-template standard on 2026-10-03. Last revised 2026-10-04.*

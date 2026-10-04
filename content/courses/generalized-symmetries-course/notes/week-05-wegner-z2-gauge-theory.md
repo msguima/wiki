@@ -7,7 +7,7 @@ week: 5
 block: B
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Weeks 1–4 (cochains, duality, Kramers–Wannier, disorder operators); the 2d Ising model
-modified: 2026-09-28
+modified: 2026-10-04
 ---
 
 # Week 5 — Wegner's ℤ₂ Gauge Theory: Phases Without a Local Order Parameter
@@ -18,7 +18,7 @@ modified: 2026-09-28
 
 - **In class:** derive at the board, in this order, the gauged action and the Wilson loop in cochain form (§2), Elitzur's bound $|\langle\sigma_\ell\rangle_h|\le\tanh(2d|h|)$ with its single-site pairing (§3.1), the surface expansion and the area law with the decorated-surface correction $\sigma=-\ln t-2(d-2)t^4$ (§§4.1–4.2), and the perimeter law $\mu=2e^{-4(d-1)\beta}$ (§5); in the second lecture, the matching of surfaces and walls with $\tanh\beta=e^{-2K^*}$ and the phase map (§7.1), the vison two-point function (§7.3) and the linking identity of the closed flipped-plaquette operator (§8.1). Problems 1–4 are the classroom core.
 - **For self-study:** the exact two-dimensional solution in two gauges (§6), §§7.2 and 7.4, §§8.2–8.3 and §§9–12. The one calculation to do alone is the strong-coupling phase of the four-dimensional 't Hooft loop in §8.2: find the cube boundaries whose sign is reversed, obtain $\tilde\mu=2t^6$, and check it against the weak-coupling $\mu(\beta^*)$ of §5 through the self-duality of §8.3.
-- **Instructor checkpoint:** the phase map runs one way. Since $\tanh\beta=e^{-2K^*}$ decreases as $K^*$ grows, the confined (small-β) phase is the **ordered** Ising phase, and what condenses there is the vison, the endpoint of an open string of flipped plaquettes. The second trap is the closed string: in $d=3$, reversing the coupling on the plaquettes pierced by a closed dual loop is a change of variables, so its expectation value is 1 in every phase; it generates the electric 1-form symmetry and detects Wilson loops by linking, and it orders nothing. The genuine 't Hooft loop, bounded by a Dirac sheet, lives in $d=4$.
+- **Instructor checkpoint:** the phase map runs one way. Since $\tanh\beta=e^{-2K^*}$ decreases as $K^*$ grows, the confined (small-β) phase is the **ordered** Ising phase, and what condenses there is the vison, the endpoint of an open string of flipped plaquettes. The second trap is the closed string: in $d=3$, reversing the coupling on the plaquettes pierced by a closed dual loop is a change of variables, so its expectation value is 1 in every phase; it generates the electric 1-form symmetry and detects Wilson loops by linking, and it orders nothing. The 't Hooft loop, the boundary of an open Dirac sheet, lives in $d=4$.
 
 ## 0. Reading
 
@@ -538,4 +538,4 @@ These checkpoints cover the core problems; starred and ⋆⋆ problems remain so
 
 ---
 
-*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester I Block B. Rewritten to the note-quality-template standard on 2026-09-28 (first draft 2026-07-01). Last revised 2026-09-28.*
+*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester I Block B. Rewritten to the note-quality-template standard on 2026-09-28 (first draft 2026-07-01). Last revised 2026-10-04.*
