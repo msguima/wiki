@@ -2,7 +2,7 @@
 titulo: wiki
 area: conhecimento
 fase: em uso
-revisado_em: 2026-10-01
+revisado_em: 2026-10-04
 ---
 
 ## Notas
@@ -11,3 +11,5 @@ Em 2026-09-29 o curso de AQFT foi republicado a partir do dossiê de aulas corri
 Em 2026-09-30 a página do conceito Bell-CHSH foi republicada com o argumento corrigido do limite local, depois da checagem de privacidade em content/ e public/. A sincronização partiu de uma cópia do commit do vault, para que mudanças ainda não commitadas de outras sessões não fossem ao site.
 
 Em 2026-10-01 o curso de AdS/CFT foi republicado com o novo título, *Holography through Quantum Information and Operator Algebras*: as 32 aulas, o programa, as convenções e os apêndices do dossiê, com as figuras de `courses/ads-cft-course/assets`, que entrou na lista PUBLISH. As trinta notas semanais antigas saíram do site. O `cull-links.py` passou a levar os links do vault escritos a partir da raiz (`wiki/courses/...`) aos caminhos do site, o que também consertou sete links quebrados das páginas de redes neurais. A checagem de privacidade em content/ e public/ não achou nada novo, e a sincronização partiu de uma cópia do commit do vault. O `~/Projects/physics-wiki` local ainda está antes desse commit, e sincronizar a partir dele traria o curso antigo de volta.
+
+Em 2026-10-04 o curso de simetrias generalizadas foi republicado com a edição completa do dossiê, sincronizada de um clone do commit e299cbd do vault: as trinta notas menos a Semana 14 do Semestre II, que segue em detalhe o manuscrito do grupo ainda não submetido e entrou no EXCLUDE do `sync-wiki.sh` até o manuscrito ser público. A construção local não acusou erro de KaTeX nem tabela quebrada; quatro trechos que renderizavam mal foram corrigidos antes no dossiê. A checagem de privacidade em content/ e public/ não achou nada novo. O `~/Projects/physics-wiki` local continua atrás do GitHub, agora dois commits, e guarda edições de 21/09 não commitadas em três arquivos do curso; sincronizar a partir dele traria o curso antigo de volta.
