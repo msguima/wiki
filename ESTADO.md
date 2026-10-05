@@ -2,7 +2,7 @@
 titulo: wiki
 area: conhecimento
 fase: em uso
-revisado_em: 2026-10-04
+revisado_em: 2026-10-05
 ---
 
 ## Notas
@@ -17,3 +17,5 @@ Em 2026-10-04 o curso de simetrias generalizadas foi republicado com a edição 
 Ainda em 2026-10-04 as edições de 21/09, a ingestão do artigo de Witten sobre a função de Chern–Simons e o efeito Hall quântico, foram corrigidas e integradas ao vault (d1db86e), e o `~/Projects/physics-wiki` local foi posto em dia com o GitHub; o `sync-wiki.sh` sem argumento volta a sincronizar a versão atual. As páginas dessa ingestão foram publicadas no mesmo dia, sincronizadas de um clone do commit d1db86e, sem nada novo na checagem de privacidade e sem erro na construção local.
 
 Ainda em 2026-10-04 foram republicadas doze páginas do curso de simetrias generalizadas com as correções de uma revisão externa, sincronizadas de um clone do commit c0d6080 do vault, sem nada novo na checagem de privacidade. As figuras-piloto de duas semanas ficam fora até a aprovação do estilo.
+
+Em 2026-10-05 entrou no site o curso *Geometric QCD: a critical course on Migdal's IAS lectures*, leitura crítica das aulas de Migdal no IAS, sincronizado de uma cópia do commit 09080a6 do vault: o guia, os cinco módulos com 35 miniaulas, o programa, os apêndices de referência e oito figuras, com os caminhos novos na lista PUBLISH do `sync-wiki.sh`. O padrão das aulas fica no vault, e o guia do instrutor, com as avaliações, no dossiê. A construção local não acusou erro de KaTeX, link nem tabela quebrados, e a checagem de privacidade em content/ e public/ não achou nada novo.
