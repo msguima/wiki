@@ -63,6 +63,22 @@ PUBLISH=(
   courses/neural-networks-llms-course/nn-llm-week-map.md
   courses/neural-networks-llms-course/nn-llm-glossary.md
   courses/neural-networks-llms-course/nn-llm-resources.md
+  # Geometric QCD, a critical course on Migdal's IAS lectures: the guide, the
+  # five modules with their 35 lectures, the reference pages and the figures
+  # in assets/, prefixed geometric-qcd-. The lecture standard stays in the
+  # vault; the instructor guide, with the assessments, stays in the dossier.
+  courses/geometric-qcd-course/modules
+  courses/geometric-qcd-course/appendices
+  courses/geometric-qcd-course/assets
+  courses/geometric-qcd-course/geometric-qcd-course-guide.md
+  courses/geometric-qcd-course/syllabus.md
+  courses/geometric-qcd-course/conventions.md
+  courses/geometric-qcd-course/notation.md
+  courses/geometric-qcd-course/glossary.md
+  courses/geometric-qcd-course/bibliography.md
+  courses/geometric-qcd-course/exercises.md
+  courses/geometric-qcd-course/claim-status-map.md
+  courses/geometric-qcd-course/source-map.md
 )
 
 # People notes that stay private (junior researchers; see wiki/entities/),

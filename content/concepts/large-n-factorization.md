@@ -3,7 +3,7 @@ title: Large-N Factorization
 type: concept
 areas: [gauge-gravity-duality, bell-inequalities-qft, relative-entropy-qft]
 aliases: ["planar limit", "'t Hooft limit", "generalized free fields"]
-modified: 2026-10-01
+modified: 2026-10-05
 ---
 
 ## Definition
@@ -29,4 +29,4 @@ Large-$N$ factorization is covered in [[lecture-14-large-n-and-semiclassical-lim
 
 This concept page is shared with the AQFT course — see also `wiki/courses/2026-algebraic-qft-course/appendices/holography-large-n-primer.md` §E.2.
 
-Course coverage: [[lecture-14-large-n-and-semiclassical-limits|Lecture 14]] and [[lecture-29-large-n-algebras|Lecture 29]].
+Course coverage: [[lecture-14-large-n-and-semiclassical-limits|Lecture 14]] and [[lecture-29-large-n-algebras|Lecture 29]] of the holography course; [[mini-lecture-01-large-n-and-wilson-loops|Mini-Lectures I.1]] and [[mini-lecture-05-the-makeenko-migdal-equation|I.5]] of the [[geometric-qcd-course-guide|geometric-QCD course]], for ribbon counting and for the factorization that closes the loop equation.

@@ -3,7 +3,7 @@ title: Wilson Loop
 type: concept
 areas: [confinement-duality]
 aliases: [Wilson loops, Wilson line, "'t Hooft loop", Polyakov loop]
-modified: 2026-07-01
+modified: 2026-10-05
 ---
 
 ## Definition
@@ -44,3 +44,4 @@ Wilson (1974) introduced the loop and the confinement criterion; 't Hooft, Nucl.
 - With dynamical charges in the fundamental representation the area law is destroyed by string breaking — the Wilson criterion fails, which is exactly why the Fradkin–Shenker Higgs and confining regions are analytically connected.
 - The Wilson loop was flagged as a needed concept page by cross-references in [[entanglement-probes-of-phases]] and related question pages; this page fills that gap.
 - "Wilson line" (open) vs "Wilson loop" (closed): the open line is gauge-variant and only becomes a genuine operator when its endpoints carry compensating charges or attach to defects.
+- Course coverage: in the [[geometric-qcd-course-guide|geometric-QCD course]], [[mini-lecture-01-large-n-and-wilson-loops|Mini-Lecture I.1]] builds the Wilson loop from parallel transport at large $N_c$, and [[mini-lecture-05-the-makeenko-migdal-equation|I.5]] derives the Makeenko–Migdal loop equation it obeys.

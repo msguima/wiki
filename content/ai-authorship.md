@@ -1,7 +1,7 @@
 ---
 title: "Authorship of this wiki"
 type: course-standard
-modified: 2026-10-04
+modified: 2026-10-05
 ---
 
 # Authorship of this Wiki
@@ -52,6 +52,7 @@ none. The counts therefore understate the earliest work.
 | Estrutura Algébrica da Teoria Quântica de Campos<br>`2026-algebraic-qft-course` | Claude Opus 4.7 (14 commits), Claude Opus 4.8 (2), Claude Opus 5 (2) | 2026-05-08 → 2026-08-23 |
 | Holography through Quantum Information and Operator Algebras<br>`ads-cft-course` | GPT Astra 6 (redesign, 32 notes); Claude Opus 5.5 (Lectures 8–32 rewritten, with independent audits) | 2026-09-29 → 2026-10-01 |
 | Generalized Symmetries and Topological Matter<br>`generalized-symmetries-course` | Claude Opus 5.5 (7 commits in the `courses` repository: Semester I rewritten and Semester II written, with independent verification passes) | 2026-09-28 → 2026-10-03 |
+| Geometric QCD: a critical course on Migdal's IAS lectures<br>`geometric-qcd-course` | GPT Astra 6 (edition 2.0: the 35 notes revised, with 140 problems, eight figures and scripted model checks); the first edition has no authorship record | 2026-10-04 → 2026-10-05 |
 | Statistical Physics of Neural Networks and Language Models<br>`neural-networks-llms-course` | Claude Opus 5 (initial wiki draft); Codex (OpenAI, pedagogical revision) | 2026-09-19 → |
 | Research notes<br>`concepts`, `areas`, `connections`, `papers`, `projects`, `questions`, `entities` | Claude Opus 4.8 (7 commits), Claude Opus 5 (2), Claude Opus 4.6 (2), Claude Fable 5 (1) | 2026-04-06 → 2026-09-19 |
 
@@ -81,6 +82,17 @@ verification pass, and the commits there carry the trailers. On 2026-10-04 it
 replaced the earlier copy of this wiki, written by Claude Opus 4.8 (5 commits)
 and Claude Fable 5 (3) between 2026-07-05 and 2026-07-10, which remains in the
 repository history.
+
+The geometric-QCD course is carried from the `courses` repository as well. It
+is a critical reading of Alexander Migdal's 2026 lectures at the Institute for
+Advanced Study. Its edition 2.0, written by GPT Astra 6 on 2026-10-04 and
+2026-10-05, revised all 35 notes and added the problems, figures, prerequisite
+bridges and claim map; the commit there carries no co-authorship trailer. The
+dossier records 120 scripted checks of its calculations. No independent audit
+has been made, except of the tensor counterexample in Mini-Lecture III.5, which
+Claude Opus 5.5 confirmed against the lecture slides on 2026-10-05 before
+carrying the course here. The first edition, which the revision replaced and
+the dossier preserves, has no authorship record.
 
 The neural-networks course has both a wiki reading route and printable lecture
 notes maintained in Marcelo's `courses` repository. The printable notes were

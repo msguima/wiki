@@ -3,7 +3,7 @@ title: Confinement
 type: concept
 areas: [gribov-zwanziger, confinement-duality]
 aliases: [color confinement, quark confinement, gluon confinement]
-modified: 2026-04-06
+modified: 2026-10-05
 ---
 
 ## Definition
@@ -55,3 +55,4 @@ See [[gribov-zwanziger]] and [[confinement-duality]] for full paper lists.
 - The string tension $\sigma$ (coefficient of the linear potential) is the order parameter for the deconfinement transition at finite temperature. Above the critical temperature $T_c$ (deconfinement), the string breaks and QCD enters the quark-gluon plasma phase.
 - Common confusion: confinement applies to color-charged particles, not to all massive particles. The Higgs mechanism (in electroweak theory) also makes gauge bosons massive, but those particles are observable — Higgs-generated mass is not confinement.
 - The relationship between the Gribov horizon and the string tension is not yet fully established analytically, though both the GZ propagator modifications and the lattice string tension arise from the same non-perturbative IR dynamics.
+- The [[geometric-qcd-course-guide|geometric-QCD course]] reads critically Migdal's 2026 proposal to solve planar QCD through a Hodge-dual minimal surface, from which the confining string and the meson spectrum would follow; its [[courses/geometric-qcd-course/claim-status-map|claim map]] separates the calculations checked in the course from the open claims.
