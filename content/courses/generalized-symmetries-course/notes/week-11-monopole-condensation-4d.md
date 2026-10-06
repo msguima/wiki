@@ -47,17 +47,8 @@ Z^{(0)}\propto\sum_{\substack{j\in C^1(\Lambda^*,\mathbb{Z})\\ \delta j=0}}\exp\
 $$
 where the proportionality constant is the free-photon partition function, $G$ is the four-dimensional lattice Green function acting on each component, and $n\in C^2(\Lambda,\mathbb{Z})$ is the Villain integer. The monopole current $j$ is conserved because $d^2=0$, so its support is a set of closed loops on $\Lambda^*$ (with multiplicities). The integer $n$ itself is gauge-dependent: under the branch shift $n\to n+dk$, $a\to a+2\pi k$ with $k\in C^1(\Lambda,\mathbb{Z})$, the plaquettes carrying $n\neq0$ move while their boundary $\star dn$ stays fixed. On $\Lambda^*$, where the plaquettes of Λ become dual plaquettes (Week 2 §5.1), $n$ is a **Dirac sheet** bounded by the monopole loop, and Week 8 §2.2 proved that integer charges do not see where it lies. Figure 1 shows the smallest nontrivial example, the one computed in Week 8 §5.5. The whole phase question is a question about these loops: whether they stay small, or grow without bound and fill space with their sheets.
 
-```
-          dual (1,2) plane at fixed x₃, x₄
+![[gs-w11-monopole-loop.svg|Dual (1,2) plane at fixed x3 and x4 with a clockwise loop of six dual links carrying the monopole current, bounding a Dirac sheet of two dual plaquettes on which n equals 1]]
 
-          ·────→────·────→────·
-          │         :         │       ─→─  monopole current j = ⋆dn = ±1 on dual links:
-          ↑   ▒▒▒   :   ▒▒▒   ↓            a closed loop γ of six links
-          │         :         │       ▒▒▒  dual plaquettes filled by the Dirac sheet, dual to the
-          ·────←────·────←────·            two (3,4)-plaquettes of Λ that carry n = 1
-
-          n → n + dk, a → a + 2πk moves the sheet with γ fixed: only γ is physical
-```
 **Figure 1. A monopole worldloop in four dimensions and its Dirac sheet: the Villain integer $n=1$ on two $(3,4)$-plaquettes of Λ is, on $\Lambda^*$, a sheet of two dual plaquettes whose boundary is the six-link loop $j=\star dn$ of Week 8 §5.5.**
 
 ## 3. Energy against entropy
@@ -107,20 +98,9 @@ and a value of μ below 7 lowers it slightly. Condensation occurs at **small** �
 
 For comparison with Monte Carlo, the most precise determination is for the Wilson action: a first-order transition at $\beta_T=1.0111331(21)$ [Stated — refs: Arnold, Bunk, Lippert, Schilling 2003]. The Villain action is a different lattice model, and the standard way to compare the two is Villain's matching of the fundamental character coefficient ([[courses/generalized-symmetries-course/conventions|conventions]] §4), $e^{-1/2\beta_V}=I_1(\beta_W)/I_0(\beta_W)$. At $\beta_W=1.0111331$ this gives $I_1/I_0=0.4503$ and $\beta_V=0.627$. The matching is itself approximate: for the two-dimensional XY model it maps the cosine critical coupling $1.12$ to $0.70$, while the Villain value is $0.75$ ([[courses/generalized-symmetries-course/conventions|conventions]] §5). Thus the agreement between $0.63$ and $0.627$ is better than either argument can justify, and we record it as a consistency check. Figure 2 collects the phase structure.
 
-```
-   β :  0 ───────────────────────────────────┬────────────────────────────────────→ ∞
-                                    β_c ≈ 0.63 (Villain; energy–entropy, §3.3)
-                                    Wilson action: β_T = 1.0111331(21), first order
+![[gs-w11-phases-along-beta.svg|Coupling axis from beta equal to zero to infinity, divided at the critical coupling, about 0.63, into a confining and a Coulomb phase, with the behaviour of the loops and the realization of the electric and magnetic 1-form symmetries listed under each]]
 
-        CONFINING                            │   COULOMB
-        monopole loops of every size         │   loops dilute and small, P(L) ∝ e^{−fL}
-        ⟨W⟩: area law, σ ≃ 1/2β as β → 0     │   ⟨W⟩: perimeter law, V(R) = −e²/4πR
-        't Hooft loops screened (§5.2)       │   't Hooft IR probe: perimeter, V(R) = −g²/4πR, g = 2π/e
-        electric U(1)⁽¹⁾ unbroken            │   electric U(1)⁽¹⁾ spontaneously broken
-        magnetic U(1)⁽¹⁾ explicitly broken   │   magnetic U(1)⁽¹⁾ emergent, spontaneously broken
-        long distances: massive 2-form (§7)  │   long distances: free photon (§4.2)
-```
-**Figure 2. The phase diagram of four-dimensional Villain compact QED along β, with the realization of the two 1-form symmetries in each phase (Table 1) and the heuristic location of the transition; σ ≃ 1/2β is the leading strong-coupling tension of the Villain weight $e^{-b^2/2\beta}$ (Week 8 §3).**
+**Figure 2. The phase diagram of four-dimensional Villain compact QED along β (schematic), with the realization of the two 1-form symmetries in each phase (Table 1) and the heuristic location of the transition; σ ≃ 1/2β is the leading strong-coupling tension of the Villain weight $e^{-b^2/2\beta}$ (Week 8 §3).**
 
 ## 4. What a Wilson loop sees, and Guth's theorem
 
@@ -276,21 +256,9 @@ T\simeq\frac{e^2m_V^2}{4\pi}\Big[\ln\frac{m_H}{m_V}+O(1)\Big].
 $$
 Figure 3 shows the cross-section.
 
-```
-                     ←──────────── λ_L = 1/m_V ────────────→
-              ·    ·    ·    ·    ·    ·    ·    ·    ·    ·        ·  monopole condensate, |φ| ≈ v
-           ·    ·    ·   ░░░░░░░░░░░░░░░░░░░░   ·    ·    ·
-         ·    ·   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   ·    ·          ░  electric flux ∝ F̃₁₂ = qα′/r;
-         ·    ░░░░░░░░░░░░    ______    ░░░░░░░░░░░░    ·              ∫F̃ = 2πq, i.e. q units of
-         ·    ░░░░░░░░░░░    /      \    ░░░░░░░░░░░    ·              electric flux along x₃
-         ·    ░░░░░░░░░░░   |  f → 0 |   ░░░░░░░░░░░    ·
-         ·    ░░░░░░░░░░░    \______/    ░░░░░░░░░░░    ·          core of radius ξ = 1/m_H, where
-         ·    ·   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   ·    ·            f = |φ|/v vanishes and the
-           ·    ·    ·   ░░░░░░░░░░░░░░░░░░░░   ·    ·    ·            phase of φ winds by 2πq
-              ·    ·    ·    ·    ·    ·    ·    ·    ·    ·
-         Bogomolny point ξ = λ_L:  T = 2πv²|q|        type II, ξ ≪ λ_L:  T ≃ 2πv²q² ln(λ_L/ξ)
-```
-**Figure 3. Cross-section of the dual Abrikosov tube: the monopole condensate vanishes in a core of radius ξ, and the electric flux of a charge-$q$ Wilson line, $2\pi q$ in dual units, is confined within the penetration depth $\lambda_L$.**
+![[gs-w11-abrikosov-tube.svg|Cross-section of the dual Abrikosov tube, with the monopole condensate drawn as dots that vanish in a small core and the electric flux as a shading confined within the penetration depth, beside the computed radial profiles of the condensate and of the flux density]]
+
+**Figure 3. The dual Abrikosov tube, computed from the profile equations of §6.2 for $q=1$ at $m_H/m_V=5$, where $T/2\pi v^2=1.961$: (a) the cross-section, (b) the radial profiles. The monopole condensate (dots, $f=|\phi|/v$) vanishes in a core of radius ξ, and the electric flux of a charge-$q$ Wilson line, $2\pi q$ in dual units (shading, $\tilde F_{12}=q\alpha'/r$), is confined within the penetration depth $\lambda_L$.**
 
 ### 6.3 The confining string [Heuristic.]
 
@@ -358,22 +326,8 @@ This is the London model of the dual superconductor, whose Meissner mass is $\ka
 
 The Julia–Toulouse action is therefore the London limit of the dual superconductor at the finite stiffness $\kappa=g^2/4\pi^2$, with the vortex sheets of θ dropped. Those sheets are the electric flux tubes of §6.2; in the Higgs phase they are massive and appear only as strings attached to Wilson lines. Dropping them is the complete-condensation limit, and this is the content of *Phys. Lett. B* 690 (2010) in the course's variables: there Grigorio, Guimaraes, Rougemont and Wotzasek compared the Julia–Toulouse approach with the approach built on the Banks–Myerson–Kogut lattice rewriting (and on Kleinert's disorder-field theory), which they call ALBA, and showed with a generalized Poisson identity for branes that the two are dual-equivalent prescriptions in the limit where the Poisson-dual current vanishes, which characterizes complete condensation; a nonzero Poisson-dual current describes vortex-like defects in the condensate, the role the θ-sheets play here. The comparison with §6.1 contains one more lesson. The exact identity has bare stiffness $\kappa=\infty$, while the effective κ is finite: the virtual electric flux surfaces renormalize the stiffness, as vortex pairs renormalize the stiffness of the XY model in [[week-04-bkt-kramers-wannier-disorder|Week 4]], and the prescription does not compute the result.
 
-```
-    exact (§6.1):  Villain compact QED at β   ══════   dual Villain Higgs model at β̃ = 1/4π²β, κ = ∞
-                   monopole loops j = ⋆dn               j = worldlines of the dual Higgs field θ
-                          │                                         │
-                          │ JT prescription (§7.2)                  │ Higgs phase; vortex sheets
-                          ▼                                         ▼ dropped; finite effective κ
-    (a) Kalb–Ramond:                                  (c) London:
-        (1/2e²)(da − Λ)² + (1/2g²)(dΛ)²                   (1/2ẽ²)(dã)² + (κ/2)(dθ − ã)²,  κ = g²/4π²
-                          ╲                                        ╱
-                 HS in (da − Λ), ∫Da                       HS in dΛ, ∫DΛ
-                            ╲                                    ╱
-                             ▼                                  ▼
-               (b) BF with the dual photon:  (1/2ẽ²)(dã)² + (1/2g²)(dΛ)² − (i/2π) Λ∧dã
+![[gs-w11-three-descriptions.svg|Flow diagram in which the exact identity between Villain compact QED and the dual Higgs model sits above the Kalb-Ramond form, reached by the Julia-Toulouse prescription, and the London form, and Gaussian dualities lead from the Kalb-Ramond form to the BF form and from the BF form to the London form]]
 
-    all three: one massive vector, three polarizations, m² = g²/e² = κẽ²
-```
 **Figure 4. One condensate, three descriptions: the Julia–Toulouse form in the original variables (a), the level-one BF form with the dual photon (b) and the London form of the dual superconductor (c), related by Gaussian dualities; the exact identity of §6.1 sits above them at infinite bare stiffness.**
 
 ### 7.5 Wilson and 't Hooft loops in the condensate [Computed. within the prescription]

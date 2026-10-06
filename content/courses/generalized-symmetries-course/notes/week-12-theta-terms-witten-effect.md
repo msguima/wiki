@@ -160,24 +160,8 @@ T:\ (n_e,n_m)\longmapsto(n_e+n_m,\,n_m),\qquad M_T=\begin{pmatrix}1&1\\0&1\end{p
 $$
 acting on the column $(n_e,n_m)^{\rm T}$. As θ increases from 0 to $2\pi$, the row $n_m$ of the charge lattice slides by $n_m$ units (Figure 1): the state labelled $(0,1)$ moves from $q_e=0$ to $q_e=1$, where $(1,1)$ sat at $\theta=0$, while the lattice as a whole returns to itself. This spectral flow is the precise content of $\theta\sim\theta+2\pi$. The weight is periodic when $Q\in\mathbb{Z}$ (§3.3), the lattice of charges is periodic up to $T$, and individual states are permuted.
 
-```
-          q_e :   -3/2   -1   -1/2    0    1/2    1    3/2    2    5/2
+![[gs-w12-charge-lattice.svg|Three stacked copies of the dyon charge lattice at theta equal to 0, pi and 2 pi, in rows of magnetic charge plus one, zero and minus one against the electric charge, with the states M and D sliding one unit to the right as theta grows to 2 pi]]
 
-θ = 0    n_m = +1         D           M           ·           ·
-         n_m =  0         ·           o           E           ·
-         n_m = -1         ·           ·           ·           ·
-
-θ = π    n_m = +1   ·           D           M           ·           ·
-         n_m =  0         ·           o           E           ·
-         n_m = -1   ·           ·           ·           ·           ·
-
-θ = 2π   n_m = +1         ·           D           M           ·
-         n_m =  0         ·           o           E           ·
-         n_m = -1         ·           ·           ·           ·
-
-   M : the state labelled (0,1)     D : the state labelled (−1,1)
-   E : the unit charge (1,0)        o : the vacuum (0,0)
-```
 **Figure 1. The charge lattice sheared by θ: the row $n_m$ slides by $\theta n_m/2\pi$. At $\theta=2\pi$ the set of points is that of $\theta=0$, but $M$ now sits where $(1,1)$ was and $D$ where $M$ was (spectral flow).**
 
 The pairing that Dirac quantization constrains is insensitive to the shear. For $v=(n_e,n_m)$ and $w=(n_e',n_m')$ define
@@ -260,21 +244,8 @@ Q_{\rm lat}=-\frac1{4\pi}\,(-2L\alpha)=\frac{L\alpha}{2\pi},\qquad e^{i\theta Q_
 $$
 where $\oint a$ is the holonomy around the time circle at the monopole, averaged over the two corners. (With $\alpha=0.7$: $Q_{\rm lat}=0.3342$; one column alone gives half, and the same columns at the antimonopole's corners give $-0.3342$.) The θ-term has attached to the worldline of the monopole the Wilson line $W_q$ of [[courses/generalized-symmetries-course/conventions|conventions]] §6 with $q=\theta n_m/2\pi$. This is the Witten effect of §4, derived on the lattice, with the same sign.
 
-```
-     τ ↑
-       │     a_τ = α                                  a_τ = α
-       │       ║                                        ║
-       │       ║      ┌──────────────────────────┐      ║
-       │       ║      │  spatial cube c           │      ║
-       │       ║      │  m₂₃₄ = −1 ,  n_m = +1    │      ║
-       │       ●      └──────────────────────────┘      ●
-       │   y = (1,0,0)                          y + (1,1,1) = (2,1,1)
-       │   base corner of c                     far corner of c
-       └───────────────────────────────────────────────────────→ (x¹, x², x³)
+![[gs-w12-lattice-witten-effect.svg|Spatial cube holding a static monopole drawn at each of three time slices, with its worldline through the cube centres and two columns of time links carrying alpha at the base and far corners, and arrows showing which cube each link meets through the two cup products]]
 
-       column at y           : a ∪ m, each link against c one step later in τ
-       column at y + (1,1,1) : m ∪ a, each link against c at the same τ
-```
 **Figure 2. The lattice Witten effect. The time links at the base and far corners of a monopole's cube couple to it through $a\cup m$ and $m\cup a$; with $a_\tau=\alpha$ on both columns the θ-term is $e^{i(\theta/2\pi)L\alpha}$, a Wilson line of charge $\theta n_m/2\pi$ along the monopole's worldline.**
 
 Three consequences follow. First, $Q_{\rm lat}$ is not an integer, and the plain Villain weight $e^{i\theta Q_{\rm lat}}$ is not $2\pi$-periodic in θ. Second, the shift $\theta\to\theta+2\pi$ multiplies the weight by $e^{2\pi iQ_{\rm lat}}$, which here is $e^{i\oint a}$, a unit Wilson line on the monopole: the flow $(0,1)\to(1,1)$ of §5 made literal. In a theory with dynamical unit charges that factor could be absorbed in a relabelling; in the plain Villain theory, which has no electric matter, θ and $\theta+2\pi$ define different lattice theories [Heuristic.]. Third, the failure is generic [Proved. for odd $L$]. If $Q_{\rm lat}$ is independent of $a$ at fixed $n$, every coefficient above vanishes, so that $J_\mu(z)\equiv\epsilon(\mu,\mu^c)\,m_{\mu^c}(z)$ obeys $J_\mu(z)=-J_\mu(z-\hat v)$ with $\hat v=(1,1,1,1)$; applying this $L$ times gives $J_\mu=(-1)^LJ_\mu$, and for odd $L$ we need $m=0$. On an odd torus, therefore, $Q_{\rm lat}$ is integer-valued for all $a$ if and only if $dn=0$. (On even tori, closed monopole configurations antiperiodic under $\hat v$ make the linear term vanish; the example above works for every $L\geq3$.)
@@ -327,27 +298,8 @@ The unit charge is confined in both phases, and the phases are distinguished by 
 
 The crude rule that the dyon with the smallest $\varepsilon$ condenses [Heuristic.] turns Figure 3 into a computation. Boundaries are where two dyons tie, $|n_e+n_m\tau|=|n_e'+n_m'\tau|$, arcs of circles centred on the real axis. Near each rational $\theta/2\pi=-n_e/n_m$ the dyon $(n_e,n_m)$ has $|n_e+n_m\tau|^2=n_m^2({\rm Im}\,\tau)^2$, which vanishes as ${\rm Im}\,\tau\to0$, so at strong enough coupling it wins: there are infinitely many phases, in agreement with the structure found by Cardy. At $\theta=\pi$, for instance, the charge $(1,0)$ condenses for ${\rm Im}\,\tau>\sqrt3/2$ (Higgs), the CP-broken coexistence of $(0,1)$ and $(-1,1)$ holds for $1/\sqrt{12}<{\rm Im}\,\tau<\sqrt3/2$, and below $1/\sqrt{12}=0.289$ the dyon $(-1,2)$ wins, with $4({\rm Im}\,\tau)^2<\frac14+({\rm Im}\,\tau)^2$. Its physical charges at $\theta=\pi$ are $(0,2)$, and ${\rm CP}_{\theta=\pi}$ maps $(-1,2)$ to itself, so this oblique phase is CP-invariant.
 
-```
- Im τ
-   1.20 | HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH      weak coupling
-   1.05 | HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
-   0.95 | MMMMMMMMMMMMMMMHHHHHHHHHHHHHHHHHHHDDDDDDDDDDDDDDD
-   0.90 | MMMMMMMMMMMMMMMMMMMMMHHHHHHHDDDDDDDDDDDDDDDDDDDDD
-   0.80 | MMMMMMMMMMMMMMMMMMMMMMMMDDDDDDDDDDDDDDDDDDDDDDDDD
-   0.60 | MMMMMMMMMMMMMMMMMMMMMMMMDDDDDDDDDDDDDDDDDDDDDDDDD
-   0.40 | MMMMMMMMMMMMMMMMMMMMMMMMDDDDDDDDDDDDDDDDDDDDDDDDD
-   0.30 | MMMMMMMMMMMMMMMMMMMMMMMMDDDDDDDDDDDDDDDDDDDDDDDDD
-   0.25 | MMMMMMMMMMMMMMMMMMMMMMOOOOODDDDDDDDDDDDDDDDDDDDDD
-   0.20 | MMMMMMMMMMMMMMMMMMMMOOOOOOOOODDDDDDDDDDDDDDDDDDDD
-   0.15 | MMMMMMMMMMMMMMMMMMOOOOOOOOOOOOODDDDDDDDDDDDDDDDDD
-   0.10 | MMMMMMMMMMMMMMM+++OOOOOOOOOOOOO+++DDDDDDDDDDDDDDD      strong coupling
-        +-------------------------------------------------> θ
-          0                       π                      2π
+![[gs-w12-dyon-phases.svg|Computed map of the lightest dyon in the plane of theta and the imaginary part of tau, with the Higgs region at weak coupling, the confining region and its T-image separated at theta equal to pi by a first-order line, and oblique regions of higher dyons at strong coupling]]
 
-   H : (1,0), Higgs        M : (0,1), confinement        D : (−1,1), oblique (T-image of M)
-   O : (−1,2), oblique, CP-invariant at θ = π           + : (−1,3), (−2,3), ...
-   the M|D boundary at θ = π, 0.29 < Im τ < 0.87, is a first-order line with two CP-conjugate vacua
-```
 **Figure 3. The lightest dyon in the $(\theta,{\rm Im}\,\tau)$ plane, ${\rm Im}\,\tau=2\pi/e^2$, computed from the self-energy of §7.1 over all coprime $(n_e,n_m)$ with $n_m\le5$; a schematic of the structure found by Cardy and Rabinovici, with boundaries fixed by the course's heuristic rule.**
 
 In this crude model something always condenses: the minimum over $w$ of $|n_e+n_m\tau|^2/{\rm Im}\,\tau$ is at most $2/\sqrt3$, attained at $\tau=e^{i\pi/3}$, so the smallest $\varepsilon$ is at most $0.562$, below the entropy $\ln7=1.946$ per step of Week 8 Problem 4⋆. Independent core energies for the two kinds of matter separate the regions and can open phases in which nothing condenses. In the $\mathbb{Z}_p$ models of Cardy and Rabinovici the structure depends on $p$, θ and the coupling, and besides electric and magnetic condensation it contains dyonic condensation and oblique confinement [Stated — refs: Cardy–Rabinovici].
@@ -379,24 +331,8 @@ $$
 $$
 For $\Delta\theta=\pi$, $\sigma_{xy}=e^2/4\pi$, one half of the quantum $e^2/h$. The surface charge obeys the Středa relation $\partial\sigma_{\rm wall}/\partial B_z=\Delta\theta/4\pi^2=\sigma_{xy}$, as it must for a gapped layer, since adiabatically inserting flux through a Hall layer drives charge into the region.
 
-```
-   θ(z)
-    Δθ ┤                           ┌──────────────────────────
-       │                           │
-     0 ┼───────────────────────────┘
-       └───────────────────────────┼──────────────────────────→ z
-                                 z = 0
-                   Chern–Simons layer, level k = Δθ/2π, oriented by dt∧dx∧dy
+![[gs-w12-theta-wall.svg|Step profile of theta across a wall at z equal to zero, beside a face-on view of the wall in which an electric field along y drives a current along x and a normal magnetic field binds a ring of surface charge]]
 
-   in the wall (normal ẑ, θ increasing along +ẑ):
-
-          y ↑
-            │     E = E_y ŷ
-            │     ↑
-            │     │                K_x = + (Δθ/4π²) E_y   ⟹ ⟹ ⟹
-            └─────┼──────────────────────────────→ x
-                        σ_wall = (Δθ/4π²) B_z
-```
 **Figure 4. A θ-wall is a Hall layer: an in-plane electric field drives the transverse current $K_x=(\Delta\theta/4\pi^2)E_y$, a normal magnetic field binds the charge $(\Delta\theta/4\pi^2)B_z$, and in canonical units $\sigma_{xy}=(\Delta\theta/2\pi)(e^2/h)$.**
 
 > **Physical picture.** An experiment on a θ-wall sees two things at once. An in-plane electric field produces a current at right angles to it, confined to the wall, with $\sigma_{xy}=(\Delta\theta/2\pi)(e^2/h)$. And each magnetic flux quantum $2\pi$ that pierces the wall binds the charge $\frac{\Delta\theta}{4\pi^2}\cdot2\pi=\Delta\theta/2\pi$, half a unit on the surface of a $\theta=\pi$ insulator. The second is the Witten effect of the wall: flux lines crossing a jump of θ carry charge exactly as a monopole in a θ-region does (§4.3, where the charge came from $\phi\,\nabla\cdot B$). Both statements are exact consequences of the θ-term; whether a given material realizes them depends on the surface being gapped, which is a statement about its microscopic electrons (§8.3).

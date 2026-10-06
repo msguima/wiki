@@ -42,19 +42,8 @@ A string net on the honeycomb lattice has on each link a label $s\in\{0,1,\dots,
 
 Each link is then a qubit, and we follow LW §II and the electric basis of Sem I Week 7: a link is occupied when $X_\ell=-1$, $n_\ell=\tfrac12(1-X_\ell)$, so $Z_\ell$ adds or removes the string. The branching rule is the star $A_v=\prod_{\ell\ni v}X_\ell=+1$ of [[courses/generalized-symmetries-course/conventions|conventions]] §9, and an allowed configuration $\mathcal X$ (the set of occupied links) is a $\mathbb{Z}_2$ 1-cycle. We write $|\mathcal X\rangle$ for the electric-basis state, $N(\mathcal X)$ for its number of loops and $L(\mathcal X)$ for its number of occupied links; Figure 1 names the links around a hexagon.
 
-```
-                l2            l1
-                  \          /
-                   v2 ---- v1
-                  /    e1    \
-              e2 /            \ e6
-      l3 ---- v3       p       v6 ---- l6
-                 \            /
-              e3  \          / e5
-                   v4 ---- v5
-                  /    e4    \
-                l4            l5
-```
+![[gs-s2w11-hexagon-labels.svg|A hexagon p of the honeycomb with its vertices v1 to v6 numbered counterclockwise, its edges e1 to e6 oriented from each vertex to the next, and the legs l1 to l6 pointing out of p, with the neighbouring hexagons drawn faintly]]
+
 **Figure 1. A hexagon $p$: vertices $v_k$ counterclockwise, edges $e_k$ from $v_k$ to $v_{k+1}$, legs $l_k$; the boundary edges at $v_k$ are $e_{k-1}$ and $e_k$ ($e_0\equiv e_6$).**
 
 ### 2.2 The $F$-move and the pentagon [Proved for the abelian reduction.]
@@ -130,22 +119,9 @@ F(1,1,1)=[F^{111}_1]_{00}=f=d_1 .\tag{3.3}
 $$
 The loop value is the invariant $I=F(s,s,s)$ of Week 7 (6.9): $+1$ for the toric code, $-1$ for the double semion.
 
-```
- (a)  a     b               a     b        (b)  .----.            .----.
-      |     |                \___/              |    |    = f x   '----'
-      |     |      =  f x                       |    |            .----.
-      |     |                 ___               '----'            '----'
-      |     |                /   \             one loop = f x (two loops):  d1 = f d1^2
-      c     d               c     d
+![[gs-s2w11-z2-rules.svg|Three panels of string pictures in discs: two parallel arcs equal f times the reconnected pair of arcs; one loop equals f times two loops; and two fusion trees of three strings, the first two or the last two closing into a cap, related by the factor f]]
 
- (c)        top: 1                         top: 1
-              |                              |
-       .--.   |                              |   .--.
-       |  |   |          =   f  x            |   |  |
-       1  1   1                              1   1  1
-    ((11)_0 1)_1                          (1(11)_0)_1
-```
-**Figure 2. The $\mathbb{Z}_2$ rules: (a) the reconnection (3.1), outside unchanged; (b) a loop read as two arcs gives two loops, so $d_1f=1$; (c) the trees of (2.1) for three strings 1 with total 1, null strings erased, one reconnection apart, so $F(1,1,1)=f$.**
+**Figure 2. The $\mathbb{Z}_2$ rules: (a) the reconnection (3.1), outside unchanged; (b) a loop read as two arcs gives two loops, so $d_1f=1$; (c) the trees of (2.1) for three strings 1 with total 1, null strings drawn dotted, one reconnection apart, so $F(1,1,1)=f$.**
 
 ### 3.3 A reconnection changes the number of loops by one [Proved.]
 
@@ -180,16 +156,8 @@ $$
 
 Draw an empty 1-loop just inside $p$ and push it onto the six edges (Figure 3). Along an empty edge this is an isotopy. Along an occupied edge the loop and the string run parallel, and one reconnection (3.1), coefficient $f$, empties the middle of the edge and turns both arcs back near its endpoints. At $v_k$ the outcome depends on $(n_{e_{k-1}},n_{e_k},n_{l_k})$: a vertex $(0,0,0)$ becomes $(1,1,0)$; $(1,0,1)$ becomes $(0,1,1)$, the string from $l_k$ turning into the loop's arc along $e_k$, and vice versa; both with no factor. A vertex $(1,1,0)$ is left with a small closed loop hugging its corner and enclosing nothing, which (R2) erases with a factor $d_1$; it becomes $(0,0,0)$.
 
-```
- vertex v_k with its leg pointing out of p; '=' occupied edge, '|' occupied leg, ':' empty leg
+![[gs-s2w11-plaquette-moves.svg|Four before and after pictures of a vertex of the hexagon p with its two boundary edges and its leg, showing how each pattern of occupied edges changes when a loop inserted inside p is pushed onto the edges, with the factor d1 in the first case and 1 in the others]]
 
-        :                  |                  |                  :
-   =====+=====        =====+                  +=====        -----+-----
- (1,1,0) -> (0,0,0)  (1,0,1) -> (0,1,1)  (0,1,1) -> (1,0,1)  (0,0,0) -> (1,1,0)
-   factor d_1           factor 1            factor 1            factor 1
-
- plus one factor f for each occupied edge of p (the reconnection that empties it)
-```
 **Figure 3. The plaquette operator as moves: insert a loop, reconnect it with each occupied edge (factor $f$), erase the corner loops at vertices $(1,1,0)$ (factor $d_1$); every edge of $p$ flips and no leg changes.**
 
 So $B_p^1|\mathcal X\rangle=c_p(\mathcal X)\,|\mathcal X+\partial p\rangle$ with
@@ -281,19 +249,9 @@ $$
 $$
 equal to $\zeta^2/2$ at $\zeta=\Gamma/2$. Exact diagonalization on the $3\times4$ torus (trivial class, 2048 states), with μ from a two-hexagon and a one-hexagon loop, gives $\mu/(\Gamma^2/8)=1.0103,\ 1.0212,\ 1.0451$ at $\Gamma=0.005,0.01,0.02$. The next term distinguishes the two states: $(\mu-\Gamma^2/8)/\Gamma^3\to0.26$ in the diagonalization (Problem 7⋆ derives $\tfrac14$), against $\tfrac18$ from (5.9); the dressing (5.4) is exact only to first order (F7).
 
-```
-                    ______
-                   /      \
-            ______/   q    \______
-           /      \   x    /      \
-          /        \__l___/        \
-          \        /======\        /
-           \______/=      =\______/
-                  \=  p0  =/
-                   \= x  =/
-                    \====/
-```
-**Figure 4. $C=\partial p_0$ (doubled lines) and a link ℓ of $C$ shared with $q$: the term $\frac\Gamma4X_\ell$ of (5.10) puts a virtual flux pair (x) on $p_0$ and $q$, one inside $S$ and one outside, which reverses $W(C)$ by (5.3).**
+![[gs-s2w11-virtual-flux-pair.svg|A hexagon p0 whose boundary C is drawn as a double line, the hexagon q above it sharing the link l, an X on that link, and a flux marked by a square in each of p0 and q]]
+
+**Figure 4. $C=\partial p_0$ (doubled lines) and a link ℓ of $C$ shared with $q$: the term $\frac\Gamma4X_\ell$ of (5.10) puts a virtual flux pair (squares) on $p_0$ and $q$, one inside $S$ and one outside, which reverses $W(C)$ by (5.3).**
 
 > **Physical picture.** The Wilson loop counts, mod 2, the visons inside $C$ (5.3). In the deconfined phase they appear as tightly bound virtual pairs, and a pair counts only when it straddles $C$, so $\ln\langle W\rangle\propto-|C|$, exactly at $O(\Gamma^2)$ by (5.11). This is the equal-time slice of [[week-05-wegner-z2-gauge-theory|Sem I Week 5]] §5, where a reversed link of $C$ is the smallest vison loop linking $C$ and gives $\mu=2e^{-8\beta}$. Confinement needs free visons, which randomize the parity inside $S$ (Problem 4), that is amplitudes that grow with enclosed area, as in the strong-coupling vacuum of Sem I Week 7 §5; local link weights such as (5.4) cannot produce them, by (5.8). Within the family (5.4), by contrast, the equal-time perimeter law holds at every ζ and does not by itself detect condensation (F6); the symmetry reading is in §6.
 

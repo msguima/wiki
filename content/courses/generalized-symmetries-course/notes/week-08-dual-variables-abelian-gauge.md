@@ -76,17 +76,8 @@ $$
 $$
 the lattice form of $\oint_SF\in2\pi\mathbb{Z}$ ([[courses/generalized-symmetries-course/conventions|conventions]] §5); two surfaces bounded by $C$ differ by a closed $S$, and their phases differ by $e^{-2\pi iq\langle\mathbb{1}_S,n\rangle}=1$. That is Dirac's condition: electric charges in $\mathbb{Z}$ (in units of the Wilson-line charge) and magnetic fluxes in $2\pi\mathbb{Z}$. With a canonically normalized gauge field ($A\to A/e$) the unit electric charge is $e$, the unit magnetic charge is $g=2\pi/e$, and the condition reads $eg\in2\pi\mathbb{Z}$.
 
-```
-                     C  (loop of links, boundary of the surface Σ)
-               +-----------------+
-               |                 |
-    (+) =======|========*========|======= (−)
-   m = +1      |        Σ        |        m = −1
-               +-----------------+
+![[gs-w08-dirac-string.svg|Oblique view of a surface Sigma bounded by the loop C and pierced once at its center by a Dirac string of dual links, which runs from the cube with m=+1 to the cube with m=-1]]
 
-   ===== : Dirac string, the plaquettes with n = 1, drawn as the dual links through them
-     *   : the string pierces Σ once, so <1_Σ, n> = 1
-```
 **Figure 1. The Villain integer as a Dirac string in $d=3$: it runs from the cube with $m=+1$ to the cube with $m=-1$. A Wilson loop sees it through the phase $e^{2\pi iq\langle\mathbb{1}_\Sigma,n\rangle}$, which is 1 for every position of the string exactly when $q$ is an integer.**
 
 ## 3. First rewriting: closed electric flux [Computed.]
@@ -165,17 +156,8 @@ $$
 $$
 with sign $+1$, since $\epsilon(\{1,2,3\},\varnothing)=+1$. The monopole of the cube $c$ sits at the dual site $c^*$ at its center (Figure 2), and the neutrality of Move 5 is the identity $\sum_cm_c=0$ of §2.1.
 
-```
-             +-----------+          cube c = (x;{1,2,3}) of Λ;  · = its center
-            /|          /|          x + (½,½,½), the dual site c* carrying v = m_c
-           / |         / |
-          +-----------+  |          flux out of c:   Σ_{P∈∂c} (da − 2πn)_P = −2π m_c
-          |  |   ·    |  |          dual photon:     source e^{−i m_c σ(c*)}
-          |  +--------|--+
-          | /         | /           each face P is pierced by one dual link, on which
-          |/          |/            (⋆dσ)(P) is the difference of σ across P
-          +-----------+
-```
+![[gs-w08-cube-dual-site.svg|A unit cube of the lattice with its center, the dual site that carries the monopole number of the cube, and the six dual links from the center through its faces to the neighbouring dual sites]]
+
 **Figure 2. Where a three-dimensional monopole lives: the integer $m_c=(dn)_c$ of a cube becomes the Poisson integer $v$ at the dual site at its center, and couples to the dual photon as $e^{-im_c\sigma(c^*)}$.**
 
 ### 4.4 The monopole Coulomb gas [Computed.]
@@ -275,18 +257,8 @@ j_4=+m_{123},\qquad j_3=-m_{124},\qquad j_2=+m_{134},\qquad j_1=-m_{234},
 $$
 where $m_{\mu\nu\rho}$ is $m$ on the cube spanned by $\mu<\nu<\rho$ (checked cell by cell on the $3^4$ torus).
 
-```
-   x₄ (time)
-    ^          · x + ½(1,1,1,+1)
-    |          ↑
-    |      +---|---+
-    |      |   ●   |     spatial cube (x;{1,2,3}) at time x₄ (drawn as a square)
-    |      +---|---+
-    |          ↑         j₄ = +m₁₂₃ on the dual link through its center
-    |          · x + ½(1,1,1,−1)
-    +--------------------------------> space
-    other orientations:  j₃ = −m₁₂₄ ,  j₂ = +m₁₃₄ ,  j₁ = −m₂₃₄
-```
+![[gs-w08-monopole-current-4d.svg|A time slice drawn as a plane with a spatial cube in it, and the dual link in the time direction through the center of the cube, from x+(1,1,1,-1)/2 to x+(1,1,1,+1)/2, carrying the time component of the monopole current, equal to the monopole number of the cube]]
+
 **Figure 3. Where a four-dimensional monopole lives: the cube $(x;S)$ is dual to the dual link through its center in the missing direction, and $m$ on the cube becomes the monopole current $j=\star m$ on that link, with the shuffle sign $\epsilon(S,S^c)$.**
 
 ### 5.4 The dual gauge field at $\tilde\beta=1/4\pi^2\beta$ [Computed.]
@@ -344,27 +316,8 @@ and unfolding it at fixed $v$ returns the boxed form of §4.5. Compact QED₃ is
 
 Each row is an exact identity of partition functions. In each dual description the monopoles are charged matter, and they break the magnetic symmetry explicitly; the electric 1-form symmetry of $a$ is, in $d=3$, the winding symmetry of σ (degree $d-2=1$, charged objects the Wilson lines) and, in $d=4$, the magnetic 1-form symmetry of $\tilde a$. Semester II Week 12 removes the defects altogether (modified Villain) and makes the symmetries exact on the lattice. Figure 4 assembles the chain.
 
-```
-  Villain U(1) on Λ:  ∫ da/2π over one period,  Σ_n exp(−β/2 ‖da − 2πn‖²)
-        │  Move 1  Hubbard–Stratonovich: (2πβ)^(−1/2) per plaquette
-        │  Move 2  Dirac comb: b ∈ C²(Λ,ℤ)
-        │  Move 3  compact a: Kronecker δ(δb, 0)
-        ▼
-  closed electric flux:  (2πβ)^(−N_P/2) Σ_{δb=0} exp(−‖b‖²/2β)
-        │  ⋆ :  δb = 0  ⟺  d(⋆b) = 0 on Λ*
-   ┌────┴──────────────────────────────┐
-   ▼ d = 3                             ▼ d = 4
- heights h̃ ∈ C⁰(Λ*,ℤ)/ℤ, w ∈ ℤ³       ℤ gauge field Ñ ∈ C¹(Λ*,ℤ)/Z¹, w ∈ ℤ⁶
-   │ Poisson; zero mode: √N*, Σv = 0   │ Poisson; gauge orbits: c₄, δj = 0
-   ▼                                   ▼
- σ = −2πφ̃ ~ σ + 2π                    ã = −2πÃ,  β̃ = 1/4π²β,  dñ = 0
- (1/8π²β)‖dσ‖²,  e^(−i⟨v,σ⟩)           (β̃/2)‖dã − 2πñ‖²,  e^(−i⟨j,ã⟩)
- v = ⋆dn : monopoles (points)          j = ⋆dn : monopole loops
-   │ Gaussian in σ                     │ Gaussian in ã
-   ▼                                   ▼
- Coulomb gas 2π²β⟨v,G′v⟩               loop gas 2π²β Σ_μ⟨j_μ,G′j_μ⟩
- S_mono = 4.99 β   (Weeks 9–10)        3.06 β per link   (Week 11)
-```
+![[gs-w08-duality-chain.svg|Flow chart from the Villain U(1) theory through closed electric flux to integer heights in three dimensions and a Z gauge field in four, then to the dual photon and the dual gauge field with the monopoles as integers, and finally to the Coulomb gas and the loop gas]]
+
 **Figure 4. The duality chain of this week: one set of moves, two constraint solutions, and the defects of the original theory returning as the integers of the second resummation.**
 
 ## 7. Subtleties and fine print

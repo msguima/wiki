@@ -7,7 +7,7 @@ week: 2
 block: A
 duration: 4 hours (2 lectures × 2 hours)
 prerequisites: Linear algebra (kernels, images, quotients, adjoints); Week 1; comfort with finite abelian groups
-modified: 2026-09-28
+modified: 2026-10-04
 ---
 
 # Week 2 — The Lattice as a Cell Complex: Chains, Cochains, and Duality
@@ -52,15 +52,8 @@ A hypercubic lattice $\Lambda \subset \mathbb{Z}^d$ is a **cell complex**: it co
 
 Every cell carries a fixed **orientation**, chosen once and used forever: links point along $+\hat\mu$; the $p$-cell spanned by directions $\hat\mu_1 < \cdots < \hat\mu_p$ is oriented by that ordered tuple (for a plaquette in the 12-plane: counterclockwise when $\hat 1$ points right and $\hat 2$ up). On the torus $T^d$ we identify $x \sim x + L\hat\mu$, making the complex finite.
 
-```
-        ℓ_top
-      x+ê2 ────→─── x+ê1+ê2
-        │               │
-  ℓ_left↑    P(x)       ↑ ℓ_right          all links oriented along +ê1, +ê2;
-        │  (oriented    │                  plaquette oriented counterclockwise:
-        x ────→─── x+ê1                    ∂P = ℓ_bot + ℓ_right − ℓ_top − ℓ_left
-        ℓ_bot
-```
+![[gs-w02-oriented-plaquette.svg|Square plaquette P(x) with corners x, x+e1, x+e1+e2 and x+e2, links oriented along +e1 and +e2, counterclockwise circulation, and signs + on the bottom and right links and minus on the top and left links]]
+
 **Figure 1. The oriented plaquette $P(x)$ and its boundary. Signs record whether a boundary link's own orientation agrees (+) or disagrees (−) with the counterclockwise traversal.**
 
 ### 2.2 Chains and $\partial$
@@ -265,17 +258,8 @@ p\text{-cell of }\Lambda \ \longleftrightarrow\ (d{-}p)\text{-cell of }\Lambda^*
 $$
 Figure 2 draws the two lattices in $d=2$.
 
-```
-    +-------+-------+          Λ : sites +, links —— , plaquettes (squares)
-    |       |       |          Λ*: sites ·  (at plaquette centers),
-    |   ·   |   ·   |               dual links (vertical/horizontal thru Λ-links)
-    |       |       |
-    +-------+-------+          In d=2:  site ↔ dual plaquette,
-    |       |       |                   link ↔ dual link (rotated 90°),
-    |   ·   |   ·   |                   plaquette ↔ dual site.
-    |       |       |
-    +-------+-------+
-```
+![[gs-w02-direct-dual-lattice.svg|Square lattice with its dual lattice dashed, highlighting a site with its dual plaquette, a link with the dual link that crosses it, and a plaquette with its dual site]]
+
 **Figure 2. Direct and dual lattices in $d=2$. Every object of degree $p$ has a shadow of degree $d-p$.**
 
 In $d=3$: sites↔cubes, links↔plaquettes, plaquettes↔links, cubes↔sites. In $d=4$: plaquettes↔plaquettes — degree 2 is **self-dual**, the structural reason electric–magnetic duality is special to four dimensions ([[week-08-dual-variables-abelian-gauge|Week 8]]).
@@ -367,15 +351,8 @@ $$
 A\cdot A = 0,\qquad B\cdot B = 0,\qquad A\cdot B = 1 .
 $$
 
-```
-            ┌──────────────┐
-            │      B ↑     │        A : loop winding in x
-            │        │     │        B : loop winding in y
-       A ───┼────────╳─────┼───→    ╳ : the single intersection,
-            │        │     │             A·B = 1
-            │        │     │
-            └──────────────┘        (opposite edges identified)
-```
+![[gs-w02-torus-intersection.svg|Square with opposite edges identified, a horizontal loop A and a vertical loop B that cross once]]
+
 **Figure 3. The intersection form of the torus. This single "+1" is the origin of the clock–shift algebra.**
 
 Signed intersection counting extends to a bilinear pairing $H_p \times H_{d-p} \to \mathbb{Z}$ (or $\mathbb{Z}_N$) on any $T^d$; it is the homological face of the linking of operators in spacetime. **Preview of its operator life** [Heuristic here; derived in Semester II Week 2]: in $\mathbb{Z}_N$ gauge theory, let $Z$ = the operator measuring the holonomy along $A$, and $X$ = the operator that shifts that holonomy (equivalently, measures/creates flux along $B$). Because $B$ must cross $A$ exactly once to close, reordering the two operations differs by one unit of $\mathbb{Z}_N$ phase:
@@ -573,4 +550,4 @@ These checkpoints cover the core problems; starred and ⋆⋆ problems remain so
 
 ---
 
-*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester I Block A. Rewritten to the note-quality-template standard on 2026-07-10 (first draft 2026-07-01). Last revised 2026-09-28.*
+*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester I Block A. Rewritten to the note-quality-template standard on 2026-07-10 (first draft 2026-07-01). Last revised 2026-10-04.*

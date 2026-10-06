@@ -173,20 +173,8 @@ H_{\rm eff}(R)=\begin{pmatrix}\sigma R&-u^R\\-u^R&2E_M\end{pmatrix},\qquad\Delta
 $$
 where the off-diagonal element is the amplitude for the string to turn into two mesons, $R$ hops of a dynamical charge. The gap at the crossing is exponentially small in $R_*$, so the breaking is sharp on the lattice scale once $R_*$ is large.
 
-```
-   time
-    ↑
-  T ●───────────────────●      ─ (top)  : a side of C covered by matter, u per link
-    ┆                   ┆      ┆        : matter on the probe worldline (a meson),
-    ┆    two mesons     ┆                 u per time step and per probe
-    ┆                   ┆
- T₁ ●╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍●      ╍        : the cut, R matter links: pair creation
-    │▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓│                 out of the string, weight u^R
-    │▓▓▓  flux sheet  ▓▓│      ▓        : tiled plaquettes, t each
-    │▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓│      │        : probe worldlines on the boundary of the
-  0 └───────────────────┘                 sheet, no matter
-    x₀                x₀+R
-```
+![[gs-w13-cut-sheet.svg|Rectangular Wilson loop of width R and height T whose part below the time T1 is tiled by a flux sheet, cut at T1 by a line of matter links, with matter on the two probe worldlines and on the top side above the cut]]
+
 **Figure 2. The flux tube's tiled surface cut by a matter-line pair: below $T_1$ the string (weight $t^R$ per row), above it two mesons ($u^2$ per row); the cut and the top side are the pair's creation and annihilation lines, $u^R$ each.**
 
 ### 5.3 A check on the strip
@@ -257,25 +245,9 @@ For continuous gauge groups the large-κ expansion is no longer a gas of discret
 
 The pure-gauge transition persists for small $\kappa>0$ (Fradkin and Shenker present an argument due to Wegner for its stability [Stated — refs: Fradkin–Shenker 1979]), and by the duality of §4.2 so does the Ising transition at large finite β. The two lines bound the **free-charge phase** at large β and small κ, where static charges are free and the gauge field is in the deconfined, $\mathbb{Z}_2$ topologically ordered state of Week 5, the toric-code phase of Semester II Week 8. They are mirror images under the duality, so if they meet at a single point M, it lies on the self-dual line; since $(t_c,u_c)=(0.6419,0.2181)$ satisfies $t+u+tu=1$, M sits near the corner that two straight lines would form. Monte Carlo on lattices up to $60^3$ finds that the two lines stay continuous up to M and merge there into a first-order line [Stated — refs: Tupitsyn et al. 2010]. Condensing either the charge or the vison while the other stays gapped gives 3d Ising exponents, and the self-dual transition out of the deconfined phase at M appears continuous, with large scaling dimensions for all local operators and no known continuum Lagrangian [Stated — refs: Somoza, Serna, Nahum 2021].
 
-```
- tanh κ
-  1.0 ┌───────────────────────────────────────────────────┐  κ = ∞: trivial (§3)
-      │░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│  ░ : the domain 𝒟 of §6
-      │░░ ◄════════════════ path ═════════════════════ H  │      (widths not to scale)
-      │░░ ║ ·                                             │  H : deep Higgs
-      │░░ ║     ·        HIGGS  =  CONFINEMENT            │  C : deep confinement
-      │░░ ║         ·       (one phase)                   │  · : self-dual line,
-      │░░ ║             ·                                 │      sinh 2β sinh 2κ = 1
-      │░░ ║                 E   critical endpoint         │
-      │░░ ║                  ╲  first-order segment       │
-      │░░ ║                   M━━━━━━━━━━━━━━━━━━━━━━━━━━━┥ 0.218: Ising point (§3)
-      │░░ ║                   ┃  ·     FREE CHARGE        │  M : multicritical point
-      │░░ ▼       confinement ┃      ·   (deconfined,     │  ━ : Higgs line
-      │░░ C             line  ┃           Z₂ top. order)  │  ┃ : confinement line
-  0.0 └───────────────────────┸───────────────────────────┘
-      0   β = 0: trivial      0.642: pure-gauge point  1.0   tanh β
-```
-**Figure 1. The $\mathbb{Z}_2$ gauge–Higgs model in $d=3$: the confinement and Higgs lines bound the free-charge phase and meet at M on the self-dual line, from which a first-order segment runs to the endpoint E; the analyticity domain $\mathcal D$ (hatched) contains the trivial edges, and the complementarity path runs inside it from H to C. The positions of M and E are schematic.**
+![[gs-w13-phase-diagram.svg|Phase diagram of the Z2 gauge-Higgs model in the square of tanh beta and tanh kappa, with the confinement and Higgs lines bounding the free-charge corner and meeting at M on the self-dual line, a first-order segment from M to E, and the hatched analyticity domain along the left and top edges containing the complementarity path from H to C]]
+
+**Figure 1. The $\mathbb{Z}_2$ gauge–Higgs model in $d=3$: the confinement and Higgs lines bound the free-charge phase and meet at M on the self-dual line, from which a first-order segment runs to the endpoint E; the analyticity domain $\mathcal D$ (hatched) contains the trivial edges, and the complementarity path runs inside it from H to C. The shapes of the two lines and the positions of M and E are schematic.**
 
 ### 7.2 The first-order segment and its endpoint
 
@@ -306,22 +278,9 @@ In a simple fluid the liquid and the gas have the same symmetry, the boiling lin
 
 Two differences keep this a formal analogy. At a triple point three first-order lines meet, whereas the two lines at M are continuous and M is itself a continuous transition. And the solid is set apart by the breaking of a symmetry, while the free-charge phase is set apart by topological order, which Week 14 and Semester II turn into a statement about emergent 1-form symmetries. With these caveats the lesson is exact: "Higgs" and "confinement" are names for the two ends of one phase, as "liquid" and "gas" are, and the first-order segment separates them only locally.
 
-```
-       p ↑
-         │           ┃ melting
-         │           ┃
-         │   SOLID   ┃          LIQUID           ● critical point
-         │           ┃                        ╱
-         │           ┃                   ╱
-         │           ┃              ╱  boiling line
-         │           ┃         ╱
-         │           ●────╱  triple point
-         │         ╱
-         │       ╱  sublimation          GAS
-         │     ╱
-         └────────────────────────────────────────────→ T
-```
-**Figure 3. The phase diagram of a simple fluid, for comparison with Figure 1: the boiling line ends at a critical point, around which liquid and gas are one phase, while the solid is bounded by lines that cannot end.**
+![[gs-w13-fluid-phase-diagram.svg|Pressure against temperature for a simple fluid, with the solid region bounded by the melting and sublimation curves, which meet the boiling line at the triple point, and the boiling line ending at the critical point]]
+
+**Figure 3. The phase diagram of a simple fluid (schematic), for comparison with Figure 1: the boiling line ends at a critical point, around which liquid and gas are one phase, while the solid is bounded by lines that cannot end.**
 
 ## 8. Continuity of the gauge-invariant spectrum
 

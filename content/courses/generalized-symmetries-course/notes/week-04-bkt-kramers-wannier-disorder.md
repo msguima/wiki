@@ -110,19 +110,9 @@ $$
 $$
 conserves $\;C \equiv x^2 - 16\pi^2 y^2\;$ ($\frac{dC}{d\ell} = 2x(-16\pi^2y^2) - 32\pi^2 y(-xy) = 0$): the trajectories are **hyperbolae**, with separatrices $x = \pm 4\pi y$. As Figure 1 shows, $C<0$ in the wedge between the two separatrices above the BKT point and $C>0$ on either side of it, and only the region to the right of $x=+4\pi y$ flows into the fixed line $y=0$.
 
-```
-      y ↑
-        │ \        ↖ flows          /
-        │   \   (disordered side) /
-        │     \       C<0       /
-        │       \             /   separatrix  x = +4πy
-        │ C>0,x<0 \         /
-        │  flows ↖  \     /        C>0 : flows into the
-        │  x = −4πy   \ /          fixed line y=0, x>0
-   ─────┼──────────────╳───────────────────→ x = πβ_R − 2
-        │           (BKT point)   ● ● ● ● ●  fixed line (QLRO)
-```
-**Figure 1. The Kosterlitz flow, with $C=x^2-16\pi^2y^2$. Right of the separatrix $x=+4\pi y$ ($C>0$, $x>0$): $y \to 0$, a line of Gaussian fixed points (the QLRO phase, one point per temperature). Left of it, in the wedge $C<0$ and in the region $C>0$, $x<0$: $y$ grows (vortices proliferate) and the flow exits toward the disordered phase.**
+![[gs-w04-kosterlitz-flow.svg|Flow diagram in the plane of x and y with hyperbolic trajectories and the two separatrices through the BKT point, the trajectories to the right of the separatrix flowing down onto the fixed line y equal to zero and all others flowing up and away.]]
+
+**Figure 1. The Kosterlitz flow, with $C=x^2-16\pi^2y^2$. Right of the separatrix $x=+4\pi y$ ($C>0$, $x>0$): $y \to 0$, a line of Gaussian fixed points (the QLRO phase, one point per temperature). Left of it, in the wedge $C<0$ and in the region $C>0$, $x<0$: $y$ grows (vortices proliferate) and the flow exits toward the disordered phase. The trajectories are computed by integrating the linearized flow of §2.3, $dx/d\ell=-16\pi^2y^2$, $dy/d\ell=-xy$.**
 
 Three consequences, each a genuine prediction:
 
@@ -165,16 +155,8 @@ $$
 \boxed{\ Z = 2^N(\cosh\beta)^{2N} \sum_{\gamma\,\in\,\ker\partial_1\otimes\mathbb{Z}_2} t^{|\gamma|}.\ }
 $$
 
-```
-   loops on Λ (high T):              walls on Λ* (low T):
+![[gs-w04-kw-expansions.svg|Two lattice patches side by side, closed loops of bonds of lengths 4 and 6 on the direct lattice and domain walls of the same shapes on the dual lattice around flipped spins.]]
 
-   +--+  +--+--+                     + + + + + +        + : spins up
-   |  |  |     |                     + +╔═══╗+ +        − : flipped cluster
-   +--+  +--+--+                     + +║− −║+ +        ═ : domain wall on the
-                                     + +╚═══╝+ +            dual lattice
-   closed even-degree                + + + + + +
-   bond sets, weight t^|γ|           closed dual cycles, weight e^{−2β|γ*|}
-```
 **Figure 2. The two expansions that Kramers–Wannier equates: high-temperature loops on the direct lattice ↔ low-temperature domain walls on the dual lattice.**
 
 ### 3.2 The low-temperature expansion [Computed.]
@@ -259,14 +241,9 @@ $$
 \langle \mu_{\tilde x}\,\mu_{\tilde y}\rangle \;=\; \frac{Z[\beta \to -\beta \text{ on } \tilde\gamma]}{Z}.
 $$
 
-```
-        s      s      s      s
-                                        seam  ̃γ (on the dual lattice):
-        s   ~~╳~~~~~╳~~~~~   s          couplings crossed by ~~ are
-              μ(x̃)     μ(ỹ)             flipped  β → −β
-        s      s      s      s
-```
-**Figure 3. A disorder-operator pair: a seam of frustrated bonds joining two dual sites.**
+![[gs-w04-disorder-seam.svg|A square lattice with a dashed dual path between two shaded endpoint plaquettes, marked mu of x and mu of y, and the three bonds the path crosses carrying the flipped coupling minus beta.]]
+
+**Figure 3. A disorder-operator pair: a seam of flipped bonds ($\beta\to-\beta$) joining two dual sites; only the two endpoint plaquettes are frustrated.**
 
 **The seam is unobservable; its endpoints are not.** Deform $\tilde\gamma$ to $\tilde\gamma'$ across a site $x$: the two seams differ by the set of bonds around $x$, and flipping all couplings at one site is undone by the change of variables $s_x \to -s_x$ — a $\mathbb{Z}_2$ "gauge transformation" of the dummy spins. Thus $\langle\mu\mu\rangle$ depends only on $\tilde x, \tilde y$ [Computed]. What *cannot* be gauged away are the endpoints: there the frustration is genuine (an odd plaquette of flipped bonds), and that is where the physics sits. This seam/endpoint dichotomy is the prototype for every extended operator in the course — Dirac strings (Week 8), 't Hooft lines (Week 11), symmetry defects (Semester II).
 

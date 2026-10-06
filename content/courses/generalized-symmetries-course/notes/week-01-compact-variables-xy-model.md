@@ -169,22 +169,9 @@ Three regimes, for orientation (the third is established in Week 4):
 
 Figure 0 draws the three regimes on logarithmic axes, where the QLRO correlator is a straight line of slope $-\eta$.
 
-```
-  ln C(x) ↑
-          │●
-          │ ●●                    LRO (forbidden in 2d):
-          │   ●●●●●●●●●●●●●●●     flattens to a constant
-          │  ▪
-          │    ▪▪                 QLRO: straight line of slope −η(T)
-          │       ▪▪▪▪            on this log–log plot; slope varies
-          │            ▪▪▪▪▪      continuously with T
-          │  ○
-          │   ○                   disorder: exponential decay,
-          │    ○                  curves down ever faster
-          │     ○
-          └──────────────────────────→ ln|x|
-```
-**Figure 0. The three decay regimes on a log–log plot. QLRO is the odd one out in Landau's world: an entire phase of straight lines whose slope is a continuous function of temperature.**
+![[gs-w01-decay-regimes.svg|Log-log plot of the spin correlator against distance, with a long-range-ordered curve that flattens to a constant, three straight quasi-long-range-ordered lines of slopes minus 1/12, minus 1/6 and minus 1/4, and an exponentially decaying disordered curve that bends ever more steeply down.]]
+
+**Figure 0. The three decay regimes on a log–log plot. QLRO is the odd one out in Landau's world: an entire phase of straight lines whose slope is a continuous function of temperature. The QLRO lines are computed from the spin-wave correlator $C(x)=e^{-\kappa/\beta}|x|^{-\eta}$ of §3.4, with $\eta=1/2\pi\beta$, at $\eta=1/12$, $1/6$ and $1/4$; in the lattice model the exponent belongs to the renormalized stiffness (the physical picture below), so only the slopes carry over. The LRO and disordered curves are schematic.**
 
 > **Physical picture.** The exponent grows with temperature — hotter means faster decay — and at the BKT point it takes the universal value $\eta(T_{BKT}) = \tfrac14$. Read that statement carefully: it is $\eta = 1/2\pi\beta_R$ evaluated at the **renormalized** stiffness, which satisfies $\pi\beta_R = 2$ exactly at the transition ([[week-04-bkt-kramers-wannier-disorder|Week 4]]); the *bare* critical coupling is model-dependent and larger, $\beta_c\approx1.12$ for this cosine model [Stated — refs: Hasenbusch, *J. Phys. A* 38 (2005) 5869], because vortex pairs screen the stiffness downward before the transition is reached. The experiments test the equivalent statement about the stiffness. In superfluid helium-4 films, Bishop and Reppy (*Phys. Rev. Lett.* 40 (1978) 1727) measured the superfluid density with a torsional oscillator and found that it drops to zero at the transition from the universal value predicted by Nelson and Kosterlitz (*Phys. Rev. Lett.* 39 (1977) 1201); that jump is the statement $\pi\beta_R=2$, and through $\eta=1/2\pi\beta_R$ it is the statement $\eta=\tfrac14$. Note the division of labor, which the exact duality of Week 3 will make into a theorem: spin waves control *how* correlators decay inside the QLRO phase; vortices decide *where* the phase ends.
 
@@ -222,16 +209,9 @@ where each bond difference $(d\theta)_\ell = \theta_y - \theta_x$ is reduced to 
 
 Here is a charge-1 vortex, explicitly, centered on a plaquette (Figure 1). Assign to each site the polar angle of that site as seen from the plaquette center. On the four sites nearest the center the angles are $45°, 135°, 225°, 315°$:
 
-```
-      θ=135°          θ=45°
-        +---------------+
-        |               |
-        |       ×       |      × = vortex core
-        |   (center)    |          (plaquette center)
-        +---------------+
-      θ=225°          θ=315°
-```
-**Figure 1. A charge-1 lattice vortex: site phases around the core plaquette.**
+![[gs-w01-lattice-vortex.svg|A patch of the square lattice with spins pointing away from the center of the core plaquette, whose four sites carry the angles 45, 135, 225 and 315 degrees, with differences of plus 90 degrees on three edges and minus 270 degrees reduced to plus 90 on the fourth.]]
+
+**Figure 1. A charge-1 lattice vortex: site phases around the core plaquette, every spin computed from the polar-angle rule.**
 
 Walk the plaquette counterclockwise and take each difference in $(-\pi,\pi]$:
 $$
@@ -256,19 +236,8 @@ with the core energy $E_{\rm core}$ collecting the lattice-scale region $r \less
 
 A vortex–antivortex pair at separation $r$: superpose $\theta = \varphi_{+}(x) - \varphi_{-}(x)$ (polar angles about the two cores). Figure 2 draws this configuration on the lattice for $r=3$.
 
-```
-    →   →   ↘   ↘   ↘   ↘   ↘   ↘   ↘   →   →
+![[gs-w01-vortex-pair.svg|Spin arrows on an 11 by 6 patch of the square lattice around a vortex at one plaquette center and an antivortex three plaquettes to its right, with the spins between the cores pointing backwards and the distant spins nearly aligned.]]
 
-    →   →   ↘   ↘   ↓   ↓   ↓   ↘   ↘   →   →        ⊕ : winding +2π
-
-    →   →   →   ↘   ↙   ↙   ↙   ↘   →   →   →        ⊖ : winding −2π
-                  ⊕           ⊖
-    →   →   →   ↗   ↖   ↖   ↖   ↗   →   →   →        (cores at plaquette centers, r = 3)
-
-    →   →   ↗   ↗   ↑   ↑   ↑   ↗   ↗   →   →
-
-    →   →   ↗   ↗   ↗   ↗   ↗   ↗   ↗   →   →
-```
 **Figure 2. A vortex–antivortex pair, each arrow giving the spin direction θ at a site: on a counterclockwise loop θ advances by +2π around ⊕ and by −2π around ⊖, the spins between the cores point backwards, and far from the pair they return to alignment, so the gradient energy is confined to a region of size r.**
 
 At distances $\gg r$ the two windings cancel and $|\nabla\theta|$ decays as $r/|x|^2$ (a dipole field), so the energy integral is cut off at scale $r$ instead of $L$:

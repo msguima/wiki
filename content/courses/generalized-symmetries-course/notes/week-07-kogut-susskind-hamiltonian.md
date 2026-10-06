@@ -62,15 +62,9 @@ which is Kogut's eq. (6.64) and the normalization of [[courses/generalized-symme
 
 Now fix **temporal gauge**, $\theta_0(x,t)=0$ on every time-like link, which a gauge transformation achieves on a lattice infinite in time (the periodic case is §4.3 and fine print F1). With the orientation rule $\partial P_{0i}(x)=\ell_0(x)+\ell_i(x+\hat0)-\ell_0(x+\hat\imath)-\ell_i(x)$ of [[courses/generalized-symmetries-course/conventions|conventions]] §1, a temporal plaquette carries $\theta_{P_{0i}}(x,t)=\theta_i(x,t+a_t)-\theta_i(x,t)$: it couples each spatial link only to itself one time step later (Figure 1).
 
-```
-  t+2a_t   ●──────●──────●
-           ┆  ▓▓  ┆      ┆        ─── spatial link ℓ of one time slice: angle θ_ℓ(t)
-  t+a_t    ●──────●──────●        ┆   time-like link, U = 1 in temporal gauge
-           ┆  ▓▓  ┆      ┆        ▓▓  temporal plaquette: weight exp{β_t cos[θ_ℓ(t+a_t) − θ_ℓ(t)]}
-  t        ●──────●──────●            (the column of ▓▓ above one link is a rotor chain in time)
-           x     x+1̂    x+2̂       spatial plaquettes lie inside a slice: weight exp{β_s cos θ_P}
-```
-**Figure 1. The anisotropic lattice in temporal gauge: along time, every spatial link is an independent rotor chain (temporal plaquettes, coupling β_t); within each slice the spatial plaquettes (coupling β_s) couple the links.**
+![[gs-w07-anisotropic-lattice.svg|Three time slices of the lattice with dashed time-like links, the column of temporal plaquettes above one spatial link labelled by the angle of that link at the three times, and a spatial plaquette shaded inside the top slice]]
+
+**Figure 1. The anisotropic lattice in temporal gauge: along time, every spatial link is an independent rotor chain (temporal plaquettes, coupling $\beta_t$); within each slice the spatial plaquettes (coupling $\beta_s$) couple the links.**
 
 ### 2.2 The transfer matrix
 
@@ -216,15 +210,8 @@ V(R)=\frac{g^2}{2}\,R,\qquad \sigma=\frac{g^2}{2}.
 $$
 For $SU(N)$ the string carries the fundamental representation on every link, $E^aE^a=C_2(F)$, and $\sigma=\frac{g^2}{2}C_2(F)=\frac{g^2}{2}\frac{N^2-1}{2N}$, equal to $\frac{3g^2}{8}$ for $SU(2)$ ([[courses/generalized-symmetries-course/conventions|conventions]] §4). Off-axis separations have many shortest paths, a point taken up in F4.
 
-```
- (a)  ·     ·     ·     ·     ·            (b)  ·     ┏━━━━━┓     ·     ·
-                                                      ┃  P  ┃
-     (+)━━━━━━━━━━━━━━━━━━━━━━━━(−)             (+)━━━━┛     ┗━━━━━━━━━━━━(−)
+![[gs-w07-strong-coupling-string.svg|Above, one unit of electric flux on the straight path of R links from a charge +1 to a charge -1; below, a plaquette P on one link of the string, once with the flux detouring around P and once with the shared link carrying two units]]
 
-      ·     ·     ·     ·     ·                 ·     ·     ·     ·     ·
-   unit flux on R links: energy g²R/2       U_P on a plaquette sharing one link with the
-                                            string: the flux detours, R+2 links, cost +g²
-```
 **Figure 2. (a) The strong-coupling string between static charges ±1: one unit of electric flux on the straight path. (b) The magnetic term acting on a plaquette that shares one link with the string: one orientation makes the flux detour (cost g²), the other doubles the shared link (cost 3g²).**
 
 ### 5.2 The tension at second order [Controlled to $O(g^{-6})$.]
@@ -312,22 +299,9 @@ confirmed numerically (gap $1.996795$ at $g=0.08$, against $1.996800$). Beyond a
 
 Figure 3 shows the crossover between the two descriptions.
 
-```
- E−E₀
-   8 ┤ *               *
-   7 ┤             *
-   6 ┤ *   *                                               o
-   5 ┤     *   *                                   o
-   4 ┤ o   o                               o
-   3 ┤         o                   o
-   2 ┤ o   o   o   o   o
-   1 ┤
-   0 └────────────────────────────────────────────────────── g²
-       0      0.5     1.0     1.5     2.0     2.5     3.0
-   o : the two levels that become n = ±1 (C-odd below C-even), → 2g² at large g²
-   * : the levels that become n = ±2, → 8g²       left edge: oscillator levels 2, 4, 6, 8
-```
-**Figure 3. The lowest four levels of the one-plaquette universe (exact diagonalization): equally spaced oscillator levels with ω = 2 at weak coupling, electric-flux levels 2g²n² at strong coupling, and a smooth crossover near g² ≈ 0.5–1.**
+![[gs-w07-one-plaquette-levels.svg|The four lowest excitation energies of the one-plaquette Hamiltonian against g squared, starting at 2, 4, 6 and 8 at weak coupling and approaching 2g squared and 8g squared in pairs at strong coupling]]
+
+**Figure 3. The four lowest excitation energies $E-E_0$ of the one-plaquette universe (computed by exact diagonalization of $H_1$, §6.1): equally spaced oscillator levels with ω = 2 at weak coupling, electric-flux levels 2g²n² at strong coupling, and a smooth crossover near g² ≈ 0.5–1.**
 
 ## 7. The $\mathbb{Z}_2$ theory and its dual Ising model
 
@@ -371,14 +345,8 @@ $$
 $$
 the transverse-field Ising model on the dual lattice, with Ising coupling Γ and transverse field $K$ ([[courses/generalized-symmetries-course/conventions|conventions]] §4; Kogut RMP 51 §V.E; Fradkin and Susskind 1978). The phase map follows at once. For $\Gamma\gg K$ the gauge theory is at strong coupling and **confined**, and the Ising model is a **ferromagnet**, $\langle\mu^z\rangle\neq0$; for $K\gg\Gamma$ the gauge theory is **deconfined** and the Ising model is a **paramagnet**. The Ising order parameter $\mu^z_P$ is a string of electric field ending at $P$, which flips $B_P$ there: it creates a $\mathbb{Z}_2$ magnetic flux, a vison, and it is a local operator of the dual model. Visons condense in the confined phase, which is Kogut's eq. (5.69) in his notation. The transition is continuous and in the three-dimensional Ising class, the Hamiltonian face of the Euclidean duality $\tanh\beta=e^{-2K^*}$ of [[week-05-wegner-z2-gauge-theory|Week 5]], with the same assignment of phases; its location is a single number, the critical point of the square-lattice transverse-field Ising model, $(K/\Gamma)_c\approx3.044$, known from simulations [Stated — refs: Blöte–Deng, Phys. Rev. E 66 (2002) 066110]. Adding $\mathbb{Z}_2$ matter on the sites turns this model into the gauge–Higgs system of [[week-13-fradkin-shenker-gauge-higgs|Week 13]], whose Hamiltonian phase diagram is drawn with exactly these variables.
 
-```
-     +───────────+───────────+
-     │           │           │        +      sites: Gauss law A_v = ∏ σ^x = 1
-     │     P     │     P'    │        ─ , │  links: σ^x = (−1)^E electric field, σ^z = U flips it
-     │     ●╌╌╌╌╌╂╌╌╌╌╌●     │        ●      dual sites: μ^x_P = B_P
-     │           │ℓ          │        ╌╂╌    dual bond across ℓ: μ^z_P μ^z_P' = σ^x_ℓ
-     +───────────+───────────+
-```
+![[gs-w07-ising-duality.svg|Two plaquettes P and P' sharing the link l, with Ising spins at the plaquette centres joined by a dashed bond across l, beside the dictionary of the duality]]
+
 **Figure 4. The duality geometry: the Ising spins live on plaquette centres, the magnetic term is their transverse field, and the electric field on a link is the Ising bond across it.**
 
 > **Physical picture.** What a simulation of the gauge theory sees as confinement, an area law of $\langle\prod_{\ell\in C}\sigma^z_\ell\rangle$, is on the dual side ferromagnetic order of visons, and deconfinement is their disorder; this correspondence is exact (§7.3). The mechanism is the one Week 4 met for Kramers–Wannier: a disorder operator, here $\mu^z$, condenses where the order variable cannot. For the research line of the course this is the simplest instance of confinement as the condensation of magnetic defects, the $\mathbb{Z}_2$ version of the dual superconductor of [[week-11-monopole-condensation-4d|Week 11]] and of the defect condensation of the [[julia-toulouse-mechanism]], which returns in modern dress in Semester II Week 14 (forward reference, heuristic at this stage).

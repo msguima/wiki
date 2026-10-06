@@ -132,18 +132,9 @@ The longitudinal part is fixed by the charge alone and has a pole at $\vec k=0$.
 
 In the unbroken phase (3.1) still holds, and Figure 1 shows how it is satisfied without a gapless mode. The line bounds a physical sheet, the worldsheet of the confining string, and the flux crosses every linking sphere where the sphere cuts the sheet: the field is localized and (3.2) has no rotation-invariant limit [Heuristic; the sine-Gordon wall of Week 10 §5 and the confining string of Week 11 §6.3 are the computed instances].
 
-```
-   (a) broken: perimeter law                 (b) unbroken: area law
+![[gs-s2w03-flux-slice.svg|Two transverse slices through a static charged line, with the flux spreading radially through every sphere around it in the broken phase and running along a single sheet in the unbroken phase]]
 
-          \     |     /
-           \    |    /                          sheet bounded by C
-      ------    ×    ------                ×====================> (the confining
-           /    |    \                                              string)
-          /     |     \
-   flux cQ through every sphere,         flux cQ through every sphere,
-   spread as 1/r²: massless pole         carried by the sheet: gapped
-```
-**Figure 1. A transverse slice through a static charged line (×). The Ward identity (3.1) forces the same flux through every sphere around it. In the broken phase the line bounds no physical surface and the flux spreads isotropically, as $1/r^2$, which is the pole (3.3); in the unbroken phase it runs along the sheet that the area law describes.**
+**Figure 1. A transverse slice through a static charged line (×). The Ward identity (3.1) forces the same flux through every sphere around it. In the broken phase the line bounds no physical surface and the flux spreads isotropically, as $1/r^2$, which is the pole (3.3); in the unbroken phase it runs along the sheet that the area law describes. Schematic.**
 
 > **Physical picture.** In a Monte Carlo simulation of compact QED₄ with two static charges, measure the plaquette correlator with the Polyakov-loop pair normalized by the pair. In the Coulomb phase the flux spreads through all of space and falls off as $1/r^2$ away from the charges; in the confining phase it is squeezed into a tube between them. The exact content is the Ward identity, which holds in both phases (§3.3); the profiles are the long-distance statement of (3.3) and of Figure 1 [Heuristic for the tube]. Problem 8⋆⋆ makes this a project.
 
@@ -221,22 +212,9 @@ d=2:\ V(R)=\frac{q^2}{2\beta}\,R;\qquad d=3:\ V(R)=\frac{q^2}\beta\,a(R)=q^2e^2\
 $$
 In $d=2$, $G_1(0)-G_1(R)=|R|/2$ exactly, since $|x|/2$ has lattice Laplacian $-\delta_{x,0}$, and with $\beta=1/e^2a_{\rm lat}^2$ the potential is linear with string tension $q^2e^2/2$, the area law of two-dimensional Maxwell theory. In $d=3$, $a(R)=G_2(0)-G_2(R)$ is the subtracted function of [[courses/generalized-symmetries-course/conventions|conventions]] §2 (its constant $0.257343$ is the κ of Weeks 1–4, a letter that §5 below reserves for the hopping coupling), with $a(1)=\tfrac14$, $a(2)=0.3634$, $a(4)=0.4770$, $a(8)=0.5881$, $a(16)=0.6986$. Figure 2 sets the three side by side: linear (unbroken), logarithmic (unbroken, the marginal case, for which no local counterterm exists), bounded (broken). GKSW §5 records the same: Coulomb behavior means a broken symmetry in four dimensions and an unbroken one in two and three.
 
-```
-   βV(R)/q²
-      │      d = 2  ╱                             linear: area law, unbroken
-      │           ╱
-      │         ╱                      ___...--- d = 3: (ln R)/2π + 0.2573, unbroken
-      │       ╱             ___...---''          (the marginal case)
-      │     ╱    ___...---''
-      │   ╱  _.-'
-      │ -╱-.'- - - - - - - - - - - - - - - - - - G₃(0) = 0.2527
-      │ ╱.'  ______________...................   d = 4: bounded, broken
-      │╱/_.-'
-      │'
-      └──┬───────────────────────────────────── R
-         1
-```
-**Figure 2. The exact lattice static potentials (4.2) of the Gaussian theory, schematic. A line in $d$ dimensions sees the $(d-1)$-dimensional Green function, which is bounded only for $d-1\ge3$; the $d=4$ values are 1/6, 0.2098, 0.2324, 0.2427, 0.2478 at $R=1,2,4,8,16$.**
+![[gs-s2w03-static-potentials.svg|Computed lattice static potentials against the separation R, linear in two dimensions, logarithmic in three and bounded by G3(0) in four]]
+
+**Figure 2. The exact lattice static potentials (4.2) of the Gaussian theory at integer $R$, computed from the Bessel representation of the lattice Green functions. A line in $d$ dimensions sees the $(d-1)$-dimensional Green function, which is bounded only for $d-1\ge3$; the $d=4$ values are 1/6, 0.2098, 0.2324, 0.2427, 0.2478 at $R=1,2,4,8,16$.**
 
 ### 4.3 The heuristic and the infrared integral [Heuristic; the theorem Stated — refs: GKSW §5]
 
@@ -310,18 +288,8 @@ In the superconducting (Higgs) phase at large β and κ:
 
 The other phases depend on the model as well. The monopole-free model has no confined phase, since its gauge field is effectively non-compact. The compact model (5.1), like its cosine form, confines at small β, where $\mathbb{Z}_q^{(1)}$ is unbroken: the strong-coupling argument of Week 14 §3.5, with $U(1)$ plaquette charges reduced modulo $q$, gives $W_k$ with $k\notin q\mathbb{Z}$ an area law. In $d=4$ both models also have a Coulomb phase at large β and small κ, with the matter gapped: $\mathbb{Z}_q^{(1)}$ is broken there too, and the photon is massless because the long-distance Maxwell theory has an accidental electric $U(1)^{(1)}$, which is broken (GKSW §5.1). Figure 3 annotates the phase diagram of the compact model.
 
-```
-  κ ↑  κ = ∞: Wegner's ℤ₂ theory at the same β (cosine form), first order at β = 0.44069
-    │ ══════════════════╤═══════════════════════════════════════════════
-    │                    │  superconductor: ℤ₂^(1) broken (W₁ perimeter law),
-    │  confined:         │  photon massive, BF at level 2, GSD 8 on T³
-    │  ℤ₂^(1) unbroken,  │  at the soluble point
-    │  W₁ area law,      ├───────────────────────────────────────────────  Higgs line
-    │  photon massive    │  Coulomb: ℤ₂^(1) broken, accidental U(1)_e^(1)
-    │                    │  broken, photon massless (its Goldstone boson)
-    └────────────────────┴───────────────────────────────────────────────→ β
-    0        β_T = 1.0111331(21) at κ = 0 (Wilson action)                 ∞
-```
+![[gs-s2w03-phase-diagram.svg|Schematic phase diagram in the plane of beta and kappa, with the confined, superconducting and Coulomb regions, the confinement boundary from beta T at kappa equal to zero to 0.44069 at kappa equal to infinity, and the Higgs line]]
+
 **Figure 3. The (β, κ) plane of compact four-dimensional $U(1)$ gauge theory with charge-2 matter in the cosine form (Week 14 (8.1)), annotated by the realization of the exact $\mathbb{Z}_2^{(1)}$; schematic, with the edge values of Week 14 §8.2 and of Arnold–Bunk–Lippert–Schilling for the pure theory. Monopoles are dynamical, so the magnetic symmetry is explicitly broken throughout; the monopole-free model has no confined region. The confinement boundary separates phases that realize the exact symmetry differently, so it cannot be crossed analytically; the Coulomb–Higgs boundary is the loss of the massless photon.**
 
 > **Physical picture.** An experiment cannot place a superconductor on a torus with periodic electromagnetism, but it sees the ingredients of points 1–4: flux enters in quanta $h/2e$, a quasiparticle of odd charge acquires the phase $-1$ around each quantum, and a magnetic field is expelled over the London length. The exact content is the lattice chain §5.1(a) → (5.5) → the deconfined phase of Wegner's model; the physical conditions are the assumptions of Week 14 §8.4, of which the dimension of electromagnetism matters most, since a film coupled to the electromagnetic field of $3+1$ dimensions keeps a gapless in-plane mode. For the research line, a condensate of charge $k$ leaves ${\rm Ann}(\langle k\rangle)$ (Week 14 §3.3) and level-$k$ BF theory, and Semester II Week 14 relates this arithmetic to subgroup gauging on a hypersurface, the setting of the group's manuscript in preparation (forward reference).

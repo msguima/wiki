@@ -160,16 +160,8 @@ $$
 
 where $J>0$, Δ is the anisotropy (Δ = 1 for the Heisenberg chain), and a hop from $j$ to $j+1$ picks up $e^{i\varphi/L}$, so the holonomy is $e^{i\varphi}$: the link phases of [[week-07-kogut-susskind-hamiltonian|Sem I Week 7]] frozen into a flat background, and the flux of Laughlin's argument. Every link carries the same phase, so $TH(\varphi)T^{-1}=H(\varphi)$ for all φ, and $Q$ is conserved.
 
-```
-                 e^{i phi/L}
-          1 o --------------> o 2
-           ^                   \
-          /                     v
-       6 o     phi (flux)        o 3
-          ^                     /
-           \                   v
-          5 o <-------------- o 4
-```
+![[gs-s2w05-flux-ring.svg|A ring of six sites numbered clockwise around a flux phi, every link carrying the same phase and an arrow in the direction of hops from j to j+1]]
+
 **Figure 1. The six-site ring in a flux φ, uniform gauge (4.1): each hop $j\to j+1$ of an up spin carries $e^{i\varphi/L}$, the holonomy is $e^{i\varphi}$, $H(\varphi)$ is translation invariant, and the twist $U$ of (4.2) maps $H(\varphi)$ to $H(\varphi+2\pi)$.**
 
 The large gauge transformation is
@@ -206,22 +198,9 @@ For $\nu\notin\mathbb{Z}$, $|\psi'\rangle$ has a different momentum and is ortho
 
 For $L=6$, $J=\Delta=1$, $N=3$ (20 states with $S^z_{\rm tot}=0$) the ground state is unique, with $E_0=-\tfrac12(2+\sqrt{13})=-2.802776$ and $P_0=\pi$; the lowest $P=0$ level is $-\tfrac12(2+\sqrt5)=-2.118034$. As φ grows (Figure 2) the ground-state level rises to $-2.118034$ at $\varphi=2\pi$, the lowest $P=0$ level falls to $-2.802776$, and they cross at φ = π at $E=-2.56150$. Inside the $P=\pi$ sector the followed level stays at least $\tfrac12(\sqrt5-1)=0.618034$ below the next one, the minimum being reached at $2\pi$, so the evolution in the sector is adiabatic, and $U^{-1}|\psi_f\rangle$ has $P=0$ and energy $-2.118034$, the lowest $P=0$ eigenvalue of $H(0)$. We checked (4.3), (4.4) and $TH(\varphi)T^{-1}=H(\varphi)$ to machine precision for $L=4,6,8$, and the flow for the other sizes: for $L=4$ from $E_0=-2$ ($P_0=0$) to the $P=\pi$ level at $-1$, crossing at $-\tfrac12(1+\sqrt5)$; for $L=8$ from $-3.651093$ to $-3.128419$.
 
-```
-   phi/pi :     0        1/2        1        3/2        2
-   P = pi :  -2.80278  -2.74037  -2.56150  -2.30104  -2.11803
-   P = 0  :  -2.11803  -2.30104  -2.56150  -2.74037  -2.80278
+![[gs-s2w05-spectral-flow.svg|Computed energies of the lowest level with momentum pi and of the lowest level with momentum 0 as the flux runs from 0 to 2 pi, crossing at pi, with an arrow from the end of the first back to the start of the second]]
 
-     E
-   -2.12 | o                                       x
-   -2.30 |          o                     x
-   -2.56 |                    ox
-   -2.74 |          x                     o
-   -2.80 | x                                       o
-         +-------------------------------------------> phi
-           0                  pi                  2 pi
-     x : lowest P = pi level (the ground state at phi = 0)     o : lowest P = 0 level
-```
-**Figure 2. Spectral flow on the six-site Heisenberg ring at $S^z_{\rm tot}=0$: the flux $2\pi$ carries the ground state ($P=\pi$) to the lowest $P=\pi$ level of $H(2\pi)$, which $U^{-1}$ maps to the lowest $P=0$ level of $H(0)$; the crossing at φ = π is allowed because the momenta differ. Schematic plot; the numbers are exact to the digits shown.**
+**Figure 2. Spectral flow on the six-site Heisenberg ring at $S^z_{\rm tot}=0$: the flux $2\pi$ carries the ground state ($P=\pi$) to the lowest $P=\pi$ level of $H(2\pi)$, which $U^{-1}$ maps to the lowest $P=0$ level of $H(0)$; the crossing at φ = π is allowed because the momenta differ. Computed by exact diagonalization of (4.1) at $J=\Delta=1$ in the two momentum sectors; the marked points, at φ/π = 0, ½, 1, 3/2, 2, take the values on the energy axis.**
 
 ### 4.4 The anomaly as a phase of the partition function [Proved.]
 
@@ -293,16 +272,8 @@ $$
 U_a=(X_1Z_2)(Z_L)\prod_{j\ {\rm odd}\ \ge3}K_j,\qquad U_b=(Z_1)(Z_{L-1}X_L)\prod_{j\ {\rm even}\ \le L-2}K_j.\tag{5.6}
 $$
 
-```
-   j     :   1      2      3      4      5      6      7      8
-   U_a   :   X             X             X             X
-   X_3   =          Z     K_3     Z
-   X_5   =                        Z     K_5     Z
-   X_7   =                                      Z     K_7     Z
-   U_a   =  X_1 Z_2   x   K_3 K_5 K_7   x   Z_8         (Z_4^2 = Z_6^2 = 1)
-           Sigma^x_L     (= 1 on the        Sigma^z_R
-                          ground space)
-```
+![[gs-s2w05-telescoping.svg|Eight columns for the sites of the open chain: the first symmetry generator as X on the odd sites, each bulk X rewritten as Z K Z, the Z on sites 4 and 6 cancelling in pairs, and the result X1 Z2 times K3 K5 K7 times Z8 with one edge operator at each end]]
+
 **Figure 3. The telescoping (5.6) on eight sites: each bulk $X_j$ is traded for its stabilizer and two $Z$'s, which cancel in pairs, and one operator survives at each edge.**
 
 On the ground space all $K_j=1$, and the symmetry is a product of edge operators,
@@ -353,16 +324,8 @@ $$
 
 For $A\to A+d\alpha$ the same steps give $\sum_Pd\alpha\cup B=\sum_Pd(\alpha\cup B)$, with α at the tails of the boundary links. This is inflow in its simplest case: each edge is an anomalous $0+1$d theory, and its anomaly is the boundary variation of the $1+1$d SPT. We checked (5.9) and its $d\alpha$ partner for 200 random closed integer cochains on a $4\times5$ cylinder, and (5.11) for both edge orientations of (5.7) on about a hundred random backgrounds with trivial holonomies, since $Z_{\rm edge}$ vanishes otherwise (§3.3).
 
-```
-   x = 0                                              x = L_x
-  edge L  .-------.-------.-------.-------.-------.  edge R
-    ^     |       |       |       |       |       |    ^       time periodic
-    |     .-------.-------.-------.-------.-------.    |
-          |       |       |       |       |       |
-          .-------.-------.-------.-------.-------.
-           bulk weight (-1)^{sum_P A u B}; under B -> B + d beta it gains
-           (-1)^{sum_t A_t(0,t)beta(0,t+1)} at edge L and (-1)^{sum_t A_t(L_x,t)beta(L_x,t+1)} at edge R
-```
+![[gs-s2w05-inflow-cylinder.svg|A strip of plaquettes, periodic in time, whose two boundary circles are the left and right edges, with one boundary time link on each edge carrying A and the site at its head carrying beta]]
+
 **Figure 4. Inflow on the cylinder: under $B\to B+d\beta$ the bulk weight (5.8) changes by one phase on each boundary circle, (5.10), each edge produces the same phase, (5.11), and the product (5.12) is invariant.**
 
 For bosonic theories with finite $G$, the anomalies of $d$-dimensional theories and the SPT phases in $d+1$ dimensions are both described, in the group-cohomology construction, by $H^{d+1}(G,U(1))$ ((3.9) for $d=1$), and each SPT's boundary realizes the corresponding anomaly [Stated — refs: CGLW; Else–Nayak; Callan–Harvey for continuous symmetries and fermions]. Sem II Week 7 classifies the $1+1$d bulks by $H^2(G,U(1))$, with (5.6)–(5.7) as its explicit example.

@@ -100,27 +100,8 @@ where $H^1(T^2,\mathbb{Z}_2)=\mathbb{Z}_2^2$ is Week 2 §4.3; this is (7.1) of W
 
 If $\tilde\Sigma$ has a boundary, the reversal cannot be undone: at each cube dual to a cell of $\partial\tilde\Sigma$ the effective field strength violates the Bianchi identity (Week 5 §8.2). The open symmetry operator is invisible along its interior, by the substitution of §3.1, and physical at its boundary, which is the worldvolume of a $\mathbb{Z}_2$ magnetic source of dimension $d-3$. In $d=3$ the boundary is a pair of points and the operator is the vison pair, $\langle\mu(\tilde x)\mu(\tilde y)\rangle_\beta=\langle s_{\tilde x}s_{\tilde y}\rangle_{K^*}$ (Week 5 §7.3; Figure 1b): the dual Ising spin is the endpoint of an open symmetry operator, as the Kadanoff–Ceva μ is the endpoint of an open Ising seam (Week 4 §4.1). In $d=4$ the boundary is a dual loop and the operator is the 't Hooft loop, with a perimeter law in the confined phase and an area law in the deconfined one; the self-duality exchanges it with $W$ (Week 5 §§8.2–8.3). The vison is local only together with its invisible string, and on a torus only pairs are defined (Week 5 F7).
 
-```
- (a) closed sheet: U(γ̃) linking W(C)             (b) open sheet: a vison pair
+![[gs-w15-translation-exercise.svg|Three panels: a closed dual loop linked once with a Wilson loop, an open sheet of reversed plaquettes along a dual path whose two endpoints are visons, and the spatial torus on which each dual curve crosses its Wilson loop on a single link]]
 
-            ╭────────────╮
-    ┌───────┼──────┐     │ γ̃                      μ(x̃) ━━━━━━━━━━━━━━━━━━━━ μ(ỹ)
-    │  C    ╰──────┼─────╯
-    │              │                              ━━ : plaquettes with β → −β, invisible
-    └──────────────┘                                   except at the two endpoints
-    Link(C, γ̃) = 1:  ⟨U⟩ = 1,  ⟨W U⟩ = −⟨W⟩
-
- (c) the spatial torus, opposite edges identified
-          ┌────────────────────────────┐
-          │      ┆ γ̃₁            │ C₂  │       C₁, C₂ : Wilson loops W₁, W₂
-          │      ┆               │     │       γ̃₁, γ̃₂ : dual curves of U₁, U₂
-    C₁ ───┼──────╳───────────────┼─────┼──→    ╳ : the single crossing of Cᵢ and γ̃ᵢ,
-          │      ┆               │     │           which gives WᵢUᵢ = −UᵢWᵢ
-    γ̃₂ ┄┄┄┼┄┄┄┄┄┄┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄╳┄┄┄┄┄┼┄┄→
-          │      ┆               │     │
-          └──────┆───────────────┼─────┘
-                 ↓               ↑
-```
 **Figure 1. The translation exercise in pictures. (a) A closed dual loop γ̃ linking a Wilson loop (γ̃ passes under C at the upper crossing and over it at the right one): U(γ̃) generates the electric ℤ₂⁽¹⁾ and detects W(C) by linking, (3.1). (b) An open sheet: only its endpoints, the visons, are physical. (c) The spatial torus: γ̃ᵢ crosses Cᵢ once, which gives the algebra (3.2) and the four ground states (3.3).**
 
 ### 3.6 What is exact, what is emergent, and where Semester II attaches [Stated — forward references.]
@@ -212,19 +193,8 @@ Table 4 relists the extended operators of the semester by their role, which is t
 
 Figure 2 places the four recurring threads of the [[courses/generalized-symmetries-course/syllabus|syllabus]] (its §8) and the question of Semester I against the weeks. Read by rows, it shows that each thread was built before it was used: Poisson resummation is derived in Weeks 1–2 and fired in Weeks 3–8; the symmetry operators of Weeks 4–5 return in Weeks 9–11 and 14; and the condensation thread runs without interruption from Week 9 to Week 13. Read by columns, it tells a student where to look when a problem names a week; for the take-home final, the diagnostic map in its package (§14) does the same problem by problem.
 
-```
-                                               Block A      │ Block B      │ Block C      │ D
-                                    Week    1  2  3  4 │  5  6  7  8 │  9 10 11 12 │ 13 14
- 1  duality is Poisson resummation          ●  ●  ●  ● │  ●  ·  ○  ● │  ○  ○  ○  ○ │  ○  ·
- 2  symmetries live on topological ops      ○  ○  ○  ● │  ●  ○  ○  ○ │  ●  ●  ●  ○ │  ○  ●
- 3  condensation changes the theory         ○  ·  ○  ● │  ●  ·  ·  ○ │  ●  ●  ●  ● │  ●  ○
- 4  cohomology is the bookkeeping           ○  ●  ●  ○ │  ○  ·  ○  ● │  ·  ·  ○  ● │  ·  ●
- 5  phases with no local order parameter    ○  ·  ·  ● │  ●  ●  ○  · │  ○  ●  ●  ○ │  ●  ●
+![[gs-w15-course-map.svg|Grid of the four recurring threads and the question of Semester I against Weeks 1 to 14, grouped into Blocks A to D, with filled marks where a thread is the subject of the week, open marks where it is used and small dots where it is absent, and the Semester II blocks in which each continues]]
 
- ● the thread is the subject of the week      ○ the thread is used      · absent
- Semester II:  1 → Week 12 (modified Villain);   2 → Blocks 1 and 4;   3 → Blocks 3 and 5;
-               4 → Blocks 1, 2 and 5;   5 → answered by the SSB criterion, Block 1, Week 3
-```
 **Figure 2. The course map: the four threads of the syllabus and the question of Semester I (row 5) against the fourteen weeks, with the Semester II blocks in which each continues.**
 
 ## 8. Subtleties and fine print

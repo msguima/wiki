@@ -86,16 +86,8 @@ G_i=X_{i-\frac12}\,\sigma^x_i\,X_{i+\frac12},\qquad G_i=1\ \text{on physical sta
 $$
 $G_i$ flips the spin at $i$ together with its two links, the local transformation $\lambda=\delta_{\cdot,i}$ acting on matter and gauge field at once. It commutes with $H_G$ because each bond term that contains site $i$ contains exactly two factors that anticommute with $G_i$, namely $\sigma^z_i$ and $Z_{i\pm1/2}$; and $G_i^2=1$, $[G_i,G_j]=0$. There is no electric term $-h\sum_iX_{i+1/2}$: the gauge field has no dynamics of its own, which is the Hamiltonian counterpart of the flatness of $B$ (F1). Figure 1 shows the layout.
 
-```
-        X,Z         X,Z         X,Z         X,Z
-   ─────[½]────●────[3/2]────●────[5/2]────●────[7/2]──── ···      ring: L+½ ≡ ½
-               1             2             3
-              σ_1           σ_2           σ_3
+![[gs-s2w04-gauged-chain.svg|A stretch of the periodic chain with Ising spins on the sites and gauge qubits on the links, the Gauss operator of site 2 acting on that spin and on both of its links, the bond term between sites 1 and 2, and the dual chain, whose sites are the links]]
 
-   Gauss operator   G_2 = X_{3/2} σ^x_2 X_{5/2}        flips σ_2 and both links of site 2
-   bond term        σ^z_1 Z_{3/2} σ^z_2                 gauge-invariant hopping
-   dual chain       μ^z_{i+½} = X_{i+½},  μ^x_{i+½} = σ^z_i Z_{i+½} σ^z_{i+1}     lives on the links
-```
 **Figure 1. The gauged chain: Ising spins on the sites, gauge qubits on the links, the Gauss operator of site 2, and the variables of the dual chain, which live on the links.**
 
 ### 3.2 The partition function is the cocycle sum
@@ -160,17 +152,9 @@ $$
 $$
 a segment of the dual symmetry line (3.8): $\sigma^z_a$ is now the endpoint of a topological line of $T/\mathbb{Z}_2$, the mirror image of (3.10). We checked the gauge invariance of (3.11) and the anticommutation of $\sigma^z_i$ with $G_i$ on the chains with $L=3,\dots,6$. Figure 2 summarizes the exchange.
 
-```
-        theory T  (Ising chain)                         theory T/ℤ₂  (gauged chain)
+![[gs-s2w04-order-disorder.svg|The Ising chain and the gauged chain side by side: before gauging the spins at a and b are genuine and the disorder pair at a+1/2 and b+1/2 bounds a string of sigma-x on the sites between them; after gauging the spins bound a string of Z on the links and the disorder operators on the links stand alone]]
 
-    σ^z_a              σ^z_b                         σ^z_a ═══════════════ σ^z_b
-      ●                  ●       genuine local         ●   Z  Z  Z  ⋯  Z    ●    ends of an η̂ segment, (3.11)
-
-        ┆ η segment ┆                                    ○               ○
-      a+½ ─────────── b+½        endpoints tied        a+½             b+½      μ^z: genuine local,
-                                 to the line, (3.10)                            charged under η̂
-```
-**Figure 2. Gauging exchanges order and disorder operators. The endpoints of the η segment, the Kadanoff–Ceva disorder pair, become local operators charged under the dual symmetry η̂, while the order parameter σ^z becomes the endpoint of a segment of the η̂ line.**
+**Figure 2. Gauging exchanges order and disorder operators. The endpoints of the η segment, the Kadanoff–Ceva disorder pair, become local operators charged under the dual symmetry η̂, while the order parameter $\sigma^z$ becomes the endpoint of a segment of the η̂ line.**
 
 > **Physical picture.** What a numerical diagonalization of $T/\mathbb{Z}_2$ shows follows from (3.9); the identities are exact, and the large-$L$ statements are the standard behaviour of the two phases of the chain. In the paramagnet of $T$, $g>1$, the twist is invisible at long distances: $H_0$ and $H_1$ have even ground states whose splitting vanishes as $L\to\infty$ (for $L=3$ and $g=2$ they are $-3-2\sqrt3$ and $-1-2\sqrt7$, already within 3% of each other), and by (3.9) the gauged chain has two nearly degenerate ground states with $\hat\eta=\pm1$: the dual symmetry is spontaneously broken. In the ferromagnet of $T$, $g<1$, the twist costs a domain wall, only the η-even cat state survives the projection, and $T/\mathbb{Z}_2$ is a paramagnet. Gauging thus exchanges ordered and disordered phases while keeping every energy level, which is Kramers–Wannier duality read as a statement about phases.
 
@@ -372,15 +356,9 @@ the line content of $(SU(N)/\mathbb{Z}_k)_n$ (their (2.8); $L_n=L_{N,n}=\{(nm,m)
 
 The combinatorial part of this statement has a short proof [Proved.]. A mutually local set $L$ is a subgroup isotropic for the alternating pairing (6.4). If $x\in L^\perp\setminus L$, then $L+\langle x\rangle$ is again isotropic, so a maximal $L$ equals $L^\perp$ and has $N$ elements, since $|L|\,|L^\perp|=N^2$. Its electric part $L\cap(\mathbb{Z}_N\times0)$ is a subgroup $k\mathbb{Z}_N\times0$ for some divisor $k$, of order $k'$; the magnetic projection then has order $N/k'=k$, so it is $k'\mathbb{Z}_N$, and $L$ contains some $(n,k')$ with $n$ defined modulo $k$. The two generators span $N$ elements, so $L=L_{k,n}$. The number of maximal sets is $\sigma(N)=\sum_{k|N}k$, which is 7 for $N=4$, 12 for $N=6$ and 28 for $N=12$. We enumerated the isotropic subgroups of order $N$ of $\mathbb{Z}_N^2$ for $2\le N\le12$ and found exactly the sets (6.5), on which $(z_e,z_m)\to(z_e+z_m,z_m)$ acts as stated; the toy sets (6.3) coincide with $L_{k,0}$. Figure 3 shows four of the seven sets for $N=4$.
 
-```
-            SU(4) = L₁,₀        (SU(4)/ℤ₂)₀ = L₂,₀     (SU(4)/ℤ₂)₁ = L₂,₁     (SU(4)/ℤ₄)₁ = L₄,₁
-   z_m = 3    ·  ·  ·  ·           ·  ·  ·  ·             ·  ·  ·  ·             ·  ·  ·  ●
-         2    ·  ·  ·  ·           ●  ·  ●  ·             ·  ●  ·  ●             ·  ·  ●  ·
-         1    ·  ·  ·  ·           ·  ·  ·  ·             ·  ·  ·  ·             ·  ●  ·  ·
-         0    ●  ●  ●  ●           ●  ·  ●  ·             ●  ·  ●  ·             ●  ·  ·  ·
-      z_e:    0  1  2  3           0  1  2  3             0  1  2  3             0  1  2  3
-```
-**Figure 3. Four of the seven maximal sets of mutually local line classes for N = 4 (● = genuine). The ℤ_N toy of §6.1 without counterterm produces L₁,₀, L₂,₀ and L₄,₀; the shift θ → θ + 2π moves L₄,ₙ to L₄,ₙ₊₁ and fixes both L₂,₀ and L₂,₁, which therefore differ by a discrete θ-angle.**
+![[gs-s2w04-line-lattices.svg|Four grids of line classes labelled by electric and magnetic charge mod 4, with large dots marking the genuine lines of SU(4), of the two theories SU(4)/Z2 with n equal to 0 and 1, and of (SU(4)/Z4) with n equal to 1]]
+
+**Figure 3. Four of the seven maximal sets of mutually local line classes for N = 4 (large dots = genuine). The $\mathbb{Z}_N$ toy of §6.1 without counterterm produces L₁,₀, L₂,₀ and L₄,₀; the shift θ → θ + 2π moves L₄,ₙ to L₄,ₙ₊₁ and fixes both L₂,₀ and L₂,₁, which therefore differ by a discrete θ-angle.**
 
 ## 7. Mini-calculation 1 (hand-in)
 

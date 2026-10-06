@@ -121,19 +121,8 @@ S(A)=\big(|\partial A|-c(\Gamma_A)-c(\Gamma_B)+1\big)\ln2 .\tag{3.7}
 $$
 A disk has $c=1$ twice; an annulus has $c(\Gamma_B)=2$ and two disjoint disks $c(\Gamma_A)=2$, both giving $|\partial A|-2$. Checks: the spectrum of $\rho_A$ computed from the $2^{15}$ configurations of $|\Omega_{00}\rangle$ on the $4\times4$ torus for $a=b=2$ has 128 eigenvalues, all $\frac1{128}$; the $3\times3$ and $3\times4$ tori give 8 and 32 equal eigenvalues for $(a,b)=(1,1)$ and $(1,2)$; and (3.10) below reproduces (3.7) on 300 random bipartitions of the $5\times4$ torus.
 
-```
-                  │               │               │
-       ───────────◆═══════════════◆═══════════════◆───────────
-                  ║               ║               ║
-                  ║               ║               ║
-       ───────────◆═══════════════●═══════════════◆───────────
-                  ║               ║               ║
-                  ║               ║               ║
-       ───────────◆═══════════════◆═══════════════◆───────────
-                  │               │               │
-      ═ ║ : the 12 links of A     ─ │ : the 12 links of B touching R
-      ◆ : the 8 boundary stars    ● : the interior star, in 𝒢_A
-```
+![[gs-s2w09-disk-boundary-stars.svg|The three by three square of vertices R with the twelve links of A drawn thick, the twelve links of B that touch R drawn thin with an X on each, the eight boundary stars marked by diamonds and the interior star marked by a dot]]
+
 **Figure 1. The disk for $a=b=2$. The product of the nine stars of $R$ is $X$ on the twelve thin links, all in $B$, the single relation (3.5); $S(A)=(8-1)\ln2$.**
 
 ### 3.3 The Gauss-law reading [Proved.]
@@ -189,15 +178,9 @@ S_{\rm topo}=\sum_X\epsilon_X\big(|\partial X|-1\big)\ln2=-\ln2,\qquad\boxed{\ \
 $$
 All regions lie in one disk, so by §3.4 every ground state gives the same values. Check (Figure 2): on the $16\times16$ torus, with the disk of links with both ends in the vertex square $3\le x,y\le13$, $A$ its links with midpoint $x<8.25$, $B$ the remaining ones with midpoint $y>8.25$ and $C$ the rest, (3.10) gives $(S_A,S_B,S_C,S_{AB},S_{BC},S_{AC},S_{ABC})=(29,18,19,39,29,38,39)\ln2$, each $|\partial X|-1$, and $S_{\rm topo}=-\ln2$ in $|\Omega_{00}\rangle$, $|\Omega_{++}\rangle$ and $|1\rangle_x$. A star where four regions meet adds $\ln2$ (Problem 2).
 
-```
-                                  D
-          ┌──────────────────────○──────────────────────┐
-          │                      │           B          │
-          │           A          ●──────────────────────○
-          │                      │           C          │
-          └──────────────────────○──────────────────────┘
-```
-**Figure 2. The regions of the check: the disk $ABC$ cut by $x=8.25$ and, to its right, by $y=8.25$; ● joins $A$, $B$, $C$, and ○ are the junctions with $D$. No star touches four regions.**
+![[gs-s2w09-kitaev-preskill-regions.svg|Part of the 16 by 16 lattice in which the disk of links between the coordinates 3 and 13 is divided by the line x equal to 8.25 into the region A on the left and, to its right, by the line y equal to 8.25 into B above and C below, with a filled dot where the three regions meet and open dots where the cuts reach the outside region D]]
+
+**Figure 2. The regions of the check: the disk $ABC$ cut by $x=8.25$ and, to its right, by $y=8.25$. The cuts cross at ● inside the plaquette $p(8,8)$, whose corner stars each touch two of $A$, $B$, $C$; ○ mark where a cut meets $D$, at the stars $(8,13)$, $(8,3)$ and $(13,8)$. No star touches four regions, nor $A$, $B$ and $C$ together.**
 
 ### 4.3 Levin–Wen [Proved for the toric code.]
 
@@ -211,15 +194,9 @@ $$
 $$
 LW compute on the honeycomb lattice with each boundary link split in two and find $S_R=(n-j)\log2$ for $n$ split links and $j$ boundary curves; (3.7) is that formula with stars, since $c(\Gamma_A)+c(\Gamma_B)-1$ counts the boundary curves of a planar region. Check: on the $16\times16$ torus, with $A_1$ the links whose midpoint $m$ has $2.2<\|m-(8,8)\|_\infty<5.8$ and the cuts its links with $|m_x-8|<1.2$ above and below the center, $(S_1,S_2,S_3,S_4)=(58,59,59,58)\ln2$, with 60 boundary stars each.
 
-```
-        A₁               A₂               A₃               A₄
-   ┌─────────┐      ┌───┐ ┌───┐      ┌─────────┐      ┌───┐ ┌───┐
-   │ ┌─────┐ │      │ ┌─┘ └─┐ │      │ ┌─────┐ │      │ ┌─┘ └─┐ │
-   │ │     │ │      │ │     │ │      │ │     │ │      │ │     │ │
-   │ └─────┘ │      │ └─────┘ │      │ └─┐ ┌─┘ │      │ └─┐ ┌─┘ │
-   └─────────┘      └─────────┘      └───┘ └───┘      └───┘ └───┘
-```
-**Figure 3. The Levin–Wen regions: the annulus, cut at the top, at the bottom, and at both.**
+![[gs-s2w09-levin-wen-regions.svg|Four copies of a square annulus of lattice links: the whole annulus, the annulus cut at the top, cut at the bottom, and cut at both, each labelled with its entropy]]
+
+**Figure 3. The Levin–Wen regions of the check: $A_1$, the links with $2.2<\|m-(8,8)\|_\infty<5.8$ on the $16\times16$ torus, cut at the top, at the bottom, and at both, with the entropies of the check.**
 
 > **Physical picture.** A Wilson loop inside the annulus equals the product of the plaquettes it encloses, 1 on every ground state: no $m$ in the hole (Week 8 (4.3)). It lies in $A_1$ and is cut in $A_2$; its definite value is a second Gauss constraint, the flux through the inner boundary even separately from the outer one, which is the extra $-\ln2$ of $S_1$. Away from the solvable point LW use a fattened string operator [Heuristic beyond the toric code].
 
@@ -280,16 +257,9 @@ $$
 $$
 as DKLP state (check: ranks and enumeration for $L=2,3,4$). A $Z$-string ends on a rough edge without creating an $e$, the missing endpoint having no star, and an $X$-string ends on a smooth edge without creating an $m$, as DKLP describe for defects: the edges are condensates in the sense of Week 8 §7.5, and $\bar Z$, $\bar X$ carry $e$ and $m$ between them (Problem 3).
 
-```
-               x=0           x=1           x=2
-    y=2   ╌╌╌─────────+──────X──────+─────────╌╌╌     smooth edge
-                      │             │
-    y=1   ╌╌╌─────────+──────X──────+─────────╌╌╌
-                      │             │
-    y=0   ╌╌╌────Z────+──────✱──────+────Z────╌╌╌     smooth edge
-        rough edge                       rough edge
-```
-**Figure 4. The planar code for $L=3$: nine horizontal links, three dangling (╌) at each rough edge, and four vertical links. $\bar Z$ is $Z$ on the row $y=0$; $\bar X$ is $X$ on the links $h(1,y)$, crossed by the dual line $x=\tfrac32$; ✱ marks $h(1,0)$, which carries both.**
+![[gs-s2w09-planar-code.svg|The planar code for L equal to 3: three rows of horizontal links with dangling ends at the rough left and right edges, four vertical links, Z on the bottom row, X on the middle column of horizontal links crossed by a vertical dual line, and the shared link marked ZX]]
+
+**Figure 4. The planar code for $L=3$: nine horizontal links, three dangling (dashed ends) at each rough edge, and four vertical links. $\bar Z$ is $Z$ on the row $y=0$; $\bar X$ is $X$ on the links $h(1,y)$, crossed by the dual line $x=\tfrac32$; $h(1,0)$, marked $ZX$, carries both.**
 
 ## 6. Decoding as statistical mechanics
 
@@ -301,16 +271,8 @@ $$
 $$
 its syndrome $S$ is the set of plaquettes with an odd number of links in $E$, the $m$'s at the ends of $E$ read as a dual chain. A decoder chooses $E'$ with the same syndrome; recovery succeeds when $E\oplus E'$ is a product of stars δα and fails when it is homologous to $\bar X_1$, $\bar X_2$ or $\bar X_1\bar X_2$ (Figure 5). The optimal decoder picks the most probable class given $S$.
 
-```
-            v(0)    v(1)    v(2)    v(3)    v(4)    v(5)
-         +───────+───────+───────+───────+───────+───────+
-         │       │   ■   X       X   ■   │       │       │
-         +───────+───────+───────+───────+───────+───────+
-           p(0)    p(1)    p(2)    p(3)    p(4)    p(5)
-   E = X on v(2), v(3); m's in p(1), p(3)
-   E′ = E:                       E ⊕ E′ = ∅               success
-   E′ = X on v(4), v(5), v(0), v(1):  E ⊕ E′ ~ X̄₂         failure
-```
+![[gs-s2w09-decoding-row.svg|Three copies of one row of six plaquettes of a torus: the error with X on two vertical links and an m in each end plaquette, a correction with X on the other four vertical links and the same syndrome, and their sum, X on the whole row of vertical links]]
+
 **Figure 5. One row of plaquettes of the $6\times6$ torus. Both corrections have the syndrome of $E$; the second closes the pair around the torus, and $E\oplus E'$ is the row of vertical links, a representative of $\bar X_2$.**
 
 ### 6.2 The random-bond Ising model [the identity Proved; Stated — refs: DKLP §IV.]

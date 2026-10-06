@@ -7,7 +7,7 @@ week: 8
 block: 3
 duration: 4 hours (3 hr lectures + 1 hr seminar, the first seminar of Block 3, presented by the instructor)
 prerequisites: Sem II Weeks 2, 3 and 7; Semester I Weeks 2, 7 and 13–15
-modified: 2026-10-03
+modified: 2026-10-04
 ---
 
 # Sem II Week 8 — The Toric Code, Solved to the Bone
@@ -81,22 +81,8 @@ d_n=4\sum_{\substack{n_e+n_m=n\\ n_e,\,n_m\ {\rm even}}}\binom N{n_e}\binom N{n_
 $$
 times degenerate, with $\sum_nd_n=2^{2N}$. On the $2\times3$ torus, $d_n=4,120,1020,1808,1020,120,4$ at $E=-12,\dots,12$, as brute-force diagonalization of the $4096\times4096$ matrix confirms. A pair of anyons costs 4 at every separation: no string tension.
 
-```
-          star A_v                         plaquette B_p
-             │
-             X                           +─────Z─────+
-             │                           │           │
-     ───X────v────X───                   Z     p     Z
-             │                           │           │
-             X                           +─────Z─────+
-             │
+![[gs-s2w08-stabilizers-strings.svg|The star operator at a vertex v with X on its four links, the plaquette operator at p with Z on its four links, a string of Z on a direct path with an e at each end, and a string of X on the links crossed by a dual path with an m in each end plaquette]]
 
-   e-string W(γ):    v ━━Z━━━+━━━Z━━━+━━━Z━━ w        A_v = A_w = −1 : an e at each end
-
-                     +───────────+───────────+───────────+
-   m-string U(γ̃):   │     p ╌╌╌╌X╌╌╌╌╌╌╌╌╌╌╌X╌╌╌╌ q     │   B_p = B_q = −1 : an m in each end plaquette
-                     +───────────+───────────+───────────+
-```
 **Figure 1. The star and plaquette of (3.1) and the open strings of (4.1): $Z$ on a direct path puts an $e$ at each end; $X$ on the links crossed by a dual path puts an $m$ in each end plaquette.**
 
 ### 3.2 The two global relations [Proved.]
@@ -139,21 +125,9 @@ $$
 $$
 of weights $L_1,L_2,L_2,L_1$. The pairs $(\bar Z_1,\bar X_1)$ and $(\bar Z_2,\bar X_2)$ share the single links $h(0,0)$ and $v(0,0)$ and anticommute, every other pair shares no link, and all four commute with every stabilizer (checked on the $3\times3$ torus): Kitaev's loops $c_{z1},c_{z2}$ and cuts $c_{x1},c_{x2}$.
 
-```
-             x=0           x=1           x=2
-    y=2      +─────────────+─────────────+──────
-             │      ┊      │             │
-             Z      ┊      │             │
-             │      ┊      │             │
-    y=1      +──────X──────+─────────────+──────
-             │      ┊      │             │
-   ╌╌╌╌╌╌╌╌╌╌✱╌╌╌╌╌╌┊╌╌╌╌╌╌X╌╌╌╌╌╌╌╌╌╌╌╌╌X╌╌╌╌╌╌    C̃_x (y = ½):  X̄₂ = X on the vertical links it crosses
-             │      ┊      │             │
-    y=0      +══════✱══════+══════Z══════+══════    C_x (y = 0):  Z̄₁ = Z on the links of the row
-                    ┊                               C̃_y (x = ½):  X̄₁ = X on the horizontal links it crosses
-                    ┊                               C_y (x = 0):  Z̄₂ = Z on the links of the column
-```
-**Figure 2. The logical operators (3.10), three columns of the periodic lattice. ✱ marks the two links that carry two of them: $h(0,0)$ carries $\bar Z_1$ and $\bar X_1$, $v(0,0)$ carries $\bar Z_2$ and $\bar X_2$.**
+![[gs-s2w08-logical-operators.svg|Three columns of the periodic lattice with Z on the row y=0 and on the column x=0, X on the links crossed by the dual lines y=1/2 and x=1/2, and the links h(0,0) and v(0,0) carrying both]]
+
+**Figure 2. The logical operators (3.10), three columns of the periodic lattice. The links marked $ZX$ carry two of them: $h(0,0)$ carries $\bar Z_1$ and $\bar X_1$, $v(0,0)$ carries $\bar Z_2$ and $\bar X_2$.**
 
 ### 3.5 The four ground states on the torus [Computed.]
 
@@ -225,18 +199,8 @@ $$
 $$
 The script finds the same for the four three-legged junctions at a vertex and for the other pairing ($m$ to the south-west). This is Levin and Wen's §V computation for Kitaev's model.
 
-```
-      (−1,1)                  (0,1)        h(0,1)          (1,1)
-         +──────────────────────+────────────X───────────────+
-         │                      │                            │
-         │       p(−1,0)        Z  v(0,0)     p(0,0)         X  v(1,0)
-         │          ●           X               ●            │
-         │                      │                            │
-         +───────────Z──────────+────────────Z───────────────+
-      (−1,0)       h(−1,0)    (0,0) = o      h(0,0)          (1,0)
+![[gs-s2w08-t-junction.svg|Two plaquettes around the origin with the Z and X operators of the three hops of the epsilon particle, and the link v(0,0) carrying a Z from one hop and an X from another]]
 
-      t₁₂ = Z_h(0,0) X_v(1,0)      t₃₁ = Z_v(0,0) X_h(0,1)      t₁₄ = Z_h(−1,0) X_v(0,0)
-```
 **Figure 3. The T-junction for ε at $o$: the hops (4.10) toward sites 2 (east), 3 (north) and 4 (west). Only $v(0,0)$ carries a $Z$ from one hop and an $X$ from another, so one pair anticommutes and $\theta_\varepsilon=-1$.**
 
 ### 4.5 Spins, monodromies and the Dijkgraaf–Witten labels [Computed.]
@@ -381,22 +345,8 @@ With both fields no string operator is conserved, and the diagram at $h=K=1$ (Fi
 
 This week adds the reading. The confinement line closes the $m$ gap with $e$ gapped, the Higgs line the $e$ gap with $m$ gapped, and both condensates end in the trivial theory of §7.5: complementarity in anyon language, since past either line no superselection sector survives to tell the regimes apart [exact on the edges Γ = 0 and $J=0$; Heuristic inside]. What distinguishes them is the transition that leads to each and the interface each forms with the toric code, which absorbs $e$'s in one case and $m$'s in the other: two boundaries of the toric code, met again in the planar code of Week 9 [Heuristic]. At M the two bosons becoming gapless are mutual semions, (4.7), so no description by two commuting local order parameters applies, the difficulty Tupitsyn et al. single out; the transition at M appears continuous [Stated — refs: Somoza, Serna, Nahum 2021; Sem I Week 13 §7.1].
 
-```
-     J  (moves e)
-     │
-     │   e condensed: Higgs regime                    ╱
-     │                                              E          · · : self-dual line Γ = J
-     │            trivial phase                   ╱            ╱   : first-order segment M–E
-     │      (Higgs = confinement, one phase)    ╱              ━   : e condensation (Higgs line)
- J_c ┼━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━M                 ┃   : m condensation (confinement line)
-     │                                   ·  ┃
-     │       toric code              ·      ┃
-     │     (Z₂ topological       ·          ┃     m condensed: confined regime
-     │         order)        ·              ┃
-     │                   ·                  ┃
-     └──────────────────────────────────────┸─────────────────────── Γ  (moves m)
-     0                                     Γ_c
-```
+![[gs-s2w08-phase-diagram.svg|Schematic phase diagram in the plane of the two fields: the toric-code region bounded by the e- and m-condensation lines, which meet at M on the self-dual line, and a first-order segment from M to E]]
+
 **Figure 4. The toric code in two fields at $h=K=1$: the toric-code phase is bounded by the $m$- and $e$-condensation lines from $\Gamma_c=J_c\approx0.3285$, mirror images under the duality, which meet at M on the self-dual line; the first-order segment M–E follows it. Shapes and the positions of M and E are schematic.**
 
 > **Physical picture.** A simulation that measures the two open strings sees the regimes of Figure 4: in the toric-code phase both $\langle W(\gamma_{vw})\rangle$ and $\langle U(\tilde\gamma_{PP'})\rangle$ decay exponentially, past the Higgs line the first saturates, past the confinement line the second, whose saturated value Problem 6⋆ computes. This is exact at the edges, where the Ising maps of §§7.3–7.4 hold; electric loops that proliferate at small tension and shrink at large tension are the heuristic loop-gas reading. For the research line, the confinement line is the simplest confinement by condensation of a magnetic defect, the $\mathbb{Z}_2$ form of the [[julia-toulouse-mechanism]], to which Sem II Weeks 14–15 return (forward reference).
@@ -501,4 +451,4 @@ because the rotation, whose matrix is $S$, conjugates the twist along $x$ into t
 
 ---
 
-*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester II Block 3. Written to the note-quality-template standard on 2026-10-02. Last revised 2026-10-03.*
+*Notes prepared for the [[courses/generalized-symmetries-course/syllabus|generalized-symmetries course]], Semester II Block 3. Written to the note-quality-template standard on 2026-10-02. Last revised 2026-10-04.*

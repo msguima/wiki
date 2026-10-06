@@ -108,16 +108,8 @@ E(X)=\sum_sA^sXA^{s\dagger},\qquad E^*(Y)=\sum_sA^{s\dagger}YA^s,\qquad E_O(X)=\
 $$
 where $O_{ss'}=\langle s|O|s'\rangle$. As a $D^2\times D^2$ matrix, $\mathbb{E}=\sum_sA^s\otimes\bar A^s$ acts on the vectorized $X$, $\langle\psi_N|\psi_N\rangle={\rm Tr}\,\mathbb{E}^N$, and in a product of insertions the maps compose with the leftmost site outermost.
 
-```
-           s_1       s_2               s_N
-            |         |                 |
-   alpha --[A]-------[A]---- . . . ----[A]-- beta        <alpha| A^{s_1} ... A^{s_N} |beta>
+![[gs-s2w07-mps-transfer-map.svg|A matrix product state drawn as a chain of tensors A contracted along the horizontal virtual index, with vertical physical legs and open virtual ends alpha and beta, and the transfer map in which a ket tensor and a bra tensor share their physical leg while a matrix X joins their right virtual legs]]
 
-                 |                        +--[A]--+
-   E(X) =     --[A]--                     |   |   |      E = sum_s A^s (x) conj(A^s)
-             X   |   (sum over s)         +--[A*]-+
-              --[A*]--
-```
 **Figure 1.** An MPS contracts tensors along the virtual (horizontal) index; the transfer map contracts one site of the ket with the same site of the bra, and every overlap or correlator is a composition of such maps.
 
 The MPS is injective if for some $L$ the products $A^{s_1}\cdots A^{s_L}$ span $M_D$; it is normalized if, in addition,
@@ -157,14 +149,9 @@ H_{\rm AKLT}=\sum_j\Big[\mathbf S_j\cdot\mathbf S_{j+1}+\tfrac13(\mathbf S_j\cdo
 $$
 where $P^{(2)}$ projects two spins 1 on total spin 2 (the identity follows from $\mathbf S_j\cdot\mathbf S_{j+1}=-2,-1,1$ at total spin $0,1,2$). Every state (3.2) is annihilated by every $P^{(2)}_{j,j+1}$: at fixed outer virtual indices, sites $j,j+1$ are in the state $\sum_{st}(A^sA^t)_{\alpha\beta}|st\rangle$, on which rotations act through the virtual indices as $\bar V\otimes V$ by (4.7)–(4.8), two spins $\tfrac12$, so the total spin is at most 1. The four states (3.2) are therefore ground states of energy $-\tfrac23(N-1)$. Exact diagonalization on six open sites gives four degenerate levels at $-10/3$, spanned by the states (3.2), and a gap to $-2.536$; (3.7)–(3.9) and the string order of Problem 1 were checked numerically from the tensors.
 
-```
-   site:      1             2             3                    N
-          ( o   o )     ( o   o )     ( o   o )     ...    ( o   o )
-            ^     \_____/     \_____/     \___  ...   ___/      ^
-          free     singlet      singlet                      free
-          spin 1/2                                         spin 1/2
-```
-**Figure 2.** The AKLT state: each spin 1 is the symmetric product of two virtual spins $\tfrac12$ (o), and neighbouring virtual spins form singlets; on an open chain the unpaired virtual spin at each end is the index α or β of (3.2).
+![[gs-s2w07-aklt-valence-bonds.svg|The AKLT chain drawn as ellipses that each hold two virtual spins one half, with singlet bonds between neighbouring sites and one free virtual spin at each end of the chain]]
+
+**Figure 2.** The AKLT state: each spin 1 is the symmetric product of two virtual spins $\tfrac12$ (small circles), and neighbouring virtual spins form singlets; on an open chain the unpaired virtual spin at each end is the index α or β of (3.2).
 
 ### 3.3 The edge doublet from the transfer matrix [Computed.]
 
@@ -320,16 +307,9 @@ $$
 $$
 On the $3^3$ torus we checked associativity, (5.6) on a random cochain, and (5.8) for random λ on all eight holonomy classes. On the harmonic representatives of [[week-02-lattice-cell-complex-cochains|Sem I Week 2]], $\sum a^{\cup3}$ is even for every class, as DW (6.35) requires for $\mathbb{Z}_2$: on $T^3$ the response is trivial.
 
-```
-   x+y ------------- x+x+y        2d: (a u b)(P_xy(x)) = a_x(x) b_y(x+x) - a_y(x) b_x(x+y)
-    |            /  |                 lower triangle: path x -> x+x -> x+x+y    sign +
-    |   (-)    /    |                 upper triangle: path x -> x+y -> x+x+y    sign -
-    |        /      |
-    |      /   (+)  |             3d: paths x -> x+e(p1) -> x+e(p1)+e(p2) -> x+e1+e2+e3,
-    |    /          |                 one per permutation p of (1,2,3), sign sgn(p):
-    x ------------- x+x               123 +   231 +   312 +   132 -   213 -   321 -
-```
-**Figure 3.** The cubical cup product triangulates (the labels write $\hat x,\hat y$ as x, y). In two dimensions its two terms are the two triangles of the plaquette; in three, the six terms of (5.6) are the six tetrahedra sharing the main diagonal.
+![[gs-s2w07-cubical-cup.svg|A square plaquette split by its diagonal into two triangles that carry the two terms of the cup product with signs plus and minus, and six cubes that each show one monotone path from the base corner to the opposite corner with its sign]]
+
+**Figure 3.** The cubical cup product triangulates. In two dimensions its two terms are the two triangles of the plaquette; in three, the six terms of (5.6) are the six tetrahedra sharing the main diagonal.
 
 ### 5.4 The classification statement [Stated — refs: CGLW §§VI, X.]
 
@@ -357,14 +337,8 @@ F(x,y,z)=\omega(x,y,z)=(-1)^{kxyz}.\tag{6.3}
 $$
 We omit the triangulation of this cobordism; DW carry out the analogous construction for $Y\times S^1$, with three simplices, in their §6.6, and §6.3 checks the outcome against their (6.32). What we use is structural: the flux sector is $\mathbb{Z}_2$ with associator ω, and the 2–3 move of §5.2 is its pentagon equation.
 
-```
-     x     y     z                      x     y     z
-      \   /     /                        \     \   /
-      (x+y)    /         =  F(x,y,z)      \    (y+z)
-         \    /                            \    /
-           |                                 |
-         x+y+z                             x+y+z
-```
+![[gs-s2w07-f-move.svg|Two fusion trees of three fluxes x, y and z, one fusing x with y first and the other fusing y with z first, related by the phase F(x,y,z)]]
+
 **Figure 4.** The F-move for three fluxes: for abelian fluxes the two fusion trees differ by the phase $F(x,y,z)$, which in the gauged SPT is the cocycle ω.
 
 ### 6.3 Anyons as fluxes with half-braidings [Proved, given (6.3) and the ansatz $R(X,Y)=\chi_X(y)$.]

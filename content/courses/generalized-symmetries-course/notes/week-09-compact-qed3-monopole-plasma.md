@@ -85,27 +85,8 @@ $$
 $$
 so it jumps by $2\pi q$ as the slice crosses the event (Figure 1). Near the monopole the lattice field is fixed by symmetry: the six faces of the cube are equivalent, so each carries $2\pi q/6$, and this is the lattice Coulomb field $2\pi q\,[G_3(0)-G_3(\hat1)]$ on the dual link from the monopole to its neighbour, since $\Delta G_3=\delta$ gives $6G_3(0)-6G_3(\hat1)=1$.
 
-```
-                                  2πq/6
-                                    ↑
-                    +---------------+---------------+
-                    |                               |
-                    |                               |
-        2πq/6  ←──  +               ⊕               +  ──→  2πq/6
-                    |         dual site c*          |
-                    |                               |
-                    +---------------+---------------+
-                                    ↓
-                                  2πq/6
-            (and 2πq/6 through each of the two faces parallel to the page)
+![[gs-w09-monopole-instanton.svg|A cube with flux arrows leaving its six faces from the monopole at its center, and beside it the monopole as an event in Euclidean time, with radial field lines crossing a time slice above it and a time slice below it]]
 
-    cube c of Λ in cross-section;  ⊕ : v = m_c = −q ;  Σ_{P∈∂c} F_P = −2π m_c = 2πq
-
-    x₃ (Euclidean time)
-     ↑   ─────────  slice above the event:  ∫ B₃ = +πq  ─────────
-     |                       ⊕   the monopole at x₃ = 0
-     |   ─────────  slice below the event:  ∫ B₃ = −πq  ─────────     jump: 2πq
-```
 **Figure 1. A monopole of charge $q$ is a flux-emitting dual site. The Villain field strength leaves the cube $c$ through its six faces, $2\pi q/6$ through each; far away the field is $B=q\,x/2|x|^3$, and the flux through a time slice jumps by $2\pi q$ as the slice crosses the event, which makes the monopole an instanton.**
 
 In the Hamiltonian language of [[week-07-kogut-susskind-hamiltonian|Week 7]], with $x_3$ as time, the monopole is a tunnelling event. The flux through space is an integer multiple of $2\pi$ at each time, and a compact plaquette angle can change it by $2\pi$ only by passing through $\pm\pi$, over the maximum of its cosine potential; the one-plaquette tunnelling of Week 7 (§6.3 and its Problem 8⋆⋆) is the simplest instance. The Villain configurations with $dn\ne0$ are therefore the instanton sector of the theory, and the sum over $v$ is a gas of instantons.
@@ -177,15 +158,8 @@ Each follows from the definitions in one line; for instance $(\bar r/\lambda_D)^
 
 The table makes three points. The gas is dilute early, with $\bar r=22\,a$ already at $\beta=2$. The plasma is weakly coupled later, with $\Gamma<0.1$ from $\beta\approx3$. And screening by many monopoles, $\lambda_D\gg\bar r$, comes last, because $\lambda_D/\bar r=2^{1/3}(8\pi^2\beta)^{-1/2}e^{S_{\rm mono}/6}$ grows only like $e^{0.83\beta}$: at $\beta=3$ the Debye length equals the mean separation, and at $\beta=2$ it is shorter, so there the linearized theory of §4 does not apply. The weak-coupling treatment of Weeks 9–10 is controlled as $\beta\to\infty$, with every correction suppressed by a positive power of $\zeta/e^6$ (F1). Figure 2 draws the hierarchy.
 
-```
-   a_lat              ℓ_B = π/e²               r̄ = (2ζ)^(−1/3)             λ_D = 1/m_D
-     |--------------------|--------------------------|----------------------------|------>  length
-   core               pair energy π/e²r          mean monopole               Debye screening
-  (one cube)          equals one                 separation                  length
+![[gs-w09-plasma-scales.svg|A schematic logarithmic length axis with the core size, the Bjerrum length, the mean monopole separation and the Debye length in increasing order, and arcs marking the ratio between neighbours]]
 
-   r̄/a_lat = (2e^(−S_mono))^(−1/3)          ℓ_B/r̄ = Γ = 2^(1/3) π (ζ/e⁶)^(1/3)
-   λ_D/r̄  = (4πΓ)^(−1/2) = 2^(5/6) e / (4π ζ^(1/6))          at β = 5:   1 : 16 : 3.2×10³ : 1.3×10⁴
-```
 **Figure 2. The three scales of the dilute monopole plasma, core size ≪ mean separation ≪ Debye length, with the Bjerrum length between the first two; every ratio among the plasma scales is a power of $\zeta/e^6$ (logarithmic axis, not to scale).**
 
 ## 3. The plasma as a field theory: sine-Gordon [Controlled to $O(\zeta^2)$ in the fugacity, both directions.]
@@ -320,24 +294,9 @@ U(r)=4\pi^2\beta\,\big[G_3(\hat1)-G_3(r)\big]\ \le\ 4\pi^2\beta\,G_3(\hat1)=3.40
 $$
 bounded at every separation, while the entropy of the separation grows up to $\ln(V/a_{\rm lat}^3)$. The total weight of the configurations in which the pair is separated by more than a fixed $R$, relative to those in which it is bound within $R$, is at least $\big(V-\frac{4\pi}{3}R^3\big)\big/\big(\frac{4\pi}{3}R^3\,e^{3.40\beta}\big)$ (volumes in units of $a_{\rm lat}^3$), which diverges as $V\to\infty$ at every β. A finite density of free monopoles is therefore present at every coupling, and a finite density of free magnetic charges screens (§4). The bound survives inside a medium of bound pairs, whose dielectric effect only rescales the Coulomb tail (§3.3). The argument is heuristic because it treats one pair in the background of the others.
 
-```
-  U(r) − U(a)
-      ↑                                                   ..··´´   2d vortex pair: 2πβ ln(r/a₀)
-      |                                           ..··´´           (logarithmic, like its entropy)
-      |                                   ..··´´
-      |                           ..··´´
-      |                   ..··´´
- 3.40β+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  bound 4π²β G₃(1̂) in d = 3
-      |           ..··´´    ____________------------------------
-      |       ..·´   ___--´´                                      3d monopole pair:
-      |    .·´  _--´´                                             4π²β [G₃(1̂) − G₃(r)]
-      |  .´ _-´
-      | .´_´
-      +-----------------------------------------------------------------→  ln r
-      a
-    entropy of the separation:  2 ln(r/a₀) in d = 2;  3 ln(r/a) in d = 3, up to ln(V/a³)
-```
-**Figure 3. Energy against entropy for one pair of opposite point defects. In two dimensions the pair energy grows logarithmically, as does the entropy of the separation, and at large β the pairs bind; in three dimensions it saturates at $3.40\,\beta$ while the entropy grows to $\ln V$, so the pairs unbind at every coupling.**
+![[gs-w09-energy-entropy.svg|Pair energy in units of beta against the separation on a logarithmic axis, a straight line for the two-dimensional vortex pair and a curve for the three-dimensional monopole pair that saturates at 3.40 beta]]
+
+**Figure 3. Energy against entropy for one pair of opposite point defects, with the energies computed from $2\pi\beta\ln(r/a_0)$ and from $U(r)$ of §6.1 with the lattice $G_3$ along an axis. In two dimensions the pair energy grows logarithmically, as does the entropy of the separation, and at large β the pairs bind; in three dimensions it saturates at $3.40\,\beta$ while the entropy grows to $\ln V$, so the pairs unbind at every coupling.**
 
 ### 6.2 What is proved [Stated — refs.]
 

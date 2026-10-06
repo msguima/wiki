@@ -80,18 +80,9 @@ $$
 $$
 or symmetrically $(2\pi\beta)^{N_1/4}Z_{\rm MV}[\Lambda;\beta]=(2\pi\tilde\beta)^{N_1/4}Z_{\rm MV}[\Lambda^*;\tilde\beta]$. Every term is accounted for: $(2\pi\beta)^{-1/2}$ per link, the cross term that vanishes on the closed torus, the zero modes of both compact fields, and the winding sectors, which sit inside the unconstrained sums over $n$ and $\tilde n$. The map is an involution with fixed point $\beta=1/2\pi$, and Figure 1 collects the moves. GLSS derive it (App. B.1.3) "ignoring the overall factor"; the factor is local (F1), and §4.3 and Week 13 need it.
 
-```
-  Λ :  θ (sites, compact)     n (links, ℤ gauge field)     θ̃ (dual sites, multiplier)
-       weight  exp( −β/2 ‖dθ − 2πn‖²  +  i⟨θ̃, ⋆dn⟩ )
-          │  (2.3)  i⟨θ̃, ⋆dn⟩ = i⟨n, v⟩ ,   v = ⋆⁻¹dθ̃
-          │  (2.4)  Poisson on every n_ℓ :  (2πβ)^(−1/2) per link
-          │         cross term (i/2π)⟨dθ, v⟩ = 0 on the closed torus
-          │         ñ = ⋆m ;  −i⟨dθ, m⟩ = i⟨θ, ⋆dñ⟩
-          ▼
-  Λ*:  θ̃ (dual sites, compact)  ñ (dual links, ℤ gauge field)  θ (sites, multiplier)
-       weight  exp( −β̃/2 ‖dθ̃ − 2πñ‖²  +  i⟨θ, ⋆dñ⟩ ),     β̃ = 1/4π²β
-```
-**Figure 1. The exact self-duality (2.7): the dynamical field and the multiplier exchange roles, and the $\mathbb{Z}$ gauge field moves from the links of Λ to the links of Λ*.**
+![[gs-s2w12-self-duality.svg|The modified Villain XY model on the lattice, with the compact field on the sites, the integer gauge field on the links and the multiplier on the dual sites, carried by the summation by parts, the Poisson resummation, the vanishing cross term and the transport of the integer to the same model on the dual lattice, with field and multiplier exchanged]]
+
+**Figure 1. The exact self-duality (2.7): the dynamical field and the multiplier exchange roles, and the $\mathbb{Z}$ gauge field moves from the links of $\Lambda$ to the links of $\Lambda^*$.**
 
 ### 2.3 The sectors, checked [Computed.]
 
@@ -125,21 +116,9 @@ $$
 $$
 Both are 0-form symmetries with local charged operators, as the form-degree table requires in $d=2$ (winding degree $d-2=0$). In the plain Villain model a vortex is a fluctuation that the sum creates by itself; in (2.1) it exists only where an operator puts it (Figure 2). The two symmetries carry an exact mixed anomaly (F4, Problem 5⋆).
 
-```
-      +-------+-------+-------+
-      |       |       |       |          +    sites: θ_x (dynamical, compact)
-      |   ·   |   ·   |   ·   |          ─ │  links: n_ℓ ∈ ℤ (gauge field, dn = 0)
-      |       |       |       |          ·    dual sites: θ̃ (multiplier, compact)
-      +-------+=======+-------+
-      |       ‖       ‖       |          ⊗    e^{iqθ̃(x̃)} :  (dn)_P = −q on the
-      |   ·   ‖   ⊗   ‖   ·   |               plaquette P around x̃
-      |       ‖       ‖       |          ═ ‖  C = ∂P, counter-clockwise:
-      +-------+=======+-------+               Q_w(C) = −Σ_C n = −(dn)_P = q
-      |       |       |       |
-      |   ·   |   ·   |   ·   |          any loop homologous to C in the
-      +-------+-------+-------+          punctured torus measures the same q
-```
-**Figure 2. The modified Villain XY model on Λ and Λ*. The vortex operator $e^{iq\tilde\theta}$ sets $dn=-q$ on the surrounding plaquette, and the winding operator (2.9) on any loop around it measures $q$.**
+![[gs-s2w12-vortex-winding.svg|A patch of the lattice and its dual with the vortex operator on the dual site at the center of a shaded plaquette P, the counter-clockwise loop C around P and a larger deformed loop C prime around the same dual site]]
+
+**Figure 2. The modified Villain XY model on $\Lambda$ and $\Lambda^*$. The vortex operator $e^{iq\tilde\theta}$ sets $dn=-q$ on the surrounding plaquette, and the winding operator (2.9) on any loop around it measures $q$.**
 
 ## 3. Compact QED without monopoles
 
@@ -167,18 +146,8 @@ with Link normalized as in [[courses/generalized-symmetries-course/conventions|c
 
 In Sem I Week 11 §5.2 the twisted sheet at $\alpha=2\pi m$ on an open dual surface $\tilde S$ was the relabeling $n\to n+m\Xi$, and the 't Hooft loop equalled 1. In (3.1) the relabeling changes the multiplier term by $e^{-im\langle\tilde a,\star d\Xi\rangle}$ with $\star d\Xi=\pm J_{\partial\tilde S}$: the twisted sheet is $T_{\pm m}(\partial\tilde S)$, its sheet invisible, a genuine line charged under (3.2). The electric symmetry is untouched, since the twisted sheets of Sem I Week 11 §5.1 act on $a$ alone. In (3.1) both 1-form symmetries of four-dimensional Maxwell theory are exact on a finite lattice, which answers the question left open by the seminar of Sem II Week 1 §8.
 
-```
-   one time slice, axes (x¹, x², x³);  C̃ runs along +τ, out of the slice
+![[gs-s2w12-magnetic-cube.svg|Oblique view of a spatial cube c pierced at its center by the 't Hooft line, which runs out of the time slice, with outward flux arrows on two faces and the magnetic operator on the boundary of the cube]]
 
-           +-----------+
-          /|          /|        T_m(C̃) = exp(−im Σ_C̃ ã)   ⇒   ⋆dn = m J_C̃
-         +-----------+ |
-         | |    ⊙    | |        on the spatial cube c pierced by C̃ :
-         | |   C̃     | |           (dn)_c = −m ,  flux of F out of c = +2πm
-         | +---------|-+
-         |/          |/         Σ = ∂c :  U^m_α(Σ) = e^{−iα Σ_Σ n} = e^{iαm}
-         +-----------+
-```
 **Figure 3. The magnetic operator (3.2) on the boundary of a spatial cube measures the charge of the 't Hooft line that pierces it; deformations of ∂c that avoid $\tilde C$ give the same phase.**
 
 > **Physical picture.** A Monte Carlo of the modified Villain theory never produces a monopole: its moves, $n\to n+dk$ and changes of the global fluxes, keep $dn=0$. The 't Hooft loop is a ratio of partition functions with the constraint $\star dn=mJ_{\tilde C}$, with a perimeter law set by the magnetic Coulomb self-energy of the probe [free-photon evaluation, not displayed]; in the plain Villain theory the same ratio is 1, because a monopole loop cutting Σ changes $\sum_\Sigma n$ by one unit and the invariance of (3.2) is lost.

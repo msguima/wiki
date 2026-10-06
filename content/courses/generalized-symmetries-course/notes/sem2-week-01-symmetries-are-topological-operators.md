@@ -98,15 +98,8 @@ because the covariance of $d\theta$ is $dG'\delta/\beta$, the projector onto exa
 
 By (2.6), two regions $V$ and $V'$ that differ by a region without insertions give the same correlators, and moving the surface across an insertion of charge $q$ multiplies the correlator by $e^{i\alpha q}$, as Figure 1 shows. That is the contact term of (2.3), integrated.
 
-```
-      ∂V'
-   .------------------------------.
-   |      ∂V                      |
-   |    .-----------.             |      × : insertions of charge q₁, q₂
-   |    |   × x₁    |      × x₂   |
-   |    '-----------'             |      ⟨U_α(∂V') X⟩ = e^{iαq₂} ⟨U_α(∂V) X⟩
-   '------------------------------'
-```
+![[gs-s2w01-support-deformation.svg|Two nested closed surfaces, the inner one enclosing the insertion x1 and the outer one enclosing x1 and x2, with arrows deforming the inner surface across x2]]
+
 **Figure 1. Deforming the support of a 0-form symmetry operator changes a correlator only when the support crosses a charged insertion; crossing $x_2$ multiplies it by $e^{i\alpha q_2}$.**
 
 To read (2.5) in a Hamiltonian, take $V$ to be the slab $\tau_1<\tau<\tau_2$, whose boundary is the slice $\tau_2$ with outward normal $+\hat\tau$ and the slice $\tau_1$ with outward normal $-\hat\tau$. In the continuum spin-wave theory the linear term of (2.8) on the upper slice is $-\alpha\beta\int d^{d-1}x\,\partial_\tau\theta$. With $\tau=it$, so that $\partial_\tau=-i\partial_t$, and the canonical momentum $\Pi_\theta=\beta\partial_t\theta$, this is
@@ -170,15 +163,8 @@ and as $\epsilon\to0$ this is $U_gU_h=U_hU_g$ on $M$. With the fusion rule, $U_{
 
 The move (4.1) turns the displacement in the plane spanned by $\hat\tau$ and $v$, which exists because the codimension of $M$ in spacetime is at least two. For $p=0$ the support fills the slice, $N=0$, and the only normal directions are $\pm\hat\tau$; any path from $+\hat\tau$ to $-\hat\tau$ in the normal line passes through zero, that is, through $M_t$. In other words, the unit normal sphere of $M$ is $S^p$, which is connected exactly when $p\ge1$, as Figure 2 draws. The ordering of codimension-1 operators is therefore meaningful, and 0-form groups such as $SU(2)$ spin rotations can be nonabelian.
 
-```
-      p ≥ 1: normal plane (τ, v)               p = 0: normal line (τ)
+![[gs-s2w01-codimension-two-move.svg|The normal plane of M, where the copy carrying g turns on a half circle from time t plus epsilon to t minus epsilon without meeting M at time t, beside the normal line for p equal to zero, where the only path passes through it]]
 
-         g at t+ε  ●  ·                            ●  g at t+ε
-                        ·                          |
-                 M_t ○    ·   → v                  ○  M_t : every path from
-                        ·                          |        t+ε to t−ε meets it
-         g at t−ε  ●  ·                            ●  g at t−ε
-```
 **Figure 2. The codimension-2 move. For $p\ge1$ the copy carrying $g$ turns from $t+\epsilon$ to $t-\epsilon$ through a spatial normal direction and never meets $M_t$; for $p=0$ the normal space is the τ line and the copy must pass through $M_t$.**
 
 Three remarks bound the statement. (i) The hypothesis on $v$ holds for every orientable $M$ when $p=1$, since an orientable codimension-1 submanifold of an orientable slice has a trivial normal line bundle, and for the spheres and flat subtori used in the course; for $p\ge2$ the normal bundle of $M$ in the slice has rank $p$ over a manifold of dimension $d-p-1$, its Euler class is the primary obstruction, complete when $d-p-1=p$, and there is no obstruction when $d-p-1<p$, so in $d\le4$ the hypothesis never fails. (ii) GKSW Appendix F shows that on a spatial manifold with torsion the electric and magnetic operators of Maxwell theory, built as networks of surfaces with junctions on torsion classes, need not commute (F7); a network with junctions admits no normal field of the kind (4.1) uses. (iii) Abelianness concerns parallel copies of one support. Operators whose supports cross inside the slice cannot be separated by (4.1), since their spatial intersection is a linking in spacetime, and a phase between them means that the operators are themselves charged: an 't Hooft anomaly for one symmetry (GKSW §3 and §4.4), a mixed one for two, as in the clock–shift algebra of $\mathbb{Z}_N$ gauge theory (Problem 6⋆; Semester II Week 2). On the Kogut–Susskind lattice the electric operators commute trivially, as functions of the commuting $E_\ell$; the argument shows that this is forced in every theory.
@@ -213,17 +199,8 @@ which agrees with (5.4) for $p=1$ and differs by a sign for $p=0$ (F5). On a tor
 
 **Worked example in $d=3$** [Computed.]. Take $C=\partial P_{12}(0)=\ell_1(0)+\ell_2(\hat1)-\ell_1(\hat2)-\ell_2(0)$ and $\tilde V=\ell_1(0)^*$, the dual plaquette in the plane $x_1=\frac12$ spanned by the directions $(2,3)$ and centred on the midpoint of $\ell_1(0)$. Its boundary $\tilde\Sigma$, from the boundary formula of [[courses/generalized-symmetries-course/conventions|conventions]] §1 applied on $\Lambda^*$, is the dual loop $(\frac12,-\frac12,-\frac12)\to(\frac12,\frac12,-\frac12)\to(\frac12,\frac12,\frac12)\to(\frac12,-\frac12,\frac12)$, counter-clockwise in the $(x_2,x_3)$ plane, as Figure 3 shows. Only the link $\ell_1(0)$ of $C$ is dual to a cell of $\tilde V$, with coefficient $+1$ and $\epsilon(\{1\},\{2,3\})=+1$, so ${\rm Link}(C,\tilde\Sigma)=+1$. By (5.5) the same number is $I(P_{12}(0),\tilde\Sigma)$: the only dual link of $\tilde\Sigma$ dual to the plaquette is $P_{12}(0)^*$, from $(\frac12,\frac12,-\frac12)$ to $(\frac12,\frac12,\frac12)$, which enters $\tilde\Sigma$ with coefficient $+1$, and $\epsilon(\{1,2\},\{3\})=+1$. Gauss's integral $\frac1{4\pi}\oint\oint\frac{(r_1-r_2)\cdot(dr_1\times dr_2)}{|r_1-r_2|^3}$ for the two polygons, evaluated numerically, gives $1.0000$: the Hodge signs of the lattice reproduce the right-hand rule.
 
-```
-   x₃
-   ^
- ½ |    +<-------------+
-   |    |              ^        ⊙ : C pierces the plane x₁ = ½ along +x₁ (link ℓ₁(0))
- 0 |    |       ⊙      |     ⊗  ⊗ : C pierces it along −x₁ (link ℓ₁(2̂), at x₂ = 1)
-   |    v              |        Σ̃ = ∂(ℓ₁(0)*), counter-clockwise, normal +x₁
--½ |    +------------->+
-   +---------------------------------> x₂
-       −½       0      ½     1
-```
+![[gs-s2w01-dual-loop-linking.svg|The plane x1 equal to one half of the cubic lattice, with the counter-clockwise dual loop around the dual plaquette of the link l1(0), the loop C crossing it once toward the reader inside the dual loop and once away from the reader outside it]]
+
 **Figure 3. The plane $x_1=\frac12$ of the $d=3$ lattice. The dual loop $\tilde\Sigma$ bounds the dual plaquette $\ell_1(0)^*$, which $C=\partial P_{12}(0)$ crosses once along its normal, so ${\rm Link}(C,\tilde\Sigma)=+1$; the return link $\ell_1(\hat2)$ crosses the plane outside $\tilde\Sigma$.**
 
 ### 5.2 The twisted sheet in $d$ dimensions [Proved.]
@@ -290,18 +267,8 @@ $$
 $$
 and $U_\alpha W_q(\Gamma_t)=e^{-iq\alpha I_s(\Gamma_t,\Sigma)}W_q(\Gamma_t)U_\alpha$, which is (6.3). In Figure 4 the sphere around the forward end links $C$ for $0<t<T$ and not for $t<0$; the jump at $t=0$ is $+1=-I_s(\Gamma_0,\Sigma)$, because the segment at $\tau=0$ enters the sphere. On the lattice of §5.2 we computed the same numbers: ${\rm Link}=0,1,1,0$ for the sheet at $\tau+\frac12=-\frac12,\frac12,\frac32,\frac52$ with $T=R=2$, and $I_s(\Gamma_0,\partial\tilde R^*)=-1$. GKSW's (3.3), $U_gV=g(V)^{(C,M)}VU_g$, is (6.3) with $(C,M)=-I_s(C,M)$ in our orientations; GKSW do not fix orientations; [[courses/generalized-symmetries-course/conventions|conventions]] §6 records (6.3) with this sign.
 
-```
-   τ
-   ^     x₂ = 0                          x₂ = R
- T |       +---------------->--------------+
-   |       ^                               |
-   |       |                               |
- t |    ( -|- )   Σ around the forward end v
-   |       |                               |
-   |       |                               |
- 0 |       +----------------<--------------+   ← Γ₀ runs from x₂ = R to x₂ = 0
-   +------------------------------------------> x₂
-```
+![[gs-s2w01-wilson-loop-sphere.svg|Rectangular Wilson loop with time vertical, a sphere drawn as a ring around its forward line at time t, the same sphere swept below t equal to zero, and the bottom segment Gamma0 running toward the forward line]]
+
 **Figure 4. The $T\times R$ Wilson loop with time vertical. The sphere Σ, drawn as a circle, surrounds the forward end and links $C$ for $0<t<T$; swept below $t=0$ it unlinks, and the jump is the crossing of Σ by the segment $\Gamma_0$, which enters it.**
 
 ### 6.4 The magnetic symmetry

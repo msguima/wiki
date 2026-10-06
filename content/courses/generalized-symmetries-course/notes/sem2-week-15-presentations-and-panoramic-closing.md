@@ -57,34 +57,8 @@ Topic 1 (Polyakov confinement retold) ends in [[sem2-week-12-modified-villain|Se
 
 The story has nine stations, drawn in Figure 1.
 
-```
- 1941            seam on a closed dual curve: η ;  μ at the ends of an open seam ;  D†D = 1+η
- Sem I Wk 4           │
-                      │ [2] one dimension up, the seam becomes a sheet
-                      ▼
- 1971–79         Wegner's sheet: (−1)^Link on W(C) ;  open sheets end on visons, 't Hooft loops ;
- Sem I Wks 5,11,14    │ twists = flux sectors ;  charge-q matter keeps only Ann(H) ≅ ℤ_r         ◆
-                      │ [1] Poisson resummation exchanges the operators of two descriptions
-                      ▼
- 1975–77         W(C) = vortex line of σ ;  e^{iσ} charged under U(1)^(0), broken by monopoles
- Sem I Wks 8–10       │
-                      │ [2] GKSW: each closed operator above is a symmetry operator
-                      ▼
- 2014            U_α(Σ) W_q(C) = e^{iqα Link} ;  BF: GSD = N^{2g} ;  broken ⇔ perimeter law
- Sem II Wks 1–3       │
-                      │ [4] sum over networks of symmetry operators = gauging ;  obstruction = anomaly
-                      ▼
-                 Σ_[B] Z_T[B] ;  KW = gauging ;  SPT, DW ;  0 → Ann(H) → ℤ_N → Ĥ → 0        ◆
- Sem II Wks 4–7       ├──▶ [3] the deconfined phase: code, state, anyons, string net  (Wks 8–11)
-                      ├──▶ [1] exact lattice: Villain = MV + summed 't Hooft lines     (Wk 12)
-                      │ [3]+[4] gauge on part of spacetime
-                      ▼
- 2016–22         half space: D × D̄ = 1+η ;  slab: C_q(M) ;  surface: S_H, Ann(H) fluxes pass ◆
- Sem II Wk 13         │
-                      │ [3]+[4] gauge H on a closed hypersurface Y ;  give its lines a cost
-                      ▼
- Sem II Wk 14    wall D_H: Ann(H) charges cross, D_H × D̄_H = D_H ;  costly lines ↔ ℤ_N′ clock ◆
-```
+![[gs-s2w15-story-chain.svg|The nine stations of the story, seven in a vertical chain from 1941 to Sem II Week 14 and two at the side for Weeks 8 to 11 and Week 12, each with its date, its weeks and the relations quoted in the text, joined by arrows marked with the thread that makes each step, with a diamond at the four stations where the exact sequence of Ann(H) appears]]
+
 **Figure 1. The single story as a chain of operators on closed submanifolds. Each arrow carries the thread of syllabus §8 that makes the step ([1] duality, [2] topological operators, [3] condensation, [4] cohomology); ◆ marks the stations at which the exact sequence of ${\rm Ann}(H)$ appears.**
 
 ### 3.1 1941: a duality is a seam
@@ -155,19 +129,8 @@ so that the other lines meet $Y$ at junctions carrying ${\rm res}_H(q)$, through
 
 Figure 2 places the threads of syllabus §8 against the weeks. The Semester I column lists only the weeks in which a thread is the subject, which Figure 2 of Sem I Week 15 resolves week by week; the Semester II rows are complete. The marks are a reading of the notes.
 
-```
-                           Sem I            Sem II
-                           (● weeks)         Block 1    │ Block 2 │ Block 3    │ Bl. 4 │ Bl. 5
-                                             1  2  3  4 │ 5  6  7 │ 8  9 10 11 │12 13 │14 15
- 1  duality                1–5, 8            ·  ○  ○  ● │ ·  ·  · │ ○  ·  ·  ○ │ ●  ● │ ●  ○
- 2  topological operators  4, 5, 9–11, 14    ●  ●  ●  ● │ ○  ○  ○ │ ●  ○  ○  ○ │ ●  ● │ ●  ○
- 3  condensation           4, 5, 9–13        ·  ·  ○  ○ │ ·  ○  · │ ●  ·  ○  ● │ ○  ● │ ●  ○
- 4  cohomology             2, 3, 8, 12, 14   ○  ●  ·  ● │ ●  ●  ● │ ●  ○  ○  ○ │ ○  ● │ ●  ○
+![[gs-s2w15-threads-weeks.svg|A grid of the four threads against the weeks, with the Semester I weeks in which each thread is the subject listed in one column and the fifteen Semester II weeks, grouped into five blocks, marked filled where the thread is the subject, open where it is used and with a small dot where it is absent]]
 
- ● the thread is the subject of the week      ○ the thread is used      · absent
- Threads: 1 duality is Poisson resummation; 2 symmetries live on topological operators;
-          3 condensation changes the theory; 4 cohomology is the bookkeeping.
-```
 **Figure 2. The threads × weeks map of the course. The Semester I column lists the weeks marked ● in Figure 2 of Sem I Week 15.**
 
 Read by rows, the duality thread becomes gauging in Sem II Week 4, exact in Week 12, a line at the self-dual coupling in Week 13, and the current–clock duality of the wall in Week 14; topological operators, the subject of Block 1, end without inverse (Weeks 13–14); condensation returns in Block 3 as anyon and string-net condensation and ends as gauging on a hypersurface, whose lines Week 14 gives a cost; cohomology ends as $H_1(\Sigma;H)$, $Z_2(Y;H)$, the relative cohomology of a slab and the sequence of ${\rm Ann}(H)$. Read by columns, Weeks 13 and 14 are the weeks in which all four threads are the subject. On the wiki the threads continue on [[villain-action]] (1), [[higher-form-symmetries]] (2), [[condensation-defects]] and [[julia-toulouse-mechanism]] (3), and [[spt-phases]] and [[topological-order]] (4).

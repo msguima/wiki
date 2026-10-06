@@ -68,25 +68,20 @@ so the branch-reduced angle winds by $-2\pi v_P$ around a plaquette $P$, and a c
 
 ### 1.3 A vortex pair, walked through the variables [Computed.]
 
-Concreteness before machinery. Take the vortex–antivortex pair of Week 1 §4.3: the phase field $\theta(x)$ winds $+2\pi$ around core plaquette $\tilde x_1$ and $-2\pi$ around $\tilde x_2$. Where do the integers sit? The multivalued angle has a **branch cut**: a curve joining the two cores across which θ jumps by $2\pi$. On the lattice, choose the cut as a path $\tilde\gamma$ on the *dual* lattice from $\tilde x_1$ to $\tilde x_2$. On every link crossed by $\tilde\gamma$, the branch-reduced difference $(d\theta)_\ell$ overshoots the fundamental domain, and minimizing the Villain action assigns exactly
+Concreteness before machinery. Take the vortex–antivortex pair of Week 1 §4.3: the phase field $\theta(x)$ winds $+2\pi$ around core plaquette $\tilde x_1$ and $-2\pi$ around $\tilde x_2$. Where do the integers sit? The multivalued angle has a **branch cut**: a curve joining the two cores across which θ jumps by $2\pi$. On the lattice, choose the cut as a path $\tilde\gamma$ on the *dual* lattice from $\tilde x_2$ to $\tilde x_1$. On every link crossed by $\tilde\gamma$, the branch-reduced difference $(d\theta)_\ell$ overshoots the fundamental domain, and minimizing the Villain action assigns exactly
 $$
 n_\ell = \begin{cases} \pm 1 & \ell \text{ crossed by } \tilde\gamma \\ 0 & \text{otherwise}\end{cases}
 \qquad\text{i.e.}\qquad n = \star\,\mathbb{1}_{\tilde\gamma},
 $$
-the indicator cochain of a **string** (Figure 0). Its coboundary is supported where the string ends: $dn$ at a plaquette $P$ equals the net number of endpoints of $\tilde\gamma$ at the dual site $\tilde P$ (transport with §5.2 of Week 2: $d$ on Λ ↔ boundary on $\Lambda^*$), so
+the indicator cochain of a **string** (Figure 0). Its coboundary is supported where the string ends: $dn$ at a plaquette $P$ equals the number of times $\tilde\gamma$ leaves the dual site $\tilde P$ minus the number of times it arrives there (the out-minus-in rule of §5.2 of Week 2, with Λ and $\Lambda^*$ exchanged: $d$ on Λ ↔ minus the boundary on $\Lambda^*$), so
 $$
 v = dn = +\mathbb{1}_{\tilde x_2} - \mathbb{1}_{\tilde x_1}:
 $$
 the charges live at the string's ends and nowhere else.
 
-```
-     ·    ·    ·    ·    ·    ·
-                                        ⊖ , ⊕ : core plaquettes (v = ∓1)
-     ·   ⊖━━━━━━━━━━━⊕    ·             ━━━ : dual path  γ̃ (the branch cut)
-              │  │  │                    | : links with n = 1
-     ·    ·    ·    ·    ·    ·              (those crossed by the cut)
-```
-**Figure 0. The Villain integer as a Dirac string: $n$ is the indicator of an unobservable cut; $v = dn$ marks its observable endpoints. The symbols label $v$; since $v=-q$ for a vortex of winding $2\pi q$ ([[courses/generalized-symmetries-course/conventions|conventions]] §4), ⊖ is the $+2\pi$ vortex drawn as ⊕ in Week 1's Figure 2.**
+![[gs-w03-dirac-string.svg|A square lattice with a dashed dual path running from the right core plaquette to the left one, three plaquettes apart, the left one marked as vorticity minus one and the right one as plus one, and the three vertical links crossed by the path carrying the Villain integer minus one.]]
+
+**Figure 0. The Villain integer as a Dirac string: $n=\star\mathbb{1}_{\tilde\gamma}$ is the indicator of an unobservable cut, transported to the links it crosses; $v = dn$ marks its observable endpoints. The symbols label $v$; since $v=-q$ for a vortex of winding $2\pi q$ ([[courses/generalized-symmetries-course/conventions|conventions]] §4), ⊖ is the $+2\pi$ vortex drawn as ⊕ in Week 1's Figure 2.**
 
 Moving the cut, $\tilde\gamma \to \tilde\gamma'$ with the same endpoints, changes $n$ by a gauge shift $dk$, with $k=\pm$ the indicator of the sites enclosed between the two cuts: this is §1.2's redundancy, now with a picture. **The string is unobservable; the endpoints are not.** Note that the configuration of Figure 0 returns, point for point, as the Dirac string of a magnetic monopole pair ([[week-08-dual-variables-abelian-gauge|Week 8]], Week 12's Witten effect) and as the seam of the Kadanoff–Ceva disorder operator ([[week-04-bkt-kramers-wannier-disorder|Week 4]]).
 
@@ -128,13 +123,8 @@ $$
 $$
 The XY model is exactly a statistical mechanics of **conserved integer currents** on links: divergence-free loops of integer flux with weight $e^{-\|m\|^2/2\beta}$, which for a loop of unit flux is $e^{-(\text{length})/2\beta}$. High-temperature physics (small β) suppresses currents entirely; low temperature lets them proliferate. (This is also precisely the form in which the model's global $U(1)$ charge sectors are manifest — each closed current loop is a worldline of charge.)
 
-```
-      ┌───→───┐   ┌→┐
-      │       │   │ │            A typical current configuration:
-      ↑       ↓   └←┘            closed integer flux loops (δm = 0),
-      │       │                  weight exp(−Σ m²/2β).
-      └───←───┘
-```
+![[gs-w03-current-loops.svg|A patch of the square lattice with three closed oriented loops of current, a large rectangle, a single plaquette and a small loop that shares one link with the rectangle, so that this link carries current 2.]]
+
 **Figure 1. The conserved-current representation: the XY model as a gas of oriented integer loops.**
 
 > **Physical picture.** The loops of Figure 1 are worldlines of the $U(1)$ charge: the current representation is what a particle physicist would call the *world-line expansion* of the theory, with $m_\ell$ counting net charge flow through each link. High temperature (small β) suppresses all flow — an insulator of charge; low temperature lets long loops proliferate — the QLRO phase is a loop condensate. This representation is also, verbatim, what Monte Carlo "worm algorithms" simulate, and its gauge-theory sibling — electric flux lines as the dual variable — is the strong-coupling picture of [[week-06-wilson-action-strong-coupling|Week 6]] and the string-net condensate of Semester II.
@@ -168,12 +158,8 @@ $Z^{(0)}_{\rm SOS}$ is the **discrete Gaussian (solid-on-solid) model**: a cryst
 
 > **Physical picture.** Which surface phase is which: large β makes height steps *cheap* ($e^{-(\Delta\tilde h)^2/2\beta} \to 1$), so the **low-temperature QLRO phase of XY is the rough phase of the surface** — logarithmically wandering, massless heights, the critical Gaussian physics wearing crystal-growth clothes. Small β freezes the surface flat (a unit step carries weight $e^{-1/2\beta} \to 0$ as $\beta \to 0$): the **smooth phase is XY's disordered phase**. Roughening transitions of real crystal facets and BKT transitions of films are the same fixed point approached from the two dual sides — one experimental literature, two names.
 
-```
-   heights on dual sites:        2 2 3 3 2
-                                 1 2 2 2 2      the SOS surface: integer
-                                 1 1 2 2 1      "terraces"; steps cost
-                                 0 1 1 1 1      (Δh)²/2β per dual link
-```
+![[gs-w03-height-model.svg|A five by four array of plaquettes shaded by the integer height on each dual site, from 0 to 3, with the steps between terraces drawn along links of the lattice.]]
+
 **Figure 2. The height-model face of the XY model. Rough (wandering) surface ↔ low-$T$ QLRO phase of XY; smooth (frozen) surface ↔ high-$T$ disordered phase. Note the inversion: the surface temperature is $\propto 1/T_{\rm XY}$.**
 
 ## 4. Third rewriting: spin waves and the Coulomb gas [Computed.]
@@ -398,32 +384,9 @@ $$
 
 Figure 3 collects the faces of the model and the exact routes between them, the direct route of §5 included, and the table below translates each object across the four columns.
 
-```
-  ┌──────────────────────────────┐
-  │ VILLAIN XY               §1  ├──────────────┐
-  │ θ on sites, n on links of Λ  │              │
-  │ exp(−β|dθ − 2πn|²/2)         │              │
-  └──────────────┬───────────────┘              │
-                 │ Moves 1–3, §2: Hubbard–      │
-                 │ Stratonovich, Dirac comb,    │ §5: Hodge split
-                 ↓ compact θ integral           │ of 2πn, v = dn,
-  ┌──────────────────────────────┐              │ no dual variables
-  │ CURRENTS / HEIGHTS    §§2–3  │              │
-  │ δm = 0,  m = ⋆dh + w·M       │              │
-  │ exp(−|m|²/2β)                │              │
-  └──────────────┬───────────────┘              │
-                 │ Moves 4–7, §4: Poisson on    │
-                 │ the heights, zero mode,      │
-                 ↓ Gaussian integral            │
-  ┌──────────────────────────────┐              │
-  │ COULOMB GAS              §4  │←─────────────┘
-  │ exp(−2π²β vG'v),  Σv = 0     │
-  │ ·  ·  ·  ·  ·  ·  ·  ·  ·  · │
-  │ SINE-GORDON              §6  │   χ = 2πφ; steps (a), (b)
-  │ (∂χ)²/8π²β − 2y cos χ        │   of §6, to O(y²)
-  └──────────────────────────────┘
-```
-**Figure 3. The three faces and the exact routes between them: Moves 1–7 through currents and heights, and the direct Hodge route of §5; only the step to sine-Gordon is approximate. Tildes on dual-lattice fields are dropped in the figure.**
+![[gs-w03-duality-map.svg|A flow chart from the Villain XY model through the currents and heights to the Coulomb gas and sine-Gordon forms, with the direct Hodge route from the Villain model to the Coulomb gas drawn on the side and the step to sine-Gordon marked as approximate.]]
+
+**Figure 3. The faces of the Villain XY model and the exact routes between them: Moves 1–7 through currents and heights, and the direct Hodge route of §5; only the step to sine-Gordon is approximate.**
 
 | XY / spin language | current model | height (SOS) model | Coulomb gas / sine-Gordon |
 |---|---|---|---|

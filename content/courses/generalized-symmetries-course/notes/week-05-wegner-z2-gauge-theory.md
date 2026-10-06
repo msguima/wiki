@@ -149,15 +149,8 @@ $$
 $$
 an exact identity on every finite lattice. Figure 1 shows the leading term for a planar loop.
 
-```
-       ┌───┬───┬───┬───┬───┐        C : the R×T loop (outer boundary)
-       │ + │ + │ + │ + │ + │        + : a plaquette of the minimal surface S₀,
-       ├───┼───┼───┼───┼───┤            weight t each
-       │ + │ + │ + │ + │ + │
-       ├───┼───┼───┼───┼───┤        every inner link lies on two plaquettes of S₀,
-       │ + │ + │ + │ + │ + │        every link of C on exactly one
-       └───┴───┴───┴───┴───┘
-```
+![[gs-w05-tiled-wilson-loop.svg|A five by three rectangular Wilson loop on the square lattice, with every plaquette inside it labelled t.]]
+
 **Figure 1. The tiled Wilson loop: the link sums leave the links of $C$ unpaired unless every plaquette inside $C$ is used once, so the leading term is $t^{A}$ with $A=RT$.**
 
 ### 4.2 Leading order and the first correction [Controlled to $O(t^4)$ in $t=\tanh\beta$.]
@@ -182,12 +175,8 @@ $$
 $$
 where the string tension σ is defined by $\langle W(C)\rangle\sim e^{-\sigma A}$ for large loops. The $t^4$ term has no perimeter part, since the plaquettes along $C$ carry their $2(d-2)$ cubes like the interior ones. The perimeter dependence first appears at relative order $t^6$, where cubes that share only a link with $S_0$ cancel against the denominator and bricks of two cubes resting on $S_0$ enter (Problem 3).
 
-```
-                     ┌─────────┐
-                     │    c    │
-      ━━━━━━━━━━━━━━━┛         ┗━━━━━━━━━━━━━━━        S₀ ⊕ ∂c seen from the side
-      ←───────────── S₀ : A plaquettes ─────────→
-```
+![[gs-w05-decorated-surface.svg|Oblique view of the flat sheet of plaquettes bounded by the Wilson loop with a cube standing on it, five faces of the cube added and its face in the sheet, dashed, removed.]]
+
 **Figure 2. A decorated surface: the face of the cube $c$ that lay in $S_0$ cancels mod 2 and its other five faces are added, $|S_0\oplus\partial c|=A-1+5=A+4$; it is the lowest transverse fluctuation of the flux sheet.**
 
 Four checks. (i) Wegner's eq. (3.34) for $n=2$ reads $\big[t+2(d-2)t^5+\dots\big]^A$, the same result. (ii) For the $1\times1$ loop, $\langle W(\partial P)\rangle=\langle\sigma_P\rangle=N_P^{-1}\partial_\beta\ln Z$, and $\ln Z=N_\ell\ln2+N_P\ln\cosh\beta+N_ct^6+O(t^{10})$ gives $\langle\sigma_P\rangle=t+6(N_c/N_P)\,t^5+O(t^7)=t+2(d-2)t^5+O(t^7)$, since $N_c/N_P=(d-2)/3$; this is the loop formula at $A=1$. (iii) Complete enumeration of all subsets of cubes in open boxes gives the $t^4$ coefficient of $\ln(\langle W\rangle/t^A)$ exactly $2(d-2)A$ for the $1\times1$, $1\times2$, $1\times3$, $2\times2$ and $2\times3$ loops (in $d=4$ with the cubes resting on $S_0$, and a full box for $1\times1$). (iv) At $d=2$ the correction vanishes, as it must by §6.
@@ -213,18 +202,8 @@ $$
 \boxed{\;\langle W(C)\rangle\simeq e^{-\mu|C|},\qquad \mu=2e^{-4(d-1)\beta}\big[1+O(e^{-4(d-2)\beta})\big]\qquad(d\ge3).\;}
 $$
 
-```
-                   ρ
-                   ↑
-          ·────────┼────────·         · : dual sites, the centers of the four
-          │        │ P₂     │             cubes around ℓ
-          │        │        │         ⊙ : the reversed link ℓ ∈ C, pointing out
-     ─────┼──P₃────⊙────P₁──┼────→ ν      of the page
-          │        │        │         P₁ … P₄ : the plaquettes containing ℓ, seen
-          │        │ P₄     │             edge-on, all frustrated
-          ·────────┼────────·         ·──· : the dual links through them, a closed
-                   │                      vison loop around ℓ
-```
+![[gs-w05-reversed-link-vison.svg|Cross-section through a reversed link pointing out of the page, with the four plaquettes that contain it seen edge-on as a cross and the square of dual links through them forming a closed vison loop around the link.]]
+
 **Figure 3. Weak coupling in $d=3$: a reversed link of $C$ frustrates the four plaquettes that contain it; the frustration is a unit vison loop that links $C$ once and reverses $W(C)$, which gives $\mu=2e^{-8\beta}$.**
 
 Three checks. (i) The partition function alone: $\ln Z=\beta N_P+\ln2^{N_s-1}+N_\ell w+O(w^2)$ gives $\langle\sigma_P\rangle=1-(N_\ell/N_P)\,4(d-1)\,w=1-8w$, since $N_\ell/N_P=2/(d-1)$, and the loop formula with $|C|=4$ gives the same $1-2\cdot4\cdot w$. (ii) Kogut's eq. (5.32) gives the leading term $2\exp[-4(d-1)\beta]$. (iii) In $d=3$ the next order is explicit for the $1\times1$ loop: 44 vison loops of length 6 link it (36 pairs of reversed links that share a plaquette and 8 corner triples), so on the infinite lattice $(1-\langle W\rangle)/(|C|w)=2+22e^{-4\beta}+\dots$, that is $2.000999$ at $\beta=2.5$. We computed $\langle W\rangle$ exactly through the dual Ising model of §7, with a transfer matrix and all eight boundary sectors (F6), on $3\times3\times L$ tori with $L\ge4$ and the loop in the $3\times3$ plane, and obtained this value; the deviation from 2 falls by $e^{-2}$ per $\Delta\beta=0.5$, the $e^{-4\beta}$ of the correction term. (On the $3\times3\times3$ torus, or with the loop in a plane that contains the long direction, pairs of winding vison loops add a finite-size shift of order $10^{-4}$.)
@@ -280,15 +259,8 @@ $$
 $$
 On the torus the same identity holds with a sum over the eight boundary sectors of the Ising model (F6).
 
-```
-      +     +     +     +     +          + , − : Ising spins on the dual sites
-         ┏━━━━━━━━━━━┓                           (cube centers of Λ)
-      +  ┃  −     −  ┃  +     +          ━ ┃ : plaquettes of Λ seen edge-on in
-         ┗━━━━━┓     ┃                           this cross-section; together
-      +     +  ┃  −  ┃  +     +                  they form a closed surface
-               ┗━━━━━┛
-      +     +     +     +     +
-```
+![[gs-w05-surface-wall-duality.svg|Cross-section of the three-dimensional lattice with plus and minus Ising spins on the dual sites and an L-shaped cluster of three minus spins enclosed by a closed surface of plaquettes seen edge-on.]]
+
 **Figure 4. The 3d duality in one picture (a cross-section): a closed surface of plaquettes, weighted $t^{|S|}$ in the strong-coupling expansion of the gauge theory, is the domain wall around a cluster of reversed dual spins, weighted $e^{-2K^*|S|}$ in the low-temperature expansion of the Ising model on $\Lambda^*$; the weights agree when $\tanh\beta=e^{-2K^*}$.**
 
 ### 7.2 The Wilson loop is a pinned interface [Computed; the identification of the tension Sketched.]
@@ -324,17 +296,8 @@ $$
 $$
 the Ising high-temperature correlator $(\tanh K^*)^r$ with its first correction. The correction counts the paths with one transverse excursion, four transverse directions times $r(r+1)/2$ placements, each two plaquettes longer; since it grows with $r$, it is a shift of the mass, which we read off from the pole of the path sum: with $u=e^{-2\beta}$, $1=2u(\cosh\kappa+2)$ gives $e^{-\kappa}=u(1+4u+\dots)$. In the deconfined phase the visons are therefore gapped particles of mass $m=2\beta-4e^{-2\beta}+O(e^{-4\beta})$. In the form-degree table of [[courses/generalized-symmetries-course/conventions|conventions]] §6, μ is local in $d=3$, like the 't Hooft operators of dimension $d-3=0$ and the monopole operator $e^{i\sigma}$ of compact QED₃ ([[week-09-compact-qed3-monopole-plasma|Week 9]]). In gauge variables it carries an unobservable string, like the Kadanoff–Ceva μ; in Ising variables it is the genuine spin.
 
-```
-  (a) a vison pair: an open dual string          (b) a closed dual string linking C
+![[gs-w05-vison-linking.svg|On the left a dashed dual path between two vison endpoints pierces four plaquettes, and on the right a closed dual string passes under a rectangular Wilson loop at one crossing and over it at the other.]]
 
-   ·     ·     ·     ·     ·     ·                             ╭──────────╮
-   ·   μ(x̃)━━━━━━━━━━━━━━━━━━━━μ(ỹ)   ·           ┌───────────┼────────┐  │ γ̃
-   ·     ·     ·     ·     ·     ·                │   C       ╰────────┼──╯
-                                                  │                    │
-   ━━ : the dual path γ̃; the plaquettes it         └────────────────────┘
-        pierces have β → −β                       γ̃ passes under C at the left
-                                                  crossing and over it at the right
-```
 **Figure 5. (a) The vison pair $\mu(\tilde x)\mu(\tilde y)$: the string is invisible and only its endpoints are physical. (b) A closed dual string $\tilde\gamma$ linking a Wilson loop: $\langle U(\tilde\gamma)\rangle=1$ and $\langle W(C)U(\tilde\gamma)\rangle=-\langle W(C)\rangle$ (§8.1).**
 
 ### 7.4 The Hamiltonian cross-check [Computed.]
@@ -408,19 +371,8 @@ $$
 
 Figure 6 and the table collect the results of §§4–8.
 
-```
- d = 2   0 ──────────────────────────────────────────────────────────→ β
-         confined at every β: ⟨W⟩ = (tanh β)^A exactly (§6); no transition
+![[gs-w05-phase-structure.svg|Three coupling axes for dimensions 2, 3 and 4, confined at every coupling in two dimensions, with a continuous transition at 0.76141 in three dimensions and a first-order transition at 0.44069 in four, drawn to a common scale.]]
 
- d = 3   0 ────────── confined ──────────┃────────── deconfined ─────→ β
-         dual Ising ordered              ┃ β_c = 0.76141   dual Ising disordered
-         visons condensed                ┃ (continuous,    visons gapped, mass ≈ 2β
-         W area; Z₂⁽¹⁾ unbroken           ┃  3d Ising)      W perimeter; Z₂⁽¹⁾ broken
-
- d = 4   0 ──── confined ────┃──────────────── deconfined ──────────────→ β
-         W area              ┃ β_sd = 0.44069            W perimeter
-         W̃ perimeter         ┃ (self-dual, first order)  W̃ area
-```
 **Figure 6. Phase structure of the $\mathbb{Z}_2$ gauge theory by dimension: no transition in $d=2$, a continuous transition in the 3d Ising class at $\beta_c=0.76141$ in $d=3$, a first-order transition at the self-dual point $\beta_{\rm sd}=0.44069$ in $d=4$.**
 
 | $d$ | exact tool | transition | confined phase | deconfined phase |

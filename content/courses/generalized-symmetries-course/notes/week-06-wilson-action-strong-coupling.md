@@ -211,19 +211,8 @@ $$
 U_C=U_{b_1}U_{b_2}U_{b_3}U_{b_4}\,U_{b_5}^\dagger U_{b_6}^\dagger U_{b_7}^\dagger U_{b_8}^\dagger .
 $$
 
-```
-             b6              b5
-   (0,2) ----->----- (1,2) ----->----- (2,2)
-     |                 |                 |
-  b7 ^       P4     i3 ^       P3        ^ b4
-     |                 |                 |
-   (0,1) ----->----- (1,1) ----->----- (2,1)
-     |       i4        |       i2        |
-  b8 ^       P1     i1 ^       P2        ^ b3
-     |                 |                 |
-   (0,0) ----->----- (1,0) ----->----- (2,0)
-             b1              b2
-```
+![[gs-w06-two-by-two-loop.svg|The 2 by 2 square of plaquettes P1 to P4 with boundary links b1 to b8 and interior links i1 to i4, an arrow on every link in its positive direction, the loop C drawn counterclockwise around the boundary, and a clockwise circulation in each tile]]
+
 **Figure 1. The 2×2 loop and its tiling. Arrows mark the positive direction of each link; the loop runs along b1, b2, b3, b4 and against b5, b6, b7, b8, and each tile carries the conjugate of its counterclockwise plaquette.**
 
 The expectation value is
@@ -291,20 +280,8 @@ The cheapest surfaces after the flat one are obtained by removing one plaquette 
 
 For SU(3), and likewise for $\mathbb Z_3$, a second configuration enters one order later. Keep p in the sheet but let it carry the conjugate representation, and attach the same five-face box with the orientation that runs along $\partial p$ in the same direction as the sheet. On each edge of p three fundamental lines then meet in the same direction, which the ε-tensor of SU(3) allows: $3\otimes3\otimes3$ contains one singlet, so $\int dU\,(\operatorname{tr}U)^3=1$. The box fuses to $N^{-4}\operatorname{tr}U_{\partial p}$, the bare integral is $N^{-4}\int dU(\operatorname{tr}U)^3=1/81$, and the weight relative to the flat sheet is $(3\tilde c_F)^5/81=3\tilde c_F^5$ per location, with the same $2(d-2)A$ locations. For U(1), $\mathbb Z_2$, SU(2) and SU($N\ge4$) the integral $\int(\operatorname{tr}U)^3$ vanishes and the configuration does not contribute (the SU(N) analogue needs N lines on an edge and appears only at much higher order).
 
-```
-   (a) side view                       +-----+
-                                       |     |   roof and four walls
-       --+-----+-----+-----+-----+-----+     +-----+-----+--
-                                          p       (p itself is removed)
+![[gs-w06-decorated-surfaces.svg|Left, a flat sheet of plaquettes in which one plaquette p is replaced by the roof and four walls of a unit cube; right, a slice of the sheet with integer heights 0 0 1 1 0 0 -1 0 over the minimal surface and one wall plaquette for each unit step]]
 
-   (b) heights over the minimal surface
-       h =    0     0     1     1     0     0    -1     0
-                        +-----------+
-                        |           |
-       --+-----+-----+--+           +-----+-----+     +-----+--
-                                                |     |
-                                                +-----+
-```
 **Figure 2. (a) A decorated surface: one plaquette p of the minimal sheet is replaced by the other five faces of a unit cube, adding four plaquettes. (b) A slice of the sheet in the solid-on-solid picture of §7.3: an integer height h on each plaquette of the minimal surface, and one wall plaquette for every unit step between neighbours.**
 
 Vacuum bubbles cancel between numerator and denominator, apart from configurations that overlap the sheet: for the groups without a cubic invariant, a cube that shares a plaquette or a link with it changes $\ln\langle W\rangle$ at relative order $\tilde c^6$ (for SU(3), the ε-tensor box above is exactly such an overlap, at order $\tilde c^5$). Two decorations appear $\frac12[2(d-2)A]^2$ times at order $\tilde c^8$, minus $O(A)$ overlapping pairs, which is the square of the single-decoration term up to $O(A\tilde c^8)$. The series exponentiates, and
@@ -410,16 +387,8 @@ which is $e^{-8\pi^2\beta/33}$ for SU(3). Three facts keep the strong-coupling s
 
 **7.5 Representation dependence and a preview of N-ality.** The leading term $\langle W_r(C)\rangle=\tilde c_r^{A}$ is the first term for a loop of fixed size as $\beta\to0$, and for higher representations it fails to describe large loops. The adjoint of SU(N) is contained in $F\otimes\bar F$, so a closed tube of fundamental plaquettes running along C, with C drawn on its surface (Figure 3), is allowed by the selection rules: at each link of C the adjoint of the loop and the F and $\bar F$ of the two tube plaquettes that contain the link combine into the singlet, once. The smallest such tube is the surface of the ring of $2(R+T)-4$ unit cubes that lines the inside of an $R\times T$ loop; each cube of the ring exposes four faces, so the tube has $4P-16$ plaquettes, with $P=2(R+T)$. It gives a perimeter law $\propto\tilde c_F^{4P-16}$, while the adjoint sheet gives $\tilde c_{\rm adj}^A\sim\tilde c_F^{2A}$ (§3.5), and for large loops the tube wins. The adjoint charge is screened by gluons, and at leading logarithmic order the crossover sits where $2A\simeq4P-16$, at square loops of side about 7 [Sketched; the group factor of the tube is Problem 5⋆].
 
-```
-      cross-section of the ring of cubes, cut perpendicular to one side of C
+![[gs-w06-adjoint-tube.svg|Cross-section of the ring of unit cubes that lines the inside of the loop, with the links of C seen end-on as asterisks at the outer lower corners of the two end cubes, where the tube faces carrying F and F-bar meet]]
 
-        +---+                                                +---+
-        |   |                  inside of the loop            |   |
-        *---+ . . . . . . . . . . . . . . . . . . . . . . . .+---*
-
-      *  = a link of C, seen end-on; it is an edge of the cube next to it,
-           and the two faces of that cube meeting at * both belong to the tube
-```
 **Figure 3. The tube that screens the adjoint loop, in cross-section. A ring of unit cubes lines the inside of the loop; its surface is a torus of fundamental plaquettes that passes through every link of C (marked \*), where the adjoint combines with F and F̄ into a singlet.**
 
 The general mechanism is the center. The element $z=e^{2\pi i/N}$ acts on a representation with $k_r$ boxes (mod N) as $z^{k_r}$, its N-ality, and the selection rule of §2.3 says that sheets of plaquettes may change representation along the way while their N-ality stays fixed. Gluons, of N-ality 0, can therefore screen any representation down to the lightest one of the same N-ality, and loops of N-ality 0 obey a perimeter law at large size. This is the local form of the electric $\mathbb Z_N$ 1-form (center) symmetry of pure SU(N) gauge theory, under which Wilson lines carry the charge $k_r$; the area law of the fundamental loop says that this symmetry is unbroken ([[courses/generalized-symmetries-course/conventions|conventions]] §6, [[higher-form-symmetries]]; [[week-14-fradkin-shenker-order-parameters|Week 14]] and Semester II Block 1). For U(1) the electric 1-form symmetry is U(1) itself, there are no charged gauge bosons, and every charge is conserved; even so, the flat sheet of charge 2 is not the cheapest surface for a large loop in $d\ge3$ (Problem 9⋆⋆). Finally, Casimir scaling of the leading coefficient depends on the action: it holds for the heat-kernel action (Problem 6⋆) and in the Hamiltonian strong-coupling limit of Week 7, where $\sigma=\frac{g^2}2C_2(F)$ ([[courses/generalized-symmetries-course/conventions|conventions]] §4), and it fails for the Wilson action (§3.5).
@@ -432,19 +401,9 @@ $$
 
 **7.7 Phase structure by group and dimension.** Figure 4 collects what is known and what is expected. In $d=2$ the tiling is exact for every group (Problem 4): an area law at every β, and no roughening, since the sheet has no transverse direction. In $d=3$ compact U(1) confines at every coupling, at weak coupling through Polyakov's monopole plasma ([[week-09-compact-qed3-monopole-plasma|Week 9]] and [[week-10-polyakov-mass-gap-area-law|Week 10]], on the dual variables of [[week-08-dual-variables-abelian-gauge|Week 8]]) and for the Villain action at all couplings by a theorem [Stated — refs: Göpfert–Mack 1982]; in the language of [[courses/generalized-symmetries-course/conventions|conventions]] §6, its electric $U(1)^{(1)}$ symmetry is unbroken at every coupling. In $d=4$ compact U(1) has a Coulomb phase at large β, with a massless photon and a perimeter law, in which the electric 1-form symmetry is spontaneously broken [Stated — refs: Guth 1980 for the Villain action; Fröhlich–Spencer 1982]; a transition separates it from the confined phase. For SU(N) in $d=4$ no bulk transition is expected between the strong-coupling region and the continuum limit at $\beta\to\infty$, on the evidence of Monte Carlo, and the only non-analyticity expected along the way at zero temperature is the roughening of the flux sheet.
 
-```
-   beta:  0 ------------------------------------------------------------> infinity
+![[gs-w06-phase-structure.svg|Three beta axes, for U(1) in d=3, U(1) in d=4 and SU(N) in d=4, showing the confined regions, the Coulomb phase above the critical coupling, the roughening point, and the small-beta region where the strong-coupling series converges]]
 
-   U(1),  d = 3   confined at every beta (monopole plasma at large beta) -----> continuum
-                  [series]
-
-   U(1),  d = 4   confined             | beta_c |  Coulomb phase: massless photon,
-                  [series]                          perimeter law
-   
-   SU(N), d = 4   confined ------ beta_R ------ no bulk transition expected -----> continuum
-                  [series]      roughening       (Monte Carlo)           (asymptotic freedom)
-```
-**Figure 4. Phase structure in β at zero temperature. "Series" marks the small-β region where the strong-coupling expansion converges; $\beta_R$ is the roughening of the flux sheet (§7.3), a transition of the string that leaves the bulk analytic, drawn only for SU(N), where §7.3 cites it; $\beta_c$ is the transition of 4d compact U(1).**
+**Figure 4. Phase structure in β at zero temperature. "Series" marks the small-β region where the strong-coupling expansion converges; $\beta_R$ is the roughening of the flux sheet (§7.3), a transition of the string that leaves the bulk analytic, drawn only for SU(N), where §7.3 cites it; $\beta_c$ is the transition of 4d compact U(1). Positions along the β axes are schematic.**
 
 ## 8. Common misconceptions
 

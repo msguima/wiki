@@ -78,16 +78,8 @@ $$
 $$
 Since $e^{i\pi\sigma_3}=-\mathbb 1$, $\Omega_1(x+L_2\hat e_2)=-\Omega_1(x)$, and (2.5) for (12) reads $\Omega_1(x)=-\omega^{n_{12}}\Omega_1(x)$, so $n_{12}=1$; (34) is the same computation, $n_{34}=1$. For (13) both matrices are diagonal and each is independent of the other's direction, so $n_{13}=0$; for (14) and (23) one matrix is $\mathbb 1$ and the other does not depend on the shifted coordinate, and (24) is trivial. The twist is $n_{12}=n_{34}=1$, κ = 1. As $x_2$ crosses the (12) face, $\Omega_1$ turns by half a period about $\sigma_3$ (Figure 1), and this half-turn is the twist.
 
-```
-          x2
-     L2   +------------------------------------+
-          |                                    |  Omega_1(x2) glues x1 = L1 to x1 = 0,
- Omega_2  |             the (12) face          |  turning from 1 (x2 = 0) to -1 (x2 = L2)
-   = 1    |     A(x + L1 e1) = A^{Omega_1}(x)  |
-      0   +------------------------------------+--> x1
-          0                                    L1
-     corner (2.5):  Omega_1(x) Omega_2(x+L1 e1) = (-1) Omega_2(x) Omega_1(x+L2 e2)
-```
+![[gs-s2w06-twisted-face.svg|The (12) face of the box with the two ways round the corner drawn along its edges, one meeting the transition functions 1 and 1 and the other 1 and minus 1, and dials beside the face showing Omega 1 turning from 1 to minus 1 as x2 runs from 0 to L2]]
+
 **Figure 1. The (12) face of the box for the bundle (2.7): the two ways round the corner differ by the center element −1, the twist n₁₂ = 1.**
 
 The winding of (2.7) is forced [Proved.]. The anticommuting constant matrices $\Omega_1=i\sigma_1$, $\Omega_2=i\sigma_2$ realize $n_{12}=1$ with A = 0 (the SU(2) form of Sem I Week 14 §6.2), but four constant matrices cannot have κ odd. If two of them anticommute they are conjugate to $i\sigma_1,i\sigma_2$, and a matrix that commutes or anticommutes with both is, up to sign, one of $\mathbb 1,i\sigma_1,i\sigma_2,i\sigma_3$ (commuting with $\sigma_1$ means lying in the span of $\mathbb 1,\sigma_1$, anticommuting in that of $\sigma_2,\sigma_3$). Each $\Omega_\mu$ then has a class $v_\mu\in\mathbb{Z}_2^2$ with $n_{\mu\nu}=v^1_\mu v^2_\nu+v^2_\mu v^1_\nu$ mod 2; the matrix n has rank at most 2 over $\mathbb{Z}_2$, so ${\rm Pf}(n)^2=\det n\equiv0$ and κ is even (a script confirms all $4^4$ assignments).
@@ -150,14 +142,8 @@ $$
 $$
 For N odd, with the even counterterm coefficients of §4.2, this is harmless and $\sum\tilde B\cup\tilde B$ mod N suffices. For N even the middle term is N times an integer that can be odd, because the cubical cup product is not graded commutative on cochains ([[courses/generalized-symmetries-course/conventions|conventions]] §8). Take N = 2, the stack with $n_{12}=n_{34}=1$, and u the indicator of $P_{12}(0)$. In $u\cup\tilde B$ only the shuffle {1,2} pairs a 12-face with a 34-face, with u at the base corner and $\tilde B$ at the far corner, and $\sum u\cup\tilde B=u_{12}(0)\tilde B_{34}(\hat e_1+\hat e_2)=1$, since the 34-stack sits at $x_3=x_4=0$. In $\tilde B\cup u$ the shuffle {3,4} reads $\tilde B_{34}$ at $-\hat e_3-\hat e_4$, off the stack, and gives 0; $\sum u\cup u=0$ (Figure 2). The change is 2 ≢ 0 mod 4: $\sum\tilde B\cup\tilde B$ mod 4 is not a function of B. This is GKKS (2.8), repaired, after Kapustin and Seiberg, by the Pontryagin square.
 
-```
-   u ∪ B~ :  u_12 at the base corner 0,     B~_34 read at e1+e2    (on the stack)    ->  1
-   B~ ∪ u :  u_12 at the far corner x+e3+e4, B~_34 read at -e3-e4  (off the stack)   ->  0
+![[gs-s2w06-cup-orders.svg|Two lattice planes: in the x1 x2 plane, which lies on the 34-stack, u sits on the plaquette at the origin and its partner is read at the far corner; in the x3 x4 plane the partner is read at the base corner, off the stack plaquette, and u at the far corner]]
 
-        x2 ^                                   x4 ^
-         1 |  o e1+e2                           0 o--.---.---.--> x3     (34-stack at x3=x4=0)
-         0 [u]--.---.--> x1                   -1   * -e3-e4
-```
 **Figure 2. The two orders of the cup product for the lift change of §3.1: the partner of u is read on the stack in one order and off it in the other, and the difference is the odd integer that spoils Σ B̃∪B̃ mod 4.**
 
 ### 3.2 The higher cup product $\cup_1$
@@ -276,13 +262,9 @@ $$
 $$
 For N even the right side is odd and there is no solution, on spin manifolds (2p ≡ 1 mod N) either. No counterterm makes the B-coupled theory at θ = π invariant under T: this is the mixed 't Hooft anomaly between $\mathbb{Z}_N^{(1)}$ and time reversal (Figure 3). Each symmetry alone is fine, since B couples consistently and T is a symmetry at B = 0; the obstruction is to keeping both. For N odd, (4.7) is solved by p ≡ (N+1)/2 mod N on spin manifolds, and §5.3 extracts what survives. GKKS put $i\theta Q$ and the counterterm in the exponent with the same signs as (4.1) and (4.3), and their (2.22)–(2.23) are (4.4); their maps $p\to-p-1$, (2.10), and $p\to-p+N-1$, (2.24), follow from composing the 2π shift as $(\theta,p)\cong(\theta+2\pi,p+N-1)$, the inverse of their (2.23). For even N the conclusion is unchanged: for N = 2, (2.10) agrees with (4.6) mod 4, and (2.24) differs from it by 2, which only non-spin manifolds detect. For odd N their fixed point (2.13), p ≡ (N−1)/2 mod N (p = 4 for N = 3), is the infrared label $p_{\rm IR}$ of (5.2), and the T-invariant counterterm is p ≡ (N+1)/2.
 
-```
-      T at theta = 0 :  p -> -p      (mod 4)        T at theta = pi :  p -> -p - 1   (mod 4)
-            0 -> 0   and   2 -> 2   fixed                 0 <-> 3,   1 <-> 2
-            1 <-> 3                                       no fixed point
-      theta -> theta + 2pi :  p -> p + (N - 1) = p + 1
-```
-**Figure 3. The counterterm label p ∈ ℤ₄ of SU(2) under time reversal: at θ = 0 the map fixes p = 0, 2; at θ = π the map (4.6) pairs the labels and fixes none, the anomaly (4.7).**
+![[gs-s2w06-counterterm-labels.svg|The four labels of Z4 on a circle in three panels: time reversal at theta equal to 0 reflects them through 0 and 2, at theta equal to pi it pairs 0 with 3 and 1 with 2 and fixes none, and the shift of theta by 2 pi rotates them by one step]]
+
+**Figure 3. The counterterm label p ∈ ℤ₄ of SU(2) under time reversal: at θ = 0 the map fixes p = 0, 2; at θ = π the map (4.6) pairs the labels and fixes none, the anomaly (4.7). The third panel is the shift θ → θ + 2π, which moves every label one step, p → p + 1, (4.4).**
 
 Summing over B at fixed p gives the PSU(N) theory with the discrete θ-angle p of AST (Sem II Week 4 §6.2), and (4.3) is the lattice form of that angle. By (4.4) its θ is no longer 2π-periodic (period 2πN on spin manifolds, GKKS p. 9; Problem 6⋆), and by (4.6) it is not T-invariant at θ = π for N even: gauging one member of an anomalous pair breaks the other (Sem II Week 5 §2).
 
@@ -358,24 +340,9 @@ with $\chi=\langle Q^2\rangle/V$ at θ = 0 of order $N^0$ [Stated — refs: Witt
 
 (d) By (5.4) the ground state of $\mathcal H_{\vec m}$ in branch k has $\vec e=k\vec m$, and the screened line is (k, 1), the 't Hooft line (0, 1) relabelled |k| times by [[courses/generalized-symmetries-course/conventions|conventions]] §10: across θ = π the screened line switches from (0, 1) to (−1, 1), the non-abelian counterpart of the switch of condensates of Sem I Week 12 §7.3.
 
-```
- E(θ)
-   |                  *                       *
-   |                 * *                     * *
-   |                *   *                   *   *
-   |               *     *                 *     *
-   |              *       *               *       *
-   |*           **         **           **         **           *
-   | **       **             **       **             **       **
-   |   *******                 *******                 *******
-   +------+-----------+-----------+-----------+-----------+------> θ
-         -2π         -π           0           π          2π
- branch       k = 1   |       k = 0           |   k = -1
- IR label     p = 1   |       p = 0           |   p = N-1
- flux in H_m  e = m   |       e = 0           |   e = -m
- screened     (1,1)   |       (0,1)           |   (-1,1)
-```
-**Figure 4. The large-N vacuum energy (6.1), the lower envelope of the branches. At its cusps the vacuum switches branch, and with it the infrared label, the flux of the twisted-box ground state and the screened line.**
+![[gs-s2w06-large-n-branches.svg|Computed large-N vacuum energy against theta, the lower envelope of three parabolas with cusps at minus pi and pi, and under the axis the branch, infrared label, twisted-box flux and screened line of each window]]
+
+**Figure 4. The large-N vacuum energy (6.1), computed at leading order: the lower envelope of the branches $E_k(\theta)=\frac\chi2(\theta+2\pi k)^2$, drawn dashed above it. At its cusps the vacuum switches branch, and with it the infrared label, the flux of the twisted-box ground state and the screened line.**
 
 ## 7. Mini-calculation 2 (hand-in)
 

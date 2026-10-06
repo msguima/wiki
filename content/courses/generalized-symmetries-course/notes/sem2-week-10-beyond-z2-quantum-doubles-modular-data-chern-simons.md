@@ -113,17 +113,8 @@ $$
 $$
 For BF with $l=(e,0)$, $l'=(0,m)$ this is $\omega^{-em\,{\rm Lk}}$, Week 2 (5.4). A counterclockwise circuit in the $xy$-plane around a static worldline has ${\rm Lk}=+1$ (Week 2 Figure 3; a numerical Gauss integral confirms it with the frame $(x,y,t)$, which is positive because $dx\wedge dy\wedge dt=dt\wedge dx\wedge dy$), so (4.1) and (4.2) agree. $B$ is symmetric and bimultiplicative, depends on $l,l'$ only through their classes in $\mathcal A$, and $B(Kv,l')=e^{-2\pi i\,v\cdot l'}=1$: the particles $Kv$ braid trivially with everything, and they are the local excitations. The mutual-statistics angle is $2\pi\,l^TK^{-1}l'$, which is $2\pi(K^{-1})_{ab}$ for $l=e_a$, $l'=e_b$.
 
-```
-      t ↑                                           a time slice (orientation dx∧dy)
-        │      ║  C_l : l at rest, carrying             y ↑
-        │      ║  the flux ∮a = −2πK⁻¹l                 │        ╭──←──╮
-     ╭──┼──────║──╮                                     │        │  ●  │   ● = l, flux −2πK⁻¹l
-     │  │      ║  │  ← C_l′ : one counterclockwise      │        ╰──→──╯   ring = path of l′
-     ╰──┼──────║──╯    turn of l′ while t advances      └──────────────────→ x
-        │      ║                                     l′ once around l :  exp(−2πi l′ᵀK⁻¹l)
-        │      ║     Lk(C_l′, C_l) = +1               two l's exchanged (half turn):
-        └────────────→ (x, y)                              θ_l = exp(−iπ lᵀK⁻¹l)
-```
+![[gs-s2w10-flux-attachment.svg|Left, the vertical worldline of a static quasiparticle carrying a flux tube, encircled once counterclockwise by the loop of a second quasiparticle with linking number plus one; middle, a time slice in which the second quasiparticle goes once counterclockwise around the first; right, two identical quasiparticles exchanged by a counterclockwise half turn]]
+
 **Figure 1. Flux attachment. A static quasiparticle drags the flux tube (2.4); a counterclockwise circuit of $l'$ links its worldline with ${\rm Lk}=+1$ and picks up the phase (4.1); half a relative turn of two identical quasiparticles gives the spin (4.3).**
 
 ### 4.2 Topological spin and the local fermion [Computed in the adiabatic limit.]
@@ -245,15 +236,9 @@ $$
 $$
 which for abelian $G$ is Week 7 (6.8) with trivial cocycle [Stated — refs: Coste–Gannon–Ruelle, for the non-abelian case].
 
-```
-      v₀ ●─────────────●          flux:   g = ordered product of link variables around p, read from v₀
-         │             │          gauge transformation h at v₀ :  g → h g h⁻¹
-         │      p      │             ⇒ the flux label is the conjugacy class C of g
-         │     (g)     │          charge at v₀ in the presence of g :
-         │             │             only h ∈ Z(g) keep g fixed ⇒ the charge is an irrep α of Z(g)
-         ●─────────────●          internal states |g′, v⟩, g′ ∈ C :  d = |C| dim α
-```
-**Figure 2. A flux–charge composite of $D(G)$. The flux is a holonomy measured from a base point, the gauge freedom at the base point reduces it to a conjugacy class, and only the centralizer survives to act on the charge.**
+![[gs-s2w10-flux-charge-composite.svg|A square plaquette whose base vertex v0 carries a charge, a holonomy loop that leaves v0 and runs once counterclockwise around the plaquette, and the gauge transformation h acting at v0]]
+
+**Figure 2. A flux–charge composite of $D(G)$. The flux is a holonomy measured from a base point, the gauge freedom at the base point reduces it to a conjugacy class, and only the centralizer survives to act on the charge. The holonomy is read counterclockwise from $v_0$, the plaquette orientation of [[courses/generalized-symmetries-course/conventions|conventions]] §1.**
 
 ### 7.3 The count for $S_3$ [Computed.]
 
@@ -306,16 +291,8 @@ S_{\rm edge}=-\frac1{4\pi}\int dt\,dx\,\big[K_{IJ}\,\partial_t\phi^I\partial_x\p
 $$
 the multicomponent chiral boson.
 
-```
-         y ↑
-           │                 vacuum
-   ════════╪══════════════════════════════════════  y = 0 :  n₊(K) modes  ⇒⇒  along +x
-           │                                                 n₋(K) modes  ⇐⇐  along −x
-           │        K-matrix fluid (y < 0)
-           └──────────────────────────────────────→ x
+![[gs-s2w10-chiral-edge.svg|Left, a half plane of fluid below its edge, with arrows for the modes that move along plus x and for those that move along minus x; right, a disk of fluid whose edge arrows run clockwise]]
 
-   disk:  the top edge runs along +x, so for positive-definite K every mode runs clockwise ↻
-```
 **Figure 3. The edge of a $K$-matrix fluid. By (8.3) the number of modes moving in $+x$ is the number of positive eigenvalues of $K$; along the top of the fluid $+x$ is the clockwise sense.**
 
 ### 8.2 Chirality, the edge algebra and the correspondence [Proved for (8.3); (8.4)–(8.5) Computed; the correspondence Stated — refs: Wen 1990; Witten 1989.]

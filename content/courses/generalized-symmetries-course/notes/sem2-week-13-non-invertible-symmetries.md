@@ -80,14 +80,8 @@ $$
 $$
 The line moves through any number of rows without changing $Z$: it is topological in time. The dressing is needed because the spins sit on the sites below the line and on the dual sites above it, and the bonds it cuts belong half to each side (Figure 1). Off the line (2.5) the dual row is a different matrix: at $(K_h,K_v)=(0.5,0.3)$ the largest entry of $[\mathcal D,\mathbb T]$ is 0.11–0.41 of that of $\mathbb T$ for $L=3,\dots,6$, against $6\times10^{-15}$ on the line, at $K_v=0.3$ and at $K_c$.
 
-```
-            ○ ─ ─ ─ ○ ─ ─ ─ ○ ─ ─ ─ ○          dual sites i+½: couplings (K_v*, K_h*) = (K_h, K_v) on (2.5)
-            ┆       ┆       ┆       ┆
-    ════════╪═══════╪═══════╪═══════╪════      𝒟 = V₂^{1/2} D V₂^{1/2}, (2.7)
-        │       │       │       │
-        ●───────●───────●───────●              sites i: couplings (K_h, K_v)
-        │       │       │       │
-```
+![[gs-s2w13-horizontal-line.svg|A horizontal duality line between two rows of the square lattice below and two rows of its dual above, displaced by half a spacing in both directions, with the couplings of each side]]
+
 **Figure 1. A horizontal duality line splices the lattice (below) to its dual (above), displaced by half a spacing. On the self-dual line (2.5) both sides carry the same couplings, and the dressed line commutes with the row transfer matrix, (2.8).**
 
 Two horizontal lines fuse into one row. The adjoint of the first relation in (2.6) is $V_1D^\dagger=c\,D^\dagger V_2$, so $D^\dagger V_2D=c^{-1}V_1D^\dagger D=c^{-1}V_1(1+\eta)$, and since η commutes with $V_1$ and $V_2$,
@@ -140,16 +134,8 @@ $$
 $$
 in which the end qubit has a bond on one side, a mixed term on the other, and no transverse field; the second pattern is the mirror image of the first. We diagonalized (3.4) for the cases of §3.1 and found the spectrum of $H_0\oplus H_1$ to $10^{-13}$.
 
-```
- site      a         a+1           a+2      ⋯      b−1           b          b+1
-     ⋯ ─── ● ──────── ● ──[a+3/2]── ● ──[ ]── ⋯ ──[ ]── ● ──[b−1/2]── ● ──────── ● ─── ⋯
-                   Dirichlet      G_{a+2}     ⋯    G_{b−1}           Dirichlet
-                (no G, no link)                                   (no G, no link)
- in the variables of (3.4):
-     ⋯ ─── ● ──────── ◆ ─────── ○ ────── ○ ── ⋯ ── ○ ─────── ◆ ──────── ● ─── ⋯
-          σ_a      σ̃_{a+1}   μ_{a+3/2}            μ_{b−1/2}   σ̃_b      σ_{b+1}
- terms:  g·x  1·zz   g·x̃z     1·x    g·zz    ⋯    1·x    g·zx̃   1·zz   g·x
-```
+![[gs-s2w13-interval-gauging.svg|The ring gauged on an interval, with link qubits inside it, Gauss laws at the interior sites and Dirichlet ends, above the same chain in the variables of (3.4), whose terms carry the coefficients g and 1 alternately across both interfaces and whose end qubits have no transverse field]]
+
 **Figure 2. Gauging on an interval with Dirichlet ends (top) and the same chain in the variables of (3.4) (bottom). The coefficients alternate g, 1 across both interfaces; inside the interval g multiplies bonds, so the μ chain is gH(1/g), and each end qubit ◆ lacks a transverse field.**
 
 ### 3.3 One line on the ring, and its motion [Computed.]
@@ -188,14 +174,8 @@ U_d\,H_D^{(d)}\,U_d^\dagger=H_D^{(d+1)} .\tag{3.8}
 $$
 We checked (3.8) for every $d$, including $d=L$, for $L=3,\dots,6$. The position of the line is unobservable, and with (2.8) the line is topological in both directions of spacetime at the self-dual point.
 
-```
- periodic chain, 2L terms:
-     x₁ ── z₁z₂ ── x₂ ── z₂z₃ ── ⋯ ── x_L ── z_L z₁ ──(x₁)
- one line at site d, 2L−1 terms:
-     ⋯ ── x_{d−1} ── z_{d−1}z_d ── x_d z_{d+1} ── x_{d+1} ── z_{d+1}z_{d+2} ── x_{d+2} ── ⋯
- after U_d, (3.8), the line sits at d+1:
-     ⋯ ── x_{d−1} ── z_{d−1}z_d ── x_d ── z_d z_{d+1} ── x_{d+1}z_{d+2} ── x_{d+2} ── ⋯
-```
+![[gs-s2w13-term-cycle.svg|Three rows of chain terms: the periodic critical chain with 2L terms, the chain with one duality line whose mixed term replaces a transverse field and a bond, and the same chain after the two-site unitary has moved the line by one site]]
+
 **Figure 3. The terms of the critical chain as a cycle of anticommuting neighbours. The duality line replaces the transverse field and the bond of one site by a single mixed term, and the two-site unitary (3.7) moves the replacement by one site.**
 
 ### 3.4 Fusion and absorption in both channels [Proved; checked numerically.]
@@ -299,14 +279,8 @@ S_H\big|_{\rm GS}={\rm diag}(1,0,1,0)_b\otimes\begin{pmatrix}1&0&1&0\\0&1&0&1\\1
 $$
 which is (5.6): $e^am^b\mapsto e^am^b+e^{a+2}m^b$ for $b\in\{0,2\}$, and 0 for $m$ and $m^3$; its trace is 8. A single link shifted by one unit carries the fluxes $(1,3)$ on its two plaquettes and is annihilated; shifted by two it carries $(2,2)$ and has $S_H=2$; the dressed sheet (5.5) with $s=1$, along the one-step dual path between the two plaquettes, has eigenvalue 2 on the $(1,3)$ configuration.
 
-```
-     +═══════+═══════+        Σ = T² (2×2), a time slice of the ℤ₄ toric code
-     ║       │       ║        ═ , ║ : a closed chain c of e² lines, one of the 32 in (5.3)
-     ║  P₁ ⊗ │  P₂   ║        ⊗   : a flux m, an 't Hooft line piercing Σ, at P₁
-     +═══════+═══════+        c and c + 2∂P₁ enter (5.3) together with relative phase ω^{2·1} = −1:
-     │       │       │        the flux m is annihilated and the flux m² passes
-     +───────+───────+
-```
+![[gs-s2w13-condensation-sheet.svg|The 2 by 2 torus slice of the Z4 toric code with a closed chain of condensed charge-2 lines along the middle row, a flux m in the plaquette P1 with the small condensed loop around it, and the partner flux m3 in P2]]
+
 **Figure 4. The condensation sheet on a time slice. The sum over all closed chains of condensed lines contains, with every chain, the same chain plus the small loop around a puncture; the two cancel for a flux outside Ann(H), (5.4).**
 
 ### 5.4 The sheet in one box [Proved in §§5.1–5.3.]

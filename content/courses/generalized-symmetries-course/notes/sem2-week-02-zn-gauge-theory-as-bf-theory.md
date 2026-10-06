@@ -127,18 +127,8 @@ W_xV_y=\omega^{-1}\,V_yW_x,\qquad W_yV_x=\omega\,V_xW_y,\qquad [W_x,V_x]=[W_y,V_
 $$
 Therefore $(Z_1,X_1)=(W_x,U(C_y))=(W_x,V_y^\dagger)$ and $(Z_2,X_2)=(W_y,U(-C_x))=(W_y,V_x)$, whose cycles cross with $C_x\cdot C_y=C_y\cdot(-C_x)=+1$, are two mutually commuting clock–shift pairs, $Z_iX_i=\omega X_iZ_i$. The phase ω per crossing is the exponential of $i$ times the bracket coefficient $2\pi/N$; this is the derivation that [[week-02-lattice-cell-complex-cochains|Week 2]] §8 announced. We checked the table (3.7) with explicit $9\times9$ clock and shift matrices for $N=3$.
 
-```
-            C_y  (b-holonomy: V_y = exp(i∮b))
-             ↑
-    ┌────────┼────────────┐
-    │        │            │
-    │        │            │      C_x · C_y = +1  (the frame (x̂, ŷ) is positive)
- ───┼────────╳────────────┼──→   C_x  (a-holonomy: W_x = exp(i∮a))
-    │        │            │
-    │        │            │      W_x V_y = ω⁻¹ V_y W_x,   W_y V_x = ω V_x W_y
-    └────────┼────────────┘
-             │                   (opposite edges of the square identified)
-```
+![[gs-s2w02-torus-holonomies.svg|Square with opposite edges identified, a horizontal cycle Cx carrying the holonomy of a and a vertical cycle Cy carrying the holonomy of b, which cross once]]
+
 **Figure 1. The torus with its two cycles. The holonomy of $a$ along $C_x$ and the holonomy of $b$ along $C_y$ meet at one point, and (3.5) assigns that point the commutator $2\pi i/N$.**
 
 ### 3.4 $W^N=1$ and ${\rm GSD}(T^2)=N^2$
@@ -171,19 +161,9 @@ $$
 $$
 one factor $N^2$ per handle, from the two pairs ($a$ on $A_i$ with $b$ on $B_i$, and $a$ on $B_i$ with $b$ on $A_i$). In the eigenbasis of the $W$'s a state is labelled by $\alpha\in{\rm Hom}(H_1(\Sigma_g),\mathbb{Z}_N)=H^1(\Sigma_g,\mathbb{Z}_N)$, the $\mathbb{Z}_N$ holonomy of $a$ on every cycle. On the sphere there is one state. We checked the irreducibility numerically: the commutant of the generators is one-dimensional for $(N,g)=(3,1)$, $(4,1)$ and $(2,2)$.
 
-```
-   _______________________________________________________
-  /                                                       \
- |     . - - - A_1 - - - .            . - - - A_2 - - - .   |
- |    :       ______      :          :       ______      :  |
- |    :      ( hole )     :          :      ( hole )     :  |   · · ·
- |    :       ‾‾‾‾‾‾      :          :       ‾‾‾‾‾‾      :  |
- |    :         ‖         :          :         ‖         :  |
- |     ' - - - -‖- - - - '            ' - - - -‖- - - - '   |
- |              ‖ B_1                          ‖ B_2        |
-  \_____________‖______________________________‖___________/
-```
-**Figure 2. A symplectic basis of $H_1(\Sigma_g)$, seen from above. $A_i$ (dashed) runs around the $i$-th hole on the top face. $B_i$ (double line) runs on the top face from the rim of the $i$-th hole across $A_i$ to the outer edge and returns along the bottom face, so it goes once around the tube of the $i$-th handle. Only $A_i$ and $B_i$ intersect, once.**
+![[gs-s2w02-genus-g-basis.svg|Surface of genus g seen from above, each cycle Ai running around a hole and each cycle Bi running from the rim of that hole to the outer edge on the top face and back on the bottom face, crossing Ai once]]
+
+**Figure 2. A symplectic basis of $H_1(\Sigma_g)$, seen from above. $A_i$ runs around the $i$-th hole on the top face. $B_i$ runs on the top face (solid) from the rim of the $i$-th hole across $A_i$ to the outer edge and returns along the bottom face (dotted), so it goes once around the tube of the $i$-th handle. Only $A_i$ and $B_i$ intersect, once.**
 
 *Euclidean check* [Computed]. Since $H=0$, $Z(\Sigma_g\times S^1)={\rm Tr}_{\mathcal H(\Sigma_g)}e^{-\beta H}=\dim\mathcal H(\Sigma_g)$. On a cellulation of $M$ with $N_0$ sites, $N_1$ links and $N_2$ plaquettes, take the dual presentation of §6.2, with $a\in C^1(M,\mathbb{Z}_N)$ on the links and $\tilde b$ on the $N_2$ dual links, one per plaquette. The normalized lattice BF partition function is
 $$
@@ -217,17 +197,8 @@ $$
 $$
 the Ward identity of [[courses/generalized-symmetries-course/conventions|conventions]] §6; §6.4 shows that the lattice definition of Link there is the right-handed linking number used here. The sign in $U_s=V_{-s}$ is forced by the sign of the weight: the line $V_m$ carries $a$-flux $-m$ by (5.2), so $U_s$ carries flux $+s$. The equal-time relation (3.6) is the same pairing seen in a time slice: two loops that cross once in space become linked once in spacetime when one of them is moved from just after to just before the other, which is the general relation between equal-time commutators and linking of [[sem2-week-01-symmetries-are-topological-operators|Week 1]] §6.3 (cross-reference: equal time from linking).
 
-```
-                    ↑  C′ : V_m (b-line), oriented upward
-                    │
-        ┌───────────┼───────────┐
-        │  D        │           │      C = ∂D : W_e, counterclockwise seen from above
-        │   (normal ↑)  ●       │      C′ crosses D once along its normal:
-        │           │           │           Lk(C, C′) = +1
-        └───────────┼───────────┘      ⟨W_e(C) V_m(C′)⟩ = ω^(−em),  ⟨W_e(C) U_s(C′)⟩ = ω^(es)
-                    │
-                    │   (C′ closes far away)
-```
+![[gs-s2w02-linked-pair.svg|A Wilson loop bounding a disk, seen in perspective, pierced once along the normal of the disk by a vertical b-line oriented upward]]
+
 **Figure 3. The linked pair of (5.4)–(5.5). The $b$-line pierces the Seifert disk of the Wilson loop once, and the $a$-flux $-2\pi m/N$ that it carries by (5.2) gives the Wilson loop its phase.**
 
 ### 5.2 Anyons
@@ -282,17 +253,8 @@ which we also checked; by the Leibniz rule of [[courses/generalized-symmetries-c
 
 *(c) The GLSS presentation.* GLSS write the β → ∞ limit of (C.19) as the weight $e^{-S}$ with $S=\frac{2\pi i}N\sum_{p\text{-cell}}m\,\Delta\tilde n$, their (C.21), which at $p=1$, $d=3$ has integers $m$ on links and $\tilde n$ on dual links, with the gauge symmetries (C.20) and (C.22) that include the shifts by $N\mathbb{Z}$. Their pairing of a link with its dual plaquette is our $\star$, up to their orientation convention for dual cells; with $m=a$ and $\tilde n=-\tilde b$, the sign absorbing $e^{-S}$, (C.21) is the last expression in (6.7). Read from right to left, (6.7) turns the GLSS presentation into the cup form of [[courses/generalized-symmetries-course/conventions|conventions]] §7; read from left to right, it removes the cup product in favour of $\tilde b$ on $\Lambda^*$. [GLSS's equations: Stated — refs: GLSS App. C.2.]
 
-```
-     side view along x₃ (the plaquette P₂₃(x+1̂) is seen edge-on as ┃)
+![[gs-s2w02-cup-dual-link.svg|A lattice cube with the link from x to x plus the unit vector 1 carrying b1(x), the face P23 at the far end of the cube, and the dual link obtained by shifting the link by h, which pierces that face at its center]]
 
-                        ┃ P₂₃(x+1̂)
-                        ┃
-          x ●━━━━━━━━━━━●  x+1̂           b₁(x) sits on the link x → x+1̂ ...
-                        ┃
-            ·───────────╂───────────→ ·   ... and is the value of b̃ on the dual link
-          x+h           ┃          x+h+1̂   (x+h; 1), which pierces P₂₃(x+1̂) at its center
-                        ┃
-```
 **Figure 4. Why the cup product is a dual-lattice pairing: the link that carries $b_1(x)$, shifted by $h$, is the dual link through the plaquette $P_{23}(x+\hat1)$ that $b_1(x)$ multiplies in (6.6).**
 
 ### 6.3 From the lattice to the continuum and back [Computed; the continuum limit Stated — refs: GLSS (C.31)–(C.33).]
@@ -333,17 +295,8 @@ e^{i\int_{\tilde\ell}b}\ \longleftrightarrow\ X_\ell^\dagger,\qquad W(\gamma)\le
 $$
 with the exponent $+1$ in $W$ for links traversed along their orientation. The generator of the electric symmetry is thus the string of shift operators $X$ on the links that $\tilde\gamma$ crosses positively, and a Wilson string and a generator string that share one such link obey $WU=\omega UW$, which is $ZX=\omega XZ$ on that link and (3.6) on the torus. The constraints (3.2) become the plaquette and star conditions. The $a$-holonomy around a plaquette is $B_P=\prod_{\partial P}Z$, so $f_a=0$ is $B_P=1$. The $b$-holonomy around the small counterclockwise dual loop that encircles a site $x$ crosses each outgoing link with $\ell\cdot\tilde\gamma=+1$ and each incoming one with $-1$, so it equals $\prod_iX_{(x-\hat i,i)}X^\dagger_{(x,i)}=G_x$, and $f_b=0$ is Gauss's law $G_x=1$ of [[courses/generalized-symmetries-course/conventions|conventions]] §4. The BF Hilbert space on $T^2$ is therefore the ground space of $-\sum_x{\rm Re}\,G_x-\sum_P{\rm Re}\,B_P$, the $\Gamma\to0$ point of the $\mathbb{Z}_N$ Kogut–Susskind Hamiltonian with the Gauss law imposed energetically (Week 7 §8 for $N=2$; Week 14 §7.1 at $q\equiv0$, where the explicit $9\times9$ ground-space matrices of the holonomies for $N=3$ were computed). The electric-flux operator $U_i(n)=\prod_{x_i=n}X_{(x,i)}$ of [[courses/generalized-symmetries-course/conventions|conventions]] §4 is $U(\tilde\gamma)$ for the dual curve that crosses that column positively, and for $N=2$ the dictionary is Week 15 §3.4, where $W_i=\prod\sigma^z$, $U_i=\prod\sigma^x$, and (3.2) there is (3.7) here. Figure 5 shows the two strings and their single shared link.
 
-```
-                ┊ C̃_y (dual curve)
-    +────────+──┊─────+────────+
-    │        │  ┊     │        │
-    +────────+──X─────+────────+        U(C̃_y) = ∏ X on the horizontal links crossed by C̃_y
-    │        │  ┊     │        │
-    +══Z═════+══╪═════+═══Z════+  ←── C_x :  W_x = ∏ Z on the row
-    │        │  ┊     │        │
-    +────────+──X─────+────────+        ╪ : the one link where both act (Z and X):
-                ┊                            W_x U(C̃_y) = ω U(C̃_y) W_x
-```
+![[gs-s2w02-lattice-holonomies.svg|Periodic square lattice with Z on the links of the row Cx and X on the links crossed by a vertical dual curve, the two strings sharing one link that carries both]]
+
 **Figure 5. The lattice holonomies of (6.13) on a spatial torus. The Wilson string of $Z$'s along $C_x$ and the string of $X$'s on the links crossed by the dual curve $\tilde C_y$ share one link, which carries the single factor of ω in (3.7).**
 
 *The lattice linking.* The generator $U_s(\tilde c)$ of [[courses/generalized-symmetries-course/conventions|conventions]] §6 replaces $(da)_P$ by $(da)_P-s$ on the plaquettes dual to a closed dual curve $\tilde c=\partial\tilde V$, oriented so that $d\lambda_{\tilde V}=+1$ on them, where $\lambda_{\tilde V}$ is the signed indicator of the links dual to the cells of $\tilde V$. With the Hodge orientations of [[courses/generalized-symmetries-course/conventions|conventions]] §2, $\lambda_{\tilde V}=\star1_{\tilde V}$, and $d\lambda_{\tilde V}=\star1_{\tilde c}$ follows from $1_{\partial\tilde V}=\delta1_{\tilde V}$ and $\delta=\star d\star$ on $C^2(\Lambda^*)$, which we checked. By the Fourier expansion of §6.1, $f\big((da)_P-s\big)=\sum_k\hat f(k)\,\omega^{k(da)_P}\omega^{-ks}$, so the replacement inserts $\omega^{-s\langle\tilde b,1_{\tilde c}\rangle}$, with $1_{\tilde c}$ the indicator cochain of $\tilde c$:

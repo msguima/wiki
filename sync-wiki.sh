@@ -49,6 +49,9 @@ PUBLISH=(
   courses/ads-cft-course/conventions.md
   courses/generalized-symmetries-course/notes
   courses/generalized-symmetries-course/appendices
+  # Figures of the generalized-symmetries notes, prefixed gs-, drawn by script
+  # in the lecture dossier.
+  courses/generalized-symmetries-course/assets
   courses/generalized-symmetries-course/syllabus.md
   courses/generalized-symmetries-course/conventions.md
   # The neural-networks/LLM course prefixes its files nn-llm- and carries
@@ -84,13 +87,19 @@ PUBLISH=(
 # People notes that stay private (junior researchers; see wiki/entities/),
 # plus internal course documents (organizational crosswalk), plus the one
 # generalized-symmetries note that follows the group's unpublished manuscript
-# in detail, held back until the manuscript is public (decision of 2026-10-04).
+# in detail, held back until the manuscript is public (decision of 2026-10-04),
+# with its five figures.
 EXCLUDE=(
   entities/ismael-porfirio.md
   entities/erick-landim.md
   entities/luigi-carvalho-ferreira.md
   courses/ads-cft-course/appendices/adscft-org-crosswalk.md
   courses/generalized-symmetries-course/notes/sem2-week-14-defect-condensation-and-julia-toulouse.md
+  courses/generalized-symmetries-course/assets/gs-s2w14-current-clock.svg
+  courses/generalized-symmetries-course/assets/gs-s2w14-endpoint-regimes.svg
+  courses/generalized-symmetries-course/assets/gs-s2w14-small-sheet.svg
+  courses/generalized-symmetries-course/assets/gs-s2w14-splitting.svg
+  courses/generalized-symmetries-course/assets/gs-s2w14-wall.svg
 )
 
 # Clear the previous copy, keeping the hand-written landing page.

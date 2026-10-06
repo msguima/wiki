@@ -210,20 +210,9 @@ Consider the saddle point of the last boxed functional for a large planar loop, 
 
 The literal jump is the configuration that the lattice formula suggests, and it has to be kept apart from the wall. Take $\sigma=0$ in the boxed formula of §4.2: the lift jumps by $2\pi q$ across Σ, $\cos\sigma=1$ everywhere, and the monopoles do not see it. Its only cost is the gradient term on the dual links through Σ, $\frac1{8\pi^2\beta}(2\pi q)^2=\frac{q^2}{2\beta}$ per plaquette, which is the strong-coupling flux sheet of §4.1, with tension $q^2e^2/2a_{\rm lat}$ in physical units, divergent in the continuum. Spreading the unwinding over a length ℓ costs gradient energy $\sim4\pi^2q^2K/\ell$ and potential energy $\sim\zeta\ell$ per unit area; the balance is at $\ell\sim m_\gamma^{-1}$ and lowers the cost to $\sim\sqrt{K\zeta}$, exponentially small. §§5.2–5.3 do the balance exactly.
 
-```
-                              σ ≈ 2π   (the vacuum, ≡ 0)
-            ↺
-          ⊙ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ⊗
-          ┆              σ ≈ 0   (the same vacuum)          ┆
-          ┆                                                 ┆
-          └┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘
+![[gs-w10-wilson-loop-cross-section.svg|Computed cross-section of a planar Wilson loop, with a dark band of action density on the flat disk between the two points where the loop crosses the page, and below it a U-shaped dashed surface that carries the literal jump and no action]]
 
-   ⊙ ⊗   the loop C crossing the page (out, in); σ winds by +2π around each crossing (↺ at ⊙)
-   ━━━   the wall: σ passes through π on the flat disk; thickness ≈ 1.76/m_γ (Figure 2)
-   ┄┄┄   a spanning surface Σ of the lattice formula, carrying ñ = −q⋆1_Σ: the literal jump,
-         invisible to cos σ and removed by a 2π shift of σ in the region V between Σ and the disk
-```
-**Figure 1. Cross-section of a planar Wilson loop in the vortex picture. The action is spent in the band where the smooth field unwinds, located by minimization on the minimal surface; the surface Σ that carries the literal jump costs nothing in the cosine and can be moved at will.**
+**Figure 1. Cross-section of a planar Wilson loop in the vortex picture, computed with the lattice action of §5.5 on the cross-section of a wrapped strip of width $R=10.5/m_\gamma$ at $m_\gamma a_{\rm lat}=0.15$, starting from the literal jump on a U-shaped Σ; the shading is the action density and the thin curves are $\cos\sigma=0$. The action is spent in the band where the smooth field unwinds, located by minimization on the minimal surface; the surface Σ that carries the literal jump costs nothing in the cosine and can be moved at will.**
 
 ### 5.2 The kink [Computed.]
 
@@ -241,24 +230,9 @@ $$
 $$
 The center $\xi_0$ is a free collective coordinate, the translation zero mode of the wall. As Figure 2 shows, σ runs from $\pi/2$ to $3\pi/2$ over $2\,{\rm arccosh}\sqrt2/m_\gamma=1.763/m_\gamma$, which is also the full width at half maximum of ε; the rms width of ε is $\pi/(\sqrt{12}\,m_\gamma)=0.907/m_\gamma$. The thickness of the wall is the Debye length.
 
-```
-  2π ┤                                             •   •
-     │                                     •   •
-     │                                 •
-     │                             •
-   π ┤  · · · · · · · · · · · ·•· · · · · · · · · · · · · · ·
-     │                     •
-     │                 •
-     │         •   •
-   0 ┤ •   •
-     └─┬───────┬───────┬───────┬───────┬───────┬───────┬────────▶ m_γξ
-      −3      −2      −1       0      +1      +2      +3
+![[gs-w10-kink-profile.svg|The kink of the dual photon rising from 0 to 2 pi over a few Debye lengths, and below it the bell-shaped action density with its equal gradient and potential halves]]
 
-   m_γξ :   −3     −2     −1      0     +1     +2     +3
-   σ/π  :  0.06   0.17   0.45   1.00   1.55   1.83   1.94
-   ε/ε₀ :  0.01   0.07   0.42   1.00   0.42   0.07   0.01       ε₀ = 8Km_γ²
-```
-**Figure 2. The unit wall $\sigma=4\arctan e^{m_\gamma\xi}$ (points at steps of $0.5/m_\gamma$) and its action density $\varepsilon=\varepsilon_0\cosh^{-2}m_\gamma\xi$: the field unwinds by $2\pi$ over a few Debye lengths, and half of ε is gradient energy, half potential energy.**
+**Figure 2. The unit wall $\sigma=4\arctan e^{m_\gamma\xi}$ (points at steps of $0.5/m_\gamma$) and its action density $\varepsilon=\varepsilon_0\cosh^{-2}m_\gamma\xi$, computed from the kink of §5.2, with the width $1.763/m_\gamma$ between $\sigma=\pi/2$ and $3\pi/2$ shaded: the field unwinds by $2\pi$ over a few Debye lengths, and half of ε is gradient energy, half potential energy.**
 
 ### 5.3 The Bogomolny bound and the tension [Computed.]
 
@@ -351,21 +325,8 @@ Steps 2 and 3 have the same parameter, $N_D\gg1$: the plasma is weakly coupled e
 
 The factor $8\sqrt2\pi^3\simeq351$ in $N_D$ means that the controlled regime begins only around β ≈ 4–5, where the Debye length is $10^3$–$10^4$ lattice spacings, in agreement with the ordering of scales in Week 9 §2.5. The formulas of §§3–6 are thus controlled at weak coupling, to leading order in $(\zeta/e^6)^{1/2}$; they are not claimed for β ≲ 3, where the scales are not ordered, nor at strong coupling, where the gas is dense. That compact QED₃ confines at every coupling is a theorem of Göpfert and Mack for the Villain action [Stated — refs.]; at strong coupling the character expansion of Week 6 already shows it. Figure 3 collects the scales.
 
-```
-   S_mono = 2π²G₃(0)β = 4.99 β                    monopole action (Week 8)
-        │   ζ = e^(−S_mono)/a_lat³
-        ▼
-   ζ/e⁶ = β³ e^(−4.99β)  ≪ 1  (at β ≫ 1)          the one small parameter
-        │   m_γ² = ζ/K = 8π²ζ/e²
-        ▼
-   m_γ = 2π√(2ζ)/e                                photon mass = Debye mass = inverse wall thickness
-        │   σ_str = 16K m_γ = (2/π²) e² m_γ
-        ▼
-   σ_str                                          string tension;  σ_str/m_γ² = 8 N_D ≫ 1
+![[gs-w10-polyakov-scales.svg|Flow chart from the monopole action to the fugacity, the small parameter zeta over e to the sixth, the photon mass and the string tension, with the ordering of lengths and their ratios below]]
 
-   lengths:  a_lat  ≪  ℓ_B = π/e²  ≪  r̄ = (2ζ)^(−1/3)  ≪  m_γ⁻¹  ≪  R
-   ratios:   ℓ_B/a_lat = πβ ;   ℓ_B/r̄ ∝ (ζ/e⁶)^(1/3) ;   r̄ m_γ ∝ (ζ/e⁶)^(1/6) ;   N_D = 2K/m_γ ∝ (ζ/e⁶)^(−1/2)
-```
 **Figure 3. The scales of Polyakov's mechanism: on the weak-coupling branch every ratio of couplings is a power of $\zeta/e^6$, and every ordering of lengths used in §§3–6 holds when it is small.**
 
 ## 8. Subtleties and fine print
