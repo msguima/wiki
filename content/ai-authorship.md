@@ -51,7 +51,7 @@ none. The counts therefore understate the earliest work.
 |---|---|---|
 | Estrutura Algébrica da Teoria Quântica de Campos<br>`2026-algebraic-qft-course` | Claude Opus 4.7 (14 commits), Claude Opus 4.8 (2), Claude Opus 5 (2) | 2026-05-08 → 2026-08-23 |
 | Holography through Quantum Information and Operator Algebras<br>`ads-cft-course` | GPT Astra 6 (redesign, 32 notes); Claude Opus 5.5 (Lectures 8–32 rewritten, with independent audits) | 2026-09-29 → 2026-10-01 |
-| Generalized Symmetries and Topological Matter<br>`generalized-symmetries-course` | Claude Opus 5.5 (7 commits in the `courses` repository: Semester I rewritten and Semester II written, with independent verification passes) | 2026-09-28 → 2026-10-03 |
+| Generalized Symmetries and Topological Matter<br>`generalized-symmetries-course` | Claude Opus 5.5 (15 commits in the `courses` repository: Semester I rewritten, Semester II written, the review's corrections and the 111 figures drawn by script, with independent verification passes); GPT Astra 6 (review of 2026-10-04, which led to the corrections and to the redrawn figures) | 2026-09-28 → 2026-10-05 |
 | Geometric QCD: a critical course on Migdal's IAS lectures<br>`geometric-qcd-course` | GPT Astra 6 (edition 2.0: the 35 notes revised, with 140 problems, eight figures and scripted model checks); the first edition has no authorship record | 2026-10-04 → 2026-10-05 |
 | Statistical Physics of Neural Networks and Language Models<br>`neural-networks-llms-course` | Claude Opus 5 (initial wiki draft); Codex (OpenAI, pedagogical revision) | 2026-09-19 → |
 | Research notes<br>`concepts`, `areas`, `connections`, `papers`, `projects`, `questions`, `entities` | Claude Opus 4.8 (7 commits), Claude Opus 5 (2), Claude Opus 4.6 (2), Claude Fable 5 (1) | 2026-04-06 → 2026-09-19 |
@@ -81,7 +81,13 @@ between 2026-09-28 and 2026-10-03, each block followed by an independent
 verification pass, and the commits there carry the trailers. On 2026-10-04 it
 replaced the earlier copy of this wiki, written by Claude Opus 4.8 (5 commits)
 and Claude Fable 5 (3) between 2026-07-05 and 2026-07-10, which remains in the
-repository history.
+repository history. Later that day GPT Astra 6 reviewed the course, the two
+editions of its book and this wiki's copy. Its review found errors in eleven
+notes, which Claude Opus 5.5 confirmed and corrected that day, and proposed
+replacing the text diagrams by figures drawn from one editable source; Claude
+Opus 5.5 redrew the 111 figures that way on 2026-10-05, each chapter checked by
+an independent instance. GPT Astra 6 made no commit, and it is credited as a
+contributor to the course at Marcelo's request.
 
 The geometric-QCD course is carried from the `courses` repository as well. It
 is a critical reading of Alexander Migdal's 2026 lectures at the Institute for
