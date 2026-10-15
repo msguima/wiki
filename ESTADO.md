@@ -2,7 +2,7 @@
 titulo: wiki
 area: conhecimento
 fase: em uso
-revisado_em: 2026-10-05
+revisado_em: 2026-10-14
 ---
 
 ## Notas
@@ -23,3 +23,5 @@ Em 2026-10-05 entrou no site o curso *Geometric QCD: a critical course on Migdal
 Ainda em 2026-10-05 as notas de simetrias generalizadas foram republicadas com as figuras redesenhadas no dossiê, sincronizadas de um clone do commit fcf86da do vault: 106 figuras em SVG, publicadas de `courses/generalized-symmetries-course/assets/`, que entrou na lista PUBLISH do `sync-wiki.sh`. As cinco figuras da Semana 14 ficam fora com a nota, listadas no EXCLUDE. A checagem de privacidade em content/ e public/ não achou nada novo.
 
 Ainda em 2026-10-05 a página de autoria foi republicada, a partir do commit acec351 do vault, com o GPT Astra 6 creditado como colaborador do curso de simetrias generalizadas, autor da revisão que levou às correções e às figuras. A checagem de privacidade não achou nada novo.
+
+Em 2026-10-14 o cluster do Julia–Toulouse foi corrigido no vault e sincronizado para `content/`: a página do conceito reescrita a partir da Semana 11 §7 do curso de simetrias generalizadas, de Quevedo–Trugenberger (1997) e da série do grupo de 2009–2013, citada paper a paper, mais a pergunta, a conexão, a área e uma relação da página de Chern–Simons. A página antiga descrevia o mecanismo errado: condensado blindando carga elétrica, fase condensada como BF topológico puro e sem a mudança de rank. A revisão que motivou o conserto cobriu as 53 páginas de conceitos. A construção local não acusou erro novo — o único aviso de KaTeX, um § dentro de `\text{}` na Semana 13 do curso de AQFT, é anterior — e a checagem de privacidade em content/ e public/ não achou nada novo, mas confirmou o achado da revisão: os nomes dos pesquisadores juniores seguem publicados em dezoito páginas, com a bolsa do pós-doc numa delas. Esse conserto e a afirmação de embezzlement exato, em dez páginas, ficaram abertos.
