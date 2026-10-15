@@ -3,7 +3,7 @@ title: Coherent States
 type: concept
 areas: [bell-inequalities-qft, relative-entropy-qft]
 aliases: [coherent state, Glauber coherent state, displacement state]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -30,11 +30,11 @@ $$\langle\psi_f|W(g)|\psi_f\rangle = e^{i\,\text{Re}\langle f,g\rangle_+}\,e^{-\
 
 where $\langle f,g\rangle_+$ is the positive-frequency inner product. This Gaussian form makes all correlators exactly computable.
 
-The **[[araki-uhlmann-relative-entropy|Araki-Uhlmann relative entropy]]** between a coherent state $\omega_f$ and the vacuum $\omega_0$ is
+The **[[araki-uhlmann-relative-entropy|Araki-Uhlmann relative entropy]]** between a coherent state $\omega_f$ and the vacuum $\omega_0$, both restricted to the algebra of a wedge, is
 
 $$S(\omega_f\|\omega_0) = \|f\|^2_+,$$
 
-the one-particle norm squared of the displacement function $f$.
+the one-particle norm squared of the displacement function. On the global algebra the two states are pure and the relative entropy diverges, so the formula is a local statement.
 
 ## Role in Research
 

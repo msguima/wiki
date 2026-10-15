@@ -3,7 +3,7 @@ title: ER=EPR
 type: concept
 areas: [gauge-gravity-duality, bell-inequalities-qft]
 aliases: [ER=EPR, Einstein-Rosen = Einstein-Podolsky-Rosen, geometry from entanglement]
-modified: 2026-06-04
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -12,7 +12,7 @@ modified: 2026-06-04
 
 The cleanest instance is the [[thermofield-double-state|thermofield double]]: maximal $L$–$R$ entanglement of two CFTs ↔ the smooth two-sided eternal black hole. Ryu–Takayanagi ([[ryu-takayanagi-formula]]) and its quantum-extremal refinement ([[quantum-extremal-surfaces]]) make "area ↔ entanglement" quantitative; ER=EPR is the slogan-level statement of the same idea applied to connectivity rather than just entropy.
 
-There is an **algebraic version** (developed in [[2025-liu-lectures-entanglement-vna|Liu's lectures]]): bulk connectivity is encoded in the commutant relations of the boundary subalgebras. Two regions are "connected" when their algebras fail to commute in the appropriate sense; modular flow of one boundary algebra generates geometric flow across the bridge.
+There is an **algebraic version** (developed in [[2025-liu-lectures-entanglement-vna|Liu's lectures]]): bulk connectivity is encoded in the structure of the boundary subalgebras. The two boundary algebras of the thermofield double do commute — each is the other's commutant — and what signals connectivity is that the Hilbert space does not factorize into a tensor product of the two, the [[type-iii-von-neumann-algebras|type III₁]] property, together with the modular flow of one algebra generating a geometric flow that crosses the bridge.
 
 ## Role in Research
 

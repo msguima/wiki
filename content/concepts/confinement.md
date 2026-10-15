@@ -3,7 +3,7 @@ title: Confinement
 type: concept
 areas: [gribov-zwanziger, confinement-duality]
 aliases: [color confinement, quark confinement, gluon confinement]
-modified: 2026-10-05
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -12,7 +12,7 @@ modified: 2026-10-05
 
 Formally, confinement can be stated as the absence of isolated color-charged states from the physical Hilbert space $\mathcal{H}_{\text{phys}}$ (the [[brst-symmetry|BRST cohomology]]). The confining force grows linearly with distance (linear potential $V(r) \sim \sigma r$ at large $r$, where $\sigma \approx 0.18\,\text{GeV}^2$ is the string tension), leading to unbreakable chromoelectric flux tubes (strings) between quarks.
 
-Confinement is not yet proven analytically from the QCD Lagrangian (it is one of the Millennium Prize Problems), but several mechanisms and signals are understood:
+Confinement is not yet proven analytically from the QCD Lagrangian — the Millennium Prize Problem is the closely related existence and mass gap of Yang-Mills theory — but several mechanisms and signals are understood:
 
 **1. Spectral positivity violation (GZ signal)**: The gluon propagator in the [[refined-gribov-zwanziger|RGZ framework]] does not admit a positive Källén-Lehmann spectral representation:
 
@@ -24,7 +24,7 @@ Complex poles in the propagator (from the quartic GZ denominator) mean gluons ca
 
 **3. Julia-Toulouse mechanism**: Proliferation and condensation of topological defects (monopoles, vortices) drives a transition to a confined phase. See [[julia-toulouse-mechanism]].
 
-**Kugo-Ojima criterion**: In Landau gauge, confinement is signaled by the ghost propagator being more singular than $1/p^2$ in the infrared (the "ghost enhancement"), combined with the gluon propagator being suppressed at $p=0$ — both predicted by GZ and confirmed (qualitatively) on the lattice.
+**Kugo-Ojima criterion**: in Landau gauge the criterion asks for a ghost propagator more singular than $1/p^2$ in the infrared (the "ghost enhancement") together with a gluon propagator vanishing at $p=0$, which is the scaling solution of the original GZ action. The lattice sees neither: the gluon propagator is finite and non-zero at $p=0$ and the ghost dressing function stays finite, the decoupling solution. Reproducing that behaviour is what the dimension-two condensates of [[refined-gribov-zwanziger|RGZ]] do, and the confinement signal then rests on the complex poles rather than on the enhancement.
 
 ## Role in Research
 
@@ -52,7 +52,7 @@ See [[gribov-zwanziger]] and [[confinement-duality]] for full paper lists.
 ## Notes
 
 - The Yang-Mills mass gap problem (proving that the Yang-Mills spectrum has a mass gap $\Delta > 0$) is a Millennium Prize Problem. Confinement is closely related but technically distinct — the mass gap implies no massless colored states, which is part of confinement.
-- The string tension $\sigma$ (coefficient of the linear potential) is the order parameter for the deconfinement transition at finite temperature. Above the critical temperature $T_c$ (deconfinement), the string breaks and QCD enters the quark-gluon plasma phase.
+- The order parameter for the deconfinement transition of the pure gauge theory at finite temperature is the Polyakov loop, charged under the $\mathbb{Z}_N$ center symmetry; the string tension vanishes above $T_c$ along with it. With dynamical quarks in the fundamental representation neither is an order parameter in the strict sense, because the center symmetry is explicitly broken.
 - Common confusion: confinement applies to color-charged particles, not to all massive particles. The Higgs mechanism (in electroweak theory) also makes gauge bosons massive, but those particles are observable — Higgs-generated mass is not confinement.
 - The relationship between the Gribov horizon and the string tension is not yet fully established analytically, though both the GZ propagator modifications and the lattice string tension arise from the same non-perturbative IR dynamics.
 - The [[geometric-qcd-course-guide|geometric-QCD course]] reads critically Migdal's 2026 proposal to solve planar QCD through a Hodge-dual minimal surface, from which the confining string and the meson spectrum would follow; its [[courses/geometric-qcd-course/claim-status-map|claim map]] separates the calculations checked in the course from the open claims.

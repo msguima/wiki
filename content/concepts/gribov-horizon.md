@@ -3,7 +3,7 @@ title: Gribov Horizon
 type: concept
 areas: [gribov-zwanziger]
 aliases: [Gribov region, first Gribov region, horizon boundary]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -26,7 +26,7 @@ The restriction of the functional integral to $\Omega$ is implemented by adding 
 
 $$h(A) = g^2 \int d^dx\, f^{abc} A^b_\mu\,(M^{-1})^{ad}\,f^{dec} A^e_\mu.$$
 
-The horizon condition $\langle h(A)\rangle = d(N^2-1)$ (for gauge group $SU(N)$ in $d$ dimensions) self-consistently enforces the restriction. This condition determines the **Gribov mass parameter** $\gamma$ (the horizon parameter), which appears in the gluon propagator.
+The horizon condition $\langle h(A)\rangle = d\,V(N^2-1)$, with $V$ the spacetime volume, for gauge group $SU(N)$ in $d$ dimensions, self-consistently enforces the restriction. This condition determines the **Gribov mass parameter** $\gamma$ (the horizon parameter), which appears in the gluon propagator.
 
 The resulting **GZ gluon propagator** in Landau gauge takes the infrared-suppressed form:
 
@@ -39,7 +39,7 @@ which is suppressed at $p \to 0$ (the Gribov mass $\gamma$ provides an effective
 The Gribov horizon is the central object of the [[gribov-zwanziger]] research program. The restriction to $\Omega$ produces all the distinctive infrared features of the GZ framework:
 
 - **Modified gluon propagator**: suppressed at $p=0$, violates Källén-Lehmann positivity.
-- **Enhanced ghost propagator**: the ghost propagator is infrared-enhanced (more singular than the free propagator), consistent with the Gribov no-pole condition.
+- **Enhanced ghost propagator**: in the pure GZ action the ghost propagator is infrared-enhanced, more singular than the free one, which is the scaling solution and is consistent with Gribov's no-pole condition. The lattice finds no enhancement, and the dimension-two condensates of [[refined-gribov-zwanziger|RGZ]] remove it.
 - **Kugo-Ojima confinement criterion**: the ghost enhancement is connected to the Kugo-Ojima criterion for confinement.
 
 The all-order equivalence of the no-pole condition and the horizon condition (Phys. Lett. B 719, 2013; 43 citations) is one of the landmark results: Gribov's original 1978 approach (no-pole condition for the ghost) and Zwanziger's functional integral approach (horizon function) were shown to give the same physics to all orders in perturbation theory.
@@ -64,4 +64,4 @@ See [[gribov-zwanziger]] for full paper list.
 - The first Gribov region $\Omega$ is **convex** and still contains Gribov copies (multiple gauge-equivalent configurations satisfying $\partial A = 0$ can both lie in $\Omega$). The fundamental modular region $\Lambda \subset \Omega$ is the true gauge-fixing domain, but it is non-convex and computationally inaccessible.
 - "Horizon" in the GZ sense is an analogy with the event horizon in general relativity: configurations near $\partial\Omega$ have infrared-divergent contributions that dominate the path integral, much as physics near a black hole horizon dominates certain observables.
 - The Gribov mass $\gamma$ is not a free parameter — it is fixed self-consistently by the horizon condition. This self-consistency is what makes the GZ framework predictive rather than phenomenological.
-- The phrase "no-pole condition" refers to Gribov's original requirement that the ghost propagator $\langle c^a c^b\rangle^{-1}(p) = M^{ab}(p)$ in Landau gauge have no poles at finite real $p^2 > 0$, which geometrically corresponds to $M > 0$ everywhere in field space — exactly the condition defining $\Omega$.
+- The phrase "no-pole condition" refers to Gribov's original requirement that the ghost propagator $\langle c^a c^b\rangle^{-1}(p) = M^{ab}(p)$ in Landau gauge have no poles at finite real $p^2 > 0$, which corresponds to $M>0$ on the configurations that are integrated over — exactly the restriction to $\Omega$.

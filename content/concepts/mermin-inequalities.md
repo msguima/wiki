@@ -3,7 +3,7 @@ title: Mermin Inequalities
 type: concept
 areas: [bell-inequalities-qft]
 aliases: [Mermin inequality, multipartite Bell inequalities, Mermin-GHZ inequality]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -18,18 +18,18 @@ $$M_3 = \langle A_1 B_1 C_2\rangle + \langle A_1 B_2 C_1\rangle + \langle A_2 B_
 
 **Quantum bound** (Tsirelson-type): $|M_3| \leq 4$, achieved by the GHZ state $|\text{GHZ}\rangle = \frac{1}{\sqrt{2}}(|000\rangle + |111\rangle)$.
 
-For general $N$, the Mermin operator involves $2^{N-1}$ correlator terms and the bounds scale as:
+For general $N$ the Mermin operator involves $2^{N-1}$ correlator terms, and the local bound depends on the parity of $N$:
 
-- Classical: $|M_N| \leq 2^{(N-1)/2}$ (for $N$ odd) or $2^{N/2-1}$ (for $N$ even).
-- Quantum: $|M_N| \leq 2^{N-1}$.
+- Classical: $|M_N| \leq 2^{(N-1)/2}$ for $N$ odd, $|M_N| \leq 2^{N/2}$ for $N$ even.
+- Quantum: $|M_N| \leq 2^{N-1}$ for $N$ odd, $2^{N-1/2}$ for $N$ even.
 
-The exponential gap between classical and quantum bounds makes Mermin inequalities particularly powerful detectors of genuine multipartite entanglement, with the violation growing exponentially with $N$.
+Either way the quantum maximum exceeds the local bound by a factor $2^{(N-1)/2}$, which is the exponential gap. For even $N$ reaching it needs the Ardehali–Klyshko form of the inequality rather than Mermin's original one, which is weaker there; the whole family is often cited as Mermin–Ardehali–Belinskii–Klyshko. At $N=2$ the bounds reduce to the CHSH pair, $2$ and $2\sqrt2$.
 
 In the QFT setting, the multipartite scenario is set up with $N$ causally separated spacetime regions, each associated with a [[type-iii-von-neumann-algebras|type III₁]] local algebra. Dichotomic observables are again constructed from [[weyl-operators|Weyl operators]] in each region.
 
 ## Role in Research
 
-The extension from bipartite [[bell-chsh-inequality|Bell-CHSH]] to multipartite Mermin inequalities was achieved in Phys. Rev. D 109, 045020 (2023), showing that the QFT vacuum exhibits **genuine multipartite entanglement** across three (and more) causally separated Rindler-wedge regions.
+The extension from bipartite [[bell-chsh-inequality|Bell-CHSH]] to multipartite Mermin inequalities was achieved in Phys. Rev. D 109, 045020 (2024), which shows that the Mermin inequality is violated in the vacuum of a scalar field across three (and more) causally separated Rindler-wedge regions.
 
 The main results:
 
@@ -56,5 +56,5 @@ See [[bell-inequalities-qft]] for full paper list.
 
 - The Mermin inequality was introduced by Mermin in 1990 as a way to extend Bell's argument to three qubits. The GHZ (Greenberger-Horne-Zeilinger) state maximally violates it. The original paper by Mermin is often cited alongside the GHZ paper.
 - The multipartite structure of vacuum entanglement in QFT is not merely a curiosity: it reflects the fact that the vacuum is a highly correlated state in which no finite subregion is "independent" of its environment.
-- Common confusion: violating a Mermin inequality implies genuine $N$-partite entanglement (not reducible to biseparable states). But it is a stronger statement than just "the state is not a product" — it requires correlations across all $N$ parties simultaneously.
+- Common confusion: a Mermin violation does **not** by itself certify genuine $N$-partite non-locality. Hybrid models in which some parties share non-local correlations while the rest stay local can reproduce it, and ruling those out is what the Svetlichny inequality does. What a violation does establish is that the correlations are not fully local, and in the QFT setting that they extend across all $N$ regions at once.
 - The exponential quantum-classical gap in Mermin inequalities ($2^{N-1}$ vs $2^{(N-1)/2}$) makes them exponentially more powerful than CHSH for certifying multipartite entanglement as $N$ grows.

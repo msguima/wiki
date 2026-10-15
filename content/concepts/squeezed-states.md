@@ -3,7 +3,7 @@ title: Squeezed States
 type: concept
 areas: [bell-inequalities-qft, relative-entropy-qft]
 aliases: [squeezed state, squeezed vacuum, two-mode squeezed state]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -30,11 +30,11 @@ $$|r\rangle_{k,-k} \propto \sum_{n=0}^\infty (\tanh r)^n\, |n\rangle_k\otimes|n\
 
 which is an entangled state of the two momentum modes. The Minkowski vacuum is itself a two-mode squeezed state in the Rindler basis (this is the algebraic content of the Unruh effect).
 
-The Weyl operator expectation value in a squeezed state is:
+The Weyl operator expectation value in a squeezed state keeps the Gaussian form of the vacuum with a dressed inner product,
 
-$$\langle\text{sq}|W(f)|\text{sq}\rangle = \exp\!\left(-\frac{1}{2}\langle f, (e^{2r}P + e^{-2r}(1-P))\, f\rangle\right),$$
+$$\langle\text{sq}|W(f)|\text{sq}\rangle = \exp\!\left(-\frac{1}{2}\langle f, \Sigma_r f\rangle\right),$$
 
-where $P$ is the projector onto the squeezed quadrature.
+where $\Sigma_r$ is the covariance of the squeezed vacuum — the one-particle inner product with the Bogoliubov coefficients $\cosh r$ and $\sinh r$ inserted, reducing to the vacuum norm at $r=0$.
 
 ## Role in Research
 
@@ -44,7 +44,7 @@ Squeezed states appear in the quantum information program as a natural generaliz
 
 - **Relative entropy for squeezed states**: The [[araki-uhlmann-relative-entropy|Araki-Uhlmann relative entropy]] $S(\omega_{\text{sq}}\|\omega_0)$ is computable in closed form using the Bogoliubov coefficients and the one-particle Hilbert space structure. The result involves $\cosh r$ and $\sinh r$ factors from the squeezing.
 
-- **Connection to Unruh effect**: The Minkowski vacuum restricted to the right Rindler wedge is a two-mode squeezed state in the Rindler particle basis, with squeezing parameter related to the Unruh temperature by $e^{-2r} = e^{-2\pi/a}$. This connects squeezed state formalism directly to the algebraic structure of [[rindler-wedges|Rindler wedges]].
+- **Connection to Unruh effect**: the Minkowski vacuum restricted to the right Rindler wedge is a two-mode squeezed state in the Rindler particle basis, mode by mode, with $\tanh r_\omega = e^{-\pi\omega/a}$ for Rindler frequency $\omega$ and proper acceleration $a$ — the Boltzmann factor at half the Unruh temperature $a/2\pi$. The squeezing is a function of the mode rather than a single number, which is what makes the reduced state thermal.
 
 ## Relations
 
@@ -64,4 +64,4 @@ See [[bell-inequalities-qft]] and [[relative-entropy-qft]] for full paper lists.
 - Squeezed states are experimentally realized in quantum optics (optical parametric oscillators) and have applications in gravitational wave detection (LIGO uses squeezed light).
 - In QFT, the two-mode squeezed structure of the vacuum across the Rindler horizon is exact and model-independent, following from the Bisognano-Wichmann theorem and the algebraic structure.
 - Common confusion: a squeezed state is not the same as an entangled state in general. A single-mode squeezed state is not entangled (it is a pure state of one mode). A two-mode squeezed state is entangled across the two modes. In the QFT/Rindler context, it is always the two-mode version that is relevant.
-- The Bogoliubov transformation relating Minkowski and Rindler particles connects squeezed state theory to the algebraic approach: the squeezing parameter $r$ is directly related to the relative modular operator $\Delta_{\Phi,\Omega}$ between the Rindler thermal state and the Minkowski vacuum.
+- The Bogoliubov transformation relating Minkowski and Rindler particles connects squeezed-state language to the algebraic one: the mode-dependent $r_\omega$ is fixed by the spectrum of the wedge modular operator, which [[bisognano-wichmann-theorem|Bisognano–Wichmann]] identifies with $e^{-2\pi K}$ for the boost generator $K$.

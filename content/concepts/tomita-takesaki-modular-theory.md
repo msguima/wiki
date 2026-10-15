@@ -3,7 +3,7 @@ title: Tomita-Takesaki Modular Theory
 type: concept
 areas: [bell-inequalities-qft, relative-entropy-qft]
 aliases: [modular theory, Tomita-Takesaki theory, modular automorphism group]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -58,5 +58,5 @@ See [[bell-inequalities-qft]] and [[relative-entropy-qft]] for full paper lists.
 - The state $\Omega$ satisfies the **KMS condition** with respect to $\sigma_t$ at inverse temperature $\beta = -1$: $\langle \Omega, a\,\sigma_{-i}(b)\,\Omega\rangle = \langle \Omega, b\,a\,\Omega\rangle$. The physical Unruh temperature arises when $t$ is scaled by $2\pi/a$ (acceleration). [[hong-liu|Liu's]] review ([[2025-liu-lectures-entanglement-vna]]) presents the KMS condition as the defining relation $f_{AB}(s) = f_{BA}(-s-i)$ and emphasizes that it characterizes thermal behavior emerging purely from entanglement structure, providing a clean route from modular theory to the Unruh and Hawking effects.
 - **Entangled spin example** ([[2025-liu-lectures-entanglement-vna]]): Liu constructs a pedagogically valuable example of an $N$-spin entangled chain where, as $N \to \infty$, the local algebra transitions from type I (where $\Delta$ has discrete spectrum) through type III$_\lambda$ to type III$_1$ (where $\log\Delta$ has continuous full-line spectrum). This makes the abstract modular theory tangible by showing how the modular operator evolves from a finite-dimensional object to the full-blown type III$_1$ modular structure in a physically transparent limit.
 - Modular theory is the appropriate generalization of the density-matrix formalism to type III algebras, where density matrices do not exist.
-- Common confusion: the modular automorphism group depends on the choice of reference state $\Omega$; different states give unitarily inequivalent (and physically distinct) flows.
+- Common confusion: the modular automorphism group depends on the reference state $\Omega$, but not freely. By Connes' cocycle theorem the flows of two faithful normal states differ by an inner perturbation, so the flow modulo inner automorphisms is state-independent — which is what makes the type classification well defined in the first place.
 - The [[crossed-product-construction|crossed product construction]] $\hat{\mathcal{M}} = \mathcal{M} \rtimes_\sigma \mathbb{R}$ uses the modular automorphism group $\sigma_t$ to promote a type III$_1$ algebra to type II$_\infty$, restoring a trace and making entropy well-defined. This construction, reviewed in detail in [[2025-liu-lectures-entanglement-vna]], is central to gravitational entropy and to quantifying [[entanglement-embezzlement|embezzlement]] cost.

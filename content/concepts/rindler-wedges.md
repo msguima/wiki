@@ -3,7 +3,7 @@ title: Rindler Wedges
 type: concept
 areas: [bell-inequalities-qft, relative-entropy-qft]
 aliases: [Rindler wedge, Rindler region, right Rindler wedge, left Rindler wedge]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -16,7 +16,7 @@ and the **left Rindler wedge** is
 
 $$L = \{x \in \mathbb{R}^{d+1} : x^1 < -|x^0|\}.$$
 
-$R$ and $L$ are **causally complementary**: no causal curve connects $R$ to $L$. They are each other's causal complement in the sense that $L = (R')'$ where the prime denotes the spacelike complement.
+$R$ and $L$ are **causally complementary**: no causal curve connects $R$ to $L$. They are each other's causal complement, $L = R'$ and $R = L'$, where the prime denotes the spacelike complement; each wedge is causally complete, $R'' = R$.
 
 Each wedge is preserved under **Lorentz boosts** in the $x^1$-direction: $x^0 \mapsto x^0\cosh\theta + x^1\sinh\theta$, $x^1 \mapsto x^0\sinh\theta + x^1\cosh\theta$. An observer uniformly accelerating in the $x^1$-direction with proper acceleration $a$ follows the trajectory
 

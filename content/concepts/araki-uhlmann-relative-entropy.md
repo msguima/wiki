@@ -21,15 +21,15 @@ When $\mathcal{M} = B(\mathcal{H})$ and the states are given by density matrices
 Key properties:
 
 - **Non-negativity**: $S(\omega\|\varphi) \geq 0$, with equality iff $\omega = \varphi$.
-- **Monotonicity (data processing)**: For any unital completely positive map $\Phi: \mathcal{M} \to \mathcal{N}$, one has $S(\omega\circ\Phi \| \varphi\circ\Phi) \leq S(\omega\|\varphi)$.
+- **Monotonicity (data processing)**: for a unital completely positive map $\Phi: \mathcal{N} \to \mathcal{M}$ and states $\omega,\varphi$ on $\mathcal{M}$, one has $S(\omega\circ\Phi \| \varphi\circ\Phi) \leq S(\omega\|\varphi)$ — pulled back to the smaller algebra, two states are harder to tell apart.
 - **Lower semi-continuity** in both arguments in the weak-* topology.
 - **Divergence for singular states**: $S(\omega\|\varphi) = +\infty$ if $\omega$ is not absolutely continuous with respect to $\varphi$.
 
-For coherent states $\omega_f$ (corresponding to displacement by $f$) relative to the vacuum $\omega_0$, one obtains the explicit formula
+For a coherent state $\omega_f$, the vacuum displaced by $f$, **restricted to the algebra of a wedge**, the computation gives
 
 $$S(\omega_f\|\omega_0) = \|f\|^2_+,$$
 
-where $\|f\|_+$ is the one-particle norm (the norm in the positive-frequency subspace). This Gaussian result is the computational workhorse in Marcelo's relative entropy program.
+where $\|f\|_+$ is the one-particle norm in the normalization of the group's papers. The restriction matters: on the global algebra both states are pure, and the relative entropy between distinct pure states diverges, so the finite answer is a statement about a local algebra. This Gaussian result is the computational workhorse of the relative-entropy program; the rigorous wedge statements are due to Longo [arXiv:1901.02366] and to Casini, Grillo and Pontello [arXiv:1903.00109].
 
 ## Role in Research
 

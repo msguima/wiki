@@ -3,7 +3,7 @@ title: Weyl Operators
 type: concept
 areas: [bell-inequalities-qft, relative-entropy-qft]
 aliases: [Weyl unitaries, displacement operators]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -30,7 +30,7 @@ Weyl operators generate the local von Neumann algebra $\mathcal{M}(\mathcal{O})$
 
 Weyl operators are the central technical tool in the quantum information program. They serve two primary roles:
 
-1. **Dichotomic observables for Bell tests.** For Bell-CHSH experiments one needs bounded, self-adjoint operators with spectrum in $[-1,1]$. The operators $W(f) + W(f)^\dagger$ and $i(W(f) - W(f)^\dagger)$ (or more generally, real parts of shifted Weyl operators) serve as the "spin" observables for Alice and Bob. The 2023 Phys. Rev. D 108, 085026 paper (15 citations) developed the systematic framework using Weyl operators localized in [[rindler-wedges|Rindler wedges]], with Bob's operators obtained via [[tomita-takesaki-modular-theory|modular conjugation]] $J$ acting on Alice's algebra.
+1. **Dichotomic observables for Bell tests.** For Bell-CHSH experiments one needs bounded, self-adjoint operators with spectrum in $[-1,1]$. The normalized real and imaginary parts $\frac12(W(f) + W(f)^\dagger)$ and $\frac{i}{2}(W(f) - W(f)^\dagger)$ serve as the "spin" observables — the factor $\frac12$ is what puts them in the unit ball — with a different test function for each measurement setting. The 2023 Phys. Rev. D 108, 085026 paper (15 citations) developed the systematic framework using Weyl operators localized in [[rindler-wedges|Rindler wedges]], with Bob's operators obtained via [[tomita-takesaki-modular-theory|modular conjugation]] $J$ acting on Alice's algebra.
 
 2. **State preparation.** [[coherent-states|Coherent states]], [[squeezed-states|squeezed states]], and [[cat-states|cat states]] are all defined through the action of Weyl operators (or products thereof) on the vacuum. The Araki-Uhlmann relative entropy between these excited states and the vacuum is computable in closed form using the Gaussian structure.
 
@@ -43,7 +43,7 @@ The bumpified Haar wavelet test functions used to achieve the Tsirelson bound fo
 - [[bell-chsh-inequality]] — Weyl operators are the explicit dichotomic observables used to construct CHSH correlators in QFT
 - [[araki-uhlmann-relative-entropy]] — relative entropy between coherent/squeezed states and the vacuum is computed via the Gaussian structure of Weyl operator expectation values
 - [[type-iii-von-neumann-algebras]] — Weyl operators generate type III₁ algebras for local regions; there are no pure states in these algebras
-- [[coherent-states]] — coherent states are eigenstates of annihilation operators, equivalently $W(f)|0\rangle$ for purely positive-frequency $f$
+- [[coherent-states]] — coherent states are eigenstates of the annihilation operator, equivalently the displaced vacuum $W(f)|0\rangle$
 - [[rindler-wedges]] — Weyl operators with $\text{supp}(f)$ in the right Rindler wedge generate the algebra $\mathcal{M}(R)$
 
 ## Papers
@@ -54,5 +54,5 @@ See [[bell-inequalities-qft]] and [[relative-entropy-qft]] for full paper lists.
 
 - The Weyl algebra is a $C^*$-algebra; passing to von Neumann algebras requires taking weak closures in a specific representation (the vacuum GNS representation).
 - In gauge theories one must work with gauge-invariant combinations of Weyl operators, which introduces additional complications. The BRST-invariant Bell-CHSH paper (SciPost Phys. 15, 2023) addresses this.
-- The phase $\Delta(f,g)/2$ in the Weyl relation is purely imaginary for real $f,g$, preserving unitarity. This is the QFT incarnation of the Heisenberg commutation relation $[x,p] = i$.
+- For real test functions $\Delta(f,g)$ is a real number, so $e^{-\frac{i}{2}\Delta(f,g)}$ is a pure phase and the Weyl relation preserves unitarity. This is the QFT incarnation of the Heisenberg commutation relation $[x,p] = i$.
 - Distinct from the Weyl operators of representation theory (group-theoretic Weyl operators for finite groups); the QFT usage refers specifically to the exponentiated field operators.

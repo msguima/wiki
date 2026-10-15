@@ -3,16 +3,16 @@ title: Pauli-Jordan Distribution
 type: concept
 areas: [bell-inequalities-qft]
 aliases: [commutator function, Pauli-Jordan function, causal propagator]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
 
 For a free scalar field $\varphi(x)$ of mass $m$ in $(d+1)$-dimensional Minkowski spacetime, the **Pauli-Jordan distribution** (also called the commutator function or causal propagator) is
 
-$$\Delta(x-y) = [\varphi(x),\, \varphi(y)]$$
+$$[\varphi(x),\, \varphi(y)] = i\,\Delta(x-y)$$
 
-as a distributional identity on test function space. In momentum space, for mass $m$:
+as a distributional identity on test function space. The factor of $i$ is kept explicit so that $\Delta$ is real; that is what makes the symplectic form $\Delta(f,g)$ below, and the phase of the Weyl relation, real. In momentum space, for mass $m$:
 
 $$\tilde{\Delta}(k) = -2\pi i\, \text{sgn}(k^0)\,\delta(k^2 + m^2),$$
 
@@ -27,7 +27,7 @@ The **defining properties** are:
 3. **Microcausality (support property)**: $\Delta(x-y) = 0$ whenever $x-y$ is spacelike, i.e., $(x-y)^2 > 0$ (using signature $(-,+,+,+)$). This is the mathematical expression of Einstein causality.
 4. **Initial data**: $\Delta(0,\mathbf{x}) = 0$ and $\partial_0\Delta(0,\mathbf{x}) = \delta^{(d)}(\mathbf{x})$.
 
-The relation to other propagators: $\Delta = \Delta_R - \Delta_A$ (retarded minus advanced propagator), and $\Delta(x-y) = -2\,\text{Im}\, G_F(x-y)$ where $G_F$ is the Feynman propagator (on the real axis; technically a distribution).
+The relation to other propagators: $\Delta = \Delta_R - \Delta_A$ (retarded minus advanced), and $\Delta = 2\,\mathrm{Im}\,G^{(1)}$ for the Wightman function $G^{(1)}(x,y) = \langle\varphi(x)\varphi(y)\rangle$, which is just $G^{(1)} - \overline{G^{(1)}} = i\Delta$ read off the commutator.
 
 The **smeared version** used in the Weyl algebra is
 
@@ -63,4 +63,4 @@ See [[bell-inequalities-qft]] for full paper list.
 - The Pauli-Jordan distribution is a distribution, not a function — it requires smearing with test functions to give well-defined numbers. The Wightman axioms require test functions to be Schwartz class ($\mathscr{S}$) or compactly supported ($\mathcal{D}$).
 - For the massive scalar field in $(3+1)$ dimensions, $\Delta(x-y)$ is supported on and inside the light cone (in contrast to the massless case where it is supported exactly on the light cone). This distinction affects whether correlations decay for large spacelike separations.
 - Notation varies: some sources write $\Delta^{(1)}$ or $D$ for the commutator function. The notation $\Delta$ used here is standard in the algebraic QFT literature following Haag.
-- The Pauli-Jordan distribution is not the same as the Hadamard two-point function $G^{(1)}(x,y) = \langle\varphi(x)\varphi(y)\rangle$, which is not antisymmetric and carries more information (state-dependent); $\Delta = 2i\,\text{Im}\,G^{(1)}$ by antisymmetry.
+- The Pauli-Jordan distribution is not the same as the two-point function $G^{(1)}(x,y) = \langle\varphi(x)\varphi(y)\rangle$, which is not antisymmetric and carries state-dependent information; only its imaginary part is universal, $\Delta = 2\,\mathrm{Im}\,G^{(1)}$.

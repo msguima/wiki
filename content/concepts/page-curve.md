@@ -3,7 +3,7 @@ title: Page Curve
 type: concept
 areas: [gauge-gravity-duality]
 aliases: [information paradox curve, Page time]
-modified: 2026-10-01
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -22,7 +22,7 @@ The Page curve is a central object of the second semester of the [[courses/ads-c
 
 ## Papers
 
-- Page 1993, [arXiv:hep-th/9305007](https://arxiv.org/abs/hep-th/9305007).
+- Page 1993, *Average entropy of a subsystem*, [arXiv:gr-qc/9305007](https://arxiv.org/abs/gr-qc/9305007).
 - Penington 2019, [arXiv:1905.08255](https://arxiv.org/abs/1905.08255).
 - Almheiri–Engelhardt–Marolf–Maxfield 2019, [arXiv:1905.08762](https://arxiv.org/abs/1905.08762).
 

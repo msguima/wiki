@@ -3,7 +3,7 @@ title: Subregion-Subalgebra Duality
 type: concept
 areas: [bell-inequalities-qft, relative-entropy-qft, gauge-gravity-duality]
 aliases: [entanglement wedge reconstruction]
-modified: 2026-04-07
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -16,7 +16,7 @@ In the large $N$ limit of the boundary CFT, these boundary subalgebras are [[typ
 
 $$\mathcal{M}_R' = \mathcal{M}_{R'}$$
 
-where $R'$ is the causal complement of $R$ in the bulk. This is a holographic version of [[haag-duality|Haag duality]].
+where $R'$ is the complementary boundary region. This is the holographic counterpart of Haag duality for local nets, and on the bulk side it says that the entanglement wedges of $A$ and of its complement together cover the bulk Cauchy slice.
 
 The entanglement wedge $\mathcal{E}(A)$ is bounded by the **Ryu-Takayanagi (RT) surface** (or its covariant generalization, the HRT surface), which is the minimal-area extremal surface anchored to the boundary of $A$. The area of this surface gives the leading contribution to the entanglement entropy via the RT formula $S(A) = \text{Area}(\gamma_A)/(4G_N)$.
 
@@ -37,7 +37,7 @@ Subregion-subalgebra duality provides a bridge between Marcelo's algebraic QFT t
 - [[crossed-product-construction]] --- promotes the type III$_1$ boundary algebra to type II$_\infty$, giving gravitational entropy
 - [[araki-uhlmann-relative-entropy]] --- well-defined on the type III$_1$ boundary algebras; related to gravitational entropy via the crossed product
 - [[rindler-wedges]] --- the simplest example of subregion-subalgebra duality, where the Rindler wedge algebra has modular flow equal to the boost
-- [[haag-duality]] --- subregion-subalgebra duality is the holographic extension of Haag duality for local algebras
+- [[haag-kastler-axioms]] --- Haag duality for a local net is the flat-space counterpart of the commutant statement above
 - [[gauge-gravity-duality]] --- area page collecting the AdS/CFT setting in which this duality is formulated.
 
 ## Papers
@@ -51,5 +51,5 @@ See also [[bell-inequalities-qft]] and [[relative-entropy-qft]] for the broader 
 ## Notes
 
 - Subregion-subalgebra duality goes beyond the simpler statement of "entanglement wedge reconstruction" by making the algebraic structure precise: it is not just that bulk operators can be reconstructed on the boundary, but that the reconstructed operators form a type III$_1$ von Neumann algebra with specific modular properties.
-- The duality breaks down away from the large $N$ limit: at finite $N$, the boundary algebra is type I (finite-dimensional) and the bulk semiclassical description fails. The type I $\to$ type III$_1$ transition as $N \to \infty$ is the algebraic signature of the emergence of smooth bulk spacetime.
+- The duality breaks down away from the large $N$ limit: at finite $N$ the boundary algebra is type I — infinite-dimensional still, but with density matrices and a trace — and the bulk semiclassical description fails. The type I $\to$ type III$_1$ transition as $N \to \infty$ is the algebraic signature of the emergence of smooth bulk spacetime.
 - For Marcelo's program, the key observation is that the algebraic tools (Weyl operators, modular conjugation, relative entropy) are universal across type III$_1$ algebras, whether they arise from flat-space QFT or from holographic boundary theories. The physics is different, but the mathematics is the same.

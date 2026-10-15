@@ -246,7 +246,7 @@ The cleanest non-trivial worked example.
 
 Let $\mathcal{M} = \mathcal{B}(\mathcal{H})$ with $\dim\mathcal{H} = n < \infty$ for concreteness (the $n = \infty$ case is similar). Let $\omega(a) = \mathrm{Tr}(\rho\,a)$ for a strictly positive density matrix $\rho$ with $\mathrm{Tr}\rho = 1$. The modular flow is
 $$
-\sigma^\omega_t(a) = \rho^{-it}\,a\,\rho^{it} \qquad (\text{Week 5 §5.3}).
+\sigma^\omega_t(a) = \rho^{-it}\,a\,\rho^{it} \qquad (\text{Week 5, Sec.\ 5.3}).
 $$
 This is **inner** (implemented by $\rho^{-it} \in \mathcal{M}$, which is a unitary in $\mathcal{B}(\mathcal{H})$). For finite-dim type I, the modular flow is always inner, so this is a degenerate case algebraically — but the crossed-product construction still works mechanically and is illuminating.
 

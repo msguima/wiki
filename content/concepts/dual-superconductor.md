@@ -3,7 +3,7 @@ title: Dual Superconductor
 type: concept
 areas: [confinement-duality, condensed-matter-connections]
 aliases: [dual superconductor model, magnetic monopole condensation, chromoelectric flux tube]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -24,11 +24,11 @@ In the **dual superconductor picture** (Nambu 1974, 't Hooft 1975, Mandelstam 19
 
 The effective Lagrangian for the dual superconductor is the **dual Ginzburg-Landau theory**:
 
-$$\mathcal{L}_{\text{dual}} = |D_\mu\phi|^2 - V(|\phi|) - \frac{1}{4}\tilde{F}^2_{\mu\nu},$$
+$$\mathcal{L}_{\text{dual}} = |D_\mu\phi|^2 - V(|\phi|) - \frac{1}{4}\tilde{F}_{\mu\nu}\tilde{F}^{\mu\nu},\qquad D_\mu = \partial_\mu - i g_m \tilde{A}_\mu,$$
 
-where $\tilde{F}_{\mu\nu} = \frac{1}{2}\epsilon_{\mu\nu\rho\sigma}F^{\rho\sigma}$ is the dual field strength and $\phi$ is the monopole condensate field. The vortex solutions of this theory are chromoelectric flux tubes (dual Abrikosov vortices).
+where $\phi$ is the monopole condensate field and $\tilde{A}_\mu$ is an independent **dual potential**, $\tilde F = d\tilde A$, carrying the magnetic coupling $g_m = 2\pi/e$. Taking $\tilde F$ to be merely the Hodge dual of $F = dA$ would leave $\phi$ coupled to nothing; and in the condensed phase the observable field strength cannot be written as $dA$ at all, which is the content of the [[julia-toulouse-mechanism|Julia–Toulouse]] change of rank. The vortex solutions of this theory are chromoelectric flux tubes, the dual Abrikosov vortices.
 
-The dual superconductor mechanism is often called **Abelian dominance** in the non-abelian case: numerical lattice evidence suggests that after gauge-fixing to the maximal Abelian gauge, the $U(1)^{N-1}$ Abelian degrees of freedom of $SU(N)$ dominate the string tension.
+A separate lattice observation supports the picture in the non-abelian case: after gauge-fixing to the maximal Abelian gauge, the $U(1)^{N-1}$ degrees of freedom of $SU(N)$ reproduce most of the string tension. That is **Abelian dominance** — an empirical statement about a gauge-fixed decomposition, and not another name for the mechanism.
 
 ## Role in Research
 
@@ -57,6 +57,6 @@ See [[confinement-duality]] and [[condensed-matter-connections]] for full paper 
 ## Notes
 
 - The dual superconductor scenario is supported by lattice QCD simulations in the maximal Abelian gauge, which show monopole condensation and Abelian dominance of the string tension. However, the gauge dependence of these findings (the results depend on the maximal Abelian gauge fixing) means the connection to the gauge-invariant physical picture is not fully settled.
-- The Abrikosov vortex of a type-II superconductor carries magnetic flux $\Phi = 2\pi/e$; its chromoelectric dual (the QCD string) carries chromoelectric flux $\sigma r$.
+- The Abrikosov vortex of a type-II superconductor carries one flux quantum, $\Phi_0 = \pi/e$ in natural units, the condensate having charge $2e$. Its dual, the QCD string, carries one unit of chromoelectric flux; what the energy per unit length of that tube gives is the string tension $\sigma$, and hence the potential $\sigma r$.
 - Common confusion: the dual superconductor model requires **magnetic** monopoles in QCD, which are not fundamental fields in the QCD Lagrangian. They are topological solitons ('t Hooft-Polyakov monopoles in the UV-completed theory, or effective degrees of freedom in the low-energy theory). Their existence as dynamical objects is non-perturbative and established only indirectly.
-- The BPS monopole (Bogomolny-Prasad-Sommerfield) in $\mathcal{N}=2$ super-Yang-Mills is the analytically controllable version of these ideas: Seiberg and Witten (1994) proved that the dual superconductor mechanism operates exactly in the $\mathcal{N}=2$ theory, providing the first rigorous demonstration of confinement via monopole condensation in a gauge theory.
+- The BPS monopole (Bogomol'nyi–Prasad–Sommerfield) in $\mathcal{N}=2$ super-Yang-Mills is the analytically controllable version of these ideas. Seiberg and Witten (1994) showed that softly breaking $\mathcal{N}=2$ to $\mathcal{N}=1$ drives a monopole condensate in the exactly known low-energy effective theory, so that confinement there follows from monopole condensation in a controlled example. It is a demonstration inside the effective description, not a proof from the microscopic theory.

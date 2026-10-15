@@ -13,7 +13,7 @@ modified: 2026-10-15
 
 ## Statement
 
-Maldacena established that the [[thermofield-double|thermofield double (TFD) state]] of a holographic CFT is dual to a specific bulk geometry — the maximally extended eternal AdS-Schwarzschild black hole. The TFD is the canonical entangled state across two boundary copies, and its bulk dual is geometrically transparent. The question taken up here is the analog for the [[entanglement-embezzlement|entanglement embezzlement protocol]]:
+Maldacena established that the [[thermofield-double-state|thermofield double (TFD) state]] of a holographic CFT is dual to a specific bulk geometry — the maximally extended eternal AdS-Schwarzschild black hole. The TFD is the canonical entangled state across two boundary copies, and its bulk dual is geometrically transparent. The question taken up here is the analog for the [[entanglement-embezzlement|entanglement embezzlement protocol]]:
 
 1. **Q1 (Catalyst geometry).** What bulk geometry is dual to a catalyst (embezzling) state in a holographic CFT? Is there a single privileged geometry, as in TFD ↔ eternal black hole, or a family?
 2. **Q2 (Protocol geometry).** What bulk operation implements the embezzlement unitary $U_A \otimes V_B$? Where does it live geometrically, and what bulk modes does it manipulate?

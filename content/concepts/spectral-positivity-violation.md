@@ -3,7 +3,7 @@ title: Spectral Positivity Violation
 type: concept
 areas: [gribov-zwanziger]
 aliases: [positivity violation, Källén-Lehmann violation, spectral condition violation]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -42,7 +42,7 @@ Key results:
 
 - The RGZ gluon propagator also violates positivity; the complex poles shift in position but do not disappear when dimension-two condensates are included.
 
-- **Lattice confirmation**: lattice QCD measurements of the gluon propagator in Landau gauge are consistent with positivity violation — the Euclidean propagator has a zero crossing at intermediate momenta (a necessary condition for positivity violation in Euclidean space).
+- **Lattice confirmation**: lattice measurements of the gluon propagator in Landau gauge are consistent with positivity violation. The quantity that shows it is the **Schwinger function**, the propagator transformed to Euclidean time, which crosses zero at intermediate times; a single negative value of it is already sufficient, since a positive spectral density would keep it positive everywhere.
 
 - **Spectral functions of gauge-invariant operators** (Eur. Phys. J. C 81, 2021): positivity is **not** violated for gauge-invariant composite operators (e.g., $F^2_{\mu\nu}$), consistent with the expectation that only gauge-charged fields are confined.
 
@@ -63,5 +63,5 @@ See [[gribov-zwanziger]] for full paper list.
 
 - Spectral positivity violation is a **necessary** but not **sufficient** condition for confinement in the strict sense. It confirms that the gluon does not appear as an asymptotic state, but does not by itself prove that quarks form bound hadrons or that the string tension is non-zero.
 - The Oehme-Zimmermann superconvergence relation: for a propagator violating positivity, the spectral density $\rho(\sigma)$ (defined in the distributional sense, allowing negative values) must satisfy $\int_0^\infty \rho(\sigma)\,d\sigma = 0$, i.e., the sum rule vanishes. This is a characteristic "fingerprint" of positivity violation.
-- Common confusion: the gluon propagator being finite at $p=0$ (as seen on the lattice) does not imply positivity restoration. The GZ/RGZ propagators are finite at $p=0$ but still violate Källén-Lehmann positivity due to complex poles.
-- The quark propagator is also expected to violate spectral positivity (quark confinement), but this is harder to study analytically because quarks couple to the Higgs-like symmetry breaking in QCD. The focus in the GZ program has been on the gluon propagator.
+- Common confusion: the gluon propagator being finite at $p=0$, as the lattice sees it, does not imply positivity restoration. The RGZ propagator is finite and non-zero there, the pure GZ one vanishes, and both violate Källén-Lehmann positivity through their complex poles.
+- The quark propagator is also expected to violate spectral positivity, but it is harder to handle analytically: its mass function is dressed by chiral symmetry breaking, while the Gribov restriction acts on the gauge sector. The focus in the GZ program has been on the gluon propagator.

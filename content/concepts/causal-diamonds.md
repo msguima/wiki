@@ -3,7 +3,7 @@ title: Causal Diamonds
 type: concept
 areas: [bell-inequalities-qft, relative-entropy-qft]
 aliases: [causal diamond, double cone, diamond region]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -40,7 +40,7 @@ since $\log\Delta$ is related to the modular Hamiltonian $K = -\log\Delta$.
 
 ## Relations
 
-- [[rindler-wedges]] — the infinite-size counterpart; diamonds are compact analogs of wedges. In the limit $r \to \infty$, the diamond approaches a wedge. The same algebraic methods (Tomita-Takesaki, Weyl operators) apply to both.
+- [[rindler-wedges]] — the non-compact counterpart. A wedge is a limit of diamonds, but a boost limit that pushes one tip to null infinity: taking $r\to\infty$ with the centre fixed gives all of Minkowski instead. The same algebraic methods (Tomita-Takesaki, Weyl operators) apply to both.
 - [[tomita-takesaki-modular-theory]] — the modular operator for the diamond algebra is explicitly known in CFT; this makes relative entropy computations tractable
 - [[bell-chsh-inequality]] — Bell-CHSH violations in diamond regions extend the Rindler program to compact setups (Eur. Phys. J. C 85, 2025)
 - [[type-iii-von-neumann-algebras]] — $\mathcal{M}(\mathcal{D})$ is type III₁ for any local region in AQFT, including diamonds
@@ -56,4 +56,4 @@ See [[bell-inequalities-qft]] and [[relative-entropy-qft]] for full paper lists.
 - The term "causal diamond" is standard in the AQFT and quantum gravity literature. "Double cone" is the older AQFT term; "diamond region" is used in quantum information contexts.
 - The modular Hamiltonian is only known explicitly for specific geometries: Rindler wedges (all QFTs), causal diamonds (CFTs via Casini-Huerta-Myers), and spherical entangling surfaces (CFTs). For general regions and non-conformal theories, it is non-local and not explicitly computable.
 - Two spacelike-separated diamonds (diamonds whose closures do not intersect) provide a natural bipartite setup where Alice controls one diamond and Bob the other; microcausality ensures $[A,B]=0$ automatically.
-- The proper acceleration required for a Rindler observer to remain inside a diamond of size $r$ is $a = 1/r$, giving an Unruh temperature $T_U = 1/(2\pi r)$ — inversely proportional to diamond size.
+- The modular Hamiltonian above assigns a local inverse temperature $\beta(\mathbf{x}) = \pi(r^2-|\mathbf{x}|^2)/r$, so an observer at the centre of the diamond sees $T = 1/(\pi r)$, falling with the size of the diamond, while the temperature diverges toward the edge. This is the diamond analogue of the Unruh temperature $1/(2\pi x^1)$ at proper distance $x^1$ from a Rindler horizon.

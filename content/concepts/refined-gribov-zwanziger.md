@@ -3,7 +3,7 @@ title: Refined Gribov-Zwanziger Theory
 type: concept
 areas: [gribov-zwanziger]
 aliases: [RGZ theory, Refined Gribov-Zwanziger, RGZ framework]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -17,21 +17,19 @@ Starting from the GZ action with auxiliary fields $(\varphi^{ab}_\mu, \bar{\varp
 
 These condensates are incorporated by adding mass parameters $m^2$ and $M^2$ to the action:
 
-$$S_{\text{RGZ}} = S_{\text{GZ}} + \int d^4x\left(m^2 A^a_\mu A^a_\mu + M^2(\bar{\varphi}^{ab}_\mu\varphi^{ab}_\mu - \bar{\omega}^{ab}_\mu\omega^{ab}_\mu)\right).$$
+$$S_{\text{RGZ}} = S_{\text{GZ}} + \int d^4x\left(\frac{m^2}{2}\, A^a_\mu A^a_\mu - M^2(\bar{\varphi}^{ab}_\mu\varphi^{ab}_\mu - \bar{\omega}^{ab}_\mu\omega^{ab}_\mu)\right),$$
+
+in the signs and normalization of Dudal, Gracey, Sorella, Vandersickel and Verschelde. The two mass parameters are fixed by their own gap equations, and the fits to lattice data return a **negative** $m^2$.
 
 The resulting **RGZ gluon propagator** in Landau gauge is
 
 $$G(p^2) = \frac{p^2 + M^2}{p^4 + (m^2 + M^2)p^2 + m^2 M^2 + \gamma^4},$$
 
-which is a **massive-type (Yukawa-like) propagator** at large $p^2$ and remains infrared-suppressed. The denominator is a quartic polynomial whose roots give the (complex) gluon "mass poles" — complex poles signal [[spectral-positivity-violation|spectral positivity violation]] and gluon confinement.
+where $\gamma^4$ stands for $2g^2N\gamma^4$ in the conventions of the horizon condition. This propagator is **finite and non-zero at $p=0$**, which is what the lattice sees and what the pure GZ form $p^2/(p^4+\gamma^4)$ fails to give, since that one vanishes there. The denominator is a quartic polynomial whose roots are the (complex) gluon "mass poles" — complex poles signal [[spectral-positivity-violation|spectral positivity violation]] and gluon confinement.
 
-This propagator is in quantitative agreement with **lattice QCD** gluon propagator data in both Landau gauge (4d SU(2) and SU(3)) and Coulomb gauge, with the parameters $\{m^2, M^2, \gamma^4\}$ fit from lattice data.
+This propagator is in quantitative agreement with **lattice** gluon propagator data in Landau gauge, for $SU(2)$ in three and four dimensions and for $SU(3)$, with the parameters $\{m^2, M^2, \gamma^4\}$ fit from the data (Cucchieri, Dudal, Mendes, Vandersickel).
 
-The RGZ ghost propagator is also modified:
-
-$$G_{\text{ghost}}(p^2) = \frac{p^2 + M^2}{p^2(p^2 + M^2) + \gamma^4},$$
-
-showing a less singular infrared behavior than the pure GZ ghost propagator, consistent with lattice data showing a finite (non-divergent) ghost propagator in the infrared.
+The ghost sector is modified as well: the infrared enhancement of the pure GZ ghost disappears, and the ghost propagator behaves as $1/p^2$ with a **finite dressing function** $p^2G_{\text{ghost}}(p^2)$ at small momentum, which is what the lattice reports. The propagator itself still diverges as $p\to0$; it is the dressing function that saturates, and the two statements are easy to confuse.
 
 ## Role in Research
 

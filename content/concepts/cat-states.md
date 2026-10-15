@@ -3,7 +3,7 @@ title: Cat States
 type: concept
 areas: [bell-inequalities-qft]
 aliases: [Schrödinger cat state, cat state, optical cat state]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -18,9 +18,9 @@ In the **Wigner function representation**, cat states have oscillatory interfere
 
 The expectation value of a [[weyl-operators|Weyl operator]] $W(g)$ in the cat state $|\text{cat}_+\rangle$ is
 
-$$\langle\text{cat}_+|W(g)|\text{cat}_+\rangle = \frac{e^{-\frac{1}{2}\|g\|^2}\bigl(\cosh(\text{Re}\langle 2\alpha, g\rangle_+) + \cos(\text{Im}\langle 2\alpha, g\rangle_+)\bigr)}{1 + e^{-2|\alpha|^2}},$$
+$$\langle\text{cat}_+|W(g)|\text{cat}_+\rangle = \frac{2\cos\Delta(f,g)\,e^{-\frac12\|g\|^2} + e^{-\frac12\|g-2f\|^2} + e^{-\frac12\|g+2f\|^2}}{2\bigl(1+e^{-2\|f\|^2}\bigr)},$$
 
-where the interference between $\langle\alpha|W(g)|-\alpha\rangle$ cross terms produces oscillatory contributions absent in the incoherent mixture $\frac{1}{2}(|\alpha\rangle\langle\alpha| + |-\alpha\rangle\langle-\alpha|)$.
+where $\Delta(f,g)$ is the smeared [[pauli-jordan-distribution|Pauli–Jordan]] form that appears in the Weyl relation and $\|\cdot\|$ is the one-particle norm. The first term is what the incoherent mixture $\frac12(|\alpha\rangle\langle\alpha|+|-\alpha\rangle\langle-\alpha|)$ gives on its own; the two Gaussians are the cross terms $\langle\alpha|W(g)|-\alpha\rangle$, and since $\|g\mp2f\|^2 = \|g\|^2\mp4\langle f,g\rangle+4\|f\|^2$ they carry the overlap suppression $e^{-2\|f\|^2}$. At $g=0$ the four terms and the normalization combine to $1$, which is the check the expression has to pass.
 
 In QFT, the cat state is constructed as $W(f)|0\rangle + W(-f)|0\rangle$ for a test function $f$ with compact support, providing a well-localized field excitation.
 
@@ -28,9 +28,9 @@ In QFT, the cat state is constructed as $W(f)|0\rangle + W(-f)|0\rangle$ for a t
 
 Cat states are the focus of the 2026 paper Phys. Rev. D 113, 065008, which computes [[bell-chsh-inequality|Bell-CHSH violations]] for cat states in QFT vacuum. The key findings:
 
-1. **Interference-driven Bell violation.** The CHSH correlator for cat states includes interference cross-terms proportional to $\cos(\text{Im}\langle 2\alpha, g\rangle_+)$ that are absent for the incoherent mixture. These terms can either enhance or suppress Bell violation depending on the test function choice.
+1. **Interference-driven Bell violation.** The CHSH correlator for cat states carries the two cross terms above, which the incoherent mixture does not have. They can enhance or suppress the violation depending on the test functions, and the overlap $e^{-2\|f\|^2}$ controls their size: the interference is a small-amplitude effect, and at large amplitude the cat correlator approaches the mixture's.
 
-2. **New qualitative features.** Unlike [[coherent-states|coherent states]] (for which the CHSH correlator depends only on $\|g\|$ and $\|f\|$), cat state Bell correlators depend on the phase structure of $\langle f, g\rangle_+$, introducing new parameter space and optimization opportunities.
+2. **New qualitative features.** For a [[coherent-states|coherent state]] the correlator depends on the test functions through $\|g\|$ and the symplectic phase alone; for a cat state it depends on the inner product $\langle f,g\rangle$ as well, through the cross terms, which opens parameter space for optimization.
 
 3. **Large-$|\alpha|$ limit.** For large amplitude $|\alpha| \gg 1$, the cat state approaches a superposition of macroscopically distinct field configurations. Bell violation in this regime tests quantum superposition of classically distinguishable states — connecting quantum information to the measurement problem.
 

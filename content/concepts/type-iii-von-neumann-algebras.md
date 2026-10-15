@@ -23,7 +23,7 @@ The **Buchholz-D'Antoni-Longo theorem** and related results establish that local
 1. **No pure states** in $\mathcal{M}(\mathcal{O})$: every normal state on a type III₁ factor is mixed.
 2. **No density matrix**: there is no trace on $\mathcal{M}(\mathcal{O})$, so $\rho = \text{tr}(\cdot\,|\psi\rangle\langle\psi|)$ does not exist.
 3. **No well-defined von Neumann entropy** $-\text{tr}(\rho\log\rho)$ for local states.
-4. **Haag duality**: $\mathcal{M}(\mathcal{O})' = \mathcal{M}(\mathcal{O}^{\perp})$ (commutant equals algebra of the causal complement), meaning the algebra and its commutant are as "far apart" as possible.
+4. **No tensor factorization**: the Hilbert space does not split as $\mathcal{H}_\mathcal{O}\otimes\mathcal{H}_{\mathcal{O}'}$, so there is no partial trace over the complement to take. Haag duality, $\mathcal{M}(\mathcal{O})' = \mathcal{M}(\mathcal{O}')$, is a separate structural property of the net rather than a consequence of the type: it holds for wedges and in the vacuum sector of standard theories, and it can fail in the presence of superselection sectors.
 
 The appropriate entropy measure is the [[araki-uhlmann-relative-entropy|Araki-Uhlmann relative entropy]], which is well-defined and finite for many pairs of states on type III₁ algebras.
 

@@ -3,7 +3,7 @@ title: BRST Symmetry
 type: concept
 areas: [gribov-zwanziger, bell-inequalities-qft]
 aliases: [BRST, Becchi-Rouet-Stora-Tyutin symmetry, BRST invariance, nilpotent BRST]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -22,7 +22,7 @@ Physical states are in the **BRST cohomology**: the kernel of $s$ modulo the ima
 
 $$\mathcal{H}_{\text{phys}} = \ker s / \text{im}\, s.$$
 
-Gauge invariance of physical observables translates to BRST invariance: $s\mathcal{O} = 0$ implies $\mathcal{O}$ is physical.
+Gauge invariance of physical observables translates to BRST invariance: an observable is physical when $s\mathcal{O} = 0$, and two observables differing by an $s$-exact term define the same physical observable.
 
 **Soft breaking of BRST in GZ theory**: the original GZ action is not strictly BRST-invariant because the horizon function $h(A)$ transforms non-trivially under $s$. The breaking is "soft" — it involves operators of dimension $\leq 4$ with coefficient $\gamma^2$ (the Gribov mass), so it vanishes perturbatively as $\gamma \to 0$.
 
@@ -56,7 +56,7 @@ See [[gribov-zwanziger]] and [[bell-inequalities-qft]] for full paper lists.
 
 ## Notes
 
-- The acronym BRST comes from the four independent discoverers: Becchi, Rouet, Stora (1974-75) and Tyutin (1975, published later). In the West the paper is cited as BRS; in the East as T. The combined BRST attribution is now universal.
+- The acronym comes from Becchi, Rouet and Stora (1974-75) and, independently, Tyutin, whose 1975 Lebedev preprint circulated unpublished for decades. Older papers cite the symmetry as BRS; the combined attribution is now universal.
 - Nilpotency $s^2 = 0$ makes BRST a cohomological structure: physical observables are cohomology classes. This is analogous to de Rham cohomology in differential geometry.
 - Common confusion: "soft BRST breaking" in GZ does not mean the theory is inconsistent. It means the breaking is controlled by a mass parameter $\gamma$ and can in principle be treated as a deformation of the BRST-exact theory. The exact BRST result shows one can do better: the breaking is entirely an artifact of not using the right field variables.
 - In the BRST-invariant Bell-CHSH context (SciPost 2023), the Proca field (massive vector field) plays a special role: it can be mapped to a scalar theory by gauge-invariant projection, allowing extension of the free scalar Bell results to the vector case.

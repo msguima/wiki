@@ -9,7 +9,7 @@ originated: 2026-07-21
 
 ## Statement
 
-The two-sided [[thermofield-double|thermofield double]] (TFD) — dual to the eternal black hole, with the Hartle–Hawking state as its near-horizon vacuum — is a cyclic-separating state on a [[type-iii-von-neumann-algebras|type III₁]] algebra and therefore, by [[2026-benedetti-magic-in-qft|Benedetti–Dabholkar–Dalmonte]], carries non-zero [[magic-nonstabilizerness|magic]]. Opening a **[[traversable-wormholes|traversable wormhole]]** via a Gao–Jafferis–Wall (GJW) double-trace deformation acts on the two sides as a **Connes cocycle** that reshapes the modular flow. **How does the magic (anti-flatness $F_2$) of the two-sided state change when the wormhole is opened — does traversability increase or decrease it?**
+The two-sided [[thermofield-double-state|thermofield double]] (TFD) — dual to the eternal black hole, with the Hartle–Hawking state as its near-horizon vacuum — is a cyclic-separating state on a [[type-iii-von-neumann-algebras|type III₁]] algebra and therefore, by [[2026-benedetti-magic-in-qft|Benedetti–Dabholkar–Dalmonte]], carries non-zero [[magic-nonstabilizerness|magic]]. Opening a **[[traversable-wormholes|traversable wormhole]]** via a Gao–Jafferis–Wall (GJW) double-trace deformation acts on the two sides as a **Connes cocycle** that reshapes the modular flow. **How does the magic (anti-flatness $F_2$) of the two-sided state change when the wormhole is opened — does traversability increase or decrease it?**
 
 ## Why It Matters
 

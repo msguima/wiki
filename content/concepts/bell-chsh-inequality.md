@@ -3,7 +3,7 @@ title: Bell-CHSH Inequality
 type: concept
 areas: [bell-inequalities-qft]
 aliases: [CHSH inequality, Bell inequality, Tsirelson bound]
-modified: 2026-09-30
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -20,7 +20,7 @@ and averaging over $\lambda$ gives $|\mathcal{C}| \leq 2$. For dichotomic outcom
 
 **Tsirelson bound:** In quantum mechanics, $|\mathcal{C}| \leq 2\sqrt{2} \approx 2.828$. This is a tight bound, achieved by the singlet state with optimal measurement settings.
 
-In **quantum field theory**, the dichotomic operators are not spin operators but bounded functions of field operators. A natural choice is $A_1 = W(f_1) + W(f_1)^\dagger$ and $A_2 = i(W(f_1) - W(f_1)^\dagger)$ built from a [[weyl-operators|Weyl operator]], which are unitaries with spectrum on the unit circle — one must work with their real and imaginary parts or more refined bounded operators with $\|A\| \leq 1$. The key result (Phys. Rev. D 108, 085026; 2023) shows that for the free scalar field vacuum in Rindler wedges, the CHSH combination can reach the Tsirelson bound.
+In **quantum field theory**, the dichotomic operators are not spin operators but bounded functions of field operators. A Weyl operator $W(f)$ is a unitary with spectrum on the unit circle, so it is not itself dichotomic; what serves is its normalized real and imaginary parts, $\frac12(W(f)+W(f)^\dagger)$ and $\frac{i}{2}(W(f)-W(f)^\dagger)$, which satisfy $\|A\|\le1$. Alice's two settings come from two different test functions $f_1, f_2$ supported in her region, and Bob's from [[tomita-takesaki-modular-theory|modular conjugation]]. With this construction (Phys. Rev. D 108, 085026; 2023) the free scalar vacuum violates the inequality on complementary [[rindler-wedges|Rindler wedges]], and the choice of test functions pushes the violation toward the Tsirelson bound.
 
 ## Role in Research
 
