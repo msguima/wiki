@@ -2,7 +2,7 @@
 titulo: wiki
 area: conhecimento
 fase: em uso
-revisado_em: 2026-10-14
+revisado_em: 2026-10-15
 ---
 
 ## Notas
@@ -25,3 +25,5 @@ Ainda em 2026-10-05 as notas de simetrias generalizadas foram republicadas com a
 Ainda em 2026-10-05 a página de autoria foi republicada, a partir do commit acec351 do vault, com o GPT Astra 6 creditado como colaborador do curso de simetrias generalizadas, autor da revisão que levou às correções e às figuras. A checagem de privacidade não achou nada novo.
 
 Em 2026-10-14 o cluster do Julia–Toulouse foi corrigido no vault e sincronizado para `content/`: a página do conceito reescrita a partir da Semana 11 §7 do curso de simetrias generalizadas, de Quevedo–Trugenberger (1997) e da série do grupo de 2009–2013, citada paper a paper, mais a pergunta, a conexão, a área e uma relação da página de Chern–Simons. A página antiga descrevia o mecanismo errado: condensado blindando carga elétrica, fase condensada como BF topológico puro e sem a mudança de rank. A revisão que motivou o conserto cobriu as 53 páginas de conceitos. A construção local não acusou erro novo — o único aviso de KaTeX, um § dentro de `\text{}` na Semana 13 do curso de AQFT, é anterior — e a checagem de privacidade em content/ e public/ não achou nada novo, mas confirmou o achado da revisão: os nomes dos pesquisadores juniores seguem publicados em dezoito páginas, com a bolsa do pós-doc numa delas. Esse conserto e a afirmação de embezzlement exato, em dez páginas, ficaram abertos.
+
+Em 2026-10-15 saíram do site os nomes dos pesquisadores juniores e entrou o enunciado certo do embezzlement, os dois achados que a revisão de 14/10 tinha deixado abertos. Pela decisão do pesquisador as páginas públicas dão o papel e não a pessoa ("two PhD students", "a postdoc"), sem financiador nem vigência de bolsa, e ex-alunos com tese defendida mantêm o nome; o vazamento vinha da prosa escrita à mão e dos links culled, e o pior caso era `entities/uerj.md`. Em dez páginas, a afirmação de que o embezzlement em tipo III₁ é exato e grátis deu lugar ao teorema de van Luijk, Stottmeister, Werner e Wilming — embezzlers universais com precisão arbitrária, erro ótimo igual a zero como ínfimo, e nada em álgebras semifinitas. Vinte e duas páginas sincronizadas do vault a377422; a construção local não acusou erro novo e a checagem de privacidade em content/ e public/ não acha mais nenhum dos três nomes nem detalhe de bolsa de junior.
