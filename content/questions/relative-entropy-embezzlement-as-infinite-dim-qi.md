@@ -18,7 +18,7 @@ Low technical risk, high visibility. The group has already *computed* the finite
 ## What We Know
 
 - Closed-form relative entropy controlled by the smeared [[pauli-jordan-distribution|Pauli–Jordan distribution]] (coherent states); distinct mass/region scaling for squeezed and two-coherent states; non-trivial dimension dependence (arXiv:2511.20244).
-- Embezzlement is exact on type III₁; the group's [[embezzlement-capacity-lower-bound|capacity question]] sharpens its *cost* to $\sim \log d / S_{\text{gen}}$.
+- Embezzlement on type III₁ is universal and arbitrarily accurate rather than exact; the group's [[embezzlement-capacity-lower-bound|capacity question]] sharpens its *cost* to $\sim \log d / S_{\text{gen}}$.
 - These are precisely "finite QI quantities on infinite-dimensional algebras" — the content §5 asks to systematize.
 
 ## Possible Approaches

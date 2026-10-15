@@ -8,7 +8,7 @@ areas:
   - gauge-gravity-duality
 priority: high
 originated: 2026-06-05
-modified: 2026-06-05
+modified: 2026-10-15
 ---
 
 ## Statement
@@ -29,7 +29,7 @@ This is the difference between a *bound* and a *capacity*. The upper bound says 
 
 - It converts the paper's contribution from "a generalized-entropy bound on holographic embezzlement" into a genuine **operational characterization of $S_{\text{gen}}$** — a new meaning distinct from RT/FLM (entanglement entropy), Wall (the GSL), and CLPW/CPW (entropy of the dressed algebra). None of those tie $S_{\text{gen}}$ to the *rate of a task*; this would.
 - It is the part least exposed to being scooped by the algebraic-holography insiders (Witten/Liu/CPW), because it requires one-shot / smooth-entropy quantum-information machinery closer to the group's idiom than to theirs.
-- It is a natural thesis result for ismael-porfirio or erick-landim.
+- It is a natural thesis result for one of the group's PhD students.
 
 ## What We Know
 

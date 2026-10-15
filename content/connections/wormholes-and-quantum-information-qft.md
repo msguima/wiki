@@ -3,7 +3,7 @@ title: "Wormholes and the group's quantum-information-in-QFT programs"
 type: connection
 areas: [gauge-gravity-duality, bell-inequalities-qft, relative-entropy-qft]
 maturity: speculative
-modified: 2026-06-04
+modified: 2026-10-15
 ---
 
 ## The Link
@@ -32,7 +32,7 @@ That gives three concrete bridges, in increasing order of ambition:
 
 - **P1 — Relative entropy of wormhole opening (most computable).** Take the free-field two-wedge TFD; perturb by $V = g\,W(f_L)W(f_R)$; compute the [[araki-uhlmann-relative-entropy|Araki–Uhlmann relative entropy]] $S(\omega_V\|\omega)$ to $O(g^2)$ via the Connes cocycle, and interpret its sign/size as the "cost of opening the throat." Extends the group's 2025 relative-entropy papers and AQFT Sem II Wk 12. Detailed in [[relative-entropy-wormhole-opening]].
 - **P2 — Traversability vs. Tsirelson (most distinctive).** Compute the Bell-CHSH correlator between the two wedge algebras *in the presence of* the coupling $V$, and test for a monotone trade-off between signaling strength $g$ and achievable violation. Detailed in [[bell-chsh-across-traversable-wormhole]].
-- **P3 — Regenesis as embezzlement (most speculative).** Formulate the Maldacena–Qi eternal traversable wormhole as a renewable type III$_1$ resource and ask whether information transfer through it is an embezzlement protocol, assigning a relative-entropy cost. Connects ismael-porfirio/erick-landim's thesis work to wormholes.
+- **P3 — Regenesis as embezzlement (most speculative).** Formulate the Maldacena–Qi eternal traversable wormhole as a renewable type III$_1$ resource and ask whether information transfer through it is an embezzlement protocol, assigning a relative-entropy cost. Connects the two embezzlement theses to wormholes.
 - **P4 — Factorization vs. large-$N$ factorization (conceptual).** Clarify whether the Euclidean-wormhole **factorization puzzle** ($\langle Z_1 Z_2\rangle \neq \langle Z_1\rangle\langle Z_2\rangle$) and **[[large-n-factorization|large-N factorization]]** of single-trace operators (the very statement that makes the algebra type III$_1$) are in tension or are two faces of one structure. A position-paper / Socratic direction rather than a calculation.
 
 ## Related

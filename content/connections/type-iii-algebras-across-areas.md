@@ -3,12 +3,12 @@ title: "Type III₁ von Neumann Algebras as the Common Thread"
 type: connection
 areas: [bell-inequalities-qft, relative-entropy-qft, gauge-gravity-duality]
 maturity: speculative
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## The Link
 
-The [[type-iii-von-neumann-algebras|type III₁ von Neumann algebra]] structure of local observables in relativistic QFT is not merely a technical curiosity about operator theory — it is the mathematical engine driving both the Bell inequality violations and the relative entropy program simultaneously. The connection is this: the same algebraic property that makes Bell violations natural (the vacuum is entangled, and the local algebras do not contain density matrices) also makes the Araki-Uhlmann relative entropy the only well-defined entropy measure available, and also implies the embezzlement phenomenon that is currently being studied by Ismael Porfirio and Erick Landim.
+The [[type-iii-von-neumann-algebras|type III₁ von Neumann algebra]] structure of local observables in relativistic QFT is not merely a technical curiosity about operator theory — it is the mathematical engine driving both the Bell inequality violations and the relative entropy program simultaneously. The connection is this: the same algebraic property that makes Bell violations natural (the vacuum is entangled, and the local algebras do not contain density matrices) also makes the Araki-Uhlmann relative entropy the only well-defined entropy measure available, and also implies the embezzlement phenomenon that two PhD students in the group are currently studying.
 
 In finite-dimensional quantum mechanics, a bipartite state on a tensor product H_A ⊗ H_B can be entangled, but the reduced density matrix ρ_A exists and its von Neumann entropy S(ρ_A) = −Tr(ρ log ρ) is a well-defined finite number. This picture breaks down entirely in QFT. The local algebras M(O) associated with bounded spacetime regions O are type III₁ factors — there are no minimal projections, no density matrices, and no trace. The von Neumann entropy is literally undefined. This is not a UV divergence that can be regulated away; it is a structural feature of the algebraic type.
 
@@ -25,7 +25,7 @@ A **fourth vertex — [[magic-nonstabilizerness|magic]] (nonstabilizerness)** �
 - **Relative entropy program** (Nucl. Phys. B 1018, 2025; Eur. Phys. J. C 85, 2025): The Araki-Uhlmann relative entropy computations for coherent, squeezed, and cat states all rely on the type III₁ structure — they compute S(ω_state‖ω_vacuum) using the modular operator, which is computable for free fields via the two-point function.
 - **Cat states and Bell-CHSH** (Phys. Rev. D 113, 065008; 2026): The same cat states that appear in the relative entropy program also produce Bell violations with qualitatively new features. This is a direct instance of the two programs sharing the same objects.
 - **Magic in local QFT** ([[2026-benedetti-magic-in-qft]]; arXiv:2607.16403): An external group (Benedetti, Dabholkar, Dalmonte) proves that the type III₁ + Bisognano–Wichmann structure forbids the flat entanglement spectrum of a stabilizer state, so every physical QFT state is magical. This is independent confirmation that type III₁ is a *resource-generating* structure, and it hands the group a new, directly-computable resource (anti-flatness) on the very states — coherent, squeezed, cat — its relative-entropy and Bell programs already treat.
-- **Embezzlement PhD theses**: Ismael Porfirio's thesis on entanglement embezzlement in type III₁ algebras and Erick Landim's thesis on von Neumann algebras, embezzlement, and many-body theory are both addressing this common mathematical structure from different angles.
+- **Embezzlement PhD theses**: two theses in progress — one on entanglement embezzlement in type III₁ algebras, one on von Neumann algebras, embezzlement and many-body theory — address this common mathematical structure from different angles.
 - **Haag duality**: The fundamental result that M(O)' = M(O') (the commutant of the algebra of O equals the algebra of the causal complement O') is what makes J a proper modular conjugation mapping between complementary wedge algebras. This is the algebraic reason the Bell test and the modular entropy formula are both possible.
 - **Bisognano-Wichmann theorem**: Establishes that for Rindler wedge algebras in relativistic QFT, the modular Hamiltonian equals 2π times the boost generator. This gives explicit access to the modular operator Δ = e^{−2π K} and makes both the Bell-CHSH construction and the relative entropy formula computationally tractable.
 
@@ -43,7 +43,7 @@ The speculative element of this connection is not the mathematics — the type I
 
 4. **Type classification in gauge theories with Gribov restriction**: The type III₁ classification relies on properties of the standard Fock vacuum and the Bisognano-Wichmann theorem. It is not known whether the [[gribov-horizon|Gribov restriction]] preserves the type III₁ classification, or whether the modified vacuum changes the algebraic type of the local algebras.
 
-5. **Many-body analog**: In condensed matter, local algebras of lattice systems are type I or type II, not type III. Understanding how the type III₁ structure emerges in the continuum limit, and whether approximate type III₁ behavior can be seen in large but finite quantum systems, is relevant to Erick Landim's thesis and to the [[condensed-matter-qft-bridge|condensed matter bridge]].
+5. **Many-body analog**: In condensed matter, local algebras of lattice systems are type I or type II, not type III. Understanding how the type III₁ structure emerges in the continuum limit, and whether approximate type III₁ behavior can be seen in large but finite quantum systems, is relevant to the many-body thesis and to the [[condensed-matter-qft-bridge|condensed matter bridge]].
 
 ## Potential Projects
 
@@ -51,7 +51,7 @@ The speculative element of this connection is not the mathematics — the type I
 
 2. **Modular-time evolution of Bell-CHSH**: Compute the Bell-CHSH violation for the operator class A ⊗ σ_t(B) — Alice's operator fixed, Bob's operator evolved under the modular flow by time t. This is computable because σ_t acts as a Bogoliubov transformation for free fields. The result would be a function B(t) revealing how Bell violation decays under modular evolution.
 
-3. **Explicit embezzlement protocol via Weyl operators**: Construct an explicit embezzlement protocol in the Rindler wedge algebra using the Weyl operator basis, and compute its cost in Araki-Uhlmann relative entropy. Compare with the theoretical lower bound from the type III₁ structure. This is the natural target for Ismael Porfirio's thesis.
+3. **Explicit embezzlement protocol via Weyl operators**: Construct an explicit embezzlement protocol in the Rindler wedge algebra using the Weyl operator basis, and compute its cost in Araki-Uhlmann relative entropy. Compare with the theoretical lower bound from the type III₁ structure. This is the natural target for the embezzlement thesis.
 
 4. **Survey of type III₁ in deformed theories**: Study whether the type III₁ classification survives in (a) the Gribov-Zwanziger theory with modified propagators, (b) finite-temperature QFT, and (c) non-commutative QFT (which has appeared in the GZ extensions). This is a foundational algebraic question with practical implications for how broadly the current Bell and relative entropy methods apply.
 
@@ -102,7 +102,4 @@ The speculative element of this connection is not the mathematics — the type I
 
 ### Entities
 - [[silvio-paolo-sorella]]
-- ismael-porfirio
-- erick-landim
-- luigi-carvalho-ferreira
 - [[hong-liu]]

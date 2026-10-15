@@ -11,7 +11,7 @@ originated: 2026-04-06
 
 ## Statement
 
-Entanglement embezzlement in [[type-iii-von-neumann-algebras]] refers to the ability to extract entanglement from a catalyst state without degrading it — a feature that is exact (not approximate) precisely because type III₁ algebras have no minimal entanglement. But "no cost" is a statement about state fidelity, not about all information-theoretic quantities. What is the cost of embezzlement when measured by [[araki-uhlmann-relative-entropy]]? Is there a relative-entropy lower bound on the disturbance caused to the catalyst state by an embezzlement protocol constructed from [[weyl-operators]] in relativistic QFT?
+Entanglement embezzlement in [[type-iii-von-neumann-algebras]] refers to the ability to extract entanglement from a catalyst state without degrading it. On a type III₁ factor every normal state does this to arbitrary accuracy, because the unitary orbit of a faithful normal state is dense, and no finite protocol is exact. But an error that can be made arbitrarily small is a statement about state fidelity, not about all information-theoretic quantities. What is the cost of embezzlement when measured by [[araki-uhlmann-relative-entropy]]? Is there a relative-entropy lower bound on the disturbance caused to the catalyst state by an embezzlement protocol constructed from [[weyl-operators]] in relativistic QFT?
 
 ## Why It Matters
 
@@ -19,10 +19,10 @@ The type III₁ structure of local von Neumann algebras in relativistic QFT — 
 
 Computing the relative entropy cost of specific embezzlement protocols in QFT would:
 1. Provide a quantitative, operationally meaningful measure of the type III₁ "resource."
-2. Connect the abstract algebraic fact (type III₁ allows exact embezzlement) to a computable number using the tools already developed for [[araki-uhlmann-relative-entropy]] in free-field QFT.
+2. Connect the abstract algebraic fact (every normal state on a type III₁ factor embezzles, to any accuracy) to a computable number using the tools already developed for [[araki-uhlmann-relative-entropy]] in free-field QFT.
 3. Clarify what aspect of the QFT vacuum structure makes embezzlement possible, potentially linking it to the [[tomita-takesaki-modular-theory|modular Hamiltonian]] and [[tomita-takesaki-modular-theory]].
 
-This is actively being pursued by ismael-porfirio and erick-landim within the group.
+This is actively being pursued by two PhD students within the group.
 
 ## What We Know
 

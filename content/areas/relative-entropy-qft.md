@@ -2,7 +2,7 @@
 title: Araki-Uhlmann Relative Entropy in Quantum Field Theory
 type: area
 status: active
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Overview
@@ -70,5 +70,4 @@ This is an active and rapidly developing line, with clear open directions toward
 - [[silvio-paolo-sorella]] ([[uerj]]) — co-author of all papers
 - [[itzhak-roditi]] ([[cbpf]]) — co-author of all papers
 - [[leticia-palhares|Arthur F. Vieira]] ([[uerj]]) — co-author of all relative entropy papers
-- ismael-porfirio ([[uerj]]) — PhD student; embezzlement and type III₁ algebras
-- erick-landim ([[uerj]]) — PhD student; von Neumann algebras, embezzlement, many-body theory
+- Two PhD students ([[uerj]]) — embezzlement and type III₁ algebras; von Neumann algebras and many-body theory

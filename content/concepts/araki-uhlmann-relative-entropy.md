@@ -3,7 +3,7 @@ title: Araki-Uhlmann Relative Entropy
 type: concept
 areas: [relative-entropy-qft, bell-inequalities-qft]
 aliases: [relative entropy, modular relative entropy, Araki relative entropy]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -47,7 +47,7 @@ Concrete results include:
 - [[tomita-takesaki-modular-theory]] — the relative modular operator $\Delta_{\Phi,\Omega}$ is the central object; Araki-Uhlmann relative entropy is defined entirely within the Tomita-Takesaki framework
 - [[type-iii-von-neumann-algebras]] — relative entropy is well-defined for type III algebras even though von Neumann entropy is not; this is the key reason for using it in AQFT
 - [[weyl-operators]] — Gaussian structure of Weyl operator expectation values enables closed-form computation of relative entropy for coherent/squeezed states
-- [[entanglement-embezzlement]] — relative entropy provides a lower bound on the cost of embezzlement protocols; in type III₁ algebras the bound can be zero (exact embezzlement)
+- [[entanglement-embezzlement]] — relative entropy is the accounting for the cost of an embezzlement protocol at a fixed accuracy; in type III₁ algebras the error can be made arbitrarily small, and how the cost scales with it is the open question
 - [[coherent-states]] — the simplest case: $S(\omega_f\|\omega_0) = \|f\|^2_+$ with explicit one-particle norm
 - [[squeezed-states]] — relative entropy for squeezed states involves the Bogoliubov coefficients, computable in closed form
 - [[rindler-wedges]] — relative entropy of the restriction of the Minkowski vacuum to one wedge provides an algebraic route to the Unruh entropy

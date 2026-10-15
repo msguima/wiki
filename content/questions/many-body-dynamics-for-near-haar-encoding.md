@@ -13,7 +13,7 @@ Problem 4.2 of [[2026-goto-rethinking-qi-gravity-fields|Goto et al.]]: toy model
 
 ## Why It Matters
 
-Peripheral to the group; a quantum-information / many-body-chaos question. Nearest group contact is erick-landim's many-body-theory interest, but not a current line.
+Peripheral to the group; a quantum-information / many-body-chaos question. Nearest group contact is the many-body-theory interest of one of the PhD theses, but not a current line.
 
 ## What We Know
 

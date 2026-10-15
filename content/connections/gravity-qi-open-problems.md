@@ -3,7 +3,7 @@ title: "The gravity/QI open-problems agenda (Goto et al.) and the group's toolki
 type: connection
 areas: [gauge-gravity-duality, bell-inequalities-qft, relative-entropy-qft]
 maturity: developing
-modified: 2026-10-01
+modified: 2026-10-15
 ---
 
 ## The Link
@@ -20,7 +20,7 @@ The other two themes (observers, QEC) are where the group is a well-positioned *
 ## Evidence
 
 - **Finite information on type III₁ is already built.** The group's 2025 papers compute [[araki-uhlmann-relative-entropy|Araki–Uhlmann relative entropy]] for [[coherent-states|coherent]], [[squeezed-states|squeezed]], and [[cat-states|cat]] states — finite quantities on algebras where von Neumann entropy is UV-divergent. That is a concrete instance of the "QI in infinite dimensions" the paper's §5 asks for, not a promissory note.
-- **Embezzlement is native to III₁.** The group (Porfirio, Landim) studies [[entanglement-embezzlement|embezzlement]] in [[type-iii-von-neumann-algebras|type III₁]] and the [[embezzlement-capacity-lower-bound|rate/capacity]] question; van Luijk–Stottmeister–Werner–Wilming (2024) established embezzlement in QFT. This is Theme 4 machinery in hand.
+- **Embezzlement is native to III₁.** The group studies [[entanglement-embezzlement|embezzlement]] in [[type-iii-von-neumann-algebras|type III₁]] and the [[embezzlement-capacity-lower-bound|rate/capacity]] question; van Luijk–Stottmeister–Werner–Wilming (2024) established embezzlement in QFT. This is Theme 4 machinery in hand.
 - **Operational characterization, made into a theorem.** The [[holographic-dual-embezzlement-protocol|holographic-embezzlement manuscript]] proves a bound $1-F_d \lesssim \log d / S_{\text{gen}}$ and conjectures a matching lower bound that would make **generalized entropy the operational capacity** — a literal answer to Theme 1's "characterize holographic observables by the tasks they enable."
 - **Tsirelson is the III₁ Bell obstruction.** Theme 4 names the Tsirelson problem (tensor vs. commuting-operator correlations, $\mathrm{MIP}^*=\mathrm{RE}$). Wedge algebras commute but do not tensor-factorize — exactly the commuting-operator setting — which is the algebraic crux of [[bell-in-type-iii-project]] and the ceiling on [[long-range-bell-decay|vacuum Bell-CHSH]].
 - **The observer's algebra is course material.** Theme 2's dynamical, type-II observer is CLPW/CPW ([[crossed-product-construction|crossed product]]), taught in AQFT Semester II ([[courses/2026-algebraic-qft-course/syllabus|syllabus]]).

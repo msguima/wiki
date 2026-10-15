@@ -6,7 +6,7 @@ target: "IQOQI Open Quantum Problem #48 (A. May)"
 priority: high
 duration: ~12–15 months (parallel track)
 linked_question: embezzlement-capacity-lower-bound
-modified: 2026-06-19
+modified: 2026-10-15
 ---
 
 # Project: Holographic embezzlement capacity & the entanglement cost of f-routing
@@ -24,7 +24,7 @@ Derive an operationally meaningful **lower bound on the entanglement cost of f-r
 - A manuscript is **drafted** for [[holographic-dual-embezzlement-protocol]] (catalyst geometry, bulk operation, cost theorem).
 - The open question [[embezzlement-capacity-lower-bound]] is the capacity statement.
 - Relative-entropy results for coherent / squeezed states (Eur. Phys. J. C 85; Nucl. Phys. B 1018) give the cost toolkit; the cocycle-perturbation machinery (the algebraic-QFT course Master's project, Phase C1) computes [[entanglement-embezzlement|embezzlement]] cost on the [[crossed-product-construction|crossed product]] directly.
-- Students ismael-porfirio (embezzlement) and erick-landim (vN algebras, many-body) are already on exactly this material.
+- The two PhD students (embezzlement; vN algebras and many-body) are already on exactly this material.
 
 ## 3. Phased plan (~12–15 months)
 
@@ -32,7 +32,7 @@ Derive an operationally meaningful **lower bound on the entanglement cost of f-r
 Map f-routing ↔ conditional disclosure of secrets ↔ non-local computation, and the ITCS-2025 rank lower bound. Identify the continuum limit in which "entanglement cost" becomes a type III$_1$ relative-entropy quantity. **Deliverable:** positioning note linking May's problem to the embezzlement program; tie into the drafted manuscript.
 
 ### Phase 1 — Relative-entropy lower bound (6–8 wks)
-Via the [[crossed-product-construction|crossed product]] (III$_1\to$ II$_\infty$, trace restored), define a finite cost for the routing/embezzlement operation and bound it below by [[araki-uhlmann-relative-entropy|Araki–Uhlmann relative entropy]] using monotonicity / data-processing. Builds on the coherent-state relative-entropy results. **Deliverable:** a continuum lower bound — *standalone result, independent of the capacity claim.* **People:** ismael-porfirio, erick-landim.
+Via the [[crossed-product-construction|crossed product]] (III$_1\to$ II$_\infty$, trace restored), define a finite cost for the routing/embezzlement operation and bound it below by [[araki-uhlmann-relative-entropy|Araki–Uhlmann relative entropy]] using monotonicity / data-processing. Builds on the coherent-state relative-entropy results. **Deliverable:** a continuum lower bound — *standalone result, independent of the capacity claim.* **People:** the two PhD students.
 
 ### Phase 2 — Capacity theorem (6–8 wks)
 Test whether the Phase-1 bound matches the holographic generalized-entropy rate from the drafted manuscript. Match $\Rightarrow$ generalized entropy is the operational capacity (the headline of [[embezzlement-capacity-lower-bound]]); gap $\Rightarrow$ a sharp, publishable gap statement. **Deliverable:** capacity theorem or quantified gap.
@@ -49,7 +49,7 @@ Show the continuum bound is the scaling limit of the rank bound — or that it c
 
 ## 5. Targets & people
 
-JHEP / Quantum / PRD. Lead: Marcelo + ismael-porfirio + erick-landim. This is the project that feeds the wormholes ↔ QI research thread directly.
+JHEP / Quantum / PRD. Lead: Marcelo + the two PhD students. This is the project that feeds the wormholes ↔ QI research thread directly.
 
 ## 6. Connection to existing wiki questions
 
@@ -60,7 +60,7 @@ JHEP / Quantum / PRD. Lead: Marcelo + ismael-porfirio + erick-landim. This is th
 
 ## 7. Sequencing within the OQP program
 
-Parallel track, driven by ismael-porfirio / erick-landim plus the drafted manuscript — does not compete with the [[long-range-bell-decay-project]] spine for the senior-collaborator bottleneck.
+Parallel track, driven by the two PhD students plus the drafted manuscript — does not compete with the [[long-range-bell-decay-project]] spine for the senior-collaborator bottleneck.
 
 ---
 

@@ -8,7 +8,7 @@ audience: M.Sc. and Ph.D. students, open to qualified outsiders
 prerequisites: Quantum mechanics; general relativity; basic quantum field theory (free fields, canonical quantization)
 not assumed: von Neumann algebras, conformal field theory, AdS/CFT
 language: lectures in Portuguese; written materials in English
-modified: 2026-08-24
+modified: 2026-10-15
 ---
 
 # Estrutura Algébrica da Teoria Quântica de Campos
@@ -156,7 +156,7 @@ Students propose a write-up topic by end of Week 4 of Semester II. Suggested top
 
 1. **Free-field cocycle perturbation** — extend the Week 12 mini-calculation to a self-contained 15–20 page exposition with a controlled second-order calculation in a free-field analogue.
 2. **Bell-CHSH in holographic settings** — develops the open question in [[sem2-week-08-bell-chsh-on-tfd|Semester II Week 8]].
-3. **Embezzlement cost on the crossed product** — connects to the Ph.D. work of ismael-porfirio and erick-landim.
+3. **Embezzlement cost on the crossed product** — connects to the Ph.D. work under way in the group.
 4. **Critical exposition of one paper** — a clean, mathematically careful exposition of CPW, CLPW (de Sitter), or AAJ for a non-specialist reader.
 
 ---

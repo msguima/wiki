@@ -3,7 +3,7 @@ title: Type III₁ von Neumann Algebras
 type: concept
 areas: [bell-inequalities-qft, relative-entropy-qft]
 aliases: [type III algebras, type III₁ factor, local algebras in QFT]
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Definition
@@ -33,7 +33,7 @@ The type III₁ structure is the algebraic foundation underlying all of the quan
 
 **Why relative entropy instead of entanglement entropy.** The standard entanglement entropy $S(\rho_A) = -\text{tr}(\rho_A\log\rho_A)$ requires a partial trace, which requires a trace on the local algebra. Type III₁ algebras have no trace, so partial traces do not exist and the von Neumann entropy diverges. The [[araki-uhlmann-relative-entropy|Araki-Uhlmann relative entropy]] is the correct replacement.
 
-**Why embezzlement is exact.** [[entanglement-embezzlement|Entanglement embezzlement]] is exact (not just approximate) in type III₁ algebras. This follows because every state is equivalent (in a certain sense) to every other state — there are no "pure" minimal states, and global unitaries can always be found to transfer entanglement without cost.
+**Why every state is an embezzler.** Type III₁ factors are universal embezzlers: every normal state is an [[entanglement-embezzlement|embezzling state]], so any target entangled state can be produced from it by local operations that disturb it arbitrarily little (van Luijk, Stottmeister, Werner, Wilming, 2024). The mechanism is Connes–Størmer transitivity, the unitary orbit of a faithful normal state being norm-dense in the normal state space, and density is not equality: the optimal error is an infimum equal to zero that no finite protocol attains. Semifinite algebras, types I and II, host no embezzling state at all.
 
 **Why modular theory is the right tool.** The [[tomita-takesaki-modular-theory|Tomita-Takesaki theory]] applies precisely to the setting of a von Neumann algebra with a cyclic separating vector. For type III₁ factors, every faithful normal state gives a cyclic separating vector (since the algebra has no pure normal states), making modular theory universally applicable.
 
@@ -41,7 +41,7 @@ The type III₁ structure is the algebraic foundation underlying all of the quan
 
 - [[tomita-takesaki-modular-theory]] — modular theory is the primary technical tool for type III₁ algebras; the type classification is determined by the Connes spectrum of the modular automorphism group
 - [[araki-uhlmann-relative-entropy]] — the only well-defined entropy quantity for type III algebras; replaces von Neumann entropy in AQFT
-- [[entanglement-embezzlement]] — exact embezzlement is a consequence of the type III₁ structure; in type I and II systems embezzlement is only approximate
+- [[entanglement-embezzlement]] — universal embezzlement is a consequence of the type III₁ structure; semifinite algebras (types I and II) host no embezzling state
 - [[weyl-operators]] — Weyl operators generate the type III₁ local algebras $\mathcal{M}(\mathcal{O})$
 - [[rindler-wedges]] — $\mathcal{M}(R)$ and $\mathcal{M}(L)$ are both type III₁ factors; the vacuum is cyclic and separating for each
 - [[causal-diamonds]] — $\mathcal{M}(\mathcal{D})$ for any causal diamond is type III₁; the type is universal across local regions

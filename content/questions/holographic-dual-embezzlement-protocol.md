@@ -8,7 +8,7 @@ areas:
   - gauge-gravity-duality
 priority: high
 originated: 2026-05-26
-modified: 2026-06-05
+modified: 2026-10-15
 ---
 
 ## Statement
@@ -17,7 +17,7 @@ Maldacena established that the [[thermofield-double|thermofield double (TFD) sta
 
 1. **Q1 (Catalyst geometry).** What bulk geometry is dual to a catalyst (embezzling) state in a holographic CFT? Is there a single privileged geometry, as in TFD ↔ eternal black hole, or a family?
 2. **Q2 (Protocol geometry).** What bulk operation implements the embezzlement unitary $U_A \otimes V_B$? Where does it live geometrically, and what bulk modes does it manipulate?
-3. **Q3 (Cost).** At strict large $N$ the embezzlement is exact (zero cost). At $\mathcal{O}(1/N^2) \sim \mathcal{O}(G_N)$ corrections the [[crossed-product-construction|crossed product]] turns the [[type-iii-von-neumann-algebras|Type III₁]] boundary algebra into a Type II∞ algebra, where exact embezzlement is forbidden. What is the optimal embezzlement error rate as a function of $G_N$, and what is its geometric meaning?
+3. **Q3 (Cost).** At strict large $N$ the boundary algebra is [[type-iii-von-neumann-algebras|Type III₁]] and every normal state embezzles, with an error that can be made arbitrarily small at no cost any entanglement monotone registers. At $\mathcal{O}(1/N^2) \sim \mathcal{O}(G_N)$ corrections the [[crossed-product-construction|crossed product]] turns it into a Type II∞ algebra, which is semifinite and hosts no embezzling state at all. What is the optimal embezzlement error rate as a function of $G_N$, and what is its geometric meaning?
 4. **Q4 (Bell × embezzlement).** Maximal Bell-CHSH violation across the TFD has a clean bulk picture (the wormhole). Both Bell saturation and universal embezzlement arise from the same Type III₁ structure. Is there a parallel bulk picture for maximal embezzlement, and how does it differ geometrically from the Bell case?
 
 The hypothesis being tested, in its corrected metric-aware form (see §Audit corrections below):
@@ -39,7 +39,7 @@ Filling the bridge would yield:
 3. A new operational meaning for generalized entropy: it sets the operational catalyst capacity for holographic embezzlement.
 4. A potential connection to [[bell-chsh-inequality|Bell-CHSH]] saturation: both phenomena arise from Type III₁ continuous modular spectrum, suggesting a unified bulk picture (Q4).
 
-This is being actively investigated within the group through Ismael Porfirio and Erick Landim's PhD work on embezzlement in Type III₁ algebras.
+This is being actively investigated within the group through the two PhD theses on embezzlement in Type III₁ algebras.
 
 ## Project status (2026-06)
 
@@ -159,7 +159,7 @@ A 2026-05-26 audit (`/Users/marcelo/Documents/Antigravity/.../2026-05-26-correct
 A focused check confirms the gap is genuine.
 
 - **Finite-dim (Type I):** vDH 2002 ($\epsilon \sim \log d/\log n$); Leung–Wang 2014; *Complete Characterization of Entanglement Embezzlement* (Quantum 2024). All finite-dim, nothing about gravity.
-- **Type III₁:** van Luijk et al. 2024 — exact embezzlement.
+- **Type III₁:** van Luijk et al. 2024 — universal embezzlement, arbitrarily accurate.
 - **Type II case — qualitatively dismissed, quantitatively open.** Van Luijk et al. state $\kappa_{\min}(\mathcal{M}) = \kappa_{\max}(\mathcal{M}) = 2$ for semifinite factors (worst possible value of their universal embezzlement quality parameter) and do not refine. They mention "in the presence of gravity, local observable algebras may be of type II" only in passing.
 - **Crossed-product / Witten-CPW side:** computes entropy, not embezzlement.
 - **Adjacent program:** Schwartzman 2024 — *circuit complexity* of embezzlement (different obstruction, not trace-norm cost; not holographic).
@@ -303,7 +303,7 @@ This is naturally the follow-up paper after Q3, exploiting the group's distincti
 
 The achievability theorem is now essentially proved. The remaining work, in order:
 
-1. **Hand the achievability theorem to a student now** (Porfirio or Landim). The Section-5-style write-up in the .tex draft is a clean publishable lemma even before the lower bound is settled. ~1 month to verify and polish.
+1. **Hand the achievability theorem to one of the PhD students now.** The Section-5-style write-up in the .tex draft is a clean publishable lemma even before the lower bound is settled. ~1 month to verify and polish.
 2. **Lower bound proof** — the main research challenge. Smooth max entropy / one-shot machinery for trace windows. ~2–3 months of focused work.
 3. **Holographic dictionary** — derive $S_{\text{cap}} \simeq S_{\text{gen}}$ explicitly in TFD and CHM ball code subspaces. Apply Witten/CPW/Soni technology.
 4. **Explicit TFD example** — implement clock translation as near-horizon modular boost; verify that the protocol's bulk image is a soft-mode operation on Alice's side of the bifurcation surface (reconciles with Q2).
@@ -383,5 +383,5 @@ The achievability theorem is now essentially proved. The remaining work, in orde
 ## Notes
 
 - **Conversation history.** Original brainstorm and plan: 2026-05-26 with claude-opus-4-7. Iterated Q1 → Q2 → Q3 → literature check → sharpened theorem → next step. Audit and LaTeX implementation in `/Users/marcelo/Documents/Antigravity/physics-wiki/draft/` correct three metric/capacity/clock-measure issues and elevate the upper bound from "proof skeleton" to a proved theorem.
-- **Discuss with ismael-porfirio and erick-landim** before committing — handing them the achievability theorem write-up is the natural first step.
+- **Discuss with the two PhD students** before committing — handing them the achievability theorem write-up is the natural first step.
 - **Decision point on talking to a principal** (Wilming, Hollands) should come after the lower bound is at least at proof-strategy maturity, not before.

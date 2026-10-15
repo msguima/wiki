@@ -6,7 +6,7 @@ target: "IQOQI Open Quantum Problem #12 (R. Verch)"
 priority: highest
 duration: ~12 months
 linked_question: long-range-bell-decay
-modified: 2026-06-19
+modified: 2026-10-15
 ---
 
 # Project: The β(L) decay law for vacuum Bell-CHSH violation
@@ -33,7 +33,7 @@ Establish the functional form and decay rate of the maximal vacuum [[bell-chsh-i
 Define $\beta(L)$ as a supremum over admissible dichotomic pairs in two diamonds at separation $L$. Catalog status: PROVED at $L\to0$, OPEN for $L>0$. **Deliverable:** formal problem-statement note → the seeded question [[long-range-bell-decay]].
 
 ### Phase 1 — Lower bound: the violation persists (4–6 wks)
-Use the modular-conjugation construction (PRD 108) and the optimal operator class (PRD 112) to compute $\beta_{\text{lower}}(L)$ for two diamonds, extending Eur. Phys. J. C 85 to explicit $L$-dependence. Extract the leading law: **massive scalar $\to e^{-mL}$; massless $\to L^{-p}$**, with $c(L)$ set by the smeared [[pauli-jordan-distribution|Pauli–Jordan]] correlator. Validate with the PRD 110 numerics. **Deliverable:** explicit lower bound — *standalone paper #1, ships regardless of Phase 2.* **People:** ismael-porfirio / erick-landim (analytics + numerics), [[silvio-paolo-sorella]], [[itzhak-roditi]].
+Use the modular-conjugation construction (PRD 108) and the optimal operator class (PRD 112) to compute $\beta_{\text{lower}}(L)$ for two diamonds, extending Eur. Phys. J. C 85 to explicit $L$-dependence. Extract the leading law: **massive scalar $\to e^{-mL}$; massless $\to L^{-p}$**, with $c(L)$ set by the smeared [[pauli-jordan-distribution|Pauli–Jordan]] correlator. Validate with the PRD 110 numerics. **Deliverable:** explicit lower bound — *standalone paper #1, ships regardless of Phase 2.* **People:** the two PhD students (analytics + numerics), [[silvio-paolo-sorella]], [[itzhak-roditi]].
 
 ### Phase 2 — Upper bound: the hard, novel step (8–12 wks)
 Bound the supremum over **all** observables. Route: Tsirelson's bound expresses the maximal CHSH value between $\mathcal{A}(\mathcal{O}_A)$ and $\mathcal{A}(\mathcal{O}_B)$ through a maximal-correlation / operator-norm quantity; control it with **Buchholz–Wichmann–Yngvason nuclearity** and the **split property**. For massive free fields the split property gives exponential clustering $\Rightarrow \beta(L)-2 \le C\,e^{-mL}$, matching the Phase-1 class. **Deliverable:** rigorous upper bound (CMP/LMP-grade if it closes). *This is where Rainer Verch (or a Fewster-style AQFT collaborator) is decisive.*
@@ -56,7 +56,7 @@ Combine into the $\beta(L)$ decay-law theorem (or sharp two-sided estimate). Ext
 
 ## 6. Targets & people
 
-PRL (headline) + PRD or CMP (long companion). Lead: Marcelo + [[silvio-paolo-sorella]]; students ismael-porfirio / erick-landim; external **Rainer Verch** (decisive for Phase 2), [[david-dudal]] optional.
+PRL (headline) + PRD or CMP (long companion). Lead: Marcelo + [[silvio-paolo-sorella]]; the two PhD students; external **Rainer Verch** (decisive for Phase 2), [[david-dudal]] optional.
 
 ## 7. Connection to existing wiki questions
 
@@ -71,7 +71,7 @@ The **spine**. [[bell-in-type-iii-project]] (companion, OQP #1/26/32) rides in t
 ## 9. Suggested next actions
 
 1. Email Verch to warm up the AQFT side *before* the lower-bound work finishes.
-2. Assign Phase 1 analytics to ismael-porfirio / erick-landim; reuse the PRD 110 numerical code.
+2. Assign Phase 1 analytics to the two PhD students; reuse the PRD 110 numerical code.
 3. Draft the Phase 0 formulation note from the PRD 108 / Eur. Phys. J. C 85 results.
 
 ---

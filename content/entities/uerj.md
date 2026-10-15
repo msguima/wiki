@@ -22,9 +22,8 @@ Current and recent members of the research group at UERJ:
 
 - [[silvio-paolo-sorella]] — senior collaborator and co-PI; 50+ joint papers since 2010
 - [[leticia-palhares]] — co-PI on FAPERJ Emerging Groups grant; 15+ joint papers since 2013
-- ismael-porfirio — PhD student (FAPERJ fellowship, 2023–present); [[entanglement-embezzlement|entanglement embezzlement]] in [[type-iii-von-neumann-algebras|type III₁ algebras]]
-- erick-landim — PhD student (FAPERJ fellowship, 2025–present); von Neumann algebras and many-body theory
-- luigi-carvalho-ferreira — postdoc (CNPq fellowship, 2025–2026)
+- Two PhD students — [[entanglement-embezzlement|entanglement embezzlement]] in [[type-iii-von-neumann-algebras|type III₁ algebras]], and von Neumann algebras with many-body theory
+- A postdoc in the quantum-information program
 
 Recent collaborators also affiliated with UERJ include Philipe De Fabritiis, Arthur F. Vieira, Fillipe M. Guedes, João G. A. Caribé, Giovani Peruzzo, and M.A.L. Capri (historical).
 

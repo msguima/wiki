@@ -1,7 +1,7 @@
 ---
 title: Research Landscape Overview
 type: overview
-modified: 2026-10-01
+modified: 2026-10-15
 ---
 
 # Research Landscape Overview
@@ -12,7 +12,7 @@ The central theme of the current research program is quantum information in quan
 
 The longest-running active line concerns Bell inequalities in QFT, with 21+ papers produced since 2023. The core technical approach uses Weyl operators to construct CHSH-type observables in relativistic settings, bypassing the measurement-interpretation difficulties that arise when naively applying quantum mechanical Bell tests to field states. Tomita-Takesaki modular theory plays a central structural role: the modular Hamiltonian and modular flow provide a canonical way to relate algebras associated to different spacetime regions, and the Bisognano-Wichmann theorem connects this abstract structure to the physical Lorentz boosts in Minkowski space. The guiding physical question is whether the degree of Bell violation — or its suppression — encodes information about the vacuum structure, phase, or confinement properties of the theory.
 
-A closely related line opened in 2025 concerns Araki-Uhlmann relative entropy for excited states in QFT. Relative entropy is the natural information-theoretic distance between states on a von Neumann algebra, and in the type III₁ setting relevant to QFT it has special properties (notably, it is always well-defined even when states are not mutually absolutely continuous in a classical sense). The immediate focus is on computing relative entropy for coherent, squeezed, and cat states in specific field-theoretic models, and on understanding how the quantity changes under the RG flow or when a mass gap is present. An emerging priority is the connection between embezzlement of entanglement and relative entropy: in type III₁ algebras, embezzlement can occur at zero cost, and making this precise in terms of relative entropy is an active open problem being pursued with PhD student Ismael Porfirio Jr.
+A closely related line opened in 2025 concerns Araki-Uhlmann relative entropy for excited states in QFT. Relative entropy is the natural information-theoretic distance between states on a von Neumann algebra, and in the type III₁ setting relevant to QFT it has special properties (notably, it is always well-defined even when states are not mutually absolutely continuous in a classical sense). The immediate focus is on computing relative entropy for coherent, squeezed, and cat states in specific field-theoretic models, and on understanding how the quantity changes under the RG flow or when a mass gap is present. An emerging priority is the connection between embezzlement of entanglement and relative entropy: in type III₁ algebras every normal state is an embezzling state, so any entangled state can be extracted to arbitrary precision while the resource is disturbed arbitrarily little, and pinning down the cost of that precision in terms of relative entropy is an active open problem being pursued with a PhD student in the group.
 
 ## Research Areas
 

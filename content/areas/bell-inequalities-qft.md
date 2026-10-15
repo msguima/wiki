@@ -2,7 +2,7 @@
 title: Bell Inequalities and Quantum Information in Quantum Field Theory
 type: area
 status: active
-modified: 2026-04-06
+modified: 2026-10-15
 ---
 
 ## Overview
@@ -74,6 +74,5 @@ The line connects directly to the [[relative-entropy-qft|relative entropy progra
 - [[silvio-paolo-sorella]] ([[uerj]]) — co-author of all papers
 - [[itzhak-roditi]] ([[cbpf]]) — co-author of 14 papers
 - [[david-dudal]] ([[ghent-university]]) — 3 papers
-- ismael-porfirio ([[uerj]]) — PhD student; entanglement embezzlement in type III₁ algebras
-- erick-landim ([[uerj]]) — PhD student; von Neumann algebras, embezzlement, many-body theory
-- luigi-carvalho-ferreira ([[uerj]]) — postdoc (CNPq fellowship)
+- Two PhD students ([[uerj]]) — entanglement embezzlement in type III₁ algebras; von Neumann algebras and many-body theory
+- A postdoc ([[uerj]])
